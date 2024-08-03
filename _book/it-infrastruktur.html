@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 IT-Infrastruktur | Medizinische Informatik: Vorbereitung zur Prüfung</title>
+<meta name="author" content="Dr. med. Grigorij Schleifer">
+<meta name="description" content="2.1 Rechnernetze Alles beginnt mit einem Rechner, der per Definition (wo?) lediglich nur einen Prozessor besitzt und nur begrenzte Funktionalität innehat. Heutzutage sind die meisten Rechner...">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 2 IT-Infrastruktur | Medizinische Informatik: Vorbereitung zur Prüfung">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 Rechnernetze Alles beginnt mit einem Rechner, der per Definition (wo?) lediglich nur einen Prozessor besitzt und nur begrenzte Funktionalität innehat. Heutzutage sind die meisten Rechner...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 IT-Infrastruktur | Medizinische Informatik: Vorbereitung zur Prüfung">
+<meta name="twitter:description" content="2.1 Rechnernetze Alles beginnt mit einem Rechner, der per Definition (wo?) lediglich nur einen Prozessor besitzt und nur begrenzte Funktionalität innehat. Heutzutage sind die meisten Rechner...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Medizinische Informatik: Vorbereitung zur Prüfung</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Modul I – Angewandte Informatik</a></li>
+<li><a class="active" href="it-infrastruktur.html"><span class="header-section-number">2</span> IT-Infrastruktur</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">3</span> Introduction</a></li>
+<li><a class="" href="literature.html"><span class="header-section-number">4</span> Literature</a></li>
+<li><a class="" href="methods.html"><span class="header-section-number">5</span> Methods</a></li>
+<li><a class="" href="applications.html"><span class="header-section-number">6</span> Applications</a></li>
+<li><a class="" href="final-words.html"><span class="header-section-number">7</span> Final Words</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="it-infrastruktur" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> IT-Infrastruktur<a class="anchor" aria-label="anchor" href="#it-infrastruktur"><i class="fas fa-link"></i></a>
+</h1>
+<div id="rechnernetze" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Rechnernetze<a class="anchor" aria-label="anchor" href="#rechnernetze"><i class="fas fa-link"></i></a>
+</h2>
+<p>Alles beginnt mit einem <strong><em>Rechner</em></strong>, der per Definition (wo?) lediglich nur einen Prozessor besitzt und nur begrenzte Funktionalität innehat. Heutzutage sind die meisten Rechner <strong>Mehrprozessorsysteme</strong> die mit mehreren Prozessoren Komponente des Systems steuern (z.B. die Tastatur oder die Netzwerkkarte). Wenn mehrere Rechner eine gemeinsame Aufgabe haben, spricht man von einem <strong><em>Rechenverbund</em></strong>. Davon zu unterscheiden ist ein <strong><em>Rechnernetz</em></strong>, dort sind die Rechner zusammengeschlossen und kommunizieren untereindander. Es muss jedoch keine gemeinsame Aufgabe ausgeführt werden und die einzelnen Rechner sind logischisch hardware-technisch unabhängig voneinander. Die Hauptsufgabe in einem <strong><em>Rechnernetz</em></strong> ist der Austausch und Verarbeitung der Information untereinander. What is just happend??? oijalkj ….</p>
+<div id="krankenhaus--und-praxisnetzwerke" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> Krankenhaus- und Praxisnetzwerke<a class="anchor" aria-label="anchor" href="#krankenhaus--und-praxisnetzwerke"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="netzwerkkomponente" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Netzwerkkomponente<a class="anchor" aria-label="anchor" href="#netzwerkkomponente"><i class="fas fa-link"></i></a>
+</h3>
+<div id="aktive-netzwerke" class="section level4" number="2.1.2.1">
+<h4>
+<span class="header-section-number">2.1.2.1</span> Aktive Netzwerke<a class="anchor" aria-label="anchor" href="#aktive-netzwerke"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="passive-netzwerke" class="section level4" number="2.1.2.2">
+<h4>
+<span class="header-section-number">2.1.2.2</span> Passive Netzwerke<a class="anchor" aria-label="anchor" href="#passive-netzwerke"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+</div>
+<div id="client-server-konzept" class="section level3" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> Client-Server-Konzept<a class="anchor" aria-label="anchor" href="#client-server-konzept"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="rechnertypen" class="section level3" number="2.1.4">
+<h3>
+<span class="header-section-number">2.1.4</span> Rechnertypen<a class="anchor" aria-label="anchor" href="#rechnertypen"><i class="fas fa-link"></i></a>
+</h3>
+<div id="fat-client" class="section level4" number="2.1.4.1">
+<h4>
+<span class="header-section-number">2.1.4.1</span> fat client<a class="anchor" aria-label="anchor" href="#fat-client"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="thin-clients" class="section level4" number="2.1.4.2">
+<h4>
+<span class="header-section-number">2.1.4.2</span> thin clients<a class="anchor" aria-label="anchor" href="#thin-clients"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="zero-clients" class="section level4" number="2.1.4.3">
+<h4>
+<span class="header-section-number">2.1.4.3</span> zero clients<a class="anchor" aria-label="anchor" href="#zero-clients"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+</div>
+<div id="servertypen" class="section level3" number="2.1.5">
+<h3>
+<span class="header-section-number">2.1.5</span> Servertypen<a class="anchor" aria-label="anchor" href="#servertypen"><i class="fas fa-link"></i></a>
+</h3>
+<div id="cluster" class="section level4" number="2.1.5.1">
+<h4>
+<span class="header-section-number">2.1.5.1</span> Cluster<a class="anchor" aria-label="anchor" href="#cluster"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="physische-server" class="section level4" number="2.1.5.2">
+<h4>
+<span class="header-section-number">2.1.5.2</span> physische Server<a class="anchor" aria-label="anchor" href="#physische-server"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="dezidierte-server" class="section level4" number="2.1.5.3">
+<h4>
+<span class="header-section-number">2.1.5.3</span> Dezidierte Server<a class="anchor" aria-label="anchor" href="#dezidierte-server"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="virtueller-server" class="section level4" number="2.1.5.4">
+<h4>
+<span class="header-section-number">2.1.5.4</span> Virtueller Server<a class="anchor" aria-label="anchor" href="#virtueller-server"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="shared-server" class="section level4" number="2.1.5.5">
+<h4>
+<span class="header-section-number">2.1.5.5</span> Shared Server<a class="anchor" aria-label="anchor" href="#shared-server"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+</div>
+<div id="betriebssysteme" class="section level3" number="2.1.6">
+<h3>
+<span class="header-section-number">2.1.6</span> Betriebssysteme<a class="anchor" aria-label="anchor" href="#betriebssysteme"><i class="fas fa-link"></i></a>
+</h3>
+<div id="windows" class="section level4" number="2.1.6.1">
+<h4>
+<span class="header-section-number">2.1.6.1</span> Windows<a class="anchor" aria-label="anchor" href="#windows"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="linux" class="section level4" number="2.1.6.2">
+<h4>
+<span class="header-section-number">2.1.6.2</span> Linux<a class="anchor" aria-label="anchor" href="#linux"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="solaris" class="section level4" number="2.1.6.3">
+<h4>
+<span class="header-section-number">2.1.6.3</span> Solaris<a class="anchor" aria-label="anchor" href="#solaris"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="unix" class="section level4" number="2.1.6.4">
+<h4>
+<span class="header-section-number">2.1.6.4</span> Unix<a class="anchor" aria-label="anchor" href="#unix"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="ios" class="section level4" number="2.1.6.5">
+<h4>
+<span class="header-section-number">2.1.6.5</span> iOS<a class="anchor" aria-label="anchor" href="#ios"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="android" class="section level4" number="2.1.6.6">
+<h4>
+<span class="header-section-number">2.1.6.6</span> Android<a class="anchor" aria-label="anchor" href="#android"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+</div>
+<div id="schnittstellen-hardwaresoftware-internextern" class="section level3" number="2.1.7">
+<h3>
+<span class="header-section-number">2.1.7</span> Schnittstellen (Hardware/Software, Intern/Extern)<a class="anchor" aria-label="anchor" href="#schnittstellen-hardwaresoftware-internextern"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="aufbau-funktionsweise-und-komponenten-der-telematik-infrastruktur" class="section level3" number="2.1.8">
+<h3>
+<span class="header-section-number">2.1.8</span> Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur<a class="anchor" aria-label="anchor" href="#aufbau-funktionsweise-und-komponenten-der-telematik-infrastruktur"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"bookdown"</span><span class="op">)</span></span>
+<span><span class="co"># or the development version</span></span>
+<span><span class="co"># devtools::install_github("rstudio/bookdown")</span></span></code></pre></div>
+<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
+<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># https://einstein.informatik.uni-oldenburg.de/rechnernetze/seite6.htm#:~:text=Wenn%20die%20Rechner%20lediglich%20beliebig,zwischen%20den%20Rechnern%20im%20Vordergrund.</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Modul I – Angewandte Informatik</a></div>
+<div class="next"><a href="intro.html"><span class="header-section-number">3</span> Introduction</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#it-infrastruktur"><span class="header-section-number">2</span> IT-Infrastruktur</a></li>
+<li>
+<a class="nav-link" href="#rechnernetze"><span class="header-section-number">2.1</span> Rechnernetze</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#krankenhaus--und-praxisnetzwerke"><span class="header-section-number">2.1.1</span> Krankenhaus- und Praxisnetzwerke</a></li>
+<li><a class="nav-link" href="#netzwerkkomponente"><span class="header-section-number">2.1.2</span> Netzwerkkomponente</a></li>
+<li><a class="nav-link" href="#client-server-konzept"><span class="header-section-number">2.1.3</span> Client-Server-Konzept</a></li>
+<li><a class="nav-link" href="#rechnertypen"><span class="header-section-number">2.1.4</span> Rechnertypen</a></li>
+<li><a class="nav-link" href="#servertypen"><span class="header-section-number">2.1.5</span> Servertypen</a></li>
+<li><a class="nav-link" href="#betriebssysteme"><span class="header-section-number">2.1.6</span> Betriebssysteme</a></li>
+<li><a class="nav-link" href="#schnittstellen-hardwaresoftware-internextern"><span class="header-section-number">2.1.7</span> Schnittstellen (Hardware/Software, Intern/Extern)</a></li>
+<li><a class="nav-link" href="#aufbau-funktionsweise-und-komponenten-der-telematik-infrastruktur"><span class="header-section-number">2.1.8</span> Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Medizinische Informatik: Vorbereitung zur Prüfung</strong>" was written by Dr. med. Grigorij Schleifer. It was last built on 2024-08-03.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

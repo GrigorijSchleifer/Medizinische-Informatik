@@ -1,0 +1,85 @@
+# Methods
+
+Inhaltsverzeichnis
+4.1 Modul I – Angewandte Informatik
+4.2 Modul II – Datenschutz/Datensicherheit 
+4.3 Modul III – Medizinische Statistik/Epidemiologie/Biometrie (15 
+4.4 Modul IV – Medizinische Dokumentation (40 h) 
+4.5 Modul V – Bildverarbeitung/Biosignalverarbeitung (15 
+4.6 Modul VI – Entscheidungsunterstützung (20 
+4.7 Modul VII – Informations- und Kommunikationssysteme (40 
+4.8 Modul VIII – Management in der Gesundheits-IT (15 
+4.9 Modul IX – Informationsmanagement/Klinisches Datenmanagement/ Klinische Forschung (30 h) .
+
+4.10 Modul X – Telemedizin und Telematik (15 
+
+
+Abkürzung Bedeutung
+AAL Ambient Assisted Living
+AMG Arzneimittelgesetz
+AMTS Arzneimitteltherapiesicherheit
+ATC-Klassifikation Anatomisch-Therapeutisch-Chemische Klassifikation
+BDSG Bundesdatenschutzgesetz
+BPMN Business Process Model and Notation
+BSI Bundesamt für Sicherheit in der Informationstechnik
+CPOE Computerized Physician Order Entry
+CRM Customer-Relationship-Management
+DICOM Digital Imaging and Communications in Medicine
+DRG Diagnosis related groups
+DSGVO Datenschutz-Grundverordnung
+EBM Einheitlicher Bewertungsmaßstab
+ER-Modell Entity-Relationship-Modell
+GMDN Global Medical Device Nomenclature
+GOÄ Gebührenordnung für Ärzte
+HL7 Health Level 7
+HTA Health Technology Assessment
+HTML Hypertext Markup Language
+ICD-10 International Classification of Diseases, Rev. 10
+ICD-O International Classification of Diseases for Oncology
+ICF International Classification of Functioning, Disability and Health
+IHE Integrating the Healthcare Enterprise
+ITIL Information Technology Infrastructure Library
+JSON JavaScript Object Notation
+KIS Krankenhausinformationssystem
+KISS Krankenhaus-Infektions-Surveillance-System
+LOINC Logical Observation Identifiers Names and Codes
+MPG Medizinproduktegesetz
+OH KIS Orientierungshilfe Krankenhausinformationssysteme
+OPS Operationen- und Prozedurenschlüssel
+PACS Picture Archiving and Communication System
+PDMS Patientendatenmanagementsystem
+PEPP Pauschalierendes Entgeltsystem Psychiatrie und Psychosomatik
+PLM Product-Lifecycle-Management
+SCM Software-Configuration-Management
+SNOMED-CT Systematized Nomenclature of Human and Veterinary Medicine – Clinical Terms
+SOAP Simple Object Access Protocol
+SPSS Statistical Package for the Social Sciences
+SQL Structured Query Language
+TNM-Klassifikation Tumour-Node-Metastasis-Klassifikation
+TOM Technische und organisatorische Maßnahmen
+UCUM Unified Code for Units of Measure
+UML Unified Modeling Language
+XML Extensible Markup Language
+
+## Methoden Nummer 2
+We describe our methods in this chapter.
+
+Math can be added in body using usual syntax like this 
+
+## math example
+
+$p$ is unknown but expected to be around 1/3. Standard error will be approximated
+
+$$
+SE = \sqrt{\frac{p(1-p)}{n}} \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
+$$
+
+You can also use math in footnotes like this^[where we mention $p = \frac{a}{b}$].
+
+We will approximate standard error to 0.027[^longnote]
+
+[^longnote]: $p$ is unknown but expected to be around 1/3. Standard error will be approximated
+
+    $$
+    SE = \sqrt{\frac{p(1-p)}{n}} \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
+    $$

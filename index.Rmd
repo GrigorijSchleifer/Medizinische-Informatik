@@ -12,9 +12,9 @@ github-repo: rstudio/bookdown-demo
 description: "Meine Notizen für die Prüfung"
 ---
 
-# Prerequisites
+# Preface {-}
 
-# Statistik PUR
+Dieses "Buch" ist kein gewöhnliches Buch per se. Ich bin nämlich auch kein Autor und schreibe viel zu selten um mich als jemanden zu sehen der gut schreibt. Ich bin Anästhesist und Notfallmediziner und seit einigen Jahren bin ich interessiert an medizinischer Informatik mit v.a. Bezug zu Bearbeitung, Specherung und einfach Umgang mit medizinischen Daten. Da ich das Glück haben auch einen Teil meiner klinischen Beschäftigung in Richtung Medizinischer Informatik zu verlagern protokolliere ich hier meinen Lernweg und sammle gleichzeitig meine Gedanken zu den Weiterbildungsinhalten "Medizinische Informatik". Es wäre natürlich total vermessen die Inhalte für die Weiterbildung selbst zusammenzustellen und ich haben im Moment auch nicht die leiseste Ahnung was alles so medizinisch Informatik ist aber erfreulicherweise gibt es genug Ressourcen von unseren Ärztekammern die mir die Arbeit sehr erleichtern. Dieses Buch habe ich also nach den Vorgaben der Weiterbildungsordnung 2018 der Bundesärztekammer gegliedert und die vorgeschlagenen Module als Kapiteln übernommen. Alle links sind in den entschprechenden Kapiteln enthalten.  
 
 ```{r eval=FALSE}
 install.packages("bookdown")

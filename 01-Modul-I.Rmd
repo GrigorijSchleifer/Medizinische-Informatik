@@ -1,4 +1,4 @@
-# Rechennetzwerke {#intro}
+# Angewandte Informatik {#intro}
 
 
 

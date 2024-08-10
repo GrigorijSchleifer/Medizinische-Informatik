@@ -1,5 +1,6 @@
 book_filename: "bookdown-demo"
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Bombai "
 delete_merged_file: true
+rmd_files: ["01-Modul-I.Rmd"]

@@ -1,6 +1,4 @@
 # Medizinische Statistik
-# Epidemiologie
-# Biometrie
 
 Inhaltsverzeichnis
 4.1 Modul I – Angewandte Informatik

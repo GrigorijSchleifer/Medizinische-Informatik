@@ -1,6 +1,14 @@
 book_filename: "bookdown-demo"
 language:
   ui:
-    chapter_name: "Bombai "
+    chapter_name: ""
 delete_merged_file: true
-rmd_files: ["01-Modul-I.Rmd"]
+
+---
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+  bookdown::pdf_book:
+    keep_tex: yes
+---

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.29)  22 NOV 2024 08:09
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.29)  15 JAN 2025 09:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -907,6 +907,6 @@ Here is how much of TeX's memory you used:
  39944 multiletter control sequences out of 15000+600000
  564560 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,8n,123p,1176b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,8n,123p,1112b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on bookdown-demo.pdf (27 pages).

@@ -1,0 +1,287 @@
+# Datenschutz/Datensicherheit
+
+## Rechtliche Grundlage
+
+::: {.exam-question}
+Frage: Als Stationsarzt — welche Gesetze/Rechtsgrundlagen regeln, dass Patientendaten nur mit Einwilligung weitergegeben werden dürfen, und was regelt grob welche?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+- **DSGVO**: zentrale, EU-weite Grundlage für den Umgang mit personenbezogenen Daten (inkl. Gesundheitsdaten als "besondere Kategorie") — Einwilligung, Betroffenenrechte.
+- **BDSG**: ergänzt/konkretisiert die DSGVO auf deutscher Ebene.
+- **StGB § 203**: Schweigepflicht — macht unbefugte Offenbarung von Patientendaten strafbar (Straftat, nicht nur Datenschutzverstoß).
+- **MPG / heute MDR + MPDG**: Medizinprodukterecht, relevant wenn Daten durch ein Medizinprodukt (z. B. Monitoring-Software) verarbeitet werden.
+- **AMG**: Datenverarbeitung im Kontext klinischer Studien/Arzneimittelzulassung.
+- **ITSichG**: verpflichtet Betreiber "kritischer Infrastrukturen" (große Krankenhäuser!) zu Mindest-IT-Sicherheitsstandards.
+- **BSI-KritisV**: legt fest, ab welcher Größe ein Krankenhaus als kritische Infrastruktur gilt.
+- **Landesgesetze**: zusätzliche länderspezifische Regelungen (z. B. Dokumentationspflicht).
+- **Einwilligung des Betroffenen**: kein Gesetz, sondern der wichtigste Rechtfertigungsgrund selbst — mit Einwilligung darf vieles verarbeitet werden, was sonst verboten wäre.
+
+Merksatz: DSGVO/BDSG = "darfst du die Daten verarbeiten" (Datenschutzrecht). StGB § 203 = "darfst du drüber reden" (Schweigepflicht, Strafrecht) — zwei verschiedene Rechtsgebiete, die beide greifen.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, u. a. DSGVO erst 2018 in Kraft) — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Betroffenenrechte und Kontrollinstanzen
+
+::: {.exam-question}
+Frage: Eine Patientin will wissen, welche Daten über sie im KIS gespeichert sind, und verlangt die Korrektur eines falschen Eintrags. Welche Rechte hat sie nach DSGVO, und wer kontrolliert die Einhaltung?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+- **Auskunftsrecht** (Art. 15): erfahren, welche Daten gespeichert sind und wofür — z. B. Einsicht in ihre KIS-Einträge.
+- **Recht auf Berichtigung** (Art. 16): falsche Einträge (z. B. falsche Diagnose) müssen korrigiert werden.
+- **Recht auf Löschung** (Art. 17, "Vergessenwerden"): Löschung wenn kein Zweck/keine Rechtsgrundlage mehr besteht — bei Patientendaten stark eingeschränkt wegen Aufbewahrungspflichten (z. B. 10 Jahre für Krankenunterlagen).
+- **Recht auf Einschränkung der Verarbeitung** (Art. 18): Daten bleiben gespeichert, dürfen aber vorübergehend nicht weiterverarbeitet werden (z. B. während ein strittiger Eintrag geprüft wird).
+- **Recht auf Datenübertragbarkeit** (Art. 20): Daten in maschinenlesbarem Format erhalten, z. B. um sie einem anderen Krankenhaus zu übergeben.
+- **Widerspruchsrecht** (Art. 21): Widerspruch gegen Verarbeitung, wenn diese auf "berechtigtem Interesse" statt Einwilligung beruht.
+
+**Kontrollinstanzen**: extern die **Landesdatenschutzbeauftragten** (Beschwerdestelle), intern der **betriebliche Datenschutzbeauftragte (DSB)** jedes Krankenhauses als erste Anlaufstelle und interne Überwachung der DSGVO-Einhaltung.
+
+Merksatz: Auskunft → Berichtigung → Löschung/Einschränkung → Übertragbarkeit → Widerspruch, plus zwei Kontroll-Ebenen (intern: DSB, extern: Landesdatenschutzbehörde).
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, vor DSGVO) — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+## Zusammenhang Datenschutz - Informationssicherheit
+
+::: {.exam-question}
+Frage: Sind Datenschutz und Informationssicherheit dasselbe? Wo überlappen sie sich, und wo nicht?
+:::
+
+::: {.exam-answer}
+**Antwort:** Nicht dasselbe, aber große Überlappung bei Patientendaten.
+
+- **Informationssicherheit**: schützt alle Informationen (egal ob personenbezogen) nach dem Ziel-Dreiklang Vertraulichkeit, Integrität, Verfügbarkeit (CIA-Triade). Beispiel: OP-Planungssoftware muss verfügbar bleiben, auch ohne Patientennamen drin — reine Sicherheitsfrage, kein Datenschutzthema.
+- **Datenschutz**: schützt speziell personenbezogene Daten und das Recht der Person, selbst zu bestimmen, was mit ihren Daten passiert (informationelle Selbstbestimmung). Beispiel: ein Arzt erzählt im Aufzug laut die Diagnose eines Patienten — reine Datenschutzverletzung, kein IT-Sicherheitsproblem (kein System kompromittiert).
+
+**Überlappung**: bei Patientendaten im KIS braucht man Informationssicherheits-Maßnahmen (Verschlüsselung, Zugriffskontrolle), um die Datenschutz-Anforderung zu erfüllen — z. B. schützt ein Rollen-/Berechtigungskonzept gleichzeitig die Vertraulichkeit (Sicherheitsziel) und die Rechte des Patienten (Datenschutzziel).
+
+Merksatz: Informationssicherheit = Werkzeugkasten (technisch/organisatorisch, für alle Daten). Datenschutz = Recht des Einzelnen (rechtlich, nur personenbezogene Daten).
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+## Bedrohungsszenarien durch Cyberkriminalität
+
+::: {.exam-question}
+Frage: Ein Krankenhaus wird Opfer eines Ransomware-Angriffs, alle Patientendaten sind plötzlich verschlüsselt. Was ist Ransomware genau, und welche anderen typischen Cyberbedrohungen für Kliniken solltest du kennen?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Ransomware**: Schadsoftware, die Daten verschlüsselt und für die Entschlüsselung Lösegeld fordert. Klinik-Beispiel: KIS-Server infiziert, Patientenakten unlesbar, Angreifer verlangt Zahlung für den Schlüssel — Krankenhaus muss ggf. auf Papier/Notbetrieb umschalten.
+
+**Weitere typische Bedrohungen:**
+
+- **Phishing**: gefälschte E-Mails, die Mitarbeiter zur Preisgabe von Zugangsdaten verleiten — häufigster Einstiegspunkt für größere Angriffe wie Ransomware.
+- **DDoS (Distributed Denial of Service)**: Überflutung eines Systems mit Anfragen, bis es nicht mehr erreichbar ist — z. B. Klinik-Website/Patientenportal lahmgelegt.
+- **Malware allgemein** (Viren, Würmer, Trojaner): Oberbegriff für Schadsoftware, Ransomware ist eine spezielle Art davon.
+- **Social Engineering**: Manipulation von Personen statt Technik — z. B. Anrufer gibt sich als IT-Support aus, um ein Passwort zu erfragen.
+- **Insider-Bedrohung**: Mitarbeiter mit legitimem Zugriff missbraucht diesen (z. B. neugieriger Blick in die Akte eines Prominenten) — kein Angriff von außen, aber ein reales Sicherheitsrisiko.
+
+**Warum Kliniken besonders gefährdet sind**: hoher Handlungsdruck (Patientenversorgung darf nicht stillstehen) macht Lösegeldzahlung wahrscheinlicher, viele veraltete/vernetzte Geräte (Medizingeräte, oft nicht patchbar), hoher Wert der Daten auf dem Schwarzmarkt.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+## Prinzipien und Maßnahmen zur Gewährleistung von Datenschutz und Datensicherheit in Versorgung und Forschung
+
+### IT-Grundschutz nach BSI
+
+::: {.exam-question}
+Frage: Was ist der IT-Grundschutz nach BSI, und wie unterscheidet er sich von ISO 27001?
+:::
+
+::: {.exam-answer}
+**Antwort:** Das BSI (Bundesamt für Sicherheit in der Informationstechnik) hat einen Katalog von Standard-Sicherheitsmaßnahmen entwickelt. Grundidee: statt für jede Klinik individuell ein Sicherheitskonzept von Null zu entwickeln, gibt es fertige "Bausteine" (Module) für typische IT-Komponenten (z. B. Server, Netzwerk, Client) — ein Baukasten mit bewährten Standardmaßnahmen statt Neuerfindung.
+
+Klinik-Beispiel: statt zu überlegen "wie sichere ich unseren KIS-Server ab", nimmt man den passenden BSI-Grundschutz-Baustein für Datenbankserver, der schon alle relevanten Standardmaßnahmen auflistet (Zugriffskontrolle, Patch-Management, Backup-Konzept, …).
+
+**Abgrenzung zu ISO 27001**: IT-Grundschutz ist die deutsche, sehr konkrete/praktische Umsetzung; es existiert auch eine ISO-27001-Zertifizierung "auf Basis von IT-Grundschutz" — beides zielt auf ein Informationssicherheits-Managementsystem (ISMS), aber IT-Grundschutz ist detaillierter/handlungsanleitender.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Technisch-organisatorische Maßnahmen
+
+::: {.exam-question}
+Frage: Was sind "technisch-organisatorische Maßnahmen" (TOM), und was sind je zwei Beispiele für "technisch" und "organisatorisch" aus dem Klinikalltag?
+:::
+
+::: {.exam-answer}
+**Antwort:** TOM ist der Rechtsbegriff aus Art. 32 DSGVO — konkrete Maßnahmen, die ein Krankenhaus umsetzen muss, um Daten angemessen zu schützen.
+
+**Technisch** (Technik/Software/Hardware setzt die Maßnahme um):
+- Verschlüsselung: Patientendaten auf Servern/beim Transport verschlüsselt, unlesbar bei Diebstahl/Abfangen.
+- Zugriffskontrolle/Passwortschutz (+ ggf. 2-Faktor) fürs KIS.
+
+**Organisatorisch** (Regeln/Prozesse, keine Technik):
+- Rollen-/Berechtigungskonzept: schriftlich festgelegt, wer (Pflege, Arzt, Verwaltung) auf welche Daten zugreifen darf.
+- Schulungen/Verpflichtung auf Datenschutz bei Einstellung, regelmäßig wiederholt.
+
+Merksatz: Technisch = "die Maschine setzt es durch". Organisatorisch = "Menschen halten sich an eine Regel". Beide ergänzen sich oft — ein Berechtigungskonzept (organisatorisch) wird durch ein Zugriffskontrollsystem (technisch) durchgesetzt.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Rollen- und Berechtigungskonzepte
+
+Vertiefung des organisatorischen TOM-Beispiels "Rollen-/Berechtigungskonzept" (siehe oben).
+
+::: {.exam-question}
+Frage: Warum darf nicht jeder Mitarbeiter im Krankenhaus auf alle Patientendaten zugreifen, selbst wenn er/sie zum Krankenhauspersonal gehört? Welches Prinzip steckt dahinter, und wie wird das technisch umgesetzt?
+:::
+
+::: {.exam-answer}
+**Antwort:** Prinzip: **Need-to-know** (Minimalprinzip/geringste Rechte) — jeder bekommt nur Zugriff auf Daten, die er für seine konkrete Aufgabe braucht. Rechtliche Basis: Datenminimierung nach DSGVO Art. 5.
+
+Klinik-Beispiel: ein Physiotherapeut braucht Mobilitätsdaten, aber keinen Zugriff auf die psychiatrische Vorgeschichte. Pflegekraft auf Station A braucht keinen Zugriff auf Akten von Station B. Verwaltung braucht Abrechnungsdaten, keine detaillierten klinischen Notizen.
+
+**Technische Umsetzung — RBAC (Role-Based Access Control)**: statt jedem Mitarbeiter individuell Rechte zuzuweisen, definiert man Rollen (Arzt, Pflege, Verwaltung, Physiotherapie, …) mit festgelegten Zugriffsrechten; jeder Mitarbeiter bekommt eine/mehrere Rollen zugewiesen — Rechte ändern sich automatisch bei Rollenwechsel (z. B. Stationswechsel).
+
+**Zusätzliche Kontrolle**: Zugriffsprotokollierung (Logging) — jeder Zugriff wird nachvollziehbar gespeichert (wer, wann, was), damit Missbrauch im Nachhinein auffällt.
+
+Merksatz und Einordnung: Need-to-know = das *Prinzip* (warum), RBAC = die *technische Umsetzung* (wie), Logging = *Kontrolle im Nachhinein*. Das Rollen-/Berechtigungskonzept selbst ist die **organisatorische** TOM-Maßnahme, RBAC ihre **technische** Durchsetzung — beide zusammen zeigen, wie sich technische und organisatorische TOM ergänzen.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Orientierungshilfe-KIS
+
+::: {.exam-question}
+Frage: Was ist die "Orientierungshilfe Krankenhausinformationssysteme", und was sind ihre zentralen Anforderungen?
+:::
+
+::: {.exam-answer}
+**Antwort:** Eine offizielle Handreichung der deutschen Datenschutzkonferenz (DSK), die konkret definiert, welche Datenschutzanforderungen ein KIS erfüllen muss (Konkretisierung von DSGVO/BDSG speziell für den Klinikkontext).
+
+**Zentrale Inhalte:**
+
+- **Behandlungsbezogene Zugriffssteuerung**: Zugriff auf eine Akte an eine tatsächliche Behandlungsbeziehung geknüpft — nicht "jeder Arzt im Haus", sondern nur wer aktuell zuständig ist (verwandt zu Need-to-know, aber spezifischer: "bist du gerade zuständig?").
+- **Mandantentrennung**: wenn mehrere rechtlich getrennte Einrichtungen (z. B. Belegärzte, externe Praxen) dasselbe KIS nutzen, müssen deren Daten sauber getrennt bleiben.
+- **Protokollierungspflicht**: lückenlose, auswertbare Zugriffsprotokolle (deckt sich mit dem Logging-Punkt bei Rollen-/Berechtigungskonzepten).
+- **Löschkonzept**: da echtes Löschen wegen Aufbewahrungsfristen selten sofort möglich ist, braucht es ein Konzept, wie/wann nach Fristablauf gelöscht wird.
+
+Kurz: die Orientierungshilfe-KIS ist die konkrete, KIS-spezifische Ausformulierung dessen, was bei Rollen-/Berechtigungskonzepten und TOM schon abstrakt behandelt wurde — praktisch die Checkliste, an der ein KIS gemessen wird.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Pseudonymisierung/Anonymisierung
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen Pseudonymisierung und Anonymisierung?
+:::
+
+::: {.exam-answer}
+**Antwort:** Pseudonymisierung = Personenbezug bleibt über einen separaten Schlüssel wiederherstellbar (gilt weiter als personenbezogene Daten, DSGVO). Anonymisierung = Personenbezug unwiderruflich entfernt, nicht mehr rückführbar (fällt nicht mehr unter DSGVO). Merksatz: Pseudonym = umkehrbar, Anonym = nicht umkehrbar.
+:::
+
+::: {.exam-question}
+Frage: Was ist k-Anonymität?
+:::
+
+::: {.exam-answer}
+**Antwort:** Jeder Datensatz ist bzgl. Quasi-Identifikatoren (z. B. Alter, PLZ, Geschlecht) von mind. k-1 anderen ununterscheidbar — erreicht durch Generalisierung/Unterdrückung von Attributen. Schützt vor eindeutiger Re-Identifizierung, aber nicht vor Homogenitätsangriffen (Erweiterungen: l-Diversität, t-Closeness). Liegt konzeptionell zwischen Pseudonymisierung und voller Anonymisierung.
+:::
+
+### Verschlüsselungsverfahren
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen symmetrischer und asymmetrischer Verschlüsselung?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Symmetrische Verschlüsselung**: Sender und Empfänger nutzen denselben geheimen Schlüssel zum Ver- und Entschlüsseln. Schnell, gut für große Datenmengen (z. B. AES für die komplette Patientenakten-Datenbank auf dem Server). Nachteil: bei N Teilnehmern braucht man N·(N-1)/2 Schlüssel — wird schnell unübersichtlich.
+
+**Asymmetrische Verschlüsselung (Public-Key)**: zwei mathematisch verknüpfte, aber nicht auseinander ableitbare Schlüssel — ein öffentlicher (zum Verschlüsseln, darf jeder kennen) und ein privater (zum Entschlüsseln, geheim). Langsamer, aber löst das Schlüsselverteilungsproblem. Typisch: E-Mail-Verschlüsselung, HTTPS, digitale Signaturen (z. B. Übermittlung eines Arztbriefs an eine andere Klinik).
+
+**In der Praxis meist hybrid**: Verbindungsaufbau/Schlüsselaustausch asymmetrisch, die eigentliche Massendatenübertragung dann symmetrisch — Sicherheit + Geschwindigkeit kombiniert.
+
+Klinik-Beispiel: ein Arzt verschickt einen elektronischen Arztbrief an eine andere Klinik — asymmetrische Verschlüsselung sichert Schlüsselaustausch/Signatur, danach läuft die eigentliche Datenübertragung symmetrisch verschlüsselt (schnell, auch bei großen Bilddaten).
+
+*(Quelle: Kap. 11, Informationssicherheit.)*
+:::
+
+::: {.exam-question}
+Frage: Wie sind öffentlicher und privater Schlüssel bei asymmetrischer Verschlüsselung mathematisch verknüpft (Beispiel RSA), und wieso ist das so schwer zu knacken?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Die Verknüpfung, vereinfacht (RSA):**
+
+1. Zwei sehr große Primzahlen *p* und *q* werden gewählt — geheim, nur der Ersteller kennt sie.
+2. Multiplikation: *n = p × q*. Diese Zahl *n* ist Teil des öffentlichen Schlüssels.
+3. Aus *p*, *q* (+ etwas zusätzlicher Rechnerei) entsteht der private Schlüssel — nur berechenbar, wenn man *p* und *q* kennt.
+
+**Warum so schwer zu knacken — die entscheidende Asymmetrie:**
+
+- **Multiplizieren ist einfach**: zwei große Primzahlen zu multiplizieren dauert für einen Computer Sekundenbruchteile.
+- **Zurück-Faktorisieren ist brutal schwer**: hat man nur das Ergebnis *n* (öffentlicher Schlüssel) und will die zwei ursprünglichen Primzahlen finden, gibt es keine Abkürzung — bei modernen Schlüssellängen (2048–4096 Bit, Zahlen mit hunderten Ziffern) würde das selbst mit den größten Supercomputern länger dauern als das Universum alt ist.
+
+**Bildliche Analogie**: wie zwei Farben zu einer dritten mischen — einfach. Aber aus der Mischfarbe die exakten Ursprungsfarben zurückzurechnen, ist praktisch unmöglich ohne Zusatzwissen.
+
+Das nennt man eine **Einwegfunktion mit Falltür** ("trapdoor function"): leicht in eine Richtung, extrem schwer rückwärts — außer man kennt das Geheimnis (hier: *p* und *q*), das die "Falltür" öffnet.
+
+**Was heißt "Faktorisieren" genau, und warum gibt es keinen schnellen Algorithmus dafür?** Faktorisieren bedeutet: aus einer Zahl herausfinden, welche zwei Zahlen multipliziert wurden, um sie zu ergeben. Kleines Beispiel: *n* = 15 → welche zwei Zahlen multipliziert ergeben 15? Antwort: 3 × 5 — bei kleinen Zahlen im Kopf lösbar.
+
+Bei RSA ist *n* aber keine kleine Zahl wie 15, sondern eine mit hunderten Stellen. Der Unterschied zur Multiplikation: für **Multiplizieren** gibt es ein klares, direktes Rechenverfahren (das aus der Schule), dessen Aufwand nur moderat mit der Ziffernzahl wächst. Für **Faktorisieren** gibt es **kein vergleichbares Verfahren** — bis heute ist kein Algorithmus bekannt, der es ähnlich einfach macht wie Multiplizieren. Der naive Ansatz (Probedivision: der Reihe nach durchtesten, ob 2, 3, 5, 7, 11, … als Teiler passen, bis zur Wurzel von *n*) scheitert bei RSA-Größen daran, dass schon die Wurzel einer 600-stelligen Zahl selbst noch ~300 Stellen hat — mehr mögliche Kandidaten, als es Atome im beobachtbaren Universum gibt. Auch cleverere bekannte Verfahren (z. B. das "General Number Field Sieve") wachsen im Aufwand so extrem mit der Zahlengröße, dass es für ausreichend große Zahlen praktisch aussichtslos bleibt.
+
+Genau diese Lücke — Multiplizieren easy, Faktorisieren (bislang) ohne Abkürzung — ist die Grundlage der RSA-Sicherheit. Ausnahme: Quantencomputer könnten das mit Shors Algorithmus effizient lösen, weshalb an "Post-Quanten-Kryptographie" geforscht wird.
+
+**Wichtig für die Prüfung**: das ist nicht prinzipiell unknackbar (im Gegensatz zum One-Time-Pad/Vernam-Chiffre, siehe Buch — informationstheoretisch sicher), sondern nur praktisch — mit genug Rechenzeit/Zukunftstechnologie (z. B. Quantencomputer) theoretisch angreifbar. Deshalb wachsen empfohlene Schlüssellängen über die Jahre.
+
+*(Andere asymmetrische Verfahren wie Diffie-Hellman/ElGamal nutzen ein anderes schwer umkehrbares Problem, den "diskreten Logarithmus" — gleiche Grundidee, andere Mathematik.)*
+
+*(Hinweis: die konkrete RSA-Primzahl-Mathematik ist im medinfo-kompakt-Buch nicht im Detail behandelt (Buch nennt RSA nur als Verfahren) — Antwort ergänzt um Allgemeinwissen.)*
+:::
+
+### Signaturen
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen einfacher, fortgeschrittener und qualifizierter digitaler Signatur — und warum ist nur eine davon vor Gericht als Beweismittel zugelassen?
+:::
+
+::: {.exam-answer}
+**Antwort:** Drei Stufen, aufsteigend in Verlässlichkeit:
+
+- **Einfache Signatur**: z. B. eine eingescannte Unterschrift oder E-Mail-Signatur-Zeile — keine kryptographische Absicherung, leicht fälschbar, kein Beweiswert.
+- **Fortgeschrittene Signatur**: eindeutig einer Person zuordenbar, kryptographisch erstellt (z. B. per Zertifikat), erlaubt Erkennung nachträglicher Änderungen — aber das Zertifikat dahinter ist nicht amtlich geprüft.
+- **Qualifizierte Signatur**: beruht auf einem qualifizierten Zertifikat einer geprüften Zertifizierungsstelle (CA) — der Antragsteller musste sich vorher mit amtlichem Ausweis identifizieren (Trust-Center-Verfahren). Nur diese Stufe ist **gerichtsfest** — laut Signaturgesetz (SigG, 2001) rechtlich der handschriftlichen Unterschrift gleichgestellt.
+
+**Warum nur die qualifizierte Stufe vor Gericht zählt**: bei den ersten beiden Stufen kann niemand mit Sicherheit sagen, wer wirklich unterschrieben hat — die Identitätsprüfung fehlt. Erst die amtliche Identitätsprüfung bei der Zertifizierungsstelle schafft die nötige Rechtssicherheit.
+
+Klinik-Bezug: ein elektronischer Arztbrief, der rechtlich bindend sein soll (z. B. für Abrechnung/Dokumentationspflicht), braucht eine qualifizierte Signatur — eine einfache digitale Unterschrift reicht rechtlich nicht.
+
+*(Quelle: Kap. 11, Informationssicherheit.)*
+:::
+
+## Entwicklung und Fortschreibung von Datenschutzkonzepten
+
+::: {.exam-question}
+Frage: Wie werden Datenschutzkonzepte in der Praxis entwickelt und laufend aktuell gehalten?
+:::
+
+::: {.exam-answer}
+**Antwort:** Zwei zentrale Mechanismen:
+
+**Bei Neuentwicklung/größeren Änderungen — Datenschutz-Folgenabschätzung (DPIA, Art. 35 DSGVO)**: vor Einführung eines neuen, risikoreichen Verarbeitungsverfahrens muss vorab geprüft werden, welche Risiken für Betroffene entstehen und wie man sie minimiert. Klinik-Beispiel: neues Telemedizin-Modul mit Videosprechstunden-Aufzeichnung — vor Go-Live klären: Wer hat Zugriff? Wie lange gespeichert? Ist Verschlüsselung ausreichend?
+
+**Laufende Pflege — Verzeichnis von Verarbeitungstätigkeiten (Art. 30 DSGVO)**: jedes Krankenhaus dokumentiert alle Verarbeitungsvorgänge (z. B. "Patientenaufnahme", "Abrechnung", "Forschungsdatenauswertung") mit Zweck, Rechtsgrundlage, TOM. Muss fortgeschrieben werden, sobald sich ein Prozess ändert (neue Software, neue Datenkategorie).
+
+**Zuständigkeit**: der betriebliche Datenschutzbeauftragte (DSB) begleitet sowohl neue DPIAs als auch die laufende Aktualisierung des Verzeichnisses.
+
+Merksatz: DPIA = vorausschauend (vor Neuem). Verarbeitungsverzeichnis = begleitend (laufend aktuell gehalten).
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, vor DSGVO) — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::

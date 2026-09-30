@@ -1,0 +1,67 @@
+# Informationsmanagement/Klinisches Datenmanagement/Klinische Forschung
+
+## Anwendungssysteme in der Forschung
+
+### Anwendungssysteme in der Forschung
+
+Anwendungssysteme in der Forschung.
+
+## Etablierung von IT-Strukturen im Rahmen von medizinischen Forschungsprojekten
+
+### Etablierung von IT-Strukturen im Rahmen von medizinischen Forschungsprojekten
+
+Etablierung von IT-Strukturen im Rahmen von medizinischen Forschungsprojekten (z. B. in klinischen Studien).
+
+## Vernetzte medizinische Forschung, Data Sharing, FAIR Data
+
+### Vernetzte medizinische Forschung
+
+Vernetzte medizinische Forschung.
+
+### Data Sharing
+
+Data Sharing.
+
+### FAIR Data
+
+FAIR Data.
+
+## Nutzung von Routine- und Registerdaten in der Versorgungsforschung
+
+### Nutzung von Routine- und Registerdaten in der Versorgungsforschung
+
+Nutzung von Routine- und Registerdaten in der Versorgungsforschung (z. B. Krebsregister, KISS).
+
+## Datenmanagement, Datenintegration
+
+### Datenmanagement
+
+Datenmanagement.
+
+### Datenintegration
+
+Datenintegration (z. B. Algorithmen, Datenstrukturen).
+
+## Durchführung klinisches Datenmanagement
+
+### Planung
+
+Planung.
+
+### Erfassung
+
+Erfassung.
+
+### Validierung
+
+Validierung.
+
+### Auswertung
+
+Auswertung.
+
+## Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien
+
+### Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien
+
+Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien (z. B. E-Learning, Blended Learning, Aufklärungsfilme).

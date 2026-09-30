@@ -1,0 +1,32 @@
+---
+title: "Medical Informatics — Exam Prep"
+author: "Your Name"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+---
+
+# Preface {-}
+
+Study notes and practice material for the medical informatics exam.
+Each chapter covers one topic area; edit or add chapters as the syllabus requires.
+
+## Buch lokal anschauen {-}
+
+Nach dem Rendern (`Rscript -e 'bookdown::render_book(".")'` aus `medinfo_exam_prep_book/`) liegt die fertige Website in `_book/`. Um sie lokal im Browser zu öffnen:
+
+```bash
+cd _book
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+| Teil | Bedeutung |
+|---|---|
+| `cd _book` | Ins gerenderte Output-Verzeichnis wechseln, damit der Server von dort aus die Dateien (`index.html` etc.) ausliefert. |
+| `python3 -m http.server 8000` | Startet Pythons eingebauten simplen Webserver auf Port 8000 (beliebig wählbar, solange frei). |
+| `--bind 127.0.0.1` | Bindet den Server nur an die lokale Loopback-Adresse (dein eigener Rechner) — nicht von anderen Geräten im Netzwerk erreichbar, sicherer als Standard. |
+
+Danach im Browser aufrufen: `http://127.0.0.1:8000`.
+
+Läuft im Vordergrund, bis mit `Strg+C` beendet — für Dauerbetrieb z.B. in einer eigenen tmux-Session laufen lassen.

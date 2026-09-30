@@ -1,0 +1,8 @@
+.claude/
+.DS_Store
+_book/
+_bookdown_files/
+*.rds
+.Rproj.user/
+.Rhistory
+.RData

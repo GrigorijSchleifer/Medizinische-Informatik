@@ -1,0 +1,408 @@
+# Medizinische Statistik/Epidemiologie/Biometrie
+
+## Grundtypen und Effektmasse für medizinische Studien
+
+### Quantitative Erfolgs- und Risikokriterien
+
+::: {.exam-question}
+Frage: Eine Studie zu einem neuen Blutverdünner zeigt "25% relative Risikoreduktion" für Schlaganfall. Was bedeutet das konkret, und warum kann diese Zahl irreführend sein? Was solltest du stattdessen fragen?
+:::
+
+::: {.exam-answer}
+**Antwort:** Beispiel (RCT): Kontrollgruppe 20% Ereignisrate, Interventionsgruppe 15%.
+
+- **Relatives Risiko (RR)**: Risiko Intervention ÷ Risiko Kontrolle = 15%/20% = 0,75 (bei Kohortenstudien/RCT).
+- **Odds Ratio (OR)**: analoges Chancenverhältnis, verwendet bei Fall-Kontroll-Studien (dort ist RR nicht direkt berechenbar).
+- **Absolute Risikoreduktion (ARR)**: 20% − 15% = 5 Prozentpunkte.
+- **Relative Risikoreduktion (RRR)**: ARR ÷ Risiko Kontrolle = 5%/20% = 25% — klingt viel beeindruckender als die ARR.
+- **NNT (Number Needed to Treat)**: 1 ÷ ARR = 1/0,05 = 20 — man muss 20 Patienten behandeln, um ein zusätzliches Ereignis zu verhindern.
+
+**Warum die RRR irreführend sein kann**: sie wirkt immer größer als die ARR — bei einem seltenen Ereignis kann die tatsächliche (absolute) Wirkung winzig sein, obwohl die RRR beeindruckend klingt. **Klinisch relevant ist die NNT**: frag bei jeder Effektangabe "Wie viele muss ich wirklich behandeln, damit einer profitiert?"
+
+*(Quelle: Kap. 13, Evidenzbasierte Medizin.)*
+:::
+
+## Grundbegriffe der Statistik, Klassifikation von Merkmalen
+
+### Grundbegriffe der Statistik
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen deskriptiver und induktiver (schließender) Statistik, und was sind Grundgesamtheit vs. Stichprobe?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Grundgesamtheit vs. Stichprobe**: die Grundgesamtheit ist alle, über die man eigentlich eine Aussage treffen will (z. B. "alle Bluthochdruck-Patienten in Deutschland") — praktisch unmöglich, alle zu untersuchen. Die Stichprobe ist der Ausschnitt, den man tatsächlich untersucht (z. B. 200 Patienten in einer Klinik), aus dem auf die Grundgesamtheit geschlossen wird.
+
+**Deskriptive Statistik**: beschreibt nur die vorliegenden Daten selbst — Mittelwert, Median, Streuung, Grafiken der Stichprobe. Keine Verallgemeinerung.
+
+**Induktive (schließende) Statistik**: schließt von der Stichprobe auf die Grundgesamtheit — mit Wahrscheinlichkeitsaussagen. Werkzeuge: Konfidenzintervalle ("der wahre Mittelwert liegt mit 95% Wahrscheinlichkeit in diesem Bereich"), Hypothesentests (p-Wert: ist der Unterschied echt oder Zufall?).
+
+Klinik-Beispiel: Blutdruckmessung bei 200 Patienten (Stichprobe). Deskriptiv: "Durchschnittlicher systolischer Blutdruck in unserer Stichprobe: 138 mmHg." Induktiv: "Wir schließen mit 95% Konfidenz, dass der durchschnittliche Blutdruck aller Bluthochdruck-Patienten in Deutschland zwischen 135 und 141 mmHg liegt."
+
+Merksatz: Deskriptiv = beschreiben, was man sieht. Induktiv = schließen auf das, was man nicht sieht (die ganze Grundgesamtheit), mit Unsicherheit/Wahrscheinlichkeit.
+
+*(Quelle: Kap. 6, Statistik und Biometrie.)*
+:::
+
+### Klassifikation von Merkmalen
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen qualitativen und quantitativen Merkmalen, und innerhalb der quantitativen zwischen diskret und stetig?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Qualitative (kategoriale) Merkmale**: beschreiben Eigenschaften/Kategorien, keine Zahlen mit Rechensinn — entsprechen Nominal- oder Ordinalskala. Beispiel: Blutgruppe (nominal), Tumorstadium I-IV (ordinal, mit Rangfolge).
+
+**Quantitative (numerische) Merkmale**: echte Zahlenwerte, mit denen gerechnet werden kann — entsprechen Intervall-, Verhältnis- oder Absolutskala. Zwei Unterarten:
+
+- **Diskret**: zählbare, abzählbare Werte, meist ganze Zahlen mit "Lücken" dazwischen. Beispiel: Anzahl der Voroperationen (0, 1, 2, … — "1,5 Voroperationen" ergibt keinen Sinn).
+- **Stetig**: kontinuierlich, jeder Wert in einem Bereich theoretisch möglich, unendlich viele Zwischenwerte. Beispiel: Körpergröße (172,3 cm, 172,31 cm, beliebig fein messbar) oder Blutdruck.
+
+**Verbindung zum Skalenniveau**: qualitativ = Nominal/Ordinal, quantitativ diskret/stetig = Intervall/Verhältnis/Absolut — dieselbe Grundunterscheidung, nur aus dem Blickwinkel des Merkmalstyps statt der erlaubten Rechenoperation.
+
+Merksatz: Qualitativ = "was für eine Art" (Kategorie). Quantitativ diskret = "wie viele" (zählbar). Quantitativ stetig = "wie viel genau" (messbar, beliebig fein).
+
+*(Quelle: Kap. 6, Statistik und Biometrie.)*
+:::
+
+### Skalenniveau
+
+::: {.exam-question}
+Frage: Du misst bei Patienten Blutgruppe, Schmerzstärke (Skala 0-10), Körpertemperatur und ob "geheilt ja/nein". Was für Skalenniveaus sind das jeweils, und warum ist das für die Wahl des Tests wichtig?
+:::
+
+::: {.exam-answer}
+**Antwort:** Vier Skalenniveaus, aufsteigend im Informationsgehalt:
+
+- **Blutgruppe (A, B, AB, 0)** → **Nominalskala**: nur Gleichheit/Ungleichheit (= oder ≠), keine Rangfolge, keine Abstände. Zulässiges Lagemaß: nur der **Modus**.
+- **Schmerzstärke (0-10)** → **Ordinalskala**: zusätzlich Rangfolge (< bzw. >), aber Abstände nicht garantiert gleich groß (2→3 ist nicht zwingend "gleich viel mehr" wie 7→8). Zulässig: **Median**, nicht der Mittelwert.
+- **Körpertemperatur (°C)** → **Intervallskala**: zusätzlich sind Abstände sinnvoll interpretierbar (1°C ist überall gleich groß), aber kein natürlicher Nullpunkt (0°C ≠ "keine Temperatur"). Zulässig: arithmetisches Mittel.
+- **Geheilt (ja/nein)** → **Nominalskala, dichotom**: wie Blutgruppe, nur mit genau zwei Ausprägungen.
+
+**Warum das für die Testwahl entscheidend ist**: das Skalenniveau bestimmt, welche Rechenoperationen erlaubt sind — und damit, welcher Test zulässig ist.
+
+- **Parametrische Tests** (z. B. t-Test) brauchen mindestens Intervallskala + (näherungsweise) Normalverteilung — passt zur Körpertemperatur.
+- **Nicht-parametrische/verteilungsfreie Tests** (Rangtests) reichen ab Ordinalskala — passend für die Schmerzskala.
+- Für **Nominaldaten** (Blutgruppe, geheilt ja/nein) braucht es andere Verfahren (z. B. Chi-Quadrat-Test), da weder Mittelwert noch Rangfolge definiert sind.
+
+Merksatz: erst Skalenniveau bestimmen → daraus ergibt sich, welches Lage-/Streuungsmaß und welcher Test zulässig ist. Ein t-Test auf Blutgruppendaten wäre ein klassischer Prüfungsfehler.
+
+*(Quelle: Kap. 6, Statistik und Biometrie.)*
+:::
+
+## Grundbegriffe der medizinischen Epidemiologie
+
+### Prinzipien der Randomisierung
+
+::: {.exam-question}
+Frage: Was ist Randomisierung, welche Verfahren gibt es (einfache/Block-/stratifizierte Randomisierung), und sollte man immer stratifiziert randomisieren?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Randomisierung**: Patienten werden per Zufall (nicht nach Ermessen des Arztes) den Studienarmen zugeteilt — Gegenmaßnahme gegen **Selection Bias** (z. B. dass ein Arzt unbewusst "vielversprechendere" Patienten der neuen Therapie zuteilt).
+
+**Beispiel**: 8 Patienten sollen auf Gruppe A (Medikament) und Gruppe B (Placebo) aufgeteilt werden.
+
+- **Einfache Randomisierung**: für jeden Patienten einzeln unabhängig "gewürfelt" (wie Münzwurf pro Person). Rein zufällig — kann z. B. 6:2 statt 4:4 werden. Keine Garantie für Balance, weder bei Gruppengröße noch bei Patienteneigenschaften.
+- **Blockrandomisierung**: vorher festgelegte Blockgröße (z. B. 4); innerhalb jedes Blocks fix 2 Patienten A, 2 Patienten B — nur die Reihenfolge wird zufällig bestimmt. Bei 8 Patienten (2 Blöcke) garantiert am Ende genau 4:4. Löst: **gleiche Gruppengrößen**.
+- **Stratifizierte Randomisierung**: Patienten werden zuerst nach einem wichtigen Merkmal in Untergruppen ("Strata") geteilt (z. B. "jung"/"alt"), dann innerhalb jeder Untergruppe separat randomisiert (einfach oder Block). Löst ein anderes Problem: **Balance eines bestimmten Merkmals** zwischen den Gruppen — verhindert, dass durch Zufall z. B. alle jungen Patienten in einer Gruppe landen. Wird in der Praxis oft mit Blockrandomisierung kombiniert.
+
+**Kern-Unterschied**: Einfach = reiner Zufall, keine Garantien. Block = garantiert gleiche Gruppengrößen. Stratifiziert = garantiert Balance eines bestimmten Merkmals.
+
+**Sollte man immer stratifiziert randomisieren? Nein**, Abwägung statt Standardregel:
+
+- **Hilft besonders** bei kleinen Studien mit bekannten, starken Einflussfaktoren (z. B. Krankheitsschwere bei nur 40 Patienten) — reiner Zufall könnte diese ungleich verteilen.
+- **Weniger nötig** bei großen Stichproben (Gesetz der großen Zahlen gleicht auch unbekannte Störfaktoren automatisch aus).
+- **Kosten**: Merkmale müssen vorher festgelegt werden (nicht nachträglich, sonst Manipulationsgefahr); zu viele Strata bei kleiner Stichprobe führen zu winzigen, schlecht randomisierbaren Untergruppen; mehr Design-/Logistikaufwand.
+
+Merksatz: Stratifizierung lohnt sich gezielt für wenige, bekannte, stark einflussreiche Merkmale bei kleineren Studien — nicht als generelle Standardregel. Bei großen RCTs reicht oft einfache/Blockrandomisierung.
+
+**Verbindung zum Jadad-Score** (Qualitätsbewertung von RCTs): eine der 5 Fragen ist genau "War die Randomisierung beschrieben und sachgerecht?" — fehlt eine ordentliche Beschreibung, sinkt der Score, die Studie gilt als methodisch fragwürdig (Score < 3 kritisch).
+
+*(Quelle: Kap. 13, Evidenzbasierte Medizin — Grundprinzip und Jadad-Score aus dem Buch; Detailtypen der Randomisierungsverfahren als Allgemeinwissen ergänzt.)*
+:::
+
+### Multicenter-Studien
+
+::: {.exam-question}
+Frage: Was ist eine Multicenter-Studie, und welche Vor- und Nachteile hat sie gegenüber einer Studie an nur einem Krankenhaus?
+:::
+
+::: {.exam-answer}
+**Antwort:** Dieselbe Studie wird nach einem gemeinsamen Protokoll gleichzeitig an mehreren Kliniken/Standorten durchgeführt, statt nur an einem Krankenhaus.
+
+**Vorteile:**
+- Schneller größere Patientenzahl erreichbar — wichtig bei seltenen Erkrankungen, wo ein einzelnes Haus nie genug Fälle hätte.
+- Höhere externe Validität/Generalisierbarkeit: Patienten aus verschiedenen Regionen/Versorgungskontexten statt nur dem speziellen Patientenklientel eines Hauses.
+- Reduziert den Zentrumseffekt (Bias durch Besonderheiten eines einzelnen Hauses, z. B. besonders erfahrenes Team oder untypische Patientenstruktur).
+
+**Nachteile:**
+- Logistisch aufwendiger/teurer — Koordination zwischen vielen Standorten.
+- Heterogenität zwischen Zentren: unterschiedliche Behandlungsstandards, Geräte, Erfahrung des Personals können Ergebnisse verwässern/verzerren, wenn nicht gut standardisiert.
+- Braucht einheitliches Protokoll, Schulung aller beteiligten Teams, zentrale Qualitätskontrolle.
+
+Klinik-Beispiel: eine seltene Krebserkrankung wird an 15 Unikliniken gleichzeitig untersucht, weil ein einzelnes Haus in 5 Jahren vielleicht nur 3 Fälle sehen würde — zusammen kommen genug Patienten für aussagekräftige Statistik zusammen.
+
+Merksatz: Multicenter = mehr Patienten + bessere Generalisierbarkeit, erkauft mit mehr Koordinationsaufwand und dem Risiko von Zentrumsunterschieden.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Meta-Analysen
+
+::: {.exam-question}
+Frage: Was ist eine Meta-Analyse, warum bringt sie mehr statistische Power als Einzelstudien, und wann deutet ein Funnel Plot auf Publication Bias hin?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Meta-Analyse**: statistisches Verfahren, das die Ergebnisse mehrerer Einzelstudien zur gleichen Fragestellung zu einem gemeinsamen, gewichteten Gesamtergebnis zusammenfasst — mit höherer statistischer Power/Präzision als jede Einzelstudie allein.
+
+**Warum mehr Power**: kombiniert man z. B. 10 kleine RCTs zu je 100 Patienten, entspricht das statistisch grob einer "virtuellen" Studie mit 1000 Patienten — zufällige Schwankungen einzelner Studien gleichen sich aus, echte Effekte werden klarer sichtbar.
+
+**Zusammenhang mit Publication Bias**: eine Meta-Analyse ist nur so gut wie die eingeschlossenen Studien. Da negative/unspektakuläre Ergebnisse seltener veröffentlicht werden (Publication Bias), kann sie ein zu positives Gesamtbild zeichnen, wenn nur publizierte Studien eingeschlossen werden.
+
+**Funnel Plot (Trichterdiagramm)**: x-Achse = Effektgröße der einzelnen Studie, y-Achse = Präzision/Studiengröße (große Studien oben, kleine unten).
+
+- **Ohne Publication Bias — symmetrischer Trichter**: große Studien (oben) streuen wenig, eng um den wahren Effekt. Kleine Studien (unten) streuen breiter nach beiden Seiten — symmetrische, nach oben schmaler werdende Trichter-/Dreiecksform.
+- **Mit Publication Bias — asymmetrischer/lückenhafter Trichter**: kleine Studien mit unspektakulärem/negativem Ergebnis werden seltener veröffentlicht → unten im Plot fehlt eine ganze Ecke (meist die "kein/geringer Effekt"-Seite), während die andere Seite normal besetzt ist.
+
+Woran erkennbar: schau auf die untere Hälfte (kleine Studien) — liegen dort Punkte nur auf einer Seite der Mittellinie statt gleichmäßig auf beiden, ist das der Verdacht auf Publication Bias.
+
+**Abgrenzung — was bedeutet ein Punkt ganz oben (hohe Präzision) und ganz rechts (starker Effekt)?** Das ist eine andere Aussage als Publication Bias: eine große, präzise Studie mit starkem, sicher gemessenem Effekt ist kein Warnsignal, sondern zieht (wegen hoher Gewichtung) das Gesamtergebnis stark in ihre Richtung. Liegt diese Studie aber weit entfernt von anderen ähnlich großen/präzisen Studien, deutet das stattdessen auf **Heterogenität** hin (Studien unterscheiden sich zu stark in Methode/Population, um sinnvoll gepoolt zu werden) — ein anderes Problem als Publication Bias.
+
+Merksatz zum Unterschied: Publication Bias → Lücke **unten** (fehlende kleine Studien auf einer Seite). Heterogenität → große, präzise Studien liegen weit auseinander, unabhängig von der Position.
+
+Klinik-Beispiel: Meta-Analyse fasst 12 RCTs zu einem Blutdruckmedikament zusammen — jede Einzelstudie zu klein für sichere Aussagen, gemeinsam ergibt sich ein belastbares Gesamtbild.
+
+Merksatz: Meta-Analyse = "Studie der Studien", höhere Power, aber nur so vertrauenswürdig wie Qualität + Vollständigkeit der eingeschlossenen Studien (Funnel Plot als Kontrolle gegen Publication Bias).
+
+*(Quelle: Kap. 13, Evidenzbasierte Medizin — Meta-Analyse und Funnel-Plot-Konzept aus dem Buch, Detailinterpretation der Trichterform als Allgemeinwissen ergänzt.)*
+:::
+
+### Maßzahlen in der Epidemiologie
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen Prävalenz und Inzidenz, und welcher Studientyp eignet sich jeweils, um sie zu ermitteln?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Prävalenz**: Anteil der Bevölkerung, der zu einem bestimmten Zeitpunkt (oder Zeitraum) an einer Krankheit leidet — "wie viele sind gerade krank". Geeignet: **Querschnittsstudie** (Momentaufnahme).
+
+**Inzidenz**: Anzahl neuer Erkrankungsfälle in einem bestimmten Zeitraum, bezogen auf die gefährdete Bevölkerung — "wie viele werden neu krank". Geeignet: **Kohortenstudie** (über Zeit verfolgt).
+
+Klinik-Beispiel Diabetes: Prävalenz = "Wie viele Menschen in Deutschland haben aktuell Diabetes?" (Querschnittsstudie, einmal messen). Inzidenz = "Wie viele erkranken pro Jahr neu?" (Kohortenstudie, gesunde Population über Zeit verfolgen).
+
+**Zusammenhang**: bei stabilen Bedingungen gilt ungefähr Prävalenz ≈ Inzidenz × durchschnittliche Krankheitsdauer. Eine chronische Krankheit mit langer Dauer (z. B. Diabetes) kann hohe Prävalenz haben, obwohl die Inzidenz niedrig ist — Fälle sammeln sich über Jahre an. Eine akute, schnell heilende oder tödliche Krankheit kann hohe Inzidenz, aber niedrige Prävalenz haben (kurze Verweildauer in der Kranken-Kategorie).
+
+Merksatz: Prävalenz = Bestand (Momentaufnahme). Inzidenz = Zufluss (neu Erkrankte pro Zeit).
+
+*(Quelle: Kap. 13 (Studientypen), Prävalenz/Inzidenz-Grundbegriffe als Curriculum/Allgemeinwissen ergänzt.)*
+:::
+
+## Maßzahlen der deskriptiven Statistik
+
+Maßzahlen der deskriptiven Statistik (z. B. Mittelwert, Median, Quantile, Varianz und Standardabweichung, Konfidenzintervalle für Mittelwerte und Anteilswerte).
+
+::: {.exam-question}
+Frage: Bei welchen Daten ist der Median besser geeignet als der Mittelwert, und warum? Gib ein Klinikbeispiel, bei dem der Mittelwert irreführend wäre.
+:::
+
+::: {.exam-answer}
+**Antwort:** Der Mittelwert ist anfällig für Ausreißer — er berücksichtigt jeden einzelnen Wert, auch extreme. Der Median (der mittlere Wert der sortierten Reihe) ist robust dagegen — Ausreißer verschieben ihn kaum.
+
+Klinik-Beispiel: Verweildauer auf einer Station bei 9 Patienten (in Tagen): 2, 3, 3, 4, 4, 5, 5, 6, **90** (ein Patient mit Komplikationen, sehr lange Liegezeit).
+
+- **Mittelwert**: (2+3+3+4+4+5+5+6+90) / 9 = 122/9 ≈ 13,6 Tage — suggeriert "im Schnitt fast 2 Wochen", was für die typische Station komplett falsch ist.
+- **Median**: mittlerer Wert der sortierten Reihe (5. von 9 Werten) = 4 Tage — spiegelt die tatsächliche, typische Verweildauer viel besser wider.
+
+Merksatz: der Median eignet sich besser bei **schiefen Verteilungen** (viele niedrige Werte + wenige extreme Ausreißer) — typisch bei Verweildauern, Einkommen, Wartezeiten. Der Mittelwert eignet sich bei **symmetrischen, normalverteilten** Daten (z. B. Körpergröße), wo Ausreißer selten/moderat sind.
+
+Zusatzregel aus dem Buch: bei stark schiefen Verteilungen weichen Mittelwert und Median deutlich voneinander ab — ein großer Unterschied zwischen beiden ist selbst schon ein Hinweis auf Ausreißer/Schiefe in den Daten.
+
+*(Quelle: Kap. 6, Statistik und Biometrie.)*
+:::
+
+::: {.exam-question}
+Frage: Was ist ein Konfidenzintervall genau, und wie verändert es sich bei kleinerer Stichprobe bzw. höherem Konfidenzniveau?
+:::
+
+::: {.exam-answer}
+**Antwort:** Der Bereich, in dem der wahre Wert der Grundgesamtheit (z. B. der echte Mittelwert) mit einer festgelegten Wahrscheinlichkeit (meist 95%) liegt — macht die Unsicherheit eines aus der Stichprobe geschätzten Werts sichtbar, statt nur eine einzelne Zahl zu präsentieren.
+
+Klinik-Beispiel: Blutdruck bei 50 Patienten gemessen, Mittelwert 138 mmHg. Statt nur "138 mmHg" zu sagen: "95%-Konfidenzintervall: 134–142 mmHg" — der wahre Durchschnitt aller Patienten liegt mit 95% Sicherheit in diesem Bereich.
+
+**Was das Intervall breiter oder schmaler macht:**
+- **Kleinere Stichprobe (n)** → **breiteres** Intervall (weniger Daten = weniger Sicherheit).
+- **Größere Streuung der Daten** → breiteres Intervall (Werte liegen weiter auseinander, größere Unsicherheit über den wahren Mittelwert).
+- **Höheres Konfidenzniveau** (z. B. 99% statt 95%) → **breiteres** Intervall — mehr Sicherheit verlangt ein größeres "Netz".
+
+Merksatz: Stichprobengröße ↑ → Intervall schmaler (mehr Sicherheit). Konfidenzniveau ↑ → Intervall breiter (mehr Sicherheit *gefordert*, kostet Präzision). Diese zwei Faktoren wirken entgegengesetzt — beliebter Prüfungsfallstrick.
+
+*(Quelle: Kap. 6, Statistik und Biometrie.)*
+:::
+
+## Statistische Methoden
+
+### Lineare Regression und Varianzanalyse
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen Korrelation und linearer Regression, wie liest man die Regressionsgleichung y = a + b·x, und wann braucht man eine Varianzanalyse (ANOVA) statt eines t-Tests?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Lineare Regression**: modelliert einen gerichteten (erklärenden) Zusammenhang — eine abhängige Variable Y wird durch eine unabhängige Variable X vorhergesagt, als Gerade: y = a + b·x.
+
+Klinik-Beispiel: Zusammenhang zwischen Alter (X) und systolischem Blutdruck (Y): `Blutdruck = 100 + 0,5 × Alter`.
+
+**Die Gleichung, Teil für Teil:**
+- **a = Achsenabschnitt/Intercept**: der Wert von y, wenn x = 0 ist — wo die Gerade die y-Achse schneidet. Hier: 100 (mathematischer Startpunkt, nicht immer biologisch sinnvoll interpretierbar).
+- **b = Steigung/Slope**: wie stark sich y verändert, wenn x um eine Einheit steigt. Hier: 0,5 — pro zusätzlichem Lebensjahr steigt der erwartete Blutdruck um 0,5 mmHg.
+
+Merkhilfe: *a* ist der Startwert (wo die Gerade beginnt), *b* die Steilheit (wie schnell es bergauf/bergab geht). Nachrechnen: Alter 40 → 100 + 0,5×40 = 120. Alter 60 → 100 + 0,5×60 = 130.
+
+**Unterschied zur Korrelation**: Korrelation misst nur, wie stark zwei Merkmale zusammenhängen (symmetrisch, keine Richtung, Korrelationskoeffizient r zwischen −1 und 1). Regression unterstellt eine Richtung — X erklärt Y, nicht umgekehrt — und liefert eine konkrete Vorhersageformel.
+
+**Bestimmtheitsmaß r²**: das Quadrat des Korrelationskoeffizienten — welcher Anteil der Streuung von Y durch X erklärt wird. r² = 0,6 → 60% der Blutdruck-Schwankungen durch Alter erklärt, 40% durch andere Faktoren.
+
+**Varianzanalyse (ANOVA)**: Erweiterung des t-Tests für **mehr als 2 Gruppen**. Klinik-Beispiel: Vergleich der durchschnittlichen Erholungszeit nach OP zwischen drei Anästhesieverfahren — ein t-Test vergleicht immer nur 2 Gruppen, ANOVA prüft alle drei gleichzeitig auf Unterschiede.
+
+**Wichtige Warnung aus dem Buch**: lineare Regression setzt einen tatsächlich linearen Zusammenhang voraus — bei offensichtlich nicht-linearen Daten (Buch-Beispiel: LVEDP vs. Pulmonalvenenfluss-Dezelerationszeit, eher eine 1/x-Kurve) führt sie zu einem irreführenden Modell. Vorher Transformation/anderes Modell prüfen.
+
+*(Quelle: Kap. 6, Statistik und Biometrie.)*
+:::
+
+### Logistische Regression
+
+::: {.exam-question}
+Frage: Was ist eine Vierfeldertafel, muss "Erkrankung" dabei immer in derselben Position (Zeile/Spalte) stehen, und geht es dabei nur um Expositionsfragen?
+:::
+
+::: {.exam-answer}
+**Antwort:** Eine Vierfeldertafel ist eine 2×2-Tabelle für zwei dichotome (ja/nein) Merkmale gleichzeitig — z. B. "Raucher ja/nein" × "Lungenkrebs ja/nein".
+
+| | Erkrankt | Nicht erkrankt | Summe |
+|---|---|---|---|
+| **Exponiert** (z. B. Raucher) | a = 40 | b = 60 | 100 |
+| **Nicht exponiert** | c = 10 | d = 90 | 100 |
+
+Daraus direkt berechenbar: Risiko bei Exposition = a/(a+b) = 0,40; Risiko ohne Exposition = c/(c+d) = 0,10; **Relatives Risiko (RR)** = 0,40/0,10 = 4,0; **Odds Ratio (OR)** = (a·d)/(c·b) = (40×90)/(10×60) = 6,0.
+
+**Ist die Anordnung (Erkrankung immer in der Spalte) fest?** Nein — reine Konvention, kein Muss. Fest ist nur die Grundidee: zwei dichotome Merkmale, 2×2-Tabelle mit vier Zellen (a, b, c, d). Was in Zeile vs. Spalte steht, ist für die Mathematik egal, solange man konsequent dieselbe Zuordnung in den Formeln verwendet. Üblich ist "das, was man beobachtet/misst" (Exposition, Testergebnis) in die Zeilen, "das Ergebnis" (Erkrankung) in die Spalten — reine Lesbarkeits-Konvention, wie x vor y in einer Funktion.
+
+**Geht es immer um Exposition?** Nein — die 2×2-Struktur funktioniert für beliebige zwei dichotome Merkmale. Andere typische Verwendung: **diagnostischer Test**, mit Zeilen = Testergebnis (positiv/negativ) und Spalten = tatsächliche Erkrankung — liefert dann Sensitivität, Spezifität, PPV, NPV statt RR/OR.
+
+| | Erkrankt | Nicht erkrankt |
+|---|---|---|
+| **Test positiv** | Richtig-positiv | Falsch-positiv |
+| **Test negativ** | Falsch-negativ | Richtig-negativ |
+
+Merksatz: bei einer Vierfeldertafel in der Prüfung nicht auf eine feste Position verlassen — auf die konkrete Achsenbeschriftung schauen und mit den Zellen (a, b, c, d) rechnen, wie sie dort tatsächlich stehen.
+
+*(Quelle: Kap. 6, Statistik und Biometrie — Vierfeldertafel/RR/OR aus dem Buch; Diagnostik-Variante und Konventions-Klarstellung als Allgemeinwissen ergänzt.)*
+:::
+
+::: {.exam-question}
+Frage: Was ist eine Odds Ratio genau (im Vergleich zu einer Wahrscheinlichkeit/zum relativen Risiko), und wie hängen Vierfeldertafel, Odds Ratio und logistische Regression zusammen?
+:::
+
+::: {.exam-answer}
+**Antwort:** Drei Ebenen desselben Konzepts, nicht drei getrennte Dinge — am Beispiel a=40, b=60, c=10, d=90 von oben.
+
+**Was ist "Odds" (Chance), im Unterschied zur Wahrscheinlichkeit?**
+- **Wahrscheinlichkeit**: "wie viel Prozent aller Fälle sind so" — bei Rauchern: 40 von 100 erkranken = 40% (0,40).
+- **Odds**: "Verhältnis Ereignis-tritt-ein zu Ereignis-tritt-nicht-ein" — bei Rauchern: 40 erkranken zu 60 nicht → Odds = a/b = 40/60 = 0,667 ("2 zu 3", wie eine Wett-Quote: auf 2 Gewinner kommen 3 Verlierer — zahlenmäßig verwandt mit der Wahrscheinlichkeit, aber nicht dasselbe).
+
+**Odds Ratio**: das Verhältnis der Odds (nicht der Wahrscheinlichkeiten!) zwischen zwei Gruppen.
+- Odds bei Rauchern: a/b = 40/60 = 0,667
+- Odds bei Nichtrauchern: c/d = 10/90 = 0,111
+- Odds Ratio = 0,667 / 0,111 = **6,0** — die Chance (Odds), zu erkranken, ist bei Rauchern 6-mal so hoch wie bei Nichtrauchern, ausgedrückt in Odds-Einheiten, nicht "6-mal wahrscheinlicher" im Alltagssinn.
+
+**Der entscheidende Fallstrick — OR ≠ RR**: das relative Risiko (Verhältnis der echten Wahrscheinlichkeiten) war in diesem Beispiel nur **4,0**, nicht 6,0. OR und RR sind zwei verschiedene Zahlen. Bei häufigen Ereignissen (wie hier 40%/10%) ist OR immer extremer (weiter von 1 weg) als RR. Nur wenn das Ereignis **selten** ist (beide Wahrscheinlichkeiten unter ~10%), rücken Odds und Wahrscheinlichkeit rechnerisch so nah zusammen, dass OR ≈ RR wird — deshalb wird die OR aus Fall-Kontroll-Studien oft als Näherung für RR interpretiert, wenn die Krankheit selten ist.
+
+**Wie Vierfeldertafel, OR und logistische Regression zusammenhängen:**
+
+1. **Vierfeldertafel** = die einfachste Situation — genau ein binäres Merkmal (Exposition) gegen ein binäres Outcome. OR direkt per Formel (a·d)/(b·c) = 6,0, reine Arithmetik.
+2. **Odds Ratio** = die Zahl selbst, egal auf welchem Weg berechnet — Tafel oder Regression liefern denselben Wert bei denselben Daten.
+3. **Logistische Regression** = die allgemeinere Methode. Setzt man nur die eine binäre Variable "Raucher ja/nein" als einzigen Prädiktor ein, kommt exakt dieselbe OR = 6,0 heraus (e^b = 6,0) — die Tafel ist praktisch ein Spezialfall der logistischen Regression mit genau einer binären Eingangsvariable.
+
+**Warum trotzdem logistische Regression brauchen, wenn die Tafel reicht**: die Tafel funktioniert nur mit genau einem binären Prädiktor. Sobald mehrere Einflussfaktoren gleichzeitig berücksichtigt werden sollen (z. B. Rauchen **und** Alter **und** Familienanamnese, um für Störfaktoren zu adjustieren) oder ein Prädiktor stetig ist (z. B. Alter als Zahl statt "alt/jung"), lässt sich keine 2×2-Tafel mehr bauen — dafür braucht es die logistische Regression.
+
+Merksatz: Vierfeldertafel = manuelle Methode, nur für 1 binären Prädiktor vs. 1 binäres Outcome. Odds Ratio = das gemeinsame Ergebnis, egal welcher Weg. Logistische Regression = die allgemeine, flexible Methode, die die Tafel als Spezialfall enthält.
+
+*(Quelle: Kap. 6, Statistik und Biometrie — Vierfeldertafel/OR/RR-Formeln aus dem Buch; Beziehung zur logistischen Regression und OR-vs-RR-Abgrenzung als Allgemeinwissen ergänzt.)*
+:::
+
+::: {.exam-question}
+Frage: Warum kann man für eine binäre Zielgröße (z. B. "postoperative Komplikation ja/nein") nicht einfach lineare Regression nutzen, und was macht logistische Regression anders?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Problem mit linearer Regression bei ja/nein-Outcomes**: die lineare Regression sagt beliebige Zahlenwerte vorher (auch negative oder über 1) — bei einer Wahrscheinlichkeit (0 bis 1) ergibt das keinen Sinn.
+
+**Logistische Regression** löst das: statt einer geraden Linie nutzt sie eine S-förmige Kurve (Sigmoid-Funktion), die immer zwischen 0 und 1 bleibt.
+
+Klinik-Beispiel: Vorhersage der Wahrscheinlichkeit einer postoperativen Komplikation basierend auf Alter und BMI. Ergebnis z. B.: "Bei diesem Patienten (Alter 70, BMI 32): 35% Komplikationswahrscheinlichkeit."
+
+**Verbindung zur Odds Ratio**: die logistische Regression arbeitet intern mit dem Logarithmus der Odds ("Logit"): logit(p) = ln(p/(1−p)) = a + b·x. Der exponentierte Koeffizient e^b ist genau die Odds Ratio — z. B. "OR = 1,8 pro 10 Jahre Alter" heißt: die Chance auf eine Komplikation steigt um Faktor 1,8 pro 10 Lebensjahre.
+
+Merksatz: Lineare Regression → stetiges Y (z. B. Blutdruck). Logistische Regression → binäres Y (ja/nein), Ergebnis als Wahrscheinlichkeit, Koeffizienten als Odds Ratios interpretierbar.
+
+*(Quelle: Kap. 6, Statistik und Biometrie — OR als Basis der logistischen Regression steht im Buch; Detailmechanik der Logit-Funktion als Allgemeinwissen ergänzt.)*
+:::
+
+### Survivalanalyse
+
+::: {.exam-question}
+Frage: Was ist eine Survivalanalyse, was bedeutet "Zensierung" dabei (betrifft das die Gestorbenen oder die Nicht-Gestorbenen?), und wie hängt die Hazard Ratio mit der Odds Ratio zusammen?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Warum Survivalanalyse ein eigenes Werkzeug braucht**: bei Zeit-bis-Ereignis-Daten (z. B. "Zeit bis zum Tod" oder "Zeit bis zum Rückfall") ist am Studienende oft nicht bei allen Patienten das Ereignis eingetreten. Normale Regression/OR-Berechnung kann mit solchen unvollständigen Daten nicht umgehen — Survivalanalyse kann.
+
+**Zensierung**: betrifft die **Nicht-Gestorbenen** (bzw. alle, bei denen das Ereignis bis zum Beobachtungsende nicht eintrat), nicht die Gestorbenen.
+
+- **Ereignis beobachtet** (nicht zensiert): der Patient ist während der Studie verstorben — genauer Zeitpunkt bekannt.
+- **Zensiert**: das Ereignis ist bis zum Ende der Beobachtung nicht eingetreten — man weiß nur "mindestens bis Zeitpunkt X überlebt", nicht was danach passiert (weil die Studie endete, bevor er starb, oder er vorher ausschied).
+
+Typische Gründe für Zensierung: Studienende erreicht (Patient lebt noch, häufigster Fall), Lost to follow-up (Patient zieht weg/Kontaktabbruch), vorzeitiger Studienabbruch des Patienten. Warum trotzdem wertvoll: "mindestens 3 Jahre überlebt" ist keine nutzlose Information — die Survivalanalyse nutzt genau diese Teil-Information, statt sie wegzuwerfen.
+
+**Klinik-Beispiel**: Studie vergleicht zwei Krebstherapien, Endpunkt "Zeit bis Tod". Nach 5 Jahren Studienende: manche Patienten verstorben (Ereignis beobachtet), manche noch am Leben (zensiert).
+
+**Kaplan-Meier-Kurve**: Stufenkurve, die zu jedem Zeitpunkt die geschätzte Überlebenswahrscheinlichkeit zeigt — fällt bei jedem Todesfall etwas ab. Zwei Behandlungsgruppen ergeben zwei vergleichbare Kurven.
+
+**Log-Rank-Test**: prüft statistisch, ob sich zwei Kaplan-Meier-Kurven signifikant unterscheiden (Äquivalent zum t-Test/ANOVA, aber für Überlebenskurven).
+
+**Cox-Regression**: das Äquivalent zur logistischen Regression, aber für Zeit-bis-Ereignis-Daten. Liefert statt einer Odds Ratio eine **Hazard Ratio (HR)**.
+
+**Hazard Ratio vs. Odds Ratio**: die HR vergleicht das momentane Ereignisrisiko (die Hazard Rate, Ereignisrate pro Zeiteinheit: h = 1 − e^(−r·t)) zwischen zwei Gruppen, über die Zeit hinweg — nicht nur an einem festen Endpunkt. Beispiel: HR = 0,7 heißt "zu jedem beliebigen Zeitpunkt ist das Sterberisiko der Behandlungsgruppe 30% niedriger als in der Kontrollgruppe" — konzeptionell wie eine OR, aber zeitabhängig und mit Zensierung umgehend, statt nur ein statisches Endergebnis zu vergleichen.
+
+Merksatz: Odds Ratio = Momentaufnahme (fester Zeitpunkt/Endpunkt). Hazard Ratio = "Odds Ratio über die Zeit", berücksichtigt zusätzlich, *wann* Ereignisse eintreten und wer zensiert ist.
+
+*(Quelle: Kap. 6, Statistik und Biometrie — Hazard Rate-Formel aus dem Buch; Kaplan-Meier, Log-Rank-Test, Cox-Regression und Zensierung als Allgemeinwissen ergänzt.)*
+:::
+
+### Höhere multivariate Verfahren
+
+## Präsentation von Daten in Tabellen und Diagrammen
+
+## Statistik-Tools
+
+Statistik-Tools (z. B. R, SPSS).
+
+## Translationale Forschungsplattformen

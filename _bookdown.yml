@@ -1,0 +1,16 @@
+book_filename: "medinfo_exam_prep"
+delete_merged_file: true
+new_session: yes
+rmd_files: [
+  "index.Rmd",
+  "01-modul-i-angewandte-informatik.Rmd",
+  "02-modul-ii-datenschutz-datensicherheit.Rmd",
+  "03-modul-iii-statistik-epidemiologie-biometrie.Rmd",
+  "04-modul-iv-medizinische-dokumentation.Rmd",
+  "05-modul-v-bildverarbeitung-biosignalverarbeitung.Rmd",
+  "06-modul-vi-entscheidungsunterstuetzung.Rmd",
+  "07-modul-vii-informations-kommunikationssysteme.Rmd",
+  "08-modul-viii-management-gesundheits-it.Rmd",
+  "09-modul-ix-informationsmanagement-klinische-forschung.Rmd",
+  "10-modul-x-telemedizin-telematik.Rmd"
+]

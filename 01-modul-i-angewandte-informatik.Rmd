@@ -1,0 +1,416 @@
+# Angewandte Informatik
+
+## Bestandteile einer IT-Infrastruktur
+
+### Aufbau typischer Krankenhaus- und Praxisnetzwerke
+
+::: {.exam-question}
+Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
+:::
+
+::: {.exam-answer}
+**Antwort:** Server (z. B. KIS), Clients, aktive Komponenten (Switches, Router, WLAN), passive Komponenten (Verkabelung, Patchpanels), Firewalls/Sicherheitszonen, Schnittstellen zu Medizingeräten, Anbindung an die Telematik-Infrastruktur.
+:::
+
+### Aktive und passive Netzwerkkomponenten
+
+::: {.exam-question}
+Frage: Unterschied aktive vs. passive Netzwerkkomponenten?
+:::
+
+::: {.exam-answer}
+**Antwort:** Aktiv = verarbeitet/verstärkt Signale, braucht Strom (z. B. Switch, Router, Access Point). Passiv = leitet Signale nur weiter, keine Verarbeitung/kein Strom (z. B. Kabel, Patchpanel, Stecker).
+:::
+
+### Client-Server-Konzept
+
+::: {.exam-question}
+Frage: Was ist das Client-Server-Konzept?
+:::
+
+::: {.exam-answer}
+**Antwort:** Client fragt Dienste/Daten an, Server stellt sie bereit — zentrale Datenhaltung/-verarbeitung auf dem Server, Clients greifen darauf zu (z. B. Arbeitsplatz-PC greift auf zentrales KIS zu).
+:::
+
+### Rechnertypen
+
+::: {.exam-question}
+Frage: Was unterscheidet Fat-, Thin- und Zero-Clients?
+:::
+
+::: {.exam-answer}
+**Antwort:** Fat Client = eigene Rechenleistung/Speicher, läuft weitgehend unabhängig. Thin Client = minimale lokale Hardware, Verarbeitung läuft am Server, Client nur für Ein-/Ausgabe. Zero Client = kein eigenes OS/keine lokale Verarbeitung, reine Anzeige-Hardware, komplett serverabhängig.
+:::
+
+### Servertypen
+
+::: {.exam-question}
+Frage: Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
+:::
+
+::: {.exam-answer}
+**Antwort:** Dedizierter Server = für eine Anwendung reserviert. Shared Server = mehrere Anwendungen teilen sich einen Server. Virtueller Server = mehrere logische Server auf einer Hardware (Hypervisor). Cluster = mehrere Server als Einheit, für Ausfallsicherheit/Lastverteilung.
+
+*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Betriebssysteme
+
+::: {.exam-question}
+Frage: Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
+:::
+
+::: {.exam-answer}
+**Antwort:** Windows Server/Windows (KIS-Arbeitsplätze meist Windows), Linux (Server-/Datenbank-Backends), Unix/Solaris (ältere/spezialisierte Enterprise-Systeme), iOS/Android (mobile Visiten-/Pflegegeräte).
+
+*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Schnittstellen
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen sowie internen und externen Schnittstellen?
+:::
+
+::: {.exam-answer}
+**Antwort:** Hardware-Schnittstelle = physischer Anschluss zum Datenaustausch (z. B. USB, LAN-Port, HDMI). Software-Schnittstelle = definierter Zugriffspunkt zwischen Programmen/Systemen (z. B. API, HL7-Schnittstelle). Intern = Verbindung innerhalb eines Systems/einer Institution (z. B. zwischen KIS-Modulen). Extern = Verbindung zu externen Systemen/Partnern (z. B. KIS ↔ Labor eines anderen Anbieters, KIS ↔ Telematikinfrastruktur).
+
+*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur
+
+::: {.exam-question}
+Frage: Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+- Konnektor: verbindet Primärsystem (KIS/PVS) mit der TI, verschlüsselt Kommunikation.
+- eGK: elektronische Gesundheitskarte, Patientenausweis mit Stammdaten.
+- SMC-B: Institutionskarte, weist Praxis/Klinik gegenüber TI aus.
+- HBA: Heilberufsausweis, persönliche Signatur/Authentifizierung des Arztes.
+- Kartenterminal: liest eGK/SMC-B/HBA aus.
+- VPN-Zugangsdienst: sicherer Tunnel vom Konnektor ins TI-Backbone.
+- Fachdienste: Anwendungen auf der TI, z. B. ePA, eRezept, NFDM, KIM.
+:::
+
+## Programme und Datenbanken
+
+### Gängige Programmbestandteile und -algorithmen
+
+::: {.exam-question}
+Frage: Was sind die drei Grundkategorien von Kontrollstrukturen, und wie unterscheiden sich while und do-while?
+:::
+
+::: {.exam-answer}
+**Antwort:** Kontrollstrukturen gliedern sich in Verzweigungen (`if`, `if-else`, `switch`), Schleifen (`while`, `do-while`, `for`, `foreach`) und Sprünge (`break`, `continue`). Bei Schleifen: `while` prüft die Bedingung vor der Iteration (0 bis n Durchläufe möglich), `do-while` prüft sie danach (mindestens 1 Durchlauf garantiert).
+:::
+
+::: {.exam-question}
+Frage: Nach welchen Kriterien wählt man einen Sortieralgorithmus, und warum wird Bubblesort in der Praxis kaum eingesetzt?
+:::
+
+::: {.exam-answer}
+**Antwort:** Insertionsort eignet sich für kleine/fast sortierte Arrays (Bestcase linear). Quicksort ist ein guter Allgemeinfall (erwartet O(n log n)), hat aber bei ungünstiger Pivot-Wahl Worstcase O(n²) — deshalb Pivot zufällig oder als Median wählen. Mergesort/Heapsort garantieren O(n log n) unabhängig von der Eingabe. Bubblesort ist einfach zu verstehen, aber mit O(n²) fast immer schlechter als Alternativen — wird laut Buch "nahezu niemals eingesetzt".
+:::
+
+::: {.exam-question}
+Frage: Was ist Divide & Conquer, und wie hängt es mit Rekursion zusammen (Beispiel Quicksort)?
+:::
+
+::: {.exam-answer}
+**Antwort:** Divide & Conquer teilt ein Problem in kleinere, gleichartige Teilprobleme (divide), löst diese rekursiv (conquer) und setzt die Teillösungen zusammen. Bei Quicksort: Divide = Array wird anhand eines Pivotelements partitioniert (kleinere Werte links, größere rechts); Conquer = Quicksort ruft sich rekursiv auf beiden Teilarrays selbst auf, bis die Abbruchbedingung (Teilarray-Größe ≤ 1) erreicht ist; Combine entfällt weitgehend, da in-place partitioniert wird. Jede Rekursion braucht zwingend eine Abbruchbedingung, sonst läuft sie endlos.
+:::
+
+::: {.exam-question}
+Frage: Was sind Klasse, Objekt, Vererbung, abstrakte Klasse und Interface (OOP-Grundbegriffe, z. B. am Beispiel Java)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+- **Klasse** = der Bauplan, z. B. `Patient` mit Attributen `name`, `geburtstag`.
+- **Objekt** = eine konkrete Instanz davon — "Herr Müller" ist ein Objekt der Klasse `Patient`.
+- **Vererbung**: eine speziellere Klasse übernimmt Eigenschaften einer allgemeineren. Beispiel: `Assistenzarzt` und `Oberarzt` erben von `Arzt` (beide haben `name`, `fachrichtung`, aber `Oberarzt` hat zusätzlich `genehmigtOperationen()`).
+- **Abstrakte Klasse**: ein Bauplan, von dem man **keine** direkte Instanz erzeugen kann — z. B. `Arzt` als abstrakte Klasse, weil in der Realität jeder Arzt entweder Assistenz- oder Oberarzt ist, nie "nur Arzt".
+- **Interface**: ein Vertrag — "wer dieses Interface implementiert, MUSS diese Funktion anbieten", ohne vorzugeben, wie. Beispiel: Interface `Abrechenbar` mit Methode `berechneKosten()` — sowohl `Laboruntersuchung` als auch `Bildgebung` implementieren das, jede auf ihre eigene Art.
+
+Das ist die Grundlage für das Klassendiagramm (siehe Software-Engineering-Sektion): die Klasse `Patient` dort im Diagramm ist genau dieses Konzept.
+:::
+
+### Relationale Datenbanken
+
+::: {.exam-question}
+Frage: Was ist ein Fremdschlüssel, und wie wird eine 1:n-Beziehung im relationalen Modell abgebildet?
+:::
+
+::: {.exam-answer}
+**Antwort:** Ein Fremdschlüssel ist eine Spalte in einer Tabelle, deren Werte auf den Primärschlüssel einer anderen (oder derselben) Tabelle verweisen — er speichert keine neue Information, sondern nur einen Verweis auf die entsprechende Zeile dort.
+
+Beispiel Patient/Station: Ein Patient liegt auf genau einer Station, eine Station hat mehrere Patienten (Patient : Station = n : 1). Tabelle `Patienten` bekommt eine Spalte `Station_ID`, die auf `Stationen.Station_ID` verweist:
+
+| Patient_ID | Name | Station_ID |
+|---|---|---|
+| P1 | Müller | S1 |
+| P2 | Schmidt | S1 |
+| P3 | Klein | S2 |
+
+Der Fremdschlüssel steht auf der **n-Seite** (viele, hier: Patienten) und zeigt zur **1-Seite** (eine, hier: Stationen) — nie umgekehrt, weil nur die n-Seite eindeutig "ihren einen Partner" nennen kann. Die Station selbst kann nicht eindeutig "ihren einen Patienten" nennen, da es mehrere sind. Vorteil: Stationsdaten (z. B. Fachrichtung) stehen nur einmal in `Stationen`, nicht redundant bei jedem Patienten (gleiches Prinzip wie bei der Normalisierung: "eine Tatsache, ein Ort").
+:::
+
+::: {.exam-question}
+Frage: Wie wird eine m:n-Beziehung im relationalen Modell abgebildet?
+:::
+
+::: {.exam-answer}
+**Antwort:** m:n-Beziehungen können nicht direkt über einen einzelnen Fremdschlüssel abgebildet werden (anders als 1:1 oder 1:n), weil beide Seiten mehrere Partner haben können. Stattdessen wird eine eigene Verknüpfungstabelle angelegt, die die Primärschlüssel beider beteiligten Tabellen als zusammengesetzten Primär-/Fremdschlüssel enthält. Beispiel: Ärzte ↔ Patienten (ein Arzt behandelt mehrere Patienten, ein Patient wird von mehreren Ärzten behandelt) → Verknüpfungstabelle `behandelt(arzt_id, pat_id)`, wobei beide Spalten zusammen den Primärschlüssel bilden und je einzeln Fremdschlüssel auf `aerzte` bzw. `patienten` sind.
+:::
+
+::: {.exam-question}
+Frage: Was sind die drei Normalformen (1./2./3. NF), und warum muss man Datenbanken normalisieren?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Warum normalisieren?** Ziel ist nicht nur, Redundanz (mehrfach gespeicherte Daten) zu vermeiden — Redundanz ist die *Ursache*, das eigentliche Problem sind die daraus entstehenden **Anomalien**:
+
+- **Update-Anomalie**: Ein Wert steht mehrfach gespeichert → bei Änderung muss man an mehreren Stellen updaten; vergisst man eine, sind die Daten inkonsistent (z. B. Patientenname doppelt gespeichert, nur einmal geändert).
+- **Einfüge-Anomalie**: Eine neue Information lässt sich nicht speichern, ohne unnötig weitere mitspeichern zu müssen (z. B. keine neue Station anlegen können, ohne schon einen Patienten dafür zu haben, wenn Stations- und Patientendaten in einer Tabelle stecken).
+- **Lösch-Anomalie**: Beim Löschen eines Datensatzes geht ungewollt weitere Information mit verloren (z. B. löscht man den letzten Patienten einer Station, verschwinden die Stationsdaten mit, wenn sie nur dort gespeichert waren).
+
+Merksatz aus dem Buch: "eine Tatsache, ein Ort" — jede Information soll nur an genau einer Stelle gespeichert sein. Gerade bei klinischen Daten (Patienten, Diagnosen, Medikation) ist das kritisch, weil veraltete/inkonsistente Duplikate zu falschen Informationen führen können.
+
+- **1. NF**: Jede Spalte enthält nur einen atomaren Wert (keine Listen/Mehrfachwerte in einer Zelle). Beispiel-Verstoß: Spalte "Produkte" = "Apfel, Brot, Milch" in einer Zelle → muss auf mehrere Zeilen/eine eigene Tabelle aufgeteilt werden.
+- **2. NF**: 1. NF erfüllt + jedes Nicht-Schlüsselattribut hängt vom **ganzen** (zusammengesetzten) Primärschlüssel ab, nicht nur einem Teil davon. Nur relevant, wenn der Schlüssel aus mehreren Spalten besteht. Beispiel (Schlüssel = Kunde-ID + Produkt-ID): "Kundenname" hängt nur an Kunde-ID, nicht am ganzen Schlüssel → raus in eigene Kunden-Tabelle.
+- **3. NF**: 2. NF erfüllt + keine **transitive** Abhängigkeit — ein Nicht-Schlüsselattribut darf nicht von einem *anderen* Nicht-Schlüsselattribut abhängen, sondern nur direkt vom Schlüssel. Einfach gesagt: alles in der Tabelle muss unmittelbar vom Schlüssel abhängen, nicht "über einen Umweg" von einer anderen Spalte. Beispiel: Tabelle `Mitarbeiter(Mitarbeiter_ID, PLZ, Stadt)` — Stadt hängt von PLZ ab, nicht direkt von der Mitarbeiter-ID → PLZ/Stadt gehören in eine eigene Tabelle.
+
+Merksatz für 2./3. NF: "Jedes Attribut hängt vom Schlüssel ab, vom ganzen Schlüssel, und von nichts außer dem Schlüssel."
+
+**Trade-off**: Normalisierung ist der Standardansatz, aber nicht immer zwingend bis zur höchsten Stufe — manchmal wird bewusst *denormalisiert* (Redundanz in Kauf genommen), wenn Lesegeschwindigkeit wichtiger ist als Konsistenz, z. B. bei Reporting-/Auswertungs-Datenbanken, um Joins zu vermeiden.
+:::
+
+### Datenaustauschformate
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen JSON und XML, wofür steht SOAP, und wo tauchen diese Formate in medizinischen Standards konkret auf?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**XML** (eXtensible Markup Language): Daten in verschachtelten Tags (`<patient><name>Müller</name></patient>`). Vergleichsweise "starr": hat oft ein Schema (DTD/XSD), das Elemente/Reihenfolge streng vorschreibt; dafür mehr Text-Overhead durch öffnende/schließende Tags.
+
+**JSON** (JavaScript Object Notation): Daten als Schlüssel-Wert-Paare (`{"name": "Müller"}`), kompakter, weniger Overhead, kein so striktes verpflichtendes Schema-System wie XML.
+
+Beide sind reine **Datenformate** (wie Daten strukturiert aufgeschrieben werden). **SOAP** (Simple Object Access Protocol) liegt eine Ebene drüber: ein **Protokoll** für den Nachrichtenaustausch zwischen Systemen, das XML-Nachrichten in einer festen Umschlag-Struktur (Header/Body) verschickt, meist über HTTP.
+
+**Medizinischer Bezug**:
+
+- **XML**: HL7 CDA (Clinical Document Architecture, strukturierte Arztbriefe/Befunde), HL7 v3 (Nachfolger des textbasierten HL7 v2 mit Pipe-Trennung, z. B. `MSH|^~\&|...`), Teile der deutschen elektronischen Patientenakte (ePA).
+- **JSON**: FHIR (Fast Healthcare Interoperability Resources, aktueller HL7-Standard, Nachfolger von v2/v3/CDA) — überträgt Daten wahlweise als JSON oder XML, in modernen Web-/App-Schnittstellen (z. B. Patienten-Apps mit ePA-Zugriff) meist JSON.
+- **SOAP**: ältere IHE-Profile und Teile der deutschen Telematikinfrastruktur-Fachdienste (z. B. Kommunikation mit dem Konnektor) — dort, wo strenge, vertraglich fest definierte Schnittstellen wichtiger sind als Schlankheit.
+
+**Trend**: HL7 v2 (Text) → v3/CDA (XML, streng spezifiziert) → FHIR (JSON, schlank, REST-basiert statt SOAP) spiegelt den allgemeinen Trend von starren, schwergewichtigen Formaten zu leichtgewichtigen, web-API-freundlichen Formaten.
+
+*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+::: {.exam-question}
+Frage: Was ist SOAP genau, was ist REST, und wie stehen die beiden zueinander? Wieso ist das für die Medizininformatik relevant?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**SOAP** (Simple Object Access Protocol): ein **Protokoll** — Nachrichten werden als XML-"Briefumschlag" mit fester Struktur verschickt:
+
+```xml
+<Envelope>
+  <Header>...</Header>                 <!-- Metadaten: Auth, Routing -->
+  <Body>
+    <GetPatientRequest>
+      <PatientID>P123</PatientID>
+    </GetPatientRequest>
+  </Body>
+</Envelope>
+```
+
+Dazu gehört meist **WSDL** (Web Services Description Language): eine formale, maschinenlesbare Vertragsbeschreibung, welche Operationen ein Dienst anbietet und welche Parameter/Rückgabewerte er erwartet — Client und Server müssen sich strikt daran halten. SOAP bringt außerdem eingebaute Standards für Sicherheit (WS-Security) und Transaktionen mit, deshalb beliebt in sicherheitskritischen/regulierten Umgebungen.
+
+**REST** (Representational State Transfer): kein Protokoll, sondern ein **Architekturstil** — nutzt die vorhandenen HTTP-Methoden direkt, um auf "Ressourcen" (identifiziert über URLs) zuzugreifen:
+
+| HTTP-Methode | Bedeutung | Beispiel |
+|---|---|---|
+| GET | Ressource lesen | `GET /Patient/123` → liefert Patient 123 |
+| POST | Ressource anlegen | `POST /Patient` → neuer Patient |
+| PUT | Ressource ändern | `PUT /Patient/123` → Patient 123 aktualisieren |
+| DELETE | Ressource löschen | `DELETE /Patient/123` → Patient 123 löschen |
+
+Kein Envelope mit Operationsnamen nötig — die Aktion steckt schon in der HTTP-Methode + URL. REST ist **stateless**: jede Anfrage muss für sich vollständig sein, der Server hält keine Sitzung zwischen Anfragen (wichtig für Skalierbarkeit, da jeder Request unabhängig von jedem Server beantwortet werden kann).
+
+**Vergleich**:
+
+| | SOAP | REST |
+|---|---|---|
+| Art | Protokoll, streng spezifiziert | Architekturstil, flexibel |
+| Format | nur XML | meist JSON, auch XML möglich |
+| Vertrag | WSDL (formal, maschinenlesbar) | keine zwingende formale Beschreibung |
+| Transport | oft HTTP, aber auch andere | praktisch immer HTTP |
+| Sicherheits-/Transaktionsstandards | eingebaut (WS-Security) | nicht eingebaut, muss selbst ergänzt werden |
+| typischer Einsatz | sicherheitskritische, streng definierte Schnittstellen (z. B. Telematikinfrastruktur-Konnektor) | moderne, leichtgewichtige Web-/App-Schnittstellen |
+
+**Warum das für die Medizininformatik wichtig ist**: Der aktuelle Interoperabilitätsstandard **FHIR** ist bewusst RESTful aufgebaut (`GET /Patient/123`, `POST /Observation`, …) — der Wechsel weg von SOAP/WSDL (wie noch bei älteren HL7-v3/IHE-Webservices) hin zu REST ist ein zentraler Grund, warum FHIR als "leichtgewichtiger" und leichter zu implementieren gilt als seine Vorgänger. Wer den SOAP→REST-Wandel versteht, versteht auch, warum FHIR sich in Kliniksoftware/Apps so schnell verbreitet hat.
+
+**Prüfungsrelevante Merksätze**:
+- SOAP = Protokoll + WSDL-Vertrag + nur XML. REST = Architekturstil + HTTP-Verben + meist JSON.
+- REST ist stateless, SOAP kann (muss aber nicht) zustandsbehaftet sein.
+- FHIR = RESTful; ältere IHE/HL7-v3-Webservices = oft SOAP-basiert.
+
+**Woher der Name "REST" kommt**: bei jeder Anfrage schickt der Server nicht den Patienten selbst, sondern eine Momentaufnahme seines aktuellen Zustands (die "Representation", z. B. als JSON) — dieser Zustand wird übertragen ("State Transfer").
+
+**Stateless, kurz erklärt**: der Server "merkt" sich nichts vom letzten Aufruf — so wie ein Bereitschaftsarzt, der bei jedem neuen Anruf nochmal den vollständigen Fall geschildert bekommt, statt sich zu merken, mit wem er vorhin telefoniert hat. Jede Anfrage muss deshalb alles Nötige selbst mitbringen (z. B. den Ausweis/Token, wer fragt).
+
+Vorteil im Klinikalltag übertragen: egal welcher "Schalter" (Server) die Anfrage bearbeitet — es kommt immer dieselbe Antwort raus, weil keiner sich extra was merken muss. Das macht es einfach, viele Anfragen gleichzeitig zu bedienen (z. B. wenn viele Stationen zur gleichen Zeit auf den FHIR-Server zugreifen).
+
+*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Methoden des Software Engineerings
+
+::: {.exam-question}
+Frage: Was ist der erste Schritt im Software-Engineering-Prozess, und wie geht es danach weiter (Anforderungsanalyse → ER-Modell → UML → BPMN)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**1. Anforderungsanalyse**: bevor eine Zeile Code geschrieben wird, wird geklärt, *was* das System können soll und *für wen* — durch Gespräche mit den späteren Nutzern. Beispiel: Interview mit der Triage-Schwester der Notaufnahme: "Was brauchst du beim Check-in?" → Name, Geburtsdatum, Beschwerde, Dringlichkeitsstufe, freies Bett finden. Noch ganz ohne Datenbank/Software zu denken — nur "was muss die Realität abdecken".
+
+**2. Datenmodellierung (ER-Modell)**: die gesammelten Infos werden zu einem Diagramm — welche "Dinge" (Entitäten) gibt es, wie hängen sie zusammen, unabhängig von jeder konkreten Datenbank/Software.
+
+**3. Softwaremodellierung (UML)**: wie das Programm selbst aufgebaut wird (Klassen, Abläufe im Code).
+
+**4. Prozessmodellierung (BPMN)**: der Arbeitsablauf wird als Flussdiagramm dargestellt, z. B. "Patient kommt an → Triage → Wartebereich → Arztzimmer → Entlassung/Aufnahme", mit Entscheidungspunkten ("kritisch? ja/nein").
+
+Merksatz: erst verstehen (Anforderungen), dann Daten strukturieren (ER-Modell), dann Software bauen (UML), dann Abläufe visualisieren (BPMN) — in der Praxis nicht ganz starr nacheinander, aber das ist die Grundidee.
+
+*(Hinweis: Im medinfo-kompakt-Buch nicht als eigener Prozessablauf behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+::: {.exam-question}
+Frage: Was ist ein ER-Modell (Entity-Relationship-Modell), und wie hängt die (min,max)-Kardinalität mit dem später gelernten 1:n/m:n zusammen?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+Grundidee: bevor eine Datenbank-Tabelle gebaut wird, zeichnet man erst ein Bild davon, welche "Dinge" es gibt und wie sie zusammenhängen — unabhängig von SQL oder einem konkreten Datenbanksystem.
+
+**Die drei Bausteine, an einem Klinikbeispiel:**
+
+- **Entitäten** = die "Dinge"/Objekte selbst, z. B. `Patient`, `Arzt`, `Station`, `Bett`. Eine Entität ist der **Typ** (alle Patienten), nicht eine einzelne Person.
+- **Beziehungen** = wie Entitäten zusammenhängen, z. B. "Patient **liegt auf** Station", "Arzt **behandelt** Patient".
+- **Attribute** = Eigenschaften einer Entität, z. B. Patient hat `Name`, `Geburtsdatum`; Station hat `Fachrichtung`.
+
+**Kardinalität** (wie viele auf jeder Seite mitmachen dürfen), als (min,max)-Notation:
+
+- Patient **(1,1)** — Station **(0,\*)**: ein Patient liegt auf **genau einer** Station, eine Station hat **null bis viele** Patienten → entspricht unserem 1:n-Beispiel (Fremdschlüssel `Station_ID` bei Patienten).
+- Patient **(0,\*)** — Arzt **(0,\*)**: ein Patient wird von mehreren Ärzten behandelt, ein Arzt behandelt mehrere Patienten → entspricht unserem m:n-Beispiel (eigene Verknüpfungstabelle `Behandelt`).
+
+**Die Min-Zahl ist wichtig**: steht dort eine **1** statt **0**, heißt das "diese Entität kann ohne die andere gar nicht existieren" (Existenzabhängigkeit) — z. B. kann ein `Bett` nur existieren, wenn es zu **genau einer** Station gehört.
+
+**Warum vor der Datenbank**: das ER-Modell ist die "Landkarte", die vor der eigentlichen Implementierung entsteht — Fehler hier (falsche Beziehung, falsche Kardinalität) sind viel billiger zu korrigieren als später, wenn schon Tabellen mit echten Daten existieren. Jede Beziehung wird später zu einem Fremdschlüssel (1:n) oder einer Verknüpfungstabelle (m:n) — genau die Konzepte, die wir bei den relationalen Datenbanken schon besprochen haben.
+
+**Faustregel — Attribut oder eigene Entität?** Eine Eigenschaft wie "Diagnose" ist nicht automatisch eine Entität. Zwei Varianten:
+
+- **Als Attribut** (einfacher Fall): wenn "Diagnose" nur ein simples Textfeld bei jedem Patienten ist — `Patient(Patient_ID, Name, Diagnose)` → dann ist es nur ein **Attribut** von `Patient`.
+- **Als eigene Entität**: sobald die Diagnose selbst eigene Merkmale hat (ICD-Code, Bezeichnung) **und/oder** in einer echten Beziehung zu mehreren Patienten stehen kann — dann wird sie zur eigenen Entität: `Diagnose(ICD_Code, Bezeichnung)`, mit Beziehung Patient **(0,\*)** — Diagnose **(0,\*)** (ein Patient kann mehrere Diagnosen haben, eine Diagnose betrifft mehrere Patienten → m:n → Verknüpfungstabelle `Patient_Diagnose(Patient_ID, ICD_Code, Diagnosedatum)`).
+
+Merksatz: einfache, einzelne Eigenschaft eines Dings → **Attribut**. Eigene Merkmale und/oder echte 1:n/m:n-Beziehung zu anderen Dingen → eigene **Entität**. In der Praxis ist "Diagnose" fast immer die Entität-Variante, weil ICD-Codes strukturiert erfasst werden (siehe Kap. 12, ICD-System).
+:::
+
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen einem UML-Klassendiagramm und einem Sequenzdiagramm, am Beispiel eines KIS-Moduls?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Klassendiagramm — die Struktur**: zeigt, welche "Bausteine" (Klassen) es im Programm gibt und wie sie zusammenhängen. Kasten mit bis zu 3 Feldern: Name, Attribute, Operationen.
+
+```
+Patient
+-----------------
+- name: String
+- geburtstag: Date
+-----------------
++ berechneAlter(): int
+```
+
+Zeigt nur: "es gibt eine Patient-Klasse mit diesen Daten und diesen Fähigkeiten" — kein zeitlicher Ablauf, nur Bauplan.
+
+**Sequenzdiagramm — der zeitliche Ablauf**: zeigt, wie Objekte zu einem bestimmten Zeitpunkt miteinander kommunizieren, Schritt für Schritt von oben nach unten (entlang vertikaler Lebenslinien).
+
+Beispiel: Arzt bestellt einen Laborbefund.
+```
+Arzt-Objekt          KIS-Objekt          Labor-System-Objekt
+    |--- bestelleBefund() --->|                    |
+    |                          |--- sendeAnfrage() ->|
+    |                          |<--- Ergebnis -------|
+    |<--- zeigeErgebnis() -----|                    |
+```
+Jede Lebenslinie (senkrechte gestrichelte Linie unter dem Objekt) zeigt, wann dieses Objekt existiert/handelt. Pfeile = Aufrufe zwischen Objekten, in der zeitlichen Reihenfolge, wie sie passieren.
+
+**Kurz der Unterschied**: Klassendiagramm = Bauplan/Struktur (was gibt's, ein für alle Mal). Sequenzdiagramm = Film/Ablauf (was passiert wann, für einen konkreten Fall). Laut Buch wird das Klassendiagramm für den schnellen Strukturüberblick genutzt (fast immer bei OOP-Projekten), das Sequenzdiagramm eher spät und nur für komplexere Abläufe, weil es aufwändiger zu erstellen ist.
+:::
+
+::: {.exam-question}
+Frage: Mit welchem Werkzeug dokumentiert man einen Ablauf mit Entscheidungspunkten (z. B. Patientenaufnahme in der Notaufnahme, "kritisch? ja/nein"), was sind die Grundbausteine, und wie unterscheidet sich das vom UML-Aktivitätsdiagramm?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**BPMN** (Business Process Model and Notation) — das richtige Werkzeug für Abläufe mit Entscheidungspunkten. Grundbausteine, am Notaufnahme-Beispiel:
+
+- **Start-/End-Event** (Kreis): "Patient kommt an" → "Patient versorgt/entlassen".
+- **Aktivität/Task** (abgerundetes Rechteck): ein Arbeitsschritt, z. B. "Patient einchecken", "Triage durchführen".
+- **Gateway** (Raute): eine Entscheidung, z. B. "kritisch? ja/nein". Die exklusive Gateway (mit X markiert) bedeutet: nur einer der Pfade wird genommen.
+- **Sequenzfluss** (Pfeil): verbindet die Schritte in der Reihenfolge, wie sie passieren.
+- **Swimlanes** (Spuren): trennen, wer für welchen Schritt zuständig ist — z. B. eine Spur "Triage-Schwester", eine Spur "Arzt", eine Spur "Verwaltung".
+
+Notaufnahme-Beispiel als Skizze:
+```
+[Start] → (Patient einchecken) → (Triage durchführen) → <kritisch?>
+                                                          ├─ ja  → (Schockraum) → [Ende]
+                                                          └─ nein → (Wartebereich) → (Arztuntersuchung) → [Ende]
+```
+
+**Abgrenzung zum UML-Aktivitätsdiagramm**: sieht sehr ähnlich aus (Pfeile, Entscheidungsrauten, Start/Ende) — der Unterschied ist Zielgruppe und Ebene, nicht die Bausteine:
+
+- **BPMN**: für Geschäfts-/Klinikprozesse über mehrere Abteilungen/Rollen hinweg — auch für Nicht-Techniker (Ärzte, Pflege, Verwaltung) verständlich, dank Swimlanes.
+- **UML-Aktivitätsdiagramm**: für den internen Ablauf **innerhalb** eines Softwaresystems (z. B. was passiert intern in einer Methode, Schritt für Schritt, mit Verzweigungen) — Teil des technischen UML-Gesamtmodells, von Entwicklern genutzt.
+
+Merksatz: BPMN = Prozess über Abteilungen hinweg, für Fachleute verständlich. UML-Aktivitätsdiagramm = Logik innerhalb einer Software, technisches Werkzeug.
+
+**Wird das in der Praxis wirklich gemalt?** Volle, lehrbuchkonforme UML-Diagramme (mit allen Notationsdetails) sind im Alltag eher selten — meist werden informelle Skizzen im UML-Stil genutzt (Whiteboard, Tools wie Miro), ohne strikte Konformität. Wichtige Ausnahme: in **regulierten Bereichen wie Medizinprodukte-Software** (Stichwort EN 62304, Software-Lebenszyklus für Medizinprodukte, siehe Kap. 16) wird oft formale Dokumentation verlangt, damit Zulassungsbehörden den Entwicklungsprozess nachvollziehen können — dort ist formales Diagrammieren tatsächlich Standard/Pflicht, nicht nur Theorie.
+
+*(Hinweis: BPMN und die Praxis-Einordnung im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
+
+### Maßnahmen und Methoden des IT-Servicemanagements
+
+::: {.exam-question}
+Frage: KIS fällt aus, Ärzte kommen nicht an Befunde — was ist der Unterschied zwischen "Incident" und "Problem" (ITIL)?
+:::
+
+::: {.exam-answer}
+**Antwort:** **Incident** = die akute Störung selbst ("KIS ausgefallen") — Ziel: schnell Betrieb wiederherstellen, notfalls per Workaround (z. B. Befunde übers Backup-System). **Problem** = die zugrunde liegende Ursache (z. B. fehlerhaftes Update) — Ziel: dauerhaft beheben, damit der Incident nicht wiederkommt.
+
+Merksatz: Incident = Feuer löschen (Symptom). Problem = Brandursache finden (Ursache). Ein Incident kann per Workaround gelöst sein, ohne dass das Problem schon behoben ist.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Allgemeinwissen, Rahmenwerk ITIL.)*
+:::

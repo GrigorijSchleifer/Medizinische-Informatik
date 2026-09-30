@@ -1,0 +1,37 @@
+# Management in der Gesundheits-IT
+
+## Qualitätsmanagement und Zertifizierungen
+
+### Qualitätsmanagement und Zertifizierungen
+
+Qualitätsmanagement und Zertifizierungen (z. B. KTQ, proCum Cert, JCI, DIN EN ISO 9001).
+
+## Qualitätssicherung
+
+### Qualitätssicherung
+
+Qualitätssicherung (gesetzliche und freiwillige Verfahren).
+
+## Prozessmanagement, z. B. Organisation von Behandlungspfaden
+
+### Prozessmanagement, z. B. Organisation von Behandlungspfaden
+
+Prozessmanagement, z. B. Organisation von Behandlungspfaden.
+
+## Typische Abläufe und Vorgehensweisen im Medizin-Controlling
+
+### Typische Abläufe und Vorgehensweisen im Medizin-Controlling
+
+Typische Abläufe und Vorgehensweisen im Medizin-Controlling.
+
+## IT-Projektmanagement und Vorgehensmodelle
+
+### IT-Projektmanagement und Vorgehensmodelle
+
+IT-Projektmanagement und Vorgehensmodelle (z. B. V-Modell).
+
+## Risikomanagement und Risikoanalyse
+
+### Risikomanagement und Risikoanalyse
+
+Risikomanagement und Risikoanalyse (z. B. nach DIN EN ISO 14971 und IEC 80001).

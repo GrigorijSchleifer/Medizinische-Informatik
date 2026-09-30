@@ -1,0 +1,61 @@
+# Entscheidungsunterstützung
+
+## Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
+
+### Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
+
+Entscheidungsunterstützung und Zugriff auf medizinisches Wissen.
+
+## Wissensbasen und Systeme zur Therapiesicherheit
+
+### Wissensbasen und Systeme zur Therapiesicherheit
+
+Wissensbasen und Systeme zur Therapiesicherheit (z. B. Wissensmanagement, Evidence Based Medicine).
+
+## Systematische evidenzbasierte Bewertung
+
+### Systematische evidenzbasierte Bewertung
+
+Systematische evidenzbasierte Bewertung (z. B. Health Technology Assessment [HTA]).
+
+## Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
+
+### Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
+
+Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie.
+
+## Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse
+
+### Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse
+
+Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse (Schlussfolgerungsverfahren).
+
+## IT-gestütztes Workflowmanagement und Clinical Pathways
+
+### IT-gestütztes Workflowmanagement und Clinical Pathways
+
+IT-gestütztes Workflowmanagement und Clinical Pathways.
+
+## Evaluation / Grundbegriffe (ergänzend)
+
+### Rule-based vs. ML-based Systeme
+
+Rule-based vs. ML-based Systeme.
+
+### Alert fatigue
+
+Alert fatigue.
+
+### Sensitivität / Spezifität
+
+Sensitivität / Spezifität.
+
+```{r cds-metrics, echo=FALSE}
+knitr::kable(
+  data.frame(
+    Term = c("Sensitivität", "Spezifität"),
+    Definition = c("TP / (TP + FN)", "TN / (TN + FP)")
+  ),
+  caption = "Diagnostische Testkennzahlen"
+)
+```

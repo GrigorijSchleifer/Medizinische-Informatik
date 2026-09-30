@@ -1,0 +1,55 @@
+# Medizinische Dokumentation
+
+## Normative Grundlagen medizinischer Dokumentation
+
+### Normative Grundlagen medizinischer Dokumentation
+
+Normative Grundlagen medizinischer Dokumentation (z. B. aus Berufsrecht, Haftungsrecht, Vertragsrecht, Sozialrecht).
+
+## Grundbegriffe der medizinischen Dokumentation
+
+### Grundbegriffe der medizinischen Dokumentation
+
+Grundbegriffe der medizinischen Dokumentation (z. B. Klassifikation, Taxonomie, Ontologie, Nomenklatur, Datentypen, Skalen).
+
+## Typische Elemente medizinischer Dokumentation
+
+### Typische Elemente medizinischer Dokumentation
+
+Typische Elemente medizinischer Dokumentation (z. B. Kurve, Akte, Arztbrief, Medikationsplan, Impfplan, Notfalldatensatz).
+
+## Ordnungs- und Klassifikationssysteme für klinische Zwecke
+
+### Ordnungs- und Klassifikationssysteme für klinische Zwecke
+
+Ordnungs- und Klassifikationssysteme für klinische Zwecke (z. B. ICD-O, ICF, TNM-Klassifikation).
+
+## Ordnungs- und Klassifikationssysteme für administrative Zwecke
+
+### Ordnungs- und Klassifikationssysteme für administrative Zwecke
+
+Ordnungs- und Klassifikationssysteme für administrative Zwecke (z. B. ICD-10, OPS, EBM, GOÄ, DRG, PEPP).
+
+## Weitere Klassifikation und ihre Anwendungsgebiete
+
+### Weitere Klassifikation und ihre Anwendungsgebiete
+
+Weitere Klassifikation und ihre Anwendungsgebiete (z. B. SNOMED-CT, LOINC, ATC-Klassifikation, UCUM, GMDN).
+
+## Qualitätssicherung nach §137 SGB V
+
+### Qualitätssicherung nach §137 SGB V
+
+Qualitätssicherung nach §137 SGB V.
+
+## Vorgehen bei Planung und Entwicklung von Dokumentationssystemen
+
+### Vorgehen bei Planung und Entwicklung von Dokumentationssystemen
+
+Vorgehen bei Planung und Entwicklung von Dokumentationssystemen (z. B. medizinische Register, Krebsregister, Infektionsschutzmeldungen, freiwillige Qualitätssicherungssysteme, Archivsysteme, AMTS).
+
+## Big Data und Public Health
+
+### Big Data und Public Health
+
+Big Data und Public Health.

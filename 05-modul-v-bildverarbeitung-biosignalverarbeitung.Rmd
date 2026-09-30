@@ -1,0 +1,31 @@
+# Bildverarbeitung/Biosignalverarbeitung
+
+## Technische Komponenten
+
+### Medizintechnik/radiologische Modalitäten
+
+Medizintechnik/radiologische Modalitäten.
+
+## Signalklassen
+
+### Signalklassen
+
+Signalklassen (analog/diskret).
+
+## Digitale Filter und Bildoperationen
+
+### Digitale Filter und Bildoperationen
+
+Digitale Filter und Bildoperationen.
+
+## Konturverfolgung und Formerkennung
+
+### Konturverfolgung und Formerkennung
+
+Konturverfolgung und Formerkennung.
+
+## DICOM-Format
+
+### DICOM-Format
+
+DICOM-Format.

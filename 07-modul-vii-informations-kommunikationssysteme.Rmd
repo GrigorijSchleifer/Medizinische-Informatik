@@ -1,0 +1,129 @@
+# Informations- und Kommunikationssysteme
+
+## Rechtliche Aspekte, Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen
+
+### Rechtliche Aspekte
+
+Rechtliche Aspekte.
+
+### Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen
+
+Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen.
+
+## Anwendungsformen Elektronischer Patientenaktensysteme
+
+### Anwendungsformen Elektronischer Patientenaktensysteme
+
+Anwendungsformen Elektronischer Patientenaktensysteme.
+
+## Einrichtungs- und nutzerspezifische Parametrierung
+
+### Einrichtungs- und nutzerspezifische Parametrierung
+
+Einrichtungs- und nutzerspezifische Parametrierung (z. B. Krankenhaustopologie).
+
+## Differenzierung verschiedener Systemkomponenten
+
+### Patientenadministrationssysteme
+
+Patientenadministrationssysteme.
+
+### Klinische Arbeitsplatzsysteme
+
+Klinische Arbeitsplatzsysteme.
+
+### Abteilungssysteme
+
+Abteilungssysteme (z. B. Kardiologie, Gastroenterologie, Radiologie, Labormedizin).
+
+### Spezialsysteme
+
+Spezialsysteme (z. B. PDMS, PACS, AMTS-Systeme [Medikation, CPOE]).
+
+## Integration von Workflowmanagementsystemen und Clinical Pathways
+
+### Integration von Workflowmanagementsystemen und Clinical Pathways
+
+Integration von Workflowmanagementsystemen und Clinical Pathways.
+
+## Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
+
+### Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
+
+Entscheidungsunterstützung und Zugriff auf medizinisches Wissen.
+
+## Entwicklungsmethoden KIS
+
+### Entwicklungsmethoden KIS
+
+Entwicklungsmethoden KIS (z. B. Waterfall vs. Agile Development).
+
+## Struktur einer Software-Entwicklungsorganisation
+
+### Struktur einer Software-Entwicklungsorganisation
+
+Struktur einer Software-Entwicklungsorganisation (PLM, SCM, CRM).
+
+### Berücksichtigung von IT-Standards
+
+Berücksichtigung von IT-Standards (z. B. ISO, DIN, IHE) und interne Qualitätssicherung.
+
+## Implementierung von Informations- und Kommunikationssystemen
+
+### Implementierung von Informations- und Kommunikationssystemen
+
+Implementierung von Informations- und Kommunikationssystemen.
+
+## Evaluation von Informations- und Kommunikationssystemen
+
+### Evaluation von Informations- und Kommunikationssystemen
+
+Evaluation von Informations- und Kommunikationssystemen (z. B. Usability).
+
+## Interoperabilität und Schnittstellen von Krankenhausinformationssystemen
+
+### Interoperabilität und Schnittstellen von Krankenhausinformationssystemen
+
+Interoperabilität und Schnittstellen von Krankenhausinformationssystemen (z. B. HL7).
+
+## IT-Servicemanagement
+
+### IT-Servicemanagement
+
+IT-Servicemanagement (z. B. ITIL).
+
+## Berücksichtigung datenschutzrechtlicher Belange
+
+### Umsetzung eines Rollen- und Berechtigungskonzeptes
+
+Umsetzung eines Rollen- und Berechtigungskonzeptes.
+
+## Schnittstellen zur Telematik-Infrastruktur
+
+### Schnittstellen zur Telematik-Infrastruktur
+
+Schnittstellen zur Telematik-Infrastruktur.
+
+## Messaging- & Austauschstandards (ergänzend)
+
+### HL7 v2 / FHIR
+
+HL7 v2 / FHIR.
+
+### DICOM
+
+DICOM.
+
+## Kodiersysteme (ergänzend)
+
+### ICD
+
+ICD.
+
+### SNOMED CT
+
+SNOMED CT.
+
+### LOINC
+
+LOINC.

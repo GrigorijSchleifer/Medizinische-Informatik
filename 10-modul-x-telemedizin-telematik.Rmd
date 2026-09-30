@@ -1,0 +1,37 @@
+# Telemedizin und Telematik
+
+## Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen
+
+### Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen
+
+Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen.
+
+## Elektronische Akten und patientenzentrierte Anwendungen
+
+### Elektronische Akten und patientenzentrierte Anwendungen
+
+Elektronische Akten und patientenzentrierte Anwendungen (z. B. Consumer Health Care IT, Anwendungssoftware, Ambient Assisted Living [AAL]).
+
+## Anwendungsfälle
+
+### Anwendungsfälle
+
+Anwendungsfälle (z. B. Homemonitoring, Telekardiologie, Teleneurologie, Telepathologie).
+
+## Telematikinfrastruktur und elektronische Gesundheitskarte
+
+### Telematikinfrastruktur und elektronische Gesundheitskarte
+
+Telematikinfrastruktur und elektronische Gesundheitskarte.
+
+## Fernbehandlung
+
+### Fernbehandlung
+
+Fernbehandlung.
+
+## Datensicherheit und Datenschutz bei telemedizinischen Anwendungen
+
+### Datensicherheit und Datenschutz bei telemedizinischen Anwendungen
+
+Datensicherheit und Datenschutz bei telemedizinischen Anwendungen.

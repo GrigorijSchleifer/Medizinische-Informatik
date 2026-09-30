@@ -1,0 +1,10 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><strong>Medical Informatics — Exam Prep</strong></li>
+      collapse: section
+    download: no
+bookdown::pdf_book:
+  keep_tex: yes

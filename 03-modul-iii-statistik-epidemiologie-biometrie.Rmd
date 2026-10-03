@@ -399,7 +399,91 @@ Merksatz: Odds Ratio = Momentaufnahme (fester Zeitpunkt/Endpunkt). Hazard Ratio 
 
 ### Höhere multivariate Verfahren
 
+::: {.exam-question}
+Frage: Ein neues Medikament soll die Sterblichkeit senken — die Behandlungsgruppe ist aber im Schnitt älter und kränker. Wie trifft man trotzdem eine faire Aussage zum Medikamenteneffekt? Welches Verfahren, und was macht es im Prinzip?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Das Problem heißt Confounding** (Störgröße): ein Confounder hängt mit der Exposition (wer bekommt das Medikament?) **und** mit dem Outcome (wer stirbt?) zusammen. Hier: Ältere/Kränkere bekommen eher das Medikament **und** sterben ohnehin häufiger → ein roher Gruppenvergleich lässt das Medikament schlechter aussehen, als es ist.
+
+**Lösung: multivariable Regression = Adjustierung.** Mehrere Einflussgrößen gleichzeitig ins Modell; jeder Koeffizient gibt dann den Effekt **einer** Variable "bei sonst gleichen Bedingungen" an (statistisch gleich alte, gleich kranke Patienten werden verglichen).
+
+| Outcome | Verfahren | Effektmaß (adjustiert) |
+|---|---|---|
+| stetig (z. B. HbA1c, Blutdruck) | multiple lineare Regression | Regressionskoeffizient β |
+| binär (tot/lebend nach 30 Tagen) | multiple logistische Regression | adjustierte Odds Ratio |
+| Zeit bis Ereignis (mit Zensierung) | Cox-Regression | adjustierte Hazard Ratio |
+
+**Klinik-Beispiele:**
+- "Medikament senkt 1-Jahres-Mortalität, HR 0,75 (95 % KI 0,62–0,91), **adjustiert für Alter, Diabetes, Herzinsuffizienz**."
+- Klinik-Benchmarking: rohe Sterblichkeit Uniklinik > Kreiskrankenhaus — nach Adjustierung für Fallschwere (Alter, Komorbidität, Notfallaufnahme) oft umgekehrt.
+- Scores wie der **EuroSCORE** (Herz-OP-Risiko) sind selbst multivariable logistische Regressionsmodelle.
+
+**Alternativen zur Regression:**
+- **Stratifizierung**: getrennt auswerten, z. B. < 70 J. und ≥ 70 J. — anschaulich, aber nur für wenige Confounder praktikabel.
+- **Propensity Score**: Wahrscheinlichkeit, das Medikament zu bekommen, aus allen Confoundern berechnen; dann Patienten mit gleichem Score paaren (Matching) — "nachgebaute Randomisierung" für Beobachtungsdaten (Register, KIS-Routinedaten).
+
+**Grenzen (prüfungsrelevant):**
+- Adjustiert werden nur **gemessene** Confounder — unbekannte/nicht erhobene (z. B. Gebrechlichkeit, Sozialstatus) bleiben → **residuelles Confounding**. Nur die **Randomisierung (RCT)** verteilt auch unbekannte Confounder gleich.
+- **Overfitting**: Faustregel ≈ **10 Ereignisse pro Einflussvariable** (bei 50 Todesfällen max. ~5 Variablen).
+- Begriffe: **multivariabel** = mehrere Einflussgrößen, ein Outcome (der Normalfall oben); **multivariat** im strengen Sinn = mehrere Outcomes gleichzeitig (z. B. MANOVA). Umgangssprachlich wird "multivariat" oft für beides benutzt.
+
+Merksatz: Regression rechnet ungleiche Gruppen "fair", aber nur bezüglich dessen, was man gemessen hat — gegen das Unbekannte hilft nur Randomisierung.
+
+*(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt.)*
+:::
+
 ## Präsentation von Daten in Tabellen und Diagrammen
+
+::: {.exam-question}
+Frage: Die Liegedauer zweier Stationen soll verglichen werden, einige wenige Patienten liegen extrem lange. Welches Diagramm nimmt man, und warum ist ein Balkendiagramm mit Mittelwert hier irreführend?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Liegedauer ist rechtsschief verteilt**: die meisten Patienten liegen kurz, wenige "Langlieger" ziehen einen langen Schwanz nach rechts. Der **Mittelwert** wird von diesen Ausreißern nach oben gezogen, der **Median** nicht.
+
+Beispiel Station A: 8 Patienten mit 3–6 Tagen, 2 Patienten mit 50 und 60 Tagen → **Median 5 Tage**, **Mittelwert ≈ 15 Tage**. Ein Balken "15 Tage" beschreibt keinen einzigen realen Patienten.
+
+**Warum Balken + Mittelwert irreführt:**
+- zeigt nur **eine Zahl** — Streuung, Schiefe und Ausreißer sind unsichtbar ("dynamite plot").
+- zwei Stationen können denselben Mittelwert haben, aber völlig verschiedene Verteilungen (Station B: alle liegen 15 Tage).
+- Balken suggerieren eine Menge "von 0 bis hierhin" — sinnvoll für **Häufigkeiten/Anteile**, nicht für Lagemaße stetiger Daten.
+
+**Besser: Boxplot** (je Station eine Box nebeneinander):
+- **Strich in der Box** = Median
+- **Box** = mittlere 50 % der Patienten (25.–75. Perzentil = Interquartilsabstand, IQR)
+- **Whisker (Antennen)** = bis max. 1,5 × IQR
+- **Einzelpunkte** darüber = Ausreißer (die Langlieger bleiben sichtbar, statt den Durchschnitt zu verfälschen)
+- Noch ehrlicher bei kleinen Fallzahlen: **Boxplot + alle Einzelwerte als Punkte** (Jitter/Dotplot) oder **Violinplot** (zeigt zusätzlich die Form der Verteilung).
+- Für die Verteilung einer einzelnen Gruppe: **Histogramm**.
+
+**Welches Diagramm wofür (Faustregeln):**
+
+| Fragestellung / Daten | Diagramm | Klinik-Beispiel |
+|---|---|---|
+| Häufigkeiten kategorialer Merkmale | Balkendiagramm | Anzahl Fälle je Fachabteilung |
+| Verteilung eines stetigen Merkmals | Histogramm | Verteilung der Aufnahme-Kreatininwerte |
+| Vergleich stetiger Werte zwischen Gruppen | Boxplot (+ Punkte) | Liegedauer Station A vs. B |
+| Zusammenhang zweier stetiger Merkmale | Streudiagramm (Scatterplot) | BMI vs. systolischer Blutdruck |
+| Verlauf über die Zeit | Liniendiagramm | Tägliche Belegung, Fieberkurve |
+| Überleben / Zeit bis Ereignis | Kaplan-Meier-Kurve | Überleben nach zwei Krebstherapien |
+| Effekte mehrerer Studien | Forest Plot | Metaanalyse: OR je Studie + gepoolter Effekt |
+
+**Tabellen:**
+- Lagemaß passend zur Verteilung: **symmetrisch** → Mittelwert ± SD; **schief/ordinal** → **Median (IQR)**, z. B. "Liegedauer 5 (4–8) Tage".
+- Kategoriale Merkmale als **n (%)**, immer mit Nenner.
+- In Studien: **"Tabelle 1"** = Patientencharakteristika je Gruppe zu Studienbeginn (Alter, Geschlecht, Komorbiditäten) → zeigt, ob die Gruppen vergleichbar sind (Bezug: Confounding).
+
+**Typische Fehler (Grafik-"Lügen"):** abgeschnittene y-Achse (kleine Unterschiede wirken riesig), 3D-Effekte, Tortendiagramme mit vielen Segmenten, unterschiedliche Achsenskalen bei Vergleichsgrafiken, fehlende Fallzahl (n).
+
+Merksatz: Schiefe Daten (Liegedauer, Kosten, CRP) → Median und Boxplot. Balken nur für Häufigkeiten.
+
+*(Quelle: Kap. 6, Statistik und Biometrie — Lage-/Streuungsmaße und Skalenniveaus aus dem Buch; Diagrammwahl und Darstellungsfehler als Allgemeinwissen ergänzt.)*
+:::
 
 ## Statistik-Tools
 

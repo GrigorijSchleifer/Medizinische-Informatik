@@ -24,6 +24,32 @@ Anwendungsfälle (z. B. Homemonitoring, Telekardiologie, Teleneurologie, Telepat
 
 Telematikinfrastruktur und elektronische Gesundheitskarte.
 
+::: {.exam-question}
+Frage: Was ist der elektronische Heilberufsausweis (eHBA), wer stellt ihn aus, und wofür braucht man ihn?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**eHBA** = persönliche **Chipkarte im Scheckkartenformat** für Angehörige von Heilberufen — der "digitale Ausweis" in der Telematikinfrastruktur (TI).
+
+- **Aussehen**: Plastikkarte mit Chip, Foto, Name, Berufsbezeichnung ("Arzt/Ärztin") und Kammer — **zugleich Sichtausweis**, ersetzt bei Ärzten also den alten Arztausweis.
+- **Wer stellt aus**:
+  - **Ärzte**: auf Antrag über die **Landesärztekammer** (die bestätigt die Approbation), produziert von einem zugelassenen Vertrauensdiensteanbieter; Laufzeit **5 Jahre**, kostenpflichtig.
+  - **Notfallsanitäter, Pflege, Physiotherapeuten u. a.**: über das **elektronische Gesundheitsberuferegister (eGBR)**, für Notfallsanitäter seit 2023.
+- **Persönlich, nicht arbeitgeberbezogen**: ein Arzt hat **einen** eHBA und nutzt ihn überall — Praxis, Klinik, Notarzteinsatz. Die **Einrichtung** hat dagegen einen eigenen Institutionsausweis (**SMC-B**, "Praxisausweis").
+- **Funktionen** (mit eigener PIN):
+  - **Authentisierung**: "ich bin Arzt" → Zugriff auf NFD, ePA, eMP.
+  - **Qualifizierte elektronische Signatur (QES)** = rechtsgültige Unterschrift: **E-Rezept**, **eAU**, **eArztbrief** über KIM.
+  - **Verschlüsselung**: z. B. KIM-Nachrichten.
+
+Analogie: eGK = Versichertenkarte des Patienten; **eHBA = Dienstausweis + Stempel + Unterschrift des Arztes**; SMC-B = Praxisschild der Einrichtung. Für die meisten TI-Zugriffe müssen **eGK + eHBA** (bzw. SMC-B) zusammen stecken ("Zwei-Karten-Prinzip").
+
+Merksatz: eHBA = persönlicher Arztausweis mit Chip — weist aus, unterschreibt, verschlüsselt; ausgestellt über die Ärztekammer, gilt in jedem Einsatzort.
+
+*(Quelle: Curriculum / Allgemeinwissen — eHBA für Gesundheitsfachberufe/eGBR nach 2015, im Buch nicht enthalten.)*
+:::
+
 ## Fernbehandlung
 
 ### Fernbehandlung

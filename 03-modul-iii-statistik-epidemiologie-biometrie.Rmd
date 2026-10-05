@@ -209,6 +209,52 @@ Merksatz: Prävalenz = Bestand (Momentaufnahme). Inzidenz = Zufluss (neu Erkrank
 *(Quelle: Kap. 13 (Studientypen), Prävalenz/Inzidenz-Grundbegriffe als Curriculum/Allgemeinwissen ergänzt.)*
 :::
 
+### Güte diagnostischer Tests: Sensitivität, Spezifität, PPV, NPV
+
+::: {.exam-question}
+Frage: Ein D-Dimer-Test hat Sensitivität 98 % und Spezifität 40 %. Eignet er sich eher zum Ausschließen oder zum Bestätigen einer Lungenembolie — und wie viele falsch Negative/falsch Positive bedeutet das?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+|  | **krank** (LE) | **gesund** |
+|---|---|---|
+| **Test positiv** | richtig positiv (RP) | falsch positiv (FP) |
+| **Test negativ** | falsch negativ (FN) | richtig negativ (RN) |
+
+- **Sensitivität** = RP / alle Kranken → "Wie viele Kranke erkennt der Test?" 98 % → **2 % der Kranken falsch negativ** (übersehen).
+- **Spezifität** = RN / alle Gesunden → "Wie viele Gesunde erkennt der Test als gesund?" 40 % → **60 % der Gesunden falsch positiv** (nicht 40 %! Falsch-positiv-Rate = 1 − Spezifität).
+
+**Ausschließen oder bestätigen?**
+- **SnNout**: **S**ensitiv + **N**egativ → rule **out**. Hohe Sensitivität: ein **negatives** Ergebnis schließt aus, weil der Test kaum Kranke übersieht → **D-Dimer negativ = LE praktisch ausgeschlossen**.
+- **SpPin**: **Sp**ezifisch + **P**ositiv → rule **in**. Hohe Spezifität: ein **positives** Ergebnis bestätigt. Das kann D-Dimer nicht (auch erhöht bei OP, Schwangerschaft, Infektion, Tumor, Alter) → positives D-Dimer → **CT-Angiographie** zur Bestätigung.
+- Klinischer Ablauf: Vortestwahrscheinlichkeit (**Wells-Score**) niedrig → D-Dimer → negativ: fertig; positiv: CT.
+
+**Prädiktive Werte (Sicht des Patienten mit Testergebnis):**
+- **PPV** = RP / alle Positiven → "Test positiv — wie wahrscheinlich bin ich krank?"
+- **NPV** = RN / alle Negativen → "Test negativ — wie wahrscheinlich bin ich gesund?"
+- **Abhängig von der Prävalenz** (anders als Sensitivität/Spezifität): seltene Erkrankung → PPV sinkt stark (viele Positive sind falsch positiv). Deshalb kein D-Dimer-Screening bei allen Notaufnahme-Patienten.
+
+**Rechenbeispiel Prävalenz → PPV** (HIV-Schnelltest, Sens. 99 %, Spez. 99 %, Prävalenz 0,1 %, 100.000 Getestete):
+
+|  | **HIV+** (100) | **HIV−** (99.900) | Summe |
+|---|---|---|---|
+| **Test +** | 99 (RP) | **999** (FP = 1 % von 99.900) | 1.098 |
+| **Test −** | 1 (FN) | 98.901 (RN) | 98.902 |
+
+- **PPV** = 99 / 1.098 ≈ **9 %** → trotz "99 % genauem" Test sind **~91 % der Positiven gesund**.
+- **NPV** = 98.901 / 98.902 ≈ **99,999 %** → negativ heißt fast sicher gesund.
+- Grund: bei seltener Erkrankung gibt es so viele Gesunde, dass schon 1 % Fehlalarme die wenigen echten Fälle zahlenmäßig weit übertrifft.
+- Konsequenz: positiver Suchtest → **Bestätigungstest** (bei HIV: Western Blot/PCR). Gleiche Logik bei Screening (Mammographie, PSA).
+
+Rechenweg in 4 Schritten: (1) Kranke = N × Prävalenz, (2) RP = Kranke × Sensitivität, (3) FP = Gesunde × (1 − Spezifität), (4) PPV = RP / (RP + FP).
+
+Merksatz: Sensitiv schließt aus (SnNout), spezifisch schließt ein (SpPin). Falsch-positiv-Rate = 1 − Spezifität.
+
+*(Quelle: Curriculum Modul III / Allgemeinwissen — 2×2-Tafel aus Kap. 6/13; SnNout/SpPin und D-Dimer-Beispiel ergänzt.)*
+:::
+
 ## Maßzahlen der deskriptiven Statistik
 
 Maßzahlen der deskriptiven Statistik (z. B. Mittelwert, Median, Quantile, Varianz und Standardabweichung, Konfidenzintervalle für Mittelwerte und Anteilswerte).
@@ -489,4 +535,91 @@ Merksatz: Schiefe Daten (Liegedauer, Kosten, CRP) → Median und Boxplot. Balken
 
 Statistik-Tools (z. B. R, SPSS).
 
+::: {.exam-question}
+Frage: Für eine Klinik-Studie soll ein Statistik-Programm ausgewählt werden. Welche Programme gibt es, was sind ihre Vor- und Nachteile, und warum ist für die Reproduzierbarkeit ein Skript besser als Klicken in einer Oberfläche?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Zwei Bedienprinzipien:**
+- **Menü/Klick (GUI)**: Analyse über Dialogfenster zusammenklicken — schnell gelernt, aber der Weg zum Ergebnis ist nicht dokumentiert.
+- **Skript/Syntax**: Analyse als Text-Befehle in einer Datei — Lernkurve, aber jeder Schritt ist nachlesbar und wiederholbar.
+
+**Die wichtigsten Programme:**
+
+| Programm | Prinzip | Vorteile | Nachteile | Typischer Einsatz |
+|---|---|---|---|---|
+| **R** (+ RStudio) | Skript | kostenlos, Open Source; riesige Paketauswahl (jede neue Methode zuerst in R); exzellente Grafiken (ggplot2); Bericht + Code + Ergebnis in einem Dokument (R Markdown/Quarto) | steile Lernkurve; Pakete unterschiedlicher Qualität (keine zentrale Validierung); kein offizieller Hersteller-Support | universitäre Forschung, Biometrie, Epidemiologie |
+| **SPSS** (IBM) | Menü (+ optional Syntax) | leicht erlernbar, menügeführt; in Medizin und Psychologie weit verbreitet (viele Doktorarbeiten) | teure Lizenz; neue/komplexe Methoden fehlen oder kommen spät; Klickwege oft nicht dokumentiert | Doktorarbeiten, kleinere klinische Studien |
+| **SAS** | Skript | **Industriestandard** in der Pharmaindustrie; validiert, von Zulassungsbehörden (FDA, EMA) akzeptiert; stark bei großen Datenmengen | sehr teuer; altmodische Syntax; außerhalb Pharma wenig verbreitet | Zulassungsstudien (Phase III), CROs |
+| **Stata** | Skript + Menü | guter Kompromiss aus Bedienbarkeit und Syntax; stark in Epidemiologie, Survival- und Paneldaten | kostenpflichtig; Grafiken weniger flexibel als R | Epidemiologie, Versorgungsforschung |
+| **Python** (pandas, statsmodels, scikit-learn) | Skript | kostenlos; Stärke bei Machine Learning/KI, Bild- und Textdaten; Anbindung an Klinik-IT | klassische Statistik weniger komfortabel als in R | Data Science, KI-Projekte mit KIS-Daten |
+| **Excel** | Tabelle | überall vorhanden, für Datenerfassung/Übersicht | **keine** echte Statistiksoftware: fehleranfällig (versehentliches Sortieren nur einer Spalte, automatische Datums-Umwandlung von Werten), keine Nachvollziehbarkeit, begrenzte Methoden | nur Datensammlung, nie für die eigentliche Auswertung |
+| **JASP / jamovi** | Menü (auf R-Basis) | kostenlos, SPSS-ähnliche Oberfläche, rechnet intern mit R | weniger Methoden als R selbst | Lehre, einfache Auswertungen |
+
+**Warum Skript > Klicken (Reproduzierbarkeit):**
+- **Nachvollziehbar**: das Skript ist das Protokoll der Auswertung — jeder Schritt (Datenbereinigung, Ausschlüsse, Test) steht schwarz auf weiß. Wie ein OP-Bericht statt "hat irgendwie geklappt".
+- **Wiederholbar**: kommen 20 Patienten nachträglich dazu oder findet der Gutachter einen Fehler → Skript erneut ausführen, alle Tabellen und Grafiken sind in Sekunden aktualisiert. Beim Klicken: alles von Hand neu, mit Risiko, einen Schritt anders zu machen.
+- **Prüfbar**: Ko-Autoren, Reviewer, Ethikkommission oder Behörde können die Analyse nachrechnen ("Four-eyes principle").
+- **Versionierbar**: Skripte lassen sich mit Git versionieren — wer hat wann was geändert (wie dieses Buch: R Markdown + Git).
+- **Regulatorisch**: in klinischen Studien (ICH-GCP, ICH E9) muss die Auswertung dem vorab festgelegten **statistischen Analyseplan (SAP)** folgen und nachvollziehbar sein — mit Skripten belegbar.
+
+**Weitere Auswahlkriterien in der Klinik:**
+- **Datenschutz**: Patientendaten lokal oder auf zugelassenen Klinikservern auswerten, nicht in fremden Cloud-Diensten (DSGVO, Modul II).
+- **Lizenzkosten** und was die Klinik/Universität bereits lizenziert hat.
+- **Was der Biometriker/das Institut nutzt**: Zusammenarbeit und Support sind wichtiger als das "beste" Tool.
+- **Validierung** bei Zulassungsstudien (→ oft SAS).
+
+Merksatz: Klicken ist schnell, Skript ist belegbar. Für Forschung: R (kostenlos, flexibel); für Zulassung: SAS (validiert); für den Einstieg: SPSS/jamovi; Excel nur zum Sammeln, nie zum Auswerten.
+
+*(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt.)*
+:::
+
 ## Translationale Forschungsplattformen
+
+::: {.exam-question}
+Frage: Was bedeutet translationale Forschung ("from bench to bedside"), welche Aufgabe haben translationale Forschungsplattformen, und welche Beispiele gibt es in Deutschland (Medizininformatik-Initiative, Datenintegrationszentren)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Translationale Forschung** = Übersetzung von Erkenntnissen aus der Grundlagenforschung in die Patientenversorgung — und zurück.
+
+- **"Bench to bedside"**: vom Labortisch zum Krankenbett. Beispiel: Entdeckung der HER2-Überexpression bei Brustkrebs im Labor → Antikörper Trastuzumab → Standardtherapie.
+- **"Bedside to bench"** (Rückübersetzung): Beobachtungen aus der Klinik lösen Laborforschung aus. Beispiel: auffällig viele Nebenwirkungen bei einer Patientengruppe → Suche nach genetischer Ursache (Pharmakogenetik).
+- Typisch beschriebene Lücken ("valleys of death"): Labor → erste Anwendung am Menschen (T1), Studienergebnis → breite Anwendung in der Versorgung (T2). Viele gute Ergebnisse versanden genau dort.
+
+**Translationale Forschungsplattform** = IT-Infrastruktur, die Daten aus getrennten Welten **zusammenführt und für Forschung nutzbar macht**:
+- **Klinische Routinedaten** (KIS: Diagnosen, Labor, Medikation, Befunde)
+- **Biobank-Proben** (Blut, Gewebe) und deren **Omics-Daten** (Genom, Proteom)
+- **Bilddaten** (PACS) und **Studiendaten**
+
+Kernaufgaben: Daten **harmonisieren** (gemeinsame Standards und Terminologien: FHIR, SNOMED CT, LOINC), **pseudonymisieren**, **Einwilligung verwalten**, **Machbarkeitsanfragen** ermöglichen ("Wie viele Patienten mit Diagnose X und Laborwert Y haben wir?") und Daten kontrolliert für genehmigte Projekte bereitstellen.
+
+Analogie: wie ein zentrales Labor-Annahmesystem — Proben (Daten) aus allen Stationen kommen in einem einheitlichen Format an, werden etikettiert (pseudonymisiert) und nur auf gültigen Auftrag (Ethikvotum, Nutzungsantrag) herausgegeben.
+
+**Beispiele:**
+
+| Plattform / Initiative | Was | Kernpunkte |
+|---|---|---|
+| **Medizininformatik-Initiative (MII)** | BMBF-Förderung, Aufbau seit 2018, alle Universitätskliniken | 4 Konsortien: **DIFUTURE, HiGHmed, MIRACUM, SMITH**; Ziel: Routinedaten standortübergreifend für Forschung nutzbar machen |
+| **Datenintegrationszentren (DIZ)** | an jedem Uniklinikum (Kernstück der MII) | holen Daten aus KIS/Labor/PACS, übersetzen sie in den **MII-Kerndatensatz** (auf Basis **HL7 FHIR**), pseudonymisieren, stellen sie bereit |
+| **Forschungsdatenportal für Gesundheit (FDPG)** | zentrale Anlaufstelle der MII | Forscher stellen dort standortübergreifend Machbarkeitsanfragen und Datennutzungsanträge |
+| **Broad Consent** | einheitliche MII-Patienteneinwilligung | breite Einwilligung in Sekundärnutzung von Daten/Proben für zukünftige, noch unbekannte Forschungsprojekte; mit den Datenschutzbehörden abgestimmt |
+| **Netzwerk Universitätsmedizin (NUM)** | seit 2020 (COVID-19) | nutzt MII-Infrastruktur für gemeinsame Forschung aller Unikliniken |
+| **i2b2**, **tranSMART** | Open-Source-Software | i2b2: Kohortensuche in klinischen Daten; tranSMART: klinische + Omics-Daten gemeinsam auswerten |
+| **OMOP / OHDSI** | internationales Datenmodell + Community | Routinedaten weltweit in ein gemeinsames Format → gleiche Analyse an vielen Standorten |
+| **Forschungsdatenzentrum Gesundheit** | am BfArM (GDNG 2024) | Abrechnungsdaten der gesetzlich Versicherten für Forschung; EU-Ebene künftig **European Health Data Space (EHDS)** |
+
+**Prinzip "Daten bleiben, Analyse wandert" (föderiert):** statt alle Patientendaten zentral zu sammeln, bleibt jeder Datensatz in seinem Klinikum; die Abfrage/Analyse wird an alle DIZ geschickt, zurück kommen nur aggregierte Ergebnisse (z. B. Fallzahlen). Datenschutzfreundlich, weil keine Rohdaten das Haus verlassen.
+
+**Herausforderungen:** Datenqualität der Routinedokumentation (Kodierung für Abrechnung, nicht für Forschung), unterschiedliche KIS-Hersteller, Datenschutz und Einwilligung, fehlende Freitext-Strukturierung, Finanzierung über die Förderphase hinaus.
+
+**Bezug zu anderen Modulen:** FHIR/HL7 (Modul VII), Pseudonymisierung/DSGVO (Modul II), SNOMED CT/LOINC (Modul IV), Forschungsdatenmanagement (Modul IX).
+
+Merksatz: Translation = Labor ↔ Krankenbett. Plattform = macht verstreute Klinik-, Bio- und Bilddaten in einem Standardformat (FHIR) pseudonymisiert für Forschung nutzbar — in Deutschland: MII mit einem DIZ an jedem Uniklinikum.
+
+*(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt; MII-Stand nach 2015. Vertiefung: "Translational Health Informatics" (Books/).)*
+:::

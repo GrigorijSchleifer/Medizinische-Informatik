@@ -248,6 +248,14 @@ Frage: Ein D-Dimer-Test hat Sensitivität 98 % und Spezifität 40 %. Eignet er s
 - Grund: bei seltener Erkrankung gibt es so viele Gesunde, dass schon 1 % Fehlalarme die wenigen echten Fälle zahlenmäßig weit übertrifft.
 - Konsequenz: positiver Suchtest → **Bestätigungstest** (bei HIV: Western Blot/PCR). Gleiche Logik bei Screening (Mammographie, PSA).
 
+**Gleicher Test (Sens. 90 %, Spez. 90 %), drei Orte, je 1.000 Patienten** — der PPV hängt von der Prävalenz ab:
+
+| Ort | Prävalenz | Kranke → RP | Gesunde → FP | PPV |
+|---|---|---|---|---|
+| Hausarzt, Vorsorge | 1 % | 10 → 9 | 990 → 99 | 9 / 108 ≈ **8 %** |
+| Kardiologie-Station | 20 % | 200 → 180 | 800 → 80 | 180 / 260 ≈ **69 %** |
+| Notaufnahme, typische Symptome | 50 % | 500 → 450 | 500 → 50 | 450 / 500 = **90 %** |
+
 Rechenweg in 4 Schritten: (1) Kranke = N × Prävalenz, (2) RP = Kranke × Sensitivität, (3) FP = Gesunde × (1 − Spezifität), (4) PPV = RP / (RP + FP).
 
 Merksatz: Sensitiv schließt aus (SnNout), spezifisch schließt ein (SpPin). Falsch-positiv-Rate = 1 − Spezifität.
@@ -298,6 +306,73 @@ Merksatz: Stichprobengröße ↑ → Intervall schmaler (mehr Sicherheit). Konfi
 :::
 
 ## Statistische Methoden
+
+### Testwahl: welcher Test für welches Szenario?
+
+::: {.exam-question}
+Frage: Nach welchen Kriterien wählt man den statistischen Test, und welche Tests gehören zu welchem Szenario — insbesondere die verteilungsfreien (nichtparametrischen)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Drei Fragen stellen:**
+1. **Welches Skalenniveau** hat das Outcome? (metrisch / ordinal / nominal)
+2. **Verbunden oder unabhängig?** Dieselben Patienten mehrfach gemessen (vorher/nachher, rechts/links) = **verbunden**; verschiedene Patienten = **unabhängig**.
+3. **Wie viele Gruppen?** 2 oder ≥ 3. Bei metrisch zusätzlich: **normalverteilt?** (Histogramm, QQ-Plot, Shapiro-Wilk-Test)
+
+**Metrische und ordinale Outcomes:**
+
+| Szenario | Normalverteilt (parametrisch) | Nicht normal / ordinal (nichtparametrisch) |
+|---|---|---|
+| **2 verbundene** Messungen | gepaarter t-Test | **Wilcoxon-Vorzeichen-Rang-Test** |
+| **2 unabhängige** Gruppen | ungepaarter t-Test | **Mann-Whitney-U-Test** (= Wilcoxon-Rangsummentest) |
+| **≥ 3 unabhängige** Gruppen | ANOVA (Varianzanalyse) | **Kruskal-Wallis-Test** |
+| ≥ 3 **verbundene** Messungen | ANOVA mit Messwiederholung | Friedman-Test |
+| **Zusammenhang** zweier Merkmale | Pearson-Korrelation | **Spearman**-Rangkorrelation |
+
+**⚠️ Verwechslungsfalle "Wilcoxon" — zwei verschiedene Tests mit demselben Namen:**
+
+| Name | Für | Synonym |
+|---|---|---|
+| **Wilcoxon-*Vorzeichen*-Rang-Test** (signed-rank) | **2 verbundene** Messungen (vorher/nachher, dieselben Patienten) | — |
+| **Wilcoxon-*Rangsummen*-Test** (rank-sum) | **2 unabhängige** Gruppen | **= Mann-Whitney-U-Test** (rechnerisch gleichwertig) |
+
+→ Wer "Wilcoxon für 2 Gruppen" sagt, meint meist den **Rangsummentest = Mann-Whitney-U**. In der Prüfung sicherheitshalber den vollen Namen nennen: **Vorzeichen** = **verbunden** (beide mit V), **Rangsumme/Mann-Whitney** = **unabhängig**.
+
+**Begriffsklärung:** "nichtparametrisch" beschreibt den **Test**, nicht die Daten. Nichtparametrische Tests (Mann-Whitney-U, Wilcoxon, Kruskal-Wallis) eignen sich für **zwei Datenarten**:
+- **metrische, aber nicht normalverteilte** Daten (Liegedauer, CRP, Kosten — schief, Ausreißer)
+- **ordinale** Daten (NRS, NYHA, GCS, Tumorstadium)
+
+Beides geht, weil sie nur die **Rangfolge** nutzen. **Nicht** geeignet für **nominale** Daten (Blutgruppe, ja/nein) → dafür Chi-Quadrat/Fisher. Bei normalverteilten metrischen Daten wären sie erlaubt, aber etwas weniger trennscharf als der t-Test.
+
+**Eselsbrücken für die nichtparametrischen Tests:**
+- **Wilcoxon** = "**Wi**eder derselbe Patient" → **verbunden** (vorher/nachher).
+- **Mann-Whitney** = **zwei Namen = zwei verschiedene Gruppen** → **unabhängig**.
+- **Kruskal-Wallis** = "**K**ommen **viele** Gruppen" → **≥ 3 Gruppen** (das nichtparametrische ANOVA).
+- **Spearman** = "**S**pearman **s**ortiert" → Rangkorrelation.
+- Alle nichtparametrischen Tests rechnen mit **Rängen** (Platz 1, 2, 3 …) statt mit den Messwerten → robust gegen Ausreißer und schiefe Verteilungen.
+
+**Klinik-Beispiele:**
+- Blutdruck **vor/nach** Medikament bei denselben 20 Patienten, normalverteilt → **gepaarter t-Test**; schief → **Wilcoxon**.
+- **Liegedauer** Station A vs. B (schief) → **Mann-Whitney-U**.
+- **Schmerz-NRS** (ordinal) bei drei Analgetika-Gruppen → **Kruskal-Wallis**.
+- HbA1c bei Diät vs. Metformin vs. Insulin, normalverteilt → **ANOVA**.
+
+**Nominale (kategoriale) Outcomes — Häufigkeiten vergleichen:**
+
+| Szenario | Test | Beispiel |
+|---|---|---|
+| unabhängige Gruppen, ausreichend große Fallzahlen | **Chi-Quadrat-Test** | Wundinfektionsrate mit vs. ohne Antibiotikaprophylaxe |
+| kleine Fallzahlen (erwartete Zellhäufigkeit < 5) | **Fisher-Exakt-Test** | seltene Komplikation, 12 Patienten |
+| verbunden (vorher/nachher ja/nein) | **McNemar-Test** | Raucher ja/nein vor und nach Raucherentwöhnung |
+
+**Zeit bis Ereignis:** Kaplan-Meier-Kurven vergleichen → **Log-Rank-Test**; mit Adjustierung → Cox-Regression.
+
+Merksatz: Erst Skala, dann verbunden/unabhängig, dann Gruppenzahl. Nicht normal: **Wi**lcoxon = **wi**eder derselbe, **Mann-Whitney** = zwei Gruppen, **Kruskal** = viele Gruppen.
+
+*(Quelle: Kap. 6, Statistik und Biometrie — parametrische vs. verteilungsfreie Verfahren nach Skalenniveau; Testübersicht und Eselsbrücken als Allgemeinwissen ergänzt.)*
+:::
 
 ### Lineare Regression und Varianzanalyse
 

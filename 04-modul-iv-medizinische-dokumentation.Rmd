@@ -140,6 +140,13 @@ Kurz: **ICD = Klassifikation** (Schublade, keine formalen Beziehungen). **SNOMED
 
 Nominal + ordinal = **qualitativ/kategorial**; Intervall + Verhältnis = **quantitativ/metrisch**.
 
+**Warum bei ordinalen Daten kein Mittelwert?** Die Zahlen sind nur **Rangplätze**, keine Mengen — die Abstände dazwischen sind nicht gleich groß.
+- **NYHA**: Schritt von I (keine Beschwerden) → II (Luftnot bei starker Belastung) ist klinisch viel kleiner als von III → IV (Luftnot in Ruhe). 4 Patienten mit NYHA I, I, I, IV → Mittelwert **1,75** — "NYHA 1,75" gibt es nicht und beschreibt keinen Patienten; **Median I** ist ehrlich ("der typische Patient hat keine Beschwerden").
+- **ICF-Schweregrad .0–.4**: "erheblich" (.3) ist nicht "dreimal so schlimm" wie "leicht" (.1).
+- **GCS**: von 14 auf 15 ist ein kleiner Unterschied (leicht verwirrt → wach), von 8 auf 9 einer an der Intubationsgrenze — gleiche Zahlendifferenz, ganz andere Bedeutung.
+- Gegenbeispiel **metrisch**: Kreatinin 1 → 2 mg/dl und 2 → 3 mg/dl sind gleich große Schritte → Mittelwert sinnvoll.
+- Praxis-Hinweis: Die **Schmerz-NRS** wird in Studien oft trotzdem wie metrisch mit Mittelwert ausgewertet — methodisch umstritten; in der Prüfung: ordinal → Median, nichtparametrische Tests (Mann-Whitney-U).
+
 Merksatz: Klassifikation = Schublade (zusammenfassen für Statistik/Abrechnung), Nomenklatur = Wörterbuch (detailliert beschreiben), Taxonomie = Baum, Ontologie = Begriffe + Beziehungen für den Computer.
 
 *(Quelle: Kap. 12, Medizinische Dokumentation — Ordnungssysteme, Klassifikation und ihre Anforderungen, SNOMED CT, MeSH; Kap. 6 Skalenniveaus; Ontologie-Begriff und Datentypen-Übersicht als Allgemeinwissen ergänzt.)*
@@ -275,11 +282,263 @@ Merksatz: TNM = wie weit (Tumor, Knoten, Metastasen); c = klinisch, p = patholog
 *(Quelle: Curriculum / Allgemeinwissen — TNM-Systematik der UICC; ICD-O-3-Struktur aus Kap. 12.)*
 :::
 
+::: {.exam-question}
+Frage: Wofür braucht man die ICD-O-3 zusätzlich zur ICD-10, wenn ein Patient ein Karzinom hat?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**ICD-O-3** = *International Classification of Diseases for Oncology*, 3. Auflage (WHO; aktuell Revision ICD-O-3.2). Spezialklassifikation für Tumoren mit **zwei Achsen**:
+
+| Achse | Was | Aufbau | Beispiel |
+|---|---|---|---|
+| **Topographie** | **Wo** sitzt der Tumor? | C00.0–C80.9 (angelehnt an ICD-10-Kapitel II) | C34.1 Oberlappen, Bronchus |
+| **Morphologie** | **Was** ist es histologisch, und **wie verhält** es sich? | M-**4 Ziffern** (Histologie) **/ Verhaltenskode** (+ ggf. Grading) | 8140/3 Adenokarzinom, maligne |
+
+**Verhaltenskode (Dignität)** nach dem Schrägstrich:
+- **/0** gutartig · **/1** unsicher, ob gut- oder bösartig · **/2** in situ · **/3** bösartig, Primärtumor · **/6** bösartig, Metastase · **/9** bösartig, unklar ob primär oder Metastase
+
+**Warum die ICD-10 nicht reicht:** Die ICD-10 kodiert nur **Lokalisation + "bösartig"** (C-Kode) — die **Histologie fehlt**, ist aber für Therapie und Prognose entscheidend:
+
+| Lungentumor, Oberlappen | ICD-10 | ICD-O-3 Morphologie | Therapie |
+|---|---|---|---|
+| Adenokarzinom | C34.1 | 8140/3 | z. B. zielgerichtet bei EGFR/ALK |
+| Plattenepithelkarzinom | C34.1 | 8070/3 | andere Chemo-/Immuntherapie |
+| Kleinzelliges Karzinom | C34.1 | 8041/3 | primär Chemo, kaum OP |
+
+→ in der ICD-10 dreimal **derselbe** Kode, obwohl völlig verschiedene Erkrankungen.
+
+**Einsatz:** vor allem **Krebsregister** (klinische und epidemiologische Register der Länder, Zusammenführung im Zentrum für Krebsregisterdaten am RKI) und onkologische Forschung/Statistik. Die ICD-10 bleibt für die **Abrechnung** zuständig.
+
+**Zusammenspiel bei einem Tumorpatienten:**
+- **ICD-10** → Abrechnung (C34.1)
+- **ICD-O-3** → Lokalisation + Histologie + Dignität (C34.1, 8140/3) → Krebsregister
+- **TNM** → Ausbreitung (pT2 pN1 cM0) → Stadium, Therapieplanung
+
+Merksatz: ICD-10 sagt *wo* und *bösartig*; ICD-O-3 sagt zusätzlich *was genau* (Histologie) und *wie bösartig* (Verhaltenskode); TNM sagt *wie weit*.
+
+*(Quelle: Kap. 12, Medizinische Dokumentation — Struktur ICD-O-3 Morphologie mit Dignitätsziffer; Topographie-Achse, Revision 3.2 und Krebsregister-Bezug als Allgemeinwissen ergänzt.)*
+:::
+
+::: {.exam-question}
+Frage: Was beschreibt die ICF, und warum reicht für einen Reha-Patienten nach Schlaganfall die ICD-Diagnose allein nicht aus?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**ICF** = *International Classification of Functioning, Disability and Health* = **Internationale Klassifikation der Funktionsfähigkeit, Behinderung und Gesundheit** (WHO 2001; deutsche Fassung BfArM, früher DIMDI). Eselsbrücke: ICD = **D**isease (Krankheit), ICF = **F**unctioning (Funktion). Klassifiziert nicht die Krankheit, sondern die **Funktionsfähigkeit**: *Was kann der Mensch im Alltag — und was hindert ihn?*
+
+**ICD vs. ICF:**
+- **ICD** = **Was hat der Patient?** (Diagnose)
+- **ICF** = **Was kann der Patient (noch), und was braucht er?** (Folgen der Erkrankung)
+
+**Schlaganfall-Beispiel:** Drei Patienten, alle mit derselben ICD **I63.- Hirninfarkt**:
+- Patient A geht nach 3 Wochen wieder arbeiten.
+- Patient B läuft mit Rollator, braucht Hilfe beim Anziehen.
+- Patient C sitzt im Rollstuhl, kann nicht sprechen.
+
+→ **Gleicher ICD-Kode, völlig verschiedener Reha-Bedarf.** Für Reha-Planung, Hilfsmittel, Begutachtung und Teilhabe braucht man die ICF.
+
+**Biopsychosoziales Modell — die Komponenten:**
+
+| Komponente | Präfix | Frage | Schlaganfall-Beispiel |
+|---|---|---|---|
+| **Körperfunktionen** | **b** (*body*) | Was funktioniert im Körper nicht? | b730 Muskelkraft (Hemiparese), b167 Sprache (Aphasie) |
+| **Körperstrukturen** | **s** (*structure*) | Welche Struktur ist geschädigt? | s110 Gehirn |
+| **Aktivitäten und Partizipation** | **d** (*domain*) | Was kann er tun, woran teilhaben? | d450 Gehen, d540 sich kleiden, d850 bezahlte Arbeit |
+| **Umweltfaktoren** | **e** (*environment*) | Was hilft oder behindert von außen? | e120 Mobilitätshilfen (Rollator = Förderfaktor), Treppe ohne Aufzug = Barriere |
+| Personbezogene Faktoren | (nicht kodiert) | Alter, Motivation, Bildung | 45 Jahre, sehr motiviert |
+
+**Beurteilungsmerkmal** hinter dem Punkt = **Schweregrad des Problems**:
+.0 kein · .1 leicht · .2 mäßig · .3 erheblich · .4 voll ausgeprägt (.8 nicht spezifiziert, .9 nicht anwendbar).
+Beispiel: **d450.3** = erhebliches Problem beim Gehen.
+
+**Einsatz:** Rehabilitation (Reha-Antrag, Zielplanung, Entlassbericht), sozialmedizinische Begutachtung, Teilhabeplanung (SGB IX, Bundesteilhabegesetz), Hilfsmittelversorgung.
+
+Merksatz: ICD = Diagnose (*was hat er*), ICF = Funktionsfähigkeit (*was kann er, was hindert ihn*). b Körperfunktion, s Struktur, d Aktivität/Teilhabe, e Umwelt.
+
+*(Quelle: Curriculum / Allgemeinwissen — ICF im Buch "MedInfo kompakt" nicht ausführlich behandelt.)*
+:::
+
 ## Ordnungs- und Klassifikationssysteme für administrative Zwecke
 
 ### Ordnungs- und Klassifikationssysteme für administrative Zwecke
 
 Ordnungs- und Klassifikationssysteme für administrative Zwecke (z. B. ICD-10, OPS, EBM, GOÄ, DRG, PEPP).
+
+::: {.exam-question}
+Frage: Was ist die ICD-10, wie ist ein ICD-Kode aufgebaut, und wofür wird sie verwendet?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+> **Auf einen Blick:**
+> - ICD-10 = **Postleitzahl der Diagnosen** (WHO): `I21.0` = Buchstabe (Bereich: Kreislauf) + 2 Ziffern (Krankheit: Herzinfarkt) + Punkt (Detail: Vorderwand).
+> - **GM** → Abrechnung, AU, Statistik (BfArM, jährlich neu) · **WHO** → Todesursachen.
+> - Buchstaben: **C** Krebs · **I** Herz/Kreislauf · **J** Lunge · **K** Bauch · **S/T** Verletzung · **F** Psyche · **Z** Vorsorge/Anlass.
+> - Zeichen: **+** Ursache · **\*** Organ (nur mit +) · **!** Zusatzinfo. Ambulant: **G/V/A/Z** (gesichert/Verdacht/ausgeschlossen/Zustand nach), **R/L/B** (Seite).
+> - Grenze: Gewebeart eines Tumors fehlt (C34.1 = Lungenkrebs, aber welcher?) → dafür **ICD-O-3**.
+
+**Was ist die ICD?** *International Statistical Classification of Diseases and Related Health Problems* der **WHO** = internationale **Klassifikation der Diagnosen**. Jede Diagnose bekommt einen kurzen Kode, damit alle Ärzte, Kliniken, Kassen und Länder dieselbe Sprache sprechen.
+
+Analogie: wie eine **Postleitzahl** für Krankheiten — statt "Herzinfarkt der Vorderwand" schreibt man **I21.0**, und jeder Computer weiß, was gemeint ist.
+
+**Zwei Versionen in Deutschland:**
+- **ICD-10-GM** (*German Modification*) → für **Abrechnung** (ambulant und stationär), AU-Bescheinigung, Krankenhausstatistik. Herausgeber: **BfArM** (früher DIMDI), **jährlich** neue Version.
+- **ICD-10-WHO** → für die **Todesursachenstatistik** (Leichenschauschein).
+- **ICD-11**: von der WHO seit 2022 in Kraft, in Deutschland für die Abrechnung **noch nicht** eingeführt.
+
+**Aufbau — eine Hierarchie von grob nach fein (Beispiel Herzinfarkt):**
+
+| Ebene | Kode | Bedeutung |
+|---|---|---|
+| **Kapitel** | IX (I00–I99) | Krankheiten des Kreislaufsystems |
+| **Gruppe** | I20–I25 | Ischämische Herzkrankheiten |
+| **Kategorie** (3-stellig) | **I21** | Akuter Myokardinfarkt |
+| **Subkategorie** (4-/5-stellig) | **I21.0** | Akuter transmuraler Myokardinfarkt der Vorderwand |
+
+**Anatomie eines Kodes** — `I21.0`:
+- **Buchstabe** (I) → grober Bereich/Kapitel
+- **2 Ziffern** (21) → Krankheit (Kategorie)
+- **Punkt + 1–2 Ziffern** (.0) → genauere Unterteilung
+- Je mehr Stellen, desto genauer. Kodiert wird immer **so spezifisch wie möglich** ("endständiger Kode").
+
+**Einfache Beispiele aus dem Alltag:**
+
+| Diagnose | ICD-10-GM | Kapitel |
+|---|---|---|
+| Erkältung (akuter Infekt der oberen Atemwege, n. n. bez.) | J06.9 | X Atmungssystem |
+| Pneumonie, nicht näher bezeichnet | J18.9 | X Atmungssystem |
+| Harnwegsinfekt | N39.0 | XIV Urogenitalsystem |
+| Distale Radiusfraktur | S52.5 | XIX Verletzungen |
+| Herzinfarkt Vorderwand | I21.0 | IX Kreislauf |
+| Brustkrebs (Mamma, n. n. bez.) | C50.9 | II Neubildungen |
+
+Faustregel Buchstaben: **C** = Krebs, **I** = Kreislauf, **J** = Lunge, **K** = Verdauung, **S/T** = Verletzungen, **F** = Psyche, **Z** = Kontaktanlässe (z. B. Vorsorge).
+
+**Sonderzeichen hinter dem Kode:**
+
+| Zeichen | Name | Bedeutung | Beispiel |
+|---|---|---|---|
+| **+** | Kreuz | **Ursache** (Ätiologie), Primärkode | E11.40+ Diabetes Typ 2 mit neurologischen Komplikationen |
+| **\*** | Stern | **Organmanifestation**, nur **zusammen** mit Kreuzkode erlaubt | G63.2\* Diabetische Polyneuropathie |
+| **!** | Ausrufezeichen | **Zusatzinformation**, nie allein | N39.0 Harnwegsinfekt + **B96.2!** E. coli als Erreger |
+
+→ Kreuz-Stern = "Ursache + wo es sich zeigt": E11.40+ G63.2\* = Polyneuropathie **durch** Diabetes.
+
+**Zusatzkennzeichen** (ambulant Pflicht, Diagnosesicherheit): **G** gesichert, **V** Verdacht, **A** ausgeschlossen, **Z** Zustand nach. Dazu Seite: **R** rechts, **L** links, **B** beidseits. Beispiel: S52.5 G L = gesicherte distale Radiusfraktur links.
+
+**Haupt- und Nebendiagnose (stationär, Deutsche Kodierrichtlinien):**
+- **Hauptdiagnose** = Grund für die Aufnahme, *nach Abschluss der Diagnostik* festgestellt. Beispiel: Aufnahme wegen Brustschmerz, Diagnose Herzinfarkt → HD **I21.0** (nicht das Symptom "Brustschmerz").
+- **Nebendiagnose** = zusätzliche Erkrankung, die **Aufwand verursacht** hat (Diagnostik, Therapie, Pflege). Beispiel: bekannter Diabetes, Insulin wird weitergegeben → ND E11.-.
+
+**Wofür die ICD verwendet wird:**
+- **Abrechnung**: stationär über **DRG** (Hauptdiagnose bestimmt die Fallgruppe), ambulant über KV/EBM (§ 295/§ 301 SGB V).
+- **AU-Bescheinigung** (eAU) — Diagnose für die Krankenkasse.
+- **Statistik**: Morbidität, Krankenhausstatistik, Todesursachen (WHO-Version).
+- **Qualitätssicherung und Versorgungsforschung**.
+
+**Grenzen:** Klassifikation = **Schublade** → Details gehen verloren (Histologie eines Tumors → dafür ICD-O-3; feine klinische Beschreibung → dafür SNOMED CT).
+
+Merksatz: ICD-10 = Postleitzahl der Diagnosen: Buchstabe (Bereich) + 2 Ziffern (Krankheit) + Punkt (Detail). GM für Abrechnung, WHO für Todesursachen; + Ursache, \* Organ, ! Zusatz.
+
+*(Quelle: Kap. 12, Medizinische Dokumentation — ICD-10-GM/WHO, Kodeaufbau, Kreuz-Stern-Systematik, Haupt-/Nebendiagnose; BfArM-Zuständigkeit, Zusatzkennzeichen und ICD-11-Stand als Allgemeinwissen ergänzt.)*
+:::
+
+::: {.exam-question}
+Frage: Eine 25-Jährige mit akuter Appendizitis wird laparoskopisch appendektomiert. Was wird mit der ICD-10, was mit dem OPS kodiert — und warum braucht das Krankenhaus beide?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+- **ICD-10-GM** = **Was hat die Patientin?** → Diagnose: **K35.8** Akute Appendizitis, nicht näher bezeichnet (Hauptdiagnose).
+- **OPS** = **Was haben wir gemacht?** → Prozedur: **5-470.1-** Appendektomie, laparoskopisch.
+
+**OPS** = *Operationen- und Prozedurenschlüssel*, deutsche Klassifikation (BfArM, jährlich neu) für **alle Prozeduren im Krankenhaus** und beim ambulanten Operieren.
+
+**Aufbau** `5-470.1-`: **Kapitel** (5 = Operationen) – **4 Stellen** (470 = Appendektomie) **.** 5./6. Stelle (1 = laparoskopisch, weitere Stelle = Technik); bei paarigen Organen Seite **R/L/B**.
+
+| Kapitel | Inhalt | Beispiel |
+|---|---|---|
+| **1** | Diagnostische Maßnahmen | Koloskopie, Biopsie |
+| **3** | Bildgebende Diagnostik | CT, MRT |
+| **5** | **Operationen** (zentrales Kapitel) | Appendektomie, Hüft-TEP |
+| **6** | Medikamente (teure, abrechnungsrelevante) | bestimmte Chemotherapeutika, Antikörper |
+| **8** | Nichtoperative therapeutische Maßnahmen | Reanimation, Transfusion, **Intensivkomplexbehandlung 8-980** |
+| **9** | Ergänzende Maßnahmen | Geburtsleitung, Dolmetscher, Psychotherapie |
+
+**Warum beide?** Der **DRG-Grouper** braucht beides:
+- **Hauptdiagnose (ICD)** → Hauptdiagnosegruppe (**MDC 06** Verdauungsorgane).
+- **OPS** → **Partition**: operativ (Kode 5-…) oder konservativ.
+- Ergebnis: operative DRG "Appendektomie" (**G23**). **Ohne OPS-Kode** landet derselbe Fall in einer **konservativen** DRG ("Appendizitis ohne OP") → deutlich weniger Erlös, obwohl operiert wurde.
+- Zusätzlich: OPS für Qualitätssicherung, Mindestmengen, Leistungsstatistik.
+
+Merksatz: **ICD = Was hat er? OPS = Was tun wir?** Beide zusammen ergeben die DRG — fehlt der OPS, "verschwindet" die OP aus der Rechnung.
+
+*(Quelle: Kap. 12, Medizinische Dokumentation — OPS-Kodierstruktur, Kapitel 5 als zentrales Kapitel, Grouper-Logik; Kodebeispiele als Allgemeinwissen, Stand kann je Katalogjahr abweichen.)*
+:::
+
+::: {.exam-question}
+Frage: Was ist eine DRG, wie entsteht der Preis, und was bedeutet die Kodierung G23B?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**DRG** = *Diagnosis Related Groups* = **Fallpauschale**: Das Krankenhaus bekommt pro stationärem Fall einen **festen Betrag** für die Fallgruppe — unabhängig davon, ob der Patient 4 oder 6 Tage bleibt (innerhalb gewisser Grenzen). In Deutschland **G-DRG**, verpflichtend seit **2004**, gepflegt vom **InEK** (Institut für das Entgeltsystem im Krankenhaus), jährlich neuer Katalog.
+
+Analogie: wie ein **Pauschalpreis beim Handwerker** — "Bad fliesen" kostet X, egal wie lange es dauert. Vorher (Tagessätze) wurde nach Tagen bezahlt → Anreiz, Patienten lange zu behalten.
+
+**Aufbau G23B:**
+
+| Stelle | Bedeutung | G23B |
+|---|---|---|
+| **1. Buchstabe** | Hauptdiagnosegruppe (**MDC**), meist aus der Hauptdiagnose | **G** = MDC 06 Verdauungsorgane |
+| **2.–3. Ziffer** | **Partition**: 01–39 operativ · 40–59 andere (invasiv) · 60–99 medizinisch/konservativ | **23** = operativ (Appendektomie) |
+| **4. Buchstabe** | **Schweregrad/Ressourcenverbrauch**: A = höchster, dann B, C …; **Z** = nicht unterteilt | **B** = zweithöchste Stufe |
+
+Sonderfälle: **A**-DRGs = Prä-MDC (Transplantation, Langzeitbeatmung), **9**xx = Fehler-DRG.
+
+**Wie der Grouper zuordnet:** Hauptdiagnose → MDC → OPS → Partition → Basis-DRG → Nebendiagnosen (CCL je ND → **PCCL** 0–4 = Gesamtschweregrad), Alter, Beatmung → finaler Schweregrad-Buchstabe.
+
+**Wie der Preis entsteht:**
+
+**Erlös = Bewertungsrelation (Relativgewicht) × Landesbasisfallwert**
+
+- **Bewertungsrelation**: wie aufwendig die DRG relativ zum Durchschnittsfall (= 1,0) ist, z. B. 0,8 für eine einfache Appendektomie, 5,0 für eine große Bauch-OP.
+- **Landesbasisfallwert**: Euro-Betrag pro Bewertungsrelation 1,0, je Bundesland verhandelt (einige tausend Euro).
+- **Grenzverweildauern**: unter der **unteren GVD** → Abschlag; über der **oberen GVD** → Zuschlag pro Tag.
+- **Zusatzentgelte** für teure Leistungen (bestimmte Medikamente, Implantate) — über OPS-Kodes ausgelöst.
+- Seit **2020**: Pflegepersonalkosten am Bett als eigenes **Pflegebudget** aus den DRGs ausgegliedert (aG-DRG).
+
+**Folgen für die Dokumentation:** Jede vergessene, aufwandsrelevante Nebendiagnose oder jeder fehlende OPS kann eine niedrigere DRG bedeuten → Kodierfachkräfte und Medizincontrolling; umgekehrt prüft der **Medizinische Dienst (MD)** auf Überkodierung ("Upcoding").
+
+**Psychiatrie:** analog **PEPP** (Pauschalierendes Entgeltsystem Psychiatrie und Psychosomatik) — vergütet **tagesbezogen**, nicht pro Fall.
+
+Merksatz: DRG = Fallpauschale. Buchstabe = Organsystem (MDC), Ziffern = operativ/konservativ, letzter Buchstabe = Schweregrad (A teuerster). Preis = Bewertungsrelation × Landesbasisfallwert.
+
+**Ambulant: EBM und GOÄ**
+
+| | **EBM** (Einheitlicher Bewertungsmaßstab) | **GOÄ** (Gebührenordnung für Ärzte) |
+|---|---|---|
+| **Für wen** | **gesetzlich Versicherte** (GKV), Vertragsärzte | **Privatpatienten**, Selbstzahler, IGeL |
+| **Wer legt fest** | **Bewertungsausschuss** (KBV + GKV-Spitzenverband), § 87 SGB V | **Rechtsverordnung** der Bundesregierung (Bundesrat stimmt zu) |
+| **Prinzip** | **Gebührenordnungspositionen (GOP)** mit **Punkten**; Euro = Punkte × **Orientierungswert** (Cent-Betrag pro Punkt); viele **Pauschalen** (z. B. Versichertenpauschale pro Quartal) | **Einzelleistungen** mit Punktzahl × Punktwert, multipliziert mit **Steigerungsfaktor** |
+| **Abrechnung** | quartalsweise über die **KV**; Diagnosen nach **ICD-10-GM** Pflicht; Budgetierung (Mengenbegrenzung) | Rechnung direkt an den Patienten, der sie bei seiner PKV einreicht |
+| **Besonderheit** | Arzt bekommt nicht immer den vollen Punktwert (Budget) | Steigerungsfaktor: persönliche Leistungen **1,0–3,5**, Regelfall bis **2,3** (darüber schriftliche Begründung); technische Leistungen bis 2,5, Labor bis 1,3. GOÄ in weiten Teilen von **1996** → Reform ("GOÄneu") geplant |
+
+**Warum Steigerungsfaktor?** Gedacht nach **§ 5 GOÄ**: Vergütung nach **Schwierigkeit, Zeitaufwand und Umständen** des Einzelfalls (z. B. Beratung eines dementen, schwerhörigen Patienten dauert dreimal so lang). In der Praxis ist **2,3 zum Standard** geworden, weil die Punktwerte seit 1996 kaum angepasst wurden — der Faktor gleicht faktisch die fehlende Inflationsanpassung aus. Kritik: intransparent, abhängig vom Versicherungsstatus; die geplante GOÄneu soll realistische Festbeträge statt Faktor-Spielraum bringen.
+
+Klinik-Beispiel: Gespräch beim Hausarzt — GKV-Patient: in der **Versichertenpauschale** (EBM) enthalten; Privatpatient: GOÄ Nr. 1 "Beratung" × Steigerungsfaktor 2,3.
+
+Merksatz: **EBM = Kasse, Punkte, Pauschalen, über die KV. GOÄ = privat, Einzelleistung × Steigerungsfaktor, direkt an den Patienten.**
+
+*(Quelle: Kap. 4 Gesundheitsökonomie und Kap. 12 Medizinische Dokumentation — DRG-Kode-Struktur, Grouper, CCL/PCCL, Bewertungsrelation; Pflegebudget seit 2020 als Allgemeinwissen ergänzt.)*
+:::
 
 ## Weitere Klassifikation und ihre Anwendungsgebiete
 
@@ -315,6 +574,27 @@ Analogie: Ein Dolmetscher, der jedes Fachwort in eine Zahl übersetzt — "Herzi
 
 Merksatz: SNOMED CT = gemeinsame klinische Sprache für Computer — dokumentieren und austauschen, nicht abrechnen.
 
+**LOINC, ATC, UCUM, GMDN — vier "Sprachen" für vier Gegenstände:**
+
+| System | Kodiert | Klinik-Beispiel | Systemtyp |
+|---|---|---|---|
+| **LOINC** (*Logical Observation Identifiers Names and Codes*) | **Laboruntersuchungen/Beobachtungen** — *was* wurde gemessen | "Kalium im Serum" hat in jedem Labor denselben Kode, egal ob intern "K", "Kalium" oder "K+" | **Nomenklatur/Terminologie**: Kodes **ohne systematische Hierarchie**, Begriff aus 6 Achsen gebildet (Komponente, Eigenschaft, Zeit, Material, Skala, Methode) → **keine** Taxonomie |
+| **ATC** (*Anatomisch-Therapeutisch-Chemisch*, WHO) | **Wirkstoffe**, nach Organ und Wirkung | **C07AB02** Metoprolol: C Herz-Kreislauf → C07 Betablocker → C07A → C07AB selektiv → 02 Metoprolol | **Klassifikation mit Taxonomie** (5 Ebenen, Baum) |
+| **UCUM** (*Unified Code for Units of Measure*) | **Maßeinheiten**, maschinenlesbar | `mmol/L` vs. `mg/dL` Glukose (Faktor 18!); `kg/m2` für BMI | **weder noch**: eine **formale Grammatik** — Regeln, wie Einheiten zusammengesetzt werden, damit Computer umrechnen können |
+| **GMDN** (*Global Medical Device Nomenclature*) | **Medizinprodukte** (Gerätetypen) | "Infusionspumpe", "Herzschrittmacher" einheitlich benannt (Rückrufe, Register); EU-Datenbank EUDAMED nutzt die verwandte **EMDN** | **Nomenklatur** |
+
+**Warum ist LOINC trotz 6 Achsen keine Taxonomie?** **Achsen ≠ Hierarchie.**
+- **Achsen** = Merkmale **nebeneinander**, wie Felder eines Formulars: Kalium im Serum = Komponente *Kalium* · Eigenschaft *Stoffmengenkonzentration* · Zeit *Zeitpunkt* · Material *Serum/Plasma* · Skala *quantitativ* · Methode *(keine)* → LOINC **2823-3**.
+- **Taxonomie** = Begriffe **übereinander** (Ober-/Unterbegriff, "ist ein"), wie ein Stammbaum.
+- Der LOINC-Kode ist zudem **nicht sprechend**: 2823-3 ist eine laufende Nummer + Prüfziffer, aus der man nichts ablesen kann. Gegensatz **sprechender Schlüssel**: ICD **I21.0** oder ATC **C07AB02** — die Stellen selbst verraten die Position im Baum.
+- (LOINC bietet zum Durchsuchen zusätzlich eine Hilfs-Hierarchie an, das Kodesystem selbst ist aber nicht hierarchisch aufgebaut.)
+
+Feinheit ATC: ein Wirkstoff kann **mehrere** ATC-Kodes haben, je nach Anwendung — ASS als Thrombozytenaggregationshemmer **B01AC06**, als Schmerzmittel **N02BA01** (ATC klassifiziert nach Hauptindikation).
+
+Zusammenspiel: Laborbefund in der ePA "Kalium (**LOINC**) = 5,8 mmol/L (**UCUM**)" + Medikation Spironolacton (**ATC** C03DA01) → System erkennt **Hyperkaliämie unter kaliumsparendem Diuretikum** und warnt.
+
+Merksatz: LOINC = *was* gemessen, UCUM = *in welcher Einheit*, ATC = *welcher Wirkstoff*, GMDN = *welches Gerät*. Nur ATC ist ein Baum (Taxonomie).
+
 *(Quelle: Kap. 12, Medizinische Dokumentation — SNOMED CT als konzeptbasierte Terminologie mit Achsen, Einsatz in DICOM/HL7/e-Akte; Mitgliedschaft Deutschlands, FHIR/ePA/MII als Allgemeinwissen ergänzt.)*
 :::
 
@@ -323,6 +603,46 @@ Merksatz: SNOMED CT = gemeinsame klinische Sprache für Computer — dokumentier
 ### Qualitätssicherung nach §137 SGB V
 
 Qualitätssicherung nach §137 SGB V.
+
+::: {.exam-question}
+Frage: Was regelt die gesetzliche Qualitätssicherung (§§ 135a–137 SGB V), wer ist beteiligt, und wie läuft die externe Qualitätssicherung im Krankenhaus ab?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Grundidee:** Krankenhäuser und Praxen sind **gesetzlich verpflichtet**, die Qualität ihrer Leistungen zu sichern und sich **vergleichen** zu lassen.
+
+**Rechtsgrundlagen (heutiger Stand — das Buch von 2015 fasst alles unter § 137):**
+
+| Norm | Inhalt |
+|---|---|
+| **§ 135a SGB V** | **Pflicht** aller Leistungserbringer zur Qualitätssicherung + einrichtungsinternes **Qualitätsmanagement** |
+| **§ 136 ff. SGB V** | **G-BA** (Gemeinsamer Bundesausschuss) erlässt die QS-Richtlinien; **§ 136b**: **Mindestmengen** und jährlicher **Qualitätsbericht** der Krankenhäuser |
+| **§ 137 SGB V** | **Durchsetzung**: Folgen bei Nichteinhaltung (Vergütungsabschläge, Wegfall des Vergütungsanspruchs), Kontrollen durch den **Medizinischen Dienst** |
+| **§ 137a SGB V** | **IQTIG** (Institut für Qualitätssicherung und Transparenz im Gesundheitswesen) — entwickelt Verfahren und wertet aus (Nachfolger des **AQUA-Instituts**) |
+
+**Ablauf der externen QS (datengestützt, DeQS-Richtlinie):**
+1. **QS-Filter** im KIS: bestimmte ICD-/OPS-Kodes lösen automatisch einen **QS-Dokumentationsbogen** aus (z. B. OPS für Hüft-TEP).
+2. Arzt/Pflege füllen den Bogen aus (strukturiert: Indikation, Komplikationen, Entlassstatus).
+3. Daten gehen pseudonymisiert an die **Landesstellen** bzw. das IQTIG; ergänzt um **Sozialdaten der Krankenkassen** (z. B. Revision im anderen Krankenhaus nach 1 Jahr).
+4. Auswertung anhand von **Qualitätsindikatoren** mit **Referenzbereichen**, risikoadjustiert (→ Modul III: Adjustierung).
+5. **Rechnerisch auffällig** → **Stellungnahmeverfahren** (früher "Strukturierter Dialog"): Klinik muss erklären; ggf. Maßnahmen, Vor-Ort-Begehung.
+6. Ergebnisse fließen in den öffentlichen **Qualitätsbericht**.
+
+**Beispiele für QS-Verfahren:** Hüft-/Knie-Endoprothetik, Geburtshilfe, Herzschrittmacher, Koronarangiographie/PCI, ambulant erworbene Pneumonie, Dekubitusprophylaxe.
+
+**Weitere Instrumente:**
+- **Mindestmengen**: bestimmte planbare Eingriffe nur, wenn ein Haus sie oft genug macht (z. B. **Knie-TEP mindestens 50/Jahr**) — Idee: Übung verbessert Ergebnisse.
+- **Qualitätsbericht**: jährlich, öffentlich (Grundlage für Klinik-Vergleichsportale).
+- **Planungsrelevante Indikatoren**: Qualitätsergebnisse können die Krankenhausplanung der Länder beeinflussen.
+
+**Bezug Dokumentation:** QS lebt von der **Routinedokumentation** (ICD/OPS als Auslöser, QS-Bögen als Daten) → schlechte Kodierung = falsche Qualitätsergebnisse.
+
+Merksatz: § 135a = Pflicht, § 136 = G-BA macht Regeln, § 137 = Durchsetzung, § 137a = IQTIG wertet aus. Ablauf: QS-Filter → QS-Bogen → Auswertung → Auffälligkeit → Stellungnahme → Qualitätsbericht.
+
+*(Quelle: Kap. 5 Qualitätsmanagement und Kap. 12 — gesetzliche QS, Qualitätsbericht §137; heutige Paragrafenaufteilung, IQTIG statt AQUA und DeQS-RL als Allgemeinwissen aktualisiert.)*
+:::
 
 ## Vorgehen bei Planung und Entwicklung von Dokumentationssystemen
 

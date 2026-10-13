@@ -6,11 +6,76 @@
 
 Medizintechnik/radiologische Modalitäten.
 
+::: {.exam-question}
+Frage: Welche bildgebenden Modalitäten gibt es, nach welchem physikalischen Prinzip arbeiten sie, und was ist daran für die Medizininformatik relevant?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Modalität** = bildgebendes Verfahren bzw. Gerät. In DICOM hat jede ein **Kürzel**, das im Bild-Header steht (wichtig für PACS-Suche und Worklist).
+
+| Modalität | DICOM | Prinzip | Ionisierend? | Typische Anwendung |
+|---|---|---|---|---|
+| Projektionsröntgen | **CR / DX** | Röntgenstrahlen, Schwächung im Gewebe, 2D-Summationsbild | ja | Thorax, Fraktur |
+| Computertomographie | **CT** | rotierende Röntgenröhre, Schnittbilder aus vielen Projektionen (Rekonstruktion) | ja (hohe Dosis) | Trauma, Schlaganfall, Lungenembolie |
+| Magnetresonanztomographie | **MR** | starkes Magnetfeld + Radiowellen, Signal der Wasserstoffkerne | **nein** | Gehirn, Gelenke, Weichteile |
+| Sonographie | **US** | Ultraschall, Echo-Laufzeit | **nein** | Abdomen, Echo, FAST |
+| Angiographie / Durchleuchtung | **XA / RF** | Röntgen in Echtzeit, ggf. Kontrastmittel | ja | Herzkatheter, Intervention |
+| Mammographie | **MG** | Weichstrahl-Röntgen | ja | Screening |
+| Nuklearmedizin | **NM** (Szintigraphie, SPECT), **PT** (PET) | radioaktive Tracer, Messung der Strahlung aus dem Körper → **Funktion/Stoffwechsel** statt Anatomie | ja | Tumorsuche, Schilddrüse, Herzperfusion |
+| Endoskopie / Mikroskopie | **ES / SM** | Licht/Kamera, digitale Pathologie (Whole-Slide-Images) | nein | Gastroskopie, Histologie |
+
+**Für die Medizininformatik relevant:**
+- **Datenmengen**: Röntgenbild wenige MB, CT-Untersuchung schnell **hunderte bis tausende Schichten** (GB-Bereich), digitale Pathologie mehrere GB pro Schnitt → Speicher, Netzwerk, Archivierung (PACS, Kompression).
+- **Workflow**: Anforderung im KIS → **RIS** (Radiologie-Informationssystem) plant → **DICOM Modality Worklist** übermittelt Patientendaten ans Gerät (kein Abtippen, keine Verwechslung) → Bilder ins **PACS** → Befund zurück ins KIS (HL7). IHE-Profil **Scheduled Workflow**.
+- **Strahlenschutz**: Dosis jeder ionisierenden Untersuchung dokumentieren (Strahlenschutzgesetz/-verordnung), **Dosismanagementsysteme** werten DICOM-Dosisberichte (RDSR) aus; Aufbewahrung bei Kindern bis zum 28. Lebensjahr (Modul IV).
+- **Medizinprodukt**: Modalitäten und Bildverarbeitungssoftware (inkl. KI-Befundung) unterliegen der **MDR**.
+
+Merksatz: Röntgen/CT/Angio/Mammo/Nuklearmedizin = ionisierend; MRT und Ultraschall = nicht. Anatomie: Röntgen, CT, MRT, US; Funktion/Stoffwechsel: Nuklearmedizin (PET, SPECT).
+
+*(Quelle: Kap. 8 Bildverarbeitung, Kap. 14 Klinische Informationssysteme (RIS/PACS), Kap. 15 DICOM; Modalitätenübersicht und Dosismanagement als Allgemeinwissen ergänzt.)*
+:::
+
 ## Signalklassen
 
 ### Signalklassen
 
 Signalklassen (analog/diskret).
+
+::: {.exam-question}
+Frage: Welche Signalklassen gibt es (analog/diskret), wie wird aus einem analogen Biosignal ein digitales, und was besagt das Abtasttheorem?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+Ein Signal hat zwei Achsen: **Zeit** (x-Achse) und **Wert/Amplitude** (y-Achse). Jede kann **kontinuierlich** (beliebig fein) oder **diskret** (nur bestimmte Stufen) sein → 4 Signalklassen:
+
+| | **wertkontinuierlich** | **wertdiskret** |
+|---|---|---|
+| **zeitkontinuierlich** | **analog** — z. B. Spannung an der EKG-Elektrode | quantisiert, aber zeitlich lückenlos (selten, z. B. Schwellwert-Schalter) |
+| **zeitdiskret** | abgetastet — Messwerte nur zu Zeitpunkten, Wert noch beliebig genau | **digital** — z. B. EKG im Computer: Messwert alle 2 ms, gespeichert als ganze Zahl |
+
+**Digitalisierung = 2 Schritte** (Analog-Digital-Wandler):
+1. **Abtastung (Sampling)** → zeitdiskret: in festen Abständen messen. **Abtastrate** in Hz, z. B. EKG 500 Hz = 500 Messwerte pro Sekunde.
+2. **Quantisierung** → wertdiskret: jeden Messwert auf eine von endlich vielen Stufen runden. **Auflösung** in Bit, z. B. 12 Bit = 4.096 Stufen. Der Rundungsfehler heißt **Quantisierungsfehler/-rauschen**.
+
+**Abtasttheorem (Nyquist-Shannon):** Die Abtastrate muss **mindestens doppelt so hoch** sein wie die höchste im Signal enthaltene Frequenz: **f~Abtast~ ≥ 2 · f~max~**.
+- Sonst **Aliasing**: hohe Frequenzen erscheinen fälschlich als niedrige ("Geisterfrequenzen"). Bekanntes Bild: Wagenräder im Film, die sich scheinbar rückwärts drehen.
+- Gegenmittel: vor der Abtastung **Tiefpassfilter** (Anti-Aliasing-Filter), der zu hohe Frequenzen entfernt.
+- Beispiel: diagnostisches EKG enthält Anteile bis ca. 150 Hz → mindestens 300 Hz abtasten, in der Praxis 500–1.000 Hz (Reserve, z. B. für Schrittmacher-Spikes).
+
+**Weitere Einteilungen von Signalen:**
+- **deterministisch** (vorhersagbar, z. B. Sinus vom Funktionsgenerator) vs. **stochastisch** (zufällig, z. B. Rauschen, EEG weitgehend).
+- **periodisch** (wiederholt sich, z. B. EKG-Zyklen bei Sinusrhythmus) vs. **aperiodisch**.
+
+**Klinische Biosignale:** EKG, EEG, EMG, Pulsoxymetrie (Plethysmogramm), invasive Blutdruckkurve, Kapnographie — alle ursprünglich **analog**, im Monitor/PDMS **digital**.
+
+Merksatz: analog = zeit- **und** wertkontinuierlich; digital = zeit- **und** wertdiskret. Digitalisieren = abtasten (Zeit) + quantisieren (Wert). Nyquist: mindestens doppelt so schnell abtasten wie die höchste Frequenz.
+
+*(Quelle: Kap. 7 Biosignalverarbeitung — Abtasttheorem f~a~ ≥ 2·f~c~, Aliasing, Digitalisierung = Diskretisierung + Quantisierung; Kap. 8 Bildverarbeitung.)*
+:::
 
 ## Digitale Filter und Bildoperationen
 
@@ -18,14 +83,139 @@ Signalklassen (analog/diskret).
 
 Digitale Filter und Bildoperationen.
 
+::: {.exam-question}
+Frage: Welche digitalen Filter werden in der Biosignalverarbeitung eingesetzt, und welche Klassen von Bildoperationen gibt es (mit Beispielen)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Digitale Filter** = Rechenvorschrift, die bestimmte **Frequenzen** im digitalisierten Signal abschwächt oder durchlässt (früher Bauteile, heute Software im Monitor/PDMS).
+
+| Filter | lässt durch | entfernt | EKG-Beispiel |
+|---|---|---|---|
+| **Tiefpass** | niedrige Frequenzen | hohe (Rauschen) | Muskelzittern, hochfrequente Störungen glätten; Anti-Aliasing vor der Abtastung |
+| **Hochpass** | hohe Frequenzen | niedrige (langsame Drift) | **Grundlinienschwankung** durch Atmung/Bewegung (Baseline Wander, ca. < 0,5 Hz) |
+| **Bandpass** | ein Frequenzband | alles darüber und darunter | Monitor-EKG z. B. 0,5–40 Hz (ruhige Kurve), diagnostisches EKG 0,05–150 Hz |
+| **Bandsperre / Notch** | alles außer einer Frequenz | eine schmale Frequenz | **50-Hz-Netzbrummen** (Stromnetz) |
+
+- Einfachster Tiefpass: **gleitender Mittelwert** (jeder Wert = Mittel seiner Nachbarn).
+- Technisch: **FIR**-Filter (nur Eingangswerte, stabil) vs. **IIR**-Filter (rekursiv, mit Rückkopplung, effizienter).
+- Vorsicht: Filter **verändern das Signal**, z. B. kann ein zu starker Hochpass ST-Strecken verfälschen → falsche Ischämie-Beurteilung. Darum hat das diagnostische EKG einen breiteren Bandpass als das Monitor-EKG.
+
+**Bildoperationen** (Bild = Matrix aus Pixeln/Voxeln mit Grauwerten):
+
+| Klasse | Prinzip | Beispiele |
+|---|---|---|
+| **Punktoperationen** | neuer Grauwert hängt nur vom **selben Pixel** ab | **Fensterung** im CT (Hounsfield-Fenster: Lunge, Weichteil, Knochen), Helligkeit/Kontrast, Histogrammausgleich, **Schwellwert** (Binarisierung, z. B. Knochen > 300 HU) |
+| **Lokale Operationen** (Nachbarschaft, **Faltung** mit Filtermaske) | neuer Grauwert aus Pixel **+ Nachbarn** | **Glättung** (Mittelwert-, Gauß-Filter → Rauschen weg, aber unscharf), **Medianfilter** (entfernt Salz-und-Pfeffer-Rauschen, **erhält Kanten**), **Kantenfilter/Schärfung** (Sobel, Laplace) |
+| **Globale Operationen** | ganzes Bild geht ein | **Fourier-Transformation** (Bild im Frequenzraum; MRT-Rohdaten = k-Raum), Histogramm |
+| **Geometrische Operationen** | Pixel werden **verschoben** | Verschieben, Drehen, Skalieren, Verzerren; **Registrierung** = Bilder deckungsgleich machen (PET/CT-Fusion, Verlaufskontrolle) |
+| **Verknüpfung mehrerer Bilder** | Pixel zweier Bilder verrechnen | **Subtraktion** → DSA (digitale Subtraktionsangiographie: Bild mit minus ohne Kontrastmittel = nur Gefäße) |
+| **Morphologische Operationen** | Formveränderung im Binärbild | Erosion (schrumpfen), Dilatation (wachsen), Opening/Closing (kleine Artefakte/Löcher entfernen) |
+
+Analogie Filter ↔ Bild: **Tiefpass = Glätten/Weichzeichnen**, **Hochpass = Kanten/Schärfen** — hohe Frequenzen im Bild sind schnelle Grauwertwechsel, also Kanten und Rauschen.
+
+Merksatz: Tiefpass glättet, Hochpass entfernt Drift, Notch entfernt 50 Hz. Punktoperation = nur das Pixel selbst (CT-Fensterung), lokale Operation = Pixel + Nachbarn (Glätten, Median, Kanten), Subtraktion = DSA, Registrierung = Bildfusion.
+
+*(Quelle: Kap. 7 Biosignalverarbeitung (Filter), Kap. 8 Bildverarbeitung (Punkt-, lokale, globale Operationen); Monitor-/Diagnose-Bandbreiten und DSA als Allgemeinwissen ergänzt.)*
+:::
+
 ## Konturverfolgung und Formerkennung
 
 ### Konturverfolgung und Formerkennung
 
 Konturverfolgung und Formerkennung.
 
+::: {.exam-question}
+Frage: Wie werden Strukturen (Organe, Tumoren, Zellen) in medizinischen Bildern automatisch abgegrenzt und erkannt — was ist Segmentierung, Konturverfolgung und Formerkennung?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Typische Verarbeitungskette** (Mustererkennung):
+Bildaufnahme → **Vorverarbeitung** (Filter, Rauschen weg) → **Segmentierung** (Objekt vom Hintergrund trennen) → **Merkmalsextraktion** (Form messen) → **Klassifikation** (was ist es?) → Befund.
+
+**Segmentierung** = Bild in sinnvolle Regionen zerlegen ("welche Pixel gehören zur Leber?").
+
+| Verfahren | Prinzip | Beispiel |
+|---|---|---|
+| **Schwellwert** | alle Pixel über/unter Grauwert X | Knochen im CT (> ca. 300 HU) |
+| **Region Growing** | ab **Saatpunkt** Nachbarn mit ähnlichem Grauwert anlagern | Arzt klickt in Leberrundherd → Region wächst bis zum Rand |
+| **kantenbasiert** | Kantenfilter (Sobel) findet Grauwertsprünge | Organgrenze |
+| **Konturverfolgung** | ab einem Randpixel **Pixel für Pixel entlang der Grenze** laufen, bis Kontur geschlossen; Speicherung z. B. als **Kettencode** (Freeman: Richtung 0–7 je Schritt) | Umriss einer Zelle im Ausstrich |
+| **aktive Konturen (Snakes)** | grob gesetzte Kontur zieht sich wie ein Gummiband an die Kante | linker Ventrikel im Echo/MRT |
+| **atlas-/modellbasiert** | Vorlage eines Normalorgans wird ans Bild angepasst (Registrierung) | Risikoorgane in der Strahlentherapieplanung |
+| **KI / Deep Learning** | neuronales Netz (z. B. **U-Net**) lernt Segmentierung an Beispielen | Tumor-, Organsegmentierung heute Standard |
+
+**Formerkennung / Merkmalsextraktion** — das segmentierte Objekt wird vermessen:
+- **Fläche/Volumen**, **Umfang**, Durchmesser
+- **Rundheit/Kompaktheit** (z. B. Umfang² / Fläche; Kreis = minimal) — glatter runder Rundherd eher benigne, spikuliert/unregelmäßig eher maligne
+- **Exzentrizität** (wie länglich), Krümmung, Textur
+- **Hough-Transformation**: findet geometrische Grundformen (Linien, Kreise) auch bei lückenhaften Kanten
+
+**Klinische Anwendungen:**
+- **Ejektionsfraktion**: Kontur des linken Ventrikels enddiastolisch/endsystolisch → Volumina → EF
+- **Tumorvolumetrie** und Verlaufskontrolle (statt nur RECIST-Durchmesser)
+- **Konturierung** von Zielvolumen und Risikoorganen in der Strahlentherapie
+- **CAD** (Computer-Aided Detection): Lungenrundherde, Mikrokalk in der Mammographie
+- **Zellzählung/-klassifikation** in Hämatologie und digitaler Pathologie
+
+**Probleme:** Rauschen, **Partialvolumeneffekt** (Voxel enthält zwei Gewebe → unscharfe Grenze), lückenhafte Kanten, ähnliche Grauwerte benachbarter Organe (Leber/Milz) → oft **halbautomatisch** mit ärztlicher Korrektur. Software zur Diagnose = **Medizinprodukt (MDR)**.
+
+Merksatz: Erst segmentieren (was gehört zum Objekt?), dann Form messen (wie groß, wie rund?), dann klassifizieren (was ist es?). Konturverfolgung = Rand Pixel für Pixel ablaufen; Region Growing = vom Saatpunkt ausbreiten.
+
+*(Quelle: Kap. 8 Bildverarbeitung (Segmentierung, Merkmalsextraktion, Mustererkennung); Snakes, U-Net, klinische Beispiele als Allgemeinwissen ergänzt.)*
+:::
+
 ## DICOM-Format
 
 ### DICOM-Format
 
 DICOM-Format.
+
+::: {.exam-question}
+Frage: Was ist DICOM, wie ist eine DICOM-Datei aufgebaut, und was muss man beim Umgang damit beachten (Kompression, Anonymisierung)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**DICOM** = *Digital Imaging and Communications in Medicine* — internationaler Standard (NEMA, ISO 12052) für **Speicherung und Austausch medizinischer Bilder**. Ermöglicht, dass CT von Hersteller A im PACS von Hersteller B und am Befundplatz von Hersteller C angezeigt wird. DICOM ist **beides**: **Dateiformat** (hier) **und Kommunikationsprotokoll** (Netzwerkdienste → Modul VII).
+
+**Aufbau einer DICOM-Datei** — anders als JPG nicht "nur Bild", sondern **Bild + Metadaten in einer Datei**:
+
+| Teil | Inhalt |
+|---|---|
+| **Präambel + "DICM"** | 128 Byte + Kennung "DICM" → Datei als DICOM erkennbar |
+| **Header (Metadaten)** | Liste von **Datenelementen (Tags)**, z. B. Patientenname, ID, Geburtsdatum, Modalität, Untersuchungsdatum, Schichtdicke, Dosis, Gerät |
+| **Pixeldaten** | das eigentliche Bild (Tag 7FE0,0010), oft 12–16 Bit Grauwerte |
+
+**Datenelement (Tag)** = (Gruppe, Element) + Datentyp + Wert, z. B.:
+- **(0010,0010)** Patientenname → `Mustermann^Max`
+- **(0010,0020)** Patienten-ID
+- **(0008,0060)** Modalität → `CT`
+- Der Datentyp heißt **VR** (*Value Representation*), z. B. PN = Personenname, DA = Datum.
+
+**Informationsmodell (Hierarchie)** — wie die Akte im Archiv:
+**Patient → Study (Untersuchung) → Series (Serie) → Instance (Einzelbild)**
+- Beispiel: Max Mustermann → CT Thorax vom 12.10. → Serie "Lungenfenster 1 mm" → Schicht Nr. 143.
+- Jede Ebene hat eine weltweit eindeutige **UID** (Study/Series/SOP Instance UID).
+- **IOD** (*Information Object Definition*) legt fest, welche Tags ein bestimmter Bildtyp (CT-Bild, MR-Bild, Strukturierter Befund) enthalten muss.
+
+**Kompression** (festgelegt in der **Transfer Syntax**):
+- **verlustfrei** (lossless, z. B. JPEG-LS, JPEG 2000 lossless): Originalbild exakt wiederherstellbar → für Diagnostik/Archiv.
+- **verlustbehaftet** (lossy, z. B. JPEG): kleiner, aber Information verloren → nur wo fachlich vertretbar (z. B. Demo, Ansicht), Risiko übersehener Feinheiten (Mikrokalk!).
+
+**Weitere Inhalte im Standard:** Graustufen-Darstellung (**GSDF** für vergleichbare Befundmonitore), **Structured Reporting (SR)** inkl. Dosisbericht (RDSR), **Segmentierungs- und RT-Objekte** (Strahlentherapie-Konturen), **DICOMweb** (REST-Zugriff übers Web), Waveform-Objekte (z. B. EKG).
+
+**Datenschutz/Praxis:**
+- Patientendaten stehen **im Header**, nicht nur im Dateinamen → Weitergabe an Forschung/Kongress erfordert **Anonymisierung/Pseudonymisierung der Tags** (DICOM-Deidentifizierungsprofil) — Vorsicht: Namen können auch **ins Bild eingebrannt** sein (Burned-in Annotation, z. B. Ultraschall-Screenshots).
+- Patienten-CD/USB: DICOM + mitgelieferter Viewer (**DICOMDIR** = Inhaltsverzeichnis des Datenträgers).
+- **Konformitätserklärung (Conformance Statement)** des Herstellers beschreibt, welche DICOM-Teile ein Gerät unterstützt → vor Anschaffung prüfen.
+
+Merksatz: DICOM = Bild + Header in einer Datei; Header aus Tags (Gruppe, Element); Hierarchie Patient → Study → Series → Instance mit UIDs. Diagnostik verlustfrei komprimieren; vor Weitergabe Header **und** eingebrannte Texte anonymisieren.
+
+*(Quelle: Kap. 15 DICOM (Dateiformat, Informationsmodell, Tags); Kompression, DICOMweb, Deidentifizierung als Allgemeinwissen ergänzt. Netzwerkdienste (C-STORE, C-FIND, Worklist) → Modul VII.)*
+:::

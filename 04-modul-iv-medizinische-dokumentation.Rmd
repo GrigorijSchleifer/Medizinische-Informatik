@@ -100,11 +100,49 @@ Einordnung der wichtigsten Systeme:
 |---|---|---|---|---|
 | **ICD-10-GM** | ✅ | – | ✅ (mono-hierarchisch: genau ein Elternteil) | – |
 | **OPS** | ✅ | – | ✅ | – |
+| **DRG** | ✅ (**Patientenklassifikation**: Fälle nach ähnlichem **Ressourcenverbrauch** gruppiert) | – | nur flach (MDC → Basis-DRG → Schweregrad), keine medizinische "ist ein"-Hierarchie | – |
 | **SNOMED CT** | – | ✅ | ✅ (poly-hierarchisch) | ✅ |
 | **LOINC** | – | ✅ (Laboranalysen) | – (keine systematische Hierarchie) | – |
 | **MeSH** | – | Thesaurus | ✅ (poly-hierarchisch) | – |
 
 Kurz: **ICD = Klassifikation** (Schublade, keine formalen Beziehungen). **SNOMED CT = Nomenklatur + Ontologie** (Wörterbuch mit Beziehungen).
+
+**Bildlich: Taxonomie = Stammbaum, Ontologie = U-Bahn-Netz**
+
+*Taxonomie* — nur **senkrecht** ("ist ein"), klassisch **ein** Elternteil pro Begriff:
+
+```
+            Krankheit
+           /         \
+  Lungenkrankheit   Infektion
+        |               |
+    Pneumonie       Virusinfektion
+        |
+  virale Pneumonie            ← hängt nur unter "Lunge", kein Bezug zu "Infektion"
+```
+
+*Ontologie* — **senkrecht** ("ist ein", auch mehrere Eltern) **plus waagerecht** (weitere, **beschriftete** Beziehungen):
+
+```
+  Pneumonie      Virusinfektion          ← zwei Eltern (senkrecht)
+        \            /
+         ist ein   ist ein
+           \      /
+       virale Pneumonie ──Lokalisation──▶ Lunge     (waagerecht)
+               │
+               └──────Erreger───────────▶ Virus     (waagerecht)
+```
+
+→ Abfrage "alle Virusinfektionen" **und** "alle Lungenerkrankungen" finden die virale Pneumonie — der Computer **schlussfolgert** über die beschrifteten Linien.
+
+| Stufe (jede kann mehr) | kann | Beispiel |
+|---|---|---|
+| Vokabular / Nomenklatur | Begriffe festlegen | Fachbegriffsliste |
+| **Taxonomie** | + Hierarchie ("ist ein") | biologische Systematik, ICD-Baum |
+| Thesaurus | + Synonyme, verwandte Begriffe | **MeSH** |
+| **Ontologie** | + viele Beziehungsarten + formale Logik | **SNOMED CT** |
+
+Klinisch: Taxonomie = Organigramm der Klinik (jede Station hat **einen** Chef); Ontologie = Wissen des Oberarztes (virale Pneumonie *ist* Infektion, *sitzt* in der Lunge, *kommt* vom Virus → Isolation nötig).
 
 **Warum rechnet man mit der ICD ab und nicht mit SNOMED CT?** Beispiel: Pneumokokken-Pneumonie rechter Unterlappen → ICD **J13** (ein Kode) vs. SNOMED CT (Erreger + Lokalisation + Morphologie einzeln).
 - **Abrechnung braucht zählbare, endliche Schubladen**: jeder Fall in genau **eine** Klasse (Disjunktheit + Vollständigkeit) → nur so kann der DRG-Grouper eindeutig zuordnen und jeder Klasse ein Preis zugeordnet werden.
@@ -513,7 +551,7 @@ Sonderfälle: **A**-DRGs = Prä-MDC (Transplantation, Langzeitbeatmung), **9**xx
 - **Landesbasisfallwert**: Euro-Betrag pro Bewertungsrelation 1,0, je Bundesland verhandelt (einige tausend Euro).
 - **Grenzverweildauern**: unter der **unteren GVD** → Abschlag; über der **oberen GVD** → Zuschlag pro Tag.
 - **Zusatzentgelte** für teure Leistungen (bestimmte Medikamente, Implantate) — über OPS-Kodes ausgelöst.
-- Seit **2020**: Pflegepersonalkosten am Bett als eigenes **Pflegebudget** aus den DRGs ausgegliedert (aG-DRG).
+- Seit **2020**: Pflegepersonalkosten am Bett als eigenes **Pflegebudget** aus den DRGs ausgegliedert (aG-DRG). **Warum?** Mit der Fallpauschale konnten Kliniken am meisten bei der **Pflege** sparen (größter beeinflussbarer Kostenblock) → jahrelanger **Stellenabbau**, Überlastung, Gefahr für Patientensicherheit. Seit dem **Pflegepersonal-Stärkungsgesetz** werden die tatsächlichen Pflegepersonalkosten **krankenhausindividuell erstattet** (Selbstkostendeckung) → jede zusätzliche Pflegekraft wird refinanziert, Sparanreiz entfällt. Ergänzend: **Pflegepersonaluntergrenzen** je Station. Kritik: Abgrenzung "was ist Pflege?" schwierig, mehr Bürokratie.
 
 **Folgen für die Dokumentation:** Jede vergessene, aufwandsrelevante Nebendiagnose oder jeder fehlende OPS kann eine niedrigere DRG bedeuten → Kodierfachkräfte und Medizincontrolling; umgekehrt prüft der **Medizinische Dienst (MD)** auf Überkodierung ("Upcoding").
 
@@ -650,8 +688,80 @@ Merksatz: § 135a = Pflicht, § 136 = G-BA macht Regeln, § 137 = Durchsetzung, 
 
 Vorgehen bei Planung und Entwicklung von Dokumentationssystemen (z. B. medizinische Register, Krebsregister, Infektionsschutzmeldungen, freiwillige Qualitätssicherungssysteme, Archivsysteme, AMTS).
 
+::: {.exam-question}
+Frage: Wie plant man ein medizinisches Dokumentationssystem (z. B. ein Register), und welche Beispiele gibt es (Krebsregister, IfSG-Meldungen, freiwillige Register, Archiv, AMTS)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Vorgehen in Schritten** (Beispiel: Reanimationsregister einer Klinik/eines Rettungsdienstes):
+
+| Schritt | Was | Beispiel Reanimationsregister |
+|---|---|---|
+| 1. **Ziel/Fragestellung** | Wofür? Wer nutzt die Daten? | Überlebensrate nach präklinischer Reanimation verbessern, Vergleich mit anderen Standorten |
+| 2. **Datensatz festlegen** | **Minimal-/Kerndatensatz**: "so wenig wie möglich, so viel wie nötig" | Zeitpunkt Kollaps, Laienreanimation ja/nein, erster Rhythmus, ROSC, Entlassung lebend |
+| 3. **Merkmalskatalog** | jedes Merkmal mit **Definition, Ausprägungen, Skalenniveau**, Pflicht/optional | "erster Rhythmus": VF / pVT / PEA / Asystolie (nominal) |
+| 4. **Standards nutzen** | etablierte Kataloge/Terminologien → Vergleichbarkeit | **Utstein-Kriterien** (internationaler Reanimations-Standard), ICD, SNOMED CT, LOINC |
+| 5. **Datenquellen + Erfassung** | Primärerfassung (eigens) oder Sekundärnutzung (aus KIS/Einsatzprotokoll übernehmen) | Übernahme aus dem digitalen Einsatzprotokoll statt doppeltem Eintippen |
+| 6. **Datenschutz** | Rechtsgrundlage (Gesetz oder Einwilligung), **Pseudonymisierung**, Zugriffsrechte, Ethikvotum | pseudonymisierte Meldung an das Register |
+| 7. **Datenqualität** | Pflichtfelder, **Plausibilitätsprüfungen**, Vollständigkeit, Schulung | Warnung bei "Entlassung lebend" vor "Kollaps-Zeit" |
+| 8. **Pilotierung → Betrieb → Evaluation** | testen, anpassen, regelmäßig auswerten und rückmelden | Jahresbericht an alle Standorte |
+
+**Beispiele aus dem Curriculum:**
+- **Krebsregister**: **klinische Krebsregister** der Länder (§ 65c SGB V) für Qualität der Versorgung + epidemiologische Auswertung; Zusammenführung im **Zentrum für Krebsregisterdaten (ZfKD)** am RKI. **Meldepflicht** für Ärzte (Diagnose, Therapie, Verlauf) — Meldungen werden vergütet. Kodiert mit **ICD-10, ICD-O-3, TNM**.
+- **Infektionsschutzmeldungen (IfSG)**: **§ 6 IfSG** — Arzt meldet bestimmte **Krankheiten** (z. B. Masern, Meningokokken-Meningitis) namentlich **innerhalb von 24 h** ans Gesundheitsamt; **§ 7 IfSG** — Labor meldet **Erregernachweise**. Elektronisch über **DEMIS** (Deutsches Elektronisches Melde- und Informationssystem für den Infektionsschutz).
+- **Freiwillige QS-Register** (Fachgesellschaften): z. B. **Deutsches Reanimationsregister**, **TraumaRegister DGU**, Endoprothesenregister — Teilnahme freiwillig, Nutzen: Benchmarking.
+- **Archivsysteme**: **revisionssichere** Langzeitarchivierung der Akte (10–30 Jahre, s. Punkt 1); Papierakten **ersetzend scannen** nur nach festgelegtem Verfahren (BSI-Richtlinie **TR-RESISCAN**), damit der Scan den Beweiswert behält.
+- **AMTS-Systeme** (Arzneimitteltherapiesicherheit): elektronische Verordnung mit **Wechselwirkungs-, Dosis-, Allergie- und Nierenfunktionsprüfung**; Grundlage: strukturierte Medikationsdaten (ATC, BMP, ePA-Medikationsliste).
+
+Merksatz: Ziel → Kerndatensatz → Merkmalskatalog → Standards → Erfassung → Datenschutz → Datenqualität → Pilot. Krebsregister = Meldepflicht + ICD-O/TNM; IfSG = 24 h ans Gesundheitsamt über DEMIS.
+
+*(Quelle: Kap. 12 Medizinische Dokumentation und Kap. 5 Qualitätsmanagement — Dokumentationsziele, Register, Qualitätssicherung; Utstein, DEMIS, TR-RESISCAN, § 65c SGB V als Allgemeinwissen ergänzt.)*
+:::
+
 ## Big Data und Public Health
 
 ### Big Data und Public Health
 
 Big Data und Public Health.
+
+::: {.exam-question}
+Frage: Was versteht man unter Big Data im Gesundheitswesen, wie wird es für Public Health genutzt, und welche Risiken gibt es?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Big Data** = Datenmengen, die zu groß, zu schnell oder zu vielfältig für klassische Auswertung sind — beschrieben durch die **5 V**:
+
+| V | Bedeutung | Gesundheits-Beispiel |
+|---|---|---|
+| **Volume** | Menge | Abrechnungsdaten von 74 Mio. GKV-Versicherten |
+| **Velocity** | Geschwindigkeit | minütliche Vitaldaten aus PDMS, Wearables |
+| **Variety** | Vielfalt | Freitext, Bilder, Labor, Genom, Abrechnung |
+| **Veracity** | Verlässlichkeit | Routinedaten für Abrechnung kodiert, nicht für Forschung |
+| **Value** | Nutzen | nur relevant, wenn daraus bessere Entscheidungen folgen |
+
+**Datenquellen:** Abrechnungs-/Routinedaten der Kassen, KIS/ePA, Register, Omics, Wearables/Apps, Labormeldungen, Abwasser, Internet-Suchanfragen.
+
+**Nutzung für Public Health:**
+- **Surveillance** (Überwachung des Infektionsgeschehens): IfSG-Meldungen über DEMIS, **Abwassermonitoring** (SARS-CoV-2, Influenza), **syndromische Surveillance** aus Notaufnahmedaten (z. B. AKTIN-Notaufnahmeregister: Anstieg "Atemwegsinfekte" sichtbar, bevor Laborbefunde da sind).
+- **Versorgungsforschung**: Über-/Unterversorgung, regionale Unterschiede (z. B. Häufigkeit von Knie-TEPs pro Landkreis).
+- **Pharmakovigilanz**: seltene Nebenwirkungen in Millionen Verordnungen erkennen.
+- **Prävention und Risikovorhersage**: z. B. Hitzewarnsysteme, Vorhersage von Krankenhausauslastung.
+- **Infrastruktur in Deutschland**: Forschungsdatenzentrum Gesundheit (BfArM, GDNG), MII/Datenintegrationszentren (Modul III), künftig **European Health Data Space (EHDS)**.
+
+**Risiken und Grenzen (prüfungsrelevant):**
+- **Garbage in, garbage out**: Routinedaten sind für die Abrechnung kodiert → Kodierfehler, Upcoding, fehlende klinische Details.
+- **Korrelation ≠ Kausalität**, **Confounding** (→ Modul III, Adjustierung).
+- **Selektionsbias**: Wearable-Nutzer sind jünger, gesünder, wohlhabender als die Bevölkerung.
+- **Viele Tests → viele Zufallsbefunde** (multiples Testen): in riesigen Datensätzen wird fast alles "signifikant".
+- **Lehrbeispiel Google Flu Trends**: Grippe-Vorhersage aus Suchanfragen überschätzte die Grippewelle 2013 um rund das Doppelte — Suchverhalten änderte sich durch Medienberichte.
+- **Datenschutz**: Re-Identifikation durch Verknüpfung (Linkage); daher Pseudonymisierung, Zugriff nur in kontrollierten Umgebungen (Modul II).
+- **Algorithmischer Bias**: Modelle, die mit Daten einer Gruppe trainiert wurden, funktionieren für andere schlechter.
+
+Merksatz: Big Data = 5 V. Für Public Health: Surveillance, Versorgungsforschung, Pharmakovigilanz. Große Datenmenge ersetzt kein gutes Studiendesign — Bias und Confounding bleiben.
+
+*(Quelle: Curriculum / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt.)*
+:::

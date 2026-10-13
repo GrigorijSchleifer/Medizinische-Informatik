@@ -13,6 +13,24 @@ p {
   color: #7a4d00 !important;
 }
 
+/* Breite Tabellen horizontal scrollbar machen (gitbook setzt sonst display: table,
+   dann greift overflow nicht und die Tabelle wird abgeschnitten) */
+.book .book-body .page-wrapper .page-inner section.normal table {
+  display: block !important;
+  overflow-x: auto !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Inhaltsverzeichnis links: lange Kapitelnamen umbrechen statt mit "…" abschneiden */
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
+  white-space: normal !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+  line-height: 1.3 !important;
+}
+
 .page-inner .exam-answer,
 .exam-answer {
   margin-left: 2em !important;

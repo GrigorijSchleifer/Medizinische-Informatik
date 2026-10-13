@@ -6,17 +6,193 @@
 
 Entscheidungsunterstützung und Zugriff auf medizinisches Wissen.
 
+::: {.exam-question}
+Frage: Was ist ein klinisches Entscheidungsunterstützungssystem (CDSS), wie unterscheidet es sich vom reinen Wissenszugriff, wie ist es aufgebaut, und welche Probleme gibt es?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Zwei Arten, Wissen an den Arzt zu bringen:**
+
+| | **passiver Wissenszugriff** ("Pull") | **aktive Entscheidungsunterstützung** ("Push") |
+|---|---|---|
+| Wer startet? | Arzt sucht selbst | System meldet sich von selbst |
+| Bezug | allgemeines Wissen | **patientenspezifisch** (nutzt Daten aus KIS/Labor/Medikation) |
+| Beispiele | PubMed/MEDLINE (MeSH), Cochrane Library, **AWMF-Leitlinien**, UpToDate/AMBOSS, Fachinformation, Embryotox | Warnung "Kalium 6,2 + Spironolacton", Dosisanpassung bei GFR 25, Sepsis-Score-Alarm, Impf-Erinnerung |
+| Brücke | **Infobutton** (HL7-Standard): Klick im KIS neben Diagnose/Medikament öffnet passende Wissensquelle **mit Kontext** | |
+
+**CDSS** (*Clinical Decision Support System*) = Software, die **patientenbezogene Daten mit medizinischem Wissen verknüpft**, um eine konkrete Entscheidung zu unterstützen — der **Arzt entscheidet**, das System berät.
+
+**Funktionen (Beispiele):**
+- **Alarme/Warnungen**: Interaktionen, Allergien, kritische Laborwerte
+- **Erinnerungen**: fällige Kontrollen, Vorsorge, Thromboseprophylaxe
+- **Diagnoseunterstützung**: Differenzialdiagnosen, Scores (CHA₂DS₂-VASc, Wells), Bild-KI (Rundherd-CAD)
+- **Therapieunterstützung**: Dosierung, **Order Sets** (Standard-Anordnungspakete), Leitlinien-Pfade
+- **Dokumentationshilfe**: Checklisten, Plausibilitätsprüfung
+
+**Wissensbasiert vs. datengetrieben:**
+
+| | **wissensbasiert** (klassisch, "Expertensystem") | **datengetrieben** (maschinelles Lernen/KI) |
+|---|---|---|
+| Wissen kommt von | Experten, Leitlinien → explizit formuliert | wird aus vielen Falldaten **gelernt** |
+| Form | **Regeln** WENN–DANN, Entscheidungsbäume, **Bayes** (Wahrscheinlichkeiten) | Modelle (Regression, neuronale Netze) |
+| Erklärbar? | **ja** ("Warnung, weil GFR < 30 UND Metformin") | oft **Black Box** → Explainable AI |
+| Beispiel | **MYCIN** (1970er, Antibiotikawahl, Regeln mit Sicherheitsfaktoren), **Arden Syntax** (HL7-Standard für Regeln, "Medical Logic Modules") | Sepsis-Vorhersage, Hautkrebs-Erkennung, Retinopathie-Screening |
+
+**Aufbau eines klassischen Expertensystems:**
+- **Wissensbasis** — die Regeln/Fakten ("Lehrbuch")
+- **Inferenzmaschine** — wendet die Regeln auf den Patienten an ("das Denken")
+- **Erklärungskomponente** — begründet den Vorschlag
+- **Dialog-/Benutzerschnittstelle** und **Wissenserwerbskomponente** (Pflege der Regeln)
+
+**Bayes als Grundlage diagnostischer Unterstützung:** Vortestwahrscheinlichkeit (Prävalenz) + Testergebnis → Nachtestwahrscheinlichkeit — genau das Prinzip von PPV/NPV (Modul III). Historisches Beispiel: de Dombals Bauchschmerz-System (Leeds, 1970er).
+
+**Probleme:**
+- **Alert Fatigue**: zu viele, zu unspezifische Warnungen → werden weggeklickt (oft > 90 % übergangen), auch die wichtigen.
+- **Wissenspflege**: Regeln veralten, neue Leitlinien müssen eingepflegt werden.
+- **Integration**: muss im Workflow (KIS, Verordnung) erscheinen, nicht in einem Extra-Programm.
+- **Datenqualität**: falsche/fehlende Daten → falsche Ratschläge ("garbage in, garbage out").
+- **Haftung/Regulierung**: CDSS mit diagnostischer/therapeutischer Zweckbestimmung = **Medizinprodukt (MDR)**, KI zusätzlich **EU AI Act** (Hochrisiko). Verantwortung bleibt beim Arzt.
+- **Automation Bias**: blindes Vertrauen in den Vorschlag.
+
+**"Five Rights" der CDS:** die **richtige Information** an die **richtige Person** im **richtigen Format** über den **richtigen Kanal** zum **richtigen Zeitpunkt** im Workflow.
+
+Merksatz: Wissenszugriff = Arzt sucht (Pull, allgemein); CDSS = System meldet sich (Push, patientenspezifisch). Wissensbasiert = Regeln, erklärbar (MYCIN, Arden Syntax); datengetrieben = gelernt, oft Black Box. Größtes Praxisproblem: Alert Fatigue.
+
+*(Quelle: Kap. 9 Entscheidungsunterstützung (Expertensysteme, wissensbasierte Systeme, MYCIN, Arden Syntax, Bayes); Infobutton, Five Rights, Alert Fatigue, AI Act als Allgemeinwissen ergänzt.)*
+:::
+
 ## Wissensbasen und Systeme zur Therapiesicherheit
 
 ### Wissensbasen und Systeme zur Therapiesicherheit
 
 Wissensbasen und Systeme zur Therapiesicherheit (z. B. Wissensmanagement, Evidence Based Medicine).
 
+::: {.exam-question}
+Frage: Welche IT-Systeme und Wissensbasen erhöhen die Arzneimitteltherapiesicherheit (AMTS)? Was ist Evidence Based Medicine (EbM), und was bedeutet Wissensmanagement im Krankenhaus?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**1. Therapiesicherheit / AMTS** — Medikationsfehler passieren an jeder Stelle des **Medikationsprozesses**: Verordnung → Übertragung → Stellen/Richten → Gabe → Überwachung. Klassische Fehler: unleserliche Handschrift, Übertragungsfehler (Kurve → Pflege), falsche Dosis bei Niereninsuffizienz, übersehene Interaktion/Allergie.
+
+| System | was es tut | Beispiel |
+|---|---|---|
+| **Arzneimittel-Wissensbasis** | strukturierte Daten zu Präparaten, Wirkstoffen, Dosierungen, Interaktionen, Kontraindikationen | **ABDA-Datenbank** (ABDATA), ifap, Fachinformation |
+| **CPOE** (*Computerized Physician Order Entry*) | **elektronische Verordnung** statt Papier — lesbar, vollständig, prüfbar | Arzt verordnet im KIS/PDMS, nicht auf der Kurve |
+| **AMTS-Prüfung / CDSS** in der CPOE | automatische Checks beim Verordnen | **Interaktion** (Clarithromycin + Simvastatin), **Allergie**, **Doppelverordnung**, **Dosis nach GFR**, Höchstdosis |
+| Spezielle Wissensquellen | Zielgruppen-Wissen | **PRISCUS-Liste** (potenziell inadäquat für Ältere), **Embryotox** (Schwangerschaft/Stillzeit), Dosierung Niereninsuffizienz |
+| **Closed Loop Medication Management** | geschlossener Kreis Verordnung → Apotheke → Gabe, alles elektronisch | **Unit-Dose** (Einzelverpackung je Patient) + **Barcode-Scan** am Bett (richtiger Patient, richtiges Medikament) |
+| **Medikationsplan** | aktuelle Medikation sektorübergreifend | bundeseinheitlicher Medikationsplan (BMP), **eMP** in der ePA |
+
+"**5-R-Regel**" der Medikamentengabe: richtiger **Patient**, richtiges **Medikament**, richtige **Dosis**, richtige **Applikationsform**, richtiger **Zeitpunkt** — Barcode/Closed Loop prüft genau das.
+
+**2. Evidence Based Medicine (EbM)** — Definition nach **Sackett**: gewissenhafter, ausdrücklicher und vernünftiger Gebrauch der **besten verfügbaren externen Evidenz** + **klinische Expertise** + **Patientenpräferenzen**.
+
+**5 Schritte (5 A):**
+1. **Ask** — beantwortbare Frage nach **PICO**: **P**atient, **I**ntervention, **C**omparison, **O**utcome. *Beispiel: Ältere mit VHF (P) — DOAK (I) vs. Phenprocoumon (C) — Blutungen (O)?*
+2. **Acquire** — Literatursuche (PubMed/MeSH, Cochrane, Leitlinien)
+3. **Appraise** — kritische Bewertung (Studiendesign, Bias, Effektmaße, KI)
+4. **Apply** — auf den Patienten anwenden
+5. **Assess** — Ergebnis überprüfen
+
+**Evidenzpyramide** (oben = stärkste Evidenz):
+
+| Rang | Studientyp | Prinzip | Beispiel | Schwäche |
+|---|---|---|---|---|
+| 1 | **Systematischer Review / Metaanalyse** von RCTs (z. B. Cochrane) | alle guten RCTs suchen und **zusammenrechnen** | alle DOAK-vs.-Marcumar-Studien gepoolt | nur so gut wie die eingeschlossenen Studien |
+| 2 | **RCT** (randomisierte kontrollierte Studie) | Zuteilung per **Los** → Intervention vs. Kontrolle | Apixaban vs. Warfarin | teuer, "ideale" Patienten |
+| 3 | **Kohortenstudie** | Exponierte vs. Nicht-Exponierte **vorwärts** beobachten | Raucher vs. Nichtraucher 20 Jahre → Lungenkrebs? | **Confounder** (Raucher trinken evtl. auch mehr) |
+| 4 | **Fall-Kontroll-Studie** | Kranke vs. Gesunde, **rückwärts** nach Exposition fragen | 100 Lungenkrebs vs. 100 Gesunde: wer rauchte? | **Recall Bias**; nur **OR** berechenbar |
+| 5 | Fallserie, Fallbericht | einzelne Fälle beschreiben | 5 Sinusvenenthrombosen nach Impfstoff X | keine Vergleichsgruppe |
+| 6 | Expertenmeinung | Erfahrung | "machen wir seit 30 Jahren so" | subjektiv |
+
+**Warum RCT so weit oben?** Die **Randomisierung** verteilt alle Störgrößen — auch unbekannte — gleichmäßig auf beide Gruppen → Unterschied im Outcome kommt wirklich von der Intervention. Bezug Statistik: Kohorte/RCT → **RR**; Fall-Kontroll → nur **OR** (Anzahl Kranker selbst festgelegt).
+
+**Leitlinien in Deutschland (AWMF** = Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften) — zwei Kriterien: systematische **Evidenz**recherche? formaler **Konsens**?
+
+| Stufe | Evidenz systematisch | Konsens formal | Bild |
+|---|---|---|---|
+| **S1** | ❌ | ❌ | Expertengruppe, Handlungsempfehlung |
+| **S2k** | ❌ | ✅ (**k** = Konsens) | Fachgesellschaften stimmen formal ab |
+| **S2e** | ✅ (**e** = Evidenz) | ❌ | Literatur systematisch ausgewertet |
+| **S3** | ✅ | ✅ | beides — höchste Stufe (z. B. S3-Leitlinie Sepsis, Nationale VersorgungsLeitlinien NVL) |
+
+Prüfungsfalle: **Leitlinie** = Empfehlung/Entscheidungs**korridor** (begründetes Abweichen erlaubt) ≠ **Richtlinie** = verbindlich (z. B. G-BA).
+
+**3. Wissensmanagement** = Wissen in der Organisation **erfassen, speichern, verteilen, nutzen**.
+- **explizites Wissen** — aufgeschrieben: SOPs, Leitlinien, Behandlungspfade, Intranet-Wiki, Dosierungstabellen.
+- **implizites Wissen** (tacit) — im Kopf erfahrener Mitarbeiter ("der Oberarzt weiß, wie man hier punktiert") → geht bei Personalwechsel verloren, wenn nicht in explizites Wissen überführt (Einarbeitung, Mentoring, SOPs).
+- Werkzeuge: Dokumentenmanagement mit Versionierung, Behandlungspfade (Clinical Pathways), **CIRS** (*Critical Incident Reporting System*, anonymes Melden von Beinahe-Fehlern → aus Fehlern lernen), Fallkonferenzen/M&M-Konferenzen.
+
+Merksatz: AMTS-IT = Wissensbasis (ABDA) + elektronische Verordnung (CPOE) mit automatischer Prüfung + Closed Loop (Unit-Dose, Barcode). EbM = Evidenz + Erfahrung + Patientenwunsch; PICO → suchen → bewerten → anwenden → prüfen; Metaanalyse von RCTs ganz oben, S3 = beste Leitlinie.
+
+*(Quelle: Kap. 9 Entscheidungsunterstützung (Wissensbasen), Kap. 10 Evidenzbasierte Medizin; AMTS/Closed Loop, PRISCUS, AWMF-Klassen und CIRS als Allgemeinwissen ergänzt.)*
+:::
+
 ## Systematische evidenzbasierte Bewertung
 
 ### Systematische evidenzbasierte Bewertung
 
 Systematische evidenzbasierte Bewertung (z. B. Health Technology Assessment [HTA]).
+
+::: {.exam-question}
+Frage: Was ist Health Technology Assessment (HTA), welche Aspekte werden bewertet, und wer macht das in Deutschland (IQWiG, G-BA, AMNOG, DiGA)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**HTA** (*Health Technology Assessment*, Technologiefolgenabschätzung im Gesundheitswesen) = **systematische, evidenzbasierte Bewertung** einer Gesundheitstechnologie, um **Entscheidungen auf Systemebene** zu unterstützen (Erstattung, Preis, Aufnahme in den Leistungskatalog).
+
+- **"Technologie"** ist weit gefasst: Arzneimittel, Medizinprodukte, Operationsverfahren, Diagnostik, Screening-Programme, **IT/Apps (DiGA)**, Organisationsformen.
+- Unterschied zur **EbM**: EbM = Entscheidung für **den einzelnen Patienten**; HTA = Entscheidung für **die Bevölkerung/das Gesundheitssystem** ("Soll die GKV das bezahlen?"). Methoden sind dieselben (PICO, systematische Suche, Bewertung, Metaanalyse).
+
+**Bewertete Aspekte (Domänen, EUnetHTA Core Model):**
+
+| Domäne | Frage | Beispiel Mammographie-Screening |
+|---|---|---|
+| **Wirksamkeit/Nutzen** | Bringt es patientenrelevant etwas? | weniger Brustkrebstodesfälle? |
+| **Sicherheit** | Welche Schäden? | Strahlung, Überdiagnosen, falsch positive Befunde |
+| **Wirtschaftlichkeit** | Kosten im Verhältnis zum Nutzen? | Kosten pro gewonnenem Lebensjahr |
+| **Ethik** | gerecht, zumutbar? | Angst durch Fehlalarme |
+| **Organisation** | Was ändert sich im Versorgungsablauf? | Screening-Einheiten, Einladungssystem |
+| **Recht / Soziales** | Zugang, Datenschutz, Akzeptanz | Einladung aus Melderegister |
+
+**Patientenrelevante Endpunkte vs. Surrogatparameter** (Prüfungsklassiker):
+- **patientenrelevant**: **Mortalität, Morbidität** (Herzinfarkt, Schlaganfall, Amputation), **Lebensqualität**, Nebenwirkungen.
+- **Surrogat** (Ersatzmesswert): HbA1c, LDL, Blutdruck, Tumorgröße — leichter/schneller messbar, aber **nicht automatisch** = Nutzen (Beispiel: manche Antidiabetika senkten HbA1c, aber nicht Herzinfarkte). HTA-Agenturen akzeptieren Surrogate nur, wenn sie validiert sind.
+
+**Gesundheitsökonomische Bewertung:**
+- Kosten-Effektivität: **ICER** (*inkrementelles Kosten-Effektivitäts-Verhältnis*) = Mehrkosten / Mehrnutzen gegenüber Standard.
+- **QALY** (*Quality-Adjusted Life Year*) = Lebensjahr × Lebensqualität (0 = tot, 1 = volle Gesundheit); z. B. 2 Jahre bei 0,5 = 1 QALY. International (z. B. UK/NICE) mit Zahlungsschwelle; in Deutschland **keine feste QALY-Schwelle**, IQWiG nutzt die **Effizienzgrenze**.
+
+**Akteure in Deutschland:**
+
+| Institution | Rolle |
+|---|---|
+| **G-BA** (Gemeinsamer Bundesausschuss) | **entscheidet**, was die GKV bezahlt (Richtlinien, verbindlich) |
+| **IQWiG** (Institut für Qualität und Wirtschaftlichkeit im Gesundheitswesen) | **bewertet** Nutzen im Auftrag des G-BA (Berichte, Dossierbewertungen), gibt Gesundheitsinformationen heraus |
+| **IQTIG** | Qualitätssicherung (Modul IV) — **nicht** HTA, Abgrenzung beachten |
+| **BfArM** | Zulassung/DiGA-Verzeichnis |
+| **GKV-Spitzenverband** | verhandelt Preise |
+
+**AMNOG** (*Arzneimittelmarktneuordnungsgesetz*, 2011) — **frühe Nutzenbewertung** neuer Arzneimittel:
+1. Hersteller reicht bei Markteintritt **Dossier** ein.
+2. **IQWiG** bewertet den **Zusatznutzen** gegenüber der **zweckmäßigen Vergleichstherapie**.
+3. **G-BA** beschließt: Zusatznutzen *erheblich / beträchtlich / gering / nicht quantifizierbar / nicht belegt / geringer*.
+4. Danach **Preisverhandlung** Hersteller ↔ GKV-Spitzenverband (Erstattungsbetrag) — kein Zusatznutzen → Preis wie Vergleichstherapie.
+
+**DiGA** (*Digitale Gesundheitsanwendungen*, "App auf Rezept", DVG 2019): **BfArM-Fast-Track** — Prüfung von Sicherheit, Datenschutz, Interoperabilität; **positiver Versorgungseffekt** muss (ggf. nach 12–24 Monaten Erprobung) belegt werden → Aufnahme ins **DiGA-Verzeichnis**.
+
+**EU:** **EU-HTA-Verordnung** (2021/2282), seit **Januar 2025** gemeinsame klinische Bewertung (*Joint Clinical Assessment*) — zunächst für **Onkologika und ATMP** (Gen-/Zelltherapien), später ausgeweitet. Wirtschaftliche Bewertung/Preis bleibt national.
+
+Merksatz: HTA = EbM auf Systemebene ("Soll die Kasse das zahlen?") — bewertet Nutzen, Schaden, Kosten, Ethik, Organisation. IQWiG **bewertet**, G-BA **entscheidet**, GKV-SV **verhandelt den Preis** (AMNOG). Patientenrelevant = Tod, Krankheit, Lebensqualität — nicht Laborwerte.
+
+*(Quelle: Kap. 10 Evidenzbasierte Medizin/HTA; AMNOG, DiGA, EU-HTA-Verordnung, QALY/Effizienzgrenze als Allgemeinwissen ergänzt.)*
+:::
 
 ## Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
 

@@ -196,21 +196,64 @@ Merksatz: HTA = EbM auf Systemebene ("Soll die Kasse das zahlen?") — bewertet 
 
 ## Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
 
-### Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen regelbasierten (rule-based) und ML-basierten Decision-Support-Systemen, und was bedeutet "Präzisionsmedizin" am Beispiel der Krebstherapie?
+:::
 
-Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie.
+::: {.exam-answer}
+**Antwort:**
+
+**Rule-based (regelbasiert)**: feste "Wenn-Dann"-Regeln, von Experten vorprogrammiert — z. B. "wenn Serum-Kalium > 6,0 mmol/l → Alarm". Vorteil: **nachvollziehbar/transparent**, jede Entscheidung lässt sich auf eine Regel zurückführen. Nachteil: **starr** — Fälle außerhalb der vordefinierten Regeln werden nicht erkannt, Pflege der Regelbasis wird mit wachsender Komplexität aufwendig.
+
+**ML-based (lernend)**: das System lernt Muster selbst aus Trainingsdaten, statt fest programmierter Regeln — z. B. erkennt ein Modell Hautkrebs auf Fotos oder Lungenrundherde auf CT-Bildern, trainiert an tausenden gelabelten Beispielen. Vorteil: oft **präziser**, erkennt auch Muster, die kein Mensch explizit als Regel formuliert hätte. Nachteil: häufig eine **"Black Box"** — nicht immer nachvollziehbar, *warum* genau diese Entscheidung getroffen wurde (relevant z. B. für Haftungsfragen, Nachvollziehbarkeit gegenüber dem Patienten).
+
+**Präzisionsmedizin**: Therapie wird nach dem **individuellen molekularen/genetischen Profil** des Patienten ausgewählt, statt nach einer Einheits-Behandlung für alle Patienten mit derselben Diagnose.
+
+Beispiel Krebstherapie: der Tumor wird genetisch sequenziert. Findet sich z. B. eine **EGFR**- oder **BRAF**-Mutation, kann ein **zielgerichtetes Medikament** (targeted therapy) gegeben werden, das genau auf diese Mutation wirkt — statt einer unspezifischen Standard-Chemotherapie. Diese molekulare Information (welche Mutation liegt vor) ist oft selbst das Ergebnis einer ML-gestützten Auswertung großer Genom-/Bilddatensätze.
+
+**Zusammenhang**: KI/ML liefert in der Präzisionsmedizin häufig die Grundlage (Mustererkennung in Genom-/Bild-/Laten-Daten), auf der dann die individualisierte Therapieentscheidung aufbaut.
+
+Merksatz: Rule-based = nachvollziehbar, aber starr. ML-based = flexibel/präzise, aber Black-Box. Präzisionsmedizin = Therapie nach Molekülprofil (z. B. EGFR/BRAF), nicht nach Durchschnittspatient.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, KI/Präzisionsmedizin in dieser Form noch nicht etabliert) — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
 
 ## Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse
 
-### Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse
+::: {.exam-question}
+Frage: Was ist der Unterschied zwischen Vorwärts- und Rückwärtsverkettung (forward/backward chaining) bei wissensbasierten Beratungssystemen?
+:::
 
-Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse (Schlussfolgerungsverfahren).
+::: {.exam-answer}
+**Antwort:**
+
+- **Vorwärtsverkettung (forward chaining, datengetrieben)**: das System startet mit den vorhandenen Fakten (Symptome, Laborwerte) und wendet Regeln schrittweise vorwärts an, bis eine Schlussfolgerung (Diagnose-/Therapievorschlag) entsteht. Klinik-Beispiel: Pflegekraft gibt Vitalwerte ein → System leitet daraus automatisch "Sepsis-Verdacht, Score X" ab.
+- **Rückwärtsverkettung (backward chaining, zielgetrieben)**: das System startet mit einer Hypothese (Ziel) und fragt rückwärts gezielt nach den Fakten, die diese Hypothese stützen oder widerlegen würden. Klinik-Beispiel: System prüft Hypothese "Patient hat Sepsis" und fragt gezielt nach den dafür nötigen Werten (Laktat, Blutkultur), statt alle verfügbaren Daten durchzugehen.
+
+Merksatz: Vorwärts = "was folgt aus den Daten, die ich habe?" (datengetrieben). Rückwärts = "welche Daten brauche ich, um diese Hypothese zu prüfen?" (zielgetrieben). Beide bauen auf derselben Wissens-/Regelbasis auf (siehe rule-based Systeme) — unterscheiden sich nur in der Suchrichtung.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen, klassische KI-Inferenzverfahren aus Expertensystemen.)*
+:::
 
 ## IT-gestütztes Workflowmanagement und Clinical Pathways
 
-### IT-gestütztes Workflowmanagement und Clinical Pathways
+::: {.exam-question}
+Frage: Was ist ein Clinical Pathway, und wie unterstützt IT-Workflowmanagement seine Umsetzung im Klinikalltag?
+:::
 
-IT-gestütztes Workflowmanagement und Clinical Pathways.
+::: {.exam-answer}
+**Antwort:**
+
+**Clinical Pathway** (klinischer Behandlungspfad): ein standardisierter, evidenzbasierter Ablaufplan für eine bestimmte Diagnose/Prozedur — legt fest, welche Schritte wann von wem erfolgen sollen (z. B. Hüft-TEP: präoperative Checkliste → OP-Tag → Tag 1 Mobilisation → Tag 3 Röntgenkontrolle → Entlassung Tag 5).
+
+**IT-gestütztes Workflowmanagement**: Software (oft eine Workflow-Engine im KIS, verknüpft mit BPMN-Prozessmodellen — siehe Modul I, Business Process Model and Notation: Start-/End-Event, Task, Gateway, Sequenzfluss, Swimlanes) bildet diesen Pfad digital ab — erinnert/prompt't automatisch die nächsten fälligen Schritte, markiert Abweichungen ("Variances") vom Standardpfad (z. B. Patient noch nicht mobilisiert an Tag 1 → System flaggt das), und dokumentiert den tatsächlichen Verlauf zur späteren Auswertung.
+
+**Nutzen**: reduziert Variabilität in der Versorgung, macht Abweichungen früh sichtbar, erleichtert Qualitätssicherung/Benchmarking zwischen Stationen.
+
+Merksatz: Clinical Pathway = der Plan (evidenzbasierter Soll-Ablauf). IT-Workflowmanagement = das Werkzeug, das diesen Plan im Alltag durchsetzt/überwacht und Abweichungen sichtbar macht.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
 
 ## Evaluation / Grundbegriffe (ergänzend)
 
@@ -220,11 +263,25 @@ Rule-based vs. ML-based Systeme.
 
 ### Alert fatigue
 
-Alert fatigue.
+::: {.exam-question}
+Frage: Was ist "Alert fatigue", und warum ist das ein zentrales Problem bei Clinical-Decision-Support-Systemen?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Alert fatigue** (Alarmmüdigkeit): wenn ein CDS-System zu viele Warnungen/Alerts auslöst (v. a. wenn viele davon klinisch unbedeutend oder falsch-positiv sind), beginnen Ärzte/Pflegekräfte, Alerts routinemäßig wegzuklicken, ohne sie wirklich zu lesen — dadurch werden irgendwann auch die wichtigen, echten Warnungen übersehen.
+
+Klinik-Beispiel: ein Medikations-Interaktions-Check warnt bei jeder Kombination, auch bei klinisch irrelevanten — nach dem 50. überflüssigen Pop-up klickt der Arzt auch die wichtige Warnung ("Lebensgefährliche Interaktion!") automatisch weg.
+
+Gegenmaßnahmen: Alerts nach Relevanz/Schweregrad stufen (nur kritische als echte Pop-ups, Rest als leiser Hinweis), kontextsensitiv filtern (z. B. nicht erneut warnen, wenn Interaktion schon bekannt/bewusst in Kauf genommen wurde).
+
+Merksatz: zu viele Alerts → Ignorieren wird zur Gewohnheit → genau die Sicherheit, die das System bringen sollte, geht verloren. Zentrales Qualitätskriterium für CDS-Systeme: Spezifität der Alerts, nicht nur Sensitivität.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
 
 ### Sensitivität / Spezifität
-
-Sensitivität / Spezifität.
 
 ```{r cds-metrics, echo=FALSE}
 knitr::kable(
@@ -235,3 +292,27 @@ knitr::kable(
   caption = "Diagnostische Testkennzahlen"
 )
 ```
+
+::: {.exam-question}
+Frage: Was messen Sensitivität und Spezifität jeweils, und wie rechnet man sie an einem konkreten Patientenkollektiv durch?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+- **Sensitivität** = TP / (TP + FN): von allen **tatsächlich Kranken**, wie viele erkennt der Test korrekt als positiv? "Wie gut erkennt der Test Kranke?"
+- **Spezifität** = TN / (TN + FP): von allen **tatsächlich Gesunden**, wie viele erkennt der Test korrekt als negativ? "Wie gut erkennt der Test Gesunde?"
+
+**Beispiel**: 1.000 Patienten, 20% haben die Krankheit (= 200 krank, 800 gesund). Test: Sensitivität 95%, Spezifität 80%.
+
+1. Von 200 Kranken: richtig-positiv = 200 × 0,95 = **190**. Falsch-negativ = 200 − 190 = **10**.
+2. Von 800 Gesunden: richtig-negativ = 800 × 0,80 = **640**. Falsch-positiv = 800 − 640 = **160**.
+
+**Klinisch übersetzt**: der Test erkennt 190 von 200 tatsächlich Kranken (nur 10 werden übersehen — hohe Sensitivität, wenig verpasste Fälle). Aber von den 800 Gesunden werden 160 fälschlich als "krank" eingestuft (mäßige Spezifität, einige Fehlalarme).
+
+**Merkhilfe SnNout/SpPin**:
+- **SnNout** (hohe **Sn**sitivität → **N**egatives Ergebnis schließt Krankheit **out**/aus): bei einem sehr sensitiven Test ist ein negatives Ergebnis beruhigend — kaum falsch-negative Fälle.
+- **SpPin** (hohe **Sp**ezifität → **P**ositives Ergebnis beweist Krankheit **in**): bei einem sehr spezifischen Test ist ein positives Ergebnis fast sicher echt — kaum falsch-positive Fälle.
+
+Merksatz: Sensitivität = Test gut bei **Kranken** (TP-Fokus). Spezifität = Test gut bei **Gesunden** (TN-Fokus). Beide sind **prävalenzunabhängige** Testeigenschaften — im Unterschied zu PPV/NPV (siehe Wiederholung), die von der Prävalenz abhängen.
+:::

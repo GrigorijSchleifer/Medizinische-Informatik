@@ -2,89 +2,210 @@
 
 ## Rechtliche Aspekte, Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen
 
-### Rechtliche Aspekte
+::: {.exam-question}
+Frage: Was ist ein KIS per Definition, wie ist es strukturell aufgebaut (3-Achsen-Modell), und welche rechtlichen Aspekte spielen dabei eine Rolle?
+:::
 
-Rechtliche Aspekte.
+::: {.exam-answer}
+**Antwort:**
 
-### Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen
+**KIS** (Klinisches/Krankenhausinformationssystem): das Teilsystem des Krankenhauses, das alle informationsverarbeitenden Prozesse (und ihre menschlichen/maschinellen Handlungsträger) erfasst, um Mitarbeiter bei ihren Aufgaben zu unterstützen.
 
-Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen.
+**3-Achsen-Einteilung**:
+- **Struktur**: Arbeitsplatz → Bereich → Abteilung → Unternehmen.
+- **Schichten**: Datenbankschicht (Datenhaltung) → Anwendungsschicht (Abläufe) → Präsentationsschicht (Nutzer-Interaktion).
+- **Aufgaben**: Verarbeitung, Dokumentation, Organisation, Kommunikation, Entscheidungsunterstützung.
+
+**Bausteine**: PAS (administrativ: Aufnahme/Entlassung/Abrechnung) + klinischer Arbeitsplatz (EPA, cPOE) + Abteilungssysteme (RIS, Labor-IS), verbunden über Kommunikationsserver — kein monolithisches Einzelprodukt.
+
+**Rechtliche Aspekte**: Dokumentationspflicht (BGB/Berufsordnung), Datenschutz (Orientierungshilfe-KIS, siehe Modul II), Aufbewahrungsfristen (10 Jahre Krankenunterlagen), bei Arztpraxis-IS zusätzlich GOÄ/EBM-Abrechnungslogik.
+
+Merksatz: KIS = Baukasten (PAS + klinischer Arbeitsplatz + Abteilungssysteme), nicht ein Produkt — eingeordnet über Struktur/Schicht/Aufgabe.
+
+*(Quelle: Kap. 14, Klinische Informationssysteme; rechtliche Aspekte als Curriculum/Allgemeinwissen ergänzt.)*
+:::
 
 ## Anwendungsformen Elektronischer Patientenaktensysteme
 
-### Anwendungsformen Elektronischer Patientenaktensysteme
+::: {.exam-question}
+Frage: Was ist das 5-Stufen-Modell nach Waegemann für elektronische Patientenakten, und wie unterscheiden sich die Stufen?
+:::
 
-Anwendungsformen Elektronischer Patientenaktensysteme.
+::: {.exam-answer}
+**Antwort:** Ein Reifegrad-Modell, das beschreibt, wie "elektronisch" eine Patientenakte wirklich ist — von reiner Digitalisierung bis zur vollen Vernetzung:
+
+1. **Automated Medical Record (AMR)**: Papierakte wird nur gescannt/digitalisiert — keine strukturierten Daten, reines Abbild.
+2. **Computerized Medical Record (CMR)**: zusätzlich einzelne strukturierte Datenfelder (z. B. Laborwerte maschinenlesbar), aber noch viel unstrukturierter Text.
+3. **Electronic Medical Record (EMR)**: vollständig elektronisch innerhalb einer Einrichtung (z. B. das KIS eines Krankenhauses) — kein Medienbruch mehr intern.
+4. **Electronic Patient Record (EPR)**: einrichtungsübergreifend — Daten von mehreren Behandlern (Hausarzt, Klinik, Facharzt) zusammengeführt, Patient steht im Zentrum.
+5. **Electronic Health Record (EHR)**: die umfassendste Stufe — lebenslange Akte, inkl. Präventions-/Wellness-Daten, oft auch patientengeführt (Patient kann selbst einsehen/verwalten) — entspricht z. B. der Zielvorstellung der deutschen ePA.
+
+Merksatz: AMR→CMR→EMR→EPR→EHR = von "nur Scan" über "ein System, voll elektronisch" bis "lebenslang, einrichtungsübergreifend, patientengeführt". Höhere Stufe = mehr Struktur + mehr Vernetzung, nicht nur mehr Daten.
+
+*(Quelle: Kap. 14 nennt das Modell kurz (EPA-Definition); Stufenbeschreibung als Allgemeinwissen ergänzt.)*
+:::
 
 ## Einrichtungs- und nutzerspezifische Parametrierung
 
-### Einrichtungs- und nutzerspezifische Parametrierung
+::: {.exam-question}
+Frage: Was bedeutet "einrichtungsspezifische" vs. "nutzerspezifische" Parametrierung eines KIS, und warum braucht jedes KIS das?
+:::
 
-Einrichtungs- und nutzerspezifische Parametrierung (z. B. Krankenhaustopologie).
+::: {.exam-answer}
+**Antwort:** Ein KIS ist kein Plug-&-Play-Produkt — es muss auf die konkrete Einrichtung UND auf den einzelnen Nutzer eingestellt (parametriert) werden:
+
+- **Einrichtungsspezifisch**: Abbildung der realen Krankenhaustopologie — Stationen, Betten, Abteilungen, Workflows, Formulare/Textbausteine (z. B. eine OP-Berichtsvorlage mit den Standard-Operateuren und -Abläufen der eigenen Klinik), Stammdaten (Kostenstellen, Leistungskataloge).
+- **Nutzerspezifisch**: Rollen- und Rechtekonzept (Pflegekraft sieht andere Maske/Funktionen als Arzt oder Verwaltung), individuelle Einstellungen (Favoriten, Kürzel, Spracheinstellung, Standard-Ansicht).
+
+Merksatz: einrichtungsspezifisch = "passt das System auf UNS", nutzerspezifisch = "passt das System auf MICH".
+
+*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
 
 ## Differenzierung verschiedener Systemkomponenten
 
-### Patientenadministrationssysteme
+::: {.exam-question}
+Frage: Welche vier Hauptkomponenten-Typen eines KIS gibt es, und was macht jede?
+:::
 
-Patientenadministrationssysteme.
+::: {.exam-answer}
+**Antwort:**
 
-### Klinische Arbeitsplatzsysteme
+- **Patientenadministrationssystem (PAS)**: administrative Kernfunktionen — Aufnahme, Verlegung, Entlassung, Abrechnung (vgl. "Patientenaufnahme am Empfang").
+- **Klinische Arbeitsplatzsysteme**: Arbeitsumgebung für Arzt/Pflege direkt am Patienten — Arztbrief, cPOE (Verordnung), Befundeinsicht, Pflegedokumentation.
+- **Abteilungssysteme**: Fachabteilungs-eigene Spezialsysteme, z. B. RIS (Radiologie), Labor-IS, Kardiologie-IS — jeweils auf die Abteilung zugeschnitten, über Kommunikationsserver an das Gesamt-KIS angebunden.
+- **Spezialsysteme**: hochspezialisierte Zusatzsysteme — PDMS (Intensivstation, kontinuierliche Vitaldaten), PACS (Bildarchiv/-kommunikation Radiologie), AMTS-Systeme (Medikations-/Interaktionsprüfung, CPOE-Zusatz).
 
-Klinische Arbeitsplatzsysteme.
+Merksatz: PAS = Verwaltung, klin. Arbeitsplatz = Alltag am Bett, Abteilungssysteme = Fachabteilung, Spezialsysteme = Nische (Intensiv/Bild/Medikation).
 
-### Abteilungssysteme
-
-Abteilungssysteme (z. B. Kardiologie, Gastroenterologie, Radiologie, Labormedizin).
-
-### Spezialsysteme
-
-Spezialsysteme (z. B. PDMS, PACS, AMTS-Systeme [Medikation, CPOE]).
+*(Quelle: Kap. 14, Systemkomponenten eines KIS.)*
+:::
 
 ## Integration von Workflowmanagementsystemen und Clinical Pathways
 
-### Integration von Workflowmanagementsystemen und Clinical Pathways
+::: {.exam-question}
+Frage: Wie wird ein Clinical Pathway technisch ins KIS integriert — was macht eine Workflow-Engine?
+:::
 
-Integration von Workflowmanagementsystemen und Clinical Pathways.
+::: {.exam-answer}
+**Antwort:** Ein Clinical Pathway (z. B. "Hüft-TEP-Pfad") ist zunächst nur ein fachlich definierter Soll-Ablauf (Reihenfolge von Untersuchungen/Maßnahmen). Damit das KIS den Behandler aktiv führt (statt der Pfad nur auf Papier existiert), braucht es eine **Workflow-Engine**: sie bildet den Pfad als Prozessmodell ab (häufig in BPMN notiert), triggert zum richtigen Zeitpunkt die nächste Aufgabe/Maske im klinischen Arbeitsplatzsystem, und dokumentiert Abweichungen vom Standardpfad (**Varianzen** — z. B. Patient braucht zusätzliche Bildgebung) für spätere Auswertung.
+
+Merksatz: Pathway = fachlicher Soll-Ablauf, Workflow-Engine = die KIS-Komponente, die ihn tatsächlich "abspielt" und Abweichungen (Varianzen) mitschreibt.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen; vgl. Modul VI, Clinical Pathways.)*
+:::
 
 ## Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
 
-### Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
+::: {.exam-question}
+Frage: Wie ist Entscheidungsunterstützung (CDSS) typischerweise ins KIS integriert, und welche zwei Arten von Wissenszugriff gibt es dabei?
+:::
 
-Entscheidungsunterstützung und Zugriff auf medizinisches Wissen.
+::: {.exam-answer}
+**Antwort:** Das KIS bindet CDSS nicht als separate Insel ein, sondern direkt im klinischen Arbeitsplatz (z. B. beim Verordnen/cPOE), damit die Hilfe im Workflow erscheint, nicht danach:
+
+- **Aktiv/integriert (push)**: das System meldet sich selbst zum passenden Moment — Alert bei Medikamenten-Interaktion während der Verordnung, Pfad-Vorschlag bei Diagnoseeingabe.
+- **Passiv (pull)**: der Arzt sucht aktiv Wissen — Verlinkung aus dem KIS zu Leitlinien-Datenbanken, Arzneimittel-Infoportalen, Literatur (z. B. Klick aus dem Arztbrief heraus direkt zur AWMF-Leitlinie).
+
+Beides nutzt dieselbe Wissensbasis (Regeln/Leitlinien/Interaktionsdatenbank) — Unterschied ist nur, ob das System selbst anstößt (push) oder der Nutzer gezielt nachschlägt (pull).
+
+Merksatz: push = "System klopft an", pull = "Arzt klickt sich durch".
+
+*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen; vgl. Modul VI zu CDSS-Typen.)*
+:::
 
 ## Entwicklungsmethoden KIS
 
-### Entwicklungsmethoden KIS
+::: {.exam-question}
+Frage: Welche grundlegenden Entwicklungsmethoden/-modelle für KIS-Software gibt es, und was ist der Hauptunterschied?
+:::
 
-Entwicklungsmethoden KIS (z. B. Waterfall vs. Agile Development).
+::: {.exam-answer}
+**Antwort:**
+
+- **Wasserfallmodell**: starre Phasenfolge (Analyse → Design → Implementierung → Test → Betrieb), jede Phase erst abgeschlossen, dann nächste — gut bei klaren, stabilen Anforderungen (z. B. gesetzlich vorgeschriebene Abrechnungslogik), schlecht wenn sich Anforderungen während der Entwicklung ändern (Rücksprung teuer).
+- **Agile Entwicklung** (z. B. Scrum): iterativ in kurzen Zyklen (Sprints), laufend Feedback von Nutzern (Ärzten/Pflege) einbauen — passt besser zu klinischen Systemen, weil Workflows komplex/schwer vorab vollständig spezifizierbar sind.
+
+Merksatz: Wasserfall = "einmal planen, dann durchziehen", Agil = "bauen, zeigen, anpassen, wiederholen".
+
+*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+:::
 
 ## Struktur einer Software-Entwicklungsorganisation
 
-### Struktur einer Software-Entwicklungsorganisation
+::: {.exam-question}
+Frage: Welche Rolle spielen PLM, SCM und CRM in der Struktur einer Software-Entwicklungsorganisation, und welche IT-Standards sichern die Qualität?
+:::
 
-Struktur einer Software-Entwicklungsorganisation (PLM, SCM, CRM).
+::: {.exam-answer}
+**Antwort:**
 
-### Berücksichtigung von IT-Standards
+- **PLM (Product Lifecycle Management)**: steuert den gesamten Lebenszyklus einer Software von Konzept über Entwicklung/Release bis Außerbetriebnahme — bei KIS z. B. Versionierung, wann welches Modul wie lange supported wird.
+- **SCM (Software Configuration Management)**: verwaltet Versionen/Änderungen am Code und an Konfigurationen kontrolliert (Versionskontrolle, Change-Tracking) — wichtig, damit nachvollziehbar bleibt, welche KIS-Version mit welcher Parametrierung in welcher Klinik läuft.
+- **CRM (Customer Relationship Management)**: organisiert Kontakt zum Kunden (Klinik) — Anforderungen, Support-Tickets, Schulungen.
 
-Berücksichtigung von IT-Standards (z. B. ISO, DIN, IHE) und interne Qualitätssicherung.
+**IT-Standards zur Qualitätssicherung**: ISO (z. B. ISO 9001 Qualitätsmanagement, ISO 13485 für Medizinprodukte-Software), DIN-Normen, IHE (Integrating the Healthcare Enterprise — definiert konkrete Interoperabilitätsprofile) — plus interne QS (Testprozesse, Code-Reviews).
+
+Merksatz: PLM = "Produkt über die Zeit", SCM = "Code/Config unter Kontrolle", CRM = "Kundenkontakt", IHE/ISO = "Standards fürs Zusammenspiel/Qualität".
+
+*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Curriculum/Allgemeinwissen.)*
+:::
 
 ## Implementierung von Informations- und Kommunikationssystemen
 
-### Implementierung von Informations- und Kommunikationssystemen
+::: {.exam-question}
+Frage: Welche Phasen/Aspekte umfasst die Implementierung eines KIS (nicht Softwareentwicklung, sondern Einführung in der Klinik)?
+:::
 
-Implementierung von Informations- und Kommunikationssystemen.
+::: {.exam-answer}
+**Antwort:** Implementierung = Rollout in den laufenden Betrieb, typischerweise:
+
+1. **Vorbereitung**: Datenmigration (Altdaten aus Vorsystem), Parametrierung (s. "Einrichtungs- und nutzerspezifische Parametrierung"), technische Infrastruktur (Netzwerk, Server/Cloud).
+2. **Schulung**: Mitarbeiter (Ärzte/Pflege/Verwaltung) müssen vor Go-Live trainiert sein.
+3. **Go-Live-Strategie**: "Big Bang" (alles auf einmal umstellen) vs. **stufenweise Einführung** (Station für Station/Modul für Modul) — stufenweise risikoärmer, aber länger Parallelbetrieb (alt+neu).
+4. **Parallelbetrieb/Rückfallplan**: Altsystem bleibt übergangsweise verfügbar, falls Probleme auftreten.
+
+Merksatz: Implementierung ≠ Programmieren — ist Change-Management (Daten, Menschen, Risiko), nicht Code.
+
+*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Curriculum/Allgemeinwissen.)*
+:::
 
 ## Evaluation von Informations- und Kommunikationssystemen
 
-### Evaluation von Informations- und Kommunikationssystemen
+::: {.exam-question}
+Frage: Welche Dimensionen werden bei der Evaluation eines KIS typischerweise betrachtet, und was bedeutet "Usability" dabei konkret?
+:::
 
-Evaluation von Informations- und Kommunikationssystemen (z. B. Usability).
+::: {.exam-answer}
+**Antwort:** Evaluation prüft, ob das System seinen Zweck erfüllt — mehrere Dimensionen:
+
+- **Technisch**: Performance, Verfügbarkeit, Fehlerquote.
+- **Ökonomisch**: Kosten-Nutzen (TCO, Produktivitätsgewinn).
+- **Organisatorisch**: passt es zu den Arbeitsabläufen?
+- **Usability**: wie gut/einfach kann der Nutzer (Arzt/Pflege) damit arbeiten — z. B. Anzahl Klicks bis zur Verordnung, Fehleranfälligkeit der Eingabemaske, Lernaufwand für neue Mitarbeiter. Schlechte Usability ist eine Hauptursache für Alert Fatigue und Dateneingabefehler (vgl. Modul VI).
+
+Merksatz: Evaluation fragt nicht nur "funktioniert's technisch", sondern "arbeitet der Arzt damit gut UND sicher".
+
+*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Curriculum/Allgemeinwissen.)*
+:::
 
 ## Interoperabilität und Schnittstellen von Krankenhausinformationssystemen
 
-### Interoperabilität und Schnittstellen von Krankenhausinformationssystemen
+::: {.exam-question}
+Frage: Was bedeutet Interoperabilität bei KIS, und über welchen zentralen Standard laufen die meisten internen Schnittstellen?
+:::
 
-Interoperabilität und Schnittstellen von Krankenhausinformationssystemen (z. B. HL7).
+::: {.exam-answer}
+**Antwort:** Interoperabilität = Fähigkeit verschiedener Systeme (PAS, RIS, Labor-IS, ...), Daten korrekt auszutauschen und zu verstehen — nicht nur technisch verbinden, sondern auch semantisch (gleiche Bedeutung).
+
+- **HL7** (Health Level 7) ist der dominante Nachrichtenstandard für den Datenaustausch zwischen KIS-Komponenten.
+- Läuft typischerweise über einen **Kommunikationsserver** (Integration Engine) als zentrale Drehscheibe — jedes System muss nur EINE Schnittstelle zum Server haben, nicht N-zu-N-Verbindungen zu allen anderen Systemen.
+- Mehrere Ebenen: technisch (Verbindung klappt) → syntaktisch (Format wird verstanden) → semantisch (Bedeutung ist gleich, z. B. durch Kodiersysteme wie ICD/LOINC).
+
+Merksatz: Kommunikationsserver = "Flughafen-Drehkreuz" statt jeder-zu-jedem-Direktflug; HL7 = die "Sprache" der Nachrichten.
+
+*(Quelle: Kap. 14, Kommunikation/Schnittstellen in KIS.)*
+:::
 
 ## IT-Servicemanagement
 
@@ -108,7 +229,27 @@ Schnittstellen zur Telematik-Infrastruktur.
 
 ### HL7 v2 / FHIR
 
-HL7 v2 / FHIR.
+::: {.exam-question}
+Frage: Was unterscheidet HL7 v2 von FHIR, und wie passt die deutsche Medizininformatik-Initiative (MII) hier ins Bild?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**HL7 v2** (seit 1980ern, bis heute das meistverbreitete KIS-interne Protokoll): Event-getriebene Nachrichten (Pipe-getrennte Segmente, z. B. `MSH`, `PID`, `OBX`), Trigger-Events wie **ADT** (Admit/Discharge/Transfer), **ORM/ORU** (Order/Result). Problem: sehr flexibel/optional → jedes Haus/Hersteller interpretiert Felder etwas anders ("ein Standard mit 100 Dialekten"), viel Mapping-Aufwand pro Schnittstelle.
+
+**HL7 v3** (Zwischenschritt, floppte weitgehend wegen Komplexität) — übrig blieb v. a. **CDA** (strukturierte Dokumente, z. B. elektronischer Arztbrief).
+
+**FHIR** (Fast Healthcare Interoperability Resources, von HL7 selbst entwickelt): REST-API mit klar definierten **Resources** (`Patient`, `Observation`, `Medication`, ...) im JSON/XML-Format — moderner, einfacher zu implementieren, weniger Interpretationsspielraum als v2. Basis der deutschen Telematik-Infrastruktur (ePA, eRezept).
+
+**Zusammenspiel in der Praxis**: FHIR ersetzt v2 nicht schlagartig — die meisten laufenden KIS/RIS/Labor-IS sprechen intern noch v2 (teure, gewachsene Systeme). Ein **Integrationsserver/Gateway** übersetzt zwischen v2 (Alt-System) und FHIR (neue Apps, TI-Anbindung).
+
+**MII (Medizininformatik-Initiative)**: anders als das laufende KIS ist die MII **FHIR-nativ** aufgesetzt — die Datenintegrationszentren (DIZ) der Unikliniken exportieren Daten direkt in den **MII-Kerndatensatz** (festes FHIR-Profil), damit Forschungsdaten standortübergreifend vergleichbar sind. Der Extraktionsschritt aus dem Alt-KIS (meist noch v2/proprietär) in dieses FHIR-Profil ist oft der eigentliche "Übersetzer".
+
+Merksatz: MII = FHIR von Anfang an (Forschungsdaten, greenfield), restliches KIS = Integrationsserver als Brücke, solange v2-Alt-Systeme laufen (brownfield) — "ganz auf FHIR" ist das Langzeitziel (TI, ePA, eRezept), nicht der aktuelle KIS-Alltag.
+
+*(Hinweis: FHIR/MII nicht im medinfo-kompakt-Buch (2015, vor FHIR) — Antwort basiert auf Curriculum/Allgemeinwissen; HL7 v2-Grundlagen aus Kap. 14.)*
+:::
 
 ### DICOM
 

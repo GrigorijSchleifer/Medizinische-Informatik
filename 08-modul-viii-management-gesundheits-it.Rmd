@@ -1,37 +1,282 @@
 # Management in der Gesundheits-IT
 
-## Qualitätsmanagement und Zertifizierungen
+## Qualitätsmanagement und Zertifizierungen (z. B. KTQ, proCum Cert, JCI, DIN EN ISO 9001)
 
-### Qualitätsmanagement und Zertifizierungen
+::: {.exam-question}
+Frage: Was unterscheidet Qualitätskontrolle, Qualitätssicherung und Qualitätsmanagement, welche Qualitätsdimensionen nach Donabedian gibt es, und welche Zertifizierungsverfahren gibt es für Krankenhäuser?
+:::
 
-Qualitätsmanagement und Zertifizierungen (z. B. KTQ, proCum Cert, JCI, DIN EN ISO 9001).
+::: {.exam-answer}
+**Antwort:**
 
-## Qualitätssicherung
+**Begriffs-Stufen** (von nachträglich → vorausschauend):
 
-### Qualitätssicherung
+| Stufe | Wann? | Klinik-Analogie |
+|---|---|---|
+| **Qualitätskontrolle** | am Ende, Aussortieren/Nachbessern | Arztbrief erst nach Entlassung auf Fehler prüfen |
+| **Qualitätssicherung** | während des Prozesses, Monitoring | tägliche Visite prüft, ob Antibiose leitliniengerecht läuft |
+| **Qualitätsmanagement** | prospektiv, Planung + ständige Verbesserung (PDCA) | Station plant Abläufe so, dass Fehler gar nicht erst entstehen |
 
-Qualitätssicherung (gesetzliche und freiwillige Verfahren).
+**Donabedian-Trias**:
+- **Strukturqualität**: Rahmenbedingungen, z. B. Facharztquote, 24-h-CT, Stroke Unit vorhanden, Fortbildungsnachweise.
+- **Prozessqualität**: Abläufe, z. B. Door-to-Needle-Zeit bei Lyse, leitliniengerechte Thromboseprophylaxe, Tumorkonferenz vor OP.
+- **Ergebnisqualität**: Resultat, z. B. Mortalität, Wundinfektionsrate, Wiederaufnahmen, Patientenzufriedenheit.
+
+**PDCA-Zyklus (Deming)**: Plan → Do → Check → Act → wieder von vorn. Beispiel: Sturzrate zu hoch → Plan: Sturzrisiko-Assessment bei Aufnahme → Do: 3 Monate auf Pilotstation → Check: Sturzrate vorher/nachher → Act: auf alle Stationen ausrollen.
+
+**Zertifizierungen/Normen**:
+
+| Verfahren | Wer/Was | Besonderheit |
+|---|---|---|
+| **DIN EN ISO 9001** | branchenneutral (Industrie, Behörden, Kliniken) | Grundnorm; prozessorientiert, aktuelle Fassung 2015 mit „risikobasiertem Denken“ |
+| **DIN EN 15224** | gesundheitsspezifische Ausprägung der ISO 9001 | „Kunde“ → „Patient“; 11 Qualitätsmerkmale (z. B. Patientensicherheit, Rechtzeitigkeit), Risikomanagement fest eingebaut |
+| **KTQ** (Kooperation für Transparenz und Qualität) | krankenhausspezifisch, von Selbstverwaltung (Kassen, DKG, BÄK, Pflegerat) | **Selbstbewertung + Fremdbewertung** (Visitoren = Fachkollegen), Zertifikat 3 Jahre |
+| **proCum Cert** | konfessionelle (kath./ev.) Krankenhäuser | baut auf KTQ auf + zusätzliche Kriterien (Seelsorge, christliches Leitbild, Ethik) |
+| **JCI** (Joint Commission International) | US-basiert, internationale Akkreditierung | sehr strenge Patientensicherheitsstandards; relevant für Kliniken mit internationalen Patienten |
+| **EFQM** | branchenübergreifendes Excellence-Modell | Befähiger- + Ergebniskriterien, Selbstbewertung; eher Weiterentwicklung als Zertifikat |
+| **QEP** | KBV, für Arztpraxen | freiwillig |
+
+Wichtig: **Internes QM ist Pflicht** (§ 135a SGB V, G-BA-QM-Richtlinie) — das *Zertifikat* (KTQ, ISO …) ist dagegen **freiwillig**.
+
+Merksatz: Kontrolle = hinterher, Sicherung = währenddessen, Management = vorher. Donabedian = Struktur (womit) → Prozess (wie) → Ergebnis (was kommt raus). KTQ = „Klinik-Zertifikat der Selbstverwaltung“, proCum Cert = KTQ + Kirche, JCI = amerikanisch/international, ISO 9001 = Industrie-Grundnorm.
+
+*(Quelle: Kap. 5, Qualitätsmanagement; proCum Cert/JCI, ISO-9001-Fassung 2015 als Curriculum/Allgemeinwissen ergänzt — Buch zitiert noch ISO 9001:2008.)*
+:::
+
+## Qualitätssicherung (gesetzliche und freiwillige Verfahren)
+
+::: {.exam-question}
+Frage: Welche gesetzlichen und welche freiwilligen Verfahren der Qualitätssicherung gibt es im Krankenhaus, und wer ist dafür zuständig?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Gesetzlich (verpflichtend, SGB V §§ 135 ff.)**:
+- **G-BA** (Gemeinsamer Bundesausschuss) legt per Richtlinie fest, *was* gemessen wird.
+- **IQTIG** (Institut für Qualitätssicherung und Transparenz im Gesundheitswesen) entwickelt Indikatoren, wertet bundesweit aus. ⚠️ Buch (2015) nennt noch **AQUA** — seit 2016 IQTIG.
+- **Externe QS (datengestützt, heute DeQS-Richtlinie)**: Klinik dokumentiert für bestimmte Leistungsbereiche (z. B. Hüft-TEP, Geburtshilfe, Herzschrittmacher, PCI, Dekubitusprophylaxe) **QS-Bögen** → Export über KIS → Landesstelle/IQTIG → Vergleich mit Referenzbereichen.
+  - Dokumentationsrate < 100 % (Buch: < 95 %) → **finanzielle Abschläge**.
+  - Auffälliges Ergebnis → **Stellungnahmeverfahren** (früher „Strukturierter Dialog“): Klinik muss erklären + Maßnahmen benennen.
+  - Zunehmend **Sozialdaten bei Krankenkassen** genutzt (z. B. Wiederaufnahmen, Spätkomplikationen nach Entlassung — ohne Zusatzdokumentation).
+- **Qualitätsbericht** (§ 136b SGB V): öffentlich, laienverständlich, **jährlich** (Buch: „alle 2 Jahre“ — veraltet), Teile A–D (Struktur Haus, Fachabteilungen, QS, QM) → Basis für Klinikvergleichsportale.
+- **Mindestmengen** (z. B. Knie-TEP, Pankreas-/Ösophagus-OP, Frühgeborene < 1250 g): Unterschreitung → keine Vergütung.
+- **Strukturvorgaben**: z. B. Pflegepersonaluntergrenzen, Notfallstufen, Richtlinien für Frühgeborenenversorgung.
+- **Prüfungen durch den Medizinischen Dienst (MD)** auf Einhaltung von Strukturmerkmalen (⚠️ früher MDK).
+- **Krankheitsregister mit Meldepflicht**: z. B. klinische Krebsregister (§ 65c SGB V), Implantateregister (EIRD).
+
+**Freiwillig**:
+- **Zertifizierungen** (KTQ, ISO 9001, proCum Cert, JCI — siehe vorheriger Punkt).
+- **Fachgesellschafts-Zertifikate**: DKG-Organkrebszentren (Brust-, Darmzentrum), Stroke Units (DSG), Traumazentren (DGU), EndoCert.
+- **IQM** (Initiative Qualitätsmedizin): Routinedaten-basierte Indikatoren + **Peer-Review**-Verfahren (Chefärzte anderer Kliniken analysieren auffällige Todesfälle).
+- **Freiwillige Register** (z. B. Traumaregister DGU), **CIRS** (anonymes Fehlermeldesystem), Morbiditäts-/Mortalitätskonferenzen (M&M).
+
+Rolle der IT: QS-Bögen werden aus dem KIS befüllt (Plausibilitätsprüfung, QS-Filter erkennt anhand ICD/OPS automatisch, welcher Fall dokumentationspflichtig ist) — ohne IT praktisch nicht leistbar.
+
+Merksatz: Gesetzlich = G-BA bestimmt, IQTIG misst, Klinik dokumentiert per QS-Bogen, Ergebnis öffentlich im Qualitätsbericht. Freiwillig = Zertifikate, Zentren, IQM-Peer-Review, CIRS.
+
+*(Quelle: Kap. 5, Qualitätsmanagement; aktualisiert: AQUA → IQTIG (2016), MDK → MD (2020), QSKH-RL → DeQS-RL (2021), Qualitätsbericht jährlich; IQM/Mindestmengen als Allgemeinwissen.)*
+:::
+
+::: {.exam-question}
+Frage (Vertiefung): Was ist die Aufgabe des G-BA, und wie ist er zusammengesetzt?
+:::
+
+::: {.exam-answer}
+**Antwort:** Der **Gemeinsame Bundesausschuss (G-BA)** ist das oberste Beschlussgremium der **gemeinsamen Selbstverwaltung** (§ 91 SGB V, Sitz Berlin) — der „kleine Gesetzgeber“: Das SGB V gibt den Rahmen vor („ausreichend, zweckmäßig, wirtschaftlich“), der G-BA konkretisiert ihn per **Richtlinie**, verbindlich für Ärzte, Kliniken, Kassen und Versicherte.
+
+**Aufgaben**:
+
+| Bereich | Beispiel |
+|---|---|
+| Leistungskatalog GKV | Liposuktion bei Lipödem Kassenleistung? |
+| Methodenbewertung | ambulant **Erlaubnisvorbehalt** (erst nach positiver Bewertung), stationär **Verbotsvorbehalt** (erlaubt, bis ausgeschlossen) |
+| Arzneimittel (AMNOG) | Zusatznutzen eines neuen Onkologikums → Basis der Preisverhandlung |
+| Qualitätssicherung | QM-Richtlinie, DeQS, Mindestmengen, Qualitätsbericht |
+| Bedarfsplanung | Zahl der Kassenarztsitze je Planungsbereich |
+| Weitere | Früherkennung (Mammographie-Screening), Heil-/Hilfsmittel, Innovationsfonds |
+
+**Zusammensetzung des Plenums (13 Stimmen)**:
+```
+            3 Unparteiische (inkl. Vorsitz)
+                       │
+  5 Leistungserbringer ┼ 5 Kostenträger
+  ├ 2 DKG (Kliniken)   │  └ 5 GKV-Spitzenverband
+  ├ 2 KBV (Kassenärzte)│
+  └ 1 KZBV (Zahnärzte) │
+  + bis zu 5 Patientenvertreter: Mitberatung/Antragsrecht, KEIN Stimmrecht
+```
+- Paritätisch 5 : 5, Unparteiische entscheiden bei Patt.
+- **Rechtsaufsicht: BMG** (kann beanstanden, entscheidet nicht inhaltlich).
+- Zuarbeit: **IQWiG** (Nutzenbewertung) und **IQTIG** (Qualitätsmessung).
+
+Merksatz: G-BA = kleiner Gesetzgeber der Selbstverwaltung; 3 + 5 + 5 = 13 Stimmen (DKG 2, KBV 2, KZBV 1 | GKV-SV 5); Patienten reden mit, stimmen nicht ab. IQWiG → Nutzen, IQTIG → Qualität.
+
+*(Quelle: Curriculum/Allgemeinwissen — im medinfo-kompakt-Buch nur am Rande erwähnt.)*
+:::
 
 ## Prozessmanagement, z. B. Organisation von Behandlungspfaden
 
-### Prozessmanagement, z. B. Organisation von Behandlungspfaden
+::: {.exam-question}
+Frage: Was ist ein klinischer Behandlungspfad, wie wird er entwickelt und im KIS abgebildet, und wie unterscheidet er sich von Leitlinie und SOP?
+:::
 
-Prozessmanagement, z. B. Organisation von Behandlungspfaden.
+::: {.exam-answer}
+**Antwort:**
+
+**Prozessmanagement** = Abläufe systematisch erfassen (Ist), verbessern (Soll), umsetzen, messen — über **Prozesseigner** (Verantwortlicher je Prozess) und PDCA. Prozesse werden grafisch modelliert, z. B. als **BPMN** oder **EPK** (Ereignisgesteuerte Prozesskette): „Patient kommt in ZNA“ → „Triage“ → „Ereignis: Verdacht Schlaganfall“ → „CT“ …
+
+**Behandlungspfad (Clinical Pathway)**: einrichtungsinterner, **interdisziplinärer, zeitlich gegliederter Standardablauf** für eine definierte Patientengruppe (meist eine Diagnose/Prozedur, oft an DRG gekoppelt).
+
+Beispiel Pfad **Hüft-TEP elektiv**:
+```
+Tag -7  prästationär: Anästhesie-Aufklärung, Labor, Rö
+Tag  0  Aufnahme, OP, Antibiotika-Prophylaxe, Thromboseprophylaxe
+Tag  1  Mobilisation mit Physio, Drainage ex, Hb-Kontrolle
+Tag 2-5 Gangschule, Treppe, Schmerz-Score
+Tag  6  Entlassung, Reha-Anmeldung, Arztbrief
+```
+
+**Abgrenzung**:
+
+| | Leitlinie | Behandlungspfad | SOP |
+|---|---|---|---|
+| Wer? | Fachgesellschaft (AWMF) | eigene Klinik, interdisziplinär | eigene Abteilung |
+| Was? | *was* ist medizinisch richtig | *wer macht was wann* bei Diagnose X | *wie* genau ein Einzelschritt geht |
+| Beispiel | S3-LL Hüftendoprothetik | Hüft-TEP-Pfad Tag 0–6 | SOP „Anlage ZVK“ |
+
+Der Pfad **übersetzt die Leitlinie in die lokalen Gegebenheiten** (Personal, Geräte, Räume).
+
+**Entwicklung**: Pfad-Team (Arzt, Pflege, Physio, Sozialdienst, Controlling) → Ist-Analyse (wie läuft es heute?) → Soll-Pfad anhand Leitlinie + Verweildauer der DRG → Pilot → Einführung → **Varianzanalyse** (Abweichungen dokumentieren und auswerten: z. B. „Entlassung Tag 9 statt 6 wegen Wundinfekt“) → Pfad anpassen.
+
+**Im KIS**: Pfad als Vorlage, die bei Aufnahme gestartet wird → erzeugt automatisch Aufträge (Labor, Physio-Anforderung), Termine, Pflegemaßnahmen, Checklisten; Abweichungen werden per Klick begründet → auswertbar.
+
+**Nutzen**: weniger Variabilität, kürzere/planbare Verweildauer, bessere Kostenkalkulation (DRG), Einarbeitung neuer Mitarbeiter, Qualitätsnachweis.
+
+Merksatz: Leitlinie = *was* (bundesweit), Pfad = *wer–was–wann* (meine Klinik, interdisziplinär, Tag für Tag), SOP = *wie* (ein Handgriff). Pfad lebt von der Varianzanalyse.
+
+*(Quelle: Kap. 5 (Prozessmanagement, Prozesseigner); Behandlungspfade/Varianzanalyse/KIS-Abbildung als Curriculum/Allgemeinwissen ergänzt.)*
+:::
 
 ## Typische Abläufe und Vorgehensweisen im Medizin-Controlling
 
-### Typische Abläufe und Vorgehensweisen im Medizin-Controlling
+::: {.exam-question}
+Frage: Was macht das Medizin-Controlling, und wie sieht der typische Ablauf von der Aufnahme bis zur Rechnung und MD-Prüfung aus?
+:::
 
-Typische Abläufe und Vorgehensweisen im Medizin-Controlling.
+::: {.exam-answer}
+**Antwort:** Medizin-Controlling = Schnittstelle **Medizin ↔ Ökonomie**: sorgt dafür, dass die erbrachte Leistung **vollständig, korrekt und prüfsicher kodiert und abgerechnet** wird, und liefert Steuerungszahlen an Chefärzte und Geschäftsführung.
 
-## IT-Projektmanagement und Vorgehensmodelle
+**Typischer Fallablauf**:
 
-### IT-Projektmanagement und Vorgehensmodelle
+1. **Aufnahme**: Aufnahmediagnose, Prüfung stationäre Notwendigkeit (ambulant möglich? AOP-Katalog, Hybrid-DRG).
+2. **Während des Aufenthalts**: Kodierfachkraft/Arzt kodiert laufend **ICD-10-GM** (Diagnosen) und **OPS** (Prozeduren) nach den **Deutschen Kodierrichtlinien (DKR)**; Controlling behält **Verweildauer** im Blick (untere/obere Grenzverweildauer, mittlere VWD der DRG) → Hinweis an Station: „Patient überschreitet bald oGVD“.
+3. **Entlassung**: Festlegung der **Hauptdiagnose** (die „nach Analyse“ hauptsächlich für die Aufnahme verantwortliche Diagnose), Nebendiagnosen (Komplikationen/Komorbiditäten → **PCCL**-Schweregrad) → **Grouper**-Software ermittelt die **DRG** → Relativgewicht × Landesbasisfallwert = Erlös (+ Zusatzentgelte, Pflegebudget seit 2020 ausgegliedert).
+4. **Rechnung** an Krankenkasse (elektronisch, § 301 SGB V-Datensatz).
+5. **Prüfung durch den MD** (Medizinischer Dienst, ⚠️ früher MDK): Kasse beauftragt Prüfung (Hauptdiagnose richtig? VWD zu lang? stationär nötig?) → Controlling stellt Unterlagen zusammen, schreibt Stellungnahme → ggf. Rechnungskorrektur, Widerspruch, Klage. Seit MDK-Reformgesetz: **Prüfquoten** abhängig von der Beanstandungsrate der Klinik.
 
-IT-Projektmanagement und Vorgehensmodelle (z. B. V-Modell).
+**Weitere Aufgaben**:
+- **Kennzahlen/Berichte**: Fallzahl, **CMI** (Case Mix Index = durchschnittliche Fallschwere), Case Mix, Erlöse je Abteilung, VWD-Abweichung.
+- **Budget-/Entgeltverhandlung** mit Kassen (Leistungsmenge fürs nächste Jahr).
+- **Schulung** der Ärzte in Kodierung, Dokumentation „MD-fest“ machen.
+- **Pfad-/Leistungsplanung** gemeinsam mit Kliniken (welche Leistung lohnt sich, Mindestmengen erreicht?).
 
-## Risikomanagement und Risikoanalyse
+Beispiel: Pneumonie-Patient, Nebendiagnose „Herzinsuffizienz NYHA III“ nicht kodiert → niedrigerer PCCL → schlechtere DRG → Erlösverlust. Umgekehrt: unbelegte Nebendiagnose → MD streicht → Rückforderung.
 
-### Risikomanagement und Risikoanalyse
+Merksatz: Medizin-Controlling = „aus Medizin wird Geld, ohne dass der MD es zurückholt“: kodieren (ICD/OPS nach DKR) → groupen (DRG) → abrechnen (§ 301) → MD-Prüfung verteidigen → Kennzahlen (CMI, VWD) zurückmelden.
 
-Risikomanagement und Risikoanalyse (z. B. nach DIN EN ISO 14971 und IEC 80001).
+*(Quelle: Kap. 4, Gesundheitsökonomie (DRG-Erlös) und Kap. 12 (Kodierung); Ablauf/MD-Prüfung als Curriculum/Allgemeinwissen; aktualisiert MDK → MD, Pflegebudget, Hybrid-DRG.)*
+:::
+
+## IT-Projektmanagement und Vorgehensmodelle (z. B. V-Modell)
+
+::: {.exam-question}
+Frage: Was gehört zum IT-Projektmanagement, wie ist das V-Modell aufgebaut, und wie unterscheidet es sich von Wasserfall und agilen Modellen (Scrum)?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Projekt** = einmalig, zeitlich begrenzt, definiertes Ziel, eigene Ressourcen (z. B. Einführung eines PDMS auf der Intensivstation, KIS-Wechsel, Anbindung an die TI).
+
+**Magisches Dreieck**: **Zeit – Kosten – Qualität/Umfang** — eines ändern verschiebt die anderen (PDMS-Einführung früher fertig → teurer oder weniger Funktionen).
+
+**Typische Phasen**: Initiierung (Projektauftrag, Lenkungsausschuss) → Planung (Lastenheft = *was* der Auftraggeber will; Pflichtenheft = *wie* der Hersteller es umsetzt; Zeitplan/Meilensteine, Gantt-Diagramm) → Durchführung → Abnahme/Go-Live → Abschluss (Lessons Learned). Rollen: Auftraggeber, Projektleiter, Key-User aus der Klinik (Arzt/Pflege!), Hersteller.
+
+**Vorgehensmodelle**:
+
+- **Wasserfall**: Phasen strikt nacheinander (Anforderung → Entwurf → Implementierung → Test → Betrieb); einfach, aber Fehler in Anforderungen fallen erst spät auf.
+- **V-Modell**: Wasserfall „geknickt“ — **jeder Spezifikationsstufe links steht eine Teststufe rechts gegenüber**:
+
+```
+Anforderungsdefinition ─────────────── Abnahmetest     (Validierung: richtiges System?)
+   Systementwurf ──────────────────── Systemtest
+      Komponentenentwurf ──────────── Integrationstest
+         Modulentwurf ─────────────── Modultest       (Verifizierung: System richtig gebaut?)
+                   \                /
+                    Implementierung
+```
+  Beispiel KIS-Medikationsmodul: Anforderung „Interaktionswarnung bei Marcumar + NSAR“ → wird beim **Abnahmetest** von Stationsärzten mit echtem Szenario geprüft; Modulentwurf „Interaktionsprüffunktion“ → **Modultest** durch Entwickler.
+  Variante **V-Modell XT**: verbindlicher Standard für IT-Projekte des Bundes. Stark in der **Medizinprodukte-Software** (IEC 62304) verbreitet, weil Nachweisbarkeit (Traceability Anforderung ↔ Test) gefordert ist.
+- **Agil (Scrum)**: kurze Iterationen (**Sprints**, 2–4 Wochen), **Product Owner** priorisiert **Backlog**, Team liefert nach jedem Sprint lauffähiges Teilprodukt, Feedback der Nutzer fließt sofort ein (z. B. Station testet nach jedem Sprint die neue Pflegedoku-Maske). Gut bei unklaren/ändernden Anforderungen; schwieriger bei strenger Regulierung.
+
+| | Wasserfall | V-Modell | Scrum |
+|---|---|---|---|
+| Ablauf | linear | linear + Test je Stufe | iterativ |
+| Änderungen | teuer | teuer | eingeplant |
+| Stärke | einfach | Nachweisbarkeit, Qualität | Nutzernähe, Flexibilität |
+| Klinik-Beispiel | Serverumzug | Medizinprodukte-Software | App/Portal mit Nutzerfeedback |
+
+Merksatz: V-Modell = „zu jeder Planung links gehört ein Test rechts“; oben Validierung (Anwender: richtiges System?), unten Verifizierung (Entwickler: richtig gebaut?). Wasserfall = Treppe runter, Scrum = Kreisverkehr in Sprints.
+
+*(Quelle: Kap. 16 (Verifizierung/Validierung, IEC 62304); Projektmanagement/V-Modell/Scrum als Curriculum/Allgemeinwissen ergänzt.)*
+:::
+
+## Risikomanagement und Risikoanalyse (z. B. nach DIN EN ISO 14971 und IEC 80001)
+
+::: {.exam-question}
+Frage: Wie läuft Risikomanagement nach DIN EN ISO 14971 ab, was regelt IEC 80001-1, und wer ist jeweils verantwortlich?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**Grundformel**: **Risiko = Eintrittswahrscheinlichkeit × Schweregrad** des Schadens.
+
+**DIN EN ISO 14971** (Risikomanagement für **Medizinprodukte**, Adressat: **Hersteller**, über den ganzen Lebenszyklus):
+
+1. **Risikoanalyse**: Zweckbestimmung **+ vorhersehbarer Fehlgebrauch** dokumentieren, Gefährdungen identifizieren, Wahrscheinlichkeit/Schwere schätzen.
+2. **Risikobewertung**: Einordnung in **Risikomatrix** → akzeptabel / **ALARP** („so niedrig wie vernünftigerweise machbar“) / nicht akzeptabel.
+3. **Risikobeherrschung**, feste Rangfolge:
+   ① **inhärent sicheres Design** > ② **Schutzmaßnahmen** (Alarme, Abschaltung) > ③ **Information** (Warnhinweis, Schulung).
+4. **Restrisiko vs. Nutzen** abwägen, danach **Marktbeobachtung** (Vorkommnisse, Beschwerden) → Analyse aktualisieren.
+
+Beispiel Infusionspumpe: Gefährdung „Dosierfehler mg vs. µg“ → ① Medikamentenbibliothek mit festen Einheiten und harten Dosisgrenzen (Design) → ② Alarm bei Überschreitung weicher Grenze (Schutz) → ③ Schulung + Warnhinweis (Information). Ein Warnhinweis allein reicht nicht, wenn Design-Lösung möglich ist.
+
+Risikomatrix (vereinfacht):
+```
+Schwere →      gering   mittel   schwer   Tod
+häufig          ALARP    X        X        X
+gelegentlich    ok       ALARP    X        X
+selten          ok       ok       ALARP    X
+unwahrscheinl.  ok       ok       ok       ALARP      X = nicht akzeptabel
+```
+
+**IEC 80001-1** (Risikomanagement für **IT-Netzwerke mit Medizinprodukten**, Adressat: **Betreiber = Krankenhaus**, zusammen mit Herstellern):
+- Problem: Medizinprodukte (Monitore, Pumpen, CT) hängen im Kliniknetz, das der Hersteller nicht kontrolliert → neue Risiken (Netzausfall, Überlast, Malware, Fehlkonfiguration).
+- Lösung: **Joint Responsibility** — Hersteller liefert Netzwerkanforderungen (Bandbreite, Ports, Latenz), Klinik betreibt Risikomanagementprozess, benennt **Risikomanager** (Medizin-IT), jede Änderung (Firewall-Regel, Windows-Update, neues VLAN) wird vorher auf Risiko geprüft.
+- Schutzziele: **Sicherheit** (Patient), **Effektivität** (Gerät funktioniert), **Daten- und Systemsicherheit**.
+- Beispiel: Zentrale Monitoring-Überwachung der Intensivstation → Netzwerkausfall darf nicht dazu führen, dass Alarme unbemerkt bleiben → eigenes VLAN, Redundanz, lokale Alarmierung am Bett bleibt erhalten.
+
+**Methoden der Risikoanalyse**: **FMEA** (Fehlermöglichkeits- und Einflussanalyse; RPZ = Auftreten × Bedeutung × Entdeckbarkeit), Fehlerbaumanalyse (FTA, „rückwärts vom Schaden zur Ursache“), Checklisten, **CIRS**-Auswertung, Morbiditäts-/Mortalitätskonferenzen.
+
+| Norm | Gegenstand | Verantwortlich |
+|---|---|---|
+| ISO 14971 | Medizinprodukt (Gerät, Software) | Hersteller |
+| IEC 62304 | Software-Lebenszyklus Medizinprodukt | Hersteller |
+| IEC 80001-1 | Netzwerk, in das Medizinprodukte eingebunden sind | Betreiber (Klinik) + Hersteller |
+
+Merksatz: 14971 = Hersteller baut sicheres Gerät (Analyse → Bewertung → Beherrschung: Design > Schutz > Info → Marktbeobachtung). 80001 = Klinik betreibt sicheres Netz für viele Geräte (gemeinsame Verantwortung).
+
+*(Quelle: Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019, IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen.)*
+:::

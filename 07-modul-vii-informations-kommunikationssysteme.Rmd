@@ -213,17 +213,176 @@ Merksatz: Kommunikationsserver = "Flughafen-Drehkreuz" statt jeder-zu-jedem-Dire
 
 IT-Servicemanagement (z. B. ITIL).
 
+::: {.exam-question}
+Frage: Was ist IT-Servicemanagement, was ist ITIL, und welche Kernprozesse (Incident, Problem, Change, SLA, Service Desk) muss man für den Krankenhausbetrieb kennen?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**IT-Servicemanagement (ITSM)** = IT wird nicht als "Technik", sondern als **Dienstleistung (Service) für die Klinik** organisiert — mit festgelegten Prozessen, Zuständigkeiten und messbarer Qualität. Der Service heißt nicht "Server XY", sondern z. B. "**KIS verfügbar auf allen Stationen, 24/7**".
+
+**ITIL** (*IT Infrastructure Library*, ursprünglich britische Regierung, heute **ITIL 4**, 2019) = Sammlung von **Best Practices** für ITSM — kein Gesetz, kein Produkt, sondern ein Rahmenwerk ("Leitlinie" für IT-Abteilungen). Zertifizierbare Norm dazu: **ISO/IEC 20000**.
+- ITIL v3: **Service-Lebenszyklus** — Strategy → Design → Transition (Einführung) → Operation (Betrieb) → Continual Service Improvement.
+- ITIL 4: **Service Value System** mit 34 "Practices"; Grundgedanke gleich: Wert für den Nutzer schaffen, kontinuierlich verbessern.
+
+**Kernprozesse — mit Klinik-Analogie:**
+
+| Prozess | Ziel | Klinik-Beispiel | Analogie |
+|---|---|---|---|
+| **Service Desk** | **eine** Anlaufstelle für alle Anliegen (*Single Point of Contact*) | IT-Hotline, Ticket-System | Zentrale Notaufnahme |
+| **Incident Management** | gestörten Service **so schnell wie möglich wiederherstellen** (Workaround erlaubt) | Drucker auf Station 3 druckt keine Etiketten → Ersatzdrucker zuweisen | Notfallversorgung: erst stabilisieren |
+| **Problem Management** | **Ursache** wiederkehrender Störungen finden und beseitigen | jeden Montag fällt das Labor-Interface aus → Ursache: Speicher voll nach Wochenend-Batch | Diagnostik / Ursachenabklärung |
+| **Change Management** | Änderungen **kontrolliert** planen, bewerten, freigeben — Risiko minimieren | KIS-Update: Test, Freigabe durch **CAB** (*Change Advisory Board*), Rollback-Plan, Termin nachts | elektive OP: Indikationskonferenz, Aufklärung, OP-Plan |
+| **Release/Deployment** | neue Versionen ausrollen | neue PDMS-Version auf alle Intensivstationen | |
+| **Service Level Management** | Leistung mit der Klinik **vereinbaren und messen** | **SLA**: KIS-Verfügbarkeit 99,9 %, Reaktionszeit Prio 1 < 15 min | Behandlungsvertrag |
+| **Configuration Management** | Überblick über alle IT-Komponenten und Abhängigkeiten (**CMDB**) | welche Medizingeräte hängen am Kommunikationsserver? | Inventar / Gerätebuch |
+| **Availability / Capacity** | Verfügbarkeit und Kapazität sichern | genug Speicher fürs PACS in 3 Jahren | |
+| **IT Service Continuity** | Notbetrieb bei Katastrophe | **Ausfallkonzept KIS**: Papierformulare, Notfall-Leserechner mit Medikationsliste, Wiederanlauf | Katastrophenschutzplan |
+| **Information Security Management** | Vertraulichkeit, Integrität, Verfügbarkeit | ISMS, Patch-Management | Hygienemanagement |
+
+**Incident ≠ Problem** (Prüfungsklassiker): Incident = **Symptom** behandeln, Service läuft wieder. Problem = **Ursache** finden, damit es nicht wieder passiert. Ein Problem kann viele Incidents verursachen.
+
+**Support-Stufen:** **1st Level** (Service Desk: Passwort, einfache Fragen) → **2nd Level** (Fachteam, z. B. KIS-Team, Applikationsbetreuung) → **3rd Level** (Hersteller/Entwickler).
+
+**Priorität = Auswirkung (Impact) × Dringlichkeit (Urgency):** KIS auf der Intensivstation ausgefallen = Prio 1; ein Bildschirm im Sekretariat flackert = Prio 4. (Analog: Triage, z. B. Manchester-Triage.)
+
+**SLA-Begriffe:**
+- **SLA** (*Service Level Agreement*) — IT ↔ Klinik (Kunde).
+- **OLA** (*Operational Level Agreement*) — zwischen internen IT-Teams.
+- **UC** (*Underpinning Contract*) — mit externen Dienstleistern/Herstellern.
+- Verfügbarkeit greifbar machen: **99 %** ≈ 3,7 Tage Ausfall/Jahr; **99,9 %** ≈ 8,8 h/Jahr; **99,99 %** ≈ 53 min/Jahr.
+
+**Warum im Krankenhaus besonders wichtig:**
+- IT-Ausfall = **Patientengefährdung** (keine Medikation, keine Befunde, keine Bilder).
+- **KRITIS**: Krankenhäuser ab **30.000 vollstationären Fällen/Jahr** sind kritische Infrastruktur (BSI-KritisV) → Nachweis IT-Sicherheit nach Stand der Technik (Branchenstandard **B3S Krankenhaus**); seit **2022** gilt IT-Sicherheit "nach Stand der Technik" für **alle** Krankenhäuser (§ 75c SGB V, heute § 391 SGB V).
+- Medizingeräte im Netz (Infusionspumpen, Monitore) → Change Management muss **Medizinprodukterecht** (MDR, IEC 80001-1) berücksichtigen.
+
+Merksatz: ITSM = IT als Dienstleistung mit Prozessen; ITIL = Best-Practice-Sammlung dafür (Norm: ISO 20000). Incident = Symptom weg (schnell), Problem = Ursache weg (gründlich), Change = geplant und freigegeben (CAB). SLA = Vertrag IT ↔ Klinik.
+
+*(Quelle: Kap. 14 Klinische Informationssysteme (Betrieb), Curriculum Modul VII; ITIL-Prozesse, KRITIS/B3S und Verfügbarkeitsrechnung als Allgemeinwissen ergänzt.)*
+:::
+
 ## Berücksichtigung datenschutzrechtlicher Belange
 
 ### Umsetzung eines Rollen- und Berechtigungskonzeptes
 
 Umsetzung eines Rollen- und Berechtigungskonzeptes.
 
+::: {.exam-question}
+Frage: Wie setzt man ein Rollen- und Berechtigungskonzept in einem KIS praktisch um — welche Dimensionen hat eine Berechtigung, wie funktioniert der Notfallzugriff, und wie verwaltet man Benutzer über ihren Lebenszyklus?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+Grundlagen (Need-to-know, RBAC, Protokollierung, Orientierungshilfe KIS) → **Modul II**. Hier: die **Umsetzung im Betrieb**.
+
+**Rechtlicher Rahmen:** DSGVO **Art. 9** (Gesundheitsdaten = besondere Kategorie), **Art. 25** (*Privacy by Design/by Default* — Standard = so wenig Zugriff wie möglich), **Art. 32** (TOM); ärztliche **Schweigepflicht** (§ 203 StGB) gilt auch **innerhalb** des Krankenhauses — nicht jeder Arzt darf jeden Patienten sehen.
+
+**Eine Berechtigung hat mehrere Dimensionen:**
+
+| Dimension | Frage | Beispiel |
+|---|---|---|
+| **Rolle** | *Wer* bin ich fachlich? | Arzt, Pflege, Therapeut, Schreibdienst, Abrechnung, Admin |
+| **Organisationseinheit / Behandlungszusammenhang** | *Für welche* Patienten? | nur Patienten der eigenen Station/Fachabteilung bzw. mit aktuellem Behandlungsauftrag (Aufnahme, Verlegung, **Konsil**) |
+| **Datenart** | *Welche* Daten? | Abrechnung sieht Diagnosen/Prozeduren, aber nicht Psychotherapie-Notizen; Pflege sieht Medikation, darf aber nicht verordnen |
+| **Aktion** | *Was* darf ich tun? | lesen / anlegen / ändern / **vidieren/freigeben** / löschen |
+| **Zeit** | *Wie lange?* | Zugriff endet nach Entlassung bzw. nach Frist (z. B. Abschluss der Abrechnung) |
+
+Beispiel-**Rollenmatrix** (Ausschnitt):
+
+| | Befund lesen | Medikation verordnen | Pflegedoku schreiben | Arztbrief freigeben | DRG kodieren |
+|---|---|---|---|---|---|
+| Stationsarzt (eigene Station) | ✅ | ✅ | lesen | ✅ | – |
+| Pflege (eigene Station) | ✅ | – (nur dokumentieren der Gabe) | ✅ | – | – |
+| Medizincontroller | eingeschränkt | – | – | – | ✅ |
+| Schreibdienst | Diktat-bezogen | – | – | – (nur Entwurf) | – |
+
+**Notfallzugriff ("Break the Glass")** — Patient der Nachbarstation reanimationspflichtig, keine reguläre Berechtigung:
+1. Zugriff **trotzdem möglich** (Patientenwohl geht vor),
+2. aber nur nach **Begründung** (Pflichtfeld/Auswahl) und **Warnhinweis**,
+3. **besonders protokolliert** und **nachträglich geprüft** (Stichproben/Auswertung durch Datenschutz).
+Analogie: Notfallschrank mit Plombe — jeder kommt dran, aber jeder Bruch wird sichtbar und hinterfragt.
+
+**Besondere Schutzfälle:**
+- **Mitarbeiter als Patienten**, **prominente Patienten (VIP)** → zusätzlich gesperrte/pseudonymisierte Anzeige, verstärkte Protokollauswertung.
+- Besonders sensible Bereiche: **Psychiatrie, HIV, Genetik, Schwangerschaftsabbruch** → engere Rechte.
+
+**Benutzerverwaltung über den Lebenszyklus (Identity & Access Management, IAM)** — "**Joiner – Mover – Leaver**":
+- **Joiner** (Neueinstellung): Konto aus Personalsystem anlegen, Rolle nach Funktion zuweisen (nicht "wie Kollege X kopieren").
+- **Mover** (Wechsel von Innere zu Chirurgie): **alte Rechte entziehen**, neue vergeben — sonst sammeln sich Rechte an ("Rechte-Akkumulation").
+- **Leaver** (Austritt): Konto **sofort sperren**.
+- **Rezertifizierung**: Vorgesetzte bestätigen regelmäßig (z. B. jährlich), dass die Rechte ihrer Mitarbeiter noch stimmen.
+
+**Technische Bausteine:**
+- **zentraler Verzeichnisdienst** (z. B. Active Directory/LDAP) statt Einzelkonten in jedem System; **Single Sign-On** (ein Login → KIS, PACS, Labor) und **Kontextweitergabe** (Patient bleibt beim Wechsel ausgewählt).
+- **Authentisierung**: persönliche Kennung (keine Sammelkonten "Station3"!), starke Passwörter/**2-Faktor**, Mitarbeiterausweis/Chipkarte, **eHBA** für qualifizierte Signatur.
+- **Automatische Sperre** am unbeaufsichtigten Arbeitsplatz (Bildschirmsperre, Fast User Switching an Stationsrechnern).
+- **Protokollierung** (wer, wann, welcher Patient, welche Aktion) + regelmäßige **Auswertung**.
+- **Least Privilege** auch für **Administratoren**: getrennte Admin-Konten, Vier-Augen-Prinzip, kein Admin liest Patientendaten ohne Anlass.
+- **Forschung/Sekundärnutzung**: nur **pseudonymisierte** Daten über eigene Rolle (Modul IX).
+
+**Typische Fehler in der Praxis:** Sammel-/Gruppenkonten, nie entzogene Rechte nach Abteilungswechsel, "alle Ärzte sehen alles", Protokolle werden geschrieben, aber nie ausgewertet, Notfallzugriff ohne Begründung.
+
+Merksatz: Berechtigung = Rolle **×** Behandlungszusammenhang **×** Datenart **×** Aktion **×** Zeit. Notfall = Break the Glass: erlaubt, aber begründet, protokolliert, geprüft. Benutzer: Joiner–Mover–Leaver — beim Wechsel alte Rechte entziehen.
+
+*(Quelle: Kap. 4 Datenschutz, Kap. 14 Klinische Informationssysteme; Orientierungshilfe KIS der Datenschutzkonferenz; IAM/Joiner-Mover-Leaver und Rollenmatrix als Allgemeinwissen ergänzt. Grundlagen siehe Modul II.)*
+:::
+
 ## Schnittstellen zur Telematik-Infrastruktur
 
 ### Schnittstellen zur Telematik-Infrastruktur
 
 Schnittstellen zur Telematik-Infrastruktur.
+
+::: {.exam-question}
+Frage: Wie wird ein KIS an die Telematikinfrastruktur (TI) angebunden — welche Komponenten braucht man, welche Fachanwendungen nutzt das Krankenhaus darüber, und welche Standards (ISiK, KIM) spielen eine Rolle?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**TI** = das **geschlossene, sichere Netz des deutschen Gesundheitswesens** (verantwortlich: **gematik**, gesetzlich SGB V). Analogie: ein eigenes "Rohrpostsystem" nur für Gesundheitseinrichtungen, mit Ausweiskontrolle an jedem Eingang. Anwendungen aus Nutzersicht (eGK, ePA, Fernbehandlung) → **Modul X**; hier: **wie das KIS angeschlossen wird**.
+
+**Komponenten der Anbindung:**
+
+| Komponente | Funktion | Analogie |
+|---|---|---|
+| **Primärsystem** (KIS, PVS, AIS) | die eigentliche Software der Einrichtung, ruft TI-Dienste über definierte Schnittstellen auf | |
+| **Konnektor** (bzw. **Highspeed-Konnektor** für große Häuser) | baut einen **verschlüsselten VPN-Tunnel** in die TI auf, prüft Karten, signiert/verschlüsselt | sichere Schleuse/Pforte |
+| **TI-Gateway** (TI 2.0) | Konnektor-Funktion **im Rechenzentrum** eines Anbieters statt als Box im Haus | Pforte wird ausgelagert |
+| **E-Health-Kartenterminal** | liest Karten | Lesegerät an der Aufnahme |
+| **SMC-B** (*Security Module Card Typ B*) | **Institutionskarte**: weist das **Krankenhaus** als berechtigte Einrichtung aus | Hausausweis der Klinik |
+| **eHBA** | **persönlicher** Ausweis des Arztes: Authentisierung + **QES** | Dienstausweis + Unterschrift |
+| **eGK** | Versichertenkarte des Patienten | Versicherungsnachweis |
+
+**Fachanwendungen im Krankenhaus (über die TI):**
+
+| Anwendung | Was passiert | Bemerkung |
+|---|---|---|
+| **VSDM** (Versichertenstammdatenmanagement) | Versichertendaten der eGK online prüfen/aktualisieren | v. a. ambulant |
+| **NFDM / eMP** | Notfalldaten, elektronischer Medikationsplan auf der eGK | |
+| **ePA** ("ePA für alle") | **Opt-out** seit 15.01.2025 (bundesweit ab 29.04.2025), Befüllpflicht ab 01.10.2025 — KIS stellt z. B. **Entlassbrief, Befunde** ein | Zugriff i. d. R. nach Stecken der eGK, befristet |
+| **E-Rezept** | Verordnung als Datensatz (FHIR) auf Fachdienst, QES mit eHBA | Pflicht seit 01.01.2024 (Entlassrezept) |
+| **eAU** | Arbeitsunfähigkeitsbescheinigung elektronisch an Krankenkasse | |
+| **KIM** (*Kommunikation im Medizinwesen*) | **sichere E-Mail** innerhalb der TI (Ende-zu-Ende verschlüsselt, signiert) | eArztbrief an Hausarzt, Befundversand |
+| **TI-Messenger (TIM)** | sicherer Chat zwischen Einrichtungen | auf Basis Matrix-Protokoll |
+
+**Standards für die KIS-Seite:**
+- **ISiK** (*Informationstechnische Systeme in Krankenhäusern*) — von der gematik festgelegte, **verpflichtende FHIR-Schnittstellen** für KIS (§ 373 SGB V): KIS-Hersteller müssen Basisdaten (Patient, Fall, Diagnose, Termine, Dokumente …) über standardisierte FHIR-Schnittstellen bereitstellen; **Bestätigungsverfahren** durch die gematik. Ziel: Subsysteme und Apps können herstellerunabhängig ans KIS andocken.
+- **FHIR** (Fachdienste E-Rezept, ePA-Inhalte/MIOs), **IHE**-Profile (ePA-Dokumentenaustausch, angelehnt an **XDS**), **KIM** = Mail-Standards (SMTP/POP3) + S/MIME-Verschlüsselung über TI-Zertifikate.
+- **gematik-Zulassung** für Komponenten und Dienste (Konnektor, Kartenterminal, KIM-Anbieter).
+
+**Rechtlich / organisatorisch:**
+- Krankenhäuser sind zur TI-Anbindung **verpflichtet** (SGB V; Fördergelder über **KHZG**, Abschläge bei fehlender Ausstattung).
+- TI-Komponenten sind Teil des Sicherheitskonzepts (ITSM, KRITIS) — Ausfall des Konnektors = kein E-Rezept, keine ePA → Ausfallkonzept.
+- **TI 2.0**: Abkehr von Hardware-Karten/Konnektor hin zu **Zero-Trust**-Architektur, digitalen Identitäten (GesundheitsID) und Internet-Zugriff auf Fachdienste.
+
+Merksatz: KIS → **Konnektor** (VPN-Schleuse) → TI; Ausweise: **SMC-B** = Klinik, **eHBA** = Arzt, **eGK** = Patient. Dienste: ePA, E-Rezept, eAU, **KIM** (sichere Mail), TIM (Chat). KIS-Schnittstellenpflicht: **ISiK** (FHIR, gematik).
+
+*(Quelle: Kap. 18 Telematik/eGK, Curriculum Modul VII; ePA-für-alle-Termine, ISiK, KIM/TIM, TI 2.0 als Allgemeinwissen ergänzt — Stand 2025/26, Termine können sich ändern.)*
+:::
 
 ## Messaging- & Austauschstandards (ergänzend)
 
@@ -257,14 +416,47 @@ DICOM.
 
 ## Kodiersysteme (ergänzend)
 
-### ICD
+Inhalte der Kodiersysteme selbst (Aufbau, Beispiele, Abgrenzung Klassifikation/Nomenklatur/Ontologie) → **Modul IV** (ICD-10-GM, OPS, SNOMED CT, LOINC, ATC, UCUM). Hier: die **IT-Sicht** — wie Codes im KIS gespeichert und zwischen Systemen ausgetauscht werden.
 
-ICD.
+::: {.exam-question}
+Frage: Wie werden ICD, SNOMED CT und LOINC in Informations- und Kommunikationssystemen technisch genutzt — wo stehen sie in HL7-Nachrichten und FHIR-Ressourcen, und wozu braucht man Terminologieserver und Mappings?
+:::
 
-### SNOMED CT
+::: {.exam-answer}
+**Antwort:**
 
-SNOMED CT.
+**Warum Codes für die IT so wichtig sind:** Freitext ("Herzinfarkt", "MI", "STEMI Vorderwand") kann ein Computer nicht zuverlässig vergleichen. Ein **Code** ist eindeutig → Abrechnung, Statistik, CDSS-Regeln, Forschung und Datenaustausch funktionieren erst damit (**semantische Interoperabilität**).
 
-### LOINC
+**Wo die drei typischerweise im Krankenhaus vorkommen:**
 
-LOINC.
+| System | wird erfasst in | geht an | Zweck |
+|---|---|---|---|
+| **ICD-10-GM** (+ **OPS**) | KIS-Diagnosen-/Prozedurendokumentation, Kodierkräfte/Medizincontrolling | **Grouper** (DRG), Krankenkasse (§ 301 SGB V), InEK (§ 21 KHEntgG), QS, Register | **Abrechnung, Statistik** |
+| **LOINC** | **Laborsystem (LIS)**, Analysen-Katalog | KIS, ePA, Forschungsdatenplattform | **eindeutige Laborbezeichnung** über Hausgrenzen |
+| **SNOMED CT** | klinische Dokumentation, Problemlisten, MIOs, Befunde | ePA, FHIR-Schnittstellen, Forschung (MII) | **feine klinische Semantik** |
+
+**In Nachrichten und Ressourcen:**
+- **HL7 v2**: Diagnose im Segment **DG1** (Code + Kodiersystem-Kennung, z. B. `I21.0^Akuter transmuraler Myokardinfarkt der Vorderwand^I10`), Laborwert im Segment **OBX** (Analyt als LOINC-Code + Wert + Einheit).
+- **FHIR**: jedes kodierte Feld ist ein **`Coding`** = **System-URL + Code + Anzeigetext**, z. B.
+  - Diagnose (`Condition.code`): `system = http://fhir.de/CodeSystem/bfarm/icd-10-gm`, `code = I21.0`
+  - Laborwert (`Observation.code`): `system = http://loinc.org`, `code = 2823-3` (Kalium im Serum/Plasma), Einheit per **UCUM** `mmol/L`
+  - Befund (`Condition`/`Observation`): `system = http://snomed.info/sct`, `code = 22298006` (Myokardinfarkt)
+- Ein Feld kann **mehrere Codings** gleichzeitig tragen (z. B. SNOMED CT **und** ICD-10-GM für dieselbe Diagnose).
+
+**Terminologieserver** = zentraler Dienst, der Kodiersysteme **vorhält, versioniert und abfragbar macht** (FHIR-Operationen wie `$lookup`, `$validate-code`, `$translate`):
+- **CodeSystem** = das ganze Kodiersystem (z. B. ICD-10-GM 2026).
+- **ValueSet** = **erlaubte Auswahl** für ein bestimmtes Feld (z. B. "nur Codes für Blutgruppen", "nur Kalium-LOINC-Codes").
+- **ConceptMap** = **Mapping** zwischen Systemen.
+- In Deutschland: **BfArM** (ICD/OPS, nationales SNOMED-CT-Release-Center), **Terminologieserver/-portal** der gematik/BfArM; MII nutzt eigene Terminologieserver.
+
+**Mapping** (Überleitung zwischen Kodiersystemen):
+- Beispiel: Arzt dokumentiert klinisch fein in **SNOMED CT** → System schlägt **ICD-10-GM** zur Abrechnung vor (**SNOMED → ICD Map**).
+- Lokale Laborkataloge ("K_SER" im Haus A, "KALIUM" im Haus B) → beide auf **LOINC 2823-3** mappen → hausübergreifend vergleichbar.
+- **Problem**: Mappings sind selten 1:1 — fein → grob verliert Information (viele SNOMED-Konzepte → ein ICD-Code), grob → fein ist nicht eindeutig. Mappings brauchen Pflege bei jeder **neuen Version** (ICD-10-GM jährlich!).
+
+**Versionierung**: ICD-10-GM/OPS erscheinen **jährlich** (BfArM), gültig ab 1.1. → KIS und Grouper müssen rechtzeitig aktualisiert werden (Change Management!), ein Fall wird mit der Version seines Aufnahmejahres kodiert.
+
+Merksatz: Code statt Freitext = semantische Interoperabilität. ICD → Abrechnung (DG1, § 301), LOINC → Labor (OBX), SNOMED CT → klinische Feinheit. In FHIR: Coding = System-URL + Code. Terminologieserver hält CodeSystems, ValueSets, ConceptMaps; Mapping fein → grob verliert Information.
+
+*(Quelle: Kap. 12 Medizinische Dokumentation, Kap. 15 Kommunikationsstandards (HL7); FHIR-Coding, Terminologieserver und Mappings als Allgemeinwissen ergänzt. Inhalte der Kodiersysteme → Modul IV.)*
+:::

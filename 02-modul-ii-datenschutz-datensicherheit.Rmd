@@ -24,6 +24,64 @@ Merksatz: DSGVO/BDSG = "darfst du die Daten verarbeiten" (Datenschutzrecht). StG
 *(Hinweis: nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, u. a. DSGVO erst 2018 in Kraft) — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 :::
 
+### Vertiefung: DSGVO, BDSG, StGB und ärztliche Schweigepflicht
+
+::: {.exam-question}
+Frage: Wie verhalten sich DSGVO, BDSG, StGB (§ 203, Schweigepflicht) und Landesgesetze zueinander, und wann dürfen Patientendaten ohne Einwilligung offenbart werden?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+**DSGVO ≠ StGB**: zwei getrennte Regelwerke, die oft gemeinsam greifen.
+
+| | **DSGVO** | **§ 203 StGB** |
+|---|---|---|
+| Was? | EU-**Verordnung**, gilt seit 25.05.2018 direkt in allen EU-Staaten | deutsches Strafrecht: „Verletzung von Privatgeheimnissen“ |
+| Schützt | Umgang mit personenbezogenen Daten allgemein (erheben, speichern, weitergeben) | Geheimnisse, die einem Berufsgeheimnisträger **anvertraut** wurden |
+| Trifft | meist die **Organisation** (Klinik/Praxis als Verantwortlicher) | die **Person** (Arzt, Pflege, auch IT-Dienstleister) |
+| Sanktion | **Bußgeld** (Art. 83: bis 20 Mio. € bzw. 4 % des weltweiten Jahresumsatzes) + Schadensersatz (Art. 82), Verwaltungsrecht | **Strafe**: Freiheitsstrafe bis 1 Jahr oder Geldstrafe |
+
+Beispiele: Oberarzt erzählt am Stammtisch von der HIV-Diagnose eines namentlich genannten Patienten → § 203 StGB + Berufsrecht. Klinik-Server mit Patientendaten ungeschützt im Internet → DSGVO-Bußgeld gegen die Klinik. MFA verkauft Patientendaten an die Presse → zusätzlich § 42 BDSG.
+
+**Normenebenen** (von oben nach unten): DSGVO (EU) → **BDSG** (Bund) → Landesdatenschutz-/Landeskrankenhausgesetze → **§ 203 StGB** (Strafrecht) → **§ 9 Berufsordnung** (Kammer). Analogie: wie beim Behandlungsfehler, der zugleich zivil-, straf- und berufsrechtlich verfolgt werden kann.
+
+**Ärztliche Schweigepflicht**: strafrechtlich in **§ 203 StGB** (Freiheitsstrafe bis 1 Jahr oder Geldstrafe), zusätzlich berufsrechtlich in der Berufsordnung (§ 9 MBO-Ä). Sie gilt auch für **Hilfspersonen** (Pflege, MFA, Sekretariat) und **IT-Dienstleister** (seit 2017 ausdrücklich in § 203 StGB) → externer KIS-Wartungstechniker muss auf die Schweigepflicht verpflichtet werden.
+
+**Wann darf offenbart werden?**
+
+| Grund | Klinik-Beispiel |
+|---|---|
+| **Einwilligung** des Betroffenen | Patient erlaubt Auskunft an die Ehefrau |
+| **mutmaßliche Einwilligung** | bewusstloser Pat. auf ITS → Angehörige informieren |
+| **gesetzliche Meldepflicht** | IfSG-Meldung über **DEMIS** ans Gesundheitsamt (siehe Modul IV), Krebsregister → namentlich, **ohne Einwilligung** zulässig |
+| **rechtfertigender Notstand** (§ 34 StGB) | Pat. mit schwerer Epilepsie fährt trotz Warnung weiter Bus → Meldung an die Fahrerlaubnisbehörde als letztes Mittel |
+
+**BDSG** (Bundesdatenschutzgesetz, Neufassung 2018): füllt die **Öffnungsklauseln** der DSGVO aus, darf ihr nicht widersprechen. Analogie: DSGVO = Leitlinie der Fachgesellschaft, BDSG = Hausstandard, der sie konkretisiert.
+
+| Einrichtung | Datenschutzgesetz neben der DSGVO |
+|---|---|
+| Arztpraxis, MVZ, **private** Klinik, Bundeseinrichtungen | **BDSG** |
+| **Uniklinik, kommunales/Landes-Krankenhaus** | **Landesdatenschutzgesetz** + ggf. Landeskrankenhausgesetz |
+| Krankenkassen, Sozialdaten | **SGB X / SGB V** |
+
+**Spezialgesetze gehen vor** (§ 1 Abs. 2 BDSG): SGB V, IfSG, GDNG, Krebsregistergesetze → BDSG ist nur das Auffanggesetz.
+
+| § BDSG | Inhalt | Beispiel |
+|---|---|---|
+| **§ 22** | Gesundheitsdaten (besondere Kategorien) für Behandlung/Gesundheitsvorsorge, mit Schutzmaßnahmen | Praxis speichert Diagnosen, beschränkt + protokolliert Zugriffe |
+| **§ 27** | **Forschung** ohne Einwilligung möglich, wenn Forschungsinteresse überwiegt + Schutzmaßnahmen (z. B. Pseudonymisierung) | retrospektive Auswertung von Praxisdaten |
+| **§ 38** | **Datenschutzbeauftragter** Pflicht ab **20 Personen**, die ständig automatisiert Daten verarbeiten | Praxis mit 25 Mitarbeitenden am PVS (Kliniken brauchen ihn ohnehin nach Art. 37 DSGVO) |
+| **§ 42** | **Strafvorschriften** (z. B. unberechtigter Verkauf von Daten) | bis 3 Jahre Freiheitsstrafe |
+| **§ 43** | Bußgelder (ergänzend zu Art. 83 DSGVO) | |
+
+Aufsicht: **BfDI** (Bundesbeauftragte/r für den Datenschutz und die Informationsfreiheit) für den Bund, sonst meist die **Landesdatenschutzbehörde**.
+
+Merksatz: **DSGVO = EU, Bußgeld, trifft meist die Klinik; § 203 StGB = Strafrecht, trifft die Person.** Schweigepflicht durchbrochen nur durch Einwilligung, Gesetz (z. B. DEMIS-Meldung) oder Notstand. **BDSG** = deutsche Ergänzung (§ 22 Gesundheitsdaten, § 27 Forschung, § 38 DSB ab 20, § 42 Strafe); Unikliniken → Landesrecht; Spezialgesetze gehen vor.
+
+*(Quelle: Curriculum/Allgemeinwissen, Vertiefung aus Nachfragen; nicht im medinfo-kompakt-Buch (2015, vor DSGVO).)*
+:::
+
 ### Betroffenenrechte und Kontrollinstanzen
 
 ::: {.exam-question}

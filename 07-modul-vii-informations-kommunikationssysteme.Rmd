@@ -1,4 +1,4 @@
-# Informations- und Kommunikationssysteme
+# Informations- und Kommunikationssysteme {#modul-vii}
 
 ## Rechtliche Aspekte, Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen
 

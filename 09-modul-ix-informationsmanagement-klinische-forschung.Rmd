@@ -1,4 +1,4 @@
-# Informationsmanagement/Klinisches Datenmanagement/Klinische Forschung
+# Informationsmanagement/Klinisches Datenmanagement/Klinische Forschung {#modul-ix}
 
 ## Anwendungssysteme in der Forschung
 

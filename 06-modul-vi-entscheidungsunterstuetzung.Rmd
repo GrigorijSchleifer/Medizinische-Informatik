@@ -1,4 +1,4 @@
-# Entscheidungsunterstützung
+# Entscheidungsunterstützung {#modul-vi}
 
 ## Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
 

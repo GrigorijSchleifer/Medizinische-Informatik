@@ -1,4 +1,4 @@
-# Bildverarbeitung/Biosignalverarbeitung
+# Bildverarbeitung/Biosignalverarbeitung {#modul-v}
 
 ## Technische Komponenten
 

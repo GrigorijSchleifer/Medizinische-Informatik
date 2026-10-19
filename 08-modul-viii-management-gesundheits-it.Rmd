@@ -1,4 +1,4 @@
-# Management in der Gesundheits-IT
+# Management in der Gesundheits-IT {#modul-viii}
 
 ## Qualitätsmanagement und Zertifizierungen (z. B. KTQ, proCum Cert, JCI, DIN EN ISO 9001)
 

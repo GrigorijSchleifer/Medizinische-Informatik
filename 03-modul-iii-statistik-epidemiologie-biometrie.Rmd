@@ -1,4 +1,4 @@
-# Medizinische Statistik/Epidemiologie/Biometrie
+# Medizinische Statistik/Epidemiologie/Biometrie {#modul-iii}
 
 ## Grundtypen und Effektmasse für medizinische Studien
 

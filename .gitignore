@@ -8,3 +8,6 @@ _bookdown_files/
 .Rhistory
 .RData
 Curriculum.pdf
+
+# automatisch erzeugt (scripts/themenindex.py)
+themen.md

@@ -58,7 +58,22 @@ ein Hinweis, dass die Antwort auf dem Curriculum/Allgemeinwissen basiert
 (für Themen, die im Buch von 2015 nicht oder nicht mehr aktuell behandelt sind,
 z. B. DSGVO, FHIR).
 
-## Status
+## Stand: was steht schon im Buch?
 
-Module I–III sind mit Fragen/Antworten gefüllt. Module IV–X sind noch
-Platzhalter-Struktur (Curriculum-Gliederung ohne Inhalt).
+```bash
+python3 scripts/themenindex.py
+```
+
+Erzeugt `themen.md` (nicht im Repo, wird lokal erzeugt): pro Modul die Zahl der
+Fragen, alle Abschnitte mit ihren Fragen und eine Markierung **offen** für
+Abschnitte, in denen noch keine Frage steht.
+
+## Mitarbeiten
+
+Regeln für neue Inhalte (Format, Quellenangabe, keine wörtlichen Buchzitate)
+stehen in [`KONVENTIONEN.md`](KONVENTIONEN.md). Abgelehnte Themenvorschläge
+werden in [`abgelehnt.md`](abgelehnt.md) gesammelt.
+
+- Im Terminal wird direkt auf `main` gearbeitet.
+- Claude in der Cloud arbeitet auf eigenen `claude/…`-Branches; Änderungen
+  kommen nur per Pull Request nach `main`.

@@ -1,4 +1,4 @@
-# Telemedizin und Telematik
+# Telemedizin und Telematik {#modul-x}
 
 ## Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen
 

@@ -4,7 +4,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><strong>Medical Informatics — Exam Prep</strong></li>
+        <li><strong>Medizinische Informatik — Prüfungsvorbereitung</strong></li>
       collapse: section
     download: no
 bookdown::pdf_book:

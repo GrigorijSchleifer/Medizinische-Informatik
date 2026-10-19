@@ -1,32 +1,32 @@
 ---
-title: "Medical Informatics — Exam Prep"
-author: "Your Name"
+title: "Medizinische Informatik — Prüfungsvorbereitung"
+subtitle: "Fragen und Antworten zur Zusatz-Weiterbildung"
 date: "`r Sys.Date()`"
+lang: de
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 ---
 
-# Preface {-}
+# Vorwort {-}
 
-Study notes and practice material for the medical informatics exam.
-Each chapter covers one topic area; edit or add chapters as the syllabus requires.
+Dieses Buch sammelt Fragen und Antworten zur Vorbereitung auf die Prüfung der
+Zusatz-Weiterbildung **Medizinische Informatik**. Es ist nach den zehn Modulen
+des (Muster-)Kursbuchs der Bundesärztekammer gegliedert — ein Kapitel pro Modul.
 
-## Buch lokal anschauen {-}
+## Wie man damit lernt {-}
 
-Nach dem Rendern (`Rscript -e 'bookdown::render_book(".")'` aus `medinfo_exam_prep_book/`) liegt die fertige Website in `_book/`. Um sie lokal im Browser zu öffnen:
+- Jede gelb hinterlegte **Frage** ist so formuliert, wie sie im Fachgespräch
+  gestellt werden könnte. Erst selbst antworten, dann die Antwort darunter lesen.
+- Viele Antworten enden mit einem **Merksatz** zum Behalten.
+- Unter jeder Antwort steht die **Quelle**: entweder ein Kapitel aus
+  "Medizinische Informatik kompakt" (De Gruyter, 2015) oder der Hinweis
+  *Curriculum/Allgemeinwissen* — für Themen, die im Buch von 2015 fehlen oder
+  veraltet sind (z. B. DSGVO, FHIR, ePA, Telematikinfrastruktur).
 
-```bash
-cd _book
-python3 -m http.server 8000 --bind 127.0.0.1
-```
+## Stand und Gewähr {-}
 
-| Teil | Bedeutung |
-|---|---|
-| `cd _book` | Ins gerenderte Output-Verzeichnis wechseln, damit der Server von dort aus die Dateien (`index.html` etc.) ausliefert. |
-| `python3 -m http.server 8000` | Startet Pythons eingebauten simplen Webserver auf Port 8000 (beliebig wählbar, solange frei). |
-| `--bind 127.0.0.1` | Bindet den Server nur an die lokale Loopback-Adresse (dein eigener Rechner) — nicht von anderen Geräten im Netzwerk erreichbar, sicherer als Standard. |
-
-Danach im Browser aufrufen: `http://127.0.0.1:8000`.
-
-Läuft im Vordergrund, bis mit `Strg+C` beendet — für Dauerbetrieb z.B. in einer eigenen tmux-Session laufen lassen.
+Das Buch ist in Arbeit; einige Abschnitte sind noch Platzhalter. Es ist
+Lernmaterial von Prüflingen für Prüflinge — ohne Gewähr für Richtigkeit und
+Vollständigkeit. Gesetze, Fristen und Telematik-Anwendungen ändern sich
+schnell; im Zweifel gilt die Primärquelle.

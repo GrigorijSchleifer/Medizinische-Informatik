@@ -2,9 +2,37 @@
 
 ## Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen
 
-### Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen
+::: {.exam-question}
+Frage: Was ist Telemedizin (vs. Telematik), und welche organisatorischen, juristischen, ethischen und technischen Aspekte muss man bei telemedizinischen Anwendungen beachten?
+:::
 
-Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen.
+::: {.exam-answer}
+**Antwort:**
+
+**Telemedizin** = medizinische Versorgung (Diagnostik, Therapie, Beratung) **über räumliche und/oder zeitliche Distanz** mithilfe von IKT (Informations- und Kommunikationstechnik). **Telematik** = **Tele**kommunikation + Infor**matik** = die technische **Infrastruktur** dafür (z. B. TI = Telematikinfrastruktur). Kurz: Telematik ist die Straße, Telemedizin der Krankentransport, der darauf fährt.
+
+Formen:
+- **Doc2Doc** (Arzt ↔ Arzt): **Telekonsil**, z. B. Radiologe befundet nachts das CT (Computertomographie) eines kleinen Hauses (Teleradiologie).
+- **Doc2Patient** (Arzt ↔ Patient): **Videosprechstunde**, **Telemonitoring** (Herzinsuffizienz-Patient überträgt Gewicht/Blutdruck/Implantatdaten).
+- **synchron** (live, z. B. Video) vs. **asynchron** (Store-and-Forward = speichern und weiterleiten, z. B. Hautfoto wird später befundet).
+
+| Aspekt | Worum geht es? | Beispiele |
+|---|---|---|
+| **Organisatorisch** | Wer macht was wann? Prozesse, Zuständigkeiten, Vergütung | **24/7-Erreichbarkeit** (wer reagiert am Sonntag auf den Telemonitoring-Alarm?); Notfallplan bei Technikausfall; Schulung von Personal und Patienten; Einbindung in KIS (Krankenhausinformationssystem)/Arbeitsabläufe; **Vergütung** über EBM-Ziffern (EBM = Einheitlicher Bewertungsmaßstab), z. B. Videosprechstunde, Telekonsil, Telemonitoring bei Herzinsuffizienz |
+| **Juristisch** | Was ist erlaubt, wer haftet? | **Fernbehandlung** seit 2018 erlaubt (§ 7 Abs. 4 MBO-Ä = Musterberufsordnung für Ärzte), wenn ärztlich vertretbar; **gleicher Facharztstandard** wie vor Ort (Haftung); **Dokumentationspflicht** (§ 630f BGB = Bürgerliches Gesetzbuch); **Aufklärung** über die Grenzen der Fernbehandlung; **Datenschutz** (DSGVO = Datenschutz-Grundverordnung, Art. 9: Gesundheitsdaten); Software ggf. **Medizinprodukt** nach MDR (Medical Device Regulation = EU-Medizinprodukteverordnung); zertifizierte Videodienstanbieter (Anlage 31b BMV-Ä = Bundesmantelvertrag-Ärzte) |
+| **Ethisch** | Ist es gerecht und gut für den Patienten? | **Arzt-Patient-Beziehung** (kein Abtasten, weniger nonverbale Signale); **Digital Divide** (digitale Spaltung: ältere, sehbehinderte, nicht-deutschsprachige Patienten ohne Smartphone); **Autonomie vs. Überwachung** (fühlt sich die demente Patientin mit Sensoren zu Hause kontrolliert?); **Gerechtigkeit**: bessere Versorgung im ländlichen Raum; informierte **Einwilligung** |
+| **Technisch** | Funktioniert es zuverlässig und sicher? | **Bandbreite/Latenz** (Verzögerung) für Video; **Verfügbarkeit/Ausfallsicherheit**; **Bild-/Tonqualität** (Telepathologie braucht hochauflösende Schnitte, Teledermatologie Farbtreue); **Interoperabilität** (HL7 FHIR = Health Level 7 Fast Healthcare Interoperability Resources, DICOM = Digital Imaging and Communications in Medicine, IHE = Integrating the Healthcare Enterprise); **Verschlüsselung** (Ende-zu-Ende); **Usability** (Gebrauchstauglichkeit) für Patienten |
+
+**Durchgespieltes Beispiel: Tele-Stroke-Netzwerk (Teleneurologie, z. B. TEMPiS = Telemedizinisches Projekt zur integrierten Schlaganfallversorgung in Bayern):** Patient mit Hemiparese in einem kleinen Haus ohne Neurologen.
+- *Technisch:* Videoverbindung + Übertragung der CT-Bilder per DICOM in Echtzeit.
+- *Organisatorisch:* Neurologe im Zentrum 24/7 erreichbar, feste Alarmierungswege, SOP (Standard Operating Procedure = Standardvorgehen) für die Lyse.
+- *Juristisch:* Behandlungsverantwortung bleibt beim Arzt vor Ort, der Telekonsiliar haftet für seinen Rat; beides dokumentieren.
+- *Ethisch:* Schnelle Lyse auch auf dem Land = mehr Versorgungsgerechtigkeit („Time is brain“).
+
+Merksatz: **Telematik = Infrastruktur (Straße), Telemedizin = Versorgung über Distanz (Krankentransport darauf). Vier Aspekte: Organisation (wer reagiert, wer bezahlt?), Recht (Fernbehandlung erlaubt seit 2018, gleicher Facharztstandard, Dokumentation, DSGVO, MDR), Ethik (Digital Divide, Autonomie), Technik (Bandbreite, Verfügbarkeit, Interoperabilität, Verschlüsselung).**
+
+*(Quelle: Curriculum/Allgemeinwissen; Telemedizin auch im Buch, Kap. Telemedizin — Fernbehandlungsverbot seit 2018 gelockert, Stand aktualisiert.)*
+:::
 
 ## Elektronische Akten und patientenzentrierte Anwendungen
 

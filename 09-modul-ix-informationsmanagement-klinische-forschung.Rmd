@@ -268,6 +268,33 @@ Merksatz: **Planen (Prüfplan, DMP = Datenmanagementplan, eCRF = digitaler Erfas
 
 ## Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien
 
-### Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien
+::: {.exam-question}
+Frage: Welche Konzepte gibt es, um Wissen mit digitalen Medien zu vermitteln (z. B. E-Learning, Blended Learning, Aufklärungsfilme), und was ist dabei zu beachten?
+:::
 
-Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien (z. B. E-Learning, Blended Learning, Aufklärungsfilme).
+::: {.exam-answer}
+**Antwort:**
+
+Zwei Zielgruppen: **Personal** (Aus-/Fort-/Weiterbildung, Einweisungen) und **Patienten** (Aufklärung, Schulung).
+
+| Konzept | Prinzip | Klinik-Beispiel |
+|---|---|---|
+| **E-Learning** | Lernen mit elektronischen Medien, meist **asynchron** (jeder lernt, wann er will); z. B. **WBT (Web-Based Training = Online-Lernmodul)** auf einem **LMS (Learning Management System = Lernplattform, z. B. Moodle, ILIAS)** mit Lernstandskontrolle | Pflicht-Unterweisung Hygiene/Datenschutz/Brandschutz als Online-Modul mit Abschlusstest; **CME (Continuing Medical Education = zertifizierte ärztliche Fortbildung)**-Punkte per Online-Fortbildung |
+| **Blended Learning** | „gemischt“: **Online-Phase + Präsenzphase** kombiniert; Variante **Inverted/Flipped Classroom** (Theorie vorher online, Präsenzzeit nur zum Üben/Diskutieren) | Reanimationskurs: Algorithmus vorab per Video/Quiz, im Präsenztermin nur Training am Phantom |
+| **Webinar / virtuelles Klassenzimmer** | **synchron** (alle gleichzeitig, live, interaktiv) | Live-Fortbildung zur neuen Leitlinie per Videokonferenz, Fragen im Chat |
+| **MOOC (Massive Open Online Course = offener Online-Kurs für sehr viele Teilnehmer)** | frei zugänglich, große Teilnehmerzahl | Online-Kurs „Digitale Medizin“ einer Universität |
+| **Simulation / VR (Virtual Reality = virtuelle Realität) / Serious Games** | realitätsnahes Üben ohne Patientenrisiko | Laparoskopie-Simulator; VR-Training für Notfall-/Katastrophenszenarien |
+| **Mikrolernen** | sehr kurze Einheiten (wenige Minuten), oft mobil per App | 3-Minuten-Video „neues Infusionspumpenmodell“ auf Station; Medizinprodukte-Einweisung |
+| **Aufklärungsfilme / digitale Patientenaufklärung** | standardisierte, verständliche Information für Patienten, ggf. mehrsprachig | Film vor Koloskopie oder Narkose im Wartezimmer/Tablet; Diabetes-Schulung per App/DiGA (Digitale Gesundheitsanwendung) |
+
+**Was zu beachten ist:**
+- **Didaktik vor Technik**: erst Lernziele festlegen, dann Medium wählen; Interaktivität (Quiz, Fälle) und Lernerfolgskontrolle einbauen.
+- **Aufklärungsfilm ersetzt nicht das ärztliche Aufklärungsgespräch**: Nach § 630e BGB (Bürgerliches Gesetzbuch) muss mündlich aufgeklärt werden; der Film ergänzt nur und dient als Vorbereitung. Die Dokumentation muss zeigen, dass das Gespräch stattgefunden hat.
+- **Vorteile**: zeit- und ortsunabhängig (Schichtdienst!), einheitliche Qualität, skalierbar, Nachweis der Teilnahme automatisch dokumentiert.
+- **Nachteile/Grenzen**: weniger persönlicher Austausch, praktische Fertigkeiten nur begrenzt digital lernbar (→ Blended Learning), Selbstdisziplin nötig, Aufwand für Erstellung und Aktualisierung.
+- **Rahmenbedingungen**: Barrierefreiheit (Untertitel, einfache Sprache, Mehrsprachigkeit), Datenschutz auf der Lernplattform (Lernstände sind Mitarbeiterdaten → Mitbestimmung durch Betriebs-/Personalrat), Urheberrecht an Bildern/Videos, IT-Ausstattung und Zugang für alle Mitarbeitenden.
+
+Merksatz: **E-Learning = online, meist asynchron; Blended Learning = online + Präsenz gemischt (Flipped Classroom: Theorie zu Hause, Üben vor Ort); Aufklärungsfilm = ergänzt das Aufklärungsgespräch, ersetzt es nie (§ 630e BGB).** Erst Lernziel, dann Medium.
+
+*(Quelle: Curriculum/Allgemeinwissen.)*
+:::

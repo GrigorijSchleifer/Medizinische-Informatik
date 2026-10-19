@@ -296,5 +296,5 @@ Zwei Zielgruppen: **Personal** (Aus-/Fort-/Weiterbildung, Einweisungen) und **Pa
 
 Merksatz: **E-Learning = online, meist asynchron; Blended Learning = online + Präsenz gemischt (Flipped Classroom: Theorie zu Hause, Üben vor Ort); Aufklärungsfilm = ergänzt das Aufklärungsgespräch, ersetzt es nie (§ 630e BGB).** Erst Lernziel, dann Medium.
 
-*(Quelle: Curriculum/Allgemeinwissen.)*
+*(Quelle: Curriculum/Allgemeinwissen — § 630e BGB (Aufklärung), (Muster-)Kursbuch BÄK Kap. 2.7 (Blended Learning/E-Learning).)*
 :::

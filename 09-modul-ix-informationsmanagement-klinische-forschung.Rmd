@@ -119,7 +119,7 @@ Frage: Was versteht man unter vernetzter medizinischer Forschung und Data Sharin
 
 Merksatz: **Vernetzt = viele Kliniken, ein Datenpool (MII/DIZ, FDPG, EHDS).** Data Sharing: open / kontrolliert / föderiert („Code to Data“). **FAIR = Findable, Accessible, Interoperable, Reusable — „fair“ heißt nicht „frei“.**
 
-*(Quelle: Curriculum/Allgemeinwissen; nicht im Buch von 2015 — MII, NUM, FDZ/GDNG, EHDS sind neuer.)*
+*(Quelle: Curriculum/Allgemeinwissen; nicht im Buch von 2015 — MII, NUM, FDZ/GDNG, EHDS sind neuer. Stand: 10/2026.)*
 :::
 
 ## Nutzung von Routine- und Registerdaten in der Versorgungsforschung
@@ -170,7 +170,7 @@ Frage: Was ist Versorgungsforschung, welche Routine- und Registerdaten nutzt sie
 
 Merksatz: **RCT = efficacy (Idealbedingungen), Versorgungsforschung = effectiveness (Alltag).** Routinedaten = *nebenbei* entstanden (Abrechnung), Register = *gezielt* gesammelt. **Krebsregister** = epidemiologisch + klinisch, ICD-O-3 + TNM, oBDS; **KISS** = NRZ/Charité, Infektionen pro 1.000 Device-Tage, erfüllt § 23 IfSG. Größte Schwäche: **Confounding** → keine Kausalität.
 
-*(Quelle: Curriculum/Allgemeinwissen; Krebsregister/§ 65c auch im Buch, Kap. Dokumentation — FDZ/GDNG, oBDS, IRD, ZfKD-Zusammenführung als aktueller Stand ergänzt.)*
+*(Quelle: Curriculum/Allgemeinwissen; Krebsregister/§ 65c auch im Buch, Kap. Dokumentation — FDZ/GDNG, oBDS, IRD, ZfKD-Zusammenführung als aktueller Stand ergänzt. Stand: 10/2026.)*
 :::
 
 ## Datenmanagement, Datenintegration

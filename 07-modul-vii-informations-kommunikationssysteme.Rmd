@@ -260,7 +260,7 @@ Frage: Was ist IT-Servicemanagement, was ist ITIL, und welche Kernprozesse (Inci
 
 Merksatz: ITSM = IT als Dienstleistung mit Prozessen; ITIL = Best-Practice-Sammlung dafür (Norm: ISO 20000). Incident = Symptom weg (schnell), Problem = Ursache weg (gründlich), Change = geplant und freigegeben (CAB). SLA = Vertrag IT ↔ Klinik.
 
-*(Quelle: Kap. 14 Klinische Informationssysteme (Betrieb), Curriculum Modul VII; ITIL-Prozesse, KRITIS/B3S und Verfügbarkeitsrechnung als Allgemeinwissen ergänzt.)*
+*(Quelle: Kap. 14 Klinische Informationssysteme (Betrieb), Curriculum Modul VII; ITIL-Prozesse, KRITIS/B3S und Verfügbarkeitsrechnung als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Berücksichtigung datenschutzrechtlicher Belange
@@ -381,7 +381,7 @@ Frage: Wie wird ein KIS an die Telematikinfrastruktur (TI) angebunden — welche
 
 Merksatz: KIS → **Konnektor** (VPN-Schleuse) → TI; Ausweise: **SMC-B** = Klinik, **eHBA** = Arzt, **eGK** = Patient. Dienste: ePA, E-Rezept, eAU, **KIM** (sichere Mail), TIM (Chat). KIS-Schnittstellenpflicht: **ISiK** (FHIR, gematik).
 
-*(Quelle: Kap. 18 Telematik/eGK, Curriculum Modul VII; ePA-für-alle-Termine, ISiK, KIM/TIM, TI 2.0 als Allgemeinwissen ergänzt — Stand 2025/26, Termine können sich ändern.)*
+*(Quelle: Kap. 18 Telematik/eGK, Curriculum Modul VII; ePA-für-alle-Termine, ISiK, KIM/TIM, TI 2.0 als Allgemeinwissen ergänzt — Stand: 10/2026, Termine können sich ändern.)*
 :::
 
 ## Messaging- & Austauschstandards (ergänzend)
@@ -407,7 +407,7 @@ Frage: Was unterscheidet HL7 v2 von FHIR, und wie passt die deutsche Medizininfo
 
 Merksatz: MII = FHIR von Anfang an (Forschungsdaten, greenfield), restliches KIS = Integrationsserver als Brücke, solange v2-Alt-Systeme laufen (brownfield) — "ganz auf FHIR" ist das Langzeitziel (TI, ePA, eRezept), nicht der aktuelle KIS-Alltag.
 
-*(Hinweis: FHIR/MII nicht im medinfo-kompakt-Buch (2015, vor FHIR) — Antwort basiert auf Curriculum/Allgemeinwissen; HL7 v2-Grundlagen aus Kap. 14.)*
+*(Hinweis: FHIR/MII nicht im medinfo-kompakt-Buch (2015, vor FHIR) — Antwort basiert auf Curriculum/Allgemeinwissen; HL7 v2-Grundlagen aus Kap. 14. Stand: 10/2026.)*
 :::
 
 ### DICOM

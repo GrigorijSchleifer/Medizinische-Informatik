@@ -10,6 +10,8 @@ Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 
 ::: {.exam-answer}
 **Antwort:** Server (z. B. KIS), Clients, aktive Komponenten (Switches, Router, WLAN), passive Komponenten (Verkabelung, Patchpanels), Firewalls/Sicherheitszonen, Schnittstellen zu Medizingeräten, Anbindung an die Telematik-Infrastruktur.
+
+Merksatz: Netz wie Klinikgebäude — Server = Zentralarchiv, Clients = Stationsarbeitsplätze, Switch/Router = Flure und Pforte, Firewall = Zugangskontrolle, TI (Telematikinfrastruktur) = gesicherter Ausgang nach draußen.
 :::
 
 ### Aktive und passive Netzwerkkomponenten
@@ -20,6 +22,8 @@ Frage: Unterschied aktive vs. passive Netzwerkkomponenten?
 
 ::: {.exam-answer}
 **Antwort:** Aktiv = verarbeitet/verstärkt Signale, braucht Strom (z. B. Switch, Router, Access Point). Passiv = leitet Signale nur weiter, keine Verarbeitung/kein Strom (z. B. Kabel, Patchpanel, Stecker).
+
+Merksatz: Aktiv = braucht Strom und „denkt mit“ (Switch, Router, Access Point); passiv = nur Leitung (Kabel, Patchpanel, Netzwerkdose).
 :::
 
 ### Client-Server-Konzept
@@ -30,6 +34,8 @@ Frage: Was ist das Client-Server-Konzept?
 
 ::: {.exam-answer}
 **Antwort:** Client fragt Dienste/Daten an, Server stellt sie bereit — zentrale Datenhaltung/-verarbeitung auf dem Server, Clients greifen darauf zu (z. B. Arbeitsplatz-PC greift auf zentrales KIS zu).
+
+Merksatz: Client = fragt an (Stationsarbeitsplatz), Server = liefert (zentrales KIS (Krankenhausinformationssystem)) — wie die Station, die beim Zentrallabor anfordert.
 :::
 
 ### Rechnertypen
@@ -40,6 +46,8 @@ Frage: Was unterscheidet Fat-, Thin- und Zero-Clients?
 
 ::: {.exam-answer}
 **Antwort:** Fat Client = eigene Rechenleistung/Speicher, läuft weitgehend unabhängig. Thin Client = minimale lokale Hardware, Verarbeitung läuft am Server, Client nur für Ein-/Ausgabe. Zero Client = kein eigenes OS/keine lokale Verarbeitung, reine Anzeige-Hardware, komplett serverabhängig.
+
+Merksatz: Fat = rechnet selbst, Thin = zeigt an und rechnet am Server, Zero = reiner Bildschirm ohne eigenes Betriebssystem — je dünner, desto leichter zentral zu verwalten, desto abhängiger vom Server.
 :::
 
 ### Servertypen
@@ -50,6 +58,8 @@ Frage: Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
 
 ::: {.exam-answer}
 **Antwort:** Dedizierter Server = für eine Anwendung reserviert. Shared Server = mehrere Anwendungen teilen sich einen Server. Virtueller Server = mehrere logische Server auf einer Hardware (Hypervisor). Cluster = mehrere Server als Einheit, für Ausfallsicherheit/Lastverteilung.
+
+Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen sich einen Server; virtuell = viele logische Server auf einer Hardware; Cluster = mehrere Server als Team gegen Ausfall.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 :::
@@ -63,6 +73,8 @@ Frage: Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
 ::: {.exam-answer}
 **Antwort:** Windows Server/Windows (KIS-Arbeitsplätze meist Windows), Linux (Server-/Datenbank-Backends), Unix/Solaris (ältere/spezialisierte Enterprise-Systeme), iOS/Android (mobile Visiten-/Pflegegeräte).
 
+Merksatz: Arbeitsplätze meist Windows, Server/Datenbanken oft Linux/Unix, mobile Visitengeräte iOS/Android.
+
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 :::
 
@@ -74,6 +86,8 @@ Frage: Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen so
 
 ::: {.exam-answer}
 **Antwort:** Hardware-Schnittstelle = physischer Anschluss zum Datenaustausch (z. B. USB, LAN-Port, HDMI). Software-Schnittstelle = definierter Zugriffspunkt zwischen Programmen/Systemen (z. B. API, HL7-Schnittstelle). Intern = Verbindung innerhalb eines Systems/einer Institution (z. B. zwischen KIS-Modulen). Extern = Verbindung zu externen Systemen/Partnern (z. B. KIS ↔ Labor eines anderen Anbieters, KIS ↔ Telematikinfrastruktur).
+
+Merksatz: Hardware-Schnittstelle = Stecker, Software-Schnittstelle = vereinbarte Sprache zwischen Programmen (z. B. HL7 (Health Level 7)); intern = innerhalb des Hauses, extern = nach draußen.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 :::
@@ -94,6 +108,11 @@ Frage: Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 - Kartenterminal: liest eGK/SMC-B/HBA aus.
 - VPN-Zugangsdienst: sicherer Tunnel vom Konnektor ins TI-Backbone.
 - Fachdienste: Anwendungen auf der TI, z. B. ePA, eRezept, NFDM, KIM.
+- Neuer: TI-Gateway = Konnektor als Dienst im Rechenzentrum statt Box im Haus; Ziel TI 2.0 (Zero Trust, digitale Identitäten) — Details siehe Modul VII und X.
+
+Merksatz: Karten weisen aus (eGK (elektronische Gesundheitskarte) = Patient, HBA (Heilberufsausweis) = Arzt, SMC-B (Security Module Card Typ B = Institutionskarte) = Einrichtung), der Konnektor ist die Schleuse ins Netz, die Fachdienste sind die Anwendungen.
+
+*(Stand: 10/2026.)*
 :::
 
 ## Programme und Datenbanken
@@ -106,6 +125,8 @@ Frage: Was sind die drei Grundkategorien von Kontrollstrukturen, und wie untersc
 
 ::: {.exam-answer}
 **Antwort:** Kontrollstrukturen gliedern sich in Verzweigungen (`if`, `if-else`, `switch`), Schleifen (`while`, `do-while`, `for`, `foreach`) und Sprünge (`break`, `continue`). Bei Schleifen: `while` prüft die Bedingung vor der Iteration (0 bis n Durchläufe möglich), `do-while` prüft sie danach (mindestens 1 Durchlauf garantiert).
+
+Merksatz: `while` = erst prüfen, dann handeln (vielleicht nie, wie „nur Insulin, wenn BZ > 200“); `do-while` = erst handeln, dann prüfen (mindestens einmal, wie „Dosis geben, dann Spiegel kontrollieren“).
 :::
 
 ::: {.exam-question}
@@ -114,6 +135,8 @@ Frage: Nach welchen Kriterien wählt man einen Sortieralgorithmus, und warum wir
 
 ::: {.exam-answer}
 **Antwort:** Insertionsort eignet sich für kleine/fast sortierte Arrays (Bestcase linear). Quicksort ist ein guter Allgemeinfall (erwartet O(n log n)), hat aber bei ungünstiger Pivot-Wahl Worstcase O(n²) — deshalb Pivot zufällig oder als Median wählen. Mergesort/Heapsort garantieren O(n log n) unabhängig von der Eingabe. Bubblesort ist einfach zu verstehen, aber mit O(n²) fast immer schlechter als Alternativen — wird laut Buch "nahezu niemals eingesetzt".
+
+Merksatz: Klein/fast sortiert → Insertionsort; Allgemeinfall → Quicksort; Garantie O(n log n) → Mergesort/Heapsort; Bubblesort → nur zum Lernen.
 :::
 
 ::: {.exam-question}
@@ -122,6 +145,8 @@ Frage: Was ist Divide & Conquer, und wie hängt es mit Rekursion zusammen (Beisp
 
 ::: {.exam-answer}
 **Antwort:** Divide & Conquer teilt ein Problem in kleinere, gleichartige Teilprobleme (divide), löst diese rekursiv (conquer) und setzt die Teillösungen zusammen. Bei Quicksort: Divide = Array wird anhand eines Pivotelements partitioniert (kleinere Werte links, größere rechts); Conquer = Quicksort ruft sich rekursiv auf beiden Teilarrays selbst auf, bis die Abbruchbedingung (Teilarray-Größe ≤ 1) erreicht ist; Combine entfällt weitgehend, da in-place partitioniert wird. Jede Rekursion braucht zwingend eine Abbruchbedingung, sonst läuft sie endlos.
+
+Merksatz: Divide & Conquer = großes Problem in gleichartige kleine zerlegen, diese rekursiv lösen, zusammensetzen; Rekursion ohne Abbruchbedingung läuft endlos.
 :::
 
 ::: {.exam-question}
@@ -138,6 +163,8 @@ Frage: Was sind Klasse, Objekt, Vererbung, abstrakte Klasse und Interface (OOP-G
 - **Interface**: ein Vertrag — "wer dieses Interface implementiert, MUSS diese Funktion anbieten", ohne vorzugeben, wie. Beispiel: Interface `Abrechenbar` mit Methode `berechneKosten()` — sowohl `Laboruntersuchung` als auch `Bildgebung` implementieren das, jede auf ihre eigene Art.
 
 Das ist die Grundlage für das Klassendiagramm (siehe Software-Engineering-Sektion): die Klasse `Patient` dort im Diagramm ist genau dieses Konzept.
+
+Merksatz: Klasse = Bauplan, Objekt = konkreter Patient, Vererbung = „ist ein“ (Oberarzt ist ein Arzt), abstrakte Klasse = Bauplan ohne eigene Instanz, Interface = Vertrag „muss können“.
 :::
 
 ### Relationale Datenbanken
@@ -158,6 +185,8 @@ Beispiel Patient/Station: Ein Patient liegt auf genau einer Station, eine Statio
 | P3 | Klein | S2 |
 
 Der Fremdschlüssel steht auf der **n-Seite** (viele, hier: Patienten) und zeigt zur **1-Seite** (eine, hier: Stationen) — nie umgekehrt, weil nur die n-Seite eindeutig "ihren einen Partner" nennen kann. Die Station selbst kann nicht eindeutig "ihren einen Patienten" nennen, da es mehrere sind. Vorteil: Stationsdaten (z. B. Fachrichtung) stehen nur einmal in `Stationen`, nicht redundant bei jedem Patienten (gleiches Prinzip wie bei der Normalisierung: "eine Tatsache, ein Ort").
+
+Merksatz: Der Fremdschlüssel steht immer auf der n-Seite und zeigt zur 1-Seite (Patient → Station).
 :::
 
 ::: {.exam-question}
@@ -166,6 +195,8 @@ Frage: Wie wird eine m:n-Beziehung im relationalen Modell abgebildet?
 
 ::: {.exam-answer}
 **Antwort:** m:n-Beziehungen können nicht direkt über einen einzelnen Fremdschlüssel abgebildet werden (anders als 1:1 oder 1:n), weil beide Seiten mehrere Partner haben können. Stattdessen wird eine eigene Verknüpfungstabelle angelegt, die die Primärschlüssel beider beteiligten Tabellen als zusammengesetzten Primär-/Fremdschlüssel enthält. Beispiel: Ärzte ↔ Patienten (ein Arzt behandelt mehrere Patienten, ein Patient wird von mehreren Ärzten behandelt) → Verknüpfungstabelle `behandelt(arzt_id, pat_id)`, wobei beide Spalten zusammen den Primärschlüssel bilden und je einzeln Fremdschlüssel auf `aerzte` bzw. `patienten` sind.
+
+Merksatz: m:n braucht immer eine eigene Verknüpfungstabelle (z. B. `behandelt(arzt_id, pat_id)`).
 :::
 
 ::: {.exam-question}
@@ -214,6 +245,8 @@ Beide sind reine **Datenformate** (wie Daten strukturiert aufgeschrieben werden)
 - **SOAP**: ältere IHE-Profile und Teile der deutschen Telematikinfrastruktur-Fachdienste (z. B. Kommunikation mit dem Konnektor) — dort, wo strenge, vertraglich fest definierte Schnittstellen wichtiger sind als Schlankheit.
 
 **Trend**: HL7 v2 (Text) → v3/CDA (XML, streng spezifiziert) → FHIR (JSON, schlank, REST-basiert statt SOAP) spiegelt den allgemeinen Trend von starren, schwergewichtigen Formaten zu leichtgewichtigen, web-API-freundlichen Formaten.
+
+Merksatz: XML (eXtensible Markup Language) = Tags, streng, z. B. CDA (Clinical Document Architecture); JSON (JavaScript Object Notation) = Schlüssel-Wert, schlank, z. B. FHIR (Fast Healthcare Interoperability Resources); SOAP (Simple Object Access Protocol) = Protokoll mit XML-Umschlag, z. B. Konnektor.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 :::
@@ -365,6 +398,8 @@ Arzt-Objekt          KIS-Objekt          Labor-System-Objekt
 Jede Lebenslinie (senkrechte gestrichelte Linie unter dem Objekt) zeigt, wann dieses Objekt existiert/handelt. Pfeile = Aufrufe zwischen Objekten, in der zeitlichen Reihenfolge, wie sie passieren.
 
 **Kurz der Unterschied**: Klassendiagramm = Bauplan/Struktur (was gibt's, ein für alle Mal). Sequenzdiagramm = Film/Ablauf (was passiert wann, für einen konkreten Fall). Laut Buch wird das Klassendiagramm für den schnellen Strukturüberblick genutzt (fast immer bei OOP-Projekten), das Sequenzdiagramm eher spät und nur für komplexere Abläufe, weil es aufwändiger zu erstellen ist.
+
+Merksatz: Klassendiagramm = Bauplan (was gibt es), Sequenzdiagramm = Film (wer ruft wann wen auf).
 :::
 
 ::: {.exam-question}

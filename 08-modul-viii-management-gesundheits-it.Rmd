@@ -75,7 +75,7 @@ Rolle der IT: QS-Bögen werden aus dem KIS befüllt (Plausibilitätsprüfung, QS
 
 Merksatz: Gesetzlich = G-BA bestimmt, IQTIG misst, Klinik dokumentiert per QS-Bogen, Ergebnis öffentlich im Qualitätsbericht. Freiwillig = Zertifikate, Zentren, IQM-Peer-Review, CIRS.
 
-*(Quelle: Kap. 5, Qualitätsmanagement; aktualisiert: AQUA → IQTIG (2016), MDK → MD (2020), QSKH-RL → DeQS-RL (2021), Qualitätsbericht jährlich; IQM/Mindestmengen als Allgemeinwissen.)*
+*(Quelle: Kap. 5, Qualitätsmanagement; aktualisiert: AQUA → IQTIG (2016), MDK → MD (2020), QSKH-RL → DeQS-RL (2021), Qualitätsbericht jährlich; IQM/Mindestmengen als Allgemeinwissen. Stand: 10/2026.)*
 :::
 
 ::: {.exam-question}
@@ -278,5 +278,5 @@ unwahrscheinl.  ok       ok       ok       ALARP      X = nicht akzeptabel
 
 Merksatz: 14971 = Hersteller baut sicheres Gerät (Analyse → Bewertung → Beherrschung: Design > Schutz > Info → Marktbeobachtung). 80001 = Klinik betreibt sicheres Netz für viele Geräte (gemeinsame Verantwortung).
 
-*(Quelle: Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019, IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen.)*
+*(Quelle: Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019, IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen. Stand: 10/2026.)*
 :::

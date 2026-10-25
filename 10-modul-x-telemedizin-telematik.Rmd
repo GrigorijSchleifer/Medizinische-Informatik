@@ -179,7 +179,7 @@ Analogie: eGK = Versichertenkarte des Patienten; **eHBA = Dienstausweis + Stempe
 
 Merksatz: eHBA = persönlicher Arztausweis mit Chip — weist aus, unterschreibt, verschlüsselt; ausgestellt über die Ärztekammer, gilt in jedem Einsatzort.
 
-*(Quelle: Curriculum / Allgemeinwissen — eHBA für Gesundheitsfachberufe/eGBR nach 2015, im Buch nicht enthalten.)*
+*(Quelle: Curriculum / Allgemeinwissen — eHBA für Gesundheitsfachberufe/eGBR nach 2015, im Buch nicht enthalten. Stand: 10/2026.)*
 :::
 
 ## Fernbehandlung

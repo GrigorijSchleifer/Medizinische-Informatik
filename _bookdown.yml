@@ -12,5 +12,6 @@ rmd_files: [
   "07-modul-vii-informations-kommunikationssysteme.Rmd",
   "08-modul-viii-management-gesundheits-it.Rmd",
   "09-modul-ix-informationsmanagement-klinische-forschung.Rmd",
-  "10-modul-x-telemedizin-telematik.Rmd"
+  "10-modul-x-telemedizin-telematik.Rmd",
+  "anhang-abkuerzungen.Rmd"
 ]

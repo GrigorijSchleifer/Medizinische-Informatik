@@ -1,0 +1,213 @@
+# (APPENDIX) Anhang {-}
+
+# Abkürzungsverzeichnis {#abkuerzungen}
+
+Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) — nicht von Hand bearbeiten. Spalte *Modul* = Module, in denen die Abkürzung vorkommt.
+
+| Abkürzung | ausgeschrieben | Bedeutung / Klinik-Beispiel | Modul |
+|---|---|---|---|
+| **AAL** | Ambient Assisted Living | altersgerechte Assistenzsysteme in der Wohnung, z. B. Sturzsensor | X |
+| **ABDA** | Bundesvereinigung Deutscher Apothekerverbände | Dachverband der Apotheker; ABDATA liefert die Arzneimitteldatenbank fürs KIS | VI |
+| **ADT** | Admission, Discharge, Transfer | HL7-v2-Nachrichtentyp für Aufnahme, Entlassung, Verlegung | VII, IX |
+| **AES** | Advanced Encryption Standard | symmetrische Verschlüsselung, z. B. Server-Festplatten | II |
+| **ALARP** | As Low As Reasonably Practicable | Restrisiko so niedrig wie vernünftig machbar (Risikomanagement ISO 14971) | VIII |
+| **ALCOA** | Attributable, Legible, Contemporaneous, Original, Accurate | Qualitätsanforderungen an Studiendaten (GCP) | IX |
+| **AMG** | Arzneimittelgesetz | Zulassung und klinische Prüfung von Arzneimitteln | II, IX |
+| **AMNOG** | Arzneimittelmarktneuordnungsgesetz | frühe Nutzenbewertung neuer Medikamente | VI, VIII |
+| **AMTS** | Arzneimitteltherapiesicherheit | Medikationsfehler vermeiden: Interaktions-, Dosis-, Allergiecheck | IV, VI, VII |
+| **ANOVA** | Analysis of Variance | Varianzanalyse: Mittelwertvergleich von ≥ 3 Gruppen | III |
+| **AOP** | Ambulantes Operieren | AOP-Katalog: Eingriffe, die ambulant erbracht werden sollen | VIII |
+| **API** | Application Programming Interface | Programmierschnittstelle, z. B. FHIR-REST-API | I, VII |
+| **AQUA** | Institut für angewandte Qualitätsförderung und Forschung im Gesundheitswesen | bis 2015 externe QS — heute IQTIG | IV, VIII |
+| **ARR** | Absolute Risikoreduktion | Differenz der Ereignisraten; NNT = 1 / ARR | III |
+| **ATC** | Anatomisch-Therapeutisch-Chemische Klassifikation | Wirkstoffklassifikation der WHO, z. B. C07AB02 = Metoprolol | IV, VII, IX |
+| **AU / eAU** | (elektronische) Arbeitsunfähigkeitsbescheinigung | eAU geht über die TI direkt an die Krankenkasse | II, IV, VII, X |
+| **AWMF** | Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften | Leitlinienregister, Stufen S1 / S2k / S2e / S3 | VI, VII, VIII |
+| **B3S** | Branchenspezifischer Sicherheitsstandard | IT-Sicherheitsstandard für KRITIS-Krankenhäuser | VII, X |
+| **BDSG** | Bundesdatenschutzgesetz | deutsche Ergänzung zur DSGVO (z. B. § 22 Gesundheitsdaten) | II |
+| **BfArM** | Bundesinstitut für Arzneimittel und Medizinprodukte | gibt ICD-10-GM und OPS heraus (früher DIMDI), DiGA-Verzeichnis, FDZ | III, IV, VI, VII, IX, X |
+| **BfDI** | Bundesbeauftragte(r) für den Datenschutz und die Informationsfreiheit | Datenschutzaufsicht des Bundes | II |
+| **BGB** | Bürgerliches Gesetzbuch | Behandlungsvertrag, Dokumentationspflicht (§ 630f), Einsichtsrecht (§ 630g) | IV, VII, IX, X |
+| **BMP** | Bundeseinheitlicher Medikationsplan | Papier-Medikationsplan mit Barcode (Anspruch ab 3 Medikamenten) | IV, VI |
+| **BMV-Ä** | Bundesmantelvertrag – Ärzte | Vertrag KBV / GKV-Spitzenverband für die Kassenpraxis | IV, X |
+| **BPMN** | Business Process Model and Notation | Prozessmodellierung, z. B. Ablauf Notaufnahme mit Entscheidungsrauten | I, VI, VII, VIII |
+| **BSI** | Bundesamt für Sicherheit in der Informationstechnik | IT-Grundschutz, KRITIS-Aufsicht | II, IV, VII, X |
+| **BSI-KritisV** | BSI-Kritisverordnung | legt fest, ab wann ein Krankenhaus KRITIS ist (30.000 vollstationäre Fälle/Jahr) | II, VII |
+| **BÄK** | Bundesärztekammer | Herausgeberin des (Muster-)Kursbuchs | IV, VIII, IX |
+| **CDA** | Clinical Document Architecture | HL7-XML-Standard für klinische Dokumente, z. B. Arztbrief | I, IV, VII |
+| **CDASH** | Clinical Data Acquisition Standards Harmonization | CDISC-Standard für die Datenerfassung (eCRF-Felder) | IX |
+| **CDISC** | Clinical Data Interchange Standards Consortium | Datenstandards für klinische Studien (CDASH, SDTM, ODM) | IX |
+| **CDS** | Clinical Decision Support | Entscheidungsunterstützung (vgl. CDSS) | VI |
+| **CDSS** | Clinical Decision Support System | klinische Entscheidungsunterstützung, z. B. Interaktionswarnung | VI, VII |
+| **CIA** | Confidentiality, Integrity, Availability | Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit | II |
+| **CIRS** | Critical Incident Reporting System | anonymes Meldesystem für Beinahe-Fehler | VI, VIII |
+| **CMI** | Case Mix Index | durchschnittlicher Fallschweregrad einer Klinik (DRG) | VIII |
+| **CPOE** | Computerized Physician Order Entry | elektronische ärztliche Anordnung (Medikation, Labor) | VI, VII |
+| **CRF / eCRF** | (electronic) Case Report Form | (digitaler) Erfassungsbogen einer Studie | IX |
+| **CRM** | Customer Relationship Management | Kundenbeziehungsmanagement (Support, Anforderungen der Klinik) | VII |
+| **CT** | Computertomographie | auch: „Clinical Terms“ in SNOMED CT | III, IV, V, VI, VII, VIII, IX, X |
+| **CTMS** | Clinical Trial Management System | Studienverwaltung: Zentren, Patienten, Monitoring | IX |
+| **DEMIS** | Deutsches Elektronisches Melde- und Informationssystem für den Infektionsschutz | IfSG-Meldungen elektronisch ans Gesundheitsamt | II, IV |
+| **DICOM** | Digital Imaging and Communications in Medicine | Standard für Bilddaten und deren Übertragung (CT, MRT, Röntgen) | IV, V, VII, X |
+| **DiGA** | Digitale Gesundheitsanwendung | „App auf Rezept“, BfArM-Verzeichnis | VI, IX, X |
+| **DIMDI** | Deutsches Institut für Medizinische Dokumentation und Information | 2020 im BfArM aufgegangen | IV |
+| **DIN** | Deutsches Institut für Normung | deutsche Normen, z. B. DIN EN ISO 14971 | VII, VIII |
+| **DiPA** | Digitale Pflegeanwendung | Pflege-Pendant zur DiGA (SGB XI) | X |
+| **DIZ** | Datenintegrationszentrum | MII-Einheit an Unikliniken, bereitet Routinedaten für Forschung auf | III, VII, IX |
+| **DKG** | Deutsche Krankenhausgesellschaft | Dachverband der Krankenhausträger | VIII |
+| **DKR** | Deutsche Kodierrichtlinien | Regeln für Diagnosen-/Prozedurenkodierung im DRG-System | VIII |
+| **DMP** | Disease-Management-Programm | strukturierte Behandlung chronisch Kranker, z. B. Diabetes | IX |
+| **DOI** | Digital Object Identifier | dauerhafte Kennung für Daten/Publikationen (FAIR: Findable) | IX |
+| **DPIA / DSFA** | Data Protection Impact Assessment / Datenschutz-Folgenabschätzung | Art. 35 DSGVO: vor riskanter neuer Verarbeitung, z. B. Videosprechstunde | II, IX, X |
+| **DRG** | Diagnosis Related Groups | diagnosebezogene Fallpauschalen (stationäre Abrechnung) | IV, VII, VIII, IX |
+| **DRKS** | Deutsches Register Klinischer Studien | Studienregistrierung vor Beginn | IX |
+| **DSB** | Datenschutzbeauftragte(r) | interne Kontrolle der DSGVO-Einhaltung | II |
+| **DSGVO** | Datenschutz-Grundverordnung | EU-Datenschutzrecht, gilt seit 25.05.2018 | II, III, IV, VII, IX, X |
+| **DSK** | Datenschutzkonferenz | Gremium der Datenschutzaufsichten; Herausgeberin der OH-KIS | II |
+| **EAV** | Entity-Attribute-Value | flexibles Datenbankschema (Zeile = Patient, Merkmal, Wert) | IX |
+| **EBM** | Einheitlicher Bewertungsmaßstab | ambulante GKV-Abrechnung (Achtung: EbM = Evidenzbasierte Medizin) | IV, VII, X |
+| **EDC** | Electronic Data Capture | elektronische Datenerfassung in Studien | IX |
+| **EHDS** | European Health Data Space | Europäischer Gesundheitsdatenraum (EU-Verordnung 2025) | III, IV, IX |
+| **EHR / EMR / EPR** | Electronic Health / Medical / Patient Record | englische Begriffe für elektronische Akten | VII, X |
+| **EKG** | Elektrokardiogramm | klassisches Biosignal | IV, V, IX, X |
+| **ETL** | Extract, Transform, Load | Daten aus Quellsystemen holen, umformen, in Data Warehouse laden | IX |
+| **EU-CTR** | EU Clinical Trials Regulation | EU-Verordnung 536/2014 für klinische Prüfungen (Portal CTIS) | IX |
+| **EUDAMED** | European Database on Medical Devices | EU-Medizinproduktedatenbank (MDR) | IV |
+| **FAIR** | Findable, Accessible, Interoperable, Reusable | Prinzipien für Forschungsdaten | IX |
+| **FDA** | Food and Drug Administration | US-Zulassungsbehörde | III, IX |
+| **FDPG** | Forschungsdatenportal für Gesundheit | zentraler Antragszugang zu MII-Daten | III, IX |
+| **FDZ** | Forschungsdatenzentrum Gesundheit | am BfArM, GKV-Abrechnungsdaten für Forschung (GDNG) | IX |
+| **FHIR** | Fast Healthcare Interoperability Resources | moderner HL7-Standard: REST, JSON, „Ressourcen“ wie Patient, Observation | I, III, IV, VII, IX, X |
+| **FMEA** | Failure Mode and Effects Analysis | Fehlermöglichkeits- und Einflussanalyse (RPZ = Risikoprioritätszahl) | VIII |
+| **FTA** | Fault Tree Analysis | Fehlerbaumanalyse: vom Schaden rückwärts zu den Ursachen | VIII |
+| **G-BA** | Gemeinsamer Bundesausschuss | oberstes Gremium der Selbstverwaltung, Richtlinien (z. B. QS) | IV, VI, VIII, X |
+| **GCP / ICH-GCP** | Good Clinical Practice | internationaler Standard für klinische Studien (ICH E6) | III, IX |
+| **GDNG** | Gesundheitsdatennutzungsgesetz | (2024) Forschungsnutzung von Gesundheitsdaten, FDZ | II, III, IV, IX |
+| **eGK** | elektronische Gesundheitskarte | Versichertenkarte; Patientenschlüssel zur TI | I, IV, VII, X |
+| **GKV** | Gesetzliche Krankenversicherung | GKV-SV = GKV-Spitzenverband | IV, VI, VIII, IX, X |
+| **GMDN** | Global Medical Device Nomenclature | Nomenklatur für Medizinprodukte | IV |
+| **GOÄ** | Gebührenordnung für Ärzte | Privatabrechnung | IV, VII |
+| **eHBA / HBA** | (elektronischer) Heilberufsausweis | Arztausweis für die TI, qualifizierte elektronische Signatur | I, II, IV, VII, X |
+| **HL7** | Health Level 7 | Standardfamilie für Nachrichtenaustausch (v2, v3/CDA, FHIR) | I, III, IV, V, VI, VII, IX, X |
+| **HTA** | Health Technology Assessment | systematische Bewertung medizinischer Technologien (Nutzen, Kosten, Ethik) | VI |
+| **HTML** | Hypertext Markup Language | Auszeichnungssprache für Webseiten (Curriculum Modul I) | – |
+| **HTTP / HTTPS** | Hypertext Transfer Protocol (Secure) | Webprotokoll; S = TLS-verschlüsselt | I, II, IX |
+| **HU** | Hounsfield Units | CT-Dichtewerte (Wasser 0, Luft −1000), Grundlage der Fensterung | V |
+| **ICD** | International Classification of Diseases | Diagnoseklassifikation; ICD-10-GM (German Modification) zur Abrechnung | I, IV, VII, VIII, IX, X |
+| **ICD-11** | International Classification of Diseases, 11. Revision | WHO seit 2022, in Deutschland noch nicht zur Abrechnung | IV |
+| **ICD-O-3** | International Classification of Diseases for Oncology, 3. Revision | Tumor: Lokalisation (Topographie) + Histologie (Morphologie) | IV, IX |
+| **ICER** | Incremental Cost-Effectiveness Ratio | Mehrkosten / Mehrnutzen gegenüber Standard (HTA) | VI |
+| **ICF** | International Classification of Functioning, Disability and Health | Funktionsfähigkeit und Teilhabe (Reha) | IV |
+| **eIDAS** | electronic IDentification, Authentication and trust Services | EU-Verordnung: QES = handschriftliche Unterschrift | II |
+| **IEC** | International Electrotechnical Commission | z. B. IEC 62304 (Medizinsoftware), IEC 80001 (Medizingeräte im IT-Netz) | VII, VIII |
+| **IfSG** | Infektionsschutzgesetz | Meldepflichten (über DEMIS) | II, IV, IX |
+| **IHE** | Integrating the Healthcare Enterprise | Profile, wie Standards (HL7, DICOM) zusammenspielen, z. B. XDS | I, V, VII, X |
+| **IQM** | Initiative Qualitätsmedizin | freiwillige QS aus Routinedaten (Peer Review) | VIII |
+| **IQR** | Interquartile Range | Interquartilsabstand: mittlere 50 % der Werte (Q1 bis Q3) | III |
+| **IQTIG** | Institut für Qualitätssicherung und Transparenz im Gesundheitswesen | externe QS seit 2016 (§ 137a SGB V) | IV, VI, VIII, IX |
+| **ISiK** | Informationstechnische Systeme in Krankenhäusern | verpflichtende FHIR-Schnittstellen der gematik für KIS | VII |
+| **ISMS** | Informationssicherheits-Managementsystem | nach ISO 27001 / BSI-Grundschutz | II, VII |
+| **ISO** | International Organization for Standardization | z. B. ISO 9001 (QM), 27001 (ISMS), 13485, 14971 (Risiko) | II, V, VII, VIII |
+| **ITIL** | IT Infrastructure Library | Best-Practice-Rahmen für IT-Servicemanagement (Incident, Problem, Change) | I, VII |
+| **ITSichG** | IT-Sicherheitsgesetz | Pflichten für Betreiber kritischer Infrastrukturen | II |
+| **ITSM** | IT-Servicemanagement | IT als Dienstleistung für die Klinik organisieren | VII |
+| **ITT** | Intention-to-treat | Auswertung nach zugeloster Gruppe, egal ob Therapie durchgehalten | IX |
+| **IWRS** | Interactive Web Response System | Online-Randomisierung in Studien | IX |
+| **JCI** | Joint Commission International | internationales Krankenhauszertifikat | VIII |
+| **JSON** | JavaScript Object Notation | schlankes Datenformat (Schlüssel-Wert), z. B. FHIR | I, VII, IX |
+| **KBV** | Kassenärztliche Bundesvereinigung | MIOs, IT-Sicherheitsrichtlinie für Praxen | IV, VIII, X |
+| **KHZG** | Krankenhauszukunftsgesetz | (2020) Förderprogramm für Klinik-Digitalisierung | VII |
+| **KI** | Künstliche Intelligenz | z. B. Bilderkennung in der Radiologie; EU AI Act | III, V, VI, IX |
+| **KIM** | Kommunikation im Medizinwesen | sicherer E-Mail-Dienst der TI, z. B. eArztbrief | I, II, VII, X |
+| **KIS** | Krankenhausinformationssystem | Gesamtheit der informationsverarbeitenden Systeme eines Krankenhauses | I, II, III, IV, V, VI, VII, VIII, IX, X |
+| **KISS** | Krankenhaus-Infektions-Surveillance-System | Erfassung nosokomialer Infektionen (OP-KISS, ITS-KISS) | IX |
+| **KKS** | Koordinierungszentrum für Klinische Studien | Studienunterstützung an Unikliniken | IX |
+| **KRITIS** | Kritische Infrastrukturen | Krankenhäuser ab 30.000 vollstationären Fällen/Jahr | VII |
+| **KTQ** | Kooperation für Transparenz und Qualität im Gesundheitswesen | deutsches Krankenhaus-Zertifizierungsverfahren | VIII |
+| **LIS** | Laborinformationssystem | Abteilungssystem des Labors | VII, IX |
+| **LMS** | Learning Management System | E-Learning-Plattform, z. B. ILIAS, Moodle | IX |
+| **LOINC** | Logical Observation Identifiers Names and Codes | Kodes für Laboruntersuchungen und Beobachtungen | III, IV, VII, IX |
+| **MBO-Ä** | (Muster-)Berufsordnung für Ärzte | Schweigepflicht (§ 9), Dokumentationspflicht (§ 10) | II, IV, X |
+| **MD** | Medizinischer Dienst | (früher MDK) prüft u. a. Krankenhausabrechnungen | IV, VIII |
+| **MDC** | Major Diagnostic Category | Hauptdiagnosegruppe im DRG-System | IV |
+| **MDK** | Medizinischer Dienst der Krankenversicherung | seit 2020 umbenannt in MD | VIII |
+| **MDR** | Medical Device Regulation | EU-Medizinprodukteverordnung 2017/745, löst MPG ab | II, IV, V, VI, VII, VIII, X |
+| **MII** | Medizininformatik-Initiative | BMBF-Förderung, DIZ an Unikliniken, Kerndatensatz | III, IV, VII, IX |
+| **MIO** | Medizinisches Informationsobjekt | KBV-Standard (FHIR) für ePA-Inhalte, z. B. Impfpass, Mutterpass | IV |
+| **ML** | Machine Learning | maschinelles Lernen: System lernt Muster aus Daten | VI |
+| **MOOC** | Massive Open Online Course | offener Online-Kurs für viele Teilnehmende | IX |
+| **eMP** | elektronischer Medikationsplan | auf der eGK, wandert in die ePA | IV, VI, VII, X |
+| **MPDG** | Medizinprodukterecht-Durchführungsgesetz | deutsche Ergänzung zur MDR | II, VIII |
+| **MPG** | Medizinproduktegesetz | bis 2021, abgelöst durch MDR + MPDG | II, VIII |
+| **MPI / EMPI** | (Enterprise) Master Patient Index | zentraler Patientenindex: ein Patient, eine ID über alle Systeme | IX |
+| **MRT** | Magnetresonanztomographie | Schnittbildgebung ohne Röntgenstrahlung | IV, V, X |
+| **NFD / NFDM** | Notfalldatensatz / Notfalldatenmanagement | Notfalldaten (eGK, künftig ePA) | I, IV, VII, X |
+| **NLP** | Natural Language Processing | Computer verarbeitet Freitext, z. B. Arztbriefe | IV |
+| **NNT** | Number Needed to Treat | so viele behandeln, damit einer profitiert (= 1 / ARR) | III |
+| **NPV** | Negativer prädiktiver Wert | Anteil wirklich Gesunder unter den Test-Negativen | III, VI |
+| **NUM** | Netzwerk Universitätsmedizin | Forschungsverbund der Unikliniken (aus der COVID-Zeit) | III, IX |
+| **NYHA** | New York Heart Association | Stadien der Herzinsuffizienz I–IV | III, IV, VIII |
+| **OBX** | Observation/Result Segment | HL7-v2-Segment für einen Messwert, z. B. Kaliumwert | VII |
+| **ODM** | Operational Data Model | CDISC-XML-Format für Studiendaten und eCRF-Definitionen | IX |
+| **OH-KIS** | Orientierungshilfe Krankenhausinformationssysteme | Datenschutz-Checkliste der DSK für KIS | II |
+| **OHDSI** | Observational Health Data Sciences and Informatics | internationales Netzwerk rund um OMOP | III |
+| **OMOP** | Observational Medical Outcomes Partnership | Common Data Model für Beobachtungsdaten | III, IX |
+| **OPS** | Operationen- und Prozedurenschlüssel | Kodierung von Prozeduren (BfArM) | IV, VII, VIII, IX |
+| **OR** | Odds Ratio | Chancenverhältnis; Effektmaß der Fall-Kontroll-Studie | III, VI |
+| **ePA** | elektronische Patientenakte | § 341 SGB V, „ePA für alle“ (Opt-out) | I, IV, VI, VII, X |
+| **PACS** | Picture Archiving and Communication System | Bildarchiv der Radiologie | III, V, VII, IX |
+| **PAS** | Patientenadministrationssystem | Aufnahme, Stammdaten, Verlegung, Abrechnung | VII |
+| **PCCL** | Patient Clinical Complexity Level | Schweregrad aus Nebendiagnosen (DRG) | IV, VIII |
+| **PDCA** | Plan-Do-Check-Act | Deming-Zyklus im Qualitätsmanagement | VIII |
+| **PDMS** | Patientendatenmanagementsystem | Intensivstation: Monitoring, Kurve, Bilanz | IV, V, VI, VII, VIII, IX, X |
+| **PEPP** | Pauschalierendes Entgeltsystem Psychiatrie und Psychosomatik | Abrechnung in der Psychiatrie | IV |
+| **PHR** | Personal Health Record | patientengeführte Gesundheitsakte | X |
+| **PICO** | Patient/Population, Intervention, Comparison, Outcome | Schema für klinische Fragen (EbM) | VI, IX |
+| **PLM** | Product Lifecycle Management | Software über ihren ganzen Lebenszyklus steuern | VII |
+| **PPRL** | Privacy-Preserving Record Linkage | pseudonymisierte Datensätze verknüpfen, ohne Klarnamen | IX |
+| **PPV** | Positiver prädiktiver Wert | Anteil wirklich Kranker unter den Test-Positiven | III, VI |
+| **PVS** | Praxisverwaltungssystem | Arztpraxis-Informationssystem | I, II, IV, VII, IX, X |
+| **PZN** | Pharmazentralnummer | Kennnummer einer Arzneimittelpackung | IV, IX |
+| **QALY** | Quality-Adjusted Life Year | qualitätsadjustiertes Lebensjahr (HTA) | VI |
+| **QES** | Qualifizierte elektronische Signatur | rechtlich = Unterschrift (eIDAS), mit eHBA | VII, X |
+| **QM** | Qualitätsmanagement | Qualität vorausschauend planen und steuern | VIII |
+| **QS** | Qualitätssicherung | Qualität messen und sichern (extern: G-BA/IQTIG) | IV, VII, VIII, IX |
+| **RBAC** | Role-Based Access Control | rollenbasierte Zugriffskontrolle im KIS | II, VII |
+| **RCT** | Randomized Controlled Trial | randomisierte kontrollierte Studie | III, VI, IX |
+| **RDSR** | Radiation Dose Structured Report | DICOM-Dosisbericht (Strahlenschutz) | V |
+| **REST** | Representational State Transfer | Architekturstil für Web-APIs (FHIR) | I, V, VII |
+| **RIS** | Radiologieinformationssystem | Termine, Befunde der Radiologie | V, VII, IX |
+| **RKI** | Robert Koch-Institut | Bundesinstitut für Infektionsschutz und Epidemiologie | IV, IX |
+| **RR** | Relatives Risiko | Risiko exponiert / Risiko nicht exponiert (Achtung: RR auch Blutdruck nach Riva-Rocci) | III, IV, VI, IX |
+| **RRR** | Relative Risikoreduktion | ARR / Risiko Kontrolle — klingt immer größer als die ARR | III |
+| **RSA** | Rivest-Shamir-Adleman | asymmetrisches Verschlüsselungsverfahren (nach den Erfindern) | II |
+| **SAE** | Serious Adverse Event | schwerwiegendes unerwünschtes Ereignis in einer Studie | IX |
+| **SAS** | Statistical Analysis System | kommerzielles Statistikprogramm (Pharma-Standard) | III, IX |
+| **SCM** | Software Configuration Management | Versionen und Konfigurationen kontrolliert verwalten | VII |
+| **SDTM** | Study Data Tabulation Model | CDISC-Format für die Einreichung von Studiendaten | IX |
+| **SDV** | Source Data Verification | Monitoring: eCRF gegen Originalakte prüfen | IX |
+| **SGB** | Sozialgesetzbuch | SGB V = gesetzliche Krankenversicherung | II, IV, VII, VIII, IX, X |
+| **SLA** | Service Level Agreement | vereinbarte Servicequalität, z. B. Reaktionszeit bei KIS-Ausfall | VII |
+| **SMC-B** | Security Module Card Typ B | Institutionskarte (Praxis/Klinik) für die TI | I, IV, VII, X |
+| **SNOMED CT** | Systematized Nomenclature of Medicine – Clinical Terms | umfassende klinische Terminologie | III, IV, VII, IX |
+| **SOAP** | Simple Object Access Protocol | Protokoll mit XML-„Briefumschlag“, z. B. Konnektor-Schnittstelle | I |
+| **SOP** | Standard Operating Procedure | Verfahrensanweisung für einen Handgriff/Ablauf | V, VIII, X |
+| **SPSS** | Statistical Package for the Social Sciences | Statistikprogramm mit Klick-Oberfläche | III, IX |
+| **SQL** | Structured Query Language | Abfragesprache relationaler Datenbanken | I |
+| **TI** | Telematikinfrastruktur | geschlossenes Gesundheitsnetz (gematik) | I, IV, VII, VIII, X |
+| **TIM** | TI-Messenger | sicherer Chat in der TI (Achtung: TIM-HF2 = Telemonitoring-Studie Herzinsuffizienz) | VII, X |
+| **TMF** | Technologie- und Methodenplattform für die vernetzte medizinische Forschung | Datenschutzkonzepte und Werkzeuge für Forschungsverbünde | IX |
+| **TNM** | Tumor, Nodus, Metastasen | Stadieneinteilung solider Tumoren (UICC) | IV, IX |
+| **TOM** | Technische und organisatorische Maßnahmen | Art. 32 DSGVO, z. B. Verschlüsselung + Schulung | II, VII, X |
+| **TR-RESISCAN** | Technische Richtlinie „Rechtssicheres ersetzendes Scannen“ (BSI) | Papierakte scannen und danach vernichten dürfen | IV |
+| **UCUM** | Unified Code for Units of Measure | einheitliche Maßeinheiten, z. B. mg/dL | IV, VII, IX |
+| **UICC** | Union for International Cancer Control | Herausgeberin der TNM-Klassifikation | IV |
+| **UML** | Unified Modeling Language | Softwaremodellierung (Klassen-, Sequenzdiagramm) | I |
+| **VDG** | Vertrauensdienstegesetz | deutsches Begleitgesetz zu eIDAS (löste 2017 das SigG ab) | II |
+| **VPN** | Virtual Private Network | verschlüsselter Tunnel, z. B. Konnektor → TI | I, VII, X |
+| **VSDM** | Versichertenstammdatenmanagement | Online-Abgleich der eGK-Daten beim Einlesen | VII, X |
+| **WHO** | World Health Organization | Weltgesundheitsorganisation, Herausgeberin der ICD | IV, IX |
+| **WSDL** | Web Services Description Language | formaler „Vertrag“ eines SOAP-Dienstes | I |
+| **XDS** | Cross-Enterprise Document Sharing | IHE-Profil für einrichtungsübergreifenden Dokumentenaustausch | VII |
+| **XML** | eXtensible Markup Language | Datenformat mit Tags, z. B. CDA-Arztbrief | I, VII, IX |
+| **ZVK** | Zentraler Venenkatheter | Beispiel für Device-assoziierte Infektionen (KISS) | VIII, IX |

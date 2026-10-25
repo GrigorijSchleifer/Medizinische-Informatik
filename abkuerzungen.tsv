@@ -1,0 +1,206 @@
+Abkürzung	ausgeschrieben	Bedeutung / Klinik-Beispiel
+AAL	Ambient Assisted Living	altersgerechte Assistenzsysteme in der Wohnung, z. B. Sturzsensor
+ABDA	Bundesvereinigung Deutscher Apothekerverbände	Dachverband der Apotheker; ABDATA liefert die Arzneimitteldatenbank fürs KIS
+ADT	Admission, Discharge, Transfer	HL7-v2-Nachrichtentyp für Aufnahme, Entlassung, Verlegung
+AES	Advanced Encryption Standard	symmetrische Verschlüsselung, z. B. Server-Festplatten
+ALARP	As Low As Reasonably Practicable	Restrisiko so niedrig wie vernünftig machbar (Risikomanagement ISO 14971)
+ALCOA	Attributable, Legible, Contemporaneous, Original, Accurate	Qualitätsanforderungen an Studiendaten (GCP)
+AMG	Arzneimittelgesetz	Zulassung und klinische Prüfung von Arzneimitteln
+AMNOG	Arzneimittelmarktneuordnungsgesetz	frühe Nutzenbewertung neuer Medikamente
+AMTS	Arzneimitteltherapiesicherheit	Medikationsfehler vermeiden: Interaktions-, Dosis-, Allergiecheck
+ANOVA	Analysis of Variance	Varianzanalyse: Mittelwertvergleich von ≥ 3 Gruppen
+AOP	Ambulantes Operieren	AOP-Katalog: Eingriffe, die ambulant erbracht werden sollen
+API	Application Programming Interface	Programmierschnittstelle, z. B. FHIR-REST-API
+AQUA	Institut für angewandte Qualitätsförderung und Forschung im Gesundheitswesen	bis 2015 externe QS — heute IQTIG
+ARR	Absolute Risikoreduktion	Differenz der Ereignisraten; NNT = 1 / ARR
+ATC	Anatomisch-Therapeutisch-Chemische Klassifikation	Wirkstoffklassifikation der WHO, z. B. C07AB02 = Metoprolol
+AU / eAU	(elektronische) Arbeitsunfähigkeitsbescheinigung	eAU geht über die TI direkt an die Krankenkasse
+AWMF	Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften	Leitlinienregister, Stufen S1 / S2k / S2e / S3
+B3S	Branchenspezifischer Sicherheitsstandard	IT-Sicherheitsstandard für KRITIS-Krankenhäuser
+BÄK	Bundesärztekammer	Herausgeberin des (Muster-)Kursbuchs
+BDSG	Bundesdatenschutzgesetz	deutsche Ergänzung zur DSGVO (z. B. § 22 Gesundheitsdaten)
+BfArM	Bundesinstitut für Arzneimittel und Medizinprodukte	gibt ICD-10-GM und OPS heraus (früher DIMDI), DiGA-Verzeichnis, FDZ
+BfDI	Bundesbeauftragte(r) für den Datenschutz und die Informationsfreiheit	Datenschutzaufsicht des Bundes
+BMP	Bundeseinheitlicher Medikationsplan	Papier-Medikationsplan mit Barcode (Anspruch ab 3 Medikamenten)
+BMV-Ä	Bundesmantelvertrag – Ärzte	Vertrag KBV / GKV-Spitzenverband für die Kassenpraxis
+BPMN	Business Process Model and Notation	Prozessmodellierung, z. B. Ablauf Notaufnahme mit Entscheidungsrauten
+BSI	Bundesamt für Sicherheit in der Informationstechnik	IT-Grundschutz, KRITIS-Aufsicht
+BSI-KritisV	BSI-Kritisverordnung	legt fest, ab wann ein Krankenhaus KRITIS ist (30.000 vollstationäre Fälle/Jahr)
+CDA	Clinical Document Architecture	HL7-XML-Standard für klinische Dokumente, z. B. Arztbrief
+CDASH	Clinical Data Acquisition Standards Harmonization	CDISC-Standard für die Datenerfassung (eCRF-Felder)
+CDISC	Clinical Data Interchange Standards Consortium	Datenstandards für klinische Studien (CDASH, SDTM, ODM)
+CDSS	Clinical Decision Support System	klinische Entscheidungsunterstützung, z. B. Interaktionswarnung
+CIA	Confidentiality, Integrity, Availability	Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit
+CIRS	Critical Incident Reporting System	anonymes Meldesystem für Beinahe-Fehler
+CMI	Case Mix Index	durchschnittlicher Fallschweregrad einer Klinik (DRG)
+CPOE	Computerized Physician Order Entry	elektronische ärztliche Anordnung (Medikation, Labor)
+CRF / eCRF	(electronic) Case Report Form	(digitaler) Erfassungsbogen einer Studie
+CRM	Customer Relationship Management	Kundenbeziehungsmanagement (Support, Anforderungen der Klinik)
+CT	Computertomographie	auch: „Clinical Terms“ in SNOMED CT
+CTMS	Clinical Trial Management System	Studienverwaltung: Zentren, Patienten, Monitoring
+DEMIS	Deutsches Elektronisches Melde- und Informationssystem für den Infektionsschutz	IfSG-Meldungen elektronisch ans Gesundheitsamt
+DICOM	Digital Imaging and Communications in Medicine	Standard für Bilddaten und deren Übertragung (CT, MRT, Röntgen)
+DiGA	Digitale Gesundheitsanwendung	„App auf Rezept“, BfArM-Verzeichnis
+DiPA	Digitale Pflegeanwendung	Pflege-Pendant zur DiGA (SGB XI)
+DIMDI	Deutsches Institut für Medizinische Dokumentation und Information	2020 im BfArM aufgegangen
+DIN	Deutsches Institut für Normung	deutsche Normen, z. B. DIN EN ISO 14971
+DIZ	Datenintegrationszentrum	MII-Einheit an Unikliniken, bereitet Routinedaten für Forschung auf
+DKG	Deutsche Krankenhausgesellschaft	Dachverband der Krankenhausträger
+DKR	Deutsche Kodierrichtlinien	Regeln für Diagnosen-/Prozedurenkodierung im DRG-System
+DMP	Disease-Management-Programm	strukturierte Behandlung chronisch Kranker, z. B. Diabetes
+DOI	Digital Object Identifier	dauerhafte Kennung für Daten/Publikationen (FAIR: Findable)
+DPIA / DSFA	Data Protection Impact Assessment / Datenschutz-Folgenabschätzung	Art. 35 DSGVO: vor riskanter neuer Verarbeitung, z. B. Videosprechstunde
+DRG	Diagnosis Related Groups	diagnosebezogene Fallpauschalen (stationäre Abrechnung)
+DRKS	Deutsches Register Klinischer Studien	Studienregistrierung vor Beginn
+DSB	Datenschutzbeauftragte(r)	interne Kontrolle der DSGVO-Einhaltung
+DSGVO	Datenschutz-Grundverordnung	EU-Datenschutzrecht, gilt seit 25.05.2018
+DSK	Datenschutzkonferenz	Gremium der Datenschutzaufsichten; Herausgeberin der OH-KIS
+EAV	Entity-Attribute-Value	flexibles Datenbankschema (Zeile = Patient, Merkmal, Wert)
+EBM	Einheitlicher Bewertungsmaßstab	ambulante GKV-Abrechnung (Achtung: EbM = Evidenzbasierte Medizin)
+EDC	Electronic Data Capture	elektronische Datenerfassung in Studien
+eGK	elektronische Gesundheitskarte	Versichertenkarte; Patientenschlüssel zur TI
+eHBA / HBA	(elektronischer) Heilberufsausweis	Arztausweis für die TI, qualifizierte elektronische Signatur
+EHDS	European Health Data Space	Europäischer Gesundheitsdatenraum (EU-Verordnung 2025)
+eIDAS	electronic IDentification, Authentication and trust Services	EU-Verordnung: QES = handschriftliche Unterschrift
+EHR / EMR / EPR	Electronic Health / Medical / Patient Record	englische Begriffe für elektronische Akten
+EKG	Elektrokardiogramm	klassisches Biosignal
+eMP	elektronischer Medikationsplan	auf der eGK, wandert in die ePA
+ePA	elektronische Patientenakte	§ 341 SGB V, „ePA für alle“ (Opt-out)
+ETL	Extract, Transform, Load	Daten aus Quellsystemen holen, umformen, in Data Warehouse laden
+EU-CTR	EU Clinical Trials Regulation	EU-Verordnung 536/2014 für klinische Prüfungen (Portal CTIS)
+EUDAMED	European Database on Medical Devices	EU-Medizinproduktedatenbank (MDR)
+FAIR	Findable, Accessible, Interoperable, Reusable	Prinzipien für Forschungsdaten
+FDA	Food and Drug Administration	US-Zulassungsbehörde
+FDPG	Forschungsdatenportal für Gesundheit	zentraler Antragszugang zu MII-Daten
+FDZ	Forschungsdatenzentrum Gesundheit	am BfArM, GKV-Abrechnungsdaten für Forschung (GDNG)
+FHIR	Fast Healthcare Interoperability Resources	moderner HL7-Standard: REST, JSON, „Ressourcen“ wie Patient, Observation
+FMEA	Failure Mode and Effects Analysis	Fehlermöglichkeits- und Einflussanalyse (RPZ = Risikoprioritätszahl)
+FTA	Fault Tree Analysis	Fehlerbaumanalyse: vom Schaden rückwärts zu den Ursachen
+G-BA	Gemeinsamer Bundesausschuss	oberstes Gremium der Selbstverwaltung, Richtlinien (z. B. QS)
+GCP / ICH-GCP	Good Clinical Practice	internationaler Standard für klinische Studien (ICH E6)
+GDNG	Gesundheitsdatennutzungsgesetz	(2024) Forschungsnutzung von Gesundheitsdaten, FDZ
+GKV	Gesetzliche Krankenversicherung	GKV-SV = GKV-Spitzenverband
+GMDN	Global Medical Device Nomenclature	Nomenklatur für Medizinprodukte
+GOÄ	Gebührenordnung für Ärzte	Privatabrechnung
+HL7	Health Level 7	Standardfamilie für Nachrichtenaustausch (v2, v3/CDA, FHIR)
+HTA	Health Technology Assessment	systematische Bewertung medizinischer Technologien (Nutzen, Kosten, Ethik)
+HTML	Hypertext Markup Language	Auszeichnungssprache für Webseiten (Curriculum Modul I)
+HTTP / HTTPS	Hypertext Transfer Protocol (Secure)	Webprotokoll; S = TLS-verschlüsselt
+HU	Hounsfield Units	CT-Dichtewerte (Wasser 0, Luft −1000), Grundlage der Fensterung
+ICD	International Classification of Diseases	Diagnoseklassifikation; ICD-10-GM (German Modification) zur Abrechnung
+ICD-11	International Classification of Diseases, 11. Revision	WHO seit 2022, in Deutschland noch nicht zur Abrechnung
+ICD-O-3	International Classification of Diseases for Oncology, 3. Revision	Tumor: Lokalisation (Topographie) + Histologie (Morphologie)
+ICER	Incremental Cost-Effectiveness Ratio	Mehrkosten / Mehrnutzen gegenüber Standard (HTA)
+ICF	International Classification of Functioning, Disability and Health	Funktionsfähigkeit und Teilhabe (Reha)
+IEC	International Electrotechnical Commission	z. B. IEC 62304 (Medizinsoftware), IEC 80001 (Medizingeräte im IT-Netz)
+IfSG	Infektionsschutzgesetz	Meldepflichten (über DEMIS)
+IHE	Integrating the Healthcare Enterprise	Profile, wie Standards (HL7, DICOM) zusammenspielen, z. B. XDS
+IQTIG	Institut für Qualitätssicherung und Transparenz im Gesundheitswesen	externe QS seit 2016 (§ 137a SGB V)
+ISiK	Informationstechnische Systeme in Krankenhäusern	verpflichtende FHIR-Schnittstellen der gematik für KIS
+ISMS	Informationssicherheits-Managementsystem	nach ISO 27001 / BSI-Grundschutz
+ISO	International Organization for Standardization	z. B. ISO 9001 (QM), 27001 (ISMS), 13485, 14971 (Risiko)
+ITIL	IT Infrastructure Library	Best-Practice-Rahmen für IT-Servicemanagement (Incident, Problem, Change)
+ITSichG	IT-Sicherheitsgesetz	Pflichten für Betreiber kritischer Infrastrukturen
+ITSM	IT-Servicemanagement	IT als Dienstleistung für die Klinik organisieren
+ITT	Intention-to-treat	Auswertung nach zugeloster Gruppe, egal ob Therapie durchgehalten
+IWRS	Interactive Web Response System	Online-Randomisierung in Studien
+JCI	Joint Commission International	internationales Krankenhauszertifikat
+JSON	JavaScript Object Notation	schlankes Datenformat (Schlüssel-Wert), z. B. FHIR
+KBV	Kassenärztliche Bundesvereinigung	MIOs, IT-Sicherheitsrichtlinie für Praxen
+KHZG	Krankenhauszukunftsgesetz	(2020) Förderprogramm für Klinik-Digitalisierung
+KI	Künstliche Intelligenz	z. B. Bilderkennung in der Radiologie; EU AI Act
+KIM	Kommunikation im Medizinwesen	sicherer E-Mail-Dienst der TI, z. B. eArztbrief
+KIS	Krankenhausinformationssystem	Gesamtheit der informationsverarbeitenden Systeme eines Krankenhauses
+KISS	Krankenhaus-Infektions-Surveillance-System	Erfassung nosokomialer Infektionen (OP-KISS, ITS-KISS)
+KRITIS	Kritische Infrastrukturen	Krankenhäuser ab 30.000 vollstationären Fällen/Jahr
+KTQ	Kooperation für Transparenz und Qualität im Gesundheitswesen	deutsches Krankenhaus-Zertifizierungsverfahren
+LIS	Laborinformationssystem	Abteilungssystem des Labors
+LMS	Learning Management System	E-Learning-Plattform, z. B. ILIAS, Moodle
+LOINC	Logical Observation Identifiers Names and Codes	Kodes für Laboruntersuchungen und Beobachtungen
+MBO-Ä	(Muster-)Berufsordnung für Ärzte	Schweigepflicht (§ 9), Dokumentationspflicht (§ 10)
+MD	Medizinischer Dienst	(früher MDK) prüft u. a. Krankenhausabrechnungen
+MDC	Major Diagnostic Category	Hauptdiagnosegruppe im DRG-System
+MDR	Medical Device Regulation	EU-Medizinprodukteverordnung 2017/745, löst MPG ab
+MII	Medizininformatik-Initiative	BMBF-Förderung, DIZ an Unikliniken, Kerndatensatz
+MIO	Medizinisches Informationsobjekt	KBV-Standard (FHIR) für ePA-Inhalte, z. B. Impfpass, Mutterpass
+ML	Machine Learning	maschinelles Lernen: System lernt Muster aus Daten
+MOOC	Massive Open Online Course	offener Online-Kurs für viele Teilnehmende
+MPDG	Medizinprodukterecht-Durchführungsgesetz	deutsche Ergänzung zur MDR
+MPG	Medizinproduktegesetz	bis 2021, abgelöst durch MDR + MPDG
+MPI / EMPI	(Enterprise) Master Patient Index	zentraler Patientenindex: ein Patient, eine ID über alle Systeme
+MRT	Magnetresonanztomographie	Schnittbildgebung ohne Röntgenstrahlung
+NFD / NFDM	Notfalldatensatz / Notfalldatenmanagement	Notfalldaten (eGK, künftig ePA)
+NLP	Natural Language Processing	Computer verarbeitet Freitext, z. B. Arztbriefe
+NNT	Number Needed to Treat	so viele behandeln, damit einer profitiert (= 1 / ARR)
+NPV	Negativer prädiktiver Wert	Anteil wirklich Gesunder unter den Test-Negativen
+NUM	Netzwerk Universitätsmedizin	Forschungsverbund der Unikliniken (aus der COVID-Zeit)
+ODM	Operational Data Model	CDISC-XML-Format für Studiendaten und eCRF-Definitionen
+OH-KIS	Orientierungshilfe Krankenhausinformationssysteme	Datenschutz-Checkliste der DSK für KIS
+OHDSI	Observational Health Data Sciences and Informatics	internationales Netzwerk rund um OMOP
+OMOP	Observational Medical Outcomes Partnership	Common Data Model für Beobachtungsdaten
+OPS	Operationen- und Prozedurenschlüssel	Kodierung von Prozeduren (BfArM)
+OR	Odds Ratio	Chancenverhältnis; Effektmaß der Fall-Kontroll-Studie
+PACS	Picture Archiving and Communication System	Bildarchiv der Radiologie
+PAS	Patientenadministrationssystem	Aufnahme, Stammdaten, Verlegung, Abrechnung
+PCCL	Patient Clinical Complexity Level	Schweregrad aus Nebendiagnosen (DRG)
+PDCA	Plan-Do-Check-Act	Deming-Zyklus im Qualitätsmanagement
+PDMS	Patientendatenmanagementsystem	Intensivstation: Monitoring, Kurve, Bilanz
+PEPP	Pauschalierendes Entgeltsystem Psychiatrie und Psychosomatik	Abrechnung in der Psychiatrie
+PICO	Patient/Population, Intervention, Comparison, Outcome	Schema für klinische Fragen (EbM)
+PLM	Product Lifecycle Management	Software über ihren ganzen Lebenszyklus steuern
+PPRL	Privacy-Preserving Record Linkage	pseudonymisierte Datensätze verknüpfen, ohne Klarnamen
+PPV	Positiver prädiktiver Wert	Anteil wirklich Kranker unter den Test-Positiven
+PVS	Praxisverwaltungssystem	Arztpraxis-Informationssystem
+PZN	Pharmazentralnummer	Kennnummer einer Arzneimittelpackung
+QALY	Quality-Adjusted Life Year	qualitätsadjustiertes Lebensjahr (HTA)
+QES	Qualifizierte elektronische Signatur	rechtlich = Unterschrift (eIDAS), mit eHBA
+QM	Qualitätsmanagement	Qualität vorausschauend planen und steuern
+QS	Qualitätssicherung	Qualität messen und sichern (extern: G-BA/IQTIG)
+RBAC	Role-Based Access Control	rollenbasierte Zugriffskontrolle im KIS
+RCT	Randomized Controlled Trial	randomisierte kontrollierte Studie
+RDSR	Radiation Dose Structured Report	DICOM-Dosisbericht (Strahlenschutz)
+REST	Representational State Transfer	Architekturstil für Web-APIs (FHIR)
+RIS	Radiologieinformationssystem	Termine, Befunde der Radiologie
+RKI	Robert Koch-Institut	Bundesinstitut für Infektionsschutz und Epidemiologie
+RR	Relatives Risiko	Risiko exponiert / Risiko nicht exponiert (Achtung: RR auch Blutdruck nach Riva-Rocci)
+RRR	Relative Risikoreduktion	ARR / Risiko Kontrolle — klingt immer größer als die ARR
+RSA	Rivest-Shamir-Adleman	asymmetrisches Verschlüsselungsverfahren (nach den Erfindern)
+SAE	Serious Adverse Event	schwerwiegendes unerwünschtes Ereignis in einer Studie
+SCM	Software Configuration Management	Versionen und Konfigurationen kontrolliert verwalten
+SDTM	Study Data Tabulation Model	CDISC-Format für die Einreichung von Studiendaten
+SDV	Source Data Verification	Monitoring: eCRF gegen Originalakte prüfen
+SGB	Sozialgesetzbuch	SGB V = gesetzliche Krankenversicherung
+SLA	Service Level Agreement	vereinbarte Servicequalität, z. B. Reaktionszeit bei KIS-Ausfall
+SMC-B	Security Module Card Typ B	Institutionskarte (Praxis/Klinik) für die TI
+SNOMED CT	Systematized Nomenclature of Medicine – Clinical Terms	umfassende klinische Terminologie
+SOAP	Simple Object Access Protocol	Protokoll mit XML-„Briefumschlag“, z. B. Konnektor-Schnittstelle
+SOP	Standard Operating Procedure	Verfahrensanweisung für einen Handgriff/Ablauf
+SPSS	Statistical Package for the Social Sciences	Statistikprogramm mit Klick-Oberfläche
+SQL	Structured Query Language	Abfragesprache relationaler Datenbanken
+TI	Telematikinfrastruktur	geschlossenes Gesundheitsnetz (gematik)
+TIM	TI-Messenger	sicherer Chat in der TI (Achtung: TIM-HF2 = Telemonitoring-Studie Herzinsuffizienz)
+TMF	Technologie- und Methodenplattform für die vernetzte medizinische Forschung	Datenschutzkonzepte und Werkzeuge für Forschungsverbünde
+TNM	Tumor, Nodus, Metastasen	Stadieneinteilung solider Tumoren (UICC)
+TOM	Technische und organisatorische Maßnahmen	Art. 32 DSGVO, z. B. Verschlüsselung + Schulung
+TR-RESISCAN	Technische Richtlinie „Rechtssicheres ersetzendes Scannen“ (BSI)	Papierakte scannen und danach vernichten dürfen
+UCUM	Unified Code for Units of Measure	einheitliche Maßeinheiten, z. B. mg/dL
+UICC	Union for International Cancer Control	Herausgeberin der TNM-Klassifikation
+UML	Unified Modeling Language	Softwaremodellierung (Klassen-, Sequenzdiagramm)
+VDG	Vertrauensdienstegesetz	deutsches Begleitgesetz zu eIDAS (löste 2017 das SigG ab)
+VPN	Virtual Private Network	verschlüsselter Tunnel, z. B. Konnektor → TI
+VSDM	Versichertenstammdatenmanagement	Online-Abgleich der eGK-Daten beim Einlesen
+WHO	World Health Organization	Weltgesundheitsorganisation, Herausgeberin der ICD
+XDS	Cross-Enterprise Document Sharing	IHE-Profil für einrichtungsübergreifenden Dokumentenaustausch
+XML	eXtensible Markup Language	Datenformat mit Tags, z. B. CDA-Arztbrief
+BGB	Bürgerliches Gesetzbuch	Behandlungsvertrag, Dokumentationspflicht (§ 630f), Einsichtsrecht (§ 630g)
+MDK	Medizinischer Dienst der Krankenversicherung	seit 2020 umbenannt in MD
+WSDL	Web Services Description Language	formaler „Vertrag“ eines SOAP-Dienstes
+IQR	Interquartile Range	Interquartilsabstand: mittlere 50 % der Werte (Q1 bis Q3)
+IQM	Initiative Qualitätsmedizin	freiwillige QS aus Routinedaten (Peer Review)
+KKS	Koordinierungszentrum für Klinische Studien	Studienunterstützung an Unikliniken
+PHR	Personal Health Record	patientengeführte Gesundheitsakte
+OBX	Observation/Result Segment	HL7-v2-Segment für einen Messwert, z. B. Kaliumwert
+SAS	Statistical Analysis System	kommerzielles Statistikprogramm (Pharma-Standard)
+NYHA	New York Heart Association	Stadien der Herzinsuffizienz I–IV
+ZVK	Zentraler Venenkatheter	Beispiel für Device-assoziierte Infektionen (KISS)
+CDS	Clinical Decision Support	Entscheidungsunterstützung (vgl. CDSS)

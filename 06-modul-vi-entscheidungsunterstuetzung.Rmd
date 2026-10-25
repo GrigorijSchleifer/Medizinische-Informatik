@@ -60,7 +60,7 @@ Frage: Was ist ein klinisches Entscheidungsunterstützungssystem (CDSS), wie unt
 
 Merksatz: Wissenszugriff = Arzt sucht (Pull, allgemein); CDSS = System meldet sich (Push, patientenspezifisch). Wissensbasiert = Regeln, erklärbar (MYCIN, Arden Syntax); datengetrieben = gelernt, oft Black Box. Größtes Praxisproblem: Alert Fatigue.
 
-*(Quelle: Kap. 9 Entscheidungsunterstützung (Expertensysteme, wissensbasierte Systeme, MYCIN, Arden Syntax, Bayes); Infobutton, Five Rights, Alert Fatigue, AI Act als Allgemeinwissen ergänzt.)*
+*(Quelle: Kap. 9 Entscheidungsunterstützung (Expertensysteme, wissensbasierte Systeme, MYCIN, Arden Syntax, Bayes); Infobutton, Five Rights, Alert Fatigue, AI Act als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Wissensbasen und Systeme zur Therapiesicherheit
@@ -129,7 +129,7 @@ Prüfungsfalle: **Leitlinie** = Empfehlung/Entscheidungs**korridor** (begründet
 
 Merksatz: AMTS-IT = Wissensbasis (ABDA) + elektronische Verordnung (CPOE) mit automatischer Prüfung + Closed Loop (Unit-Dose, Barcode). EbM = Evidenz + Erfahrung + Patientenwunsch; PICO → suchen → bewerten → anwenden → prüfen; Metaanalyse von RCTs ganz oben, S3 = beste Leitlinie.
 
-*(Quelle: Kap. 9 Entscheidungsunterstützung (Wissensbasen), Kap. 10 Evidenzbasierte Medizin; AMTS/Closed Loop, PRISCUS, AWMF-Klassen und CIRS als Allgemeinwissen ergänzt.)*
+*(Quelle: Kap. 9 Entscheidungsunterstützung (Wissensbasen), Kap. 10 Evidenzbasierte Medizin; AMTS/Closed Loop, PRISCUS, AWMF-Klassen und CIRS als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Systematische evidenzbasierte Bewertung
@@ -191,7 +191,7 @@ Frage: Was ist Health Technology Assessment (HTA), welche Aspekte werden bewerte
 
 Merksatz: HTA = EbM auf Systemebene ("Soll die Kasse das zahlen?") — bewertet Nutzen, Schaden, Kosten, Ethik, Organisation. IQWiG **bewertet**, G-BA **entscheidet**, GKV-SV **verhandelt den Preis** (AMNOG). Patientenrelevant = Tod, Krankheit, Lebensqualität — nicht Laborwerte.
 
-*(Quelle: Kap. 10 Evidenzbasierte Medizin/HTA; AMNOG, DiGA, EU-HTA-Verordnung, QALY/Effizienzgrenze als Allgemeinwissen ergänzt.)*
+*(Quelle: Kap. 10 Evidenzbasierte Medizin/HTA; AMNOG, DiGA, EU-HTA-Verordnung, QALY/Effizienzgrenze als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie

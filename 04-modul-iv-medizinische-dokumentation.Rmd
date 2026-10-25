@@ -267,7 +267,7 @@ Merksatz Kurve: Papierkurve = Notizblock am Bett; **PDMS = Kurve, die sich selbs
 
 Merksatz Medikationsplan vs. Notfalldatensatz: **BMP** = vollständige Medikation für den Alltag (ab 3 Medikamenten, Barcode); **NFD** = das Allernötigste für den Notfall (Diagnosen, Allergien, Medikation, Kontakte), **ohne PIN** für Ärzte lesbar.
 
-*(Quelle: Curriculum / Allgemeinwissen — MIOs, ePA für alle und mio42 sind im Buch "MedInfo kompakt" (2015) nicht enthalten.)*
+*(Quelle: Curriculum / Allgemeinwissen — MIOs, ePA für alle und mio42 sind im Buch "MedInfo kompakt" (2015) nicht enthalten. Stand: 10/2026.)*
 :::
 
 ## Ordnungs- und Klassifikationssysteme für klinische Zwecke
@@ -483,7 +483,7 @@ Faustregel Buchstaben: **C** = Krebs, **I** = Kreislauf, **J** = Lunge, **K** = 
 
 Merksatz: ICD-10 = Postleitzahl der Diagnosen: Buchstabe (Bereich) + 2 Ziffern (Krankheit) + Punkt (Detail). GM für Abrechnung, WHO für Todesursachen; + Ursache, \* Organ, ! Zusatz.
 
-*(Quelle: Kap. 12, Medizinische Dokumentation — ICD-10-GM/WHO, Kodeaufbau, Kreuz-Stern-Systematik, Haupt-/Nebendiagnose; BfArM-Zuständigkeit, Zusatzkennzeichen und ICD-11-Stand als Allgemeinwissen ergänzt.)*
+*(Quelle: Kap. 12, Medizinische Dokumentation — ICD-10-GM/WHO, Kodeaufbau, Kreuz-Stern-Systematik, Haupt-/Nebendiagnose; BfArM-Zuständigkeit, Zusatzkennzeichen und ICD-11-Stand als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ::: {.exam-question}
@@ -575,7 +575,7 @@ Klinik-Beispiel: Gespräch beim Hausarzt — GKV-Patient: in der **Versichertenp
 
 Merksatz: **EBM = Kasse, Punkte, Pauschalen, über die KV. GOÄ = privat, Einzelleistung × Steigerungsfaktor, direkt an den Patienten.**
 
-*(Quelle: Kap. 4 Gesundheitsökonomie und Kap. 12 Medizinische Dokumentation — DRG-Kode-Struktur, Grouper, CCL/PCCL, Bewertungsrelation; Pflegebudget seit 2020 als Allgemeinwissen ergänzt.)*
+*(Quelle: Kap. 4 Gesundheitsökonomie und Kap. 12 Medizinische Dokumentation — DRG-Kode-Struktur, Grouper, CCL/PCCL, Bewertungsrelation; Pflegebudget seit 2020 als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Weitere Klassifikation und ihre Anwendungsgebiete
@@ -679,7 +679,7 @@ Frage: Was regelt die gesetzliche Qualitätssicherung (§§ 135a–137 SGB V), w
 
 Merksatz: § 135a = Pflicht, § 136 = G-BA macht Regeln, § 137 = Durchsetzung, § 137a = IQTIG wertet aus. Ablauf: QS-Filter → QS-Bogen → Auswertung → Auffälligkeit → Stellungnahme → Qualitätsbericht.
 
-*(Quelle: Kap. 5 Qualitätsmanagement und Kap. 12 — gesetzliche QS, Qualitätsbericht §137; heutige Paragrafenaufteilung, IQTIG statt AQUA und DeQS-RL als Allgemeinwissen aktualisiert.)*
+*(Quelle: Kap. 5 Qualitätsmanagement und Kap. 12 — gesetzliche QS, Qualitätsbericht §137; heutige Paragrafenaufteilung, IQTIG statt AQUA und DeQS-RL als Allgemeinwissen aktualisiert. Stand: 10/2026.)*
 :::
 
 ## Vorgehen bei Planung und Entwicklung von Dokumentationssystemen
@@ -763,5 +763,5 @@ Frage: Was versteht man unter Big Data im Gesundheitswesen, wie wird es für Pub
 
 Merksatz: Big Data = 5 V. Für Public Health: Surveillance, Versorgungsforschung, Pharmakovigilanz. Große Datenmenge ersetzt kein gutes Studiendesign — Bias und Confounding bleiben.
 
-*(Quelle: Curriculum / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt.)*
+*(Quelle: Curriculum / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt. Stand: 10/2026.)*
 :::

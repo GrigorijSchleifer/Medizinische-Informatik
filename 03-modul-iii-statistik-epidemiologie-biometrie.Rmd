@@ -19,6 +19,8 @@ Frage: Eine Studie zu einem neuen Blutverdünner zeigt "25% relative Risikoreduk
 
 **Warum die RRR irreführend sein kann**: sie wirkt immer größer als die ARR — bei einem seltenen Ereignis kann die tatsächliche (absolute) Wirkung winzig sein, obwohl die RRR beeindruckend klingt. **Klinisch relevant ist die NNT**: frag bei jeder Effektangabe "Wie viele muss ich wirklich behandeln, damit einer profitiert?"
 
+Merksatz: Die RRR (relative Risikoreduktion) klingt immer groß — frag nach ARR (absolute Risikoreduktion) und NNT (Number Needed to Treat = 1 / ARR).
+
 *(Quelle: Kap. 13, Evidenzbasierte Medizin.)*
 :::
 
@@ -400,6 +402,8 @@ Merkhilfe: *a* ist der Startwert (wo die Gerade beginnt), *b* die Steilheit (wie
 **Varianzanalyse (ANOVA)**: Erweiterung des t-Tests für **mehr als 2 Gruppen**. Klinik-Beispiel: Vergleich der durchschnittlichen Erholungszeit nach OP zwischen drei Anästhesieverfahren — ein t-Test vergleicht immer nur 2 Gruppen, ANOVA prüft alle drei gleichzeitig auf Unterschiede.
 
 **Wichtige Warnung aus dem Buch**: lineare Regression setzt einen tatsächlich linearen Zusammenhang voraus — bei offensichtlich nicht-linearen Daten (Buch-Beispiel: LVEDP vs. Pulmonalvenenfluss-Dezelerationszeit, eher eine 1/x-Kurve) führt sie zu einem irreführenden Modell. Vorher Transformation/anderes Modell prüfen.
+
+Merksatz: Korrelation = wie stark hängen zwei Merkmale zusammen (r, ohne Richtung); Regression = Vorhersageformel y = a + b·x (a = Startwert, b = Steigung); ANOVA (Analysis of Variance = Varianzanalyse) = t-Test für ≥ 3 Gruppen.
 
 *(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::

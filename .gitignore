@@ -11,3 +11,8 @@ Curriculum.pdf
 
 # automatisch erzeugt (scripts/themenindex.py)
 themen.md
+.quarto/
+*_files/
+
+/.quarto/
+**/*.quarto_ipynb

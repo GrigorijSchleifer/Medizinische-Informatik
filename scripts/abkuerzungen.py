@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Erzeugt anhang-abkuerzungen.Rmd aus abkuerzungen.tsv.
+"""Erzeugt anhang-abkuerzungen.qmd aus abkuerzungen.tsv.
 
 Aufruf aus dem Projektordner:  python3 scripts/abkuerzungen.py
 Die Spalte "Modul" wird automatisch aus den Modul-Dateien ermittelt.
@@ -20,7 +20,7 @@ def pattern(abbr):
 
 
 def main():
-    modules = sorted(ROOT.glob("[0-9][0-9]-*.Rmd"))
+    modules = sorted(ROOT.glob("[0-9][0-9]-*.qmd"))
     texts = [m.read_text(encoding="utf-8") for m in modules]
     rows = [l.split("\t") for l in (ROOT / "abkuerzungen.tsv").read_text(encoding="utf-8").splitlines()[1:] if l.strip()]
     rows.sort(key=lambda r: r[0].lower().lstrip("e") if r[0][:1] == "e" and r[0][1:2].isupper() else r[0].lower())
@@ -35,8 +35,6 @@ def main():
         lines.append(f"| **{abbr}** | {full} | {meaning} | {', '.join(hits) or '–'} |")
 
     out = [
-        "# (APPENDIX) Anhang {-}",
-        "",
         "# Abkürzungsverzeichnis {#abkuerzungen}",
         "",
         "Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) — "
@@ -47,8 +45,8 @@ def main():
         *lines,
         "",
     ]
-    (ROOT / "anhang-abkuerzungen.Rmd").write_text("\n".join(out), encoding="utf-8")
-    print(f"{len(rows)} Abkürzungen → anhang-abkuerzungen.Rmd")
+    (ROOT / "anhang-abkuerzungen.qmd").write_text("\n".join(out), encoding="utf-8")
+    print(f"{len(rows)} Abkürzungen → anhang-abkuerzungen.qmd")
     if missing:
         print("Nicht im Buch gefunden:", ", ".join(missing))
 

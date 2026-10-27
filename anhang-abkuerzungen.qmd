@@ -1,5 +1,3 @@
-# (APPENDIX) Anhang {-}
-
 # Abkürzungsverzeichnis {#abkuerzungen}
 
 Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) — nicht von Hand bearbeiten. Spalte *Modul* = Module, in denen die Abkürzung vorkommt.
@@ -124,7 +122,7 @@ Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) �
 | **KKS** | Koordinierungszentrum für Klinische Studien | Studienunterstützung an Unikliniken | IX |
 | **KRITIS** | Kritische Infrastrukturen | Krankenhäuser ab 30.000 vollstationären Fällen/Jahr | VII |
 | **KTQ** | Kooperation für Transparenz und Qualität im Gesundheitswesen | deutsches Krankenhaus-Zertifizierungsverfahren | VIII |
-| **LIS** | Laborinformationssystem | Abteilungssystem des Labors | VII, IX |
+| **LIS** | Laborinformationssystem | Abteilungssystem des Labors | I, VII, IX |
 | **LMS** | Learning Management System | E-Learning-Plattform, z. B. ILIAS, Moodle | IX |
 | **LOINC** | Logical Observation Identifiers Names and Codes | Kodes für Laboruntersuchungen und Beobachtungen | III, IV, VII, IX |
 | **MBO-Ä** | (Muster-)Berufsordnung für Ärzte | Schweigepflicht (§ 9), Dokumentationspflicht (§ 10) | II, IV, X |
@@ -155,7 +153,7 @@ Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) �
 | **OPS** | Operationen- und Prozedurenschlüssel | Kodierung von Prozeduren (BfArM) | IV, VII, VIII, IX |
 | **OR** | Odds Ratio | Chancenverhältnis; Effektmaß der Fall-Kontroll-Studie | III, VI |
 | **ePA** | elektronische Patientenakte | § 341 SGB V, „ePA für alle“ (Opt-out) | I, IV, VI, VII, X |
-| **PACS** | Picture Archiving and Communication System | Bildarchiv der Radiologie | III, V, VII, IX |
+| **PACS** | Picture Archiving and Communication System | Bildarchiv der Radiologie | I, III, V, VII, IX |
 | **PAS** | Patientenadministrationssystem | Aufnahme, Stammdaten, Verlegung, Abrechnung | VII |
 | **PCCL** | Patient Clinical Complexity Level | Schweregrad aus Nebendiagnosen (DRG) | IV, VIII |
 | **PDCA** | Plan-Do-Check-Act | Deming-Zyklus im Qualitätsmanagement | VIII |

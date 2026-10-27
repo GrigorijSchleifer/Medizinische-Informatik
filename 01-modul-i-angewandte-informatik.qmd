@@ -9,9 +9,18 @@ Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Server (z. B. KIS), Clients, aktive Komponenten (Switches, Router, WLAN), passive Komponenten (Verkabelung, Patchpanels), Firewalls/Sicherheitszonen, Schnittstellen zu Medizingeräten, Anbindung an die Telematik-Infrastruktur.
+**Antwort:**
 
-Merksatz: Netz wie Klinikgebäude — Server = Zentralarchiv, Clients = Stationsarbeitsplätze, Switch/Router = Flure und Pforte, Firewall = Zugangskontrolle, TI (Telematikinfrastruktur) = gesicherter Ausgang nach draußen.
+- **Server:** stellen Anwendungen und Daten bereit, z. B. KIS (Krankenhausinformationssystem), PACS (Picture Archiving and Communication System = Bildarchiv) und LIS (Laborinformationssystem).
+- **Clients und Endgeräte:** Arbeitsplatzrechner, mobile Geräte, Drucker und vernetzte Medizingeräte.
+- **Aktive Netzwerkkomponenten:** Switches verbinden Geräte innerhalb eines Netzwerks, Router verbinden unterschiedliche Netzwerke, WLAN-Access-Points (WLAN = Wireless Local Area Network = Funknetz) ermöglichen drahtlosen Zugang.
+- **Passive Netzwerkkomponenten:** Kupfer- und Glasfaserkabel, Netzwerkdosen und Patchpanels.
+- **Sicherheitskomponenten und Netzwerksegmentierung:** Firewalls und getrennte Netzbereiche, z. B. für Verwaltung, Medizintechnik und Gäste.
+- **Externe Anbindungen:** Internet, externe Standorte und TI (Telematikinfrastruktur), bei Bedarf über VPN (Virtual Private Network = verschlüsselter Tunnel durchs Internet).
+
+Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte, Router verbinden Netze, Firewalls kontrollieren den Verkehr.
+
+*(Quelle: Curriculum/Allgemeinwissen — Netzwerkgrundlagen.)*
 :::
 
 ### Aktive und passive Netzwerkkomponenten

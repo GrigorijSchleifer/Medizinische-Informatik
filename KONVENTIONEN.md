@@ -14,7 +14,7 @@ geplante Aufgaben). Wer mit Claude arbeitet, gibt diese Datei als Kontext mit
 
 ## Wohin
 
-- Ein Modul = eine Datei (`01-…Rmd` bis `10-…Rmd`), Gliederung nach dem
+- Ein Modul = eine Datei (`01-…qmd` bis `10-…qmd`), Gliederung nach dem
   (Muster-)Kursbuch der Bundesärztekammer.
 - `#` = Modul (nur einmal pro Datei), `##` = Kursbuch-Punkt, `###` = Unterthema.
 - Neue Fragen unter den passenden Kursbuch-Punkt; Platzhaltersatz darunter

@@ -45,7 +45,7 @@ def parse(path):
 
 
 def main():
-    files = sorted(ROOT.glob("[0-9][0-9]-*.Rmd"))
+    files = sorted(ROOT.glob("[0-9][0-9]-*.qmd"))
     out = ["# Themenindex", "",
            "Automatisch erzeugt mit `python3 scripts/themenindex.py` — nicht von Hand bearbeiten.", ""]
     summary = ["| Modul | Fragen | Offene Abschnitte |", "|---|---|---|"]

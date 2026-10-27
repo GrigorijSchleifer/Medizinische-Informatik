@@ -1,30 +1,27 @@
 # Medizinische Informatik — Prüfungsvorbereitung
 
-Ein Bookdown-Projekt (R Markdown) mit Fragen & Antworten zur Zusatz-Weiterbildung
+Ein Quarto-Buch (https://quarto.org) mit Fragen & Antworten zur Zusatz-Weiterbildung
 "Medizinische Informatik", strukturiert nach dem (Muster-)Kursbuch der
 Bundesärztekammer (10 Module).
 
 ## Voraussetzungen
 
-- **R** (getestet mit R 4.5)
-- R-Pakete: `bookdown`, `servr`
-  ```r
-  install.packages(c("bookdown", "servr"))
-  ```
-- **pandoc** (System-Tool, nicht über R installierbar)
+- **Quarto** (bringt pandoc mit)
   ```bash
-  brew install pandoc   # macOS
+  brew install --cask quarto   # macOS
   ```
+- **R** mit den Paketen `rmarkdown` und `knitr` (für den R-Codeblock in Modul VI)
 
 ## Buch rendern
 
-Im Projektordner (wo `index.Rmd` liegt):
+Im Projektordner (wo `_quarto.yml` liegt):
 
 ```bash
-Rscript -e 'bookdown::render_book(".")'
+quarto render
 ```
 
 Erzeugt eine statische HTML-Site im Ordner `_book/`.
+Zum Schreiben mit Live-Vorschau: `quarto preview` (lädt bei jedem Speichern neu).
 
 ## Lokal ansehen
 
@@ -41,16 +38,16 @@ Dann im Browser: <http://127.0.0.1:8000>
 
 | Datei | Modul (nach Kursbuch) |
 |---|---|
-| `01-modul-i-angewandte-informatik.Rmd` | I — Angewandte Informatik |
-| `02-modul-ii-datenschutz-datensicherheit.Rmd` | II — Datenschutz/Datensicherheit |
-| `03-modul-iii-statistik-epidemiologie-biometrie.Rmd` | III — Statistik/Epidemiologie/Biometrie |
-| `04-modul-iv-medizinische-dokumentation.Rmd` | IV — Medizinische Dokumentation |
-| `05-modul-v-bildverarbeitung-biosignalverarbeitung.Rmd` | V — Bildverarbeitung/Biosignalverarbeitung |
-| `06-modul-vi-entscheidungsunterstuetzung.Rmd` | VI — Entscheidungsunterstützung |
-| `07-modul-vii-informations-kommunikationssysteme.Rmd` | VII — Informations-/Kommunikationssysteme |
-| `08-modul-viii-management-gesundheits-it.Rmd` | VIII — Management in der Gesundheits-IT |
-| `09-modul-ix-informationsmanagement-klinische-forschung.Rmd` | IX — Informationsmanagement/Klin. Datenmanagement/Forschung |
-| `10-modul-x-telemedizin-telematik.Rmd` | X — Telemedizin und Telematik |
+| `01-modul-i-angewandte-informatik.qmd` | I — Angewandte Informatik |
+| `02-modul-ii-datenschutz-datensicherheit.qmd` | II — Datenschutz/Datensicherheit |
+| `03-modul-iii-statistik-epidemiologie-biometrie.qmd` | III — Statistik/Epidemiologie/Biometrie |
+| `04-modul-iv-medizinische-dokumentation.qmd` | IV — Medizinische Dokumentation |
+| `05-modul-v-bildverarbeitung-biosignalverarbeitung.qmd` | V — Bildverarbeitung/Biosignalverarbeitung |
+| `06-modul-vi-entscheidungsunterstuetzung.qmd` | VI — Entscheidungsunterstützung |
+| `07-modul-vii-informations-kommunikationssysteme.qmd` | VII — Informations-/Kommunikationssysteme |
+| `08-modul-viii-management-gesundheits-it.qmd` | VIII — Management in der Gesundheits-IT |
+| `09-modul-ix-informationsmanagement-klinische-forschung.qmd` | IX — Informationsmanagement/Klin. Datenmanagement/Forschung |
+| `10-modul-x-telemedizin-telematik.qmd` | X — Telemedizin und Telematik |
 
 Jede Frage-Antwort-Box ist mit ihrer Quelle gekennzeichnet: entweder ein
 Kapitelverweis auf "Medizinische Informatik kompakt" (De Gruyter, 2015), oder

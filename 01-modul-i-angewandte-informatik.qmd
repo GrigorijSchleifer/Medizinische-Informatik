@@ -4,18 +4,25 @@
 
 ### Aufbau typischer Krankenhaus- und Praxisnetzwerke
 
-::: {.exam-question}
+::: {.exam-question .done}
 Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 :::
 
 ::: {.exam-answer}
 **Antwort:**
-
-- **Server:** stellen Anwendungen und Daten bereit, z. B. KIS (Krankenhausinformationssystem), PACS (Picture Archiving and Communication System = Bildarchiv) und LIS (Laborinformationssystem).
-- **Clients und Endgeräte:** Arbeitsplatzrechner, mobile Geräte, Drucker und vernetzte Medizingeräte.
-- **Aktive Netzwerkkomponenten:** Switches verbinden Geräte innerhalb eines Netzwerks, Router verbinden unterschiedliche Netzwerke, WLAN-Access-Points (WLAN = Wireless Local Area Network = Funknetz) ermöglichen drahtlosen Zugang.
-- **Passive Netzwerkkomponenten:** Kupfer- und Glasfaserkabel, Netzwerkdosen und Patchpanels.
-- **Sicherheitskomponenten und Netzwerksegmentierung:** Firewalls und getrennte Netzbereiche, z. B. für Verwaltung, Medizintechnik und Gäste.
+- **Server:** stellen Anwendungen und Daten bereit
+    - KIS (Krankenhausinformationssystem)
+    - PACS (Picture Archiving and Communication System = Bildarchiv)
+    - LIS (Laborinformationssystem)
+- **Aktive Netzwerkkomponenten:** strombetriebene Geräte, die Daten weiterleiten
+    - **Switch:** verbindet Geräte innerhalb eines Netzwerks (z. B. alle PCs einer Station)
+    - **Router:** verbindet unterschiedliche Netzwerke (z. B. Klinik-Netz ↔ Internet)
+    - **WLAN-Access-Point: ** drahtloser Zugang, z. B. für Visitenwagen
+- **Passive Netzwerkkomponenten:** stromlose Komponenten zur physikalischen Datenübertragung
+	- Kupfer- und Glasfaserkabel
+	- Netzwerkdosen
+    - Patchpanels
+- **Sicherheitskomponenten und Netzwerksegmentierung:** Firewalls und getrennte Netzbereiche, z. B. für Verwaltung, Medizintechnik und Gäste (VLAN)
 - **Externe Anbindungen:** Internet, externe Standorte und TI (Telematikinfrastruktur), bei Bedarf über VPN (Virtual Private Network = verschlüsselter Tunnel durchs Internet).
 
 Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte, Router verbinden Netze, Firewalls kontrollieren den Verkehr.
@@ -25,14 +32,24 @@ Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte,
 
 ### Aktive und passive Netzwerkkomponenten
 
-::: {.exam-question}
+::: {.exam-question .done}
 Frage: Unterschied aktive vs. passive Netzwerkkomponenten?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Aktiv = verarbeitet/verstärkt Signale, braucht Strom (z. B. Switch, Router, Access Point). Passiv = leitet Signale nur weiter, keine Verarbeitung/kein Strom (z. B. Kabel, Patchpanel, Stecker).
+**Antwort:** 
 
-Merksatz: Aktiv = braucht Strom und „denkt mit“ (Switch, Router, Access Point); passiv = nur Leitung (Kabel, Patchpanel, Netzwerkdose).
+- **Aktive Netzwerkkomponenten:** verarbeiten, verstärken oder steuern Signale (benötigen Strom)
+  - **Switch:** verbindet Geräte innerhalb eines Netzwerks
+  - **Router:** verbindet unterschiedliche Netzwerke
+  - **WLAN-Access-Point:** ermöglicht drahtlosen Netzwerkzugang
+- **Passive Netzwerkkomponenten:** übertragen oder verbinden Signale ohne aktive Verarbeitung (benötigen kein Strom)
+  - **Kabel:** übertragen Signale über Kupfer oder Glasfaser
+  - **Patchpanel:** verbindet und ordnet Kabelanschlüsse
+  - **Stecker und Netzwerkdosen:** bilden Anschlussstellen
+
+Merksatz: Aktiv verarbeitet mit Strom, passiv verbindet ohne eigene Stromversorgung
+
 :::
 
 ### Client-Server-Konzept
@@ -42,9 +59,16 @@ Frage: Was ist das Client-Server-Konzept?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Client fragt Dienste/Daten an, Server stellt sie bereit — zentrale Datenhaltung/-verarbeitung auf dem Server, Clients greifen darauf zu (z. B. Arbeitsplatz-PC greift auf zentrales KIS zu).
+**Antwort:**
 
-Merksatz: Client = fragt an (Stationsarbeitsplatz), Server = liefert (zentrales KIS (Krankenhausinformationssystem)) — wie die Station, die beim Zentrallabor anfordert.
+- **Client-Server-Konzept:** Aufgaben sind zwischen anfragendem Client und bereitstellendem Server aufgeteilt
+  - **Client:** fordert Dienste oder Daten an
+    - Der Stations-PC ruft einen Laborbefund im KIS ab
+  - **Server:** verarbeitet Anfragen und stellt Dienste oder Daten bereit
+    - Der KIS-Server liefert den angeforderten Laborbefund
+  - **Datenhaltung und Verarbeitung:** Daten und gemeinsame Dienste liegen typischerweise zentral auf dem Server; Verarbeitung kann auf beiden Seiten erfolgen
+
+Merksatz: Client fragt an, Server liefert
 :::
 
 ### Rechnertypen

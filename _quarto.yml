@@ -8,6 +8,7 @@ book:
   date: today
   date-format: "DD.MM.YYYY"
   search: true
+  reader-mode: true      # Knopf oben: beide Seitenleisten aus-/einblenden
   chapters:
     - index.qmd
     - 01-modul-i-angewandte-informatik.qmd
@@ -25,6 +26,8 @@ book:
 
 lang: de
 from: markdown+lists_without_preceding_blankline
+filters:
+  - merksatz.lua
 
 format:
   html:
@@ -34,4 +37,5 @@ format:
     css: style.css
     toc: true
     toc-depth: 3
+    toc-expand: 1        # rechts nur Kursbuch-Punkte offen, Unterpunkte klappen beim Scrollen auf
     number-depth: 3

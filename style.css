@@ -19,7 +19,6 @@ p {
 .exam-answer {
   margin-left: 2em;
   padding-left: 1em;
-  border-left: 2px solid #ddd;
 }
 
 /* Breite Tabellen horizontal scrollbar machen statt abschneiden */
@@ -27,4 +26,22 @@ main table {
   display: block;
   overflow-x: auto;
   max-width: 100%;
+}
+
+/* Fertig überarbeitete Frage: ::: {.exam-question .done} */
+.exam-question.done {
+  background-color: #d4edda;
+  border-left-color: #28a745;
+  color: #155724;
+}
+
+/* Merksatz: schlichter gelber Balken links (Absätze werden von merksatz.lua markiert) */
+.merksatz {
+  border-left: 4px solid #f0c419;
+  padding-left: 0.8em;
+  margin: 1em 0;
+}
+
+.merksatz p {
+  margin-bottom: 0;
 }

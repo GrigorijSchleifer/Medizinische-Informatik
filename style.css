@@ -45,3 +45,7 @@ main table {
 .merksatz p {
   margin-bottom: 0;
 }
+
+strong {
+  font-size: 1.1em;
+}

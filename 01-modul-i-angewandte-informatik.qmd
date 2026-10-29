@@ -27,29 +27,12 @@ Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 
 Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte, Router verbinden Netze, Firewalls kontrollieren den Verkehr.
 
+::: {.callout-note title="Prüfungswissen" appearance="simple"}
+- **Aktiv:** verarbeitet, verstärkt oder steuert Signale; benötigt Strom
+- **Passiv:** überträgt oder verbindet Signale ohne aktive Verarbeitung; benötigt keine eigene Stromversorgung
+:::
+
 *(Quelle: Curriculum/Allgemeinwissen — Netzwerkgrundlagen.)*
-:::
-
-### Aktive und passive Netzwerkkomponenten
-
-::: {.exam-question .done}
-Frage: Unterschied aktive vs. passive Netzwerkkomponenten?
-:::
-
-::: {.exam-answer}
-**Antwort:** 
-
-- **Aktive Netzwerkkomponenten:** verarbeiten, verstärken oder steuern Signale (benötigen Strom)
-  - **Switch:** verbindet Geräte innerhalb eines Netzwerks
-  - **Router:** verbindet unterschiedliche Netzwerke
-  - **WLAN-Access-Point:** ermöglicht drahtlosen Netzwerkzugang
-- **Passive Netzwerkkomponenten:** übertragen oder verbinden Signale ohne aktive Verarbeitung (benötigen kein Strom)
-  - **Kabel:** übertragen Signale über Kupfer oder Glasfaser
-  - **Patchpanel:** verbindet und ordnet Kabelanschlüsse
-  - **Stecker und Netzwerkdosen:** bilden Anschlussstellen
-
-Merksatz: Aktiv verarbeitet mit Strom, passiv verbindet ohne eigene Stromversorgung
-
 :::
 
 ### Client-Server-Konzept
@@ -74,13 +57,20 @@ Merksatz: Client fragt an, Server liefert
 ### Rechnertypen
 
 ::: {.exam-question}
-Frage: Was unterscheidet Fat-, Thin- und Zero-Clients?
+**Frage: Was unterscheidet Fat-, Thin- und Zero-Clients?**
 :::
 
 ::: {.exam-answer}
-**Antwort:** Fat Client = eigene Rechenleistung/Speicher, läuft weitgehend unabhängig. Thin Client = minimale lokale Hardware, Verarbeitung läuft am Server, Client nur für Ein-/Ausgabe. Zero Client = kein eigenes OS/keine lokale Verarbeitung, reine Anzeige-Hardware, komplett serverabhängig.
+**Antwort:**
 
-Merksatz: Fat = rechnet selbst, Thin = zeigt an und rechnet am Server, Zero = reiner Bildschirm ohne eigenes Betriebssystem — je dünner, desto leichter zentral zu verwalten, desto abhängiger vom Server.
+- **Fat Client:** vollwertiger Rechner mit eigenem Betriebssystem; verarbeitet Anwendungen überwiegend lokal
+  - Praxis-PC mit lokal installierter Praxissoftware und Verbindung zum Datenbankserver
+- **Thin Client:** schlankes Betriebssystem; Anwendungen und wesentliche Verarbeitung laufen überwiegend auf dem Server
+  - Stationsarbeitsplatz mit Zugriff auf einen Terminalserver
+- **Zero Client:** spezialisierte Hardware mit Firmware statt eines allgemeinen Betriebssystems; Anwendungen laufen auf dem Server
+  - Befundarbeitsplatz mit Zugriff auf einen virtuellen Desktop
+
+Merksatz: Fat rechnet überwiegend lokal, Thin und Zero überwiegend auf dem Server. Auch Zero-Clients verarbeiten lokal die Bildübertragung und Ein-/Ausgabe.
 :::
 
 ### Servertypen

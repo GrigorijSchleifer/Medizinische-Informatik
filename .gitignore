@@ -16,3 +16,7 @@ themen.md
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Vim-Auslagerungsdateien
+*.swp
+*.swo

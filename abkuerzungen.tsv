@@ -30,6 +30,7 @@ CDA	Clinical Document Architecture	HL7-XML-Standard für klinische Dokumente, z.
 CDASH	Clinical Data Acquisition Standards Harmonization	CDISC-Standard für die Datenerfassung (eCRF-Felder)
 CDISC	Clinical Data Interchange Standards Consortium	Datenstandards für klinische Studien (CDASH, SDTM, ODM)
 CDSS	Clinical Decision Support System	klinische Entscheidungsunterstützung, z. B. Interaktionswarnung
+CEN	Comité Européen de Normalisation	Europäisches Komitee für Normung; übernimmt Normen als EN, z. B. EN ISO 14971
 CIA	Confidentiality, Integrity, Availability	Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit
 CIRS	Critical Incident Reporting System	anonymes Meldesystem für Beinahe-Fehler
 CMI	Case Mix Index	durchschnittlicher Fallschweregrad einer Klinik (DRG)
@@ -64,6 +65,7 @@ EHDS	European Health Data Space	Europäischer Gesundheitsdatenraum (EU-Verordnun
 eIDAS	electronic IDentification, Authentication and trust Services	EU-Verordnung: QES = handschriftliche Unterschrift
 EHR / EMR / EPR	Electronic Health / Medical / Patient Record	englische Begriffe für elektronische Akten
 EKG	Elektrokardiogramm	klassisches Biosignal
+EN	Europäische Norm	vom CEN übernommene Norm, gilt unverändert in allen CEN-Mitgliedsländern, z. B. DIN EN ISO 9001
 eMP	elektronischer Medikationsplan	auf der eGK, wandert in die ePA
 ePA	elektronische Patientenakte	§ 341 SGB V, „ePA für alle“ (Opt-out)
 ETL	Extract, Transform, Load	Daten aus Quellsystemen holen, umformen, in Data Warehouse laden

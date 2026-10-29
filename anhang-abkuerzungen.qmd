@@ -37,6 +37,7 @@ Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) �
 | **CDISC** | Clinical Data Interchange Standards Consortium | Datenstandards für klinische Studien (CDASH, SDTM, ODM) | IX |
 | **CDS** | Clinical Decision Support | Entscheidungsunterstützung (vgl. CDSS) | VI |
 | **CDSS** | Clinical Decision Support System | klinische Entscheidungsunterstützung, z. B. Interaktionswarnung | VI, VII |
+| **CEN** | Comité Européen de Normalisation | Europäisches Komitee für Normung; übernimmt Normen als EN, z. B. EN ISO 14971 | VIII |
 | **CIA** | Confidentiality, Integrity, Availability | Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit | II |
 | **CIRS** | Critical Incident Reporting System | anonymes Meldesystem für Beinahe-Fehler | VI, VIII |
 | **CMI** | Case Mix Index | durchschnittlicher Fallschweregrad einer Klinik (DRG) | VIII |
@@ -68,6 +69,7 @@ Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) �
 | **EHDS** | European Health Data Space | Europäischer Gesundheitsdatenraum (EU-Verordnung 2025) | III, IV, IX |
 | **EHR / EMR / EPR** | Electronic Health / Medical / Patient Record | englische Begriffe für elektronische Akten | VII, X |
 | **EKG** | Elektrokardiogramm | klassisches Biosignal | IV, V, IX, X |
+| **EN** | Europäische Norm | vom CEN übernommene Norm, gilt unverändert in allen CEN-Mitgliedsländern, z. B. DIN EN ISO 9001 | I, VIII |
 | **ETL** | Extract, Transform, Load | Daten aus Quellsystemen holen, umformen, in Data Warehouse laden | IX |
 | **EU-CTR** | EU Clinical Trials Regulation | EU-Verordnung 536/2014 für klinische Prüfungen (Portal CTIS) | IX |
 | **EUDAMED** | European Database on Medical Devices | EU-Medizinproduktedatenbank (MDR) | IV |

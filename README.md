@@ -34,6 +34,12 @@ Dann im Browser: <http://127.0.0.1:8000>
 
 (`--bind 127.0.0.1` hält den Server lokal — nicht im Netzwerk erreichbar.)
 
+## Online (GitHub Pages)
+
+Bei jedem Push auf `main` rendert `.github/workflows/publish.yml` das Buch und
+veröffentlicht es auf GitHub Pages (manuell: Actions → "Buch veröffentlichen" →
+"Run workflow"). Einmalig einrichten: Settings → Pages → Source: **GitHub Actions**.
+
 ## Struktur
 
 | Datei | Modul (nach Kursbuch) |

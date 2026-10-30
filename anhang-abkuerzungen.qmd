@@ -115,7 +115,7 @@ Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) �
 | **JSON** | JavaScript Object Notation | schlankes Datenformat (Schlüssel-Wert), z. B. FHIR | I, VII, IX |
 | **KBV** | Kassenärztliche Bundesvereinigung | MIOs, IT-Sicherheitsrichtlinie für Praxen | IV, VIII, X |
 | **KHZG** | Krankenhauszukunftsgesetz | (2020) Förderprogramm für Klinik-Digitalisierung | VII |
-| **KI** | Künstliche Intelligenz | z. B. Bilderkennung in der Radiologie; EU AI Act | III, V, VI, IX |
+| **KI** | Künstliche Intelligenz | z. B. Bilderkennung in der Radiologie; EU AI Act | III, V, VI, VIII, IX |
 | **KIM** | Kommunikation im Medizinwesen | sicherer E-Mail-Dienst der TI, z. B. eArztbrief | I, II, VII, X |
 | **KIS** | Krankenhausinformationssystem | Gesamtheit der informationsverarbeitenden Systeme eines Krankenhauses | I, II, III, IV, V, VI, VII, VIII, IX, X |
 | **KISS** | Krankenhaus-Infektions-Surveillance-System | Erfassung nosokomialer Infektionen (OP-KISS, ITS-KISS) | IX |
@@ -128,8 +128,12 @@ Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) �
 | **MBO-Ä** | (Muster-)Berufsordnung für Ärzte | Schweigepflicht (§ 9), Dokumentationspflicht (§ 10) | II, IV, X |
 | **MD** | Medizinischer Dienst | (früher MDK) prüft u. a. Krankenhausabrechnungen | IV, VIII |
 | **MDC** | Major Diagnostic Category | Hauptdiagnosegruppe im DRG-System | IV |
+| **MDCG** | Medical Device Coordination Group | Koordinierungsgruppe der EU-Mitgliedstaaten; Leitfäden zur MDR, z. B. MDCG 2019-11 (Software) | VIII |
+| **MDD** | Medical Device Directive | EU-Medizinprodukterichtlinie 93/42/EWG, durch die MDR abgelöst | VIII |
 | **MDK** | Medizinischer Dienst der Krankenversicherung | seit 2020 umbenannt in MD | VIII |
 | **MDR** | Medical Device Regulation | EU-Medizinprodukteverordnung 2017/745, löst MPG ab | II, IV, V, VI, VII, VIII, X |
+| **MDS2** | Manufacturer Disclosure Statement for Medical Device Security | Herstellerformular zu den IT-Sicherheitseigenschaften eines Medizinprodukts | VIII |
+| **MDSW** | Medical Device Software | Software mit medizinischer Zweckbestimmung nach Art. 2 Nr. 1 MDR | VIII |
 | **MII** | Medizininformatik-Initiative | BMBF-Förderung, DIZ an Unikliniken, Kerndatensatz | III, IV, VII, IX |
 | **MIO** | Medizinisches Informationsobjekt | KBV-Standard (FHIR) für ePA-Inhalte, z. B. Impfpass, Mutterpass | IV |
 | **ML** | Machine Learning | maschinelles Lernen: System lernt Muster aus Daten | VI |
@@ -164,6 +168,7 @@ Automatisch erzeugt aus `abkuerzungen.tsv` (`python3 scripts/abkuerzungen.py`) �
 | **PLM** | Product Lifecycle Management | Software über ihren ganzen Lebenszyklus steuern | VII |
 | **PPRL** | Privacy-Preserving Record Linkage | pseudonymisierte Datensätze verknüpfen, ohne Klarnamen | IX |
 | **PPV** | Positiver prädiktiver Wert | Anteil wirklich Kranker unter den Test-Positiven | III, VI |
+| **PRINCE2** | PRojects IN Controlled Environments | Projektmanagement-Methode mit Lenkungsausschuss und Management by Exception | VIII |
 | **PVS** | Praxisverwaltungssystem | Arztpraxis-Informationssystem | I, II, IV, VII, IX, X |
 | **PZN** | Pharmazentralnummer | Kennnummer einer Arzneimittelpackung | IV, IX |
 | **QALY** | Quality-Adjusted Life Year | qualitätsadjustiertes Lebensjahr (HTA) | VI |

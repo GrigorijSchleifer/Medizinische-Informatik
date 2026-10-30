@@ -197,7 +197,7 @@ Frage: Was gehört zum IT-Projektmanagement, wie ist das V-Modell aufgebaut, und
 ::: {.exam-answer}
 **Antwort:**
 
-**Projekt** = einmalig, zeitlich begrenzt, definiertes Ziel, eigene Ressourcen (z. B. Einführung eines PDMS auf der Intensivstation, KIS-Wechsel, Anbindung an die TI).
+**Projekt** (DIN 69901: Vorhaben, das im Wesentlichen durch die *Einmaligkeit der Bedingungen* gekennzeichnet ist) = einmalig, zeitlich begrenzt, definiertes Ziel, eigene Ressourcen und Organisation — Gegensatz: **Linie** (Routinebetrieb). Beispiele: Einführung eines PDMS auf der Intensivstation, KIS-Wechsel, Anbindung an die TI.
 
 **Magisches Dreieck**: **Zeit – Kosten – Qualität/Umfang** — eines ändern verschiebt die anderen (PDMS-Einführung früher fertig → teurer oder weniger Funktionen).
 
@@ -217,19 +217,49 @@ Anforderungsdefinition ─────────────── Abnahmetest
                     Implementierung
 ```
   Beispiel KIS-Medikationsmodul: Anforderung „Interaktionswarnung bei Marcumar + NSAR“ → wird beim **Abnahmetest** von Stationsärzten mit echtem Szenario geprüft; Modulentwurf „Interaktionsprüffunktion“ → **Modultest** durch Entwickler.
-  Variante **V-Modell XT**: verbindlicher Standard für IT-Projekte des Bundes. Stark in der **Medizinprodukte-Software** (IEC 62304) verbreitet, weil Nachweisbarkeit (Traceability Anforderung ↔ Test) gefordert ist.
-- **Agil (Scrum)**: kurze Iterationen (**Sprints**, 2–4 Wochen), **Product Owner** priorisiert **Backlog**, Team liefert nach jedem Sprint lauffähiges Teilprodukt, Feedback der Nutzer fließt sofort ein (z. B. Station testet nach jedem Sprint die neue Pflegedoku-Maske). Gut bei unklaren/ändernden Anforderungen; schwieriger bei strenger Regulierung.
+  Variante **V-Modell XT** (*eXtreme Tailoring*): verbindlicher Standard für IT-Projekte des Bundes. Kern ist das **Tailoring**: je nach Projekttyp werden *Vorgehensbausteine* ausgewählt, gesteuert wird über *Entscheidungspunkte* (Meilensteine mit Qualitätsprüfung). Es legt fest, *welche* Ergebnisse entstehen, nicht zwingend die Reihenfolge der Arbeit — iterative Durchläufe sind möglich, „V-Modell = starrer Wasserfall“ ist also eine Vereinfachung. Stark in der **Medizinprodukte-Software** (IEC 62304) verbreitet, weil Nachweisbarkeit (Traceability Anforderung ↔ Test) gefordert ist.
+- **Agil (Scrum)**: kurze Iterationen (**Sprints**, höchstens 1 Monat, meist 2–4 Wochen), Ergebnis jedes Sprints ist ein nutzbares **Inkrement**. Rollen: **Product Owner** (verantwortet den Wert, priorisiert das **Product Backlog**), **Scrum Master** (sorgt für den Prozess, räumt Hindernisse aus dem Weg), **Developers**. Ereignisse: Sprint Planning, Daily Scrum, Sprint Review, Retrospektive. Feedback der Nutzer fließt sofort ein (z. B. Station testet nach jedem Sprint die neue Pflegedoku-Maske). Gut bei unklaren/ändernden Anforderungen; schwieriger bei strenger Regulierung.
 
 | | Wasserfall | V-Modell | Scrum |
 |---|---|---|---|
 | Ablauf | linear | linear + Test je Stufe | iterativ |
 | Änderungen | teuer | teuer | eingeplant |
+| fest / variabel | Umfang fest → Zeit und Kosten werden geplant | wie Wasserfall | Zeit und Team fest → Umfang variiert |
 | Stärke | einfach | Nachweisbarkeit, Qualität | Nutzernähe, Flexibilität |
 | Klinik-Beispiel | Serverumzug | Medizinprodukte-Software | App/Portal mit Nutzerfeedback |
 
 Merksatz: V-Modell = „zu jeder Planung links gehört ein Test rechts“; oben Validierung (Anwender: richtiges System?), unten Verifizierung (Entwickler: richtig gebaut?). Wasserfall = Treppe runter, Scrum = Kreisverkehr in Sprints.
 
-*(Quelle: Kap. 16 (Verifizierung/Validierung, IEC 62304); Projektmanagement/V-Modell/Scrum als Curriculum/Allgemeinwissen ergänzt.)*
+*(Quelle: Kap. 16 (Verifizierung/Validierung, IEC 62304); Projektmanagement (DIN 69901), V-Modell XT und Scrum (Scrum Guide 2020) als Curriculum/Allgemeinwissen ergänzt.)*
+:::
+
+::: {.exam-question}
+Frage (Vertiefung): Was ist PRINCE2, worin unterscheidet es sich von einem Vorgehensmodell wie dem V-Modell, und wie wird ein Klinik-IT-Projekt damit gesteuert?
+:::
+
+::: {.exam-answer}
+**Antwort:** **PRINCE2** (*PRojects IN Controlled Environments*, aus Großbritannien) ist eine **Projektmanagement-Methode**, kein Entwicklungsmodell: Sie sagt nichts darüber, *wie* Software gebaut wird, sondern *wie ein Projekt gelenkt* wird. Daher lässt sie sich mit V-Modell oder Scrum kombinieren.
+
+**Aufbau: 7 – 7 – 7**:
+- **7 Grundprinzipien**, u. a. fortlaufende geschäftliche Rechtfertigung (*Business Case* muss über die ganze Laufzeit tragen), Steuern nach dem **Ausnahmeprinzip** (*Management by Exception*), Steuern über **Managementphasen**, **Produktorientierung**, Anpassung an die Projektumgebung (*Tailoring*).
+- **7 Themen** (seit der Ausgabe 2023 „Praktiken“): Business Case, Organisation, Qualität, Pläne, Risiko, Änderungen (*Issues*), Fortschritt.
+- **7 Prozesse** vom Vorbereiten bis zum Abschließen des Projekts.
+
+**Lenkungsausschuss** (*Project Board*) mit drei Perspektiven:
+
+| Rolle | Vertritt | Klinik-Beispiel PDMS |
+|---|---|---|
+| **Executive** (Auftraggeber) | Geschäftsinteresse, Business Case | Geschäftsführung |
+| **Senior User** | künftige Anwender | Oberarzt/Pflegeleitung Intensivstation |
+| **Senior Supplier** | Lieferanten/Umsetzer | Hersteller, ggf. Klinik-IT |
+
+Der **Projektmanager** arbeitet innerhalb vereinbarter **Toleranzen** (Zeit, Kosten, Umfang …) selbstständig und **eskaliert erst bei drohender Überschreitung** an den Lenkungsausschuss.
+
+**Praxis — hybrid**: Kliniken steuern Ausschreibung, Vertrag, Budget und Meilensteine meist klassisch (PRINCE2, V-Modell); die Parametrierung (Formulare, Order-Sets, Pflegedoku-Masken) läuft in kurzen agilen Zyklen mit den Anwendern.
+
+Merksatz: PRINCE2 lenkt das Projekt (Business Case, Lenkungsausschuss, Management by Exception), V-Modell und Scrum beschreiben, wie das Produkt entsteht.
+
+*(Quelle: Curriculum/Allgemeinwissen — PRINCE2 (AXELOS/PeopleCert, 7. Ausgabe 2023).)*
 :::
 
 ## Risikomanagement und Risikoanalyse (z. B. nach DIN EN ISO 14971 und IEC 80001)
@@ -241,15 +271,20 @@ Frage: Wie läuft Risikomanagement nach DIN EN ISO 14971 ab, was regelt IEC 8000
 ::: {.exam-answer}
 **Antwort:**
 
-**Grundformel**: **Risiko = Eintrittswahrscheinlichkeit × Schweregrad** des Schadens.
+**Begriffe** (ISO 14971):
+- **Gefährdung** (*hazard*): potenzielle Schadensquelle (z. B. falsche Dosiseinheit).
+- **Gefährdungssituation**: Umstände, in denen Menschen einer Gefährdung ausgesetzt sind (Pflegekraft programmiert die Pumpe in µg statt mg).
+- **Schaden**: Verletzung oder Schädigung der Gesundheit von Menschen, von Sachen oder der Umwelt.
+- **Risiko** = **Kombination** aus **Wahrscheinlichkeit** des Schadens und seinem **Schweregrad** (oft vereinfacht als Produkt gerechnet).
 
-**DIN EN ISO 14971** (Risikomanagement für **Medizinprodukte**, Adressat: **Hersteller**, über den ganzen Lebenszyklus):
+**DIN EN ISO 14971** (Risikomanagement für **Medizinprodukte**, Adressat: **Hersteller**, über den ganzen Lebenszyklus). Aktuell **ISO 14971:2019**, in Europa **EN ISO 14971:2019 + A11:2021** — die Änderung A11 ergänzt den Anhang Z mit dem Bezug zur MDR; in dieser Fassung ist die Norm unter der MDR **harmonisiert**. Erläuternder Leitfaden: **ISO/TR 24971:2020**.
 
 1. **Risikoanalyse**: Zweckbestimmung **+ vorhersehbarer Fehlgebrauch** dokumentieren, Gefährdungen identifizieren, Wahrscheinlichkeit/Schwere schätzen.
 2. **Risikobewertung**: Einordnung in **Risikomatrix** → akzeptabel / **ALARP** („so niedrig wie vernünftigerweise machbar“) / nicht akzeptabel.
 3. **Risikobeherrschung**, feste Rangfolge:
    ① **inhärent sicheres Design** > ② **Schutzmaßnahmen** (Alarme, Abschaltung) > ③ **Information** (Warnhinweis, Schulung).
-4. **Restrisiko vs. Nutzen** abwägen, danach **Marktbeobachtung** (Vorkommnisse, Beschwerden) → Analyse aktualisieren.
+4. **Gesamt-Restrisiko** bewerten (Restrisiko vs. Nutzen) und im **Risikomanagementbericht** festhalten.
+5. **Herstellung und Nachproduktionsphase**: Marktbeobachtung (Vorkommnisse, Beschwerden) → Analyse aktualisieren — der Prozess endet nicht mit der Markteinführung.
 
 Beispiel Infusionspumpe: Gefährdung „Dosierfehler mg vs. µg“ → ① Medikamentenbibliothek mit festen Einheiten und harten Dosisgrenzen (Design) → ② Alarm bei Überschreitung weicher Grenze (Schutz) → ③ Schulung + Warnhinweis (Information). Ein Warnhinweis allein reicht nicht, wenn Design-Lösung möglich ist.
 
@@ -264,7 +299,8 @@ unwahrscheinl.  ok       ok       ok       ALARP      X = nicht akzeptabel
 
 **IEC 80001-1** (Risikomanagement für **IT-Netzwerke mit Medizinprodukten**, Adressat: **Betreiber = Krankenhaus**, zusammen mit Herstellern):
 - Problem: Medizinprodukte (Monitore, Pumpen, CT) hängen im Kliniknetz, das der Hersteller nicht kontrolliert → neue Risiken (Netzausfall, Überlast, Malware, Fehlkonfiguration).
-- Lösung: **Joint Responsibility** — Hersteller liefert Netzwerkanforderungen (Bandbreite, Ports, Latenz), Klinik betreibt Risikomanagementprozess, benennt **Risikomanager** (Medizin-IT), jede Änderung (Firewall-Regel, Windows-Update, neues VLAN) wird vorher auf Risiko geprüft.
+- Lösung: **Joint Responsibility** — Hersteller liefert Netzwerkanforderungen (Bandbreite, Ports, Latenz; Sicherheitsangaben z. B. im **MDS2**-Formular), Klinik betreibt Risikomanagementprozess, benennt **Risikomanager** (Medizin-IT), jede Änderung (Firewall-Regel, Firmware-/Windows-Update, neues VLAN, Switch-Tausch) wird vorher auf Risiko geprüft.
+- Fassung **IEC 80001-1:2021** (DIN EN IEC 80001-1): Aufbau an **ISO 31000** (allgemeines Risikomanagement) angelehnt, Anforderungen richten sich an die **Organisation** des Betreibers; die **oberste Leitung** legt die Risikopolitik fest und stellt die Ressourcen bereit.
 - Schutzziele: **Sicherheit** (Patient), **Effektivität** (Gerät funktioniert), **Daten- und Systemsicherheit**.
 - Beispiel: Zentrale Monitoring-Überwachung der Intensivstation → Netzwerkausfall darf nicht dazu führen, dass Alarme unbemerkt bleiben → eigenes VLAN, Redundanz, lokale Alarmierung am Bett bleibt erhalten.
 
@@ -278,5 +314,39 @@ unwahrscheinl.  ok       ok       ok       ALARP      X = nicht akzeptabel
 
 Merksatz: 14971 = Hersteller baut sicheres Gerät (Analyse → Bewertung → Beherrschung: Design > Schutz > Info → Marktbeobachtung). 80001 = Klinik betreibt sicheres Netz für viele Geräte (gemeinsame Verantwortung).
 
-*(Quelle: Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019, IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen. Stand: 10/2026.)*
+*(Quelle: Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019 (EN ISO 14971:2019 + A11:2021, ISO/TR 24971:2020), IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen. Stand: 10/2026.)*
+:::
+
+::: {.exam-question}
+Frage (Vertiefung): Wann ist Software ein Medizinprodukt, und in welche Risikoklasse fällt sie nach der MDR?
+:::
+
+::: {.exam-answer}
+**Antwort:** Zwei getrennte Schritte: **Qualifizierung** (Ist es überhaupt ein Medizinprodukt?) und **Klassifizierung** (Welche Risikoklasse?). Entscheidend ist in beiden Fällen die **Zweckbestimmung** des Herstellers, nicht die Technik.
+
+**Qualifizierung**: Software ist **Medical Device Software (MDSW)**, wenn ihr der Hersteller eine medizinische Zweckbestimmung nach **Art. 2 Nr. 1 MDR** gibt (Diagnose, Überwachung, Behandlung … mit Nutzen für den *einzelnen* Patienten). Reine Speicherung, Archivierung, verlustfreie Kommunikation oder einfache Suche reichen nicht. Ein KIS als Verwaltungssystem ist daher in der Regel kein Medizinprodukt, ein darin enthaltener **Dosisrechner** kann es aber sein (modulare Betrachtung). Leitfaden: **MDCG 2019-11** (Rev. 1, Juni 2025).
+
+**Klassifizierung nach Regel 11** (Anhang VIII MDR):
+
+| Software … | Klasse |
+|---|---|
+| liefert Informationen für Entscheidungen zu Diagnose oder Therapie | **mindestens IIa** |
+| … deren Folgen eine schwerwiegende Verschlechterung des Gesundheitszustands oder einen chirurgischen Eingriff verursachen können | **IIb** |
+| … deren Folgen Tod oder eine irreversible Verschlechterung verursachen können | **III** |
+| überwacht physiologische Prozesse | **IIa** |
+| … überwacht **vitale** Parameter, deren Schwankungen eine unmittelbare Gefahr bedeuten können (z. B. Intensivmonitoring) | **IIb** |
+| alle sonstige Software | **I** |
+
+Folge: Unter der alten MDD war fast jede Software Klasse I, unter der MDR landet Entscheidungs-Software meist in IIa oder höher und braucht eine **Benannte Stelle**.
+
+**Ergänzend**:
+- **IEC 62304** (Software-Lebenszyklus) teilt Software in **Sicherheitsklassen A/B/C** nach möglichem Schaden ein — ein eigenes System, nicht gleich den MDR-Klassen (IIb ≠ C).
+- **KI-Software**: Muss für das Medizinprodukt eine Benannte Stelle beteiligt werden, gilt das KI-System nach dem **EU AI Act** zusätzlich als **Hochrisiko-KI**.
+- **Eigenherstellung** in der Klinik (z. B. selbst programmierter Heparin-Dosisrechner): **Art. 5 Abs. 5 MDR** befreit von Teilen der Herstellerpflichten, u. a. nur wenn kein gleichwertiges Produkt auf dem Markt die Bedürfnisse erfüllt, ein QM-System besteht, die grundlegenden Sicherheits- und Leistungsanforderungen (Anhang I) erfüllt sind und eine öffentliche Erklärung vorliegt. Risikomanagement (ISO 14971) und ein geregelter Software-Lebenszyklus (IEC 62304) sind trotzdem faktisch nötig.
+
+⚠️ **Reform**: Die EU-Kommission hat am 16.12.2025 eine gezielte Überarbeitung von MDR und IVDR vorgeschlagen (Verfahren 2025/0404(COD)), u. a. mit einer Neufassung von Regel 11, nach der mehr Software in Klasse I fallen könnte. Das ist **noch kein geltendes Recht** (Parlament und Rat beraten noch) — in der Prüfung die geltende Regel 11 vortragen, die Reform als Ausblick.
+
+Merksatz: Ob Software ein Medizinprodukt ist, entscheidet die Zweckbestimmung; über die Klasse entscheidet Regel 11, und Entscheidungsunterstützung ist mindestens IIa.
+
+*(Quelle: Curriculum/Allgemeinwissen — MDR (EU 2017/745) Art. 2 Nr. 1, Art. 5 Abs. 5, Anhang VIII Regel 11; MDCG 2019-11 Rev. 1; IEC 62304; EU AI Act Art. 6; Kommissionsvorschlag COM(2025) 1023. Stand: 10/2026.)*
 :::

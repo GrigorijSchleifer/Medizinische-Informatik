@@ -10,26 +10,31 @@ Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 
 ::: {.exam-answer}
 **Antwort:**
-- **Server:** stellen Anwendungen und Daten bereit
-    - KIS (Krankenhausinformationssystem)
-    - PACS (Picture Archiving and Communication System = Bildarchiv)
-    - LIS (Laborinformationssystem)
-- **Aktive Netzwerkkomponenten:** strombetriebene Geräte, die Daten weiterleiten
-    - **Switch:** verbindet Geräte innerhalb eines Netzwerks (z. B. alle PCs einer Station)
-    - **Router:** verbindet unterschiedliche Netzwerke (z. B. Klinik-Netz ↔ Internet)
-    - **WLAN-Access-Point: ** drahtloser Zugang, z. B. für Visitenwagen
-- **Passive Netzwerkkomponenten:** stromlose Komponenten zur physikalischen Datenübertragung
-	- Kupfer- und Glasfaserkabel
-	- Netzwerkdosen
-    - Patchpanels
-- **Sicherheitskomponenten und Netzwerksegmentierung:** Firewalls und getrennte Netzbereiche, z. B. für Verwaltung, Medizintechnik und Gäste (VLAN)
-- **Externe Anbindungen:** Internet, externe Standorte und TI (Telematikinfrastruktur), bei Bedarf über VPN (Virtual Private Network = verschlüsselter Tunnel durchs Internet).
+
+- **Server:** stellen Anwendungen (z.B. KIS, PACS, LIS) und Daten bereit
+- **Clients und Endgeräte:** greifen auf Dienste zu oder tauschen Daten aus
+  - Stations-PCs, Visitenwagen, Netzwerkdrucker und Medizingeräte
+- **Aktive Netzwerkkomponenten:** verarbeiten oder steuern Signale 
+  - Switch, Router, WLAN-Access-Point
+  - benötigen Strom
+- **Passive Netzwerkkomponenten:** übertragen oder verbinden Signale 
+  - Kabel, Netzwerkdosen und Patchpanels
+  - Keine aktive Verarbeitung
+  - benötigen kein Strom 
+- **Sicherheitskomponenten und Netzwerksegmentierung:** 
+  - Kontrollieren Zugriffe und trennen Netzbereiche
+  - Firewalls (kontrollieren den Verkehr)
+  - [VLANs](https://de.wikipedia.org/wiki/Virtual_Local_Area_Network) sind Pfeiler der Segmentierung und unterteilen das Krankenhaus in Zonen (Medizintechnik, Verwaltung und Gäste)
+
+- **Externe Anbindungen:** verbinden die Klinik mit externen Diensten und Standorten
+  - Internet, TI (Telematikinfrastruktur) und VPN (Virtual Private Network)
 
 Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte, Router verbinden Netze, Firewalls kontrollieren den Verkehr.
 
-::: {.callout-note title="Prüfungswissen" appearance="simple"}
-- **Aktiv:** verarbeitet, verstärkt oder steuert Signale; benötigt Strom
-- **Passiv:** überträgt oder verbindet Signale ohne aktive Verarbeitung; benötigt keine eigene Stromversorgung
+::: {.callout-note title="Fehlt noch" appearance="simple"}
+- Passive Infrastruktur nach [EN 50173](https://de.wikipedia.org/wiki/EN_50173) vs [Hierarchisches Internetworking-Modell](https://de.wikipedia.org/wiki/Hierarchisches_Internetworking-Modell)
+- VLAN als Grundlage der Segmentierungf
+- [ISO 80001-1](https://de.wikipedia.org/wiki/Risikomanagement_f%C3%BCr_medizinische_IT-Netzwerke)
 :::
 
 *(Quelle: Curriculum/Allgemeinwissen — Netzwerkgrundlagen.)*

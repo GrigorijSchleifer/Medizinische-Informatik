@@ -31,7 +31,7 @@ Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 
 Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte, Router verbinden Netze, Firewalls kontrollieren den Verkehr.
 
-::: {.callout-note title="Fehlt noch" appearance="simple"}
+::: {.callout-note title="Good to know" appearance="simple"}
 - Passive Infrastruktur nach [EN 50173](https://de.wikipedia.org/wiki/EN_50173) vs [Hierarchisches Internetworking-Modell](https://de.wikipedia.org/wiki/Hierarchisches_Internetworking-Modell)
 - VLAN als Grundlage der Segmentierungf
 - [ISO 80001-1](https://de.wikipedia.org/wiki/Risikomanagement_f%C3%BCr_medizinische_IT-Netzwerke)

@@ -25,6 +25,7 @@ book:
     - 10-modul-x-telemedizin-telematik.qmd
   appendices:
     - anhang-abkuerzungen.qmd
+    - anhang-wbo-abgleich.qmd
 
 lang: de
 from: markdown+lists_without_preceding_blankline

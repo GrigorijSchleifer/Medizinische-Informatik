@@ -1,0 +1,63 @@
+# Abgleich mit der Weiterbildungsordnung {#sec-wbo-abgleich}
+
+Dieses Buch ist nach dem **(Muster-)Kursbuch Medizinische Informatik** der
+Bundesärztekammer (2. Auflage, 2022) gegliedert. Geprüft wird aber nach der
+**Weiterbildungsordnung der zuständigen Ärztekammer**. Deren Liste der
+Weiterbildungsinhalte ist anders aufgebaut und enthält einige Themen, die das
+Kursbuch nicht nennt.
+
+Hier steht, was dabei auffällt — als Arbeitsliste zum Abhaken.
+
+- **Quelle:** Ärztekammer Nordrhein, Weiterbildungsordnung 2014, Abschnitt C,
+  Nr. 26 Medizinische Informatik —
+  <https://www.aekno.de/aerzte/weiterbildung/weiterbildungsordnung-2014/weiterbildung-abschnitt-c-zusatz-weiterbildungen/26-medizinische-informatik>
+- **Stand des Abgleichs:** 11/2026
+- **Noch zu prüfen:** Gilt für die eigene Prüfung diese Fassung oder eine
+  neuere Weiterbildungsordnung der Kammer? [Fassung klären]{.platzhalter}
+
+::: {.callout-note}
+## Wie abgeglichen wurde
+Jeder Punkt der WBO-Liste wurde mit den Lerninhalten des Kursbuchs verglichen.
+Für die Lücken wurden die Kapitel dieses Buches nach passenden Stichworten
+durchsucht. Eine Stichwortsuche zeigt nur, *ob* ein Begriff vorkommt — nicht,
+ob er gut erklärt ist.
+:::
+
+## Themen, die im Kursbuch fehlen
+
+| WBO-Bereich | Thema, das im Kursbuch fehlt | Stand in diesem Buch |
+|---|---|---|
+| Computergestützte medizintechnische und bildverarbeitende Verfahren | **Robotik** (z. B. OP-Roboter) | fehlt |
+| Computergestützte medizintechnische und bildverarbeitende Verfahren | **Steuerung diagnostischer und therapeutischer Systeme** (z. B. Navigation, Bestrahlungsplanung) | fehlt |
+| Computergestützte medizintechnische und bildverarbeitende Verfahren | **Mehrdimensionale Rekonstruktion und Darstellung** (z. B. MPR, Volume Rendering) | teilweise (Modul V) |
+| Gesundheitsökonomie, BWL, Medizin-Controlling | **Organisationsformen** von Leistungserbringern und Kostenträgern (Krankenhaus, Praxis, MVZ; GKV, PKV, KV) | verstreut (Module IV, VIII) |
+| Gesundheitsökonomie, BWL, Medizin-Controlling | **Finanzierungsstrukturen** (z. B. duale Krankenhausfinanzierung) | fehlt |
+| Informations- und Kommunikationssysteme | **Vernetzte, sektorenübergreifende Systeme** als eigenes Thema | teilweise (Telematik, Modul X) |
+| Epidemiologie | **Rechtliche Rahmenbedingungen** epidemiologischer Studien | teilweise (Modul III, IX) |
+| Angewandte Informatik | **Datenstrukturen** (z. B. Liste, Baum) | teilweise (Modul IX) |
+
+### Arbeitsliste
+
+- [ ] Robotik: Frage formulieren und einem Modul zuordnen (Vorschlag: Modul V)
+- [ ] Steuerung diagnostischer und therapeutischer Systeme (Vorschlag: Modul V)
+- [ ] Mehrdimensionale Rekonstruktion: bestehende Antwort in Modul V prüfen und ggf. ausbauen
+- [ ] Gesundheitsökonomie: Organisationsformen und Kostenträger als eigene Frage (Vorschlag: Modul VIII)
+- [ ] Duale Krankenhausfinanzierung (Vorschlag: Modul VIII)
+- [ ] Sektorenübergreifende Versorgung und Systeme (Vorschlag: Modul VII oder X)
+- [ ] Rechtsrahmen epidemiologischer Studien (Vorschlag: Modul III)
+- [ ] Datenstrukturen in Modul I ergänzen
+
+## Praktische Anteile
+
+Einige WBO-Punkte verlangen **Erfahrungen**, nicht Wissen. Sie werden im
+(e)Logbuch nachgewiesen und lassen sich mit Fragen und Antworten kaum
+vorbereiten. Hier nur zur Erinnerung:
+
+- [ ] Nutzungserfahrung mit Standardanwendungen (z. B. Textverarbeitung, Tabellenkalkulation)
+- [ ] Erfahrungen mit Anwendungssystemen im Gesundheitswesen
+- [ ] Praktische Erfahrung mit einem elektronischen Lernsystem
+- [ ] Mitarbeit in einem Qualitätssicherungsprojekt
+
+## Eigene Notizen
+
+[Platz für eigene Ergänzungen]{.platzhalter}

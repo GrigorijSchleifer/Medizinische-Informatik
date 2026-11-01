@@ -3,12 +3,10 @@
 ## Anwendungssysteme in der Forschung
 
 ::: {.exam-question}
-Frage: Welche Anwendungssysteme werden in der medizinischen (klinischen) Forschung eingesetzt, wofür, und welche regulatorischen Anforderungen gelten für sie?
+Welche Anwendungssysteme werden in der medizinischen (klinischen) Forschung eingesetzt, wofür, und welche regulatorischen Anforderungen gelten für sie?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Grundidee: Das **KIS** dient der *Versorgung des einzelnen Patienten*, Forschungssysteme dienen der *Auswertung vieler Patienten* nach einem vorab festgelegten Protokoll. Daten entstehen oft im KIS und werden (pseudonymisiert) in Forschungssysteme übernommen.
 
 **Systeme entlang des Studienablaufs**:
@@ -45,12 +43,10 @@ Merksatz: KIS = ein Patient, jetzt behandeln; Forschungs-IT = viele Patienten, s
 ## Etablierung von IT-Strukturen im Rahmen von medizinischen Forschungsprojekten
 
 ::: {.exam-question}
-Frage: Wie baut man die IT-Struktur für ein medizinisches Forschungsprojekt (z. B. eine multizentrische klinische Studie) auf — welche Schritte, Dokumente und Akteure gehören dazu?
+Wie baut man die IT-Struktur für ein medizinisches Forschungsprojekt (z. B. eine multizentrische klinische Studie) auf — welche Schritte, Dokumente und Akteure gehören dazu?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Analogie: Wie eine **neue Station eröffnen** — erst planen (Betten, Personal, SOPs), dann einrichten und probelaufen, dann Betrieb, am Ende geordnet schließen und archivieren.
 
 **Phasen**:
@@ -83,12 +79,10 @@ Merksatz: **Protokoll → DMP → Datenschutzkonzept → eCRF bauen → validier
 ## Vernetzte medizinische Forschung, Data Sharing, FAIR Data
 
 ::: {.exam-question}
-Frage: Was versteht man unter vernetzter medizinischer Forschung und Data Sharing, welche Initiativen gibt es in Deutschland/EU, und was bedeuten die FAIR-Prinzipien?
+Was versteht man unter vernetzter medizinischer Forschung und Data Sharing, welche Initiativen gibt es in Deutschland/EU, und was bedeuten die FAIR-Prinzipien?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Vernetzte Forschung** = Daten vieler Kliniken/Einrichtungen gemeinsam nutzen, weil eine Klinik allein zu wenige Fälle hat. Analogie: **Tumorkonferenz statt Einzelmeinung** — erst die gebündelte Erfahrung vieler ergibt belastbare Aussagen (v. a. bei seltenen Erkrankungen, KI-Training, Versorgungsforschung).
 
 **Initiativen**:
@@ -131,12 +125,10 @@ Merksatz: **Vernetzt = viele Kliniken, ein Datenpool (MII/DIZ, FDPG, EHDS).** Da
 ## Nutzung von Routine- und Registerdaten in der Versorgungsforschung
 
 ::: {.exam-question}
-Frage: Was ist Versorgungsforschung, welche Routine- und Registerdaten nutzt sie (z. B. Krebsregister, KISS), und welche Stärken und Schwächen haben diese Daten?
+Was ist Versorgungsforschung, welche Routine- und Registerdaten nutzt sie (z. B. Krebsregister, KISS), und welche Stärken und Schwächen haben diese Daten?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Versorgungsforschung** = Wie wirkt Medizin im **Alltag** („real world“), nicht unter Studienbedingungen? RCT = Wirksamkeit im Labor-ähnlichen Setting (*efficacy*), Versorgungsforschung = Wirksamkeit auf normaler Station mit multimorbiden 85-Jährigen (*effectiveness*). Fragen z. B.: Kommt die Leitlinie beim Patienten an? Gibt es regionale Unterschiede? Was passiert nach Entlassung?
 
 **Routinedaten** (entstehen *nebenbei* bei Versorgung/Abrechnung, nicht für Forschung):
@@ -184,12 +176,10 @@ Merksatz: **RCT = efficacy (Idealbedingungen), Versorgungsforschung = effectiven
 ## Datenmanagement, Datenintegration
 
 ::: {.exam-question}
-Frage: Was umfasst Datenmanagement, wie integriert man Daten aus verschiedenen Quellen (Architekturen, Datenstrukturen), und welche Algorithmen braucht man dafür (z. B. Record Linkage)?
+Was umfasst Datenmanagement, wie integriert man Daten aus verschiedenen Quellen (Architekturen, Datenstrukturen), und welche Algorithmen braucht man dafür (z. B. Record Linkage)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Datenmanagement** = alle Tätigkeiten, damit Daten über ihren ganzen **Lebenszyklus** nutzbar, korrekt und geschützt sind: planen (Datenmanagementplan) → erheben → speichern → verarbeiten/prüfen → bereitstellen → archivieren → löschen.
 - **Data Governance**: Wer darf/muss was? **Data Owner** (fachlich verantwortlich, z. B. Chefarzt Labor für Laborwerte), **Data Steward** (pflegt Qualität und Definitionen, z. B. Medizincontroller für Kodierung).
 - **Stammdaten** (ändern sich selten: Patientenstamm, Leistungskatalog, Laborkatalog) vs. **Bewegungsdaten** (laufend: Befunde, Vitalwerte, Anordnungen).
@@ -252,12 +242,10 @@ Merksatz: **Datenmanagement = Lebenszyklus + Governance + Qualität + Metadaten.
 ## Durchführung klinisches Datenmanagement
 
 ::: {.exam-question}
-Frage: Wie läuft klinisches Datenmanagement in einer Studie ab — Planung, Erfassung, Validierung, Auswertung?
+Wie läuft klinisches Datenmanagement in einer Studie ab — Planung, Erfassung, Validierung, Auswertung?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Klinisches Datenmanagement (CDM)** = alles, damit am Ende einer Studie ein **vollständiger, korrekter, nachvollziehbarer Datensatz** vorliegt, den man auswerten (und der Behörde vorlegen) kann. Rahmen: **ICH-GCP E6 (International Council for Harmonisation – Good Clinical Practice = Regeln für gute klinische Studienpraxis)**; elektronische Systeme müssen **validiert** sein und einen **Audit Trail** haben (wer hat wann was geändert, alter Wert bleibt sichtbar — wie eine Korrektur in der Papierakte: durchstreichen, nicht schwärzen; USA: **21 CFR Part 11 (Code of Federal Regulations, US-Vorschrift für elektronische Aufzeichnungen und Signaturen)**).
 
 Analogie: Wie eine **Station über einen Fall** — vorher festlegen, was dokumentiert wird (Standard), dann dokumentieren, dann Visite/Kontrolle (stimmt das?), am Ende Arztbrief (Auswertung).
@@ -281,12 +269,10 @@ Merksatz: **Planen (Prüfplan, DMP = Datenmanagementplan, eCRF = digitaler Erfas
 ## Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien
 
 ::: {.exam-question}
-Frage: Welche Konzepte gibt es, um Wissen mit digitalen Medien zu vermitteln (z. B. E-Learning, Blended Learning, Aufklärungsfilme), und was ist dabei zu beachten?
+Welche Konzepte gibt es, um Wissen mit digitalen Medien zu vermitteln (z. B. E-Learning, Blended Learning, Aufklärungsfilme), und was ist dabei zu beachten?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Zwei Zielgruppen: **Personal** (Aus-/Fort-/Weiterbildung, Einweisungen) und **Patienten** (Aufklärung, Schulung).
 
 | Konzept | Prinzip | Klinik-Beispiel |

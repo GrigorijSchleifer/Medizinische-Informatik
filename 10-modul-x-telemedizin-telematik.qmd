@@ -3,12 +3,10 @@
 ## Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen
 
 ::: {.exam-question}
-Frage: Was ist Telemedizin (vs. Telematik), und welche organisatorischen, juristischen, ethischen und technischen Aspekte muss man bei telemedizinischen Anwendungen beachten?
+Was ist Telemedizin (vs. Telematik), und welche organisatorischen, juristischen, ethischen und technischen Aspekte muss man bei telemedizinischen Anwendungen beachten?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Telemedizin** = medizinische Versorgung (Diagnostik, Therapie, Beratung) **über räumliche und/oder zeitliche Distanz** mithilfe von IKT (Informations- und Kommunikationstechnik). **Telematik** = **Tele**kommunikation + Infor**matik** = die technische **Infrastruktur** dafür (z. B. TI = Telematikinfrastruktur). Kurz: Telematik ist die Straße, Telemedizin der Krankentransport, der darauf fährt.
 
 Formen:
@@ -39,12 +37,10 @@ Merksatz: **Telematik = Infrastruktur (Straße), Telemedizin = Versorgung über 
 ## Elektronische Akten und patientenzentrierte Anwendungen
 
 ::: {.exam-question}
-Frage: Welche elektronischen Akten und patientenzentrierten Anwendungen gibt es (z. B. ePA, Consumer Health IT, DiGA, Ambient Assisted Living), und worin unterscheiden sie sich?
+Welche elektronischen Akten und patientenzentrierten Anwendungen gibt es (z. B. ePA, Consumer Health IT, DiGA, Ambient Assisted Living), und worin unterscheiden sie sich?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 „Patientenzentriert“ heißt: Der **Patient selbst** nutzt, steuert oder befüllt die Anwendung, nicht nur die Einrichtung. Die Spannweite reicht von der gesetzlich geregelten **ePA (elektronische Patientenakte)** über ärztlich verordnete **DiGA (Digitale Gesundheitsanwendungen)** bis zu frei gekauften Apps und Wearables und zu Assistenzsystemen in der Wohnung (**AAL = Ambient Assisted Living = altersgerechte Assistenzsysteme für ein selbstbestimmtes Leben**).
 
 **Akten nach Verantwortung** (Stufen der Akte nach Waegemann → siehe Modul VII):
@@ -80,12 +76,10 @@ Merksatz: **ePA = gesetzliche Akte, Patient verfügt, Opt-out (§ 341 SGB V); Di
 ## Anwendungsfälle
 
 ::: {.exam-question}
-Frage: Nennen Sie typische telemedizinische Anwendungsfälle (z. B. Homemonitoring, Telekardiologie, Teleneurologie, Telepathologie) — wie funktionieren sie, und welchen Nutzen haben sie?
+Nennen Sie typische telemedizinische Anwendungsfälle (z. B. Homemonitoring, Telekardiologie, Teleneurologie, Telepathologie) — wie funktionieren sie, und welchen Nutzen haben sie?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Allen gemeinsam: **Daten oder Expertise reisen statt des Patienten oder des Arztes.** Man unterscheidet **Doc2Patient** (Homemonitoring) und **Doc2Doc** (Telekonsil: Tele-Stroke, Telepathologie, Teleradiologie), außerdem **synchron** (live) und **asynchron** (Store-and-Forward = speichern und weiterleiten).
 
 | Anwendung | Wie funktioniert es? | Klinik-Beispiel | Nutzen |
@@ -115,12 +109,10 @@ Merksatz: **Homemonitoring = Patient misst, TMZ reagiert (Herzinsuffizienz, Kass
 ## Telematikinfrastruktur und elektronische Gesundheitskarte
 
 ::: {.exam-question}
-Frage: Was ist die Telematikinfrastruktur (TI), wie ist sie aufgebaut, welche Rolle spielt die elektronische Gesundheitskarte (eGK), und welche Anwendungen laufen über die TI?
+Was ist die Telematikinfrastruktur (TI), wie ist sie aufgebaut, welche Rolle spielt die elektronische Gesundheitskarte (eGK), und welche Anwendungen laufen über die TI?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Die **TI (Telematikinfrastruktur)** ist das **geschlossene, verschlüsselte Datennetz des deutschen Gesundheitswesens**, das Praxen, Krankenhäuser, Apotheken, Krankenkassen und (zunehmend) Pflege und Patienten verbindet. Verantwortlich ist die **gematik** (früher Gesellschaft für Telematikanwendungen der Gesundheitskarte, seit 2024 „Digitalagentur", Mehrheitsgesellschafter BMG = Bundesministerium für Gesundheit); Rechtsgrundlage §§ 306 ff. SGB V (Sozialgesetzbuch V). Nur wer sich mit einer **Karte** ausweist, kommt hinein.
 
 **Aufbau (Klinik-Analogie: geschlossenes Rohrpostsystem eines Klinikverbunds, Zugang nur mit Dienstausweis):**
@@ -165,12 +157,10 @@ Merksatz: **TI = geschlossenes, verschlüsseltes Netz (gematik); Zugang nur mit 
 ### Elektronischer Heilberufsausweis (eHBA)
 
 ::: {.exam-question}
-Frage: Was ist der elektronische Heilberufsausweis (eHBA), wer stellt ihn aus, und wofür braucht man ihn?
+Was ist der elektronische Heilberufsausweis (eHBA), wer stellt ihn aus, und wofür braucht man ihn?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **eHBA** = persönliche **Chipkarte im Scheckkartenformat** für Angehörige von Heilberufen — der "digitale Ausweis" in der Telematikinfrastruktur (TI).
 
 - **Aussehen**: Plastikkarte mit Chip, Foto, Name, Berufsbezeichnung ("Arzt/Ärztin") und Kammer — **zugleich Sichtausweis**, ersetzt bei Ärzten also den alten Arztausweis.
@@ -195,12 +185,10 @@ Merksatz: eHBA = persönlicher Arztausweis mit Chip — weist aus, unterschreibt
 ## Fernbehandlung
 
 ::: {.exam-question}
-Frage: Was versteht man unter ausschließlicher Fernbehandlung, unter welchen Voraussetzungen ist sie berufsrechtlich zulässig, und wo liegen die Grenzen?
+Was versteht man unter ausschließlicher Fernbehandlung, unter welchen Voraussetzungen ist sie berufsrechtlich zulässig, und wo liegen die Grenzen?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Ausschließliche Fernbehandlung** = Arzt und Patient behandeln **ohne jemals persönlichen Kontakt** gehabt zu haben, nur per Telefon, Video, Chat oder E-Mail. Bis 2018 war sie berufsrechtlich verboten (der Erstkontakt musste persönlich stattfinden). Seit dem **121. Deutschen Ärztetag 2018** ist sie nach **§ 7 Abs. 4 MBO-Ä (Musterberufsordnung für Ärzte)** **im Einzelfall erlaubt**. Die Landesärztekammern haben das in ihre Berufsordnungen übernommen.
 
 **Voraussetzungen (§ 7 Abs. 4 MBO-Ä):**
@@ -236,12 +224,10 @@ Merksatz: **Fernbehandlung seit 2018 im Einzelfall erlaubt (§ 7 Abs. 4 MBO-Ä):
 ## Datensicherheit und Datenschutz bei telemedizinischen Anwendungen
 
 ::: {.exam-question}
-Frage: Welche Anforderungen an Datenschutz und Datensicherheit gelten bei telemedizinischen Anwendungen, und welche typischen Risiken gibt es?
+Welche Anforderungen an Datenschutz und Datensicherheit gelten bei telemedizinischen Anwendungen, und welche typischen Risiken gibt es?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Telemedizin heißt: Gesundheitsdaten **verlassen die Klinikmauern**. Sie laufen über Internet, Patienten-Smartphones, private WLANs und Server von Dienstleistern. Es gelten dieselben Regeln wie im Haus (→ Modul II), aber mehr Stellen, an denen etwas schiefgehen kann. **Datenschutz** fragt: *Darf* ich die Daten verarbeiten? **Datensicherheit** fragt: *Wie* schütze ich sie technisch?
 
 **Datenschutz: rechtliche Pflichten**

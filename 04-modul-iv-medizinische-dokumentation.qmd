@@ -7,12 +7,10 @@
 Normative Grundlagen medizinischer Dokumentation (z. B. aus Berufsrecht, Haftungsrecht, Vertragsrecht, Sozialrecht).
 
 ::: {.exam-question}
-Frage: Warum muss ein Arzt dokumentieren? Welche Rechtsgrundlagen regeln die ärztliche Dokumentationspflicht, und wie lange muss aufbewahrt werden?
+Warum muss ein Arzt dokumentieren? Welche Rechtsgrundlagen regeln die ärztliche Dokumentationspflicht, und wie lange muss aufbewahrt werden?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Zwecke der Dokumentation** (warum überhaupt):
 - **Therapiesicherung**: Kommunikation im Team und über Schichten/Sektoren hinweg (Übergabe, Arztbrief, Weiterbehandler) — der Hauptzweck.
 - **Beweissicherung**: im Haftungsfall belegen, was wann warum getan wurde.
@@ -63,12 +61,10 @@ Merksatz: Dokumentation ist Therapie- und Beweismittel. **§ 630f BGB** = Pflich
 Grundbegriffe der medizinischen Dokumentation (z. B. Klassifikation, Taxonomie, Ontologie, Nomenklatur, Datentypen, Skalen).
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen Klassifikation, Nomenklatur, Taxonomie und Ontologie? Je ein Klinik-Beispiel. Welche Datentypen und Skalen gibt es in der medizinischen Dokumentation?
+Was ist der Unterschied zwischen Klassifikation, Nomenklatur, Taxonomie und Ontologie? Je ein Klinik-Beispiel. Welche Datentypen und Skalen gibt es in der medizinischen Dokumentation?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Oberbegriff: Ordnungssystem** = System, das medizinische Sachverhalte über eine festgelegte Terminologie mit Kodes/Symbolen eindeutig erfassbar macht (Indexierung).
 
 **Die vier Begriffe im Vergleich:**
@@ -201,12 +197,10 @@ Merksatz: Klassifikation = Schublade (zusammenfassen für Statistik/Abrechnung),
 Typische Elemente medizinischer Dokumentation (z. B. Kurve, Akte, Arztbrief, Medikationsplan, Impfplan, Notfalldatensatz).
 
 ::: {.exam-question}
-Frage: Was sind MIOs (Medizinische Informationsobjekte), wie hängen sie mit Impfpass, Mutterpass usw. zusammen, und welche Rolle spielen FHIR und SNOMED CT darin?
+Was sind MIOs (Medizinische Informationsobjekte), wie hängen sie mit Impfpass, Mutterpass usw. zusammen, und welche Rolle spielen FHIR und SNOMED CT darin?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **MIO = Medizinisches Informationsobjekt**: ein **bundesweit einheitlich festgelegtes, digitales Dokumentformat** für ein bestimmtes medizinisches Dokument in der **elektronischen Patientenakte (ePA)**. Ziel: jedes Praxis- und Kliniksystem kann den Inhalt **lesen und weiterverarbeiten** — nicht nur als PDF anzeigen.
 
 - **Wer**: festgelegt von der **KBV** (gesetzlicher Auftrag, § 355 SGB V), entwickelt durch deren Tochter **mio42**.
@@ -283,12 +277,10 @@ Merksatz Medikationsplan vs. Notfalldatensatz: **BMP** = vollständige Medikatio
 Ordnungs- und Klassifikationssysteme für klinische Zwecke (z. B. ICD-O, ICF, TNM-Klassifikation).
 
 ::: {.exam-question}
-Frage: Was beschreibt die TNM-Klassifikation, und was bedeuten die Präfixe c, p und y (z. B. ypT2)?
+Was beschreibt die TNM-Klassifikation, und was bedeuten die Präfixe c, p und y (z. B. ypT2)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **TNM** (herausgegeben von der **UICC**) beschreibt die **anatomische Ausbreitung solider Tumoren** — einheitlich für Prognose, Therapieplanung (Tumorkonferenz), Vergleichbarkeit von Studien und Krebsregister.
 
 | Kategorie | Bedeutung | Ausprägungen |
@@ -329,12 +321,10 @@ Merksatz: TNM = wie weit (Tumor, Knoten, Metastasen); c = klinisch, p = patholog
 :::
 
 ::: {.exam-question}
-Frage: Wofür braucht man die ICD-O-3 zusätzlich zur ICD-10, wenn ein Patient ein Karzinom hat?
+Wofür braucht man die ICD-O-3 zusätzlich zur ICD-10, wenn ein Patient ein Karzinom hat?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **ICD-O-3** = *International Classification of Diseases for Oncology*, 3. Auflage (WHO; aktuell Revision ICD-O-3.2). Spezialklassifikation für Tumoren mit **zwei Achsen**:
 
 | Achse | Was | Aufbau | Beispiel |
@@ -370,12 +360,10 @@ Merksatz: ICD-10 sagt *wo* und *bösartig*; ICD-O-3 sagt zusätzlich *was genau*
 :::
 
 ::: {.exam-question}
-Frage: Was beschreibt die ICF, und warum reicht für einen Reha-Patienten nach Schlaganfall die ICD-Diagnose allein nicht aus?
+Was beschreibt die ICF, und warum reicht für einen Reha-Patienten nach Schlaganfall die ICD-Diagnose allein nicht aus?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **ICF** = *International Classification of Functioning, Disability and Health* = **Internationale Klassifikation der Funktionsfähigkeit, Behinderung und Gesundheit** (WHO 2001; deutsche Fassung BfArM, früher DIMDI). Eselsbrücke: ICD = **D**isease (Krankheit), ICF = **F**unctioning (Funktion). Klassifiziert nicht die Krankheit, sondern die **Funktionsfähigkeit**: *Was kann der Mensch im Alltag — und was hindert ihn?*
 
 **ICD vs. ICF:**
@@ -419,12 +407,10 @@ Merksatz: ICD = Diagnose (*was hat er*), ICF = Funktionsfähigkeit (*was kann er
 Ordnungs- und Klassifikationssysteme für administrative Zwecke (z. B. ICD-10, OPS, EBM, GOÄ, DRG, PEPP).
 
 ::: {.exam-question}
-Frage: Was ist die ICD-10, wie ist ein ICD-Kode aufgebaut, und wofür wird sie verwendet?
+Was ist die ICD-10, wie ist ein ICD-Kode aufgebaut, und wofür wird sie verwendet?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 > **Auf einen Blick:**
 > - ICD-10 = **Postleitzahl der Diagnosen** (WHO): `I21.0` = Buchstabe (Bereich: Kreislauf) + 2 Ziffern (Krankheit: Herzinfarkt) + Punkt (Detail: Vorderwand).
 > - **GM** → Abrechnung, AU, Statistik (BfArM, jährlich neu) · **WHO** → Todesursachen.
@@ -501,12 +487,10 @@ Merksatz: ICD-10 = Postleitzahl der Diagnosen: Buchstabe (Bereich) + 2 Ziffern (
 :::
 
 ::: {.exam-question}
-Frage: Eine 25-Jährige mit akuter Appendizitis wird laparoskopisch appendektomiert. Was wird mit der ICD-10, was mit dem OPS kodiert — und warum braucht das Krankenhaus beide?
+Eine 25-Jährige mit akuter Appendizitis wird laparoskopisch appendektomiert. Was wird mit der ICD-10, was mit dem OPS kodiert — und warum braucht das Krankenhaus beide?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **ICD-10-GM** = **Was hat die Patientin?** → Diagnose: **K35.8** Akute Appendizitis, nicht näher bezeichnet (Hauptdiagnose).
 - **OPS** = **Was haben wir gemacht?** → Prozedur: **5-470.1-** Appendektomie, laparoskopisch.
 
@@ -537,12 +521,10 @@ Merksatz: **ICD = Was hat er? OPS = Was tun wir?** Beide zusammen ergeben die DR
 :::
 
 ::: {.exam-question}
-Frage: Was ist eine DRG, wie entsteht der Preis, und was bedeutet die Kodierung G23B?
+Was ist eine DRG, wie entsteht der Preis, und was bedeutet die Kodierung G23B?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **DRG** = *Diagnosis Related Groups* = **Fallpauschale**: Das Krankenhaus bekommt pro stationärem Fall einen **festen Betrag** für die Fallgruppe — unabhängig davon, ob der Patient 4 oder 6 Tage bleibt (innerhalb gewisser Grenzen). In Deutschland **G-DRG**, verpflichtend seit **2004**, gepflegt vom **InEK** (Institut für das Entgeltsystem im Krankenhaus), jährlich neuer Katalog.
 
 Analogie: wie ein **Pauschalpreis beim Handwerker** — "Bad fliesen" kostet X, egal wie lange es dauert. Vorher (Tagessätze) wurde nach Tagen bezahlt → Anreiz, Patienten lange zu behalten.
@@ -603,12 +585,10 @@ Merksatz: **EBM = Kasse, Punkte, Pauschalen, über die KV. GOÄ = privat, Einzel
 Weitere Klassifikation und ihre Anwendungsgebiete (z. B. SNOMED-CT, LOINC, ATC-Klassifikation, UCUM, GMDN).
 
 ::: {.exam-question}
-Frage: Was macht SNOMED CT, wofür wird es eingesetzt, und wie ist es aufgebaut?
+Was macht SNOMED CT, wofür wird es eingesetzt, und wie ist es aufgebaut?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Aufgabe:** SNOMED CT (*Systematized Nomenclature of Medicine – Clinical Terms*) ist die weltweit umfassendste **klinische Terminologie**. Es gibt jedem klinischen Begriff einen **eindeutigen, sprachunabhängigen Kode**, damit Computer verschiedener Hersteller und Länder **dasselbe meinen**, wenn sie Daten austauschen (semantische Interoperabilität).
 
 Analogie: Ein Dolmetscher, der jedes Fachwort in eine Zahl übersetzt — "Herzinfarkt", "MI", "myocardial infarction" → alle `22298006`.
@@ -663,12 +643,10 @@ Merksatz: LOINC = *was* gemessen, UCUM = *in welcher Einheit*, ATC = *welcher Wi
 Qualitätssicherung nach §137 SGB V.
 
 ::: {.exam-question}
-Frage: Was regelt die gesetzliche Qualitätssicherung (§§ 135a–137 SGB V), wer ist beteiligt, und wie läuft die externe Qualitätssicherung im Krankenhaus ab?
+Was regelt die gesetzliche Qualitätssicherung (§§ 135a–137 SGB V), wer ist beteiligt, und wie läuft die externe Qualitätssicherung im Krankenhaus ab?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Grundidee:** Krankenhäuser und Praxen sind **gesetzlich verpflichtet**, die Qualität ihrer Leistungen zu sichern und sich **vergleichen** zu lassen.
 
 **Rechtsgrundlagen (heutiger Stand — das Buch von 2015 fasst alles unter § 137):**
@@ -711,12 +689,10 @@ Merksatz: § 135a = Pflicht, § 136 = G-BA macht Regeln, § 137 = Durchsetzung, 
 Vorgehen bei Planung und Entwicklung von Dokumentationssystemen (z. B. medizinische Register, Krebsregister, Infektionsschutzmeldungen, freiwillige Qualitätssicherungssysteme, Archivsysteme, AMTS).
 
 ::: {.exam-question}
-Frage: Wie plant man ein medizinisches Dokumentationssystem (z. B. ein Register), und welche Beispiele gibt es (Krebsregister, IfSG-Meldungen, freiwillige Register, Archiv, AMTS)?
+Wie plant man ein medizinisches Dokumentationssystem (z. B. ein Register), und welche Beispiele gibt es (Krebsregister, IfSG-Meldungen, freiwillige Register, Archiv, AMTS)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Vorgehen in Schritten** (Beispiel: Reanimationsregister einer Klinik/eines Rettungsdienstes):
 
 | Schritt | Was | Beispiel Reanimationsregister |
@@ -751,12 +727,10 @@ Merksatz: Ziel → Kerndatensatz → Merkmalskatalog → Standards → Erfassung
 Big Data und Public Health.
 
 ::: {.exam-question}
-Frage: Was versteht man unter Big Data im Gesundheitswesen, wie wird es für Public Health genutzt, und welche Risiken gibt es?
+Was versteht man unter Big Data im Gesundheitswesen, wie wird es für Public Health genutzt, und welche Risiken gibt es?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Big Data** = Datenmengen, die zu groß, zu schnell oder zu vielfältig für klassische Auswertung sind — beschrieben durch die **5 V**:
 
 | V | Bedeutung | Gesundheits-Beispiel |

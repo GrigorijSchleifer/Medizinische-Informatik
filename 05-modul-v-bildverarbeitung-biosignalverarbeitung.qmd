@@ -7,12 +7,10 @@
 Medizintechnik/radiologische Modalitäten.
 
 ::: {.exam-question}
-Frage: Welche bildgebenden Modalitäten gibt es, nach welchem physikalischen Prinzip arbeiten sie, und was ist daran für die Medizininformatik relevant?
+Welche bildgebenden Modalitäten gibt es, nach welchem physikalischen Prinzip arbeiten sie, und was ist daran für die Medizininformatik relevant?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Modalität** = bildgebendes Verfahren bzw. Gerät. In DICOM hat jede ein **Kürzel**, das im Bild-Header steht (wichtig für PACS-Suche und Worklist).
 
 | Modalität | DICOM | Prinzip | Ionisierend? | Typische Anwendung |
@@ -46,12 +44,10 @@ Merksatz: Röntgen/CT/Angio/Mammo/Nuklearmedizin = ionisierend; MRT und Ultrasch
 Signalklassen (analog/diskret).
 
 ::: {.exam-question}
-Frage: Welche Signalklassen gibt es (analog/diskret), wie wird aus einem analogen Biosignal ein digitales, und was besagt das Abtasttheorem?
+Welche Signalklassen gibt es (analog/diskret), wie wird aus einem analogen Biosignal ein digitales, und was besagt das Abtasttheorem?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Ein Signal hat zwei Achsen: **Zeit** (x-Achse) und **Wert/Amplitude** (y-Achse). Jede kann **kontinuierlich** (beliebig fein) oder **diskret** (nur bestimmte Stufen) sein → 4 Signalklassen:
 
 | | **wertkontinuierlich** | **wertdiskret** |
@@ -88,12 +84,10 @@ Merksatz: analog = zeit- **und** wertkontinuierlich; digital = zeit- **und** wer
 Digitale Filter und Bildoperationen.
 
 ::: {.exam-question}
-Frage: Welche digitalen Filter werden in der Biosignalverarbeitung eingesetzt, und welche Klassen von Bildoperationen gibt es (mit Beispielen)?
+Welche digitalen Filter werden in der Biosignalverarbeitung eingesetzt, und welche Klassen von Bildoperationen gibt es (mit Beispielen)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Digitale Filter** = Rechenvorschrift, die bestimmte **Frequenzen** im digitalisierten Signal abschwächt oder durchlässt (früher Bauteile, heute Software im Monitor/PDMS).
 
 | Filter | lässt durch | entfernt | EKG-Beispiel |
@@ -134,12 +128,10 @@ Merksatz: Tiefpass glättet, Hochpass entfernt Drift, Notch entfernt 50 Hz. Punk
 Konturverfolgung und Formerkennung.
 
 ::: {.exam-question}
-Frage: Wie werden Strukturen (Organe, Tumoren, Zellen) in medizinischen Bildern automatisch abgegrenzt und erkannt — was ist Segmentierung, Konturverfolgung und Formerkennung?
+Wie werden Strukturen (Organe, Tumoren, Zellen) in medizinischen Bildern automatisch abgegrenzt und erkannt — was ist Segmentierung, Konturverfolgung und Formerkennung?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Typische Verarbeitungskette** (Mustererkennung):
 Bildaufnahme → **Vorverarbeitung** (Filter, Rauschen weg) → **Segmentierung** (Objekt vom Hintergrund trennen) → **Merkmalsextraktion** (Form messen) → **Klassifikation** (was ist es?) → Befund.
 
@@ -184,12 +176,10 @@ Merksatz: Erst segmentieren (was gehört zum Objekt?), dann Form messen (wie gro
 DICOM-Format.
 
 ::: {.exam-question}
-Frage: Was ist DICOM, wie ist eine DICOM-Datei aufgebaut, und was muss man beim Umgang damit beachten (Kompression, Anonymisierung)?
+Was ist DICOM, wie ist eine DICOM-Datei aufgebaut, und was muss man beim Umgang damit beachten (Kompression, Anonymisierung)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **DICOM** = *Digital Imaging and Communications in Medicine* — internationaler Standard (NEMA, ISO 12052) für **Speicherung und Austausch medizinischer Bilder**. Ermöglicht, dass CT von Hersteller A im PACS von Hersteller B und am Befundplatz von Hersteller C angezeigt wird. DICOM ist **beides**: **Dateiformat** (hier) **und Kommunikationsprotokoll** (Netzwerkdienste → Modul VII).
 
 **Aufbau einer DICOM-Datei** — anders als JPG nicht "nur Bild", sondern **Bild + Metadaten in einer Datei**:

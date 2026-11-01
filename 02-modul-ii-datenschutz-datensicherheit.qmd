@@ -3,12 +3,10 @@
 ## Rechtliche Grundlage
 
 ::: {.exam-question}
-Frage: Als Stationsarzt — welche Gesetze/Rechtsgrundlagen regeln, dass Patientendaten nur mit Einwilligung weitergegeben werden dürfen, und was regelt grob welche?
+Als Stationsarzt — welche Gesetze/Rechtsgrundlagen regeln, dass Patientendaten nur mit Einwilligung weitergegeben werden dürfen, und was regelt grob welche?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **DSGVO**: zentrale, EU-weite Grundlage für den Umgang mit personenbezogenen Daten (inkl. Gesundheitsdaten als "besondere Kategorie") — Einwilligung, Betroffenenrechte.
 - **BDSG**: ergänzt/konkretisiert die DSGVO auf deutscher Ebene.
 - **StGB § 203**: Schweigepflicht — macht unbefugte Offenbarung von Patientendaten strafbar (Straftat, nicht nur Datenschutzverstoß).
@@ -29,12 +27,10 @@ Merksatz: DSGVO/BDSG = "darfst du die Daten verarbeiten" (Datenschutzrecht). StG
 ### Vertiefung: DSGVO, BDSG, StGB und ärztliche Schweigepflicht
 
 ::: {.exam-question}
-Frage: Wie verhalten sich DSGVO, BDSG, StGB (§ 203, Schweigepflicht) und Landesgesetze zueinander, und wann dürfen Patientendaten ohne Einwilligung offenbart werden?
+Wie verhalten sich DSGVO, BDSG, StGB (§ 203, Schweigepflicht) und Landesgesetze zueinander, und wann dürfen Patientendaten ohne Einwilligung offenbart werden?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **DSGVO ≠ StGB**: zwei getrennte Regelwerke, die oft gemeinsam greifen.
 
 | | **DSGVO** | **§ 203 StGB** |
@@ -89,12 +85,10 @@ Merksatz: **DSGVO = EU, Bußgeld, trifft meist die Klinik; § 203 StGB = Strafre
 ### Betroffenenrechte und Kontrollinstanzen
 
 ::: {.exam-question}
-Frage: Eine Patientin will wissen, welche Daten über sie im KIS gespeichert sind, und verlangt die Korrektur eines falschen Eintrags. Welche Rechte hat sie nach DSGVO, und wer kontrolliert die Einhaltung?
+Eine Patientin will wissen, welche Daten über sie im KIS gespeichert sind, und verlangt die Korrektur eines falschen Eintrags. Welche Rechte hat sie nach DSGVO, und wer kontrolliert die Einhaltung?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Auskunftsrecht** (Art. 15): erfahren, welche Daten gespeichert sind und wofür — z. B. Einsicht in ihre KIS-Einträge.
 - **Recht auf Berichtigung** (Art. 16): falsche Einträge (z. B. falsche Diagnose) müssen korrigiert werden.
 - **Recht auf Löschung** (Art. 17, "Vergessenwerden"): Löschung wenn kein Zweck/keine Rechtsgrundlage mehr besteht — bei Patientendaten stark eingeschränkt wegen Aufbewahrungspflichten (z. B. 10 Jahre für Krankenunterlagen).
@@ -114,11 +108,11 @@ Merksatz: Auskunft → Berichtigung → Löschung/Einschränkung → Übertragba
 ## Zusammenhang Datenschutz - Informationssicherheit
 
 ::: {.exam-question}
-Frage: Sind Datenschutz und Informationssicherheit dasselbe? Wo überlappen sie sich, und wo nicht?
+Sind Datenschutz und Informationssicherheit dasselbe? Wo überlappen sie sich, und wo nicht?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Nicht dasselbe, aber große Überlappung bei Patientendaten.
+Nicht dasselbe, aber große Überlappung bei Patientendaten.
 
 - **Informationssicherheit**: schützt alle Informationen (egal ob personenbezogen) nach dem Ziel-Dreiklang Vertraulichkeit, Integrität, Verfügbarkeit (CIA-Triade). Beispiel: OP-Planungssoftware muss verfügbar bleiben, auch ohne Patientennamen drin — reine Sicherheitsfrage, kein Datenschutzthema.
 - **Datenschutz**: schützt speziell personenbezogene Daten und das Recht der Person, selbst zu bestimmen, was mit ihren Daten passiert (informationelle Selbstbestimmung). Beispiel: ein Arzt erzählt im Aufzug laut die Diagnose eines Patienten — reine Datenschutzverletzung, kein IT-Sicherheitsproblem (kein System kompromittiert).
@@ -135,12 +129,10 @@ Merksatz: Informationssicherheit = Werkzeugkasten (technisch/organisatorisch, f�
 ## Bedrohungsszenarien durch Cyberkriminalität
 
 ::: {.exam-question}
-Frage: Ein Krankenhaus wird Opfer eines Ransomware-Angriffs, alle Patientendaten sind plötzlich verschlüsselt. Was ist Ransomware genau, und welche anderen typischen Cyberbedrohungen für Kliniken solltest du kennen?
+Ein Krankenhaus wird Opfer eines Ransomware-Angriffs, alle Patientendaten sind plötzlich verschlüsselt. Was ist Ransomware genau, und welche anderen typischen Cyberbedrohungen für Kliniken solltest du kennen?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Ransomware**: Schadsoftware, die Daten verschlüsselt und für die Entschlüsselung Lösegeld fordert. Klinik-Beispiel: KIS-Server infiziert, Patientenakten unlesbar, Angreifer verlangt Zahlung für den Schlüssel — Krankenhaus muss ggf. auf Papier/Notbetrieb umschalten.
 
 **Weitere typische Bedrohungen:**
@@ -165,11 +157,11 @@ Merksatz: Ransomware = Daten als Geisel; Haupteinfallstor ist Phishing; Kliniken
 ### IT-Grundschutz nach BSI
 
 ::: {.exam-question}
-Frage: Was ist der IT-Grundschutz nach BSI, und wie unterscheidet er sich von ISO 27001?
+Was ist der IT-Grundschutz nach BSI, und wie unterscheidet er sich von ISO 27001?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Das BSI (Bundesamt für Sicherheit in der Informationstechnik) hat einen Katalog von Standard-Sicherheitsmaßnahmen entwickelt. Grundidee: statt für jede Klinik individuell ein Sicherheitskonzept von Null zu entwickeln, gibt es fertige "Bausteine" (Module) für typische IT-Komponenten (z. B. Server, Netzwerk, Client) — ein Baukasten mit bewährten Standardmaßnahmen statt Neuerfindung.
+Das BSI (Bundesamt für Sicherheit in der Informationstechnik) hat einen Katalog von Standard-Sicherheitsmaßnahmen entwickelt. Grundidee: statt für jede Klinik individuell ein Sicherheitskonzept von Null zu entwickeln, gibt es fertige "Bausteine" (Module) für typische IT-Komponenten (z. B. Server, Netzwerk, Client) — ein Baukasten mit bewährten Standardmaßnahmen statt Neuerfindung.
 
 Klinik-Beispiel: statt zu überlegen "wie sichere ich unseren KIS-Server ab", nimmt man den passenden BSI-Grundschutz-Baustein für Datenbankserver, der schon alle relevanten Standardmaßnahmen auflistet (Zugriffskontrolle, Patch-Management, Backup-Konzept, …).
 
@@ -185,11 +177,11 @@ Merksatz: BSI-Grundschutz (BSI = Bundesamt für Sicherheit in der Informationste
 ### Technisch-organisatorische Maßnahmen
 
 ::: {.exam-question}
-Frage: Was sind "technisch-organisatorische Maßnahmen" (TOM), und was sind je zwei Beispiele für "technisch" und "organisatorisch" aus dem Klinikalltag?
+Was sind "technisch-organisatorische Maßnahmen" (TOM), und was sind je zwei Beispiele für "technisch" und "organisatorisch" aus dem Klinikalltag?
 :::
 
 ::: {.exam-answer}
-**Antwort:** TOM ist der Rechtsbegriff aus Art. 32 DSGVO — konkrete Maßnahmen, die ein Krankenhaus umsetzen muss, um Daten angemessen zu schützen.
+TOM ist der Rechtsbegriff aus Art. 32 DSGVO — konkrete Maßnahmen, die ein Krankenhaus umsetzen muss, um Daten angemessen zu schützen.
 
 **Technisch** (Technik/Software/Hardware setzt die Maßnahme um):
 - Verschlüsselung: Patientendaten auf Servern/beim Transport verschlüsselt, unlesbar bei Diebstahl/Abfangen.
@@ -211,11 +203,11 @@ Merksatz: Technisch = "die Maschine setzt es durch". Organisatorisch = "Menschen
 Vertiefung des organisatorischen TOM-Beispiels "Rollen-/Berechtigungskonzept" (siehe oben).
 
 ::: {.exam-question}
-Frage: Warum darf nicht jeder Mitarbeiter im Krankenhaus auf alle Patientendaten zugreifen, selbst wenn er/sie zum Krankenhauspersonal gehört? Welches Prinzip steckt dahinter, und wie wird das technisch umgesetzt?
+Warum darf nicht jeder Mitarbeiter im Krankenhaus auf alle Patientendaten zugreifen, selbst wenn er/sie zum Krankenhauspersonal gehört? Welches Prinzip steckt dahinter, und wie wird das technisch umgesetzt?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Prinzip: **Need-to-know** (Minimalprinzip/geringste Rechte) — jeder bekommt nur Zugriff auf Daten, die er für seine konkrete Aufgabe braucht. Rechtliche Basis: Datenminimierung nach DSGVO Art. 5.
+Prinzip: **Need-to-know** (Minimalprinzip/geringste Rechte) — jeder bekommt nur Zugriff auf Daten, die er für seine konkrete Aufgabe braucht. Rechtliche Basis: Datenminimierung nach DSGVO Art. 5.
 
 Klinik-Beispiel: ein Physiotherapeut braucht Mobilitätsdaten, aber keinen Zugriff auf die psychiatrische Vorgeschichte. Pflegekraft auf Station A braucht keinen Zugriff auf Akten von Station B. Verwaltung braucht Abrechnungsdaten, keine detaillierten klinischen Notizen.
 
@@ -233,11 +225,11 @@ Merksatz und Einordnung: Need-to-know = das *Prinzip* (warum), RBAC = die *techn
 ### Orientierungshilfe-KIS
 
 ::: {.exam-question}
-Frage: Was ist die "Orientierungshilfe Krankenhausinformationssysteme", und was sind ihre zentralen Anforderungen?
+Was ist die "Orientierungshilfe Krankenhausinformationssysteme", und was sind ihre zentralen Anforderungen?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Eine offizielle Handreichung der deutschen Datenschutzkonferenz (DSK), die konkret definiert, welche Datenschutzanforderungen ein KIS erfüllen muss (Konkretisierung von DSGVO/BDSG speziell für den Klinikkontext).
+Eine offizielle Handreichung der deutschen Datenschutzkonferenz (DSK), die konkret definiert, welche Datenschutzanforderungen ein KIS erfüllen muss (Konkretisierung von DSGVO/BDSG speziell für den Klinikkontext).
 
 **Zentrale Inhalte:**
 
@@ -258,11 +250,11 @@ Merksatz: OH-KIS (Orientierungshilfe Krankenhausinformationssysteme) = Datenschu
 ### Pseudonymisierung/Anonymisierung
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen Pseudonymisierung und Anonymisierung?
+Was ist der Unterschied zwischen Pseudonymisierung und Anonymisierung?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Pseudonymisierung = Personenbezug bleibt über einen separaten Schlüssel wiederherstellbar (gilt weiter als personenbezogene Daten, DSGVO). Anonymisierung = Personenbezug unwiderruflich entfernt, nicht mehr rückführbar (fällt nicht mehr unter DSGVO).
+Pseudonymisierung = Personenbezug bleibt über einen separaten Schlüssel wiederherstellbar (gilt weiter als personenbezogene Daten, DSGVO). Anonymisierung = Personenbezug unwiderruflich entfernt, nicht mehr rückführbar (fällt nicht mehr unter DSGVO).
 
 Merksatz: Pseudonym = umkehrbar, Anonym = nicht umkehrbar.
 
@@ -272,11 +264,11 @@ Merksatz: Pseudonym = umkehrbar, Anonym = nicht umkehrbar.
 :::
 
 ::: {.exam-question}
-Frage: Was ist k-Anonymität?
+Was ist k-Anonymität?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Jeder Datensatz ist bzgl. Quasi-Identifikatoren (z. B. Alter, PLZ, Geschlecht) von mind. k-1 anderen ununterscheidbar — erreicht durch Generalisierung/Unterdrückung von Attributen. Schützt vor eindeutiger Re-Identifizierung, aber nicht vor Homogenitätsangriffen (Erweiterungen: l-Diversität, t-Closeness). Liegt konzeptionell zwischen Pseudonymisierung und voller Anonymisierung.
+Jeder Datensatz ist bzgl. Quasi-Identifikatoren (z. B. Alter, PLZ, Geschlecht) von mind. k-1 anderen ununterscheidbar — erreicht durch Generalisierung/Unterdrückung von Attributen. Schützt vor eindeutiger Re-Identifizierung, aber nicht vor Homogenitätsangriffen (Erweiterungen: l-Diversität, t-Closeness). Liegt konzeptionell zwischen Pseudonymisierung und voller Anonymisierung.
 
 Merksatz: k-Anonymität = jeder Datensatz versteckt sich in einer Gruppe von mindestens k Gleichen; schützt nicht, wenn alle in der Gruppe dieselbe Diagnose haben (Homogenitätsangriff).
 
@@ -288,12 +280,10 @@ Merksatz: k-Anonymität = jeder Datensatz versteckt sich in einer Gruppe von min
 ### Verschlüsselungsverfahren
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen symmetrischer und asymmetrischer Verschlüsselung?
+Was ist der Unterschied zwischen symmetrischer und asymmetrischer Verschlüsselung?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Symmetrische Verschlüsselung**: Sender und Empfänger nutzen denselben geheimen Schlüssel zum Ver- und Entschlüsseln. Schnell, gut für große Datenmengen (z. B. AES für die komplette Patientenakten-Datenbank auf dem Server). Nachteil: bei N Teilnehmern braucht man N·(N-1)/2 Schlüssel — wird schnell unübersichtlich.
 
 **Asymmetrische Verschlüsselung (Public-Key)**: zwei mathematisch verknüpfte, aber nicht auseinander ableitbare Schlüssel — ein öffentlicher (zum Verschlüsseln, darf jeder kennen) und ein privater (zum Entschlüsseln, geheim). Langsamer, aber löst das Schlüsselverteilungsproblem. Typisch: E-Mail-Verschlüsselung, HTTPS, digitale Signaturen (z. B. Übermittlung eines Arztbriefs an eine andere Klinik).
@@ -310,12 +300,10 @@ Merksatz: Symmetrisch = ein gemeinsamer Schlüssel, schnell; asymmetrisch = Schl
 :::
 
 ::: {.exam-question}
-Frage: Wie sind öffentlicher und privater Schlüssel bei asymmetrischer Verschlüsselung mathematisch verknüpft (Beispiel RSA), und wieso ist das so schwer zu knacken?
+Wie sind öffentlicher und privater Schlüssel bei asymmetrischer Verschlüsselung mathematisch verknüpft (Beispiel RSA), und wieso ist das so schwer zu knacken?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Die Verknüpfung, vereinfacht (RSA):**
 
 1. Zwei sehr große Primzahlen *p* und *q* werden gewählt — geheim, nur der Ersteller kennt sie.
@@ -351,11 +339,11 @@ Merksatz: RSA (Rivest-Shamir-Adleman, nach den Erfindern) beruht darauf, dass Mu
 ### Signaturen
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen einfacher, fortgeschrittener und qualifizierter digitaler Signatur — und warum ist nur eine davon der handschriftlichen Unterschrift gleichgestellt?
+Was ist der Unterschied zwischen einfacher, fortgeschrittener und qualifizierter digitaler Signatur — und warum ist nur eine davon der handschriftlichen Unterschrift gleichgestellt?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Drei Stufen, aufsteigend in Verlässlichkeit:
+Drei Stufen, aufsteigend in Verlässlichkeit:
 
 - **Einfache Signatur**: z. B. eine eingescannte Unterschrift oder E-Mail-Signatur-Zeile — keine kryptographische Absicherung, leicht fälschbar, geringer Beweiswert (Gericht würdigt frei).
 - **Fortgeschrittene Signatur**: eindeutig einer Person zuordenbar, kryptographisch erstellt (z. B. per Zertifikat), erlaubt Erkennung nachträglicher Änderungen — aber das Zertifikat dahinter ist nicht amtlich geprüft.
@@ -375,11 +363,11 @@ Merksatz: Einfach = Name drunter; fortgeschritten = kryptografisch einer Person 
 ## Entwicklung und Fortschreibung von Datenschutzkonzepten
 
 ::: {.exam-question}
-Frage: Wie werden Datenschutzkonzepte in der Praxis entwickelt und laufend aktuell gehalten?
+Wie werden Datenschutzkonzepte in der Praxis entwickelt und laufend aktuell gehalten?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Zwei zentrale Mechanismen:
+Zwei zentrale Mechanismen:
 
 **Bei Neuentwicklung/größeren Änderungen — Datenschutz-Folgenabschätzung (DPIA, Art. 35 DSGVO)**: vor Einführung eines neuen, risikoreichen Verarbeitungsverfahrens muss vorab geprüft werden, welche Risiken für Betroffene entstehen und wie man sie minimiert. Klinik-Beispiel: neues Telemedizin-Modul mit Videosprechstunden-Aufzeichnung — vor Go-Live klären: Wer hat Zugriff? Wie lange gespeichert? Ist Verschlüsselung ausreichend?
 

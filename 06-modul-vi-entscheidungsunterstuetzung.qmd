@@ -7,12 +7,10 @@
 Entscheidungsunterstützung und Zugriff auf medizinisches Wissen.
 
 ::: {.exam-question}
-Frage: Was ist ein klinisches Entscheidungsunterstützungssystem (CDSS), wie unterscheidet es sich vom reinen Wissenszugriff, wie ist es aufgebaut, und welche Probleme gibt es?
+Was ist ein klinisches Entscheidungsunterstützungssystem (CDSS), wie unterscheidet es sich vom reinen Wissenszugriff, wie ist es aufgebaut, und welche Probleme gibt es?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Zwei Arten, Wissen an den Arzt zu bringen:**
 
 | | **passiver Wissenszugriff** ("Pull") | **aktive Entscheidungsunterstützung** ("Push") |
@@ -72,12 +70,10 @@ Merksatz: Wissenszugriff = Arzt sucht (Pull, allgemein); CDSS = System meldet si
 Wissensbasen und Systeme zur Therapiesicherheit (z. B. Wissensmanagement, Evidence Based Medicine).
 
 ::: {.exam-question}
-Frage: Welche IT-Systeme und Wissensbasen erhöhen die Arzneimitteltherapiesicherheit (AMTS)? Was ist Evidence Based Medicine (EbM), und was bedeutet Wissensmanagement im Krankenhaus?
+Welche IT-Systeme und Wissensbasen erhöhen die Arzneimitteltherapiesicherheit (AMTS)? Was ist Evidence Based Medicine (EbM), und was bedeutet Wissensmanagement im Krankenhaus?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **1. Therapiesicherheit / AMTS** — Medikationsfehler passieren an jeder Stelle des **Medikationsprozesses**: Verordnung → Übertragung → Stellen/Richten → Gabe → Überwachung. Klassische Fehler: unleserliche Handschrift, Übertragungsfehler (Kurve → Pflege), falsche Dosis bei Niereninsuffizienz, übersehene Interaktion/Allergie.
 
 | System | was es tut | Beispiel |
@@ -143,12 +139,10 @@ Merksatz: AMTS-IT = Wissensbasis (ABDA) + elektronische Verordnung (CPOE) mit au
 Systematische evidenzbasierte Bewertung (z. B. Health Technology Assessment [HTA]).
 
 ::: {.exam-question}
-Frage: Was ist Health Technology Assessment (HTA), welche Aspekte werden bewertet, und wer macht das in Deutschland (IQWiG, G-BA, AMNOG, DiGA)?
+Was ist Health Technology Assessment (HTA), welche Aspekte werden bewertet, und wer macht das in Deutschland (IQWiG, G-BA, AMNOG, DiGA)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **HTA** (*Health Technology Assessment*, Technologiefolgenabschätzung im Gesundheitswesen) = **systematische, evidenzbasierte Bewertung** einer Gesundheitstechnologie, um **Entscheidungen auf Systemebene** zu unterstützen (Erstattung, Preis, Aufnahme in den Leistungskatalog).
 
 - **"Technologie"** ist weit gefasst: Arzneimittel, Medizinprodukte, Operationsverfahren, Diagnostik, Screening-Programme, **IT/Apps (DiGA)**, Organisationsformen.
@@ -203,12 +197,10 @@ Merksatz: HTA = EbM auf Systemebene ("Soll die Kasse das zahlen?") — bewertet 
 ## Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen regelbasierten (rule-based) und ML-basierten Decision-Support-Systemen, und was bedeutet "Präzisionsmedizin" am Beispiel der Krebstherapie?
+Was ist der Unterschied zwischen regelbasierten (rule-based) und ML-basierten Decision-Support-Systemen, und was bedeutet "Präzisionsmedizin" am Beispiel der Krebstherapie?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Rule-based (regelbasiert)**: feste "Wenn-Dann"-Regeln, von Experten vorprogrammiert — z. B. "wenn Serum-Kalium > 6,0 mmol/l → Alarm". Vorteil: **nachvollziehbar/transparent**, jede Entscheidung lässt sich auf eine Regel zurückführen. Nachteil: **starr** — Fälle außerhalb der vordefinierten Regeln werden nicht erkannt, Pflege der Regelbasis wird mit wachsender Komplexität aufwendig.
 
 **ML-based (lernend)**: das System lernt Muster selbst aus Trainingsdaten, statt fest programmierter Regeln — z. B. erkennt ein Modell Hautkrebs auf Fotos oder Lungenrundherde auf CT-Bildern, trainiert an tausenden gelabelten Beispielen. Vorteil: oft **präziser**, erkennt auch Muster, die kein Mensch explizit als Regel formuliert hätte. Nachteil: häufig eine **"Black Box"** — nicht immer nachvollziehbar, *warum* genau diese Entscheidung getroffen wurde (relevant z. B. für Haftungsfragen, Nachvollziehbarkeit gegenüber dem Patienten).
@@ -229,12 +221,10 @@ Merksatz: Rule-based = nachvollziehbar, aber starr. ML-based = flexibel/präzise
 ## Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen Vorwärts- und Rückwärtsverkettung (forward/backward chaining) bei wissensbasierten Beratungssystemen?
+Was ist der Unterschied zwischen Vorwärts- und Rückwärtsverkettung (forward/backward chaining) bei wissensbasierten Beratungssystemen?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Vorwärtsverkettung (forward chaining, datengetrieben)**: das System startet mit den vorhandenen Fakten (Symptome, Laborwerte) und wendet Regeln schrittweise vorwärts an, bis eine Schlussfolgerung (Diagnose-/Therapievorschlag) entsteht. Klinik-Beispiel: Pflegekraft gibt Vitalwerte ein → System leitet daraus automatisch "Sepsis-Verdacht, Score X" ab.
 - **Rückwärtsverkettung (backward chaining, zielgetrieben)**: das System startet mit einer Hypothese (Ziel) und fragt rückwärts gezielt nach den Fakten, die diese Hypothese stützen oder widerlegen würden. Klinik-Beispiel: System prüft Hypothese "Patient hat Sepsis" und fragt gezielt nach den dafür nötigen Werten (Laktat, Blutkultur), statt alle verfügbaren Daten durchzugehen.
 
@@ -248,12 +238,10 @@ Merksatz: Vorwärts = "was folgt aus den Daten, die ich habe?" (datengetrieben).
 ## IT-gestütztes Workflowmanagement und Clinical Pathways
 
 ::: {.exam-question}
-Frage: Was ist ein Clinical Pathway, und wie unterstützt IT-Workflowmanagement seine Umsetzung im Klinikalltag?
+Was ist ein Clinical Pathway, und wie unterstützt IT-Workflowmanagement seine Umsetzung im Klinikalltag?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Clinical Pathway** (klinischer Behandlungspfad): ein standardisierter, evidenzbasierter Ablaufplan für eine bestimmte Diagnose/Prozedur — legt fest, welche Schritte wann von wem erfolgen sollen (z. B. Hüft-TEP: präoperative Checkliste → OP-Tag → Tag 1 Mobilisation → Tag 3 Röntgenkontrolle → Entlassung Tag 5).
 
 **IT-gestütztes Workflowmanagement**: Software (oft eine Workflow-Engine im KIS, verknüpft mit BPMN-Prozessmodellen — siehe Modul I, Business Process Model and Notation: Start-/End-Event, Task, Gateway, Sequenzfluss, Swimlanes) bildet diesen Pfad digital ab — erinnert/prompt't automatisch die nächsten fälligen Schritte, markiert Abweichungen ("Variances") vom Standardpfad (z. B. Patient noch nicht mobilisiert an Tag 1 → System flaggt das), und dokumentiert den tatsächlichen Verlauf zur späteren Auswertung.
@@ -276,12 +264,10 @@ Rule-based vs. ML-based Systeme.
 ### Alert fatigue
 
 ::: {.exam-question}
-Frage: Was ist "Alert fatigue", und warum ist das ein zentrales Problem bei Clinical-Decision-Support-Systemen?
+Was ist "Alert fatigue", und warum ist das ein zentrales Problem bei Clinical-Decision-Support-Systemen?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Alert fatigue** (Alarmmüdigkeit): wenn ein CDS-System zu viele Warnungen/Alerts auslöst (v. a. wenn viele davon klinisch unbedeutend oder falsch-positiv sind), beginnen Ärzte/Pflegekräfte, Alerts routinemäßig wegzuklicken, ohne sie wirklich zu lesen — dadurch werden irgendwann auch die wichtigen, echten Warnungen übersehen.
 
 Klinik-Beispiel: ein Medikations-Interaktions-Check warnt bei jeder Kombination, auch bei klinisch irrelevanten — nach dem 50. überflüssigen Pop-up klickt der Arzt auch die wichtige Warnung ("Lebensgefährliche Interaktion!") automatisch weg.
@@ -308,12 +294,10 @@ knitr::kable(
 ```
 
 ::: {.exam-question}
-Frage: Was messen Sensitivität und Spezifität jeweils, und wie rechnet man sie an einem konkreten Patientenkollektiv durch?
+Was messen Sensitivität und Spezifität jeweils, und wie rechnet man sie an einem konkreten Patientenkollektiv durch?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Sensitivität** = TP / (TP + FN): von allen **tatsächlich Kranken**, wie viele erkennt der Test korrekt als positiv? "Wie gut erkennt der Test Kranke?"
 - **Spezifität** = TN / (TN + FP): von allen **tatsächlich Gesunden**, wie viele erkennt der Test korrekt als negativ? "Wie gut erkennt der Test Gesunde?"
 

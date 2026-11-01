@@ -3,12 +3,10 @@
 ## Rechtliche Aspekte, Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen
 
 ::: {.exam-question}
-Frage: Was ist ein KIS per Definition, wie ist es strukturell aufgebaut (3-Achsen-Modell), und welche rechtlichen Aspekte spielen dabei eine Rolle?
+Was ist ein KIS per Definition, wie ist es strukturell aufgebaut (3-Achsen-Modell), und welche rechtlichen Aspekte spielen dabei eine Rolle?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **KIS** (Klinisches/Krankenhausinformationssystem): das Teilsystem des Krankenhauses, das alle informationsverarbeitenden Prozesse (und ihre menschlichen/maschinellen Handlungsträger) erfasst, um Mitarbeiter bei ihren Aufgaben zu unterstützen.
 
 **3-Achsen-Einteilung**:
@@ -30,11 +28,11 @@ Merksatz: KIS = Baukasten (PAS + klinischer Arbeitsplatz + Abteilungssysteme), n
 ## Anwendungsformen Elektronischer Patientenaktensysteme
 
 ::: {.exam-question}
-Frage: Was ist das 5-Stufen-Modell nach Waegemann für elektronische Patientenakten, und wie unterscheiden sich die Stufen?
+Was ist das 5-Stufen-Modell nach Waegemann für elektronische Patientenakten, und wie unterscheiden sich die Stufen?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Ein Reifegrad-Modell, das beschreibt, wie "elektronisch" eine Patientenakte wirklich ist — von reiner Digitalisierung bis zur vollen Vernetzung:
+Ein Reifegrad-Modell, das beschreibt, wie "elektronisch" eine Patientenakte wirklich ist — von reiner Digitalisierung bis zur vollen Vernetzung:
 
 1. **Automated Medical Record (AMR)**: Papierakte wird nur gescannt/digitalisiert — keine strukturierten Daten, reines Abbild.
 2. **Computerized Medical Record (CMR)**: zusätzlich einzelne strukturierte Datenfelder (z. B. Laborwerte maschinenlesbar), aber noch viel unstrukturierter Text.
@@ -52,11 +50,11 @@ Merksatz: AMR→CMR→EMR→EPR→EHR = von "nur Scan" über "ein System, voll e
 ## Einrichtungs- und nutzerspezifische Parametrierung
 
 ::: {.exam-question}
-Frage: Was bedeutet "einrichtungsspezifische" vs. "nutzerspezifische" Parametrierung eines KIS, und warum braucht jedes KIS das?
+Was bedeutet "einrichtungsspezifische" vs. "nutzerspezifische" Parametrierung eines KIS, und warum braucht jedes KIS das?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Ein KIS ist kein Plug-&-Play-Produkt — es muss auf die konkrete Einrichtung UND auf den einzelnen Nutzer eingestellt (parametriert) werden:
+Ein KIS ist kein Plug-&-Play-Produkt — es muss auf die konkrete Einrichtung UND auf den einzelnen Nutzer eingestellt (parametriert) werden:
 
 - **Einrichtungsspezifisch**: Abbildung der realen Krankenhaustopologie — Stationen, Betten, Abteilungen, Workflows, Formulare/Textbausteine (z. B. eine OP-Berichtsvorlage mit den Standard-Operateuren und -Abläufen der eigenen Klinik), Stammdaten (Kostenstellen, Leistungskataloge).
 - **Nutzerspezifisch**: Rollen- und Rechtekonzept (Pflegekraft sieht andere Maske/Funktionen als Arzt oder Verwaltung), individuelle Einstellungen (Favoriten, Kürzel, Spracheinstellung, Standard-Ansicht).
@@ -71,12 +69,10 @@ Merksatz: einrichtungsspezifisch = "passt das System auf UNS", nutzerspezifisch 
 ## Differenzierung verschiedener Systemkomponenten
 
 ::: {.exam-question}
-Frage: Welche vier Hauptkomponenten-Typen eines KIS gibt es, und was macht jede?
+Welche vier Hauptkomponenten-Typen eines KIS gibt es, und was macht jede?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Patientenadministrationssystem (PAS)**: administrative Kernfunktionen — Aufnahme, Verlegung, Entlassung, Abrechnung (vgl. "Patientenaufnahme am Empfang").
 - **Klinische Arbeitsplatzsysteme**: Arbeitsumgebung für Arzt/Pflege direkt am Patienten — Arztbrief, cPOE (Verordnung), Befundeinsicht, Pflegedokumentation.
 - **Abteilungssysteme**: Fachabteilungs-eigene Spezialsysteme, z. B. RIS (Radiologie), Labor-IS, Kardiologie-IS — jeweils auf die Abteilung zugeschnitten, über Kommunikationsserver an das Gesamt-KIS angebunden.
@@ -92,11 +88,11 @@ Merksatz: PAS = Verwaltung, klin. Arbeitsplatz = Alltag am Bett, Abteilungssyste
 ## Integration von Workflowmanagementsystemen und Clinical Pathways
 
 ::: {.exam-question}
-Frage: Wie wird ein Clinical Pathway technisch ins KIS integriert — was macht eine Workflow-Engine?
+Wie wird ein Clinical Pathway technisch ins KIS integriert — was macht eine Workflow-Engine?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Ein Clinical Pathway (z. B. "Hüft-TEP-Pfad") ist zunächst nur ein fachlich definierter Soll-Ablauf (Reihenfolge von Untersuchungen/Maßnahmen). Damit das KIS den Behandler aktiv führt (statt der Pfad nur auf Papier existiert), braucht es eine **Workflow-Engine**: sie bildet den Pfad als Prozessmodell ab (häufig in BPMN notiert), triggert zum richtigen Zeitpunkt die nächste Aufgabe/Maske im klinischen Arbeitsplatzsystem, und dokumentiert Abweichungen vom Standardpfad (**Varianzen** — z. B. Patient braucht zusätzliche Bildgebung) für spätere Auswertung.
+Ein Clinical Pathway (z. B. "Hüft-TEP-Pfad") ist zunächst nur ein fachlich definierter Soll-Ablauf (Reihenfolge von Untersuchungen/Maßnahmen). Damit das KIS den Behandler aktiv führt (statt der Pfad nur auf Papier existiert), braucht es eine **Workflow-Engine**: sie bildet den Pfad als Prozessmodell ab (häufig in BPMN notiert), triggert zum richtigen Zeitpunkt die nächste Aufgabe/Maske im klinischen Arbeitsplatzsystem, und dokumentiert Abweichungen vom Standardpfad (**Varianzen** — z. B. Patient braucht zusätzliche Bildgebung) für spätere Auswertung.
 
 Merksatz: Pathway = fachlicher Soll-Ablauf, Workflow-Engine = die KIS-Komponente, die ihn tatsächlich "abspielt" und Abweichungen (Varianzen) mitschreibt.
 
@@ -108,11 +104,11 @@ Merksatz: Pathway = fachlicher Soll-Ablauf, Workflow-Engine = die KIS-Komponente
 ## Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
 
 ::: {.exam-question}
-Frage: Wie ist Entscheidungsunterstützung (CDSS) typischerweise ins KIS integriert, und welche zwei Arten von Wissenszugriff gibt es dabei?
+Wie ist Entscheidungsunterstützung (CDSS) typischerweise ins KIS integriert, und welche zwei Arten von Wissenszugriff gibt es dabei?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Das KIS bindet CDSS nicht als separate Insel ein, sondern direkt im klinischen Arbeitsplatz (z. B. beim Verordnen/cPOE), damit die Hilfe im Workflow erscheint, nicht danach:
+Das KIS bindet CDSS nicht als separate Insel ein, sondern direkt im klinischen Arbeitsplatz (z. B. beim Verordnen/cPOE), damit die Hilfe im Workflow erscheint, nicht danach:
 
 - **Aktiv/integriert (push)**: das System meldet sich selbst zum passenden Moment — Alert bei Medikamenten-Interaktion während der Verordnung, Pfad-Vorschlag bei Diagnoseeingabe.
 - **Passiv (pull)**: der Arzt sucht aktiv Wissen — Verlinkung aus dem KIS zu Leitlinien-Datenbanken, Arzneimittel-Infoportalen, Literatur (z. B. Klick aus dem Arztbrief heraus direkt zur AWMF-Leitlinie).
@@ -129,12 +125,10 @@ Merksatz: push = "System klopft an", pull = "Arzt klickt sich durch".
 ## Entwicklungsmethoden KIS
 
 ::: {.exam-question}
-Frage: Welche grundlegenden Entwicklungsmethoden/-modelle für KIS-Software gibt es, und was ist der Hauptunterschied?
+Welche grundlegenden Entwicklungsmethoden/-modelle für KIS-Software gibt es, und was ist der Hauptunterschied?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Wasserfallmodell**: starre Phasenfolge (Analyse → Design → Implementierung → Test → Betrieb), jede Phase erst abgeschlossen, dann nächste — gut bei klaren, stabilen Anforderungen (z. B. gesetzlich vorgeschriebene Abrechnungslogik), schlecht wenn sich Anforderungen während der Entwicklung ändern (Rücksprung teuer).
 - **Agile Entwicklung** (z. B. Scrum): iterativ in kurzen Zyklen (Sprints), laufend Feedback von Nutzern (Ärzten/Pflege) einbauen — passt besser zu klinischen Systemen, weil Workflows komplex/schwer vorab vollständig spezifizierbar sind.
 
@@ -148,12 +142,10 @@ Merksatz: Wasserfall = "einmal planen, dann durchziehen", Agil = "bauen, zeigen,
 ## Struktur einer Software-Entwicklungsorganisation
 
 ::: {.exam-question}
-Frage: Welche Rolle spielen PLM, SCM und CRM in der Struktur einer Software-Entwicklungsorganisation, und welche IT-Standards sichern die Qualität?
+Welche Rolle spielen PLM, SCM und CRM in der Struktur einer Software-Entwicklungsorganisation, und welche IT-Standards sichern die Qualität?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **PLM (Product Lifecycle Management)**: steuert den gesamten Lebenszyklus einer Software von Konzept über Entwicklung/Release bis Außerbetriebnahme — bei KIS z. B. Versionierung, wann welches Modul wie lange supported wird.
 - **SCM (Software Configuration Management)**: verwaltet Versionen/Änderungen am Code und an Konfigurationen kontrolliert (Versionskontrolle, Change-Tracking) — wichtig, damit nachvollziehbar bleibt, welche KIS-Version mit welcher Parametrierung in welcher Klinik läuft.
 - **CRM (Customer Relationship Management)**: organisiert Kontakt zum Kunden (Klinik) — Anforderungen, Support-Tickets, Schulungen.
@@ -170,11 +162,11 @@ Merksatz: PLM = "Produkt über die Zeit", SCM = "Code/Config unter Kontrolle", C
 ## Implementierung von Informations- und Kommunikationssystemen
 
 ::: {.exam-question}
-Frage: Welche Phasen/Aspekte umfasst die Implementierung eines KIS (nicht Softwareentwicklung, sondern Einführung in der Klinik)?
+Welche Phasen/Aspekte umfasst die Implementierung eines KIS (nicht Softwareentwicklung, sondern Einführung in der Klinik)?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Implementierung = Rollout in den laufenden Betrieb, typischerweise:
+Implementierung = Rollout in den laufenden Betrieb, typischerweise:
 
 1. **Vorbereitung**: Datenmigration (Altdaten aus Vorsystem), Parametrierung (s. "Einrichtungs- und nutzerspezifische Parametrierung"), technische Infrastruktur (Netzwerk, Server/Cloud).
 2. **Schulung**: Mitarbeiter (Ärzte/Pflege/Verwaltung) müssen vor Go-Live trainiert sein.
@@ -191,11 +183,11 @@ Merksatz: Implementierung ≠ Programmieren — ist Change-Management (Daten, Me
 ## Evaluation von Informations- und Kommunikationssystemen
 
 ::: {.exam-question}
-Frage: Welche Dimensionen werden bei der Evaluation eines KIS typischerweise betrachtet, und was bedeutet "Usability" dabei konkret?
+Welche Dimensionen werden bei der Evaluation eines KIS typischerweise betrachtet, und was bedeutet "Usability" dabei konkret?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Evaluation prüft, ob das System seinen Zweck erfüllt — mehrere Dimensionen:
+Evaluation prüft, ob das System seinen Zweck erfüllt — mehrere Dimensionen:
 
 - **Technisch**: Performance, Verfügbarkeit, Fehlerquote.
 - **Ökonomisch**: Kosten-Nutzen (TCO, Produktivitätsgewinn).
@@ -212,11 +204,11 @@ Merksatz: Evaluation fragt nicht nur "funktioniert's technisch", sondern "arbeit
 ## Interoperabilität und Schnittstellen von Krankenhausinformationssystemen
 
 ::: {.exam-question}
-Frage: Was bedeutet Interoperabilität bei KIS, und über welchen zentralen Standard laufen die meisten internen Schnittstellen?
+Was bedeutet Interoperabilität bei KIS, und über welchen zentralen Standard laufen die meisten internen Schnittstellen?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Interoperabilität = Fähigkeit verschiedener Systeme (PAS, RIS, Labor-IS, ...), Daten korrekt auszutauschen und zu verstehen — nicht nur technisch verbinden, sondern auch semantisch (gleiche Bedeutung).
+Interoperabilität = Fähigkeit verschiedener Systeme (PAS, RIS, Labor-IS, ...), Daten korrekt auszutauschen und zu verstehen — nicht nur technisch verbinden, sondern auch semantisch (gleiche Bedeutung).
 
 - **HL7** (Health Level 7) ist der dominante Nachrichtenstandard für den Datenaustausch zwischen KIS-Komponenten.
 - Läuft typischerweise über einen **Kommunikationsserver** (Integration Engine) als zentrale Drehscheibe — jedes System muss nur EINE Schnittstelle zum Server haben, nicht N-zu-N-Verbindungen zu allen anderen Systemen.
@@ -236,12 +228,10 @@ Merksatz: Kommunikationsserver = "Flughafen-Drehkreuz" statt jeder-zu-jedem-Dire
 IT-Servicemanagement (z. B. ITIL).
 
 ::: {.exam-question}
-Frage: Was ist IT-Servicemanagement, was ist ITIL, und welche Kernprozesse (Incident, Problem, Change, SLA, Service Desk) muss man für den Krankenhausbetrieb kennen?
+Was ist IT-Servicemanagement, was ist ITIL, und welche Kernprozesse (Incident, Problem, Change, SLA, Service Desk) muss man für den Krankenhausbetrieb kennen?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **IT-Servicemanagement (ITSM)** = IT wird nicht als "Technik", sondern als **Dienstleistung (Service) für die Klinik** organisiert — mit festgelegten Prozessen, Zuständigkeiten und messbarer Qualität. Der Service heißt nicht "Server XY", sondern z. B. "**KIS verfügbar auf allen Stationen, 24/7**".
 
 **ITIL** (*IT Infrastructure Library*, ursprünglich britische Regierung, heute **ITIL 4**, 2019) = Sammlung von **Best Practices** für ITSM — kein Gesetz, kein Produkt, sondern ein Rahmenwerk ("Leitlinie" für IT-Abteilungen). Zertifizierbare Norm dazu: **ISO/IEC 20000**.
@@ -294,12 +284,10 @@ Merksatz: ITSM = IT als Dienstleistung mit Prozessen; ITIL = Best-Practice-Samml
 Umsetzung eines Rollen- und Berechtigungskonzeptes.
 
 ::: {.exam-question}
-Frage: Wie setzt man ein Rollen- und Berechtigungskonzept in einem KIS praktisch um — welche Dimensionen hat eine Berechtigung, wie funktioniert der Notfallzugriff, und wie verwaltet man Benutzer über ihren Lebenszyklus?
+Wie setzt man ein Rollen- und Berechtigungskonzept in einem KIS praktisch um — welche Dimensionen hat eine Berechtigung, wie funktioniert der Notfallzugriff, und wie verwaltet man Benutzer über ihren Lebenszyklus?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Grundlagen (Need-to-know, RBAC, Protokollierung, Orientierungshilfe KIS) → **Modul II**. Hier: die **Umsetzung im Betrieb**.
 
 **Rechtlicher Rahmen:** DSGVO **Art. 9** (Gesundheitsdaten = besondere Kategorie), **Art. 25** (*Privacy by Design/by Default* — Standard = so wenig Zugriff wie möglich), **Art. 32** (TOM); ärztliche **Schweigepflicht** (§ 203 StGB) gilt auch **innerhalb** des Krankenhauses — nicht jeder Arzt darf jeden Patienten sehen.
@@ -363,12 +351,10 @@ Merksatz: Berechtigung = Rolle **×** Behandlungszusammenhang **×** Datenart **
 Schnittstellen zur Telematik-Infrastruktur.
 
 ::: {.exam-question}
-Frage: Wie wird ein KIS an die Telematikinfrastruktur (TI) angebunden — welche Komponenten braucht man, welche Fachanwendungen nutzt das Krankenhaus darüber, und welche Standards (ISiK, KIM) spielen eine Rolle?
+Wie wird ein KIS an die Telematikinfrastruktur (TI) angebunden — welche Komponenten braucht man, welche Fachanwendungen nutzt das Krankenhaus darüber, und welche Standards (ISiK, KIM) spielen eine Rolle?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **TI** = das **geschlossene, sichere Netz des deutschen Gesundheitswesens** (verantwortlich: **gematik**, gesetzlich SGB V). Analogie: ein eigenes "Rohrpostsystem" nur für Gesundheitseinrichtungen, mit Ausweiskontrolle an jedem Eingang. Anwendungen aus Nutzersicht (eGK, ePA, Fernbehandlung) → **Modul X**; hier: **wie das KIS angeschlossen wird**.
 
 **Komponenten der Anbindung:**
@@ -417,12 +403,10 @@ Merksatz: KIS → **Konnektor** (VPN-Schleuse) → TI; Ausweise: **SMC-B** = Kli
 ### HL7 v2 / FHIR
 
 ::: {.exam-question}
-Frage: Was unterscheidet HL7 v2 von FHIR, und wie passt die deutsche Medizininformatik-Initiative (MII) hier ins Bild?
+Was unterscheidet HL7 v2 von FHIR, und wie passt die deutsche Medizininformatik-Initiative (MII) hier ins Bild?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **HL7 v2** (seit 1980ern, bis heute das meistverbreitete KIS-interne Protokoll): Event-getriebene Nachrichten (Pipe-getrennte Segmente, z. B. `MSH`, `PID`, `OBX`), Trigger-Events wie **ADT** (Admit/Discharge/Transfer), **ORM/ORU** (Order/Result). Problem: sehr flexibel/optional → jedes Haus/Hersteller interpretiert Felder etwas anders ("ein Standard mit 100 Dialekten"), viel Mapping-Aufwand pro Schnittstelle.
 
 **HL7 v3** (Zwischenschritt, floppte weitgehend wegen Komplexität) — übrig blieb v. a. **CDA** (strukturierte Dokumente, z. B. elektronischer Arztbrief).
@@ -449,12 +433,10 @@ DICOM.
 Inhalte der Kodiersysteme selbst (Aufbau, Beispiele, Abgrenzung Klassifikation/Nomenklatur/Ontologie) → **Modul IV** (ICD-10-GM, OPS, SNOMED CT, LOINC, ATC, UCUM). Hier: die **IT-Sicht** — wie Codes im KIS gespeichert und zwischen Systemen ausgetauscht werden.
 
 ::: {.exam-question}
-Frage: Wie werden ICD, SNOMED CT und LOINC in Informations- und Kommunikationssystemen technisch genutzt — wo stehen sie in HL7-Nachrichten und FHIR-Ressourcen, und wozu braucht man Terminologieserver und Mappings?
+Wie werden ICD, SNOMED CT und LOINC in Informations- und Kommunikationssystemen technisch genutzt — wo stehen sie in HL7-Nachrichten und FHIR-Ressourcen, und wozu braucht man Terminologieserver und Mappings?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Warum Codes für die IT so wichtig sind:** Freitext ("Herzinfarkt", "MI", "STEMI Vorderwand") kann ein Computer nicht zuverlässig vergleichen. Ein **Code** ist eindeutig → Abrechnung, Statistik, CDSS-Regeln, Forschung und Datenaustausch funktionieren erst damit (**semantische Interoperabilität**).
 
 **Wo die drei typischerweise im Krankenhaus vorkommen:**

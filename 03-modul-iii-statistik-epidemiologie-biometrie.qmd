@@ -5,11 +5,11 @@
 ### Quantitative Erfolgs- und Risikokriterien
 
 ::: {.exam-question}
-Frage: Eine Studie zu einem neuen Blutverdünner zeigt "25% relative Risikoreduktion" für Schlaganfall. Was bedeutet das konkret, und warum kann diese Zahl irreführend sein? Was solltest du stattdessen fragen?
+Eine Studie zu einem neuen Blutverdünner zeigt "25% relative Risikoreduktion" für Schlaganfall. Was bedeutet das konkret, und warum kann diese Zahl irreführend sein? Was solltest du stattdessen fragen?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Beispiel (RCT): Kontrollgruppe 20% Ereignisrate, Interventionsgruppe 15%.
+Beispiel (RCT): Kontrollgruppe 20% Ereignisrate, Interventionsgruppe 15%.
 
 - **Relatives Risiko (RR)**: Risiko Intervention ÷ Risiko Kontrolle = 15%/20% = 0,75 (bei Kohortenstudien/RCT).
 - **Odds Ratio (OR)**: analoges Chancenverhältnis, verwendet bei Fall-Kontroll-Studien (dort ist RR nicht direkt berechenbar).
@@ -31,12 +31,10 @@ Merksatz: Die RRR (relative Risikoreduktion) klingt immer groß — frag nach AR
 ### Grundbegriffe der Statistik
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen deskriptiver und induktiver (schließender) Statistik, und was sind Grundgesamtheit vs. Stichprobe?
+Was ist der Unterschied zwischen deskriptiver und induktiver (schließender) Statistik, und was sind Grundgesamtheit vs. Stichprobe?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Grundgesamtheit vs. Stichprobe**: die Grundgesamtheit ist alle, über die man eigentlich eine Aussage treffen will (z. B. "alle Bluthochdruck-Patienten in Deutschland") — praktisch unmöglich, alle zu untersuchen. Die Stichprobe ist der Ausschnitt, den man tatsächlich untersucht (z. B. 200 Patienten in einer Klinik), aus dem auf die Grundgesamtheit geschlossen wird.
 
 **Deskriptive Statistik**: beschreibt nur die vorliegenden Daten selbst — Mittelwert, Median, Streuung, Grafiken der Stichprobe. Keine Verallgemeinerung.
@@ -55,12 +53,10 @@ Merksatz: Deskriptiv = beschreiben, was man sieht. Induktiv = schließen auf das
 ### Klassifikation von Merkmalen
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen qualitativen und quantitativen Merkmalen, und innerhalb der quantitativen zwischen diskret und stetig?
+Was ist der Unterschied zwischen qualitativen und quantitativen Merkmalen, und innerhalb der quantitativen zwischen diskret und stetig?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Qualitative (kategoriale) Merkmale**: beschreiben Eigenschaften/Kategorien, keine Zahlen mit Rechensinn — entsprechen Nominal- oder Ordinalskala. Beispiel: Blutgruppe (nominal), Tumorstadium I-IV (ordinal, mit Rangfolge).
 
 **Quantitative (numerische) Merkmale**: echte Zahlenwerte, mit denen gerechnet werden kann — entsprechen Intervall-, Verhältnis- oder Absolutskala. Zwei Unterarten:
@@ -80,11 +76,11 @@ Merksatz: Qualitativ = "was für eine Art" (Kategorie). Quantitativ diskret = "w
 ### Skalenniveau
 
 ::: {.exam-question}
-Frage: Du misst bei Patienten Blutgruppe, Schmerzstärke (Skala 0-10), Körpertemperatur und ob "geheilt ja/nein". Was für Skalenniveaus sind das jeweils, und warum ist das für die Wahl des Tests wichtig?
+Du misst bei Patienten Blutgruppe, Schmerzstärke (Skala 0-10), Körpertemperatur und ob "geheilt ja/nein". Was für Skalenniveaus sind das jeweils, und warum ist das für die Wahl des Tests wichtig?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Vier Skalenniveaus, aufsteigend im Informationsgehalt:
+Vier Skalenniveaus, aufsteigend im Informationsgehalt:
 
 - **Blutgruppe (A, B, AB, 0)** → **Nominalskala**: nur Gleichheit/Ungleichheit (= oder ≠), keine Rangfolge, keine Abstände. Zulässiges Lagemaß: nur der **Modus**.
 - **Schmerzstärke (0-10)** → **Ordinalskala**: zusätzlich Rangfolge (< bzw. >), aber Abstände nicht garantiert gleich groß (2→3 ist nicht zwingend "gleich viel mehr" wie 7→8). Zulässig: **Median**, nicht der Mittelwert.
@@ -109,12 +105,10 @@ Merksatz: erst Skalenniveau bestimmen → daraus ergibt sich, welches Lage-/Stre
 ### Prinzipien der Randomisierung
 
 ::: {.exam-question}
-Frage: Was ist Randomisierung, welche Verfahren gibt es (einfache/Block-/stratifizierte Randomisierung), und sollte man immer stratifiziert randomisieren?
+Was ist Randomisierung, welche Verfahren gibt es (einfache/Block-/stratifizierte Randomisierung), und sollte man immer stratifiziert randomisieren?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Randomisierung**: Patienten werden per Zufall (nicht nach Ermessen des Arztes) den Studienarmen zugeteilt — Gegenmaßnahme gegen **Selection Bias** (z. B. dass ein Arzt unbewusst "vielversprechendere" Patienten der neuen Therapie zuteilt).
 
 **Beispiel**: 8 Patienten sollen auf Gruppe A (Medikament) und Gruppe B (Placebo) aufgeteilt werden.
@@ -143,11 +137,11 @@ Merksatz: Stratifizierung lohnt sich gezielt für wenige, bekannte, stark einflu
 ### Multicenter-Studien
 
 ::: {.exam-question}
-Frage: Was ist eine Multicenter-Studie, und welche Vor- und Nachteile hat sie gegenüber einer Studie an nur einem Krankenhaus?
+Was ist eine Multicenter-Studie, und welche Vor- und Nachteile hat sie gegenüber einer Studie an nur einem Krankenhaus?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Dieselbe Studie wird nach einem gemeinsamen Protokoll gleichzeitig an mehreren Kliniken/Standorten durchgeführt, statt nur an einem Krankenhaus.
+Dieselbe Studie wird nach einem gemeinsamen Protokoll gleichzeitig an mehreren Kliniken/Standorten durchgeführt, statt nur an einem Krankenhaus.
 
 **Vorteile:**
 - Schneller größere Patientenzahl erreichbar — wichtig bei seltenen Erkrankungen, wo ein einzelnes Haus nie genug Fälle hätte.
@@ -171,12 +165,10 @@ Merksatz: Multicenter = mehr Patienten + bessere Generalisierbarkeit, erkauft mi
 ### Meta-Analysen
 
 ::: {.exam-question}
-Frage: Was ist eine Meta-Analyse, warum bringt sie mehr statistische Power als Einzelstudien, und wann deutet ein Funnel Plot auf Publication Bias hin?
+Was ist eine Meta-Analyse, warum bringt sie mehr statistische Power als Einzelstudien, und wann deutet ein Funnel Plot auf Publication Bias hin?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Meta-Analyse**: statistisches Verfahren, das die Ergebnisse mehrerer Einzelstudien zur gleichen Fragestellung zu einem gemeinsamen, gewichteten Gesamtergebnis zusammenfasst — mit höherer statistischer Power/Präzision als jede Einzelstudie allein.
 
 **Warum mehr Power**: kombiniert man z. B. 10 kleine RCTs zu je 100 Patienten, entspricht das statistisch grob einer "virtuellen" Studie mit 1000 Patienten — zufällige Schwankungen einzelner Studien gleichen sich aus, echte Effekte werden klarer sichtbar.
@@ -206,12 +198,10 @@ Merksatz: Meta-Analyse = "Studie der Studien", höhere Power, aber nur so vertra
 ### Maßzahlen in der Epidemiologie
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen Prävalenz und Inzidenz, und welcher Studientyp eignet sich jeweils, um sie zu ermitteln?
+Was ist der Unterschied zwischen Prävalenz und Inzidenz, und welcher Studientyp eignet sich jeweils, um sie zu ermitteln?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Prävalenz**: Anteil der Bevölkerung, der zu einem bestimmten Zeitpunkt (oder Zeitraum) an einer Krankheit leidet — "wie viele sind gerade krank". Geeignet: **Querschnittsstudie** (Momentaufnahme).
 
 **Inzidenz**: Anzahl neuer Erkrankungsfälle in einem bestimmten Zeitraum, bezogen auf die gefährdete Bevölkerung — "wie viele werden neu krank". Geeignet: **Kohortenstudie** (über Zeit verfolgt).
@@ -230,12 +220,10 @@ Merksatz: Prävalenz = Bestand (Momentaufnahme). Inzidenz = Zufluss (neu Erkrank
 ### Güte diagnostischer Tests: Sensitivität, Spezifität, PPV, NPV
 
 ::: {.exam-question}
-Frage: Ein D-Dimer-Test hat Sensitivität 98 % und Spezifität 40 %. Eignet er sich eher zum Ausschließen oder zum Bestätigen einer Lungenembolie — und wie viele falsch Negative/falsch Positive bedeutet das?
+Ein D-Dimer-Test hat Sensitivität 98 % und Spezifität 40 %. Eignet er sich eher zum Ausschließen oder zum Bestätigen einer Lungenembolie — und wie viele falsch Negative/falsch Positive bedeutet das?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 |  | **krank** (LE) | **gesund** |
 |---|---|---|
 | **Test positiv** | richtig positiv (RP) | falsch positiv (FP) |
@@ -288,11 +276,11 @@ Merksatz: Sensitiv schließt aus (SnNout), spezifisch schließt ein (SpPin). Fal
 Maßzahlen der deskriptiven Statistik (z. B. Mittelwert, Median, Quantile, Varianz und Standardabweichung, Konfidenzintervalle für Mittelwerte und Anteilswerte).
 
 ::: {.exam-question}
-Frage: Bei welchen Daten ist der Median besser geeignet als der Mittelwert, und warum? Gib ein Klinikbeispiel, bei dem der Mittelwert irreführend wäre.
+Bei welchen Daten ist der Median besser geeignet als der Mittelwert, und warum? Gib ein Klinikbeispiel, bei dem der Mittelwert irreführend wäre.
 :::
 
 ::: {.exam-answer}
-**Antwort:** Der Mittelwert ist anfällig für Ausreißer — er berücksichtigt jeden einzelnen Wert, auch extreme. Der Median (der mittlere Wert der sortierten Reihe) ist robust dagegen — Ausreißer verschieben ihn kaum.
+Der Mittelwert ist anfällig für Ausreißer — er berücksichtigt jeden einzelnen Wert, auch extreme. Der Median (der mittlere Wert der sortierten Reihe) ist robust dagegen — Ausreißer verschieben ihn kaum.
 
 Klinik-Beispiel: Verweildauer auf einer Station bei 9 Patienten (in Tagen): 2, 3, 3, 4, 4, 5, 5, 6, **90** (ein Patient mit Komplikationen, sehr lange Liegezeit).
 
@@ -309,11 +297,11 @@ Zusatzregel aus dem Buch: bei stark schiefen Verteilungen weichen Mittelwert und
 :::
 
 ::: {.exam-question}
-Frage: Was ist ein Konfidenzintervall genau, und wie verändert es sich bei kleinerer Stichprobe bzw. höherem Konfidenzniveau?
+Was ist ein Konfidenzintervall genau, und wie verändert es sich bei kleinerer Stichprobe bzw. höherem Konfidenzniveau?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Der Bereich, in dem der wahre Wert der Grundgesamtheit (z. B. der echte Mittelwert) mit einer festgelegten Wahrscheinlichkeit (meist 95%) liegt — macht die Unsicherheit eines aus der Stichprobe geschätzten Werts sichtbar, statt nur eine einzelne Zahl zu präsentieren.
+Der Bereich, in dem der wahre Wert der Grundgesamtheit (z. B. der echte Mittelwert) mit einer festgelegten Wahrscheinlichkeit (meist 95%) liegt — macht die Unsicherheit eines aus der Stichprobe geschätzten Werts sichtbar, statt nur eine einzelne Zahl zu präsentieren.
 
 Klinik-Beispiel: Blutdruck bei 50 Patienten gemessen, Mittelwert 138 mmHg. Statt nur "138 mmHg" zu sagen: "95%-Konfidenzintervall: 134–142 mmHg" — der wahre Durchschnitt aller Patienten liegt mit 95% Sicherheit in diesem Bereich.
 
@@ -334,12 +322,10 @@ Merksatz: Stichprobengröße ↑ → Intervall schmaler (mehr Sicherheit). Konfi
 ### Testwahl: welcher Test für welches Szenario?
 
 ::: {.exam-question}
-Frage: Nach welchen Kriterien wählt man den statistischen Test, und welche Tests gehören zu welchem Szenario — insbesondere die verteilungsfreien (nichtparametrischen)?
+Nach welchen Kriterien wählt man den statistischen Test, und welche Tests gehören zu welchem Szenario — insbesondere die verteilungsfreien (nichtparametrischen)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Drei Fragen stellen:**
 1. **Welches Skalenniveau** hat das Outcome? (metrisch / ordinal / nominal)
 2. **Verbunden oder unabhängig?** Dieselben Patienten mehrfach gemessen (vorher/nachher, rechts/links) = **verbunden**; verschiedene Patienten = **unabhängig**.
@@ -403,12 +389,10 @@ Merksatz: Erst Skala, dann verbunden/unabhängig, dann Gruppenzahl. Nicht normal
 ### Lineare Regression und Varianzanalyse
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen Korrelation und linearer Regression, wie liest man die Regressionsgleichung y = a + b·x, und wann braucht man eine Varianzanalyse (ANOVA) statt eines t-Tests?
+Was ist der Unterschied zwischen Korrelation und linearer Regression, wie liest man die Regressionsgleichung y = a + b·x, und wann braucht man eine Varianzanalyse (ANOVA) statt eines t-Tests?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Lineare Regression**: modelliert einen gerichteten (erklärenden) Zusammenhang — eine abhängige Variable Y wird durch eine unabhängige Variable X vorhergesagt, als Gerade: y = a + b·x.
 
 Klinik-Beispiel: Zusammenhang zwischen Alter (X) und systolischem Blutdruck (Y): `Blutdruck = 100 + 0,5 × Alter`.
@@ -437,11 +421,11 @@ Merksatz: Korrelation = wie stark hängen zwei Merkmale zusammen (r, ohne Richtu
 ### Logistische Regression
 
 ::: {.exam-question}
-Frage: Was ist eine Vierfeldertafel, muss "Erkrankung" dabei immer in derselben Position (Zeile/Spalte) stehen, und geht es dabei nur um Expositionsfragen?
+Was ist eine Vierfeldertafel, muss "Erkrankung" dabei immer in derselben Position (Zeile/Spalte) stehen, und geht es dabei nur um Expositionsfragen?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Eine Vierfeldertafel ist eine 2×2-Tabelle für zwei dichotome (ja/nein) Merkmale gleichzeitig — z. B. "Raucher ja/nein" × "Lungenkrebs ja/nein".
+Eine Vierfeldertafel ist eine 2×2-Tabelle für zwei dichotome (ja/nein) Merkmale gleichzeitig — z. B. "Raucher ja/nein" × "Lungenkrebs ja/nein".
 
 | | Erkrankt | Nicht erkrankt | Summe |
 |---|---|---|---|
@@ -467,11 +451,11 @@ Merksatz: bei einer Vierfeldertafel in der Prüfung nicht auf eine feste Positio
 :::
 
 ::: {.exam-question}
-Frage: Was ist eine Odds Ratio genau (im Vergleich zu einer Wahrscheinlichkeit/zum relativen Risiko), und wie hängen Vierfeldertafel, Odds Ratio und logistische Regression zusammen?
+Was ist eine Odds Ratio genau (im Vergleich zu einer Wahrscheinlichkeit/zum relativen Risiko), und wie hängen Vierfeldertafel, Odds Ratio und logistische Regression zusammen?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Drei Ebenen desselben Konzepts, nicht drei getrennte Dinge — am Beispiel a=40, b=60, c=10, d=90 von oben.
+Drei Ebenen desselben Konzepts, nicht drei getrennte Dinge — am Beispiel a=40, b=60, c=10, d=90 von oben.
 
 **Was ist "Odds" (Chance), im Unterschied zur Wahrscheinlichkeit?**
 - **Wahrscheinlichkeit**: "wie viel Prozent aller Fälle sind so" — bei Rauchern: 40 von 100 erkranken = 40% (0,40).
@@ -500,12 +484,10 @@ Merksatz: Vierfeldertafel = manuelle Methode, nur für 1 binären Prädiktor vs.
 :::
 
 ::: {.exam-question}
-Frage: Warum kann man für eine binäre Zielgröße (z. B. "postoperative Komplikation ja/nein") nicht einfach lineare Regression nutzen, und was macht logistische Regression anders?
+Warum kann man für eine binäre Zielgröße (z. B. "postoperative Komplikation ja/nein") nicht einfach lineare Regression nutzen, und was macht logistische Regression anders?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Problem mit linearer Regression bei ja/nein-Outcomes**: die lineare Regression sagt beliebige Zahlenwerte vorher (auch negative oder über 1) — bei einer Wahrscheinlichkeit (0 bis 1) ergibt das keinen Sinn.
 
 **Logistische Regression** löst das: statt einer geraden Linie nutzt sie eine S-förmige Kurve (Sigmoid-Funktion), die immer zwischen 0 und 1 bleibt.
@@ -524,12 +506,10 @@ Merksatz: Lineare Regression → stetiges Y (z. B. Blutdruck). Logistische Regre
 ### Survivalanalyse
 
 ::: {.exam-question}
-Frage: Was ist eine Survivalanalyse, was bedeutet "Zensierung" dabei (betrifft das die Gestorbenen oder die Nicht-Gestorbenen?), und wie hängt die Hazard Ratio mit der Odds Ratio zusammen?
+Was ist eine Survivalanalyse, was bedeutet "Zensierung" dabei (betrifft das die Gestorbenen oder die Nicht-Gestorbenen?), und wie hängt die Hazard Ratio mit der Odds Ratio zusammen?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Warum Survivalanalyse ein eigenes Werkzeug braucht**: bei Zeit-bis-Ereignis-Daten (z. B. "Zeit bis zum Tod" oder "Zeit bis zum Rückfall") ist am Studienende oft nicht bei allen Patienten das Ereignis eingetreten. Normale Regression/OR-Berechnung kann mit solchen unvollständigen Daten nicht umgehen — Survivalanalyse kann.
 
 **Zensierung**: betrifft die **Nicht-Gestorbenen** (bzw. alle, bei denen das Ereignis bis zum Beobachtungsende nicht eintrat), nicht die Gestorbenen.
@@ -559,12 +539,10 @@ Merksatz: Odds Ratio = Momentaufnahme (fester Zeitpunkt/Endpunkt). Hazard Ratio 
 ### Höhere multivariate Verfahren
 
 ::: {.exam-question}
-Frage: Ein neues Medikament soll die Sterblichkeit senken — die Behandlungsgruppe ist aber im Schnitt älter und kränker. Wie trifft man trotzdem eine faire Aussage zum Medikamenteneffekt? Welches Verfahren, und was macht es im Prinzip?
+Ein neues Medikament soll die Sterblichkeit senken — die Behandlungsgruppe ist aber im Schnitt älter und kränker. Wie trifft man trotzdem eine faire Aussage zum Medikamenteneffekt? Welches Verfahren, und was macht es im Prinzip?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Das Problem heißt Confounding** (Störgröße): ein Confounder hängt mit der Exposition (wer bekommt das Medikament?) **und** mit dem Outcome (wer stirbt?) zusammen. Hier: Ältere/Kränkere bekommen eher das Medikament **und** sterben ohnehin häufiger → ein roher Gruppenvergleich lässt das Medikament schlechter aussehen, als es ist.
 
 **Lösung: multivariable Regression = Adjustierung.** Mehrere Einflussgrößen gleichzeitig ins Modell; jeder Koeffizient gibt dann den Effekt **einer** Variable "bei sonst gleichen Bedingungen" an (statistisch gleich alte, gleich kranke Patienten werden verglichen).
@@ -599,12 +577,10 @@ Merksatz: Regression rechnet ungleiche Gruppen "fair", aber nur bezüglich desse
 ## Präsentation von Daten in Tabellen und Diagrammen
 
 ::: {.exam-question}
-Frage: Die Liegedauer zweier Stationen soll verglichen werden, einige wenige Patienten liegen extrem lange. Welches Diagramm nimmt man, und warum ist ein Balkendiagramm mit Mittelwert hier irreführend?
+Die Liegedauer zweier Stationen soll verglichen werden, einige wenige Patienten liegen extrem lange. Welches Diagramm nimmt man, und warum ist ein Balkendiagramm mit Mittelwert hier irreführend?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Liegedauer ist rechtsschief verteilt**: die meisten Patienten liegen kurz, wenige "Langlieger" ziehen einen langen Schwanz nach rechts. Der **Mittelwert** wird von diesen Ausreißern nach oben gezogen, der **Median** nicht.
 
 Beispiel Station A: 8 Patienten mit 3–6 Tagen, 2 Patienten mit 50 und 60 Tagen → **Median 5 Tage**, **Mittelwert ≈ 15 Tage**. Ein Balken "15 Tage" beschreibt keinen einzigen realen Patienten.
@@ -653,12 +629,10 @@ Merksatz: Schiefe Daten (Liegedauer, Kosten, CRP) → Median und Boxplot. Balken
 Statistik-Tools (z. B. R, SPSS).
 
 ::: {.exam-question}
-Frage: Für eine Klinik-Studie soll ein Statistik-Programm ausgewählt werden. Welche Programme gibt es, was sind ihre Vor- und Nachteile, und warum ist für die Reproduzierbarkeit ein Skript besser als Klicken in einer Oberfläche?
+Für eine Klinik-Studie soll ein Statistik-Programm ausgewählt werden. Welche Programme gibt es, was sind ihre Vor- und Nachteile, und warum ist für die Reproduzierbarkeit ein Skript besser als Klicken in einer Oberfläche?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Zwei Bedienprinzipien:**
 - **Menü/Klick (GUI)**: Analyse über Dialogfenster zusammenklicken — schnell gelernt, aber der Weg zum Ergebnis ist nicht dokumentiert.
 - **Skript/Syntax**: Analyse als Text-Befehle in einer Datei — Lernkurve, aber jeder Schritt ist nachlesbar und wiederholbar.
@@ -698,12 +672,10 @@ Merksatz: Klicken ist schnell, Skript ist belegbar. Für Forschung: R (kostenlos
 ## Translationale Forschungsplattformen
 
 ::: {.exam-question}
-Frage: Was bedeutet translationale Forschung ("from bench to bedside"), welche Aufgabe haben translationale Forschungsplattformen, und welche Beispiele gibt es in Deutschland (Medizininformatik-Initiative, Datenintegrationszentren)?
+Was bedeutet translationale Forschung ("from bench to bedside"), welche Aufgabe haben translationale Forschungsplattformen, und welche Beispiele gibt es in Deutschland (Medizininformatik-Initiative, Datenintegrationszentren)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Translationale Forschung** = Übersetzung von Erkenntnissen aus der Grundlagenforschung in die Patientenversorgung — und zurück.
 
 - **"Bench to bedside"**: vom Labortisch zum Krankenbett. Beispiel: Entdeckung der HER2-Überexpression bei Brustkrebs im Labor → Antikörper Trastuzumab → Standardtherapie.

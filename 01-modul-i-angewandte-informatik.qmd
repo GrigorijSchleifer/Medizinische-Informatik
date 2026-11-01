@@ -5,12 +5,10 @@
 ### Aufbau typischer Krankenhaus- und Praxisnetzwerke
 
 ::: {.exam-question .done}
-Frage: Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
+Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Server:** stellen Anwendungen (z.B. KIS, PACS, LIS) und Daten bereit
 - **Clients und Endgeräte:** greifen auf Dienste zu oder tauschen Daten aus
   - Stations-PCs, Visitenwagen, Netzwerkdrucker und Medizingeräte
@@ -41,12 +39,10 @@ Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte,
 ### Client-Server-Konzept
 
 ::: {.exam-question}
-Frage: Was ist das Client-Server-Konzept?
+Was ist das Client-Server-Konzept?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Client-Server-Konzept:** Aufgaben sind zwischen anfragendem Client und bereitstellendem Server aufgeteilt
   - **Client:** fordert Dienste oder Daten an
     - Der Stations-PC ruft einen Laborbefund im KIS ab
@@ -64,12 +60,10 @@ Merksatz: Client fragt an, Server liefert
 ### Rechnertypen
 
 ::: {.exam-question}
-**Frage: Was unterscheidet Fat-, Thin- und Zero-Clients?**
+Was unterscheidet Fat-, Thin- und Zero-Clients?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Fat Client:** vollwertiger Rechner mit eigenem Betriebssystem; verarbeitet Anwendungen überwiegend lokal
   - Praxis-PC mit lokal installierter Praxissoftware und Verbindung zum Datenbankserver
 - **Thin Client:** schlankes Betriebssystem; Anwendungen und wesentliche Verarbeitung laufen überwiegend auf dem Server
@@ -87,11 +81,11 @@ Merksatz: Fat rechnet überwiegend lokal, Thin und Zero überwiegend auf dem Ser
 ### Servertypen
 
 ::: {.exam-question}
-Frage: Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
+Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Dedizierter Server = für eine Anwendung reserviert. Shared Server = mehrere Anwendungen teilen sich einen Server. Virtueller Server = mehrere logische Server auf einer Hardware (Hypervisor). Cluster = mehrere Server als Einheit, für Ausfallsicherheit/Lastverteilung.
+Dedizierter Server = für eine Anwendung reserviert. Shared Server = mehrere Anwendungen teilen sich einen Server. Virtueller Server = mehrere logische Server auf einer Hardware (Hypervisor). Cluster = mehrere Server als Einheit, für Ausfallsicherheit/Lastverteilung.
 
 Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen sich einen Server; virtuell = viele logische Server auf einer Hardware; Cluster = mehrere Server als Team gegen Ausfall.
 
@@ -103,11 +97,11 @@ Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen
 ### Betriebssysteme
 
 ::: {.exam-question}
-Frage: Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
+Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Windows Server/Windows (KIS-Arbeitsplätze meist Windows), Linux (Server-/Datenbank-Backends), Unix/Solaris (ältere/spezialisierte Enterprise-Systeme), iOS/Android (mobile Visiten-/Pflegegeräte).
+Windows Server/Windows (KIS-Arbeitsplätze meist Windows), Linux (Server-/Datenbank-Backends), Unix/Solaris (ältere/spezialisierte Enterprise-Systeme), iOS/Android (mobile Visiten-/Pflegegeräte).
 
 Merksatz: Arbeitsplätze meist Windows, Server/Datenbanken oft Linux/Unix, mobile Visitengeräte iOS/Android.
 
@@ -119,11 +113,11 @@ Merksatz: Arbeitsplätze meist Windows, Server/Datenbanken oft Linux/Unix, mobil
 ### Schnittstellen
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen sowie internen und externen Schnittstellen?
+Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen sowie internen und externen Schnittstellen?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Hardware-Schnittstelle = physischer Anschluss zum Datenaustausch (z. B. USB, LAN-Port, HDMI). Software-Schnittstelle = definierter Zugriffspunkt zwischen Programmen/Systemen (z. B. API, HL7-Schnittstelle). Intern = Verbindung innerhalb eines Systems/einer Institution (z. B. zwischen KIS-Modulen). Extern = Verbindung zu externen Systemen/Partnern (z. B. KIS ↔ Labor eines anderen Anbieters, KIS ↔ Telematikinfrastruktur).
+Hardware-Schnittstelle = physischer Anschluss zum Datenaustausch (z. B. USB, LAN-Port, HDMI). Software-Schnittstelle = definierter Zugriffspunkt zwischen Programmen/Systemen (z. B. API, HL7-Schnittstelle). Intern = Verbindung innerhalb eines Systems/einer Institution (z. B. zwischen KIS-Modulen). Extern = Verbindung zu externen Systemen/Partnern (z. B. KIS ↔ Labor eines anderen Anbieters, KIS ↔ Telematikinfrastruktur).
 
 Merksatz: Hardware-Schnittstelle = Stecker, Software-Schnittstelle = vereinbarte Sprache zwischen Programmen (z. B. HL7 (Health Level 7)); intern = innerhalb des Hauses, extern = nach draußen.
 
@@ -135,12 +129,10 @@ Merksatz: Hardware-Schnittstelle = Stecker, Software-Schnittstelle = vereinbarte
 ### Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur
 
 ::: {.exam-question}
-Frage: Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
+Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - Konnektor: verbindet Primärsystem (KIS/PVS) mit der TI, verschlüsselt Kommunikation.
 - eGK: elektronische Gesundheitskarte, Patientenausweis mit Stammdaten.
 - SMC-B: Institutionskarte, weist Praxis/Klinik gegenüber TI aus.
@@ -164,11 +156,11 @@ Merksatz: Karten weisen aus (eGK (elektronische Gesundheitskarte) = Patient, HBA
 ### Gängige Programmbestandteile und -algorithmen
 
 ::: {.exam-question}
-Frage: Was sind die drei Grundkategorien von Kontrollstrukturen, und wie unterscheiden sich while und do-while?
+Was sind die drei Grundkategorien von Kontrollstrukturen, und wie unterscheiden sich while und do-while?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Kontrollstrukturen gliedern sich in Verzweigungen (`if`, `if-else`, `switch`), Schleifen (`while`, `do-while`, `for`, `foreach`) und Sprünge (`break`, `continue`). Bei Schleifen: `while` prüft die Bedingung vor der Iteration (0 bis n Durchläufe möglich), `do-while` prüft sie danach (mindestens 1 Durchlauf garantiert).
+Kontrollstrukturen gliedern sich in Verzweigungen (`if`, `if-else`, `switch`), Schleifen (`while`, `do-while`, `for`, `foreach`) und Sprünge (`break`, `continue`). Bei Schleifen: `while` prüft die Bedingung vor der Iteration (0 bis n Durchläufe möglich), `do-while` prüft sie danach (mindestens 1 Durchlauf garantiert).
 
 Merksatz: `while` = erst prüfen, dann handeln (vielleicht nie, wie „nur Insulin, wenn BZ > 200“); `do-while` = erst handeln, dann prüfen (mindestens einmal, wie „Dosis geben, dann Spiegel kontrollieren“).
 
@@ -178,11 +170,11 @@ Merksatz: `while` = erst prüfen, dann handeln (vielleicht nie, wie „nur Insul
 :::
 
 ::: {.exam-question}
-Frage: Nach welchen Kriterien wählt man einen Sortieralgorithmus, und warum wird Bubblesort in der Praxis kaum eingesetzt?
+Nach welchen Kriterien wählt man einen Sortieralgorithmus, und warum wird Bubblesort in der Praxis kaum eingesetzt?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Insertionsort eignet sich für kleine/fast sortierte Arrays (Bestcase linear). Quicksort ist ein guter Allgemeinfall (erwartet O(n log n)), hat aber bei ungünstiger Pivot-Wahl Worstcase O(n²) — deshalb Pivot zufällig oder als Median wählen. Mergesort/Heapsort garantieren O(n log n) unabhängig von der Eingabe. Bubblesort ist einfach zu verstehen, aber mit O(n²) fast immer schlechter als Alternativen — wird laut Buch "nahezu niemals eingesetzt".
+Insertionsort eignet sich für kleine/fast sortierte Arrays (Bestcase linear). Quicksort ist ein guter Allgemeinfall (erwartet O(n log n)), hat aber bei ungünstiger Pivot-Wahl Worstcase O(n²) — deshalb Pivot zufällig oder als Median wählen. Mergesort/Heapsort garantieren O(n log n) unabhängig von der Eingabe. Bubblesort ist einfach zu verstehen, aber mit O(n²) fast immer schlechter als Alternativen — wird laut Buch "nahezu niemals eingesetzt".
 
 Merksatz: Klein/fast sortiert → Insertionsort; Allgemeinfall → Quicksort; Garantie O(n log n) → Mergesort/Heapsort; Bubblesort → nur zum Lernen.
 
@@ -192,11 +184,11 @@ Merksatz: Klein/fast sortiert → Insertionsort; Allgemeinfall → Quicksort; Ga
 :::
 
 ::: {.exam-question}
-Frage: Was ist Divide & Conquer, und wie hängt es mit Rekursion zusammen (Beispiel Quicksort)?
+Was ist Divide & Conquer, und wie hängt es mit Rekursion zusammen (Beispiel Quicksort)?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Divide & Conquer teilt ein Problem in kleinere, gleichartige Teilprobleme (divide), löst diese rekursiv (conquer) und setzt die Teillösungen zusammen. Bei Quicksort: Divide = Array wird anhand eines Pivotelements partitioniert (kleinere Werte links, größere rechts); Conquer = Quicksort ruft sich rekursiv auf beiden Teilarrays selbst auf, bis die Abbruchbedingung (Teilarray-Größe ≤ 1) erreicht ist; Combine entfällt weitgehend, da in-place partitioniert wird. Jede Rekursion braucht zwingend eine Abbruchbedingung, sonst läuft sie endlos.
+Divide & Conquer teilt ein Problem in kleinere, gleichartige Teilprobleme (divide), löst diese rekursiv (conquer) und setzt die Teillösungen zusammen. Bei Quicksort: Divide = Array wird anhand eines Pivotelements partitioniert (kleinere Werte links, größere rechts); Conquer = Quicksort ruft sich rekursiv auf beiden Teilarrays selbst auf, bis die Abbruchbedingung (Teilarray-Größe ≤ 1) erreicht ist; Combine entfällt weitgehend, da in-place partitioniert wird. Jede Rekursion braucht zwingend eine Abbruchbedingung, sonst läuft sie endlos.
 
 Merksatz: Divide & Conquer = großes Problem in gleichartige kleine zerlegen, diese rekursiv lösen, zusammensetzen; Rekursion ohne Abbruchbedingung läuft endlos.
 
@@ -206,12 +198,10 @@ Merksatz: Divide & Conquer = großes Problem in gleichartige kleine zerlegen, di
 :::
 
 ::: {.exam-question}
-Frage: Was sind Klasse, Objekt, Vererbung, abstrakte Klasse und Interface (OOP-Grundbegriffe, z. B. am Beispiel Java)?
+Was sind Klasse, Objekt, Vererbung, abstrakte Klasse und Interface (OOP-Grundbegriffe, z. B. am Beispiel Java)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 - **Klasse** = der Bauplan, z. B. `Patient` mit Attributen `name`, `geburtstag`.
 - **Objekt** = eine konkrete Instanz davon — "Herr Müller" ist ein Objekt der Klasse `Patient`.
 - **Vererbung**: eine speziellere Klasse übernimmt Eigenschaften einer allgemeineren. Beispiel: `Assistenzarzt` und `Oberarzt` erben von `Arzt` (beide haben `name`, `fachrichtung`, aber `Oberarzt` hat zusätzlich `genehmigtOperationen()`).
@@ -230,11 +220,11 @@ Merksatz: Klasse = Bauplan, Objekt = konkreter Patient, Vererbung = „ist ein�
 ### Relationale Datenbanken
 
 ::: {.exam-question}
-Frage: Was ist ein Fremdschlüssel, und wie wird eine 1:n-Beziehung im relationalen Modell abgebildet?
+Was ist ein Fremdschlüssel, und wie wird eine 1:n-Beziehung im relationalen Modell abgebildet?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Ein Fremdschlüssel ist eine Spalte in einer Tabelle, deren Werte auf den Primärschlüssel einer anderen (oder derselben) Tabelle verweisen — er speichert keine neue Information, sondern nur einen Verweis auf die entsprechende Zeile dort.
+Ein Fremdschlüssel ist eine Spalte in einer Tabelle, deren Werte auf den Primärschlüssel einer anderen (oder derselben) Tabelle verweisen — er speichert keine neue Information, sondern nur einen Verweis auf die entsprechende Zeile dort.
 
 Beispiel Patient/Station: Ein Patient liegt auf genau einer Station, eine Station hat mehrere Patienten (Patient : Station = n : 1). Tabelle `Patienten` bekommt eine Spalte `Station_ID`, die auf `Stationen.Station_ID` verweist:
 
@@ -254,11 +244,11 @@ Merksatz: Der Fremdschlüssel steht immer auf der n-Seite und zeigt zur 1-Seite 
 :::
 
 ::: {.exam-question}
-Frage: Wie wird eine m:n-Beziehung im relationalen Modell abgebildet?
+Wie wird eine m:n-Beziehung im relationalen Modell abgebildet?
 :::
 
 ::: {.exam-answer}
-**Antwort:** m:n-Beziehungen können nicht direkt über einen einzelnen Fremdschlüssel abgebildet werden (anders als 1:1 oder 1:n), weil beide Seiten mehrere Partner haben können. Stattdessen wird eine eigene Verknüpfungstabelle angelegt, die die Primärschlüssel beider beteiligten Tabellen als zusammengesetzten Primär-/Fremdschlüssel enthält. Beispiel: Ärzte ↔ Patienten (ein Arzt behandelt mehrere Patienten, ein Patient wird von mehreren Ärzten behandelt) → Verknüpfungstabelle `behandelt(arzt_id, pat_id)`, wobei beide Spalten zusammen den Primärschlüssel bilden und je einzeln Fremdschlüssel auf `aerzte` bzw. `patienten` sind.
+m:n-Beziehungen können nicht direkt über einen einzelnen Fremdschlüssel abgebildet werden (anders als 1:1 oder 1:n), weil beide Seiten mehrere Partner haben können. Stattdessen wird eine eigene Verknüpfungstabelle angelegt, die die Primärschlüssel beider beteiligten Tabellen als zusammengesetzten Primär-/Fremdschlüssel enthält. Beispiel: Ärzte ↔ Patienten (ein Arzt behandelt mehrere Patienten, ein Patient wird von mehreren Ärzten behandelt) → Verknüpfungstabelle `behandelt(arzt_id, pat_id)`, wobei beide Spalten zusammen den Primärschlüssel bilden und je einzeln Fremdschlüssel auf `aerzte` bzw. `patienten` sind.
 
 Merksatz: m:n braucht immer eine eigene Verknüpfungstabelle (z. B. `behandelt(arzt_id, pat_id)`).
 
@@ -268,12 +258,10 @@ Merksatz: m:n braucht immer eine eigene Verknüpfungstabelle (z. B. `behandelt(a
 :::
 
 ::: {.exam-question}
-Frage: Was sind die drei Normalformen (1./2./3. NF), und warum muss man Datenbanken normalisieren?
+Was sind die drei Normalformen (1./2./3. NF), und warum muss man Datenbanken normalisieren?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Warum normalisieren?** Ziel ist nicht nur, Redundanz (mehrfach gespeicherte Daten) zu vermeiden — Redundanz ist die *Ursache*, das eigentliche Problem sind die daraus entstehenden **Anomalien**:
 
 - **Update-Anomalie**: Ein Wert steht mehrfach gespeichert → bei Änderung muss man an mehreren Stellen updaten; vergisst man eine, sind die Daten inkonsistent (z. B. Patientenname doppelt gespeichert, nur einmal geändert).
@@ -298,12 +286,10 @@ Merksatz für 2./3. NF: "Jedes Attribut hängt vom Schlüssel ab, vom ganzen Sch
 ### Datenaustauschformate
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen JSON und XML, wofür steht SOAP, und wo tauchen diese Formate in medizinischen Standards konkret auf?
+Was ist der Unterschied zwischen JSON und XML, wofür steht SOAP, und wo tauchen diese Formate in medizinischen Standards konkret auf?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **XML** (eXtensible Markup Language): Daten in verschachtelten Tags (`<patient><name>Müller</name></patient>`). Vergleichsweise "starr": hat oft ein Schema (DTD/XSD), das Elemente/Reihenfolge streng vorschreibt; dafür mehr Text-Overhead durch öffnende/schließende Tags.
 
 **JSON** (JavaScript Object Notation): Daten als Schlüssel-Wert-Paare (`{"name": "Müller"}`), kompakter, weniger Overhead, kein so striktes verpflichtendes Schema-System wie XML.
@@ -326,12 +312,10 @@ Merksatz: XML (eXtensible Markup Language) = Tags, streng, z. B. CDA (Clinical D
 :::
 
 ::: {.exam-question}
-Frage: Was ist SOAP genau, was ist REST, und wie stehen die beiden zueinander? Wieso ist das für die Medizininformatik relevant?
+Was ist SOAP genau, was ist REST, und wie stehen die beiden zueinander? Wieso ist das für die Medizininformatik relevant?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **SOAP** (Simple Object Access Protocol): ein **Protokoll** — Nachrichten werden als XML-"Briefumschlag" mit fester Struktur verschickt:
 
 ```xml
@@ -390,12 +374,10 @@ Vorteil im Klinikalltag übertragen: egal welcher "Schalter" (Server) die Anfrag
 ### Methoden des Software Engineerings
 
 ::: {.exam-question}
-Frage: Was ist der erste Schritt im Software-Engineering-Prozess, und wie geht es danach weiter (Anforderungsanalyse → ER-Modell → UML → BPMN)?
+Was ist der erste Schritt im Software-Engineering-Prozess, und wie geht es danach weiter (Anforderungsanalyse → ER-Modell → UML → BPMN)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **1. Anforderungsanalyse**: bevor eine Zeile Code geschrieben wird, wird geklärt, *was* das System können soll und *für wen* — durch Gespräche mit den späteren Nutzern. Beispiel: Interview mit der Triage-Schwester der Notaufnahme: "Was brauchst du beim Check-in?" → Name, Geburtsdatum, Beschwerde, Dringlichkeitsstufe, freies Bett finden. Noch ganz ohne Datenbank/Software zu denken — nur "was muss die Realität abdecken".
 
 **2. Datenmodellierung (ER-Modell)**: die gesammelten Infos werden zu einem Diagramm — welche "Dinge" (Entitäten) gibt es, wie hängen sie zusammen, unabhängig von jeder konkreten Datenbank/Software.
@@ -412,12 +394,10 @@ Merksatz: erst verstehen (Anforderungen), dann Daten strukturieren (ER-Modell), 
 :::
 
 ::: {.exam-question}
-Frage: Was ist ein ER-Modell (Entity-Relationship-Modell), und wie hängt die (min,max)-Kardinalität mit dem später gelernten 1:n/m:n zusammen?
+Was ist ein ER-Modell (Entity-Relationship-Modell), und wie hängt die (min,max)-Kardinalität mit dem später gelernten 1:n/m:n zusammen?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 Grundidee: bevor eine Datenbank-Tabelle gebaut wird, zeichnet man erst ein Bild davon, welche "Dinge" es gibt und wie sie zusammenhängen — unabhängig von SQL oder einem konkreten Datenbanksystem.
 
 **Die drei Bausteine, an einem Klinikbeispiel:**
@@ -448,12 +428,10 @@ Merksatz: einfache, einzelne Eigenschaft eines Dings → **Attribut**. Eigene Me
 :::
 
 ::: {.exam-question}
-Frage: Was ist der Unterschied zwischen einem UML-Klassendiagramm und einem Sequenzdiagramm, am Beispiel eines KIS-Moduls?
+Was ist der Unterschied zwischen einem UML-Klassendiagramm und einem Sequenzdiagramm, am Beispiel eines KIS-Moduls?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Klassendiagramm — die Struktur**: zeigt, welche "Bausteine" (Klassen) es im Programm gibt und wie sie zusammenhängen. Kasten mit bis zu 3 Feldern: Name, Attribute, Operationen.
 
 ```
@@ -489,12 +467,10 @@ Merksatz: Klassendiagramm = Bauplan (was gibt es), Sequenzdiagramm = Film (wer r
 :::
 
 ::: {.exam-question}
-Frage: Mit welchem Werkzeug dokumentiert man einen Ablauf mit Entscheidungspunkten (z. B. Patientenaufnahme in der Notaufnahme, "kritisch? ja/nein"), was sind die Grundbausteine, und wie unterscheidet sich das vom UML-Aktivitätsdiagramm?
+Mit welchem Werkzeug dokumentiert man einen Ablauf mit Entscheidungspunkten (z. B. Patientenaufnahme in der Notaufnahme, "kritisch? ja/nein"), was sind die Grundbausteine, und wie unterscheidet sich das vom UML-Aktivitätsdiagramm?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **BPMN** (Business Process Model and Notation) — das richtige Werkzeug für Abläufe mit Entscheidungspunkten. Grundbausteine, am Notaufnahme-Beispiel:
 
 - **Start-/End-Event** (Kreis): "Patient kommt an" → "Patient versorgt/entlassen".
@@ -527,11 +503,11 @@ Merksatz: BPMN = Prozess über Abteilungen hinweg, für Fachleute verständlich.
 ### Maßnahmen und Methoden des IT-Servicemanagements
 
 ::: {.exam-question}
-Frage: KIS fällt aus, Ärzte kommen nicht an Befunde — was ist der Unterschied zwischen "Incident" und "Problem" (ITIL)?
+KIS fällt aus, Ärzte kommen nicht an Befunde — was ist der Unterschied zwischen "Incident" und "Problem" (ITIL)?
 :::
 
 ::: {.exam-answer}
-**Antwort:** **Incident** = die akute Störung selbst ("KIS ausgefallen") — Ziel: schnell Betrieb wiederherstellen, notfalls per Workaround (z. B. Befunde übers Backup-System). **Problem** = die zugrunde liegende Ursache (z. B. fehlerhaftes Update) — Ziel: dauerhaft beheben, damit der Incident nicht wiederkommt.
+**Incident** = die akute Störung selbst ("KIS ausgefallen") — Ziel: schnell Betrieb wiederherstellen, notfalls per Workaround (z. B. Befunde übers Backup-System). **Problem** = die zugrunde liegende Ursache (z. B. fehlerhaftes Update) — Ziel: dauerhaft beheben, damit der Incident nicht wiederkommt.
 
 Merksatz: Incident = Feuer löschen (Symptom). Problem = Brandursache finden (Ursache). Ein Incident kann per Workaround gelöst sein, ohne dass das Problem schon behoben ist.
 

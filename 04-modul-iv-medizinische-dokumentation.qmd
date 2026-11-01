@@ -54,8 +54,6 @@ Merksatz: Dokumentation ist Therapie- und Beweismittel. **§ 630f BGB** = Pflich
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12, Medizinische Dokumentation — § 10 MBO-Ä und 10 Jahre Aufbewahrungsfrist aus dem Buch; Patientenrechtegesetz (§§ 630a ff. BGB), Strahlenschutz-/Transfusionsfristen und DSGVO als Allgemeinwissen ergänzt.)*
 :::
 
 ## Grundbegriffe der medizinischen Dokumentation
@@ -194,8 +192,6 @@ Merksatz: Klassifikation = Schublade (zusammenfassen für Statistik/Abrechnung),
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12, Medizinische Dokumentation — Ordnungssysteme, Klassifikation und ihre Anforderungen, SNOMED CT, MeSH; Kap. 6 Skalenniveaus; Ontologie-Begriff und Datentypen-Übersicht als Allgemeinwissen ergänzt.)*
 :::
 
 ## Typische Elemente medizinischer Dokumentation
@@ -278,8 +274,6 @@ Merksatz Medikationsplan vs. Notfalldatensatz: **BMP** = vollständige Medikatio
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum / Allgemeinwissen — MIOs, ePA für alle und mio42 sind im Buch "MedInfo kompakt" (2015) nicht enthalten. Stand: 10/2026.)*
 :::
 
 ## Ordnungs- und Klassifikationssysteme für klinische Zwecke
@@ -332,8 +326,6 @@ Merksatz: TNM = wie weit (Tumor, Knoten, Metastasen); c = klinisch, p = patholog
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum / Allgemeinwissen — TNM-Systematik der UICC; ICD-O-3-Struktur aus Kap. 12.)*
 :::
 
 ::: {.exam-question}
@@ -375,8 +367,6 @@ Merksatz: ICD-10 sagt *wo* und *bösartig*; ICD-O-3 sagt zusätzlich *was genau*
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12, Medizinische Dokumentation — Struktur ICD-O-3 Morphologie mit Dignitätsziffer; Topographie-Achse, Revision 3.2 und Krebsregister-Bezug als Allgemeinwissen ergänzt.)*
 :::
 
 ::: {.exam-question}
@@ -420,8 +410,6 @@ Merksatz: ICD = Diagnose (*was hat er*), ICF = Funktionsfähigkeit (*was kann er
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum / Allgemeinwissen — ICF im Buch "MedInfo kompakt" nicht ausführlich behandelt.)*
 :::
 
 ## Ordnungs- und Klassifikationssysteme für administrative Zwecke
@@ -510,8 +498,6 @@ Merksatz: ICD-10 = Postleitzahl der Diagnosen: Buchstabe (Bereich) + 2 Ziffern (
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12, Medizinische Dokumentation — ICD-10-GM/WHO, Kodeaufbau, Kreuz-Stern-Systematik, Haupt-/Nebendiagnose; BfArM-Zuständigkeit, Zusatzkennzeichen und ICD-11-Stand als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ::: {.exam-question}
@@ -548,8 +534,6 @@ Merksatz: **ICD = Was hat er? OPS = Was tun wir?** Beide zusammen ergeben die DR
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12, Medizinische Dokumentation — OPS-Kodierstruktur, Kapitel 5 als zentrales Kapitel, Grouper-Logik; Kodebeispiele als Allgemeinwissen, Stand kann je Katalogjahr abweichen.)*
 :::
 
 ::: {.exam-question}
@@ -610,8 +594,6 @@ Merksatz: **EBM = Kasse, Punkte, Pauschalen, über die KV. GOÄ = privat, Einzel
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 4 Gesundheitsökonomie und Kap. 12 Medizinische Dokumentation — DRG-Kode-Struktur, Grouper, CCL/PCCL, Bewertungsrelation; Pflegebudget seit 2020 als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Weitere Klassifikation und ihre Anwendungsgebiete
@@ -672,8 +654,6 @@ Merksatz: LOINC = *was* gemessen, UCUM = *in welcher Einheit*, ATC = *welcher Wi
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12, Medizinische Dokumentation — SNOMED CT als konzeptbasierte Terminologie mit Achsen, Einsatz in DICOM/HL7/e-Akte; Mitgliedschaft Deutschlands, FHIR/ePA/MII als Allgemeinwissen ergänzt.)*
 :::
 
 ## Qualitätssicherung nach §137 SGB V
@@ -722,8 +702,6 @@ Merksatz: § 135a = Pflicht, § 136 = G-BA macht Regeln, § 137 = Durchsetzung, 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 5 Qualitätsmanagement und Kap. 12 — gesetzliche QS, Qualitätsbericht §137; heutige Paragrafenaufteilung, IQTIG statt AQUA und DeQS-RL als Allgemeinwissen aktualisiert. Stand: 10/2026.)*
 :::
 
 ## Vorgehen bei Planung und Entwicklung von Dokumentationssystemen
@@ -764,8 +742,6 @@ Merksatz: Ziel → Kerndatensatz → Merkmalskatalog → Standards → Erfassung
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12 Medizinische Dokumentation und Kap. 5 Qualitätsmanagement — Dokumentationsziele, Register, Qualitätssicherung; Utstein, DEMIS, TR-RESISCAN, § 65c SGB V als Allgemeinwissen ergänzt.)*
 :::
 
 ## Big Data und Public Health
@@ -814,6 +790,22 @@ Merksatz: Big Data = 5 V. Für Public Health: Surveillance, Versorgungsforschung
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt. Stand: 10/2026.)*
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Kap. 12, Medizinische Dokumentation — § 10 MBO-Ä und 10 Jahre Aufbewahrungsfrist aus dem Buch; Patientenrechtegesetz (§§ 630a ff. BGB), Strahlenschutz-/Transfusionsfristen und DSGVO als Allgemeinwissen ergänzt
+- Kap. 12, Medizinische Dokumentation — Ordnungssysteme, Klassifikation und ihre Anforderungen, SNOMED CT, MeSH; Kap. 6 Skalenniveaus; Ontologie-Begriff und Datentypen-Übersicht als Allgemeinwissen ergänzt
+- Curriculum / Allgemeinwissen — MIOs, ePA für alle und mio42 sind im Buch "MedInfo kompakt" (2015) nicht enthalten. Stand: 10/2026
+- Curriculum / Allgemeinwissen — TNM-Systematik der UICC; ICD-O-3-Struktur aus Kap. 12
+- Kap. 12, Medizinische Dokumentation — Struktur ICD-O-3 Morphologie mit Dignitätsziffer; Topographie-Achse, Revision 3.2 und Krebsregister-Bezug als Allgemeinwissen ergänzt
+- Curriculum / Allgemeinwissen — ICF im Buch "MedInfo kompakt" nicht ausführlich behandelt
+- Kap. 12, Medizinische Dokumentation — ICD-10-GM/WHO, Kodeaufbau, Kreuz-Stern-Systematik, Haupt-/Nebendiagnose; BfArM-Zuständigkeit, Zusatzkennzeichen und ICD-11-Stand als Allgemeinwissen ergänzt. Stand: 10/2026
+- Kap. 12, Medizinische Dokumentation — OPS-Kodierstruktur, Kapitel 5 als zentrales Kapitel, Grouper-Logik; Kodebeispiele als Allgemeinwissen, Stand kann je Katalogjahr abweichen
+- Kap. 4 Gesundheitsökonomie und Kap. 12 Medizinische Dokumentation — DRG-Kode-Struktur, Grouper, CCL/PCCL, Bewertungsrelation; Pflegebudget seit 2020 als Allgemeinwissen ergänzt. Stand: 10/2026
+- Kap. 12, Medizinische Dokumentation — SNOMED CT als konzeptbasierte Terminologie mit Achsen, Einsatz in DICOM/HL7/e-Akte; Mitgliedschaft Deutschlands, FHIR/ePA/MII als Allgemeinwissen ergänzt
+- Kap. 5 Qualitätsmanagement und Kap. 12 — gesetzliche QS, Qualitätsbericht §137; heutige Paragrafenaufteilung, IQTIG statt AQUA und DeQS-RL als Allgemeinwissen aktualisiert. Stand: 10/2026
+- Kap. 12 Medizinische Dokumentation und Kap. 5 Qualitätsmanagement — Dokumentationsziele, Register, Qualitätssicherung; Utstein, DEMIS, TR-RESISCAN, § 65c SGB V als Allgemeinwissen ergänzt
+- Curriculum / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt. Stand: 10/2026

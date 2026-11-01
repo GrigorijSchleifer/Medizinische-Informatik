@@ -34,8 +34,6 @@ Merksatz: **Telematik = Infrastruktur (Straße), Telemedizin = Versorgung über 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä, § 630f BGB, MDR, Anlage 31b BMV-Ä, EBM. Stand: 10/2026.)*
 :::
 
 ## Elektronische Akten und patientenzentrierte Anwendungen
@@ -77,8 +75,6 @@ Merksatz: **ePA = gesetzliche Akte, Patient verfügt, Opt-out (§ 341 SGB V); Di
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — § 341 SGB V (ePA), § 33a und § 139e SGB V (DiGA), § 40a SGB XI (DiPA), BfArM-DiGA-Verzeichnis, MDR. Stand: 10/2026.)*
 :::
 
 ## Anwendungsfälle
@@ -114,8 +110,6 @@ Merksatz: **Homemonitoring = Patient misst, TMZ reagiert (Herzinsuffizienz, Kass
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — TIM-HF2-Studie, EBM-Telemonitoring Herzinsuffizienz, § 14 StrlSchG (Teleradiologie), TEMPiS. Stand: 10/2026.)*
 :::
 
 ## Telematikinfrastruktur und elektronische Gesundheitskarte
@@ -166,8 +160,6 @@ Merksatz: **TI = geschlossenes, verschlüsseltes Netz (gematik); Zugang nur mit 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — gematik, §§ 291, 306 ff., 341 SGB V. Stand: 10/2026.)*
 :::
 
 ### Elektronischer Heilberufsausweis (eHBA)
@@ -198,8 +190,6 @@ Merksatz: eHBA = persönlicher Arztausweis mit Chip — weist aus, unterschreibt
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum / Allgemeinwissen — eHBA für Gesundheitsfachberufe/eGBR nach 2015, im Buch nicht enthalten. Stand: 10/2026.)*
 :::
 
 ## Fernbehandlung
@@ -241,8 +231,6 @@ Merksatz: **Fernbehandlung seit 2018 im Einzelfall erlaubt (§ 7 Abs. 4 MBO-Ä):
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä (121. Deutscher Ärztetag 2018), §§ 630a, 630f BGB, § 9 HWG, AU-Richtlinie G-BA, Anlage 31b BMV-Ä. Stand: 10/2026.)*
 :::
 
 ## Datensicherheit und Datenschutz bei telemedizinischen Anwendungen
@@ -294,6 +282,16 @@ Merksatz: **Datenschutz = *darf* ich (Art. 9 DSGVO, Einwilligung, AV-Vertrag, ke
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — DSGVO Art. 9, 28, 32, 35, 44 ff., § 203 StGB, Anlage 31b BMV-Ä, BSI-TR-03161, §§ 390, 391 SGB V, MDR. Stand: 10/2026.)*
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä, § 630f BGB, MDR, Anlage 31b BMV-Ä, EBM. Stand: 10/2026
+- Curriculum/Allgemeinwissen — § 341 SGB V (ePA), § 33a und § 139e SGB V (DiGA), § 40a SGB XI (DiPA), BfArM-DiGA-Verzeichnis, MDR. Stand: 10/2026
+- Curriculum/Allgemeinwissen — TIM-HF2-Studie, EBM-Telemonitoring Herzinsuffizienz, § 14 StrlSchG (Teleradiologie), TEMPiS. Stand: 10/2026
+- Curriculum/Allgemeinwissen — gematik, §§ 291, 306 ff., 341 SGB V. Stand: 10/2026
+- Curriculum / Allgemeinwissen — eHBA für Gesundheitsfachberufe/eGBR nach 2015, im Buch nicht enthalten. Stand: 10/2026
+- Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä (121. Deutscher Ärztetag 2018), §§ 630a, 630f BGB, § 9 HWG, AU-Richtlinie G-BA, Anlage 31b BMV-Ä. Stand: 10/2026
+- Curriculum/Allgemeinwissen — DSGVO Art. 9, 28, 32, 35, 44 ff., § 203 StGB, Anlage 31b BMV-Ä, BSI-TR-03161, §§ 390, 391 SGB V, MDR. Stand: 10/2026

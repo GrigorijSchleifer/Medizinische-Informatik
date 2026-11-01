@@ -63,8 +63,6 @@ Merksatz: Wissenszugriff = Arzt sucht (Pull, allgemein); CDSS = System meldet si
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 9 Entscheidungsunterstützung (Expertensysteme, wissensbasierte Systeme, MYCIN, Arden Syntax, Bayes); Infobutton, Five Rights, Alert Fatigue, AI Act als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Wissensbasen und Systeme zur Therapiesicherheit
@@ -136,8 +134,6 @@ Merksatz: AMTS-IT = Wissensbasis (ABDA) + elektronische Verordnung (CPOE) mit au
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 9 Entscheidungsunterstützung (Wissensbasen), Kap. 10 Evidenzbasierte Medizin; AMTS/Closed Loop, PRISCUS, AWMF-Klassen und CIRS als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Systematische evidenzbasierte Bewertung
@@ -202,8 +198,6 @@ Merksatz: HTA = EbM auf Systemebene ("Soll die Kasse das zahlen?") — bewertet 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 10 Evidenzbasierte Medizin/HTA; AMNOG, DiGA, EU-HTA-Verordnung, QALY/Effizienzgrenze als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
@@ -227,8 +221,6 @@ Beispiel Krebstherapie: der Tumor wird genetisch sequenziert. Findet sich z. B. 
 
 Merksatz: Rule-based = nachvollziehbar, aber starr. ML-based = flexibel/präzise, aber Black-Box. Präzisionsmedizin = Therapie nach Molekülprofil (z. B. EGFR/BRAF), nicht nach Durchschnittspatient.
 
-*(Hinweis: nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, KI/Präzisionsmedizin in dieser Form noch nicht etabliert) — Antwort basiert auf Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -247,8 +239,6 @@ Frage: Was ist der Unterschied zwischen Vorwärts- und Rückwärtsverkettung (fo
 - **Rückwärtsverkettung (backward chaining, zielgetrieben)**: das System startet mit einer Hypothese (Ziel) und fragt rückwärts gezielt nach den Fakten, die diese Hypothese stützen oder widerlegen würden. Klinik-Beispiel: System prüft Hypothese "Patient hat Sepsis" und fragt gezielt nach den dafür nötigen Werten (Laktat, Blutkultur), statt alle verfügbaren Daten durchzugehen.
 
 Merksatz: Vorwärts = "was folgt aus den Daten, die ich habe?" (datengetrieben). Rückwärts = "welche Daten brauche ich, um diese Hypothese zu prüfen?" (zielgetrieben). Beide bauen auf derselben Wissens-/Regelbasis auf (siehe rule-based Systeme) — unterscheiden sich nur in der Suchrichtung.
-
-*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen, klassische KI-Inferenzverfahren aus Expertensystemen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -271,8 +261,6 @@ Frage: Was ist ein Clinical Pathway, und wie unterstützt IT-Workflowmanagement 
 **Nutzen**: reduziert Variabilität in der Versorgung, macht Abweichungen früh sichtbar, erleichtert Qualitätssicherung/Benchmarking zwischen Stationen.
 
 Merksatz: Clinical Pathway = der Plan (evidenzbasierter Soll-Ablauf). IT-Workflowmanagement = das Werkzeug, das diesen Plan im Alltag durchsetzt/überwacht und Abweichungen sichtbar macht.
-
-*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -301,8 +289,6 @@ Klinik-Beispiel: ein Medikations-Interaktions-Check warnt bei jeder Kombination,
 Gegenmaßnahmen: Alerts nach Relevanz/Schweregrad stufen (nur kritische als echte Pop-ups, Rest als leiser Hinweis), kontextsensitiv filtern (z. B. nicht erneut warnen, wenn Interaktion schon bekannt/bewusst in Kauf genommen wurde).
 
 Merksatz: zu viele Alerts → Ignorieren wird zur Gewohnheit → genau die Sicherheit, die das System bringen sollte, geht verloren. Zentrales Qualitätskriterium für CDS-Systeme: Spezifität der Alerts, nicht nur Sensitivität.
-
-*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -348,3 +334,14 @@ Merksatz: Sensitivität = Test gut bei **Kranken** (TP-Fokus). Spezifität = Tes
 
 :::
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Kap. 9 Entscheidungsunterstützung (Expertensysteme, wissensbasierte Systeme, MYCIN, Arden Syntax, Bayes); Infobutton, Five Rights, Alert Fatigue, AI Act als Allgemeinwissen ergänzt. Stand: 10/2026
+- Kap. 9 Entscheidungsunterstützung (Wissensbasen), Kap. 10 Evidenzbasierte Medizin; AMTS/Closed Loop, PRISCUS, AWMF-Klassen und CIRS als Allgemeinwissen ergänzt. Stand: 10/2026
+- Kap. 10 Evidenzbasierte Medizin/HTA; AMNOG, DiGA, EU-HTA-Verordnung, QALY/Effizienzgrenze als Allgemeinwissen ergänzt. Stand: 10/2026
+- nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, KI/Präzisionsmedizin in dieser Form noch nicht etabliert) — Antwort basiert auf Curriculum/Allgemeinwissen
+- nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen, klassische KI-Inferenzverfahren aus Expertensystemen
+- nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen

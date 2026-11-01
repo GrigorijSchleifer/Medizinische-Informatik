@@ -43,8 +43,6 @@ Merksatz: Kontrolle = hinterher, Sicherung = währenddessen, Management = vorher
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 5, Qualitätsmanagement; proCum Cert/JCI, ISO-9001-Fassung 2015 als Curriculum/Allgemeinwissen ergänzt — Buch zitiert noch ISO 9001:2008.)*
 :::
 
 ## Qualitätssicherung (gesetzliche und freiwillige Verfahren)
@@ -82,8 +80,6 @@ Merksatz: Gesetzlich = G-BA bestimmt, IQTIG misst, Klinik dokumentiert per QS-Bo
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 5, Qualitätsmanagement; aktualisiert: AQUA → IQTIG (2016), MDK → MD (2020), QSKH-RL → DeQS-RL (2021), Qualitätsbericht jährlich; IQM/Mindestmengen als Allgemeinwissen. Stand: 10/2026.)*
 :::
 
 ::: {.exam-question}
@@ -123,8 +119,6 @@ Merksatz: G-BA = kleiner Gesetzgeber der Selbstverwaltung; 3 + 5 + 5 = 13 Stimme
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — im medinfo-kompakt-Buch nur am Rande erwähnt.)*
 :::
 
 ## Prozessmanagement, z. B. Organisation von Behandlungspfaden
@@ -170,8 +164,6 @@ Merksatz: Leitlinie = *was* (bundesweit), Pfad = *wer–was–wann* (meine Klini
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 5 (Prozessmanagement, Prozesseigner); Behandlungspfade/Varianzanalyse/KIS-Abbildung als Curriculum/Allgemeinwissen ergänzt.)*
 :::
 
 ## Typische Abläufe und Vorgehensweisen im Medizin-Controlling
@@ -204,8 +196,6 @@ Merksatz: Medizin-Controlling = „aus Medizin wird Geld, ohne dass der MD es zu
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 4, Gesundheitsökonomie (DRG-Erlös) und Kap. 12 (Kodierung); Ablauf/MD-Prüfung als Curriculum/Allgemeinwissen; aktualisiert MDK → MD, Pflegebudget, Hybrid-DRG.)*
 :::
 
 ## IT-Projektmanagement und Vorgehensmodelle (z. B. V-Modell)
@@ -253,8 +243,6 @@ Merksatz: V-Modell = „zu jeder Planung links gehört ein Test rechts“; oben 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 16 (Verifizierung/Validierung, IEC 62304); Projektmanagement (DIN 69901), V-Modell XT und Scrum (Scrum Guide 2020) als Curriculum/Allgemeinwissen ergänzt.)*
 :::
 
 ::: {.exam-question}
@@ -286,8 +274,6 @@ Merksatz: PRINCE2 lenkt das Projekt (Business Case, Lenkungsausschuss, Managemen
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — PRINCE2 (AXELOS/PeopleCert, 7. Ausgabe 2023).)*
 :::
 
 ## Risikomanagement und Risikoanalyse (z. B. nach DIN EN ISO 14971 und IEC 80001)
@@ -345,8 +331,6 @@ Merksatz: 14971 = Hersteller baut sicheres Gerät (Analyse → Bewertung → Beh
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019 (EN ISO 14971:2019 + A11:2021, ISO/TR 24971:2020), IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen. Stand: 10/2026.)*
 :::
 
 ::: {.exam-question}
@@ -383,6 +367,18 @@ Merksatz: Ob Software ein Medizinprodukt ist, entscheidet die Zweckbestimmung; �
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — MDR (EU 2017/745) Art. 2 Nr. 1, Art. 5 Abs. 5, Anhang VIII Regel 11; MDCG 2019-11 Rev. 1; IEC 62304; EU AI Act Art. 6; Kommissionsvorschlag COM(2025) 1023. Stand: 10/2026.)*
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Kap. 5, Qualitätsmanagement; proCum Cert/JCI, ISO-9001-Fassung 2015 als Curriculum/Allgemeinwissen ergänzt — Buch zitiert noch ISO 9001:2008
+- Kap. 5, Qualitätsmanagement; aktualisiert: AQUA → IQTIG (2016), MDK → MD (2020), QSKH-RL → DeQS-RL (2021), Qualitätsbericht jährlich; IQM/Mindestmengen als Allgemeinwissen. Stand: 10/2026
+- Curriculum/Allgemeinwissen — im medinfo-kompakt-Buch nur am Rande erwähnt
+- Kap. 5 (Prozessmanagement, Prozesseigner); Behandlungspfade/Varianzanalyse/KIS-Abbildung als Curriculum/Allgemeinwissen ergänzt
+- Kap. 4, Gesundheitsökonomie (DRG-Erlös) und Kap. 12 (Kodierung); Ablauf/MD-Prüfung als Curriculum/Allgemeinwissen; aktualisiert MDK → MD, Pflegebudget, Hybrid-DRG
+- Kap. 16 (Verifizierung/Validierung, IEC 62304); Projektmanagement (DIN 69901), V-Modell XT und Scrum (Scrum Guide 2020) als Curriculum/Allgemeinwissen ergänzt
+- Curriculum/Allgemeinwissen — PRINCE2 (AXELOS/PeopleCert, 7. Ausgabe 2023)
+- Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019 (EN ISO 14971:2019 + A11:2021, ISO/TR 24971:2020), IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen. Stand: 10/2026
+- Curriculum/Allgemeinwissen — MDR (EU 2017/745) Art. 2 Nr. 1, Art. 5 Abs. 5, Anhang VIII Regel 11; MDCG 2019-11 Rev. 1; IEC 62304; EU AI Act Art. 6; Kommissionsvorschlag COM(2025) 1023. Stand: 10/2026

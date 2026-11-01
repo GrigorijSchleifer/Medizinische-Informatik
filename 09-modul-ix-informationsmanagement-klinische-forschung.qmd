@@ -40,8 +40,6 @@ Merksatz: KIS = ein Patient, jetzt behandeln; Forschungs-IT = viele Patienten, s
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen; „Medizinische Informatik kompakt“ behandelt Forschungs-IT nur am Rande — MII/DIZ, REDCap, CTIS als aktueller Stand ergänzt.)*
 :::
 
 ## Etablierung von IT-Strukturen im Rahmen von medizinischen Forschungsprojekten
@@ -80,8 +78,6 @@ Merksatz: **Protokoll → DMP → Datenschutzkonzept → eCRF bauen → validier
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen; EU-CTR 536/2014, MII/DIZ, Broad Consent als aktueller Stand ergänzt.)*
 :::
 
 ## Vernetzte medizinische Forschung, Data Sharing, FAIR Data
@@ -130,8 +126,6 @@ Merksatz: **Vernetzt = viele Kliniken, ein Datenpool (MII/DIZ, FDPG, EHDS).** Da
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen; nicht im Buch von 2015 — MII, NUM, FDZ/GDNG, EHDS sind neuer. Stand: 10/2026.)*
 :::
 
 ## Nutzung von Routine- und Registerdaten in der Versorgungsforschung
@@ -185,8 +179,6 @@ Merksatz: **RCT = efficacy (Idealbedingungen), Versorgungsforschung = effectiven
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen; Krebsregister/§ 65c auch im Buch, Kap. Dokumentation — FDZ/GDNG, oBDS, IRD, ZfKD-Zusammenführung als aktueller Stand ergänzt. Stand: 10/2026.)*
 :::
 
 ## Datenmanagement, Datenintegration
@@ -255,8 +247,6 @@ Merksatz: **Datenmanagement = Lebenszyklus + Governance + Qualität + Metadaten.
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen; Datenbank-Grundlagen auch im Buch (Kap. Datenbanken) — MII/DIZ, OMOP, PPRL als aktueller Stand ergänzt.)*
 :::
 
 ## Durchführung klinisches Datenmanagement
@@ -286,8 +276,6 @@ Merksatz: **Planen (Prüfplan, DMP = Datenmanagementplan, eCRF = digitaler Erfas
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — ICH-GCP E6 (International Council for Harmonisation – Good Clinical Practice), CDISC, EU-CTR als aktueller Stand.)*
 :::
 
 ## Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien
@@ -323,6 +311,16 @@ Merksatz: **E-Learning = online, meist asynchron; Blended Learning = online + Pr
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — § 630e BGB (Aufklärung), (Muster-)Kursbuch BÄK Kap. 2.7 (Blended Learning/E-Learning).)*
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Curriculum/Allgemeinwissen; „Medizinische Informatik kompakt“ behandelt Forschungs-IT nur am Rande — MII/DIZ, REDCap, CTIS als aktueller Stand ergänzt
+- Curriculum/Allgemeinwissen; EU-CTR 536/2014, MII/DIZ, Broad Consent als aktueller Stand ergänzt
+- Curriculum/Allgemeinwissen; nicht im Buch von 2015 — MII, NUM, FDZ/GDNG, EHDS sind neuer. Stand: 10/2026
+- Curriculum/Allgemeinwissen; Krebsregister/§ 65c auch im Buch, Kap. Dokumentation — FDZ/GDNG, oBDS, IRD, ZfKD-Zusammenführung als aktueller Stand ergänzt. Stand: 10/2026
+- Curriculum/Allgemeinwissen; Datenbank-Grundlagen auch im Buch (Kap. Datenbanken) — MII/DIZ, OMOP, PPRL als aktueller Stand ergänzt
+- Curriculum/Allgemeinwissen — ICH-GCP E6 (International Council for Harmonisation – Good Clinical Practice), CDISC, EU-CTR als aktueller Stand
+- Curriculum/Allgemeinwissen — § 630e BGB (Aufklärung), (Muster-)Kursbuch BÄK Kap. 2.7 (Blended Learning/E-Learning)

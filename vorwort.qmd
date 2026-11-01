@@ -9,7 +9,8 @@ des (Muster-)Kursbuchs der Bundesärztekammer gegliedert — ein Kapitel pro Mod
 - Jede gelb hinterlegte **Frage** ist so formuliert, wie sie im Fachgespräch
   gestellt werden könnte. Erst selbst antworten, dann die Antwort darunter lesen.
 - Viele Antworten enden mit einem **Merksatz** zum Behalten.
-- Unter jeder Antwort steht die **Quelle**: entweder ein Kapitel aus
+- Unter vielen Antworten steht ein Kasten **Good to know** mit Zusatzwissen zum Selbstlesen.
+- Am Ende jedes Kapitels stehen die **Quellen**: entweder ein Kapitel aus
   "Medizinische Informatik kompakt" (De Gruyter, 2015) oder der Hinweis
   *Curriculum/Allgemeinwissen* — für Themen, die im Buch von 2015 fehlen oder
   veraltet sind (z. B. DSGVO, FHIR, ePA, Telematikinfrastruktur).

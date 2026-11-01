@@ -25,8 +25,6 @@ Merksatz: KIS = Baukasten (PAS + klinischer Arbeitsplatz + Abteilungssysteme), n
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 14, Klinische Informationssysteme; rechtliche Aspekte als Curriculum/Allgemeinwissen ergänzt.)*
 :::
 
 ## Anwendungsformen Elektronischer Patientenaktensysteme
@@ -49,8 +47,6 @@ Merksatz: AMR→CMR→EMR→EPR→EHR = von "nur Scan" über "ein System, voll e
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 14 nennt das Modell kurz (EPA-Definition); Stufenbeschreibung als Allgemeinwissen ergänzt.)*
 :::
 
 ## Einrichtungs- und nutzerspezifische Parametrierung
@@ -66,8 +62,6 @@ Frage: Was bedeutet "einrichtungsspezifische" vs. "nutzerspezifische" Parametrie
 - **Nutzerspezifisch**: Rollen- und Rechtekonzept (Pflegekraft sieht andere Maske/Funktionen als Arzt oder Verwaltung), individuelle Einstellungen (Favoriten, Kürzel, Spracheinstellung, Standard-Ansicht).
 
 Merksatz: einrichtungsspezifisch = "passt das System auf UNS", nutzerspezifisch = "passt das System auf MICH".
-
-*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -93,8 +87,6 @@ Merksatz: PAS = Verwaltung, klin. Arbeitsplatz = Alltag am Bett, Abteilungssyste
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 14, Systemkomponenten eines KIS.)*
 :::
 
 ## Integration von Workflowmanagementsystemen und Clinical Pathways
@@ -107,8 +99,6 @@ Frage: Wie wird ein Clinical Pathway technisch ins KIS integriert — was macht 
 **Antwort:** Ein Clinical Pathway (z. B. "Hüft-TEP-Pfad") ist zunächst nur ein fachlich definierter Soll-Ablauf (Reihenfolge von Untersuchungen/Maßnahmen). Damit das KIS den Behandler aktiv führt (statt der Pfad nur auf Papier existiert), braucht es eine **Workflow-Engine**: sie bildet den Pfad als Prozessmodell ab (häufig in BPMN notiert), triggert zum richtigen Zeitpunkt die nächste Aufgabe/Maske im klinischen Arbeitsplatzsystem, und dokumentiert Abweichungen vom Standardpfad (**Varianzen** — z. B. Patient braucht zusätzliche Bildgebung) für spätere Auswertung.
 
 Merksatz: Pathway = fachlicher Soll-Ablauf, Workflow-Engine = die KIS-Komponente, die ihn tatsächlich "abspielt" und Abweichungen (Varianzen) mitschreibt.
-
-*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen; vgl. Modul VI, Clinical Pathways.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -131,8 +121,6 @@ Beides nutzt dieselbe Wissensbasis (Regeln/Leitlinien/Interaktionsdatenbank) —
 
 Merksatz: push = "System klopft an", pull = "Arzt klickt sich durch".
 
-*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen; vgl. Modul VI zu CDSS-Typen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -151,8 +139,6 @@ Frage: Welche grundlegenden Entwicklungsmethoden/-modelle für KIS-Software gibt
 - **Agile Entwicklung** (z. B. Scrum): iterativ in kurzen Zyklen (Sprints), laufend Feedback von Nutzern (Ärzten/Pflege) einbauen — passt besser zu klinischen Systemen, weil Workflows komplex/schwer vorab vollständig spezifizierbar sind.
 
 Merksatz: Wasserfall = "einmal planen, dann durchziehen", Agil = "bauen, zeigen, anpassen, wiederholen".
-
-*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -176,8 +162,6 @@ Frage: Welche Rolle spielen PLM, SCM und CRM in der Struktur einer Software-Entw
 
 Merksatz: PLM = "Produkt über die Zeit", SCM = "Code/Config unter Kontrolle", CRM = "Kundenkontakt", IHE/ISO = "Standards fürs Zusammenspiel/Qualität".
 
-*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -199,8 +183,6 @@ Frage: Welche Phasen/Aspekte umfasst die Implementierung eines KIS (nicht Softwa
 
 Merksatz: Implementierung ≠ Programmieren — ist Change-Management (Daten, Menschen, Risiko), nicht Code.
 
-*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -221,8 +203,6 @@ Frage: Welche Dimensionen werden bei der Evaluation eines KIS typischerweise bet
 - **Usability**: wie gut/einfach kann der Nutzer (Arzt/Pflege) damit arbeiten — z. B. Anzahl Klicks bis zur Verordnung, Fehleranfälligkeit der Eingabemaske, Lernaufwand für neue Mitarbeiter. Schlechte Usability ist eine Hauptursache für Alert Fatigue und Dateneingabefehler (vgl. Modul VI).
 
 Merksatz: Evaluation fragt nicht nur "funktioniert's technisch", sondern "arbeitet der Arzt damit gut UND sicher".
-
-*(Hinweis: nicht im medinfo-kompakt-Buch vertieft — Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -247,8 +227,6 @@ Merksatz: Kommunikationsserver = "Flughafen-Drehkreuz" statt jeder-zu-jedem-Dire
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 14, Kommunikation/Schnittstellen in KIS.)*
 :::
 
 ## IT-Servicemanagement
@@ -307,8 +285,6 @@ Merksatz: ITSM = IT als Dienstleistung mit Prozessen; ITIL = Best-Practice-Samml
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 14 Klinische Informationssysteme (Betrieb), Curriculum Modul VII; ITIL-Prozesse, KRITIS/B3S und Verfügbarkeitsrechnung als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
 ## Berücksichtigung datenschutzrechtlicher Belange
@@ -378,8 +354,6 @@ Merksatz: Berechtigung = Rolle **×** Behandlungszusammenhang **×** Datenart **
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 4 Datenschutz, Kap. 14 Klinische Informationssysteme; Orientierungshilfe KIS der Datenschutzkonferenz; IAM/Joiner-Mover-Leaver und Rollenmatrix als Allgemeinwissen ergänzt. Grundlagen siehe Modul II.)*
 :::
 
 ## Schnittstellen zur Telematik-Infrastruktur
@@ -436,8 +410,6 @@ Merksatz: KIS → **Konnektor** (VPN-Schleuse) → TI; Ausweise: **SMC-B** = Kli
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 18 Telematik/eGK, Curriculum Modul VII; ePA-für-alle-Termine, ISiK, KIM/TIM, TI 2.0 als Allgemeinwissen ergänzt — Stand: 10/2026, Termine können sich ändern.)*
 :::
 
 ## Messaging- & Austauschstandards (ergänzend)
@@ -462,8 +434,6 @@ Frage: Was unterscheidet HL7 v2 von FHIR, und wie passt die deutsche Medizininfo
 **MII (Medizininformatik-Initiative)**: anders als das laufende KIS ist die MII **FHIR-nativ** aufgesetzt — die Datenintegrationszentren (DIZ) der Unikliniken exportieren Daten direkt in den **MII-Kerndatensatz** (festes FHIR-Profil), damit Forschungsdaten standortübergreifend vergleichbar sind. Der Extraktionsschritt aus dem Alt-KIS (meist noch v2/proprietär) in dieses FHIR-Profil ist oft der eigentliche "Übersetzer".
 
 Merksatz: MII = FHIR von Anfang an (Forschungsdaten, greenfield), restliches KIS = Integrationsserver als Brücke, solange v2-Alt-Systeme laufen (brownfield) — "ganz auf FHIR" ist das Langzeitziel (TI, ePA, eRezept), nicht der aktuelle KIS-Alltag.
-
-*(Hinweis: FHIR/MII nicht im medinfo-kompakt-Buch (2015, vor FHIR) — Antwort basiert auf Curriculum/Allgemeinwissen; HL7 v2-Grundlagen aus Kap. 14. Stand: 10/2026.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -521,6 +491,22 @@ Merksatz: Code statt Freitext = semantische Interoperabilität. ICD → Abrechnu
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 12 Medizinische Dokumentation, Kap. 15 Kommunikationsstandards (HL7); FHIR-Coding, Terminologieserver und Mappings als Allgemeinwissen ergänzt. Inhalte der Kodiersysteme → Modul IV.)*
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Kap. 14, Klinische Informationssysteme; rechtliche Aspekte als Curriculum/Allgemeinwissen ergänzt
+- Kap. 14 nennt das Modell kurz (EPA-Definition); Stufenbeschreibung als Allgemeinwissen ergänzt
+- nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen
+- Kap. 14, Systemkomponenten eines KIS
+- nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen; vgl. Modul VI, Clinical Pathways
+- nicht im medinfo-kompakt-Buch vertieft — Antwort basiert auf Curriculum/Allgemeinwissen; vgl. Modul VI zu CDSS-Typen
+- nicht im medinfo-kompakt-Buch vertieft — Curriculum/Allgemeinwissen
+- Kap. 14, Kommunikation/Schnittstellen in KIS
+- Kap. 14 Klinische Informationssysteme (Betrieb), Curriculum Modul VII; ITIL-Prozesse, KRITIS/B3S und Verfügbarkeitsrechnung als Allgemeinwissen ergänzt. Stand: 10/2026
+- Kap. 4 Datenschutz, Kap. 14 Klinische Informationssysteme; Orientierungshilfe KIS der Datenschutzkonferenz; IAM/Joiner-Mover-Leaver und Rollenmatrix als Allgemeinwissen ergänzt. Grundlagen siehe Modul II
+- Kap. 18 Telematik/eGK, Curriculum Modul VII; ePA-für-alle-Termine, ISiK, KIM/TIM, TI 2.0 als Allgemeinwissen ergänzt — Stand: 10/2026, Termine können sich ändern
+- FHIR/MII nicht im medinfo-kompakt-Buch (2015, vor FHIR) — Antwort basiert auf Curriculum/Allgemeinwissen; HL7 v2-Grundlagen aus Kap. 14. Stand: 10/2026
+- Kap. 12 Medizinische Dokumentation, Kap. 15 Kommunikationsstandards (HL7); FHIR-Coding, Terminologieserver und Mappings als Allgemeinwissen ergänzt. Inhalte der Kodiersysteme → Modul IV

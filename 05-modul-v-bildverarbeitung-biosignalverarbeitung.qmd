@@ -37,8 +37,6 @@ Merksatz: Röntgen/CT/Angio/Mammo/Nuklearmedizin = ionisierend; MRT und Ultrasch
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 8 Bildverarbeitung, Kap. 14 Klinische Informationssysteme (RIS/PACS), Kap. 15 DICOM; Modalitätenübersicht und Dosismanagement als Allgemeinwissen ergänzt.)*
 :::
 
 ## Signalklassen
@@ -81,8 +79,6 @@ Merksatz: analog = zeit- **und** wertkontinuierlich; digital = zeit- **und** wer
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 7 Biosignalverarbeitung — Abtasttheorem f~a~ ≥ 2·f~c~, Aliasing, Digitalisierung = Diskretisierung + Quantisierung; Kap. 8 Bildverarbeitung.)*
 :::
 
 ## Digitale Filter und Bildoperationen
@@ -129,8 +125,6 @@ Merksatz: Tiefpass glättet, Hochpass entfernt Drift, Notch entfernt 50 Hz. Punk
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 7 Biosignalverarbeitung (Filter), Kap. 8 Bildverarbeitung (Punkt-, lokale, globale Operationen); Monitor-/Diagnose-Bandbreiten und DSA als Allgemeinwissen ergänzt.)*
 :::
 
 ## Konturverfolgung und Formerkennung
@@ -181,8 +175,6 @@ Merksatz: Erst segmentieren (was gehört zum Objekt?), dann Form messen (wie gro
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 8 Bildverarbeitung (Segmentierung, Merkmalsextraktion, Mustererkennung); Snakes, U-Net, klinische Beispiele als Allgemeinwissen ergänzt.)*
 :::
 
 ## DICOM-Format
@@ -236,6 +228,14 @@ Merksatz: DICOM = Bild + Header in einer Datei; Header aus Tags (Gruppe, Element
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 15 DICOM (Dateiformat, Informationsmodell, Tags); Kompression, DICOMweb, Deidentifizierung als Allgemeinwissen ergänzt. Netzwerkdienste (C-STORE, C-FIND, Worklist) → Modul VII.)*
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Kap. 8 Bildverarbeitung, Kap. 14 Klinische Informationssysteme (RIS/PACS), Kap. 15 DICOM; Modalitätenübersicht und Dosismanagement als Allgemeinwissen ergänzt
+- Kap. 7 Biosignalverarbeitung — Abtasttheorem f~a~ ≥ 2·f~c~, Aliasing, Digitalisierung = Diskretisierung + Quantisierung; Kap. 8 Bildverarbeitung
+- Kap. 7 Biosignalverarbeitung (Filter), Kap. 8 Bildverarbeitung (Punkt-, lokale, globale Operationen); Monitor-/Diagnose-Bandbreiten und DSA als Allgemeinwissen ergänzt
+- Kap. 8 Bildverarbeitung (Segmentierung, Merkmalsextraktion, Mustererkennung); Snakes, U-Net, klinische Beispiele als Allgemeinwissen ergänzt
+- Kap. 15 DICOM (Dateiformat, Informationsmodell, Tags); Kompression, DICOMweb, Deidentifizierung als Allgemeinwissen ergänzt. Netzwerkdienste (C-STORE, C-FIND, Worklist) → Modul VII

@@ -34,17 +34,21 @@ Frage: <so formuliert, wie ein Prüfer im Fachgespräch fragen würde>
 
 Merksatz: <ein Satz zum Behalten>
 
-*(Quelle: …)*
+::: {.callout-note title="Good to know" appearance="simple"}
+<optional: Zusatzwissen zum Selbstlesen, nicht prüfungsrelevant>
+:::
 :::
 ```
 
 ## Quellenangabe (Pflicht)
 
-Genau eine dieser Formen, am Ende jeder Antwort:
+Quellen stehen **nicht** in der Antwort, sondern gesammelt im Abschnitt
+`## Quellen {.unnumbered}` am Ende des Kapitels — ein Listenpunkt pro Quelle,
+keine Dopplungen. Formen:
 
-- `*(Quelle: Kap. N, <Kapiteltitel> — "Medizinische Informatik kompakt".)*`
-- `*(Quelle: Curriculum/Allgemeinwissen — <konkrete Quelle, z. B. § 341 SGB V, gematik, BSI>.)*`
-- Mischform: `*(Quelle: Kap. N, <Titel>; ergänzt um <was> aus Curriculum/Allgemeinwissen.)*`
+- `- Kap. N, <Kapiteltitel>` (bezieht sich auf "Medizinische Informatik kompakt")
+- `- Curriculum/Allgemeinwissen — <konkrete Quelle, z. B. § 341 SGB V, gematik, BSI>`
+- Mischform: `- Kap. N, <Titel>; ergänzt um <was> aus Curriculum/Allgemeinwissen`
 
 Bei Themen, die sich schnell ändern (ePA, TI, E-Rezept, DiGA, KHZG, EHDS,
 KI-Verordnung …), einen Stand angeben: `Stand: 10/2026`.

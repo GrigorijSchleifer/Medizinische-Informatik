@@ -24,8 +24,6 @@ Merksatz: Die RRR (relative Risikoreduktion) klingt immer groß — frag nach AR
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 13, Evidenzbasierte Medizin.)*
 :::
 
 ## Grundbegriffe der Statistik, Klassifikation von Merkmalen
@@ -52,8 +50,6 @@ Merksatz: Deskriptiv = beschreiben, was man sieht. Induktiv = schließen auf das
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
 ### Klassifikation von Merkmalen
@@ -79,8 +75,6 @@ Merksatz: Qualitativ = "was für eine Art" (Kategorie). Quantitativ diskret = "w
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
 ### Skalenniveau
@@ -108,8 +102,6 @@ Merksatz: erst Skalenniveau bestimmen → daraus ergibt sich, welches Lage-/Stre
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
 ## Grundbegriffe der medizinischen Epidemiologie
@@ -146,8 +138,6 @@ Merksatz: Stratifizierung lohnt sich gezielt für wenige, bekannte, stark einflu
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 13, Evidenzbasierte Medizin — Grundprinzip und Jadad-Score aus dem Buch; Detailtypen der Randomisierungsverfahren als Allgemeinwissen ergänzt.)*
 :::
 
 ### Multicenter-Studien
@@ -172,8 +162,6 @@ Frage: Was ist eine Multicenter-Studie, und welche Vor- und Nachteile hat sie ge
 Klinik-Beispiel: eine seltene Krebserkrankung wird an 15 Unikliniken gleichzeitig untersucht, weil ein einzelnes Haus in 5 Jahren vielleicht nur 3 Fälle sehen würde — zusammen kommen genug Patienten für aussagekräftige Statistik zusammen.
 
 Merksatz: Multicenter = mehr Patienten + bessere Generalisierbarkeit, erkauft mit mehr Koordinationsaufwand und dem Risiko von Zentrumsunterschieden.
-
-*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -213,8 +201,6 @@ Merksatz: Meta-Analyse = "Studie der Studien", höhere Power, aber nur so vertra
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 13, Evidenzbasierte Medizin — Meta-Analyse und Funnel-Plot-Konzept aus dem Buch, Detailinterpretation der Trichterform als Allgemeinwissen ergänzt.)*
 :::
 
 ### Maßzahlen in der Epidemiologie
@@ -239,8 +225,6 @@ Merksatz: Prävalenz = Bestand (Momentaufnahme). Inzidenz = Zufluss (neu Erkrank
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 13 (Studientypen), Prävalenz/Inzidenz-Grundbegriffe als Curriculum/Allgemeinwissen ergänzt.)*
 :::
 
 ### Güte diagnostischer Tests: Sensitivität, Spezifität, PPV, NPV
@@ -297,8 +281,6 @@ Merksatz: Sensitiv schließt aus (SnNout), spezifisch schließt ein (SpPin). Fal
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum Modul III / Allgemeinwissen — 2×2-Tafel aus Kap. 6/13; SnNout/SpPin und D-Dimer-Beispiel ergänzt.)*
 :::
 
 ## Maßzahlen der deskriptiven Statistik
@@ -324,8 +306,6 @@ Zusatzregel aus dem Buch: bei stark schiefen Verteilungen weichen Mittelwert und
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
 ::: {.exam-question}
@@ -347,8 +327,6 @@ Merksatz: Stichprobengröße ↑ → Intervall schmaler (mehr Sicherheit). Konfi
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
 ## Statistische Methoden
@@ -420,8 +398,6 @@ Merksatz: Erst Skala, dann verbunden/unabhängig, dann Gruppenzahl. Nicht normal
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie — parametrische vs. verteilungsfreie Verfahren nach Skalenniveau; Testübersicht und Eselsbrücken als Allgemeinwissen ergänzt.)*
 :::
 
 ### Lineare Regression und Varianzanalyse
@@ -456,8 +432,6 @@ Merksatz: Korrelation = wie stark hängen zwei Merkmale zusammen (r, ohne Richtu
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
 ### Logistische Regression
@@ -490,8 +464,6 @@ Merksatz: bei einer Vierfeldertafel in der Prüfung nicht auf eine feste Positio
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie — Vierfeldertafel/RR/OR aus dem Buch; Diagnostik-Variante und Konventions-Klarstellung als Allgemeinwissen ergänzt.)*
 :::
 
 ::: {.exam-question}
@@ -525,8 +497,6 @@ Merksatz: Vierfeldertafel = manuelle Methode, nur für 1 binären Prädiktor vs.
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie — Vierfeldertafel/OR/RR-Formeln aus dem Buch; Beziehung zur logistischen Regression und OR-vs-RR-Abgrenzung als Allgemeinwissen ergänzt.)*
 :::
 
 ::: {.exam-question}
@@ -549,8 +519,6 @@ Merksatz: Lineare Regression → stetiges Y (z. B. Blutdruck). Logistische Regre
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie — OR als Basis der logistischen Regression steht im Buch; Detailmechanik der Logit-Funktion als Allgemeinwissen ergänzt.)*
 :::
 
 ### Survivalanalyse
@@ -586,8 +554,6 @@ Merksatz: Odds Ratio = Momentaufnahme (fester Zeitpunkt/Endpunkt). Hazard Ratio 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie — Hazard Rate-Formel aus dem Buch; Kaplan-Meier, Log-Rank-Test, Cox-Regression und Zensierung als Allgemeinwissen ergänzt.)*
 :::
 
 ### Höhere multivariate Verfahren
@@ -628,8 +594,6 @@ Merksatz: Regression rechnet ungleiche Gruppen "fair", aber nur bezüglich desse
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt.)*
 :::
 
 ## Präsentation von Daten in Tabellen und Diagrammen
@@ -682,8 +646,6 @@ Merksatz: Schiefe Daten (Liegedauer, Kosten, CRP) → Median und Boxplot. Balken
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Kap. 6, Statistik und Biometrie — Lage-/Streuungsmaße und Skalenniveaus aus dem Buch; Diagrammwahl und Darstellungsfehler als Allgemeinwissen ergänzt.)*
 :::
 
 ## Statistik-Tools
@@ -731,8 +693,6 @@ Merksatz: Klicken ist schnell, Skript ist belegbar. Für Forschung: R (kostenlos
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt.)*
 :::
 
 ## Translationale Forschungsplattformen
@@ -783,6 +743,24 @@ Merksatz: Translation = Labor ↔ Krankenbett. Plattform = macht verstreute Klin
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
-
-*(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt; MII-Stand nach 2015. Vertiefung: "Translational Health Informatics" (Books/).)*
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Kap. 13, Evidenzbasierte Medizin
+- Kap. 6, Statistik und Biometrie
+- Kap. 13, Evidenzbasierte Medizin — Grundprinzip und Jadad-Score aus dem Buch; Detailtypen der Randomisierungsverfahren als Allgemeinwissen ergänzt
+- nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
+- Kap. 13, Evidenzbasierte Medizin — Meta-Analyse und Funnel-Plot-Konzept aus dem Buch, Detailinterpretation der Trichterform als Allgemeinwissen ergänzt
+- Kap. 13 (Studientypen), Prävalenz/Inzidenz-Grundbegriffe als Curriculum/Allgemeinwissen ergänzt
+- Curriculum Modul III / Allgemeinwissen — 2×2-Tafel aus Kap. 6/13; SnNout/SpPin und D-Dimer-Beispiel ergänzt
+- Kap. 6, Statistik und Biometrie — parametrische vs. verteilungsfreie Verfahren nach Skalenniveau; Testübersicht und Eselsbrücken als Allgemeinwissen ergänzt
+- Kap. 6, Statistik und Biometrie — Vierfeldertafel/RR/OR aus dem Buch; Diagnostik-Variante und Konventions-Klarstellung als Allgemeinwissen ergänzt
+- Kap. 6, Statistik und Biometrie — Vierfeldertafel/OR/RR-Formeln aus dem Buch; Beziehung zur logistischen Regression und OR-vs-RR-Abgrenzung als Allgemeinwissen ergänzt
+- Kap. 6, Statistik und Biometrie — OR als Basis der logistischen Regression steht im Buch; Detailmechanik der Logit-Funktion als Allgemeinwissen ergänzt
+- Kap. 6, Statistik und Biometrie — Hazard Rate-Formel aus dem Buch; Kaplan-Meier, Log-Rank-Test, Cox-Regression und Zensierung als Allgemeinwissen ergänzt
+- Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt
+- Kap. 6, Statistik und Biometrie — Lage-/Streuungsmaße und Skalenniveaus aus dem Buch; Diagrammwahl und Darstellungsfehler als Allgemeinwissen ergänzt
+- Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt; MII-Stand nach 2015. Vertiefung: "Translational Health Informatics" (Books/)

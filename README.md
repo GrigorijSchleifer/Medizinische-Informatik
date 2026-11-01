@@ -49,7 +49,7 @@ Dann im Browser: <http://127.0.0.1:8000>
 | `09-modul-ix-informationsmanagement-klinische-forschung.qmd` | IX — Informationsmanagement/Klin. Datenmanagement/Forschung |
 | `10-modul-x-telemedizin-telematik.qmd` | X — Telemedizin und Telematik |
 
-Jede Frage-Antwort-Box ist mit ihrer Quelle gekennzeichnet: entweder ein
+Am Ende jedes Kapitels steht ein Abschnitt **Quellen**: entweder ein
 Kapitelverweis auf "Medizinische Informatik kompakt" (De Gruyter, 2015), oder
 ein Hinweis, dass die Antwort auf dem Curriculum/Allgemeinwissen basiert
 (für Themen, die im Buch von 2015 nicht oder nicht mehr aktuell behandelt sind,

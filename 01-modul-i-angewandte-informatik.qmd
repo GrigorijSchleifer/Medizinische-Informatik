@@ -36,8 +36,6 @@ Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte,
 - VLAN als Grundlage der Segmentierungf
 - [ISO 80001-1](https://de.wikipedia.org/wiki/Risikomanagement_f%C3%BCr_medizinische_IT-Netzwerke)
 :::
-
-*(Quelle: Curriculum/Allgemeinwissen — Netzwerkgrundlagen.)*
 :::
 
 ### Client-Server-Konzept
@@ -97,8 +95,6 @@ Frage: Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
 
 Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen sich einen Server; virtuell = viele logische Server auf einer Hardware; Cluster = mehrere Server als Team gegen Ausfall.
 
-*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -115,8 +111,6 @@ Frage: Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
 
 Merksatz: Arbeitsplätze meist Windows, Server/Datenbanken oft Linux/Unix, mobile Visitengeräte iOS/Android.
 
-*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -132,8 +126,6 @@ Frage: Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen so
 **Antwort:** Hardware-Schnittstelle = physischer Anschluss zum Datenaustausch (z. B. USB, LAN-Port, HDMI). Software-Schnittstelle = definierter Zugriffspunkt zwischen Programmen/Systemen (z. B. API, HL7-Schnittstelle). Intern = Verbindung innerhalb eines Systems/einer Institution (z. B. zwischen KIS-Modulen). Extern = Verbindung zu externen Systemen/Partnern (z. B. KIS ↔ Labor eines anderen Anbieters, KIS ↔ Telematikinfrastruktur).
 
 Merksatz: Hardware-Schnittstelle = Stecker, Software-Schnittstelle = vereinbarte Sprache zwischen Programmen (z. B. HL7 (Health Level 7)); intern = innerhalb des Hauses, extern = nach draußen.
-
-*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -328,8 +320,6 @@ Beide sind reine **Datenformate** (wie Daten strukturiert aufgeschrieben werden)
 
 Merksatz: XML (eXtensible Markup Language) = Tags, streng, z. B. CDA (Clinical Document Architecture); JSON (JavaScript Object Notation) = Schlüssel-Wert, schlank, z. B. FHIR (Fast Healthcare Interoperability Resources); SOAP (Simple Object Access Protocol) = Protokoll mit XML-Umschlag, z. B. Konnektor.
 
-*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -392,8 +382,6 @@ Kein Envelope mit Operationsnamen nötig — die Aktion steckt schon in der HTTP
 
 Vorteil im Klinikalltag übertragen: egal welcher "Schalter" (Server) die Anfrage bearbeitet — es kommt immer dieselbe Antwort raus, weil keiner sich extra was merken muss. Das macht es einfach, viele Anfragen gleichzeitig zu bedienen (z. B. wenn viele Stationen zur gleichen Zeit auf den FHIR-Server zugreifen).
 
-*(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -417,8 +405,6 @@ Frage: Was ist der erste Schritt im Software-Engineering-Prozess, und wie geht e
 **4. Prozessmodellierung (BPMN)**: der Arbeitsablauf wird als Flussdiagramm dargestellt, z. B. "Patient kommt an → Triage → Wartebereich → Arztzimmer → Entlassung/Aufnahme", mit Entscheidungspunkten ("kritisch? ja/nein").
 
 Merksatz: erst verstehen (Anforderungen), dann Daten strukturieren (ER-Modell), dann Software bauen (UML), dann Abläufe visualisieren (BPMN) — in der Praxis nicht ganz starr nacheinander, aber das ist die Grundidee.
-
-*(Hinweis: Im medinfo-kompakt-Buch nicht als eigener Prozessablauf behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 
@@ -533,8 +519,6 @@ Merksatz: BPMN = Prozess über Abteilungen hinweg, für Fachleute verständlich.
 
 **Wird das in der Praxis wirklich gemalt?** Volle, lehrbuchkonforme UML-Diagramme (mit allen Notationsdetails) sind im Alltag eher selten — meist werden informelle Skizzen im UML-Stil genutzt (Whiteboard, Tools wie Miro), ohne strikte Konformität. Wichtige Ausnahme: in **regulierten Bereichen wie Medizinprodukte-Software** (Stichwort EN 62304, Software-Lebenszyklus für Medizinprodukte, siehe Kap. 16) wird oft formale Dokumentation verlangt, damit Zulassungsbehörden den Entwicklungsprozess nachvollziehen können — dort ist formales Diagrammieren tatsächlich Standard/Pflicht, nicht nur Theorie.
 
-*(Hinweis: BPMN und die Praxis-Einordnung im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
@@ -551,9 +535,17 @@ Frage: KIS fällt aus, Ärzte kommen nicht an Befunde — was ist der Unterschie
 
 Merksatz: Incident = Feuer löschen (Symptom). Problem = Brandursache finden (Ursache). Ein Incident kann per Workaround gelöst sein, ohne dass das Problem schon behoben ist.
 
-*(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Allgemeinwissen, Rahmenwerk ITIL.)*
-
 ::: {.callout-note title="Good to know" appearance="simple"}
 
 :::
 :::
+
+## Quellen {.unnumbered}
+
+Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+
+- Curriculum/Allgemeinwissen — Netzwerkgrundlagen
+- Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
+- Im medinfo-kompakt-Buch nicht als eigener Prozessablauf behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
+- BPMN und die Praxis-Einordnung im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
+- nicht im medinfo-kompakt-Buch behandelt — Allgemeinwissen, Rahmenwerk ITIL

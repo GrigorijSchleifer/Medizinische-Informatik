@@ -35,6 +35,11 @@ format:
       light: cosmo
       dark: darkly
     css: style.css
+    grid:
+      sidebar-width: 250px   # linke Kapitel-Navigation (Standard: 250px)
+      body-width: 1100px     # mittlere Textspalte (Standard: 800px) -> breiter = Tabellen weniger gequetscht
+      margin-width: 250px    # rechtes Inhaltsverzeichnis (Standard: 250px)
+      gutter-width: 1.5rem   # Abstand zwischen den Spalten
     toc: true
     toc-depth: 3
     toc-expand: 1        # rechts nur Kursbuch-Punkte offen, Unterpunkte klappen beim Scrollen auf

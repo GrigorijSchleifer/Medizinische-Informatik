@@ -204,3 +204,8 @@ SAS	Statistical Analysis System	kommerzielles Statistikprogramm (Pharma-Standard
 NYHA	New York Heart Association	Stadien der Herzinsuffizienz I–IV
 ZVK	Zentraler Venenkatheter	Beispiel für Device-assoziierte Infektionen (KISS)
 CDS	Clinical Decision Support	Entscheidungsunterstützung (vgl. CDSS)
+MDCG	Medical Device Coordination Group	Koordinierungsgruppe der EU-Mitgliedstaaten; Leitfäden zur MDR, z. B. MDCG 2019-11 (Software)
+MDD	Medical Device Directive	EU-Medizinprodukterichtlinie 93/42/EWG, durch die MDR abgelöst
+MDS2	Manufacturer Disclosure Statement for Medical Device Security	Herstellerformular zu den IT-Sicherheitseigenschaften eines Medizinprodukts
+MDSW	Medical Device Software	Software mit medizinischer Zweckbestimmung nach Art. 2 Nr. 1 MDR
+PRINCE2	PRojects IN Controlled Environments	Projektmanagement-Methode mit Lenkungsausschuss und Management by Exception

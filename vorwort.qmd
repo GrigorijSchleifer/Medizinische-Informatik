@@ -1,0 +1,22 @@
+# Vorwort {.unnumbered}
+
+Dieses Buch sammelt Fragen und Antworten zur Vorbereitung auf die Prüfung der
+Zusatz-Weiterbildung **Medizinische Informatik**. Es ist nach den zehn Modulen
+des (Muster-)Kursbuchs der Bundesärztekammer gegliedert — ein Kapitel pro Modul.
+
+## Wie man damit lernt {.unnumbered}
+
+- Jede gelb hinterlegte **Frage** ist so formuliert, wie sie im Fachgespräch
+  gestellt werden könnte. Erst selbst antworten, dann die Antwort darunter lesen.
+- Viele Antworten enden mit einem **Merksatz** zum Behalten.
+- Unter jeder Antwort steht die **Quelle**: entweder ein Kapitel aus
+  "Medizinische Informatik kompakt" (De Gruyter, 2015) oder der Hinweis
+  *Curriculum/Allgemeinwissen* — für Themen, die im Buch von 2015 fehlen oder
+  veraltet sind (z. B. DSGVO, FHIR, ePA, Telematikinfrastruktur).
+
+## Stand und Gewähr {.unnumbered}
+
+Das Buch ist in Arbeit; einige Abschnitte sind noch Platzhalter. Es ist
+Lernmaterial von Prüflingen für Prüflinge — ohne Gewähr für Richtigkeit und
+Vollständigkeit. Gesetze, Fristen und Telematik-Anwendungen ändern sich
+schnell; im Zweifel gilt die Primärquelle.

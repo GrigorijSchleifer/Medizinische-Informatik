@@ -5,12 +5,14 @@ project:
 book:
   title: "Medizinische Informatik — Prüfungsvorbereitung"
   subtitle: "Fragen und Antworten zur Zusatz-Weiterbildung"
+  author: "Grigorij Schleifer"
   date: today
   date-format: "DD.MM.YYYY"
   search: true
   reader-mode: true      # Knopf oben: beide Seitenleisten aus-/einblenden
   chapters:
     - index.qmd
+    - vorwort.qmd
     - 01-modul-i-angewandte-informatik.qmd
     - 02-modul-ii-datenschutz-datensicherheit.qmd
     - 03-modul-iii-statistik-epidemiologie-biometrie.qmd

@@ -1,22 +1,70 @@
-# Vorwort {.unnumbered}
+<!--
+Startseite des Buches.
+Titel, Untertitel, Autor und Datum kommen automatisch aus _quarto.yml (book:).
+Alles, was mit {.platzhalter} markiert ist, ist noch nicht fertig und erscheint
+im Buch grau-gestrichelt umrandet. Sobald es fertig ist: Text/Link eintragen und
+das {.platzhalter} entfernen.
+-->
 
-Dieses Buch sammelt Fragen und Antworten zur Vorbereitung auf die Prüfung der
-Zusatz-Weiterbildung **Medizinische Informatik**. Es ist nach den zehn Modulen
-des (Muster-)Kursbuchs der Bundesärztekammer gegliedert — ein Kapitel pro Modul.
+# Lizenz {.unnumbered}
 
-## Wie man damit lernt {.unnumbered}
+:::: {.columns}
 
-- Jede gelb hinterlegte **Frage** ist so formuliert, wie sie im Fachgespräch
-  gestellt werden könnte. Erst selbst antworten, dann die Antwort darunter lesen.
-- Viele Antworten enden mit einem **Merksatz** zum Behalten.
-- Unter jeder Antwort steht die **Quelle**: entweder ein Kapitel aus
-  "Medizinische Informatik kompakt" (De Gruyter, 2015) oder der Hinweis
-  *Curriculum/Allgemeinwissen* — für Themen, die im Buch von 2015 fehlen oder
-  veraltet sind (z. B. DSGVO, FHIR, ePA, Telematikinfrastruktur).
+::: {.column width="62%"}
 
-## Stand und Gewähr {.unnumbered}
+**Willkommen zu diesem freien Lernbuch.**
 
-Das Buch ist in Arbeit; einige Abschnitte sind noch Platzhalter. Es ist
-Lernmaterial von Prüflingen für Prüflinge — ohne Gewähr für Richtigkeit und
-Vollständigkeit. Gesetze, Fristen und Telematik-Anwendungen ändern sich
-schnell; im Zweifel gilt die Primärquelle.
+Dieses Buch sammelt Fragen und Antworten zur Vorbereitung auf das Fachgespräch
+der Zusatz-Weiterbildung **Medizinische Informatik**. Es folgt den zehn Modulen
+des (Muster-)Kursbuchs der Bundesärztekammer — ein Kapitel pro Modul — und ist
+zum Abfragen gedacht: erst selbst antworten, dann nachlesen.
+
+Es ist kein Lehrbuch, das die Medizinische Informatik von Grund auf erklärt,
+sondern ein Wiederholungs- und Nachschlagewerk für die Prüfung.
+
+Das Buch wird laufend ergänzt und überarbeitet.
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="33%"}
+[Titelbild folgt]{.platzhalter .platzhalter-bild}
+:::
+
+::::
+
+- Eine aktuelle **PDF-Version** finden Sie unter: [PDF-Link folgt]{.platzhalter}
+- Eine aktuelle **EPUB-Version** finden Sie unter: [EPUB-Link folgt]{.platzhalter}
+- **Fehler gefunden, Ideen, Kritik?** [Kontakt/Issue-Link folgt]{.platzhalter}
+
+## Lizenz {.unnumbered}
+
+Dieses Werk steht unter der Lizenz
+[Creative Commons Namensnennung – Nicht kommerziell – Weitergabe unter gleichen
+Bedingungen 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de).
+
+Das heißt, Sie dürfen das Material
+
+- **teilen** — in jedwedem Format oder Medium vervielfältigen und weiterverbreiten,
+- **bearbeiten** — remixen, verändern und darauf aufbauen,
+
+unter folgenden Bedingungen:
+
+- **Namensnennung (BY)** — Sie nennen den Urheber, verlinken die Lizenz und
+  geben an, ob Änderungen vorgenommen wurden.
+- **Nicht kommerziell (NC)** — Sie nutzen das Material nicht für kommerzielle
+  Zwecke.
+- **Weitergabe unter gleichen Bedingungen (SA)** — Wenn Sie das Material
+  verändern, dürfen Sie Ihre Beiträge nur unter derselben Lizenz verbreiten.
+
+Ausgenommen von dieser Lizenz sind Inhalte Dritter (z. B. Zitate oder
+Abbildungen aus anderen Werken). Für sie gelten die Rechte der jeweiligen
+Urheber; sie sind mit ihrer Quelle gekennzeichnet.
+
+## Zitationsvorschlag {.unnumbered}
+
+Schleifer, G. ([Jahr]{.platzhalter}). *Medizinische Informatik —
+Prüfungsvorbereitung. Fragen und Antworten zur Zusatz-Weiterbildung.*
+[URL folgt]{.platzhalter}

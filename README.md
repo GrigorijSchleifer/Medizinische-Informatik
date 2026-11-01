@@ -74,3 +74,9 @@ werden in [`abgelehnt.md`](abgelehnt.md) gesammelt.
 - Im Terminal wird direkt auf `main` gearbeitet.
 - Claude in der Cloud arbeitet auf eigenen `claude/…`-Branches; Änderungen
   kommen nur per Pull Request nach `main`.
+
+## Lizenz
+
+Die Inhalte stehen unter [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de)
+(Namensnennung – Nicht kommerziell – Weitergabe unter gleichen Bedingungen).
+Ausgenommen sind gekennzeichnete Inhalte Dritter.

@@ -49,3 +49,21 @@ main table {
 strong {
   font-size: 1.1em;
 }
+
+/* Platzhalter auf der Startseite: [Text]{.platzhalter} — grau, gestrichelt umrandet */
+.platzhalter {
+  color: #6c757d;
+  border: 1px dashed #adb5bd;
+  border-radius: 4px;
+  padding: 0 0.4em;
+  font-style: italic;
+}
+
+/* Platzhalter für das Titelbild: Hochformat-Kasten statt Bild */
+.platzhalter-bild {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1.414;   /* Verhältnis eines DIN-A4-Blatts */
+  width: 100%;
+}

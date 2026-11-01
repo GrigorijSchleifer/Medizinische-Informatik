@@ -9,33 +9,38 @@ Frage: Welche Anwendungssysteme werden in der medizinischen (klinischen) Forschu
 ::: {.exam-answer}
 **Antwort:**
 
-Grundidee: Das **KIS** dient der *Versorgung des einzelnen Patienten*, Forschungssysteme dienen der *Auswertung vieler Patienten* nach einem vorab festgelegten Protokoll. Daten entstehen oft im KIS und werden (pseudonymisiert) in Forschungssysteme übernommen.
+- **Studienregistrierung und Antragstellung:** machen Studien öffentlich nachvollziehbar und unterstützen behördliche Verfa
+- **[DRKS](https://www.bfarm.de/DE/Das-BfArM/Aufgaben/Deutsches-Register-Klinischer-Studien/_node.html) / ClinicalTrials.gov:** öffentliche Studienregistrierung
+- **CTIS:** Antragstellung, Aufsicht und Transparenz bei EU-Arzneimittelprüfungen
+- **EDC (Electronic Data Capture):** erfasst und prüft Studiendaten in elektronischen Prüfbögen (eCRF)
+  - Eine Study Nurse dokumentiert eine Visite in REDCap; Plausibilitätsprüfungen markieren auffällige Werte
+- **CTMS (Clinical Trial Management System):** organisiert Studienabläufe, Zentren und Termine
+  - Die Studienzentrale überwacht den Rekrutierungsstand
+- **IRT (Interactive Response Technology):** unterstützt Randomisierung und Prüfpräparateverwaltung
+  - Ein Teilnehmer wird einer Behandlungsgruppe zugeteilt
+- **Pseudonymisierungs- und Einwilligungsmanagement:** trennt Identitätsdaten von Forschungsdaten und dokumentiert Einwilligungen
+  - Forschende arbeiten mit einer Studiennummer statt dem Patientennamen
+- **Forschungsdatenplattform / Data Warehouse:** führt Routinedaten zusammen und ermöglicht Kohortenabfragen
+  - Suche nach Patienten mit Diabetes und HbA1c > 9 %
+- **Statistiksoftware:** analysiert Daten und stellt Ergebnisse dar
+  - Überlebenszeitanalyse mit R oder SAS
 
-**Systeme entlang des Studienablaufs**:
+**Anforderungen – abhängig von Studienart und Einsatzzweck:**
 
-| System | Wofür? | Klinik-/Studien-Beispiel |
-|---|---|---|
-| **Studienregister** (DRKS, ClinicalTrials.gov, EU-CTIS) | Studie *vor* Beginn öffentlich registrieren (Voraussetzung für Publikation, ICMJE) | Phase-III-Studie zu neuem Antikoagulans wird im DRKS eingetragen |
-| **Rekrutierungsunterstützung** (Patient Recruitment System) | KIS-Daten automatisch gegen Ein-/Ausschlusskriterien prüfen | Notaufnahme: System meldet „Pat. mit STEMI, < 75 J., keine Dialyse → Studie XY geeignet“ |
-| **Randomisierungssystem** (IWRS/IRT) | verdeckte Zuteilung Verum/Placebo, oft inkl. Medikationslogistik | Prüfarzt ruft online ab: „Pat. 017 → Kit-Nr. 4711“ |
-| **EDC-System mit eCRF** (z. B. REDCap, secuTrial, OpenClinica, Medidata Rave) | elektronische Erfassung der Studiendaten statt Papier-CRF; Plausibilitätsprüfungen, Queries | Study Nurse trägt Visite 3 ein; System warnt „Kreatinin 15 mg/dl – plausibel?“ |
-| **ePRO/eCOA** | Patient erfasst selbst (App/Tablet) | Schmerztagebuch, Lebensqualitätsfragebogen (EQ-5D) zu Hause |
-| **CTMS** (Clinical Trial Management System) | Studien*management*: Zentren, Budgets, Visitenplan, Monitoring, Rekrutierungsstand | Studienzentrale sieht: Zentrum Köln hat 12/30 Patienten |
-| **Pharmakovigilanz-/SAE-Datenbank** | schwerwiegende unerwünschte Ereignisse melden/verfolgen | Pat. mit Anaphylaxie → SAE binnen 24 h an Sponsor |
-| **Biobank-LIMS** | Proben verwalten (Lagerort, Einwilligung, Qualität) | Tumorgewebe aus OP → Freezer 3, Rack B, nur für Krebsforschung freigegeben |
-| **Treuhandstelle / Pseudonymisierungsdienst** (z. B. Mainzelliste, E-PIX, gPAS; Einwilligungen: gICS) | Identität ↔ Pseudonym trennen, Einwilligungen verwalten | Forscher sieht nur „PSN-8F3A“, nicht „Müller, Hans“ |
-| **Forschungs-Datenplattform / Data Warehouse** (i2b2, OMOP, tranSMART; **DIZ** der Medizininformatik-Initiative) | Routinedaten vieler Patienten zusammenführen, Machbarkeitsabfragen | „Wie viele Pat. mit Diabetes + HbA1c > 9 % hatten wir 2020–2025?“ |
-| **Statistiksoftware** (R, SAS, SPSS, Stata) | Auswertung | Kaplan-Meier-Kurve im Abschlussbericht |
-| **Literatur/Wissen** (PubMed/MEDLINE, Cochrane Library, Zotero/Citavi) | Recherche, Literaturverwaltung | PICO-Recherche vor Studienplanung |
+- **Datenschutz:** geeignete Rechtsgrundlage nach Art. 6 und 9 DSGVO, Datenminimierung und Schutzmaßnahmen
+  - Pseudonymisierung schützt die Identität, hebt den Personenbezug aber nicht auf
+- **Studienrecht und Ethik:** erforderliche Genehmigungen und ethische Bewertung
+  - Diese betreffen das Forschungsvorhaben, nicht allein die Software
+- **GCP bei entsprechenden klinischen Prüfungen:** Schutz der Teilnehmenden und verlässliche Studiendaten
+  - ICH E6(R3): risikobasiertes und verhältnismäßiges Vorgehen
+- **Validierung:** dokumentierter Nachweis der Eignung für den vorgesehenen Einsatz
+  - Umfang richtet sich nach Risiko und Bedeutung des Systems für die Studie
+- **Datenintegrität:** Daten müssen zuordenbar, lesbar, zeitnah, originalgetreu und korrekt sowie vollständig, konsistent, dauerhaft und verfügbar sein (ALCOA+)
+  - **Audit Trail:** dokumentiert Erfassung und Änderungen mit Person, Zeitpunkt, alten/neuen Werten und gegebenenfalls Änderungsgrund
+- **Sicherer Betrieb:** Rollen und Rechte, Backups, Wiederherstellbarkeit und Archivierung
+- **FDA 21 CFR Part 11:** zusätzliche Anforderungen an elektronische Aufzeichnungen und Signaturen, soweit der FDA-Anwendungsbereich eröffnet ist
 
-**Regulatorische Anforderungen** (v. a. Arzneimittel-/Medizinproduktstudien):
-- **ICH-GCP (E6)**: Datenqualität nach **ALCOA+** (attributable, legible, contemporaneous, original, accurate … = zuordenbar, lesbar, zeitnah, original, korrekt).
-- **Audit Trail**: jede Änderung mit *wer, wann, alt → neu, warum* — nichts wird spurlos überschrieben (wie in der Papierakte: durchstreichen + abzeichnen, nicht schwärzen).
-- **FDA 21 CFR Part 11** (USA): elektronische Aufzeichnungen/Signaturen gleichwertig zu Papier/Unterschrift.
-- **Computervalidierung** (CSV, GAMP 5): Nachweis, dass das System tut, was es soll.
-- **Rollen & Rechte**, Datensicherung, **DSGVO** (Einwilligung, Pseudonymisierung, Art. 89 Forschungsprivileg), **Ethikvotum**.
-
-Merksatz: KIS = ein Patient, jetzt behandeln; Forschungs-IT = viele Patienten, später auswerten. Kern-Kette: **Register → Rekrutierung → Randomisierung (IWRS) → Erfassung (EDC/eCRF) → Management (CTMS) → Auswertung (R/SAS)** — alles mit **Audit Trail** und **Pseudonymisierung**.
+Merksatz: Forschungssysteme organisieren, erfassen und analysieren — Anforderungen richten sich nach Zweck, Risiko und Studienart.
 
 ::: {.callout-note title="Good to know" appearance="simple"}
 

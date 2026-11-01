@@ -3,12 +3,10 @@
 ## Qualitätsmanagement und Zertifizierungen (z. B. KTQ, proCum Cert, JCI, DIN EN ISO 9001)
 
 ::: {.exam-question}
-Frage: Was unterscheidet Qualitätskontrolle, Qualitätssicherung und Qualitätsmanagement, welche Qualitätsdimensionen nach Donabedian gibt es, und welche Zertifizierungsverfahren gibt es für Krankenhäuser?
+Was unterscheidet Qualitätskontrolle, Qualitätssicherung und Qualitätsmanagement, welche Qualitätsdimensionen nach Donabedian gibt es, und welche Zertifizierungsverfahren gibt es für Krankenhäuser?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Begriffs-Stufen** (von nachträglich → vorausschauend):
 
 | Stufe | Wann? | Klinik-Analogie |
@@ -48,12 +46,10 @@ Merksatz: Kontrolle = hinterher, Sicherung = währenddessen, Management = vorher
 ## Qualitätssicherung (gesetzliche und freiwillige Verfahren)
 
 ::: {.exam-question}
-Frage: Welche gesetzlichen und welche freiwilligen Verfahren der Qualitätssicherung gibt es im Krankenhaus, und wer ist dafür zuständig?
+Welche gesetzlichen und welche freiwilligen Verfahren der Qualitätssicherung gibt es im Krankenhaus, und wer ist dafür zuständig?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Gesetzlich (verpflichtend, SGB V §§ 135 ff.)**:
 - **G-BA** (Gemeinsamer Bundesausschuss) legt per Richtlinie fest, *was* gemessen wird.
 - **IQTIG** (Institut für Qualitätssicherung und Transparenz im Gesundheitswesen) entwickelt Indikatoren, wertet bundesweit aus. ⚠️ Buch (2015) nennt noch **AQUA** — seit 2016 IQTIG.
@@ -83,11 +79,11 @@ Merksatz: Gesetzlich = G-BA bestimmt, IQTIG misst, Klinik dokumentiert per QS-Bo
 :::
 
 ::: {.exam-question}
-Frage (Vertiefung): Was ist die Aufgabe des G-BA, und wie ist er zusammengesetzt?
+Vertiefung: Was ist die Aufgabe des G-BA, und wie ist er zusammengesetzt?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Der **Gemeinsame Bundesausschuss (G-BA)** ist das oberste Beschlussgremium der **gemeinsamen Selbstverwaltung** (§ 91 SGB V, Sitz Berlin) — der „kleine Gesetzgeber“: Das SGB V gibt den Rahmen vor („ausreichend, zweckmäßig, wirtschaftlich“), der G-BA konkretisiert ihn per **Richtlinie**, verbindlich für Ärzte, Kliniken, Kassen und Versicherte.
+Der **Gemeinsame Bundesausschuss (G-BA)** ist das oberste Beschlussgremium der **gemeinsamen Selbstverwaltung** (§ 91 SGB V, Sitz Berlin) — der „kleine Gesetzgeber“: Das SGB V gibt den Rahmen vor („ausreichend, zweckmäßig, wirtschaftlich“), der G-BA konkretisiert ihn per **Richtlinie**, verbindlich für Ärzte, Kliniken, Kassen und Versicherte.
 
 **Aufgaben**:
 
@@ -124,12 +120,10 @@ Merksatz: G-BA = kleiner Gesetzgeber der Selbstverwaltung; 3 + 5 + 5 = 13 Stimme
 ## Prozessmanagement, z. B. Organisation von Behandlungspfaden
 
 ::: {.exam-question}
-Frage: Was ist ein klinischer Behandlungspfad, wie wird er entwickelt und im KIS abgebildet, und wie unterscheidet er sich von Leitlinie und SOP?
+Was ist ein klinischer Behandlungspfad, wie wird er entwickelt und im KIS abgebildet, und wie unterscheidet er sich von Leitlinie und SOP?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Prozessmanagement** = Abläufe systematisch erfassen (Ist), verbessern (Soll), umsetzen, messen — über **Prozesseigner** (Verantwortlicher je Prozess) und PDCA. Prozesse werden grafisch modelliert, z. B. als **BPMN** oder **EPK** (Ereignisgesteuerte Prozesskette): „Patient kommt in ZNA“ → „Triage“ → „Ereignis: Verdacht Schlaganfall“ → „CT“ …
 
 **Behandlungspfad (Clinical Pathway)**: einrichtungsinterner, **interdisziplinärer, zeitlich gegliederter Standardablauf** für eine definierte Patientengruppe (meist eine Diagnose/Prozedur, oft an DRG gekoppelt).
@@ -169,11 +163,11 @@ Merksatz: Leitlinie = *was* (bundesweit), Pfad = *wer–was–wann* (meine Klini
 ## Typische Abläufe und Vorgehensweisen im Medizin-Controlling
 
 ::: {.exam-question}
-Frage: Was macht das Medizin-Controlling, und wie sieht der typische Ablauf von der Aufnahme bis zur Rechnung und MD-Prüfung aus?
+Was macht das Medizin-Controlling, und wie sieht der typische Ablauf von der Aufnahme bis zur Rechnung und MD-Prüfung aus?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Medizin-Controlling = Schnittstelle **Medizin ↔ Ökonomie**: sorgt dafür, dass die erbrachte Leistung **vollständig, korrekt und prüfsicher kodiert und abgerechnet** wird, und liefert Steuerungszahlen an Chefärzte und Geschäftsführung.
+Medizin-Controlling = Schnittstelle **Medizin ↔ Ökonomie**: sorgt dafür, dass die erbrachte Leistung **vollständig, korrekt und prüfsicher kodiert und abgerechnet** wird, und liefert Steuerungszahlen an Chefärzte und Geschäftsführung.
 
 **Typischer Fallablauf**:
 
@@ -201,12 +195,10 @@ Merksatz: Medizin-Controlling = „aus Medizin wird Geld, ohne dass der MD es zu
 ## IT-Projektmanagement und Vorgehensmodelle (z. B. V-Modell)
 
 ::: {.exam-question}
-Frage: Was gehört zum IT-Projektmanagement, wie ist das V-Modell aufgebaut, und wie unterscheidet es sich von Wasserfall und agilen Modellen (Scrum)?
+Was gehört zum IT-Projektmanagement, wie ist das V-Modell aufgebaut, und wie unterscheidet es sich von Wasserfall und agilen Modellen (Scrum)?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Projekt** (DIN 69901: Vorhaben, das im Wesentlichen durch die *Einmaligkeit der Bedingungen* gekennzeichnet ist) = einmalig, zeitlich begrenzt, definiertes Ziel, eigene Ressourcen und Organisation — Gegensatz: **Linie** (Routinebetrieb). Beispiele: Einführung eines PDMS auf der Intensivstation, KIS-Wechsel, Anbindung an die TI.
 
 **Magisches Dreieck**: **Zeit – Kosten – Qualität/Umfang** — eines ändern verschiebt die anderen (PDMS-Einführung früher fertig → teurer oder weniger Funktionen).
@@ -246,11 +238,11 @@ Merksatz: V-Modell = „zu jeder Planung links gehört ein Test rechts“; oben 
 :::
 
 ::: {.exam-question}
-Frage (Vertiefung): Was ist PRINCE2, worin unterscheidet es sich von einem Vorgehensmodell wie dem V-Modell, und wie wird ein Klinik-IT-Projekt damit gesteuert?
+Vertiefung: Was ist PRINCE2, worin unterscheidet es sich von einem Vorgehensmodell wie dem V-Modell, und wie wird ein Klinik-IT-Projekt damit gesteuert?
 :::
 
 ::: {.exam-answer}
-**Antwort:** **PRINCE2** (*PRojects IN Controlled Environments*, aus Großbritannien) ist eine **Projektmanagement-Methode**, kein Entwicklungsmodell: Sie sagt nichts darüber, *wie* Software gebaut wird, sondern *wie ein Projekt gelenkt* wird. Daher lässt sie sich mit V-Modell oder Scrum kombinieren.
+**PRINCE2** (*PRojects IN Controlled Environments*, aus Großbritannien) ist eine **Projektmanagement-Methode**, kein Entwicklungsmodell: Sie sagt nichts darüber, *wie* Software gebaut wird, sondern *wie ein Projekt gelenkt* wird. Daher lässt sie sich mit V-Modell oder Scrum kombinieren.
 
 **Aufbau: 7 – 7 – 7**:
 - **7 Grundprinzipien**, u. a. fortlaufende geschäftliche Rechtfertigung (*Business Case* muss über die ganze Laufzeit tragen), Steuern nach dem **Ausnahmeprinzip** (*Management by Exception*), Steuern über **Managementphasen**, **Produktorientierung**, Anpassung an die Projektumgebung (*Tailoring*).
@@ -279,12 +271,10 @@ Merksatz: PRINCE2 lenkt das Projekt (Business Case, Lenkungsausschuss, Managemen
 ## Risikomanagement und Risikoanalyse (z. B. nach DIN EN ISO 14971 und IEC 80001)
 
 ::: {.exam-question}
-Frage: Wie läuft Risikomanagement nach DIN EN ISO 14971 ab, was regelt IEC 80001-1, und wer ist jeweils verantwortlich?
+Wie läuft Risikomanagement nach DIN EN ISO 14971 ab, was regelt IEC 80001-1, und wer ist jeweils verantwortlich?
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 **Begriffe** (ISO 14971):
 - **Gefährdung** (*hazard*): potenzielle Schadensquelle (z. B. falsche Dosiseinheit).
 - **Gefährdungssituation**: Umstände, in denen Menschen einer Gefährdung ausgesetzt sind (Pflegekraft programmiert die Pumpe in µg statt mg).
@@ -334,11 +324,11 @@ Merksatz: 14971 = Hersteller baut sicheres Gerät (Analyse → Bewertung → Beh
 :::
 
 ::: {.exam-question}
-Frage (Vertiefung): Wann ist Software ein Medizinprodukt, und in welche Risikoklasse fällt sie nach der MDR?
+Vertiefung: Wann ist Software ein Medizinprodukt, und in welche Risikoklasse fällt sie nach der MDR?
 :::
 
 ::: {.exam-answer}
-**Antwort:** Zwei getrennte Schritte: **Qualifizierung** (Ist es überhaupt ein Medizinprodukt?) und **Klassifizierung** (Welche Risikoklasse?). Entscheidend ist in beiden Fällen die **Zweckbestimmung** des Herstellers, nicht die Technik.
+Zwei getrennte Schritte: **Qualifizierung** (Ist es überhaupt ein Medizinprodukt?) und **Klassifizierung** (Welche Risikoklasse?). Entscheidend ist in beiden Fällen die **Zweckbestimmung** des Herstellers, nicht die Technik.
 
 **Qualifizierung**: Software ist **Medical Device Software (MDSW)**, wenn ihr der Hersteller eine medizinische Zweckbestimmung nach **Art. 2 Nr. 1 MDR** gibt (Diagnose, Überwachung, Behandlung … mit Nutzen für den *einzelnen* Patienten). Reine Speicherung, Archivierung, verlustfreie Kommunikation oder einfache Suche reichen nicht. Ein KIS als Verwaltungssystem ist daher in der Regel kein Medizinprodukt, ein darin enthaltener **Dosisrechner** kann es aber sein (modulare Betrachtung). Leitfaden: **MDCG 2019-11** (Rev. 1, Juni 2025).
 

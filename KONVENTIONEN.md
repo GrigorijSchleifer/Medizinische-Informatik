@@ -22,14 +22,15 @@ geplante Aufgaben). Wer mit Claude arbeitet, gibt diese Datei als Kontext mit
 
 ## Format einer Frage
 
+Kein „Frage:“/„Antwort:“ davorschreiben — der gelbe Kasten zeigt, was die Frage ist.
+Vertiefende Zusatzfragen beginnen mit `Vertiefung:`.
+
 ```markdown
 ::: {.exam-question}
-Frage: <so formuliert, wie ein Prüfer im Fachgespräch fragen würde>
+<Frage, so formuliert, wie ein Prüfer im Fachgespräch fragen würde>
 :::
 
 ::: {.exam-answer}
-**Antwort:**
-
 <Kernaussage in 2–3 Sätzen, dann Vertiefung als Liste/Tabelle>
 
 Merksatz: <ein Satz zum Behalten>

@@ -37,6 +37,10 @@ Grundidee: Das **KIS** dient der *Versorgung des einzelnen Patienten*, Forschung
 
 Merksatz: KIS = ein Patient, jetzt behandeln; Forschungs-IT = viele Patienten, später auswerten. Kern-Kette: **Register → Rekrutierung → Randomisierung (IWRS) → Erfassung (EDC/eCRF) → Management (CTMS) → Auswertung (R/SAS)** — alles mit **Audit Trail** und **Pseudonymisierung**.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Curriculum/Allgemeinwissen; „Medizinische Informatik kompakt“ behandelt Forschungs-IT nur am Rande — MII/DIZ, REDCap, CTIS als aktueller Stand ergänzt.)*
 :::
 
@@ -72,6 +76,10 @@ Analogie: Wie eine **neue Station eröffnen** — erst planen (Betten, Personal,
 **Architekturentscheidung multizentrisch**: **zentral** (ein Web-EDC, alle Zentren tippen dort ein — Standard) vs. **föderiert/dezentral** („Daten bleiben im Haus, Analyse wandert hin“, z. B. MII-Machbarkeitsabfragen, föderiertes Lernen).
 
 Merksatz: **Protokoll → DMP → Datenschutzkonzept → eCRF bauen → validieren → schulen → betreiben → Database Lock → archivieren.** Wer hilft? **KKS** (Dienstleister vor Ort), **TMF** (Vorlagen), **MII/DIZ** (Routinedaten).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen; EU-CTR 536/2014, MII/DIZ, Broad Consent als aktueller Stand ergänzt.)*
 :::
@@ -118,6 +126,10 @@ Frage: Was versteht man unter vernetzter medizinischer Forschung und Data Sharin
 ⚠️ Falle: **FAIR ≠ Open.** FAIR-Daten dürfen zugangsbeschränkt sein — wichtig: man *findet* sie und weiß, *wie* man Zugang bekommt.
 
 Merksatz: **Vernetzt = viele Kliniken, ein Datenpool (MII/DIZ, FDPG, EHDS).** Data Sharing: open / kontrolliert / föderiert („Code to Data“). **FAIR = Findable, Accessible, Interoperable, Reusable — „fair“ heißt nicht „frei“.**
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen; nicht im Buch von 2015 — MII, NUM, FDZ/GDNG, EHDS sind neuer. Stand: 10/2026.)*
 :::
@@ -169,6 +181,10 @@ Frage: Was ist Versorgungsforschung, welche Routine- und Registerdaten nutzt sie
 | | **Record Linkage** über Quellen schwierig (Pseudonyme, Datenschutz) |
 
 Merksatz: **RCT = efficacy (Idealbedingungen), Versorgungsforschung = effectiveness (Alltag).** Routinedaten = *nebenbei* entstanden (Abrechnung), Register = *gezielt* gesammelt. **Krebsregister** = epidemiologisch + klinisch, ICD-O-3 + TNM, oBDS; **KISS** = NRZ/Charité, Infektionen pro 1.000 Device-Tage, erfüllt § 23 IfSG. Größte Schwäche: **Confounding** → keine Kausalität.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen; Krebsregister/§ 65c auch im Buch, Kap. Dokumentation — FDZ/GDNG, oBDS, IRD, ZfKD-Zusammenführung als aktueller Stand ergänzt. Stand: 10/2026.)*
 :::
@@ -236,6 +252,10 @@ Ebenen: **syntaktisch** (Format lesbar, z. B. HL7, FHIR, CSV) → **semantisch**
 
 Merksatz: **Datenmanagement = Lebenszyklus + Governance + Qualität + Metadaten.** Integration: **Warehouse = Daten zusammentragen (ETL), föderiert = Abfrage verteilen, Kommunikationsserver = Nachrichten in Echtzeit.** EAV für „viele leere Spalten“, Sternschema fürs Warehouse. **Record Linkage: deterministisch = exakt, probabilistisch = gewichtete Punkte**, Bloom-Filter = datenschutzgerecht.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Curriculum/Allgemeinwissen; Datenbank-Grundlagen auch im Buch (Kap. Datenbanken) — MII/DIZ, OMOP, PPRL als aktueller Stand ergänzt.)*
 :::
 
@@ -262,6 +282,10 @@ Analogie: Wie eine **Station über einen Fall** — vorher festlegen, was dokume
 **Warum den SAP (Analyseplan) vor Lock/Entblindung festlegen?** Sonst „sucht man sich“ nachträglich die Analyse, die ein signifikantes Ergebnis liefert (p-Hacking).
 
 Merksatz: **Planen (Prüfplan, DMP = Datenmanagementplan, eCRF = digitaler Erfassungsbogen, SAP = Analyseplan) → Erfassen (EDC = elektronische Datenerfassung aus Source Documents) → Validieren (Edit-Checks, Queries, SDV = Abgleich mit der Akte, MedDRA-Kodierung, Database Lock) → Auswerten (CDISC-Export, nach SAP, archivieren).** Immer mit **Audit Trail** nach GCP (Good Clinical Practice).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — ICH-GCP E6 (International Council for Harmonisation – Good Clinical Practice), CDISC, EU-CTR als aktueller Stand.)*
 :::
@@ -295,6 +319,10 @@ Zwei Zielgruppen: **Personal** (Aus-/Fort-/Weiterbildung, Einweisungen) und **Pa
 - **Rahmenbedingungen**: Barrierefreiheit (Untertitel, einfache Sprache, Mehrsprachigkeit), Datenschutz auf der Lernplattform (Lernstände sind Mitarbeiterdaten → Mitbestimmung durch Betriebs-/Personalrat), Urheberrecht an Bildern/Videos, IT-Ausstattung und Zugang für alle Mitarbeitenden.
 
 Merksatz: **E-Learning = online, meist asynchron; Blended Learning = online + Präsenz gemischt (Flipped Classroom: Theorie zu Hause, Üben vor Ort); Aufklärungsfilm = ergänzt das Aufklärungsgespräch, ersetzt es nie (§ 630e BGB).** Erst Lernziel, dann Medium.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — § 630e BGB (Aufklärung), (Muster-)Kursbuch BÄK Kap. 2.7 (Blended Learning/E-Learning).)*
 :::

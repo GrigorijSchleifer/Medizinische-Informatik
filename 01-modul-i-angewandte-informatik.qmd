@@ -57,6 +57,10 @@ Frage: Was ist das Client-Server-Konzept?
   - **Datenhaltung und Verarbeitung:** Daten und gemeinsame Dienste liegen typischerweise zentral auf dem Server; Verarbeitung kann auf beiden Seiten erfolgen
 
 Merksatz: Client fragt an, Server liefert
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Rechnertypen
@@ -76,6 +80,10 @@ Merksatz: Client fragt an, Server liefert
   - Befundarbeitsplatz mit Zugriff auf einen virtuellen Desktop
 
 Merksatz: Fat rechnet überwiegend lokal, Thin und Zero überwiegend auf dem Server. Auch Zero-Clients verarbeiten lokal die Bildübertragung und Ein-/Ausgabe.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Servertypen
@@ -90,6 +98,10 @@ Frage: Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
 Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen sich einen Server; virtuell = viele logische Server auf einer Hardware; Cluster = mehrere Server als Team gegen Ausfall.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Betriebssysteme
@@ -104,6 +116,10 @@ Frage: Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
 Merksatz: Arbeitsplätze meist Windows, Server/Datenbanken oft Linux/Unix, mobile Visitengeräte iOS/Android.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Schnittstellen
@@ -118,6 +134,10 @@ Frage: Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen so
 Merksatz: Hardware-Schnittstelle = Stecker, Software-Schnittstelle = vereinbarte Sprache zwischen Programmen (z. B. HL7 (Health Level 7)); intern = innerhalb des Hauses, extern = nach draußen.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur
@@ -141,6 +161,10 @@ Frage: Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 Merksatz: Karten weisen aus (eGK (elektronische Gesundheitskarte) = Patient, HBA (Heilberufsausweis) = Arzt, SMC-B (Security Module Card Typ B = Institutionskarte) = Einrichtung), der Konnektor ist die Schleuse ins Netz, die Fachdienste sind die Anwendungen.
 
 *(Stand: 10/2026.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ## Programme und Datenbanken
@@ -155,6 +179,10 @@ Frage: Was sind die drei Grundkategorien von Kontrollstrukturen, und wie untersc
 **Antwort:** Kontrollstrukturen gliedern sich in Verzweigungen (`if`, `if-else`, `switch`), Schleifen (`while`, `do-while`, `for`, `foreach`) und Sprünge (`break`, `continue`). Bei Schleifen: `while` prüft die Bedingung vor der Iteration (0 bis n Durchläufe möglich), `do-while` prüft sie danach (mindestens 1 Durchlauf garantiert).
 
 Merksatz: `while` = erst prüfen, dann handeln (vielleicht nie, wie „nur Insulin, wenn BZ > 200“); `do-while` = erst handeln, dann prüfen (mindestens einmal, wie „Dosis geben, dann Spiegel kontrollieren“).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -165,6 +193,10 @@ Frage: Nach welchen Kriterien wählt man einen Sortieralgorithmus, und warum wir
 **Antwort:** Insertionsort eignet sich für kleine/fast sortierte Arrays (Bestcase linear). Quicksort ist ein guter Allgemeinfall (erwartet O(n log n)), hat aber bei ungünstiger Pivot-Wahl Worstcase O(n²) — deshalb Pivot zufällig oder als Median wählen. Mergesort/Heapsort garantieren O(n log n) unabhängig von der Eingabe. Bubblesort ist einfach zu verstehen, aber mit O(n²) fast immer schlechter als Alternativen — wird laut Buch "nahezu niemals eingesetzt".
 
 Merksatz: Klein/fast sortiert → Insertionsort; Allgemeinfall → Quicksort; Garantie O(n log n) → Mergesort/Heapsort; Bubblesort → nur zum Lernen.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -175,6 +207,10 @@ Frage: Was ist Divide & Conquer, und wie hängt es mit Rekursion zusammen (Beisp
 **Antwort:** Divide & Conquer teilt ein Problem in kleinere, gleichartige Teilprobleme (divide), löst diese rekursiv (conquer) und setzt die Teillösungen zusammen. Bei Quicksort: Divide = Array wird anhand eines Pivotelements partitioniert (kleinere Werte links, größere rechts); Conquer = Quicksort ruft sich rekursiv auf beiden Teilarrays selbst auf, bis die Abbruchbedingung (Teilarray-Größe ≤ 1) erreicht ist; Combine entfällt weitgehend, da in-place partitioniert wird. Jede Rekursion braucht zwingend eine Abbruchbedingung, sonst läuft sie endlos.
 
 Merksatz: Divide & Conquer = großes Problem in gleichartige kleine zerlegen, diese rekursiv lösen, zusammensetzen; Rekursion ohne Abbruchbedingung läuft endlos.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -193,6 +229,10 @@ Frage: Was sind Klasse, Objekt, Vererbung, abstrakte Klasse und Interface (OOP-G
 Das ist die Grundlage für das Klassendiagramm (siehe Software-Engineering-Sektion): die Klasse `Patient` dort im Diagramm ist genau dieses Konzept.
 
 Merksatz: Klasse = Bauplan, Objekt = konkreter Patient, Vererbung = „ist ein“ (Oberarzt ist ein Arzt), abstrakte Klasse = Bauplan ohne eigene Instanz, Interface = Vertrag „muss können“.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Relationale Datenbanken
@@ -215,6 +255,10 @@ Beispiel Patient/Station: Ein Patient liegt auf genau einer Station, eine Statio
 Der Fremdschlüssel steht auf der **n-Seite** (viele, hier: Patienten) und zeigt zur **1-Seite** (eine, hier: Stationen) — nie umgekehrt, weil nur die n-Seite eindeutig "ihren einen Partner" nennen kann. Die Station selbst kann nicht eindeutig "ihren einen Patienten" nennen, da es mehrere sind. Vorteil: Stationsdaten (z. B. Fachrichtung) stehen nur einmal in `Stationen`, nicht redundant bei jedem Patienten (gleiches Prinzip wie bei der Normalisierung: "eine Tatsache, ein Ort").
 
 Merksatz: Der Fremdschlüssel steht immer auf der n-Seite und zeigt zur 1-Seite (Patient → Station).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -225,6 +269,10 @@ Frage: Wie wird eine m:n-Beziehung im relationalen Modell abgebildet?
 **Antwort:** m:n-Beziehungen können nicht direkt über einen einzelnen Fremdschlüssel abgebildet werden (anders als 1:1 oder 1:n), weil beide Seiten mehrere Partner haben können. Stattdessen wird eine eigene Verknüpfungstabelle angelegt, die die Primärschlüssel beider beteiligten Tabellen als zusammengesetzten Primär-/Fremdschlüssel enthält. Beispiel: Ärzte ↔ Patienten (ein Arzt behandelt mehrere Patienten, ein Patient wird von mehreren Ärzten behandelt) → Verknüpfungstabelle `behandelt(arzt_id, pat_id)`, wobei beide Spalten zusammen den Primärschlüssel bilden und je einzeln Fremdschlüssel auf `aerzte` bzw. `patienten` sind.
 
 Merksatz: m:n braucht immer eine eigene Verknüpfungstabelle (z. B. `behandelt(arzt_id, pat_id)`).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -249,6 +297,10 @@ Merksatz aus dem Buch: "eine Tatsache, ein Ort" — jede Information soll nur an
 Merksatz für 2./3. NF: "Jedes Attribut hängt vom Schlüssel ab, vom ganzen Schlüssel, und von nichts außer dem Schlüssel."
 
 **Trade-off**: Normalisierung ist der Standardansatz, aber nicht immer zwingend bis zur höchsten Stufe — manchmal wird bewusst *denormalisiert* (Redundanz in Kauf genommen), wenn Lesegeschwindigkeit wichtiger ist als Konsistenz, z. B. bei Reporting-/Auswertungs-Datenbanken, um Joins zu vermeiden.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Datenaustauschformate
@@ -277,6 +329,10 @@ Beide sind reine **Datenformate** (wie Daten strukturiert aufgeschrieben werden)
 Merksatz: XML (eXtensible Markup Language) = Tags, streng, z. B. CDA (Clinical Document Architecture); JSON (JavaScript Object Notation) = Schlüssel-Wert, schlank, z. B. FHIR (Fast Healthcare Interoperability Resources); SOAP (Simple Object Access Protocol) = Protokoll mit XML-Umschlag, z. B. Konnektor.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -337,6 +393,10 @@ Kein Envelope mit Operationsnamen nötig — die Aktion steckt schon in der HTTP
 Vorteil im Klinikalltag übertragen: egal welcher "Schalter" (Server) die Anfrage bearbeitet — es kommt immer dieselbe Antwort raus, weil keiner sich extra was merken muss. Das macht es einfach, viele Anfragen gleichzeitig zu bedienen (z. B. wenn viele Stationen zur gleichen Zeit auf den FHIR-Server zugreifen).
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Methoden des Software Engineerings
@@ -359,6 +419,10 @@ Frage: Was ist der erste Schritt im Software-Engineering-Prozess, und wie geht e
 Merksatz: erst verstehen (Anforderungen), dann Daten strukturieren (ER-Modell), dann Software bauen (UML), dann Abläufe visualisieren (BPMN) — in der Praxis nicht ganz starr nacheinander, aber das ist die Grundidee.
 
 *(Hinweis: Im medinfo-kompakt-Buch nicht als eigener Prozessablauf behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -391,6 +455,10 @@ Grundidee: bevor eine Datenbank-Tabelle gebaut wird, zeichnet man erst ein Bild 
 - **Als eigene Entität**: sobald die Diagnose selbst eigene Merkmale hat (ICD-Code, Bezeichnung) **und/oder** in einer echten Beziehung zu mehreren Patienten stehen kann — dann wird sie zur eigenen Entität: `Diagnose(ICD_Code, Bezeichnung)`, mit Beziehung Patient **(0,\*)** — Diagnose **(0,\*)** (ein Patient kann mehrere Diagnosen haben, eine Diagnose betrifft mehrere Patienten → m:n → Verknüpfungstabelle `Patient_Diagnose(Patient_ID, ICD_Code, Diagnosedatum)`).
 
 Merksatz: einfache, einzelne Eigenschaft eines Dings → **Attribut**. Eigene Merkmale und/oder echte 1:n/m:n-Beziehung zu anderen Dingen → eigene **Entität**. In der Praxis ist "Diagnose" fast immer die Entität-Variante, weil ICD-Codes strukturiert erfasst werden (siehe Kap. 12, ICD-System).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -428,6 +496,10 @@ Jede Lebenslinie (senkrechte gestrichelte Linie unter dem Objekt) zeigt, wann di
 **Kurz der Unterschied**: Klassendiagramm = Bauplan/Struktur (was gibt's, ein für alle Mal). Sequenzdiagramm = Film/Ablauf (was passiert wann, für einen konkreten Fall). Laut Buch wird das Klassendiagramm für den schnellen Strukturüberblick genutzt (fast immer bei OOP-Projekten), das Sequenzdiagramm eher spät und nur für komplexere Abläufe, weil es aufwändiger zu erstellen ist.
 
 Merksatz: Klassendiagramm = Bauplan (was gibt es), Sequenzdiagramm = Film (wer ruft wann wen auf).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ::: {.exam-question}
@@ -462,6 +534,10 @@ Merksatz: BPMN = Prozess über Abteilungen hinweg, für Fachleute verständlich.
 **Wird das in der Praxis wirklich gemalt?** Volle, lehrbuchkonforme UML-Diagramme (mit allen Notationsdetails) sind im Alltag eher selten — meist werden informelle Skizzen im UML-Stil genutzt (Whiteboard, Tools wie Miro), ohne strikte Konformität. Wichtige Ausnahme: in **regulierten Bereichen wie Medizinprodukte-Software** (Stichwort EN 62304, Software-Lebenszyklus für Medizinprodukte, siehe Kap. 16) wird oft formale Dokumentation verlangt, damit Zulassungsbehörden den Entwicklungsprozess nachvollziehen können — dort ist formales Diagrammieren tatsächlich Standard/Pflicht, nicht nur Theorie.
 
 *(Hinweis: BPMN und die Praxis-Einordnung im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Maßnahmen und Methoden des IT-Servicemanagements
@@ -476,4 +552,8 @@ Frage: KIS fällt aus, Ärzte kommen nicht an Befunde — was ist der Unterschie
 Merksatz: Incident = Feuer löschen (Symptom). Problem = Brandursache finden (Ursache). Ein Incident kann per Workaround gelöst sein, ohne dass das Problem schon behoben ist.
 
 *(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Allgemeinwissen, Rahmenwerk ITIL.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::

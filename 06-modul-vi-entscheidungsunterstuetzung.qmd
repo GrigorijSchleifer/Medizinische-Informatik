@@ -60,6 +60,10 @@ Frage: Was ist ein klinisches Entscheidungsunterstützungssystem (CDSS), wie unt
 
 Merksatz: Wissenszugriff = Arzt sucht (Pull, allgemein); CDSS = System meldet sich (Push, patientenspezifisch). Wissensbasiert = Regeln, erklärbar (MYCIN, Arden Syntax); datengetrieben = gelernt, oft Black Box. Größtes Praxisproblem: Alert Fatigue.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 9 Entscheidungsunterstützung (Expertensysteme, wissensbasierte Systeme, MYCIN, Arden Syntax, Bayes); Infobutton, Five Rights, Alert Fatigue, AI Act als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
@@ -129,6 +133,10 @@ Prüfungsfalle: **Leitlinie** = Empfehlung/Entscheidungs**korridor** (begründet
 
 Merksatz: AMTS-IT = Wissensbasis (ABDA) + elektronische Verordnung (CPOE) mit automatischer Prüfung + Closed Loop (Unit-Dose, Barcode). EbM = Evidenz + Erfahrung + Patientenwunsch; PICO → suchen → bewerten → anwenden → prüfen; Metaanalyse von RCTs ganz oben, S3 = beste Leitlinie.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 9 Entscheidungsunterstützung (Wissensbasen), Kap. 10 Evidenzbasierte Medizin; AMTS/Closed Loop, PRISCUS, AWMF-Klassen und CIRS als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
@@ -191,6 +199,10 @@ Frage: Was ist Health Technology Assessment (HTA), welche Aspekte werden bewerte
 
 Merksatz: HTA = EbM auf Systemebene ("Soll die Kasse das zahlen?") — bewertet Nutzen, Schaden, Kosten, Ethik, Organisation. IQWiG **bewertet**, G-BA **entscheidet**, GKV-SV **verhandelt den Preis** (AMNOG). Patientenrelevant = Tod, Krankheit, Lebensqualität — nicht Laborwerte.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 10 Evidenzbasierte Medizin/HTA; AMNOG, DiGA, EU-HTA-Verordnung, QALY/Effizienzgrenze als Allgemeinwissen ergänzt. Stand: 10/2026.)*
 :::
 
@@ -216,6 +228,10 @@ Beispiel Krebstherapie: der Tumor wird genetisch sequenziert. Findet sich z. B. 
 Merksatz: Rule-based = nachvollziehbar, aber starr. ML-based = flexibel/präzise, aber Black-Box. Präzisionsmedizin = Therapie nach Molekülprofil (z. B. EGFR/BRAF), nicht nach Durchschnittspatient.
 
 *(Hinweis: nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, KI/Präzisionsmedizin in dieser Form noch nicht etabliert) — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ## Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse
@@ -233,6 +249,10 @@ Frage: Was ist der Unterschied zwischen Vorwärts- und Rückwärtsverkettung (fo
 Merksatz: Vorwärts = "was folgt aus den Daten, die ich habe?" (datengetrieben). Rückwärts = "welche Daten brauche ich, um diese Hypothese zu prüfen?" (zielgetrieben). Beide bauen auf derselben Wissens-/Regelbasis auf (siehe rule-based Systeme) — unterscheiden sich nur in der Suchrichtung.
 
 *(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen, klassische KI-Inferenzverfahren aus Expertensystemen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ## IT-gestütztes Workflowmanagement und Clinical Pathways
@@ -253,6 +273,10 @@ Frage: Was ist ein Clinical Pathway, und wie unterstützt IT-Workflowmanagement 
 Merksatz: Clinical Pathway = der Plan (evidenzbasierter Soll-Ablauf). IT-Workflowmanagement = das Werkzeug, das diesen Plan im Alltag durchsetzt/überwacht und Abweichungen sichtbar macht.
 
 *(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ## Evaluation / Grundbegriffe (ergänzend)
@@ -279,6 +303,10 @@ Gegenmaßnahmen: Alerts nach Relevanz/Schweregrad stufen (nur kritische als echt
 Merksatz: zu viele Alerts → Ignorieren wird zur Gewohnheit → genau die Sicherheit, die das System bringen sollte, geht verloren. Zentrales Qualitätskriterium für CDS-Systeme: Spezifität der Alerts, nicht nur Sensitivität.
 
 *(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Sensitivität / Spezifität
@@ -315,4 +343,8 @@ Frage: Was messen Sensitivität und Spezifität jeweils, und wie rechnet man sie
 - **SpPin** (hohe **Sp**ezifität → **P**ositives Ergebnis beweist Krankheit **in**): bei einem sehr spezifischen Test ist ein positives Ergebnis fast sicher echt — kaum falsch-positive Fälle.
 
 Merksatz: Sensitivität = Test gut bei **Kranken** (TP-Fokus). Spezifität = Test gut bei **Gesunden** (TN-Fokus). Beide sind **prävalenzunabhängige** Testeigenschaften — im Unterschied zu PPV/NPV (siehe Wiederholung), die von der Prävalenz abhängen.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::

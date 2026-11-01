@@ -21,6 +21,10 @@ Frage: Eine Studie zu einem neuen Blutverdünner zeigt "25% relative Risikoreduk
 
 Merksatz: Die RRR (relative Risikoreduktion) klingt immer groß — frag nach ARR (absolute Risikoreduktion) und NNT (Number Needed to Treat = 1 / ARR).
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 13, Evidenzbasierte Medizin.)*
 :::
 
@@ -45,6 +49,10 @@ Klinik-Beispiel: Blutdruckmessung bei 200 Patienten (Stichprobe). Deskriptiv: "D
 
 Merksatz: Deskriptiv = beschreiben, was man sieht. Induktiv = schließen auf das, was man nicht sieht (die ganze Grundgesamtheit), mit Unsicherheit/Wahrscheinlichkeit.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
@@ -67,6 +75,10 @@ Frage: Was ist der Unterschied zwischen qualitativen und quantitativen Merkmalen
 **Verbindung zum Skalenniveau**: qualitativ = Nominal/Ordinal, quantitativ diskret/stetig = Intervall/Verhältnis/Absolut — dieselbe Grundunterscheidung, nur aus dem Blickwinkel des Merkmalstyps statt der erlaubten Rechenoperation.
 
 Merksatz: Qualitativ = "was für eine Art" (Kategorie). Quantitativ diskret = "wie viele" (zählbar). Quantitativ stetig = "wie viel genau" (messbar, beliebig fein).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
@@ -92,6 +104,10 @@ Frage: Du misst bei Patienten Blutgruppe, Schmerzstärke (Skala 0-10), Körperte
 - Für **Nominaldaten** (Blutgruppe, geheilt ja/nein) braucht es andere Verfahren (z. B. Chi-Quadrat-Test), da weder Mittelwert noch Rangfolge definiert sind.
 
 Merksatz: erst Skalenniveau bestimmen → daraus ergibt sich, welches Lage-/Streuungsmaß und welcher Test zulässig ist. Ein t-Test auf Blutgruppendaten wäre ein klassischer Prüfungsfehler.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
@@ -127,6 +143,10 @@ Merksatz: Stratifizierung lohnt sich gezielt für wenige, bekannte, stark einflu
 
 **Verbindung zum Jadad-Score** (Qualitätsbewertung von RCTs): eine der 5 Fragen ist genau "War die Randomisierung beschrieben und sachgerecht?" — fehlt eine ordentliche Beschreibung, sinkt der Score, die Studie gilt als methodisch fragwürdig (Score < 3 kritisch).
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 13, Evidenzbasierte Medizin — Grundprinzip und Jadad-Score aus dem Buch; Detailtypen der Randomisierungsverfahren als Allgemeinwissen ergänzt.)*
 :::
 
@@ -154,6 +174,10 @@ Klinik-Beispiel: eine seltene Krebserkrankung wird an 15 Unikliniken gleichzeiti
 Merksatz: Multicenter = mehr Patienten + bessere Generalisierbarkeit, erkauft mit mehr Koordinationsaufwand und dem Risiko von Zentrumsunterschieden.
 
 *(Hinweis: nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen.)*
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 :::
 
 ### Meta-Analysen
@@ -186,6 +210,10 @@ Klinik-Beispiel: Meta-Analyse fasst 12 RCTs zu einem Blutdruckmedikament zusamme
 
 Merksatz: Meta-Analyse = "Studie der Studien", höhere Power, aber nur so vertrauenswürdig wie Qualität + Vollständigkeit der eingeschlossenen Studien (Funnel Plot als Kontrolle gegen Publication Bias).
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 13, Evidenzbasierte Medizin — Meta-Analyse und Funnel-Plot-Konzept aus dem Buch, Detailinterpretation der Trichterform als Allgemeinwissen ergänzt.)*
 :::
 
@@ -207,6 +235,10 @@ Klinik-Beispiel Diabetes: Prävalenz = "Wie viele Menschen in Deutschland haben 
 **Zusammenhang**: bei stabilen Bedingungen gilt ungefähr Prävalenz ≈ Inzidenz × durchschnittliche Krankheitsdauer. Eine chronische Krankheit mit langer Dauer (z. B. Diabetes) kann hohe Prävalenz haben, obwohl die Inzidenz niedrig ist — Fälle sammeln sich über Jahre an. Eine akute, schnell heilende oder tödliche Krankheit kann hohe Inzidenz, aber niedrige Prävalenz haben (kurze Verweildauer in der Kranken-Kategorie).
 
 Merksatz: Prävalenz = Bestand (Momentaufnahme). Inzidenz = Zufluss (neu Erkrankte pro Zeit).
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 13 (Studientypen), Prävalenz/Inzidenz-Grundbegriffe als Curriculum/Allgemeinwissen ergänzt.)*
 :::
@@ -262,6 +294,10 @@ Rechenweg in 4 Schritten: (1) Kranke = N × Prävalenz, (2) RP = Kranke × Sensi
 
 Merksatz: Sensitiv schließt aus (SnNout), spezifisch schließt ein (SpPin). Falsch-positiv-Rate = 1 − Spezifität.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Curriculum Modul III / Allgemeinwissen — 2×2-Tafel aus Kap. 6/13; SnNout/SpPin und D-Dimer-Beispiel ergänzt.)*
 :::
 
@@ -285,6 +321,10 @@ Merksatz: der Median eignet sich besser bei **schiefen Verteilungen** (viele nie
 
 Zusatzregel aus dem Buch: bei stark schiefen Verteilungen weichen Mittelwert und Median deutlich voneinander ab — ein großer Unterschied zwischen beiden ist selbst schon ein Hinweis auf Ausreißer/Schiefe in den Daten.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
@@ -303,6 +343,10 @@ Klinik-Beispiel: Blutdruck bei 50 Patienten gemessen, Mittelwert 138 mmHg. Statt
 - **Höheres Konfidenzniveau** (z. B. 99% statt 95%) → **breiteres** Intervall — mehr Sicherheit verlangt ein größeres "Netz".
 
 Merksatz: Stichprobengröße ↑ → Intervall schmaler (mehr Sicherheit). Konfidenzniveau ↑ → Intervall breiter (mehr Sicherheit *gefordert*, kostet Präzision). Diese zwei Faktoren wirken entgegengesetzt — beliebter Prüfungsfallstrick.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
@@ -373,6 +417,10 @@ Beides geht, weil sie nur die **Rangfolge** nutzen. **Nicht** geeignet für **no
 
 Merksatz: Erst Skala, dann verbunden/unabhängig, dann Gruppenzahl. Nicht normal: **Wi**lcoxon = **wi**eder derselbe, **Mann-Whitney** = zwei Gruppen, **Kruskal** = viele Gruppen.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 6, Statistik und Biometrie — parametrische vs. verteilungsfreie Verfahren nach Skalenniveau; Testübersicht und Eselsbrücken als Allgemeinwissen ergänzt.)*
 :::
 
@@ -405,6 +453,10 @@ Merkhilfe: *a* ist der Startwert (wo die Gerade beginnt), *b* die Steilheit (wie
 
 Merksatz: Korrelation = wie stark hängen zwei Merkmale zusammen (r, ohne Richtung); Regression = Vorhersageformel y = a + b·x (a = Startwert, b = Steigung); ANOVA (Analysis of Variance = Varianzanalyse) = t-Test für ≥ 3 Gruppen.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 6, Statistik und Biometrie.)*
 :::
 
@@ -434,6 +486,10 @@ Daraus direkt berechenbar: Risiko bei Exposition = a/(a+b) = 0,40; Risiko ohne E
 | **Test negativ** | Falsch-negativ | Richtig-negativ |
 
 Merksatz: bei einer Vierfeldertafel in der Prüfung nicht auf eine feste Position verlassen — auf die konkrete Achsenbeschriftung schauen und mit den Zellen (a, b, c, d) rechnen, wie sie dort tatsächlich stehen.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 6, Statistik und Biometrie — Vierfeldertafel/RR/OR aus dem Buch; Diagnostik-Variante und Konventions-Klarstellung als Allgemeinwissen ergänzt.)*
 :::
@@ -466,6 +522,10 @@ Frage: Was ist eine Odds Ratio genau (im Vergleich zu einer Wahrscheinlichkeit/z
 
 Merksatz: Vierfeldertafel = manuelle Methode, nur für 1 binären Prädiktor vs. 1 binäres Outcome. Odds Ratio = das gemeinsame Ergebnis, egal welcher Weg. Logistische Regression = die allgemeine, flexible Methode, die die Tafel als Spezialfall enthält.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 6, Statistik und Biometrie — Vierfeldertafel/OR/RR-Formeln aus dem Buch; Beziehung zur logistischen Regression und OR-vs-RR-Abgrenzung als Allgemeinwissen ergänzt.)*
 :::
 
@@ -485,6 +545,10 @@ Klinik-Beispiel: Vorhersage der Wahrscheinlichkeit einer postoperativen Komplika
 **Verbindung zur Odds Ratio**: die logistische Regression arbeitet intern mit dem Logarithmus der Odds ("Logit"): logit(p) = ln(p/(1−p)) = a + b·x. Der exponentierte Koeffizient e^b ist genau die Odds Ratio — z. B. "OR = 1,8 pro 10 Jahre Alter" heißt: die Chance auf eine Komplikation steigt um Faktor 1,8 pro 10 Lebensjahre.
 
 Merksatz: Lineare Regression → stetiges Y (z. B. Blutdruck). Logistische Regression → binäres Y (ja/nein), Ergebnis als Wahrscheinlichkeit, Koeffizienten als Odds Ratios interpretierbar.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 6, Statistik und Biometrie — OR als Basis der logistischen Regression steht im Buch; Detailmechanik der Logit-Funktion als Allgemeinwissen ergänzt.)*
 :::
@@ -518,6 +582,10 @@ Typische Gründe für Zensierung: Studienende erreicht (Patient lebt noch, häuf
 **Hazard Ratio vs. Odds Ratio**: die HR vergleicht das momentane Ereignisrisiko (die Hazard Rate, Ereignisrate pro Zeiteinheit: h = 1 − e^(−r·t)) zwischen zwei Gruppen, über die Zeit hinweg — nicht nur an einem festen Endpunkt. Beispiel: HR = 0,7 heißt "zu jedem beliebigen Zeitpunkt ist das Sterberisiko der Behandlungsgruppe 30% niedriger als in der Kontrollgruppe" — konzeptionell wie eine OR, aber zeitabhängig und mit Zensierung umgehend, statt nur ein statisches Endergebnis zu vergleichen.
 
 Merksatz: Odds Ratio = Momentaufnahme (fester Zeitpunkt/Endpunkt). Hazard Ratio = "Odds Ratio über die Zeit", berücksichtigt zusätzlich, *wann* Ereignisse eintreten und wer zensiert ist.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 6, Statistik und Biometrie — Hazard Rate-Formel aus dem Buch; Kaplan-Meier, Log-Rank-Test, Cox-Regression und Zensierung als Allgemeinwissen ergänzt.)*
 :::
@@ -556,6 +624,10 @@ Frage: Ein neues Medikament soll die Sterblichkeit senken — die Behandlungsgru
 - Begriffe: **multivariabel** = mehrere Einflussgrößen, ein Outcome (der Normalfall oben); **multivariat** im strengen Sinn = mehrere Outcomes gleichzeitig (z. B. MANOVA). Umgangssprachlich wird "multivariat" oft für beides benutzt.
 
 Merksatz: Regression rechnet ungleiche Gruppen "fair", aber nur bezüglich dessen, was man gemessen hat — gegen das Unbekannte hilft nur Randomisierung.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt.)*
 :::
@@ -607,6 +679,10 @@ Beispiel Station A: 8 Patienten mit 3–6 Tagen, 2 Patienten mit 50 und 60 Tagen
 
 Merksatz: Schiefe Daten (Liegedauer, Kosten, CRP) → Median und Boxplot. Balken nur für Häufigkeiten.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 6, Statistik und Biometrie — Lage-/Streuungsmaße und Skalenniveaus aus dem Buch; Diagrammwahl und Darstellungsfehler als Allgemeinwissen ergänzt.)*
 :::
 
@@ -651,6 +727,10 @@ Frage: Für eine Klinik-Studie soll ein Statistik-Programm ausgewählt werden. W
 - **Validierung** bei Zulassungsstudien (→ oft SAS).
 
 Merksatz: Klicken ist schnell, Skript ist belegbar. Für Forschung: R (kostenlos, flexibel); für Zulassung: SAS (validiert); für den Einstieg: SPSS/jamovi; Excel nur zum Sammeln, nie zum Auswerten.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt.)*
 :::
@@ -699,6 +779,10 @@ Analogie: wie ein zentrales Labor-Annahmesystem — Proben (Daten) aus allen Sta
 **Bezug zu anderen Modulen:** FHIR/HL7 (Modul VII), Pseudonymisierung/DSGVO (Modul II), SNOMED CT/LOINC (Modul IV), Forschungsdatenmanagement (Modul IX).
 
 Merksatz: Translation = Labor ↔ Krankenbett. Plattform = macht verstreute Klinik-, Bio- und Bilddaten in einem Standardformat (FHIR) pseudonymisiert für Forschung nutzbar — in Deutschland: MII mit einem DIZ an jedem Uniklinikum.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt; MII-Stand nach 2015. Vertiefung: "Translational Health Informatics" (Books/).)*
 :::

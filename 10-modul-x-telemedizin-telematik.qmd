@@ -31,6 +31,10 @@ Formen:
 
 Merksatz: **Telematik = Infrastruktur (Straße), Telemedizin = Versorgung über Distanz (Krankentransport darauf). Vier Aspekte: Organisation (wer reagiert, wer bezahlt?), Recht (Fernbehandlung erlaubt seit 2018, gleicher Facharztstandard, Dokumentation, DSGVO, MDR), Ethik (Digital Divide, Autonomie), Technik (Bandbreite, Verfügbarkeit, Interoperabilität, Verschlüsselung).**
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä, § 630f BGB, MDR, Anlage 31b BMV-Ä, EBM. Stand: 10/2026.)*
 :::
 
@@ -70,6 +74,10 @@ Frage: Welche elektronischen Akten und patientenzentrierten Anwendungen gibt es 
 
 Merksatz: **ePA = gesetzliche Akte, Patient verfügt, Opt-out (§ 341 SGB V); DiGA = geprüfte App auf Rezept (BfArM-Verzeichnis, § 33a SGB V); Consumer Health = frei gekauft, meist kein Medizinprodukt; AAL = Sensorik in der Wohnung für ein selbstständiges Leben im Alter.**
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Curriculum/Allgemeinwissen — § 341 SGB V (ePA), § 33a und § 139e SGB V (DiGA), § 40a SGB XI (DiPA), BfArM-DiGA-Verzeichnis, MDR. Stand: 10/2026.)*
 :::
 
@@ -102,6 +110,10 @@ Allen gemeinsam: **Daten oder Expertise reisen statt des Patienten oder des Arzt
 - Datenschutz und Einwilligung.
 
 Merksatz: **Homemonitoring = Patient misst, TMZ reagiert (Herzinsuffizienz, Kassenleistung). Telekardiologie = Implantat meldet sich selbst. Tele-Stroke = Neurologe per Video + CT live. Telepathologie = gescannter Schnitt (Schnellschnitt aus der Ferne). Teleradiologie = Befund aus der Ferne, genehmigt nach StrlSchG.**
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — TIM-HF2-Studie, EBM-Telemonitoring Herzinsuffizienz, § 14 StrlSchG (Teleradiologie), TEMPiS. Stand: 10/2026.)*
 :::
@@ -151,6 +163,10 @@ Die **TI (Telematikinfrastruktur)** ist das **geschlossene, verschlüsselte Date
 
 Merksatz: **TI = geschlossenes, verschlüsseltes Netz (gematik); Zugang nur mit Karte: eGK (Patient), eHBA (Arzt), SMC-B (Einrichtung), über Konnektor/TI-Gateway. Die eGK ist der Schlüssel, nicht der Speicher (nur Stammdaten, NFD, DPE). Anwendungen: VSDM, E-Rezept, eAU, KIM, TIM, ePA.**
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Curriculum/Allgemeinwissen — gematik, §§ 291, 306 ff., 341 SGB V. Stand: 10/2026.)*
 :::
 
@@ -178,6 +194,10 @@ Frage: Was ist der elektronische Heilberufsausweis (eHBA), wer stellt ihn aus, u
 Analogie: eGK = Versichertenkarte des Patienten; **eHBA = Dienstausweis + Stempel + Unterschrift des Arztes**; SMC-B = Praxisschild der Einrichtung. Für die meisten TI-Zugriffe müssen **eGK + eHBA** (bzw. SMC-B) zusammen stecken ("Zwei-Karten-Prinzip").
 
 Merksatz: eHBA = persönlicher Arztausweis mit Chip — weist aus, unterschreibt, verschlüsselt; ausgestellt über die Ärztekammer, gilt in jedem Einsatzort.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum / Allgemeinwissen — eHBA für Gesundheitsfachberufe/eGBR nach 2015, im Buch nicht enthalten. Stand: 10/2026.)*
 :::
@@ -217,6 +237,10 @@ Frage: Was versteht man unter ausschließlicher Fernbehandlung, unter welchen Vo
 **Abgrenzung:** Fernbehandlung = **Arzt ↔ Patient** (Doc2Patient). Ein **Telekonsil** (Arzt ↔ Arzt, z. B. Tele-Stroke) ist keine Fernbehandlung, denn der Patient wird vom Arzt vor Ort persönlich behandelt.
 
 Merksatz: **Fernbehandlung seit 2018 im Einzelfall erlaubt (§ 7 Abs. 4 MBO-Ä): ärztlich vertretbar, Sorgfalt gewahrt, Patient aufgeklärt. Gleicher Facharztstandard wie vor Ort; im Zweifel persönlich einbestellen.**
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä (121. Deutscher Ärztetag 2018), §§ 630a, 630f BGB, § 9 HWG, AU-Richtlinie G-BA, Anlage 31b BMV-Ä. Stand: 10/2026.)*
 :::
@@ -266,6 +290,10 @@ Telemedizin heißt: Gesundheitsdaten **verlassen die Klinikmauern**. Sie laufen 
 - Patiententablet ohne PIN, gemeinsames Passwort im Telemedizinzentrum.
 
 Merksatz: **Datenschutz = *darf* ich (Art. 9 DSGVO, Einwilligung, AV-Vertrag, kein unsicherer Drittlandserver, DSFA, Schweigepflicht); Datensicherheit = *wie* schütze ich (Vertraulichkeit, Integrität, Verfügbarkeit, Authentizität: Ende-zu-Ende-Verschlüsselung, Backups, Rückfallplan). Kein WhatsApp für Befunde, nur zertifizierte Videodienste.**
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — DSGVO Art. 9, 28, 32, 35, 44 ff., § 203 StGB, Anlage 31b BMV-Ä, BSI-TR-03161, §§ 390, 391 SGB V, MDR. Stand: 10/2026.)*
 :::

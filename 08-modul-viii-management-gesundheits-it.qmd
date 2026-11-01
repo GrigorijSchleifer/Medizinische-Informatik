@@ -40,6 +40,10 @@ Wichtig: **Internes QM ist Pflicht** (§ 135a SGB V, G-BA-QM-Richtlinie) — das
 
 Merksatz: Kontrolle = hinterher, Sicherung = währenddessen, Management = vorher. Donabedian = Struktur (womit) → Prozess (wie) → Ergebnis (was kommt raus). KTQ = „Klinik-Zertifikat der Selbstverwaltung“, proCum Cert = KTQ + Kirche, JCI = amerikanisch/international, ISO 9001 = Industrie-Grundnorm.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 5, Qualitätsmanagement; proCum Cert/JCI, ISO-9001-Fassung 2015 als Curriculum/Allgemeinwissen ergänzt — Buch zitiert noch ISO 9001:2008.)*
 :::
 
@@ -74,6 +78,10 @@ Frage: Welche gesetzlichen und welche freiwilligen Verfahren der Qualitätssiche
 Rolle der IT: QS-Bögen werden aus dem KIS befüllt (Plausibilitätsprüfung, QS-Filter erkennt anhand ICD/OPS automatisch, welcher Fall dokumentationspflichtig ist) — ohne IT praktisch nicht leistbar.
 
 Merksatz: Gesetzlich = G-BA bestimmt, IQTIG misst, Klinik dokumentiert per QS-Bogen, Ergebnis öffentlich im Qualitätsbericht. Freiwillig = Zertifikate, Zentren, IQM-Peer-Review, CIRS.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 5, Qualitätsmanagement; aktualisiert: AQUA → IQTIG (2016), MDK → MD (2020), QSKH-RL → DeQS-RL (2021), Qualitätsbericht jährlich; IQM/Mindestmengen als Allgemeinwissen. Stand: 10/2026.)*
 :::
@@ -111,6 +119,10 @@ Frage (Vertiefung): Was ist die Aufgabe des G-BA, und wie ist er zusammengesetzt
 - Zuarbeit: **IQWiG** (Nutzenbewertung) und **IQTIG** (Qualitätsmessung).
 
 Merksatz: G-BA = kleiner Gesetzgeber der Selbstverwaltung; 3 + 5 + 5 = 13 Stimmen (DKG 2, KBV 2, KZBV 1 | GKV-SV 5); Patienten reden mit, stimmen nicht ab. IQWiG → Nutzen, IQTIG → Qualität.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — im medinfo-kompakt-Buch nur am Rande erwähnt.)*
 :::
@@ -155,6 +167,10 @@ Der Pfad **übersetzt die Leitlinie in die lokalen Gegebenheiten** (Personal, Ge
 
 Merksatz: Leitlinie = *was* (bundesweit), Pfad = *wer–was–wann* (meine Klinik, interdisziplinär, Tag für Tag), SOP = *wie* (ein Handgriff). Pfad lebt von der Varianzanalyse.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 5 (Prozessmanagement, Prozesseigner); Behandlungspfade/Varianzanalyse/KIS-Abbildung als Curriculum/Allgemeinwissen ergänzt.)*
 :::
 
@@ -184,6 +200,10 @@ Frage: Was macht das Medizin-Controlling, und wie sieht der typische Ablauf von 
 Beispiel: Pneumonie-Patient, Nebendiagnose „Herzinsuffizienz NYHA III“ nicht kodiert → niedrigerer PCCL → schlechtere DRG → Erlösverlust. Umgekehrt: unbelegte Nebendiagnose → MD streicht → Rückforderung.
 
 Merksatz: Medizin-Controlling = „aus Medizin wird Geld, ohne dass der MD es zurückholt“: kodieren (ICD/OPS nach DKR) → groupen (DRG) → abrechnen (§ 301) → MD-Prüfung verteidigen → Kennzahlen (CMI, VWD) zurückmelden.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Kap. 4, Gesundheitsökonomie (DRG-Erlös) und Kap. 12 (Kodierung); Ablauf/MD-Prüfung als Curriculum/Allgemeinwissen; aktualisiert MDK → MD, Pflegebudget, Hybrid-DRG.)*
 :::
@@ -230,6 +250,10 @@ Anforderungsdefinition ─────────────── Abnahmetest
 
 Merksatz: V-Modell = „zu jeder Planung links gehört ein Test rechts“; oben Validierung (Anwender: richtiges System?), unten Verifizierung (Entwickler: richtig gebaut?). Wasserfall = Treppe runter, Scrum = Kreisverkehr in Sprints.
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 16 (Verifizierung/Validierung, IEC 62304); Projektmanagement (DIN 69901), V-Modell XT und Scrum (Scrum Guide 2020) als Curriculum/Allgemeinwissen ergänzt.)*
 :::
 
@@ -258,6 +282,10 @@ Der **Projektmanager** arbeitet innerhalb vereinbarter **Toleranzen** (Zeit, Kos
 **Praxis — hybrid**: Kliniken steuern Ausschreibung, Vertrag, Budget und Meilensteine meist klassisch (PRINCE2, V-Modell); die Parametrierung (Formulare, Order-Sets, Pflegedoku-Masken) läuft in kurzen agilen Zyklen mit den Anwendern.
 
 Merksatz: PRINCE2 lenkt das Projekt (Business Case, Lenkungsausschuss, Management by Exception), V-Modell und Scrum beschreiben, wie das Produkt entsteht.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — PRINCE2 (AXELOS/PeopleCert, 7. Ausgabe 2023).)*
 :::
@@ -314,6 +342,10 @@ unwahrscheinl.  ok       ok       ok       ALARP      X = nicht akzeptabel
 
 Merksatz: 14971 = Hersteller baut sicheres Gerät (Analyse → Bewertung → Beherrschung: Design > Schutz > Info → Marktbeobachtung). 80001 = Klinik betreibt sicheres Netz für viele Geräte (gemeinsame Verantwortung).
 
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
+
 *(Quelle: Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019 (EN ISO 14971:2019 + A11:2021, ISO/TR 24971:2020), IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen. Stand: 10/2026.)*
 :::
 
@@ -347,6 +379,10 @@ Folge: Unter der alten MDD war fast jede Software Klasse I, unter der MDR landet
 ⚠️ **Reform**: Die EU-Kommission hat am 16.12.2025 eine gezielte Überarbeitung von MDR und IVDR vorgeschlagen (Verfahren 2025/0404(COD)), u. a. mit einer Neufassung von Regel 11, nach der mehr Software in Klasse I fallen könnte. Das ist **noch kein geltendes Recht** (Parlament und Rat beraten noch) — in der Prüfung die geltende Regel 11 vortragen, die Reform als Ausblick.
 
 Merksatz: Ob Software ein Medizinprodukt ist, entscheidet die Zweckbestimmung; über die Klasse entscheidet Regel 11, und Entscheidungsunterstützung ist mindestens IIa.
+
+::: {.callout-note title="Good to know" appearance="simple"}
+
+:::
 
 *(Quelle: Curriculum/Allgemeinwissen — MDR (EU 2017/745) Art. 2 Nr. 1, Art. 5 Abs. 5, Anhang VIII Regel 11; MDCG 2019-11 Rev. 1; IEC 62304; EU AI Act Art. 6; Kommissionsvorschlag COM(2025) 1023. Stand: 10/2026.)*
 :::

@@ -126,37 +126,64 @@ Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen
 
 ### Betriebssysteme
 
-::: {.exam-question}
-Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
+::: {.exam-question .done}
+Welche Betriebssysteme sind im Klinikkontext auf Clients, Servern, mobilen Endgeräten und Medizingeräten relevant?
 :::
 
-::: {.exam-answer}
-- Eingebettete Systeme in Medizingeräten (Windows IoT/Embedded ?), oft uralte Stände, dazu Echtzeitbetriebssysteme (eal-time operating system, kurz RTOS) in Beatmungsgeräten und Pumpen
+:::: {.exam-answer}
 
-Windows Server/Windows (KIS-Arbeitsplätze meist Windows), Linux (Server-/Datenbank-Backends), Unix/Solaris (ältere/spezialisierte Enterprise-Systeme), iOS/Android (mobile Visiten-/Pflegegeräte).
+- **Stationäre Clients:** Windows sowie – abhängig von Anwendung und Arbeitsplatz – Linux, macOS oder spezielle Thin-Client-Betriebssysteme
+	- Ein Windows-Arbeitsplatz in der Notaufnahme greift auf das Krankenhausinformationssystem (KIS) zu
+	- Verzeichnisdienst (meist Microsoft Active Directory / AD): zentrale Datenbank und das „Telefonbuch“ des Netzwerks. Hier sind alle Benutzer (z. B. Ärztinnen, Pfleger), Computer, Drucker und Berechtigungen gespeichert.
+- **Server:** Windows Server, Linux und Unix-Varianten wie Solaris
+  	- Ein Windows-Server stellt den Verzeichnisdienst für die Klinikarbeitsplätze bereit
+- **Mobile Endgeräte:** iOS beziehungsweise iPadOS und Android
+  	- Ein zentral verwaltetes Tablet dient der mobilen Pflegedokumentation
+- **Medizingeräte:** allgemeine oder eingebettete Betriebssysteme; bei zeitkritischen Funktionen auch Echtzeitbetriebssysteme (Real-Time Operating Systems, RTOS)
+  	- Eine vernetzte Infusionspumpe kann ein eingebettetes Betriebssystem enthalten
 
-Merksatz: Arbeitsplätze meist Windows, Server/Datenbanken oft Linux/Unix, mobile Visitengeräte iOS/Android.
+Merksatz: Es gibt keine feste Zuordnung: Das Betriebssystem richtet sich nach Anwendung, Herstelleranforderungen, Support, Verwaltung und Sicherheitsanforderungen.
 
-::: {.callout-note title="Good to know" appearance="simple"}
-In der Klinik entscheidet oft nicht die Technik, sondern die Herstellerfreigabe: Welche OS-Version ist als Medizinprodukt zugelassen (Konformitötsprüfung (?))
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Bei Medizinprodukten müssen die Herstellerangaben zur unterstützten Betriebsumgebung berücksichtigt werden. Sicherheitsrelevante Softwareupdates gehören nach § 7 Abs. 2 MPBetreibV zur Instandhaltung. Netzsegmentierung ergänzt das Patchmanagement, ersetzt es aber nicht.
+
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: [(Muster-)Kursbuch Medizinische Informatik](https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf), 2. Auflage, 2022, Abschnitt 4.1, S. 10
+- Winter A, Ammenwerth E, Haux R et al.: *Health Information Systems: Technological and Management Perspectives*, 3. Auflage, Springer 2023, Kapitel 3, Abschnitte 3.10.1.1 und 3.10.1.2, [DOI: 10.1007/978-3-031-12310-8_3](https://doi.org/10.1007/978-3-031-12310-8_3)
+- NIST: *Guidelines for Managing the Security of Mobile Devices in the Enterprise*, SP 800-124 Rev. 2, 2023, Abschnitt 4.2.1, [DOI: 10.6028/NIST.SP.800-124r2](https://doi.org/10.6028/NIST.SP.800-124r2)
+- MDCG: [Guidance on Cybersecurity for Medical Devices, MDCG 2019-16 Rev. 1](https://health.ec.europa.eu/system/files/2022-01/md_cybersecurity_en.pdf), 2020, Abschnitte 3.6 und 3.7
+- [§ 7 Abs. 2 Medizinprodukte-Betreiberverordnung](https://www.gesetze-im-internet.de/mpbetreibv_2025/__7.html)
+
 :::
+::::
 
 ### Schnittstellen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen sowie internen und externen Schnittstellen?
 :::
 
-::: {.exam-answer}
-Hardware-Schnittstelle = physischer Anschluss zum Datenaustausch (z. B. USB, LAN-Port, HDMI). Software-Schnittstelle = definierter Zugriffspunkt zwischen Programmen/Systemen (z. B. API, HL7-Schnittstelle). Intern = Verbindung innerhalb eines Systems/einer Institution (z. B. zwischen KIS-Modulen). Extern = Verbindung zu externen Systemen/Partnern (z. B. KIS ↔ Labor eines anderen Anbieters, KIS ↔ Telematikinfrastruktur).
+:::: {.exam-answer}
 
-Merksatz: Hardware-Schnittstelle = Stecker, Software-Schnittstelle = vereinbarte Sprache zwischen Programmen (z. B. HL7 (Health Level 7)); intern = innerhalb des Hauses, extern = nach draußen.
+- **Hardware-Schnittstelle:** Physische und elektrische Verbindung zwischen technischen Geräten zur Signalübertragung.
+  - Beispiel: Die serielle RS-232-Verbindung eines Intensivmonitors an einen Datenkonzentrator.
+- **Software-Schnittstelle:** Logische Vereinbarung aus Format, Protokoll und Semantik zum Datenaustausch zwischen Anwendungsprogrammen.
+  - Beispiel: Eine REST-API nach dem FHIR-Standard zur Abfrage von Patientendaten durch eine App.
+- **Interne Schnittstelle:** Schnittstelle zum Datenaustausch innerhalb einer definierten System- oder Organisationsgrenze.
+  - Beispiel: Die Schnittstelle zwischen dem Patientenaufnahmemodul und dem Abrechnungsmodul im Krankenhausinformationssystem.
+- **Externe Schnittstelle:** Schnittstelle zum Datenaustausch über eine festgelegte System- oder Organisationsgrenze hinweg.
+  - Beispiel: Die Anbindung des Krankenhauses an die Telematikinfrastruktur zur Prüfung des Versichertenstammdatenmanagements.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+Merksatz: Hardware verbindet Geräte physisch, Software Programme logisch – ob intern oder extern, bestimmt einzig die gewählte Systemgrenze.
 
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+„Intern“ und „extern“ sind relative Begriffe. Eine Schnittstelle zum Laborrechner eines Fremdherstellers im selben Raum ist technisch intern im Kliniknetz, aber logisch-organisatorisch eine externe Systemgrenze. In Prüfungen sollte stets das Bezugssystem angegeben werden.
 :::
-:::
+::::
 
 ### Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur
 

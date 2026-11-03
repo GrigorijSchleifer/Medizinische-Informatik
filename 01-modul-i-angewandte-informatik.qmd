@@ -163,7 +163,7 @@ Bei Medizinprodukten müssen die Herstellerangaben zur unterstützten Betriebsum
 
 ### Schnittstellen
 
-::: {.exam-question .done}
+::: {.exam-question .done .done}
 Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen sowie internen und externen Schnittstellen?
 :::
 
@@ -191,24 +191,55 @@ Merksatz: Hardware verbindet Geräte physisch, Software Programme logisch – ob
 Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 :::
 
-::: {.exam-answer}
-- Konnektor: verbindet Primärsystem (KIS/PVS) mit der TI, verschlüsselt Kommunikation.
-- eGK: elektronische Gesundheitskarte, Patientenausweis mit Stammdaten.
-- SMC-B: Institutionskarte, weist Praxis/Klinik gegenüber TI aus.
-- HBA: Heilberufsausweis, persönliche Signatur/Authentifizierung des Arztes.
-- Kartenterminal: liest eGK/SMC-B/HBA aus.
-- VPN-Zugangsdienst: sicherer Tunnel vom Konnektor ins TI-Backbone.
-- Fachdienste: Anwendungen auf der TI, z. B. ePA, eRezept, NFDM, KIM.
-- Neuer: TI-Gateway = Konnektor als Dienst im Rechenzentrum statt Box im Haus; Ziel TI 2.0 (Zero Trust, digitale Identitäten) — Details siehe Modul VII und X.
+:::: {.exam-answer}
 
-Merksatz: Karten weisen aus (eGK (elektronische Gesundheitskarte) = Patient, HBA (Heilberufsausweis) = Arzt, SMC-B (Security Module Card Typ B = Institutionskarte) = Einrichtung), der Konnektor ist die Schleuse ins Netz, die Fachdienste sind die Anwendungen.
+- **Identifikations- und Authentisierungskomponenten:** Personen- und institutionsbezogene Chipkarten zur Identifikation, Authentisierung und Berechtigungsprüfung
+  - **elektronische Gesundheitskarte (eGK):** Versichertennachweis, Authentisierungsmittel und Träger von Versichertenstammdaten
+    - Beispiel: Ein Patient legt die eGK bei der Anmeldung in der Arztpraxis vor
+  - **Security Module Card Typ B (SMC-B):** Institutionsausweis zur Authentisierung einer Praxis, Klinik oder Apotheke
+    - Beispiel: Bei kartenbasierter Nutzung befindet sich die SMC-B im E-Health-Kartenterminal und authentisiert die Praxis
+  - **elektronischer Heilberufsausweis (HBA):** personenbezogener Berufsausweis für Leistungserbringende, unter anderem zur qualifizierten elektronischen Signatur (QES)
+    - Beispiel: Eine Ärztin signiert ein E-Rezept mit ihrem HBA
 
-*(Stand: 10/2026.)*
+- **Zugangskomponenten vor Ort:** Komponenten zur Anbindung der Einrichtung an die TI
+  - **Konnektor:** Sicherheitsgateway zwischen dem Netz der Einrichtung und der TI; alternativ kann ein TI-Gateway verwendet werden
+    - Beispiel: Ein im Krankenhausinformationssystem integriertes ePA-Modul greift über den TI-Zugang auf die elektronische Patientenakte zu
+  - **E-Health-Kartenterminal:** von der gematik zugelassenes Lesegerät für eGK, SMC-B und HBA
+    - Beispiel: Das Kartenterminal am Aufnahmeschalter liest die eGK ein
 
-::: {.callout-note title="Good to know" appearance="simple"}
+- **Netz und zentrale Dienste:** ermöglichen die geschützte Kommunikation und Adressierung
+  - **VPN-Zugangsdienst:** stellt beim klassischen Konnektor die gesicherte Verbindung zur zentralen TI-Plattform her
+    - Beispiel: Der Konnektor verbindet sich über den VPN-Zugangsdienst mit den TI-Diensten
+  - **Verzeichnisdienst (VZD):** zentrales Adressbuch für registrierte Leistungserbringende, Einrichtungen und weitere Organisationen
+    - Beispiel: Eine Praxis sucht die KIM-Adresse einer weiterbehandelnden Klinik im VZD
+
+- **Fachanwendungen:** medizinische und administrative Anwendungen der TI
+  - **Fachdienste und Anwendungssysteme:** stellen Funktionen für TI-Anwendungen bereit
+    - Beispiel: Abruf und Einstellung von Dokumenten in der elektronischen Patientenakte (ePA)
+  - **VSDM-Fachdienste:** ermöglichen die Onlineprüfung von Versichertenstammdaten
+    - Beispiel: Durchführung des Versichertenstammdatenmanagements (VSDM) beim Einlesen der eGK
+  - **Kartengestützte Anwendungen:** speichern bestimmte medizinische Daten dezentral auf der eGK
+    - Beispiel: Auslesen eines Notfalldatensatzes des Notfalldatenmanagements (NFDM) von der eGK
+
+Merksatz: Karten und digitale Identitäten weisen Personen und Einrichtungen aus, Zugangskomponenten verbinden mit der TI, und Fachanwendungen erfüllen den medizinischen oder administrativen Zweck.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Beim TI-Gateway entfällt der eigene Konnektor vor Ort. Ein lokales Hard- oder Software-Zugangsmodul verbindet die Einrichtung per VPN mit einem zentral betriebenen Highspeed-Konnektor. Die TI 2.0 soll den Zugang durch digitale Identitäten und eine Zero-Trust-Architektur weiterentwickeln.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: [(Muster-)Kursbuch Medizinische Informatik](https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf), 2. Auflage, 2022, Abschnitt 4.1, S. 10
+- gematik: [Übergreifendes Datenschutz- und Sicherheitskonzept der TI](https://gemspec.gematik.de/docs/gemKPT/gemKPT_DS_Sich_TI/), Version 3.2.2, 2026, Abschnitte 4.1 und 4.4
+- gematik: [TI-Zugang](https://www.gematik.de/telematikinfrastruktur/ti-zugang), Abschnitt „Was brauche ich, um einen TI-Zugang einzurichten?“
+- gematik: [TI-Gateway](https://www.gematik.de/telematikinfrastruktur/ti-zugang/ti-gateway), Abschnitt „So funktioniert das TI-Gateway“
+
+Quellen geprüft am 3. November 2026.
+
 :::
+::::
 
 ## Programme und Datenbanken
 

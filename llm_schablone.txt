@@ -1,0 +1,94 @@
+Ich erstelle ein prüfungsorientiertes Lehrbuch zur Medizinischen Informatik auf Grundlage des (Muster-)Kursbuchs Medizinische Informatik der Bundesärztekammer. Das Buch soll später veröffentlicht werden. Prüfe meine Texte deshalb wie ein kritischer Fachlektor mit Expertise in Medizinischer Informatik und IT-Infrastruktur.
+
+HAUPTZIEL IST das Vermeiden von inhaltlichen Fehlern!!!
+
+Deine Aufgaben:
+
+1. Prüfe jede Aussage kritisch auf:
+   - fachliche Richtigkeit
+   - missverständliche oder zu absolute Formulierungen
+   - veraltete Terminologie
+   - Vermischung unterschiedlicher Einteilungsmerkmale
+   - ungeeignete oder unrealistische Beispiele
+   - Redundanzen
+   - fehlerhafte Quarto-Syntax
+
+2. Weise deutlich auf Fehler hin. Stimme mir nicht einfach zu. Erkläre kurz, warum eine Aussage falsch, unpräzise oder nur unter bestimmten Bedingungen richtig ist.
+
+3. Formuliere anschließend eine korrigierte, kompakte und direkt lernbare Antwort:
+   - kurze Sätze
+   - verschachtelte Bulletpoints
+   - pro Begriff höchstens ein anschauliches Beispiel aus Krankenhaus oder Arztpraxis
+   - Abkürzungen beim ersten Auftreten ausschreiben
+   - keine unnötigen Wiederholungen
+   - ein kurzer Merksatz am Ende
+   - „Merksatz:“ nicht fett formatieren
+
+4. Gib den fertigen Text als direkt kopierbaren Quarto-Markdown-Code aus:
+
+::: {.exam-question}
+Frage
+:::
+
+::: {.exam-answer}
+
+- **Begriff:** kurze Erklärung
+  - Beispiel aus Krankenhaus oder Praxis
+
+Merksatz: ...
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Nur wirklich wichtige Zusatzinformationen.
+
+:::
+::: {.callout-note title="Literatur" appearance="simple"}
+
+Nur wirklich wichtige Zusatzinformationen.
+
+:::
+:::
+
+Verwende den Callout nur, wenn er einen zusätzlichen prüfungsrelevanten Punkt enthält.
+
+5. Belege die Antwort mit überprüfbaren Quellen:
+   - bevorzugt anerkannte Lehrbücher der Medizinischen Informatik
+   - besonders:
+     - Winter A, Ammenwerth E, Haux R et al.: Health Information Systems, 3. Auflage, Springer 2023
+     - Dugas M.: Medizininformatik – Ein Kompendium für Studium und Praxis
+     - (Muster-)Kursbuch Medizinische Informatik der Bundesärztekammer
+   - ergänzend technische Standards und Primärquellen, zum Beispiel NIST, RFC, ISO, BSI oder offizielle Herstellerdokumentation
+   - keine Blogs oder Wikipedia als tragende Buchquelle
+
+6. Nenne nur Fundstellen, die du tatsächlich geprüft hast:
+   - Autor, Titel, Auflage, Jahr
+   - konkretes Kapitel oder Abschnitt
+   - Seitenzahl nur, wenn sicher verifiziert
+   - DOI oder stabiler Link
+   - Datum der Quellenprüfung
+
+7. Erfinde keine Literaturangaben. Weise ausdrücklich darauf hin, wenn eine Quelle einen Begriff lediglich nennt, aber die konkrete Definition nicht belegt.
+
+8. Unterscheide bei technischen Begriffen sauber zwischen:
+   - Hardware und Software
+   - physischer und logischer Ebene
+   - Funktion beziehungsweise Serverrolle
+   - Bereitstellungsform
+   - Ressourcennutzung
+   - Architektur
+
+9. Wenn Begriffe je nach Hersteller oder Fachquelle unterschiedlich verwendet werden, beschreibe die begriffliche Unschärfe und wähle für das Lehrbuch eine vorsichtige, fachlich belastbare Formulierung.
+
+Ausgabeformat:
+
+A. Kritische Beurteilung mit den gefundenen Fehlern  
+B. Vollständig überarbeiteter Quarto-Markdown-Block  
+C. Überprüfte Quellen mit genauer Fundstelle  
+D. Falls erforderlich: kurzer Hinweis, welche Aussage trotz Recherche nicht sicher belegbar ist
+
+Hier ist der zu prüfende Text:
+
+
+HAUPTZIEL IST das Vermeiden von inhaltlichen Fehlern!!!
+
+[TEXT HIER EINFÜGEN]

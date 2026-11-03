@@ -7,21 +7,29 @@ Welche Anwendungssysteme werden in der medizinischen (klinischen) Forschung eing
 :::
 
 ::: {.exam-answer}
-- **Studienregistrierung und Antragstellung:** machen Studien öffentlich nachvollziehbar und unterstützen behördliche Verfa
-- **[DRKS](https://www.bfarm.de/DE/Das-BfArM/Aufgaben/Deutsches-Register-Klinischer-Studien/_node.html) / ClinicalTrials.gov:** öffentliche Studienregistrierung
-- **CTIS:** Antragstellung, Aufsicht und Transparenz bei EU-Arzneimittelprüfungen
-- **EDC (Electronic Data Capture):** erfasst und prüft Studiendaten in elektronischen Prüfbögen (eCRF)
-  - Eine Study Nurse dokumentiert eine Visite in REDCap; Plausibilitätsprüfungen markieren auffällige Werte
-- **CTMS (Clinical Trial Management System):** organisiert Studienabläufe, Zentren und Termine
-  - Die Studienzentrale überwacht den Rekrutierungsstand
+- **Studienregistrierung und Antragstellung:** 
+	- machen Studien öffentlich nachvollziehbar und unterstützen behördliche Verfa
+- **[DRKS](https://www.bfarm.de/DE/Das-BfArM/Aufgaben/Deutsches-Register-Klinischer-Studien/_node.html) / ClinicalTrials.gov:** 
+	- öffentliche Studienregistrierung
+- **CTIS:** 
+	- Antragstellung, Aufsicht und Transparenz bei EU-Arzneimittelprüfungen
+- **EDC (Electronic Data Capture):**
+	- erfasst und prüft Studiendaten in elektronischen Prüfbögen (eCRF)
+	- Eine Study Nurse dokumentiert eine Visite in REDCap; Plausibilitätsprüfungen markieren auffällige Werte
+- **CTMS (Clinical Trial Management System):** 
+	- organisiert Studienabläufe, Zentren und Termine
+	- Die Studienzentrale überwacht den Rekrutierungsstand
 - **IRT (Interactive Response Technology):** unterstützt Randomisierung und Prüfpräparateverwaltung
-  - Ein Teilnehmer wird einer Behandlungsgruppe zugeteilt
-- **Pseudonymisierungs- und Einwilligungsmanagement:** trennt Identitätsdaten von Forschungsdaten und dokumentiert Einwilligungen
-  - Forschende arbeiten mit einer Studiennummer statt dem Patientennamen
-- **Forschungsdatenplattform / Data Warehouse:** führt Routinedaten zusammen und ermöglicht Kohortenabfragen
-  - Suche nach Patienten mit Diabetes und HbA1c > 9 %
-- **Statistiksoftware:** analysiert Daten und stellt Ergebnisse dar
-  - Überlebenszeitanalyse mit R oder SAS
+	- Ein Teilnehmer wird einer Behandlungsgruppe zugeteilt
+- **Pseudonymisierungs- und Einwilligungsmanagement:** 
+	- trennt Identitätsdaten von Forschungsdaten und dokumentiert Einwilligungen
+	- Forschende arbeiten mit einer Studiennummer statt dem Patientennamen
+- **Forschungsdatenplattform / Data Warehouse:** 
+	- führt Routinedaten zusammen und ermöglicht Kohortenabfragen
+  	- z.B. FDPG
+- **Statistiksoftware:** 
+	- analysiert Daten und stellt Ergebnisse dar
+  	- Überlebenszeitanalyse mit R oder SAS
 
 **Anforderungen – abhängig von Studienart und Einsatzzweck:**
 

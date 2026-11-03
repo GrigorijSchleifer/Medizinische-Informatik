@@ -19,13 +19,12 @@ Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
   - Kabel, Netzwerkdosen und Patchpanels
   - Keine aktive Verarbeitung
   - benötigen kein Strom 
-- **Sicherheitskomponenten und Netzwerksegmentierung:** 
-  - Kontrollieren Zugriffe und trennen Netzbereiche
+- **Sicherheitskomponenten und Netzwerksegmentierung:** Zugriffskontrolle, Netztrennung, Netzsicherheit
   - Firewalls (kontrollieren den Verkehr)
   - [VLANs](https://de.wikipedia.org/wiki/Virtual_Local_Area_Network) sind Pfeiler der Segmentierung und unterteilen das Krankenhaus in Zonen (Medizintechnik, Verwaltung und Gäste)
 
 - **Externe Anbindungen:** verbinden die Klinik mit externen Diensten und Standorten
-  - Internet, TI (Telematikinfrastruktur) und VPN (Virtual Private Network)
+  - z.B. Internet, TI (Telematikinfrastruktur), VPN (Virtual Private Network)
 
 Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte, Router verbinden Netze, Firewalls kontrollieren den Verkehr.
 
@@ -38,59 +37,90 @@ Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte,
 
 ### Client-Server-Konzept
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist das Client-Server-Konzept?
 :::
 
 ::: {.exam-answer}
 - **Client-Server-Konzept:** Aufgaben sind zwischen anfragendem Client und bereitstellendem Server aufgeteilt
-  - **Client:** fordert Dienste oder Daten an
-    - Der Stations-PC ruft einen Laborbefund im KIS ab
+  - **Client:** fordert Dienste/Daten an und verarbeitet die Antwort
+    - Die KIS-Anwendung auf dem Stations-PC ruft einen Laborbefund ab
   - **Server:** verarbeitet Anfragen und stellt Dienste oder Daten bereit
     - Der KIS-Server liefert den angeforderten Laborbefund
-  - **Datenhaltung und Verarbeitung:** Daten und gemeinsame Dienste liegen typischerweise zentral auf dem Server; Verarbeitung kann auf beiden Seiten erfolgen
+    - **Aufgabenverteilung:** Gemeinsame Daten und Dienste werden häufig zentral bereitgestellt; Verarbeitung kann auf beiden Seiten erfolgen
 
-Merksatz: Client fragt an, Server liefert
+Merksatz: Client fragt an, Server bearbeite und antwortet
 
 ::: {.callout-note title="Good to know" appearance="simple"}
+- Client und Server bezeichnen Software-Rollen [Fielding], nicht zwingend getrennte Rechner. Ein Programm kann je nach Kommunikationspartner beide Rollen übernehmen.
+- Client-Server und 3-Schichten-Modell
+	- Client-Server legt nur zwei Rollen fest: Einer fragt an (Client), einer liefert (Server).
+Das 3-Schichten-Modell sagt genauer, wo welche Arbeit erledigt wird.
+:::
+
+::: {.callout-note title="Zitate" appearance="simple"}
+Fielding RT, Nottingham M, Reschke J (2022).
+*HTTP Semantics*. RFC 9110, Abschnitt 3.3 „[Connections, Clients, and Servers](https://www.rfc-editor.org/rfc/rfc9110.html#section-3.3)“.
 
 :::
 :::
 
 ### Rechnertypen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was unterscheidet Fat-, Thin- und Zero-Clients?
 :::
 
 ::: {.exam-answer}
-- **Fat Client:** vollwertiger Rechner mit eigenem Betriebssystem; verarbeitet Anwendungen überwiegend lokal
+
+Entscheidend sind die Verteilung der Anwendungsverarbeitung und die lokale Softwareausstattung.
+
+- **Fat Client:** führt Anwendungen überwiegend lokal aus; besitzt ein eigenes Betriebssystem
   - Praxis-PC mit lokal installierter Praxissoftware und Verbindung zum Datenbankserver
-- **Thin Client:** schlankes Betriebssystem; Anwendungen und wesentliche Verarbeitung laufen überwiegend auf dem Server
-  - Stationsarbeitsplatz mit Zugriff auf einen Terminalserver
-- **Zero Client:** spezialisierte Hardware mit Firmware statt eines allgemeinen Betriebssystems; Anwendungen laufen auf dem Server
-  - Befundarbeitsplatz mit Zugriff auf einen virtuellen Desktop
+- **Thin Client:** nutzt überwiegend serverseitig ausgeführte Anwendungen; besitzt ein lokales, häufig reduziertes Betriebssystem
+  - Am Stationsarbeitsplatz wird das KIS bedient; die Anwendung läuft auf einem zentralen Terminalserver
+- **Zero Client:** spezialisiertes Endgerät für entfernte Anwendungen oder Desktops; nutzt typischerweise Firmware statt eines allgemeinen Anwendungsbetriebssystems
+  - Stationsarbeitsplatz mit Zugriff auf einen virtuellen Desktop
 
-Merksatz: Fat rechnet überwiegend lokal, Thin und Zero überwiegend auf dem Server. Auch Zero-Clients verarbeiten lokal die Bildübertragung und Ein-/Ausgabe.
+Merksatz: Fat verarbeitet Anwendungen überwiegend lokal; Thin und Zero überwiegend serverseitig.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+Auch Thin und Zero Clients verarbeiten Daten lokal, etwa zur Bilddarstellung und Übertragung von Tastatur- und Mauseingaben. Ein Zero Client ist deshalb mehr als ein Bildschirm.
+:::
+::: {.callout-note title="Zitate" appearance="simple"}
 
 :::
 :::
 
 ### Servertypen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
 :::
 
+
 ::: {.exam-answer}
-Dedizierter Server = für eine Anwendung reserviert. Shared Server = mehrere Anwendungen teilen sich einen Server. Virtueller Server = mehrere logische Server auf einer Hardware (Hypervisor). Cluster = mehrere Server als Einheit, für Ausfallsicherheit/Lastverteilung.
+
+Ein Server kann physischer Natur sein, eine Rolle (logische Funktion) einnehmen oder eine Schicht in der Anwendungsarchitektur sein. Die Begriffe bilden keine einheitliche, gegenseitig ausschließende Klassifikationen.
+
+- **Physischer Server:** eigenständiger Hardware-Rechner, auf dem ein Serverbetriebssystem, Anwendungen oder ein Hyperviser laufen
+	- Stellt Rechenleistung für mehrere KIS-Subsysteme (z.B. im eigenen Klinik-Rechenzentrum) 
+- **Virtueller Server:** softwaredefinierte (?), von einem Hypervisor bereitgestellte Serverumgebung (?) mit eigenem Betriebssystem und zugewiesenen Ressourcen 
+	- Eine VM betreibt den Applikationsserver des LIS
+- **Dedizierter Server:** seine Ressourcen sind exklusiv einem Mandanten oder einem bestimmten Workload zugeordnet (kann physisch oder virtuell sein)
+	- z.B. eine VM ist ausschließlich für die produktive LIS-Datenbank reserviert
+- **Shared Server:** mehrere Anwendungen VMs oder Mandanten teilen sich Ressourcen einer Serverinfrastruktur. 
+	- Ein physischer Virtualisierungshost stellt Rechenleistung für virtuelle Server von LIS, KIS und RIS bereit.
+- **Cluster:** mehrere eingenständige Server oder Clusterknoten (?) arbeiten koordiniert zusammen
+	- Zwei Datenbankserver stellen die KIS-Datenbank als Failovercluster bereit (Redundanz)
+		- Failover-Cluster, Load-Balancing, High-Performance
 
 Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen sich einen Server; virtuell = viele logische Server auf einer Hardware; Cluster = mehrere Server als Team gegen Ausfall.
 
 ::: {.callout-note title="Good to know" appearance="simple"}
-
+- Ein KIS läuft auf einem virtullen Server, dieser liegt auf einem Cluster mit mehreren physischen Hyperviser-Hosts, die sich einen shard Storage teilen. Die Datenbank bekommnt dedizierte Ressourcen zugewiesen, damit sie nicht mit mehreren VMs um CPU konkurriert.
+- Servertypen können auch nach ihrer Funktions klassifiziert werdern (Datenbank-, Applikations-, Terminal-, Kommunikationsserver)
+- Hyperviser: eine Software- oder Firmware-Schicht, die die physischen Ressourcen der Hardware (CPU, RAM, Festplatte) verwaltet und sie der VM als virtuelle Umgebung bereitstellt
 :::
 :::
 
@@ -101,12 +131,14 @@ Welche Betriebssysteme sind im Klinikkontext relevant (Server/Client)?
 :::
 
 ::: {.exam-answer}
+- Eingebettete Systeme in Medizingeräten (Windows IoT/Embedded ?), oft uralte Stände, dazu Echtzeitbetriebssysteme (eal-time operating system, kurz RTOS) in Beatmungsgeräten und Pumpen
+
 Windows Server/Windows (KIS-Arbeitsplätze meist Windows), Linux (Server-/Datenbank-Backends), Unix/Solaris (ältere/spezialisierte Enterprise-Systeme), iOS/Android (mobile Visiten-/Pflegegeräte).
 
 Merksatz: Arbeitsplätze meist Windows, Server/Datenbanken oft Linux/Unix, mobile Visitengeräte iOS/Android.
 
 ::: {.callout-note title="Good to know" appearance="simple"}
-
+In der Klinik entscheidet oft nicht die Technik, sondern die Herstellerfreigabe: Welche OS-Version ist als Medizinprodukt zugelassen (Konformitötsprüfung (?))
 :::
 :::
 

@@ -35,8 +35,8 @@ filters:
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: [cosmo, custom-light.scss]
+      dark:  [darkly, custom-dark.scss]
     css: style.css
     grid:
       sidebar-width: 250px   # linke Kapitel-Navigation (Standard: 250px)
@@ -47,3 +47,4 @@ format:
     toc-depth: 3
     toc-expand: 1        # rechts nur Kursbuch-Punkte offen, Unterpunkte klappen beim Scrollen auf
     number-depth: 3
+

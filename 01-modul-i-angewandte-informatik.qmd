@@ -187,7 +187,7 @@ Merksatz: Hardware verbindet Geräte physisch, Software Programme logisch – ob
 
 ### Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur
 
-::: {.exam-question}
+::: {.exam-question .done}
 Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 :::
 
@@ -203,7 +203,7 @@ Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 
 - **Zugangskomponenten vor Ort:** Komponenten zur Anbindung der Einrichtung an die TI
   - **Konnektor:** Sicherheitsgateway zwischen dem Netz der Einrichtung und der TI; alternativ kann ein TI-Gateway verwendet werden
-    - Beispiel: Ein im Krankenhausinformationssystem integriertes ePA-Modul greift über den TI-Zugang auf die elektronische Patientenakte zu
+    - Beispiel: Ein im KIS integriertes ePA-Modul greift über den TI-Zugang auf die elektronische Patientenakte zu
   - **E-Health-Kartenterminal:** von der gematik zugelassenes Lesegerät für eGK, SMC-B und HBA
     - Beispiel: Das Kartenterminal am Aufnahmeschalter liest die eGK ein
 
@@ -227,6 +227,10 @@ Merksatz: Karten und digitale Identitäten weisen Personen und Einrichtungen aus
 
 Beim TI-Gateway entfällt der eigene Konnektor vor Ort. Ein lokales Hard- oder Software-Zugangsmodul verbindet die Einrichtung per VPN mit einem zentral betriebenen Highspeed-Konnektor. Die TI 2.0 soll den Zugang durch digitale Identitäten und eine Zero-Trust-Architektur weiterentwickeln.
 
+HBA ist nicht ausschließlich auf approbierte Berufe beschränkt
+
+VZD: "bildet die Basis für sichere Kommunikation mit KIM und TI‑Messenger sowie für weitere TI‑Anwendungen wie E-Rezept und der elektronischen Patientenakte (ePA)." (https://www.gematik.de/telematikinfrastruktur/verzeichnisdienst-vzd)
+
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
@@ -243,21 +247,231 @@ Quellen geprüft am 3. November 2026.
 
 ## Programme und Datenbanken
 
-### Gängige Programmbestandteile und -algorithmen
+### Programmbestandteile und Kontrollstrukturen
+
+::: {.exam-question .don .done}
+Welche typischen Bestandteile enthält der Quellcode eines Programms?
+:::
+
+:::: {.exam-answer}
+
+- **Anweisungen (Statements):** führen einzelne Verarbeitungsschritte aus
+  - Beispiele sind Zuweisungen, Funktionsaufrufe und Rückgaben
+- **Variablen und Datentypen:** Variablen bezeichnen Werte; der Datentyp bestimmt deren mögliche Werte und Operationen
+  - Beispiele sind Ganzzahlen, Gleitkommazahlen, Text und Wahrheitswerte
+- **Kontrollstrukturen:** steuern, in welcher Reihenfolge Anweisungen ausgeführt werden
+  - **Sequenz:** Anweisungen werden nacheinander ausgeführt
+  - **Selektion:** abhängig von einer Bedingung wird ein Zweig ausgewählt, z. B. mit `if–else`
+  - **Iteration:** Anweisungen werden wiederholt, z. B. mit `for`, `while` oder `do–while`
+- **Funktionen und Methoden:** fassen Anweisungen zu wiederverwendbaren Teilaufgaben zusammen
+  - Eine Methode ist einer Klasse oder einem Objekt zugeordnet
+- **Kommentare:** erklären den Quellcode für Menschen und werden normalerweise nicht ausgeführt
+- **Ein- und Ausgabe (Input/Output, I/O):** ermöglichen den Datenaustausch mit Nutzern, Dateien, Datenbanken oder anderen Systemen
+
+**Beispiel in Python:**
+
+```{.python}
+def filtere_werte(werte, grenzwert):       # Funktion
+    ergebnis = []                          # Variable und Anweisung
+
+    for wert in werte:                     # Iteration
+        if wert > grenzwert:               # Selektion
+            ergebnis.append(wert)           # Methodenaufruf
+
+    return ergebnis                        # Rückgabe
+
+kalium_werte = [4.2, 5.5, 4.8, 6.1]        # vereinfachte Eingabedaten
+auffaellige_werte = filtere_werte(kalium_werte, 5.0)
+print(auffaellige_werte)                    # Ausgabe
+```
+
+Das Beispiel filtert Werte anhand eines ausschließlich zu Lehrzwecken festgelegten Schwellenwerts. Es stellt keine medizinische Entscheidungsregel dar.
+
+Merksatz: Anweisungen führen aus, Variablen halten Werte, Kontrollstrukturen steuern, Funktionen gliedern, Kommentare erklären und Ein- und Ausgabe verbinden das Programm mit seiner Umgebung.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Nicht jedes Programm enthält alle genannten Bestandteile. Kommentare gehören zum Quelltext, aber nicht zur ausgeführten Programmlogik.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
+- Python Software Foundation: *The Python Language Reference*, Kapitel 2.1.3, 3.1, 7 und 8. Onlinefassung, geprüft am 04.11.2026.
+
+:::
+::::
+
+### Ein- und Ausgabe, Bedingungen und Schleifen
+
+:::: {.exam-question}
+Wie werden Ein- und Ausgabe, Bedingungen und Schleifen in einer
+Programmiersprache umgesetzt — am Beispiel von Python?
+::::
+
+:::: {.exam-answer}
+
+- **Eingabe:** Daten gelangen von außen in das Programm. In Python liest
+  `input()` von der Tastatur und liefert das Ergebnis **immer als
+  Zeichenkette**.
+  - Zahlen müssen umgewandelt werden, etwa mit `int()` oder `float()` —
+    sonst scheitert jeder Vergleich mit einem Zahlenwert.
+- **Ausgabe:** Daten verlassen das Programm. In Python schreibt `print()`
+  auf die Standardausgabe.
+  - In klinischen Systemen laufen Ein- und Ausgabe praktisch nie über die
+    Konsole, sondern über Benutzeroberflächen, Dateien, Datenbanken oder
+    Schnittstellen. `input()` und `print()` sind Lehrbeispiele.
+- **Bedingung:** Ausdruck, der zu wahr oder falsch ausgewertet wird.
+  - Beispiel: `kalium > 5.0`
+- **Selektion:** `if`, `elif` und `else` wählen abhängig von Bedingungen
+  einen Zweig aus.
+- **Iteration:** `for` durchläuft eine Sammlung, `while` wiederholt, solange
+  eine Bedingung gilt. Eine fußgesteuerte `do-while`-Anweisung kennt Python
+  nicht; sie wird mit `while True` und `break` nachgebildet.
+- **Schleifensteuerung:** `break` verlässt die Schleife sofort, `continue`
+  springt zum nächsten Durchlauf.
+
+**Ein- und Ausgabe mit Typumwandlung:**
+
+```{.python}
+eingabe = input("Kaliumwert in mmol/l: ")   # <1>
+kalium = float(eingabe)                      # <2>
+print("Erfasster Wert:", kalium)             # <3>
+```
+1. `input()` liefert eine Zeichenkette, zum Beispiel `"5.5"`
+2. Umwandlung in eine Gleitkommazahl — ohne diesen Schritt wäre `kalium > 5.0` ein Fehler
+3. Ausgabe auf der Standardausgabe
+
+**Selektion und Iteration:**
+
+```{.python}
+offene_befunde = ["Labor", "Röntgen", "EKG"]
+
+for befund in offene_befunde:                # <1>
+    if befund == "Labor":                    # <2>
+        print(befund, "– vorrangig prüfen")
+    else:
+        print(befund, "– Routine")
+```
+1. Iteration über die Elemente der Liste
+2. Selektion: Fallunterscheidung je Element
+
+Merksatz: `input()` liest und liefert immer Text, `print()` gibt aus, `if`
+entscheidet, `for` durchläuft, `while` wiederholt — und `break` bricht ab.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**Die häufigste Fehlerquelle bei der Eingabe** ist der Datentyp. `input()`
+gibt eine Zeichenkette zurück, auch wenn der Benutzer eine Zahl eintippt.
+Der Vergleich `input("Wert: ") > 5` löst in Python einen `TypeError` aus.
+Erst `float()` oder `int()` macht den Wert rechenbar — und beide scheitern
+ihrerseits, wenn die Eingabe keine Zahl enthält. Robuste Programme prüfen
+die Eingabe deshalb, bevor sie damit rechnen.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+Python Software Foundation: The Python Language Reference, Kapitel 8
+„Compound statements", Abschnitte 8.1 (`if`), 8.2 (`while`), 8.3 (`for`).
+Python Software Foundation: Built-in Functions, `input()` und `print()`.
+
+:::
+::::
+### Algorithmen
+
+### Programmier- und Auszeichnungssprachen
 
 ::: {.exam-question}
-Was sind die drei Grundkategorien von Kontrollstrukturen, und wie unterscheiden sich while und do-while?
+Was unterscheidet Programmier- und Auszeichnungssprachen, und wie sind Java, Python und HTML einzuordnen?
 :::
 
-::: {.exam-answer}
-Kontrollstrukturen gliedern sich in Verzweigungen (`if`, `if-else`, `switch`), Schleifen (`while`, `do-while`, `for`, `foreach`) und Sprünge (`break`, `continue`). Bei Schleifen: `while` prüft die Bedingung vor der Iteration (0 bis n Durchläufe möglich), `do-while` prüft sie danach (mindestens 1 Durchlauf garantiert).
+:::: {.exam-answer}
 
-Merksatz: `while` = erst prüfen, dann handeln (vielleicht nie, wie „nur Insulin, wenn BZ > 200“); `do-while` = erst handeln, dann prüfen (mindestens einmal, wie „Dosis geben, dann Spiegel kontrollieren“).
+- **Java:** statisch typisierte Programmiersprache
+  - Java-Quellcode wird typischerweise in Bytecode übersetzt und von der Java Virtual Machine (JVM) ausgeführt
 
-::: {.callout-note title="Good to know" appearance="simple"}
+```{.java}
+double kalium = 5.5;
+
+if (kalium > 5.0) {
+    System.out.println("Wert oberhalb des festgelegten Schwellenwerts");
+}
+```
+
+- **Python:** dynamisch typisierte Programmiersprache mit vergleichsweise kompakter Syntax
+  - Python-Code wird durch eine Python-Laufzeitumgebung ausgeführt
+
+```{.python}
+kalium = 5.5
+
+if kalium > 5.0:
+    print("Wert oberhalb des festgelegten Schwellenwerts")
+```
+
+- **HTML (Hypertext Markup Language):** Auszeichnungssprache zur Strukturierung und semantischen Beschreibung von Webinhalten
+  - HTML selbst besitzt keine allgemeinen algorithmischen Kontrollstrukturen
+
+```{.html}
+<section>
+  <h2>Laborbefund</h2>
+  <p>Kalium: <strong>5,5 mmol/l</strong></p>
+</section>
+```
+
+Merksatz: Java und Python verarbeiten Daten; HTML strukturiert deren Darstellung.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Dynamisches Verhalten einer Webseite wird üblicherweise durch eine Programmiersprache wie JavaScript ergänzt. HTML beschreibt dagegen die Struktur und Bedeutung der Inhalte.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: [(Muster-)Kursbuch Medizinische Informatik](https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf), 2. Auflage, 2022, Abschnitt 4.1, S. 10
+- Oracle: [The Java Language Specification](https://docs.oracle.com/javase/specs/jls/se26/html/jls-14.html), Java SE 26, 2026, Kapitel 14, insbesondere Abschnitte 14.9, 14.12 und 14.13
+- Python Software Foundation: [The Python Language Reference](https://docs.python.org/3/reference/)
+- WHATWG: [HTML Living Standard](https://html.spec.whatwg.org/dev/introduction.html), Abschnitte 1.2 und 1.4
+- NIST: [Glossary – Algorithm](https://csrc.nist.gov/glossary/term/Algorithm)
+
+Quellen geprüft am 4. November 2026.
+
 :::
+::::
+
+
+
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**Vertiefung: Algorithmen und Komplexität**
+
+- **Algorithmus:** eindeutig beschriebene Folge von Regeln oder Verarbeitungsschritten zur Lösung einer Aufgabe
+- **Finitheit:** der Algorithmus lässt sich durch eine endliche Zahl von Regeln beschreiben
+- **Terminierung:** die Ausführung endet für die vorgesehenen Eingaben nach endlich vielen Schritten
+- **Determiniertheit:** der jeweils nächste Verarbeitungsschritt ist eindeutig festgelegt
+- **Determinismus:** gleiche Eingaben führen zum gleichen Ablauf und Ergebnis
+  - nicht für jeden Algorithmus erforderlich, da beispielsweise randomisierte Algorithmen existieren
+- **O-Notation:** beschreibt, wie Laufzeit oder Speicherbedarf mit der Eingabegröße wachsen
+  - `O(n)`: ungefähr lineares Wachstum
+  - `O(log n)`: ungefähr logarithmisches Wachstum
+- **Lineare Suche:** prüft Elemente nacheinander; eine Sortierung ist nicht erforderlich
+  - typische Laufzeit: `O(n)`
+- **Binäre Suche:** halbiert den Suchbereich bei jedem Schritt und setzt sortierte Daten voraus
+  - typische Laufzeit: `O(log n)`
+- **Divide-and-Conquer:** zerlegt ein Problem in Teilprobleme, löst diese und setzt die Teilergebnisse zusammen
+  - wird häufig, aber nicht zwingend, rekursiv umgesetzt
+
+Die Begriffe Determiniertheit und Determinismus werden in Lehrbüchern nicht immer einheitlich verwendet.
+
+:::
+
+
+
+
+
 
 ::: {.exam-question}
 Nach welchen Kriterien wählt man einen Sortieralgorithmus, und warum wird Bubblesort in der Praxis kaum eingesetzt?

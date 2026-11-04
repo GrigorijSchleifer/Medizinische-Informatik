@@ -43,6 +43,38 @@ Merksatz: Kontrolle = hinterher, Sicherung = währenddessen, Management = vorher
 :::
 :::
 
+::: {.exam-question}
+Frage (Vertiefung): Was bedeuten die Kürzel in „DIN EN ISO 9001:2015“, und warum ist das „EN“ rechtlich wichtig?
+:::
+
+::: {.exam-answer}
+**Antwort:**
+
+Jedes Kürzel steht für eine Normungsebene, die die Norm übernommen hat — man liest den Namen **von hinten nach vorn**: erarbeitet weltweit (ISO), übernommen in Europa (EN), veröffentlicht in Deutschland (DIN). Inhaltlich ist es überall derselbe Text.
+
+| Kürzel | Ebene | Bedeutung |
+|---|---|---|
+| **ISO** | weltweit | Internationale Organisation für Normung (Genf) hat die Norm erarbeitet |
+| **EN** | Europa | vom Europäischen Komitee für Normung (**CEN**) als Europäische Norm übernommen → alle CEN-Mitglieder müssen sie **unverändert** ins nationale Normenwerk aufnehmen und widersprechende nationale Normen **zurückziehen** |
+| **DIN** | Deutschland | vom Deutschen Institut für Normung veröffentlicht, meist mit deutscher Übersetzung und nationalem Vorwort |
+| **:2015** | — | Ausgabejahr |
+
+**Varianten**:
+
+| Bezeichnung | Herkunft | Beispiel |
+|---|---|---|
+| **DIN ISO …** | ISO-Norm, nur von Deutschland übernommen, nicht von Europa | — |
+| **DIN EN …** | ursprünglich europäische Norm | DIN EN 15224 (QM im Gesundheitswesen) |
+| **DIN EN IEC …** | wie DIN EN ISO, aber von der **IEC** (Internationale Elektrotechnische Kommission; zuständig für Elektrotechnik, also auch Medizingeräte und -software) | IEC 62304, IEC 80001-1 |
+| **ISO/IEC …** | gemeinsam von ISO und IEC erarbeitet | ISO/IEC 27001 (Informationssicherheit) |
+
+**Prüfungsrelevant — Konformitätsvermutung**: Normen sind an sich **freiwillig**. Europäische Normen, die im **EU-Amtsblatt als harmonisiert** gelistet sind, lösen aber unter der **MDR** (Art. 8) eine **Konformitätsvermutung** aus: Wer sie einhält, bei dem wird vermutet, dass er die entsprechenden gesetzlichen Anforderungen erfüllt (z. B. EN ISO 14971 Risikomanagement, EN ISO 13485 QM für Medizinproduktehersteller). Über diesen Mechanismus werden Normen **faktisch zum Standard**.
+
+Merksatz: Von hinten lesen — ISO erarbeitet, EN übernimmt für Europa, DIN veröffentlicht für Deutschland; harmonisierte EN-Norm eingehalten = Konformität mit der MDR vermutet.
+
+*(Quelle: Curriculum/Allgemeinwissen — DIN, CEN, Art. 8 MDR (EU 2017/745), Liste harmonisierter Normen im EU-Amtsblatt. Stand: 10/2026.)*
+:::
+
 ## Qualitätssicherung (gesetzliche und freiwillige Verfahren)
 
 ::: {.exam-question}

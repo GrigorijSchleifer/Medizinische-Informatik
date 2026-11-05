@@ -271,19 +271,26 @@ Welche typischen Bestandteile enthält der Quellcode eines Programms?
 **Beispiel in Python:**
 
 ```{.python}
-def filtere_werte(werte, grenzwert):       # Funktion
-    ergebnis = []                          # Variable und Anweisung
+def filtere_werte(werte, grenzwert):                 # <1>
+    ergebnis = []                                    # <2>
 
-    for wert in werte:                     # Iteration
-        if wert > grenzwert:               # Selektion
-            ergebnis.append(wert)           # Methodenaufruf
+    for wert in werte:                               # <3>
+        if wert > grenzwert:                         # <4>
+            ergebnis.append(wert)                    # <5>
 
-    return ergebnis                        # Rückgabe
+    return ergebnis                                  # <6>
 
-kalium_werte = [4.2, 5.5, 4.8, 6.1]        # vereinfachte Eingabedaten
-auffaellige_werte = filtere_werte(kalium_werte, 5.0)
-print(auffaellige_werte)                    # Ausgabe
+kalium_werte = [4.2, 5.5, 4.8, 6.1]                  # <7>
+auffaellige_werte = filtere_werte(kalium_werte, 5.0) # <8>
+print(auffaellige_werte)                             # <9>
 ```
+1. Funktionsdefinition mit zwei Parametern
+2. Variable mit Zuweisung einer leeren Liste
+3. Iteration über die übergebenen Werte
+4. Selektion: Prüfung der Bedingung
+5. Methodenaufruf auf dem Listenobjekt
+6. Rückgabe an die aufrufende Stelle
+7. Vereinfachte
 
 Das Beispiel filtert Werte anhand eines ausschließlich zu Lehrzwecken festgelegten Schwellenwerts. Es stellt keine medizinische Entscheidungsregel dar.
 
@@ -305,37 +312,20 @@ Nicht jedes Programm enthält alle genannten Bestandteile. Kommentare gehören z
 
 ### Ein- und Ausgabe, Bedingungen und Schleifen
 
-:::: {.exam-question}
+:::: {.exam-question .done}
 Wie werden Ein- und Ausgabe, Bedingungen und Schleifen in einer
-Programmiersprache umgesetzt — am Beispiel von Python?
+Programmiersprache umgesetzt?
 ::::
 
 :::: {.exam-answer}
 
-- **Eingabe:** Daten gelangen von außen in das Programm. In Python liest
-  `input()` von der Tastatur und liefert das Ergebnis **immer als
-  Zeichenkette**.
-  - Zahlen müssen umgewandelt werden, etwa mit `int()` oder `float()` —
-    sonst scheitert jeder Vergleich mit einem Zahlenwert.
-- **Ausgabe:** Daten verlassen das Programm. In Python schreibt `print()`
-  auf die Standardausgabe.
-  - In klinischen Systemen laufen Ein- und Ausgabe praktisch nie über die
-    Konsole, sondern über Benutzeroberflächen, Dateien, Datenbanken oder
-    Schnittstellen. `input()` und `print()` sind Lehrbeispiele.
-- **Bedingung:** Ausdruck, der zu wahr oder falsch ausgewertet wird.
-  - Beispiel: `kalium > 5.0`
-- **Selektion:** `if`, `elif` und `else` wählen abhängig von Bedingungen
-  einen Zweig aus.
-- **Iteration:** `for` durchläuft eine Sammlung, `while` wiederholt, solange
-  eine Bedingung gilt. Eine fußgesteuerte `do-while`-Anweisung kennt Python
-  nicht; sie wird mit `while True` und `break` nachgebildet.
-- **Schleifensteuerung:** `break` verlässt die Schleife sofort, `continue`
-  springt zum nächsten Durchlauf.
+- **Eingabe:** Daten gelangen von außen in das Programm. In Python liest `input()` von der Tastatur und liefert das Ergebnis **immer als Zeichenkette**.
+  - Zahlen müssen umgewandelt werden, etwa mit `int()` oder `float()` — sonst scheitert jeder Vergleich mit einem Zahlenwert.
 
 **Ein- und Ausgabe mit Typumwandlung:**
 
 ```{.python}
-eingabe = input("Kaliumwert in mmol/l: ")   # <1>
+eingabe = input("Kaliumwert in mmol/l: ")    # <1>
 kalium = float(eingabe)                      # <2>
 print("Erfasster Wert:", kalium)             # <3>
 ```
@@ -343,100 +333,223 @@ print("Erfasster Wert:", kalium)             # <3>
 2. Umwandlung in eine Gleitkommazahl — ohne diesen Schritt wäre `kalium > 5.0` ein Fehler
 3. Ausgabe auf der Standardausgabe
 
-**Selektion und Iteration:**
+- **Ausgabe:** Daten verlassen das Programm. In Python schreibt `print()` auf die Standardausgabe.
+  - In klinischen Systemen laufen Ein- und Ausgabe praktisch nie über die Konsole, sondern über Benutzeroberfläche, Dateien, Datenbanken oder Schnittstellen. `input()` und `print()` sind Lehrbeispiele.
+- **Bedingung:** Ausdruck, der zu wahr oder falsch ausgewertet wird.
+  - Beispiel: `kalium > 5.0`
+- **Selektion:** `if`, `elif` und `else` wählen abhängig von Bedingungen einen Zweig aus.
+- **Iteration:** `for` durchläuft eine Sammlung, `while` wiederholt, solange eine Bedingung gilt. Eine fußgesteuerte `do-while`-Anweisung kennt Python nicht; sie wird mit `while True` und `break` nachgebildet.
+- **Schleifensteuerung:** `break` verlässt die Schleife sofort, `continue` springt zum nächsten Durchlauf.
+
+**Schleifensteuerung:** break und continue
 
 ```{.python}
-offene_befunde = ["Labor", "Röntgen", "EKG"]
+kalium_messungen = [4.2, None, 4.9, 5.4, 6.2]
+grenzwert = 6.0
+pumpe_laeuft = True
 
-for befund in offene_befunde:                # <1>
-    if befund == "Labor":                    # <2>
-        print(befund, "– vorrangig prüfen")
-    else:
-        print(befund, "– Routine")
+for messung in kalium_messungen:                       # <1>
+    if messung is None:                                # <2>
+        print("Messwert fehlt – Laufrate unverändert")
+        continue
+    if messung > grenzwert:                            # <3>
+        pumpe_laeuft = False
+        print("Grenzwert überschritten:", messung, "– Pumpe gestoppt")
+        break
+    print("Kalium", messung, "– Infusion läuft weiter")
 ```
-1. Iteration über die Elemente der Liste
-2. Selektion: Fallunterscheidung je Element
+1. Iteration über die aufeinanderfolgenden Messwerte
+2. Fehlender Messwert: `continue` überspringt diesen Durchlauf, die
+   Schleife läuft weiter
+3. Grenzwert überschritten: `break` verlässt die Schleife sofort, die
+   Simulation stoppt die Pumpe
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**Achten Sie auf das Fehlerverhalten.** Der `continue`-Zweig im Beispiel ist
+sicherheitstechnisch die falsche Entscheidung: Bei einem fehlenden Messwert
+läuft die Infusion unverändert weiter — das Programm verhält sich
+*fail-open*. Ein reales Infusionssystem müsste *fail-safe* arbeiten: keine
+Messung heißt keine Freigabe, also stoppen oder alarmieren. Dieselbe
+Kontrollstruktur kann je nach Zweig sicher oder unsicher sein.
+
+:::
+
+Das Beispiel simuliert den Ablauf ausschließlich zu Lehrzwecken. Grenzwert
+und Logik stellen keine medizinische Entscheidungsregel und keine Steuerung
+eines Medizinprodukts dar.
 
 Merksatz: `input()` liest und liefert immer Text, `print()` gibt aus, `if`
-entscheidet, `for` durchläuft, `while` wiederholt — und `break` bricht ab.
+entscheidet, `for` durchläuft, `while` wiederholt — und `break` bricht ab,
+`continue` überspringt.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
 **Die häufigste Fehlerquelle bei der Eingabe** ist der Datentyp. `input()`
 gibt eine Zeichenkette zurück, auch wenn der Benutzer eine Zahl eintippt.
-Der Vergleich `input("Wert: ") > 5` löst in Python einen `TypeError` aus.
-Erst `float()` oder `int()` macht den Wert rechenbar — und beide scheitern
-ihrerseits, wenn die Eingabe keine Zahl enthält. Robuste Programme prüfen
-die Eingabe deshalb, bevor sie damit rechnen.
+Der Vergleich `input("Wert: ") > 5` löst einen `TypeError` aus. Erst
+`float()` oder `int()` macht den Wert rechenbar.
 
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
+Bundesärztekammer: (Muster-)Kursbuch Medizinische Informatik, Modul I
+„Angewandte Informatik", Lerninhalt „Gängige Programmbestandteile und
+–algorithmen".
+
 Python Software Foundation: The Python Language Reference, Kapitel 8
 „Compound statements", Abschnitte 8.1 (`if`), 8.2 (`while`), 8.3 (`for`).
-Python Software Foundation: Built-in Functions, `input()` und `print()`.
 
 :::
 ::::
-### Algorithmen
 
-### Programmier- und Auszeichnungssprachen
+### Ein- und Ausgabe, Bedingungen und Schleifen
 
-::: {.exam-question}
-Was unterscheidet Programmier- und Auszeichnungssprachen, und wie sind Java, Python und HTML einzuordnen?
+::: {.exam-question .don .done}
+Wie werden Ein- und Ausgabe, Bedingungen und Schleifen in Python umgesetzt?
 :::
 
 :::: {.exam-answer}
 
-- **Java:** statisch typisierte Programmiersprache
-  - Java-Quellcode wird typischerweise in Bytecode übersetzt und von der Java Virtual Machine (JVM) ausgeführt
+- **Eingabe:** `input()` liest eine Eingabe ein und gibt sie als Text zurück
+- **Ausgabe:** `print()` gibt Daten als Text aus
+  - In klinischen Systemen erfolgt die Ein- und Ausgabe meist über Benutzeroberflächen, Dateien, Datenbanken oder Schnittstellen
+- **Bedingung:** ein Ausdruck, der als wahr oder falsch ausgewertet wird
+- **Selektion:** `if`, `elif` und `else` wählen abhängig von Bedingungen einen Programmzweig aus
+- **Iteration:** Schleifen wiederholen Anweisungen
+  - **`for`-Schleife:** durchläuft die Elemente einer Sammlung
+  - **`while`-Schleife:** wiederholt Anweisungen, solange eine Bedingung erfüllt ist
+  - **`do–while`-Schleife:** prüft die Bedingung erst nach dem ersten Durchlauf und wird daher mindestens einmal ausgeführt
+    - Python besitzt keine eigene `do–while`-Anweisung; das Verhalten kann mit `while True` und `break` nachgebildet werden
 
-```{.java}
-double kalium = 5.5;
-
-if (kalium > 5.0) {
-    System.out.println("Wert oberhalb des festgelegten Schwellenwerts");
-}
-```
-
-- **Python:** dynamisch typisierte Programmiersprache mit vergleichsweise kompakter Syntax
-  - Python-Code wird durch eine Python-Laufzeitumgebung ausgeführt
+**Beispiel in Python:**
 
 ```{.python}
-kalium = 5.5
+offene_befunde = ["Laborbefund", "Röntgenbefund"]
 
-if kalium > 5.0:
-    print("Wert oberhalb des festgelegten Schwellenwerts")
+for befund in offene_befunde:                                             # <1>
+    print(befund)                                                         # <2>
+
+while True:  # Nachbildung einer do-while-Schleife                        # <3>
+    antwort = input("Befundliste vollständig? (j/n): ").strip().lower()   # <4>
+
+    if antwort == "j":                                                    # <5>
+        print("Dokumentation abgeschlossen.")
+        break
+    elif antwort == "n":
+        print("Dokumentation bleibt offen.")
+        break
+    else:
+        print("Bitte j oder n eingeben.")
 ```
+1. `for`-Schleife: Iteration über die Elemente der Liste
+2. Ausgabe mit `print()`
+3. `while True`: Die Bedingung ist stets wahr, die Schleife läuft endlos —
+   verlassen wird sie nur durch `break`. So entsteht die Nachbildung einer
+   fußgesteuerten Schleife
+4. Eingabe mit `input()`; der gelesene Text wird der Variablen `antwort`
+   zugewiesen und ist immer eine Zeichenkette
+5. Selektion mit `if`, `elif` und `else`; bei gültiger Eingabe beendet
+   `break` die Schleife, sonst wird erneut gefragt
 
-- **HTML (Hypertext Markup Language):** Auszeichnungssprache zur Strukturierung und semantischen Beschreibung von Webinhalten
-  - HTML selbst besitzt keine allgemeinen algorithmischen Kontrollstrukturen
-
-```{.html}
-<section>
-  <h2>Laborbefund</h2>
-  <p>Kalium: <strong>5,5 mmol/l</strong></p>
-</section>
-```
-
-Merksatz: Java und Python verarbeiten Daten; HTML strukturiert deren Darstellung.
+Merksatz: `input()` liest, `print()` gibt aus, `if` entscheidet, `for` durchläuft und `while` wiederholt.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-Dynamisches Verhalten einer Webseite wird üblicherweise durch eine Programmiersprache wie JavaScript ergänzt. HTML beschreibt dagegen die Struktur und Bedeutung der Inhalte.
+Python besitzt keine native `do–while`-Schleife. `while True` führt den Schleifenkörper zunächst aus; `break` beendet die Schleife, sobald die Abbruchbedingung erfüllt ist.
 
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
-- Bundesärztekammer: [(Muster-)Kursbuch Medizinische Informatik](https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf), 2. Auflage, 2022, Abschnitt 4.1, S. 10
-- Oracle: [The Java Language Specification](https://docs.oracle.com/javase/specs/jls/se26/html/jls-14.html), Java SE 26, 2026, Kapitel 14, insbesondere Abschnitte 14.9, 14.12 und 14.13
-- Python Software Foundation: [The Python Language Reference](https://docs.python.org/3/reference/)
-- WHATWG: [HTML Living Standard](https://html.spec.whatwg.org/dev/introduction.html), Abschnitte 1.2 und 1.4
-- NIST: [Glossary – Algorithm](https://csrc.nist.gov/glossary/term/Algorithm)
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
+- Python Software Foundation: *The Python Language Reference*, Kapitel 8.1–8.3 „Compound statements“.
+- Python Software Foundation: *Built-in Functions*, Abschnitte `input()` und `print()`. Onlinefassungen geprüft am 04.11.2026.
 
-Quellen geprüft am 4. November 2026.
+:::
+::::
+
+### Algorithmen
+
+::: {.exam-question .done}
+Was ist ein Algorithmus, welche Eigenschaften kennzeichnen ihn, und wie unterscheidet er sich von Programm und Modell?
+:::
+
+::: {.exam-answer}
+
+- **Algorithmus:** eindeutig beschriebenes, ausführbares Verfahren zur Lösung einer Aufgabe
+- **Typische Eigenschaften:**
+  - **Finitheit:** besteht aus einer endlichen Beschreibung
+  - **Eindeutigkeit:** der jeweils nächste Verarbeitungsschritt ist festgelegt
+  - **Ausführbarkeit:** jeder Schritt kann tatsächlich ausgeführt werden
+  - **Terminierung:** endet für die vorgesehenen Eingaben nach endlich vielen Schritten
+  - **Ein- und Ausgabe:** verarbeitet Eingaben und erzeugt ein Ergebnis
+- **Programm:** ausführbare Umsetzung eines oder mehrerer Algorithmen in einer Programmiersprache
+- **Modell:** vereinfachte Darstellung von Zusammenhängen
+  - kann regelbasiert, mathematisch oder aus Daten gelernt sein
+  - Algorithmen können ein Modell trainieren oder anwenden
+
+**Klinisches Beispiel:**
+
+Die regelbasierte Berechnung des Sequential Organ Failure Assessment Score (SOFA-Score) ist ein algorithmisches Verfahren. Ein KIS-Programm kann dieses Verfahren implementieren und aus Patientendaten einen Punktwert berechnen.
+
+Merksatz: Der Algorithmus beschreibt das Verfahren, das Programm führt es aus und das Modell bildet Zusammenhänge ab.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Die Begriffe Determiniertheit und Determinismus werden nicht einheitlich verwendet. Deterministisches Verhalten bedeutet meist, dass gleiche Eingaben zum gleichen Ergebnis führen. Dies ist keine notwendige Eigenschaft aller Algorithmen, da auch randomisierte Algorithmen existieren.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- National Institute of Standards and Technology (NIST): *Dictionary of Algorithms and Data Structures*, Eintrag „algorithm“. Geprüft am 04.11.2026.
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1, S. 10.
+
+:::
+::::
+
+
+::: {.exam-question .done}
+Was beschreibt die O-Notation, und welche grundlegenden algorithmischen Verfahren sollte man kennen?
+:::
+
+:::: {.exam-answer}
+
+- **O-Notation:** beschreibt, wie Laufzeit oder Speicherbedarf eines Algorithmus mit der Eingabegröße `n` wächst
+  - `O(1)`: konstant
+  - `O(log n)`: logarithmisch
+  - `O(n)`: linear
+  - `O(n log n)`: linear-logarithmisch
+  - `O(n²)`: quadratisch
+- **Lineare Suche:** prüft Elemente nacheinander
+  - benötigt keine sortierten Daten
+  - Laufzeit typischerweise `O(n)`
+- **Binäre Suche:** halbiert den Suchbereich bei jedem Schritt
+  - setzt sortierte Daten voraus
+  - Laufzeit typischerweise `O(log n)`
+- **Divide-and-Conquer:** zerlegt ein Problem in kleinere Teilprobleme, löst diese und führt die Teilergebnisse zusammen
+  - Beispiel: binäre Suche
+- **Rekursion:** eine Funktion ruft sich selbst mit einem kleineren Teilproblem auf
+  - wird häufig, aber nicht zwingend für Divide-and-Conquer verwendet
+- **Sortierverfahren:** werden unter anderem nach Laufzeit, Speicherbedarf und Stabilität ausgewählt
+
+**Beispiel:**
+
+In einer unsortierten Liste von Patientenkennungen muss schlimmstenfalls jede Kennung geprüft werden. In einer sortierten Liste kann eine binäre Suche den Suchbereich wiederholt halbieren.
+
+Merksatz: Die O-Notation beschreibt das Wachstum des Aufwands; Teilen und Halbieren kann die Suche deutlich beschleunigen.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+`O(n log n)` wächst bei großen Eingaben langsamer als `O(n²)`. Die O-Notation beschreibt jedoch keine exakte Laufzeit und berücksichtigt unter anderem konstante Faktoren, Implementierung und Hardware nicht unmittelbar.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+National Institute of Standards and Technology (NIST): *Dictionary of Algorithms and Data Structures*, Einträge „big-O notation“, „binary search“ und „divide and conquer“. Geprüft am 04.11.2026.
 
 :::
 ::::
@@ -444,84 +557,210 @@ Quellen geprüft am 4. November 2026.
 
 
 
-::: {.callout-note title="Gut zu wissen" appearance="simple"}
-
-**Vertiefung: Algorithmen und Komplexität**
-
-- **Algorithmus:** eindeutig beschriebene Folge von Regeln oder Verarbeitungsschritten zur Lösung einer Aufgabe
-- **Finitheit:** der Algorithmus lässt sich durch eine endliche Zahl von Regeln beschreiben
-- **Terminierung:** die Ausführung endet für die vorgesehenen Eingaben nach endlich vielen Schritten
-- **Determiniertheit:** der jeweils nächste Verarbeitungsschritt ist eindeutig festgelegt
-- **Determinismus:** gleiche Eingaben führen zum gleichen Ablauf und Ergebnis
-  - nicht für jeden Algorithmus erforderlich, da beispielsweise randomisierte Algorithmen existieren
-- **O-Notation:** beschreibt, wie Laufzeit oder Speicherbedarf mit der Eingabegröße wachsen
-  - `O(n)`: ungefähr lineares Wachstum
-  - `O(log n)`: ungefähr logarithmisches Wachstum
-- **Lineare Suche:** prüft Elemente nacheinander; eine Sortierung ist nicht erforderlich
-  - typische Laufzeit: `O(n)`
-- **Binäre Suche:** halbiert den Suchbereich bei jedem Schritt und setzt sortierte Daten voraus
-  - typische Laufzeit: `O(log n)`
-- **Divide-and-Conquer:** zerlegt ein Problem in Teilprobleme, löst diese und setzt die Teilergebnisse zusammen
-  - wird häufig, aber nicht zwingend, rekursiv umgesetzt
-
-Die Begriffe Determiniertheit und Determinismus werden in Lehrbüchern nicht immer einheitlich verwendet.
-
-:::
 
 
 
 
 
 
-::: {.exam-question}
-Nach welchen Kriterien wählt man einen Sortieralgorithmus, und warum wird Bubblesort in der Praxis kaum eingesetzt?
-:::
 
-::: {.exam-answer}
-Insertionsort eignet sich für kleine/fast sortierte Arrays (Bestcase linear). Quicksort ist ein guter Allgemeinfall (erwartet O(n log n)), hat aber bei ungünstiger Pivot-Wahl Worstcase O(n²) — deshalb Pivot zufällig oder als Median wählen. Mergesort/Heapsort garantieren O(n log n) unabhängig von der Eingabe. Bubblesort ist einfach zu verstehen, aber mit O(n²) fast immer schlechter als Alternativen — wird laut Buch "nahezu niemals eingesetzt".
 
-Merksatz: Klein/fast sortiert → Insertionsort; Allgemeinfall → Quicksort; Garantie O(n log n) → Mergesort/Heapsort; Bubblesort → nur zum Lernen.
 
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Was ist Divide & Conquer, und wie hängt es mit Rekursion zusammen (Beispiel Quicksort)?
-:::
-
-::: {.exam-answer}
-Divide & Conquer teilt ein Problem in kleinere, gleichartige Teilprobleme (divide), löst diese rekursiv (conquer) und setzt die Teillösungen zusammen. Bei Quicksort: Divide = Array wird anhand eines Pivotelements partitioniert (kleinere Werte links, größere rechts); Conquer = Quicksort ruft sich rekursiv auf beiden Teilarrays selbst auf, bis die Abbruchbedingung (Teilarray-Größe ≤ 1) erreicht ist; Combine entfällt weitgehend, da in-place partitioniert wird. Jede Rekursion braucht zwingend eine Abbruchbedingung, sonst läuft sie endlos.
-
-Merksatz: Divide & Conquer = großes Problem in gleichartige kleine zerlegen, diese rekursiv lösen, zusammensetzen; Rekursion ohne Abbruchbedingung läuft endlos.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Was sind Klasse, Objekt, Vererbung, abstrakte Klasse und Interface (OOP-Grundbegriffe, z. B. am Beispiel Java)?
-:::
-
-::: {.exam-answer}
-- **Klasse** = der Bauplan, z. B. `Patient` mit Attributen `name`, `geburtstag`.
-- **Objekt** = eine konkrete Instanz davon — "Herr Müller" ist ein Objekt der Klasse `Patient`.
-- **Vererbung**: eine speziellere Klasse übernimmt Eigenschaften einer allgemeineren. Beispiel: `Assistenzarzt` und `Oberarzt` erben von `Arzt` (beide haben `name`, `fachrichtung`, aber `Oberarzt` hat zusätzlich `genehmigtOperationen()`).
-- **Abstrakte Klasse**: ein Bauplan, von dem man **keine** direkte Instanz erzeugen kann — z. B. `Arzt` als abstrakte Klasse, weil in der Realität jeder Arzt entweder Assistenz- oder Oberarzt ist, nie "nur Arzt".
-- **Interface**: ein Vertrag — "wer dieses Interface implementiert, MUSS diese Funktion anbieten", ohne vorzugeben, wie. Beispiel: Interface `Abrechenbar` mit Methode `berechneKosten()` — sowohl `Laboruntersuchung` als auch `Bildgebung` implementieren das, jede auf ihre eigene Art.
-
-Das ist die Grundlage für das Klassendiagramm (siehe Software-Engineering-Sektion): die Klasse `Patient` dort im Diagramm ist genau dieses Konzept.
-
-Merksatz: Klasse = Bauplan, Objekt = konkreter Patient, Vererbung = „ist ein“ (Oberarzt ist ein Arzt), abstrakte Klasse = Bauplan ohne eigene Instanz, Interface = Vertrag „muss können“.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
 
 ### Relationale Datenbanken
+
+
+::: {.exam-question .done}
+Wie sind Daten in einer relationalen Datenbank organisiert und miteinander verknüpft?
+:::
+
+:::: {.exam-answer}
+
+- **Tabellen:** speichern zusammengehörige Daten in Zeilen und Spalten
+  - **Zeile:** enthält einen Datensatz, z. B. einen Behandlungsfall
+  - **Spalte:** enthält ein Merkmal, z. B. Aufnahmedatum oder Fallnummer
+- **Primärschlüssel (Primary Key, PK):** identifiziert jede Zeile einer Tabelle eindeutig
+  - Beispiel: `Patient_ID` in der Tabelle `Patient`
+- **Fremdschlüssel (Foreign Key, FK):** verweist auf einen eindeutigen Schlüssel einer anderen Tabelle und verknüpft dadurch Datensätze
+  - verhindert beispielsweise, dass ein Behandlungsfall einem nicht vorhandenen Patienten zugeordnet wird
+- **1:1-Beziehung:** Jedem Datensatz der ersten Tabelle ist höchstens ein Datensatz der zweiten Tabelle zugeordnet und umgekehrt
+  - Der Fremdschlüssel wird zusätzlich als `UNIQUE` festgelegt oder ist zugleich Primärschlüssel
+  - Beispiel: Zu einem Patienten existiert höchstens ein gesonderter Datensatz mit besonders geschützten Zusatzinformationen
+- **1:n-Beziehung:** Ein Datensatz der ersten Tabelle kann mit mehreren Datensätzen der zweiten Tabelle verbunden sein
+  - Ein Patient kann mehrere Behandlungsfälle haben, jeder Fall gehört aber genau einem Patienten
+  - Der Fremdschlüssel `Patient_ID` steht deshalb in der Tabelle `Fall`
+- **m:n-Beziehung:** Auf beiden Seiten können mehrere zugehörige Datensätze bestehen
+  - Ein Fall kann mehrere Diagnosen haben; derselbe Diagnosecode kann bei mehreren Fällen vorkommen
+  - Die Beziehung wird über die Verknüpfungstabelle `Fall_Diagnose` abgebildet
+
+
+**Vereinfachtes klinisches Datenmodell:**
+
+```{mermaid}
+erDiagram
+    PATIENT  ||--o{ FALL : "hat"
+    FALL     ||--o{ FALL_DIAGNOSE : "enthält"
+    DIAGNOSE ||--o{ FALL_DIAGNOSE : "erscheint in"
+
+    PATIENT {
+        int    Patient_ID PK
+        string Name
+    }
+    FALL {
+        int    Fall_ID PK
+        int    Patient_ID FK
+        date   Aufnahmedatum
+    }
+    DIAGNOSE {
+        int    Diagnose_ID PK
+        string ICD_Code
+        string Bezeichnung
+    }
+    FALL_DIAGNOSE {
+        int Fall_ID PK
+        int Diagnose_ID PK
+    }
+```
+
+Die Darstellung folgt dem **Entity-Relationship-Modell (ER-Modell)**, dem Standardverfahren zur Datenmodellierung. Gezeigt ist die Krähenfußnotation; `||--o{` liest sich als „eins zu null bis viele": Ein Patient hat beliebig viele Fälle, jeder Fall gehört genau einem Patienten. Daneben existieren andere Notationen, etwa die Chen-Notation und das UML-Klassendiagramm.
+
+Das ER-Modell beschreibt die fachliche Struktur unabhängig von einem konkreten Datenbanksystem. Erst die Umsetzung in Tabellen, Schlüssel und Datentypen bindet es an ein System.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+::: {.exam-question}
+Was ist SQL und wie werden damit Tabellen definiert sowie Daten abgefragt und verändert?
+:::
+
+:::: {.exam-answer}
+**Umsetzung in SQL — Datendefinition (DDL):**
+
+Die Struktur wird mit der **Data Definition Language (DDL)** angelegt —`CREATE`, `ALTER`, `DROP` definieren Tabellen, Spalten und Schlüssel:
+
+```{.sql}
+CREATE TABLE Patient (
+    Patient_ID  INTEGER PRIMARY KEY,                               -- <1>
+    Name        TEXT NOT NULL                                      -- <2>
+);
+
+CREATE TABLE Fall (
+    Fall_ID        INTEGER PRIMARY KEY,
+    Patient_ID     INTEGER NOT NULL REFERENCES Patient(Patient_ID),-- <3>
+    Aufnahmedatum  DATE                                            -- <4>
+);
+
+CREATE TABLE Diagnose (
+    Diagnose_ID  INTEGER PRIMARY KEY,
+    ICD_Code     TEXT NOT NULL,
+    Bezeichnung  TEXT
+);
+
+CREATE TABLE Fall_Diagnose (                                       -- <5>
+    Fall_ID      INTEGER REFERENCES Fall(Fall_ID),
+    Diagnose_ID  INTEGER REFERENCES Diagnose(Diagnose_ID),
+    PRIMARY KEY (Fall_ID, Diagnose_ID)                             -- <6>
+);
+```
+1. Primärschlüssel: identifiziert jede Zeile eindeutig und ist damit
+   automatisch pflichtig
+2. `NOT NULL`: Pflichtangabe — die Datenbank weist Datensätze ohne Namen ab
+3. Fremdschlüssel: Nur Werte, die in `Patient` existieren, sind zulässig.
+   Das sichert die referenzielle Integrität
+4. Eigener Datentyp für Datumswerte; erlaubt Vergleiche und Zeitberechnungen,
+   anders als eine Speicherung als Text
+5. Verknüpfungstabelle zur Auflösung der m:n-Beziehung
+6. Zusammengesetzter Primärschlüssel aus beiden Spalten: Jede Kombination aus
+   Fall und Diagnose kann nur einmal vorkommen
+
+In `Fall_Diagnose` bilden `Fall_ID` und `Diagnose_ID` gemeinsam einen zusammengesetzten Primärschlüssel und verweisen zugleich als Fremdschlüssel auf `Fall` und `Diagnose`.
+
+Diese Wahl legt zugleich fest, was fachlich möglich ist: Dieselbe Diagnose kann einem Fall nur einmal zugeordnet werden. Soll ein ICD-Kode je Fall mehrfach vorkommen — etwa als Haupt- und als Nebendiagnose —, muss das Merkmal in den Schlüssel aufgenommen oder ein eigener Schlüssel für die Verknüpfungstabelle eingeführt werden.
+
+**Abfrage über alle vier Tabellen (DQL):**
+
+```{.sql}
+SELECT p.Name,                                            -- <1>
+       f.Fall_ID,
+       f.Aufnahmedatum,
+       d.ICD_Code,
+       d.Bezeichnung
+FROM Patient p
+JOIN Fall           f  ON f.Patient_ID  = p.Patient_ID    -- <2>
+JOIN Fall_Diagnose  fd ON fd.Fall_ID    = f.Fall_ID       -- <3>
+JOIN Diagnose       d  ON d.Diagnose_ID = fd.Diagnose_ID
+WHERE p.Patient_ID = 4711                                 -- <4>
+ORDER BY f.Aufnahmedatum;
+```
+1. Auswahl der gewünschten Spalten aus mehreren Tabellen; die Kürzel `p`,
+   `f`, `fd` und `d` sind Aliasnamen
+2. 1:n-Beziehung: Verknüpfung über den Fremdschlüssel `Patient_ID`
+3. Auflösung der m:n-Beziehung über die Verknüpfungstabelle — sie wird
+   durchlaufen, aber keine ihrer Spalten wird ausgegeben
+4. Einschränkung auf einen Patienten
+
+
+**Ergebnis der Abfrage:**
+
+| Name        | Fall_ID | Aufnahmedatum | ICD_Code | Bezeichnung                       |
+|-------------|---------|---------------|----------|-----------------------------------|
+| Meier, Anna | 10231   | 2026-03-02    | I10      | Essentielle Hypertonie            |
+| Meier, Anna | 10231   | 2026-03-02    | E11.9    | Diabetes mellitus, Typ 2          |
+| Meier, Anna | 10231   | 2026-03-02    | N18.3    | Chronische Nierenkrankheit, St. 3 |
+| Meier, Anna | 10987   | 2026-07-14    | J18.9    | Pneumonie, n. n. bez.             |
+| Meier, Anna | 10987   | 2026-07-14    | I10      | Essentielle Hypertonie            |
+| Meier, Anna | 10987   | 2026-07-14    | A41.9    | Sepsis, n. n. bez.                |
+
+Das Ergebnis enthält **eine Zeile je Kombination aus Fall und Diagnose**. Hat ein Patient zwei Fälle mit je drei Diagnosen, erscheinen sechs Zeilen, und Name sowie Aufnahmedatum wiederholen sich. Das ist kein Fehler, sondern die Folge des Verbunds über eine m:n-Beziehung.
+
+
+Merksatz: Der Primärschlüssel identifiziert einen Datensatz, der Fremdschlüssel verbindet Tabellen; 1:n wird über einen Fremdschlüssel auf der n-Seite, m:n über eine Verknüpfungstabelle abgebildet.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+**SQL gliedert sich in Teilsprachen.** Die Data Definition Language (DDL) legt mit `CREATE`, `ALTER` und `DROP` die Struktur fest. Die Data Manipulation Language (DML) ändert mit `INSERT`, `UPDATE` und `DELETE` die Daten. Die Data Control Language (DCL) vergibt mit `GRANT` und `REVOKE` Rechte. `SELECT` wird je nach Quelle der DML zugerechnet oder als eigene Data Query Language (DQL) geführt — in Prüfungen beides vertretbar, wenn man die Zuordnung benennt.
+
+Ein Fremdschlüssel kann auf einen Primärschlüssel oder einen anderen eindeutigen Schlüssel verweisen.
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
+- PostgreSQL Global Development Group: *PostgreSQL 18 Documentation*, Abschnitte 5.5.4 „Primary Keys“ und 5.5.5 „Foreign Keys“. Geprüft am 05.11.2026.
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Fremdschlüssel
 
 ::: {.exam-question}
 Was ist ein Fremdschlüssel, und wie wird eine 1:n-Beziehung im relationalen Modell abgebildet?

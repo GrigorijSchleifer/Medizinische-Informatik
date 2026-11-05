@@ -21,6 +21,14 @@ p {
   padding-left: 1em;
 }
 
+/* Listen im Antwortblock an die Codekante holen */
+.exam-answer ul {
+  padding-left: 1.2rem;
+}
+.exam-answer ul ul {
+  padding-left: 1.4rem;
+}
+
 /* Breite Tabellen horizontal scrollbar machen statt abschneiden */
 main table {
   display: block;

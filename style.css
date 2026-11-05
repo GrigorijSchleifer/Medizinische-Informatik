@@ -1,5 +1,6 @@
 p {
   text-align: justify;
+  hyphens: auto;
 }
 
 .exam-question {
@@ -17,8 +18,12 @@ p {
 }
 
 .exam-answer {
-  margin-left: 2em;
-  padding-left: 1em;
+  margin-left: 3em;
+  margin-bottom: 3rem;
+}
+
+.exam-answer > * + * {
+  margin-top: 1.25rem;
 }
 
 /* Listen im Antwortblock an die Codekante holen */
@@ -76,3 +81,8 @@ strong {
   width: 100%;
 }
 
+.exam-answer pre.mermaid,
+.exam-answer figure {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

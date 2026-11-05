@@ -631,29 +631,29 @@ erDiagram
     }
 ```
 
+
+
+```{.text}
 Die Darstellung verwendet ein **Entity-Relationship-Diagramm (ER-Diagramm)** in Krähenfußnotation:
 
-- `||--o|`: genau ein zu null oder einem
-- `||--o{`: genau ein zu null, einem oder mehreren
-- Die m:n-Beziehung zwischen `Fall` und `Diagnose` wird durch zwei 1:n-Beziehungen zur Verknüpfungstabelle `Fall_Diagnose` aufgelöst.
+||--o|    genau ein zu null oder einem
+||--o{    genau ein zu null, einem oder mehreren
+```
+
+- Die m:n-Beziehung zwischen `Fall` und `Diagnose` wird durch zwei 1:n-Beziehungen zur Verknüpfungstabelle `Fall_Diagnose` aufgelöst. 
 
 Das Diagramm beschreibt die logische Datenstruktur. Die konkrete Umsetzung erfolgt anschließend in einem Datenbanksystem, beispielsweise durch SQL-Anweisungen.
 
 Merksatz: Der Primärschlüssel identifiziert, der Fremdschlüssel verbindet; 1:1 benötigt einen eindeutigen Fremdschlüssel, 1:n einen Fremdschlüssel auf der n-Seite und m:n eine Verknüpfungstabelle.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
-
 Ein Fremdschlüssel kann auf einen Primärschlüssel oder einen anderen eindeutigen Schlüssel verweisen. Verknüpfungstabellen können zusätzliche Angaben zur Beziehung enthalten, beispielsweise Diagnosetyp oder Diagnosesicherheit.
-
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
 - PostgreSQL Global Development Group: *PostgreSQL 18 Documentation*, Abschnitte 5.5.4 „Primary Keys“ und 5.5.5 „Foreign Keys“. Geprüft am 05.11.2026.
-
 :::
-
 ::::
 
 
@@ -663,188 +663,193 @@ Ein Fremdschlüssel kann auf einen Primärschlüssel oder einen anderen eindeuti
 
 
 
-
-
-
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist SQL und wie werden damit Tabellen definiert sowie Daten abgefragt und verändert?
 :::
 
 :::: {.exam-answer}
-**Umsetzung in SQL — Datendefinition (DDL):**
 
-Die Struktur wird mit der **Data Definition Language (DDL)** angelegt —`CREATE`, `ALTER`, `DROP` definieren Tabellen, Spalten und Schlüssel:
+- **Structured Query Language (SQL):** Sprache für relationale Datenbanken
+  - definiert Tabellen und Beziehungen
+  - fügt Daten ein, verändert oder löscht sie
+  - fragt gespeicherte Daten ab
+
+**Tabellen des vorherigen ER-Modells definieren:**
 
 ```{.sql}
 CREATE TABLE Patient (
-    Patient_ID  INTEGER PRIMARY KEY,                               -- <1>
-    Name        TEXT NOT NULL                                      -- <2>
+    Patient_ID  INTEGER PRIMARY KEY,                 -- <1>
+    Name        VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE Patient_Zusatz (
+    Patient_ID         INTEGER PRIMARY KEY
+                       REFERENCES Patient(Patient_ID), -- <2>
+    Zusatzinformation  VARCHAR(500)
 );
 
 CREATE TABLE Fall (
     Fall_ID        INTEGER PRIMARY KEY,
-    Patient_ID     INTEGER NOT NULL REFERENCES Patient(Patient_ID),-- <3>
-    Aufnahmedatum  DATE                                            -- <4>
+    Patient_ID     INTEGER NOT NULL
+                   REFERENCES Patient(Patient_ID),   -- <3>
+    Aufnahmedatum  DATE
 );
 
 CREATE TABLE Diagnose (
     Diagnose_ID  INTEGER PRIMARY KEY,
-    ICD_Code     TEXT NOT NULL,
-    Bezeichnung  TEXT
+    ICD_Code     VARCHAR(10) NOT NULL,
+    Bezeichnung  VARCHAR(200)
 );
 
-CREATE TABLE Fall_Diagnose (                                       -- <5>
-    Fall_ID      INTEGER REFERENCES Fall(Fall_ID),
-    Diagnose_ID  INTEGER REFERENCES Diagnose(Diagnose_ID),
-    PRIMARY KEY (Fall_ID, Diagnose_ID)                             -- <6>
+CREATE TABLE Fall_Diagnose (
+    Fall_ID       INTEGER REFERENCES Fall(Fall_ID),  -- <4>
+    Diagnose_ID   INTEGER
+                  REFERENCES Diagnose(Diagnose_ID),
+    Diagnosetyp   VARCHAR(20),
+    PRIMARY KEY (Fall_ID, Diagnose_ID)               -- <5>
 );
 ```
-1. Primärschlüssel: identifiziert jede Zeile eindeutig und ist damit
-   automatisch pflichtig
-2. `NOT NULL`: Pflichtangabe — die Datenbank weist Datensätze ohne Namen ab
-3. Fremdschlüssel: Nur Werte, die in `Patient` existieren, sind zulässig.
-   Das sichert die referenzielle Integrität
-4. Eigener Datentyp für Datumswerte; erlaubt Vergleiche und Zeitberechnungen,
-   anders als eine Speicherung als Text
-5. Verknüpfungstabelle zur Auflösung der m:n-Beziehung
-6. Zusammengesetzter Primärschlüssel aus beiden Spalten: Jede Kombination aus
-   Fall und Diagnose kann nur einmal vorkommen
 
-In `Fall_Diagnose` bilden `Fall_ID` und `Diagnose_ID` gemeinsam einen zusammengesetzten Primärschlüssel und verweisen zugleich als Fremdschlüssel auf `Fall` und `Diagnose`.
+1. `Patient_ID` identifiziert jeden Patienten eindeutig.
+2. In `Patient_Zusatz` ist `Patient_ID` zugleich Primär- und Fremdschlüssel. Dadurch kann zu jedem Patienten höchstens ein Zusatzdatensatz existieren: 1:0..1.
+3. Der Fremdschlüssel in `Fall` bildet die 1:n-Beziehung ab: Ein Patient kann mehrere Fälle haben.
+4. `Fall_Diagnose` verbindet Fälle und Diagnosen über zwei Fremdschlüssel.
+5. Der zusammengesetzte Primärschlüssel verhindert eine doppelte Zuordnung derselben Diagnose zu einem Fall.
 
-Diese Wahl legt zugleich fest, was fachlich möglich ist: Dieselbe Diagnose kann einem Fall nur einmal zugeordnet werden. Soll ein ICD-Kode je Fall mehrfach vorkommen — etwa als Haupt- und als Nebendiagnose —, muss das Merkmal in den Schlüssel aufgenommen oder ein eigener Schlüssel für die Verknüpfungstabelle eingeführt werden.
-
-**Abfrage über alle vier Tabellen (DQL):**
+**Daten einfügen und verändern:**
 
 ```{.sql}
-SELECT p.Name,                                            -- <1>
+INSERT INTO Patient (Patient_ID, Name)
+VALUES (4711, 'Beispielpatient');                    -- <1>
+
+INSERT INTO Fall (Fall_ID, Patient_ID, Aufnahmedatum)
+VALUES (10231, 4711, DATE '2026-03-02');             -- <2>
+
+INSERT INTO Diagnose (Diagnose_ID, ICD_Code, Bezeichnung)
+VALUES (17, 'J18.9', 'Pneumonie, nicht näher bezeichnet');
+
+INSERT INTO Fall_Diagnose
+       (Fall_ID, Diagnose_ID, Diagnosetyp)
+VALUES (10231, 17, 'Hauptdiagnose');                 -- <3>
+
+UPDATE Patient
+SET Name = 'Neuer Name'
+WHERE Patient_ID = 4711;                             -- <4>
+
+DELETE FROM Fall_Diagnose
+WHERE Fall_ID = 10231
+  AND Diagnose_ID = 17;                              -- <5>
+```
+
+1. `INSERT` legt einen Patienten an.
+2. Der Fremdschlüssel ordnet den neuen Fall dem Patienten zu.
+3. Die Verknüpfungstabelle ordnet dem Fall eine Diagnose zu.
+4. `UPDATE` verändert ausgewählte Daten.
+5. `DELETE` entfernt eine Zuordnung aus der Verknüpfungstabelle.
+
+`WHERE` bestimmt, welche Zeilen verändert oder gelöscht werden. Ohne `WHERE` betrifft `UPDATE` beziehungsweise `DELETE` alle Zeilen der Tabelle.
+
+**Daten aus den verknüpften Tabellen abfragen:**
+
+```{.sql}
+SELECT p.Name,
        f.Fall_ID,
        f.Aufnahmedatum,
        d.ICD_Code,
-       d.Bezeichnung
+       d.Bezeichnung,
+       fd.Diagnosetyp                                  -- <1>
 FROM Patient p
-JOIN Fall           f  ON f.Patient_ID  = p.Patient_ID    -- <2>
-JOIN Fall_Diagnose  fd ON fd.Fall_ID    = f.Fall_ID       -- <3>
-JOIN Diagnose       d  ON d.Diagnose_ID = fd.Diagnose_ID
-WHERE p.Patient_ID = 4711                                 -- <4>
+JOIN Fall f
+  ON f.Patient_ID = p.Patient_ID                       -- <2>
+JOIN Fall_Diagnose fd
+  ON fd.Fall_ID = f.Fall_ID                            -- <3>
+JOIN Diagnose d
+  ON d.Diagnose_ID = fd.Diagnose_ID
+WHERE p.Patient_ID = 4711                              -- <4>
 ORDER BY f.Aufnahmedatum;
 ```
-1. Auswahl der gewünschten Spalten aus mehreren Tabellen; die Kürzel `p`,
-   `f`, `fd` und `d` sind Aliasnamen
-2. 1:n-Beziehung: Verknüpfung über den Fremdschlüssel `Patient_ID`
-3. Auflösung der m:n-Beziehung über die Verknüpfungstabelle — sie wird
-   durchlaufen, aber keine ihrer Spalten wird ausgegeben
-4. Einschränkung auf einen Patienten
 
+1. `SELECT` bestimmt die auszugebenden Spalten; `p`, `f`, `fd` und `d` sind Aliasnamen.
+2. Der erste `JOIN` verbindet Patient und Fall über die 1:n-Beziehung.
+3. Die beiden weiteren `JOIN`-Anweisungen lösen die m:n-Beziehung über `Fall_Diagnose` auf.
+4. `WHERE` beschränkt das Ergebnis auf einen Patienten.
 
-**Ergebnis der Abfrage:**
-
-| Name        | Fall_ID | Aufnahmedatum | ICD_Code | Bezeichnung                       |
-|-------------|---------|---------------|----------|-----------------------------------|
-| Meier, Anna | 10231   | 2026-03-02    | I10      | Essentielle Hypertonie            |
-| Meier, Anna | 10231   | 2026-03-02    | E11.9    | Diabetes mellitus, Typ 2          |
-| Meier, Anna | 10231   | 2026-03-02    | N18.3    | Chronische Nierenkrankheit, St. 3 |
-| Meier, Anna | 10987   | 2026-07-14    | J18.9    | Pneumonie, n. n. bez.             |
-| Meier, Anna | 10987   | 2026-07-14    | I10      | Essentielle Hypertonie            |
-| Meier, Anna | 10987   | 2026-07-14    | A41.9    | Sepsis, n. n. bez.                |
-
-Das Ergebnis enthält **eine Zeile je Kombination aus Fall und Diagnose**. Hat ein Patient zwei Fälle mit je drei Diagnosen, erscheinen sechs Zeilen, und Name sowie Aufnahmedatum wiederholen sich. Das ist kein Fehler, sondern die Folge des Verbunds über eine m:n-Beziehung.
-
-
-Merksatz: Der Primärschlüssel identifiziert einen Datensatz, der Fremdschlüssel verbindet Tabellen; 1:n wird über einen Fremdschlüssel auf der n-Seite, m:n über eine Verknüpfungstabelle abgebildet.
+Merksatz: `CREATE` definiert, `INSERT` fügt ein, `UPDATE` verändert, `DELETE` löscht, `SELECT` fragt ab und `JOIN` verbindet.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
-**SQL gliedert sich in Teilsprachen.** Die Data Definition Language (DDL) legt mit `CREATE`, `ALTER` und `DROP` die Struktur fest. Die Data Manipulation Language (DML) ändert mit `INSERT`, `UPDATE` und `DELETE` die Daten. Die Data Control Language (DCL) vergibt mit `GRANT` und `REVOKE` Rechte. `SELECT` wird je nach Quelle der DML zugerechnet oder als eigene Data Query Language (DQL) geführt — in Prüfungen beides vertretbar, wenn man die Zuordnung benennt.
 
-Ein Fremdschlüssel kann auf einen Primärschlüssel oder einen anderen eindeutigen Schlüssel verweisen.
+SQL wird häufig in Teilsprachen eingeteilt:
+- **Data Definition Language (DDL):** `CREATE`, `ALTER`, `DROP`
+- **Data Manipulation Language (DML):** `INSERT`, `UPDATE`, `DELETE`
+- **Data Control Language (DCL):** `GRANT`, `REVOKE`
+
+`SELECT` wird je nach Quelle der DML oder einer eigenen **Data Query Language (DQL)** zugerechnet. Das Beispiel verwendet PostgreSQL-kompatibles SQL; andere Datenbanksysteme können sich in Einzelheiten unterscheiden.
+
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
+
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
-- PostgreSQL Global Development Group: *PostgreSQL 18 Documentation*, Abschnitte 5.5.4 „Primary Keys“ und 5.5.5 „Foreign Keys“. Geprüft am 05.11.2026.
+- PostgreSQL Global Development Group: *PostgreSQL 18 Documentation*, Kapitel 2 „The SQL Language“, Kapitel 5 „Data Definition“ und Kapitel 6 „Data Manipulation“. Geprüft am 05.11.2026.
+  - <https://www.postgresql.org/docs/current/tutorial-sql.html>
+  - <https://www.postgresql.org/docs/current/ddl.html>
+  - <https://www.postgresql.org/docs/current/dml.html>
+
 :::
 ::::
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-### Fremdschlüssel
-
-::: {.exam-question}
-Was ist ein Fremdschlüssel, und wie wird eine 1:n-Beziehung im relationalen Modell abgebildet?
+::: {.exam-question .done}
+Warum werden relationale Datenbanken normalisiert?
 :::
 
-::: {.exam-answer}
-Ein Fremdschlüssel ist eine Spalte in einer Tabelle, deren Werte auf den Primärschlüssel einer anderen (oder derselben) Tabelle verweisen — er speichert keine neue Information, sondern nur einen Verweis auf die entsprechende Zeile dort.
+:::: {.exam-answer}
 
-Beispiel Patient/Station: Ein Patient liegt auf genau einer Station, eine Station hat mehrere Patienten (Patient : Station = n : 1). Tabelle `Patienten` bekommt eine Spalte `Station_ID`, die auf `Stationen.Station_ID` verweist:
+- **Normalisierung:** verteilt Daten nach festen Regeln auf zusammengehörige, miteinander verknüpfte Tabellen
+- **Ziel:** Redundanzen und daraus entstehende Inkonsistenzen vermeiden
+- **Typische Anomalien einer unzureichend normalisierten Datenbank:**
+  - **Änderungsanomalie:** Eine mehrfach gespeicherte Information wird nur an einer Stelle geändert
+    - Beispiel: Der Patientenname wird in einem Fall korrigiert, bleibt in anderen Fällen aber unverändert
+  - **Einfügeanomalie:** Eine Information kann nicht unabhängig gespeichert werden
+    - Beispiel: Ein neuer Diagnosecode kann erst gespeichert werden, wenn er einem Behandlungsfall zugeordnet wird
+  - **Löschanomalie:** Beim Löschen eines Datensatzes gehen unbeabsichtigt weitere Informationen verloren
+    - Beispiel: Mit dem letzten Fall, der einen Diagnosecode verwendet, werden auch Bezeichnung und Bedeutung dieses Codes gelöscht
+- **Lösung:** Patienten, Fälle und Diagnosecodes werden in getrennten Tabellen gespeichert und über Schlüssel miteinander verbunden
 
-| Patient_ID | Name | Station_ID |
-|---|---|---|
-| P1 | Müller | S1 |
-| P2 | Schmidt | S1 |
-| P3 | Klein | S2 |
+Merksatz: Redundanz verursacht Änderungs-, Einfüge- und Löschanomalien; Normalisierung speichert jede Information möglichst nur einmal.
 
-Der Fremdschlüssel steht auf der **n-Seite** (viele, hier: Patienten) und zeigt zur **1-Seite** (eine, hier: Stationen) — nie umgekehrt, weil nur die n-Seite eindeutig "ihren einen Partner" nennen kann. Die Station selbst kann nicht eindeutig "ihren einen Patienten" nennen, da es mehrere sind. Vorteil: Stationsdaten (z. B. Fachrichtung) stehen nur einmal in `Stationen`, nicht redundant bei jedem Patienten (gleiches Prinzip wie bei der Normalisierung: "eine Tatsache, ein Ort").
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-Merksatz: Der Fremdschlüssel steht immer auf der n-Seite und zeigt zur 1-Seite (Patient → Station).
+- **1. Normalform:** Jede Tabellenzelle enthält nur einen Wert; keine Listen
+  oder Wiederholungsgruppen.
+  - Verstoß: `Fall` enthält eine Spalte `Diagnosen` mit dem Inhalt `"J18.9, I10, E11.9"` — oder die Spalten `Diagnose1`, `Diagnose2`, `Diagnose3`.
+  - Lösung: je Diagnose eine eigene Zeile in `Fall_Diagnose`.
+- **2. Normalform:** Jedes Nicht-Schlüsselattribut hängt vom **gesamten** Primärschlüssel ab.
+  - relevant nur bei zusammengesetzten Schlüsseln
+  - Verstoß: `Fall_Diagnose(Fall_ID, Diagnose_ID, Bezeichnung)` — die Bezeichnung hängt allein von `Diagnose_ID` ab, also von einem Teil des Schlüssels.
+  - Lösung: Bezeichnung gehört in die Tabelle `Diagnose`.
+- **3. Normalform:** Nicht-Schlüsselattribute hängen nicht voneinander,
+  sondern unmittelbar vom Schlüssel ab.
+  - Verstoß: `Fall(Fall_ID, Patient_ID, Station_ID, Stationsname)` — der Stationsname hängt an `Station_ID`, nicht am Fall.
+  - Lösung: eigene Tabelle `Station`, im `Fall` bleibt nur `Station_ID`.
 
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Wie wird eine m:n-Beziehung im relationalen Modell abgebildet?
-:::
-
-::: {.exam-answer}
-m:n-Beziehungen können nicht direkt über einen einzelnen Fremdschlüssel abgebildet werden (anders als 1:1 oder 1:n), weil beide Seiten mehrere Partner haben können. Stattdessen wird eine eigene Verknüpfungstabelle angelegt, die die Primärschlüssel beider beteiligten Tabellen als zusammengesetzten Primär-/Fremdschlüssel enthält. Beispiel: Ärzte ↔ Patienten (ein Arzt behandelt mehrere Patienten, ein Patient wird von mehreren Ärzten behandelt) → Verknüpfungstabelle `behandelt(arzt_id, pat_id)`, wobei beide Spalten zusammen den Primärschlüssel bilden und je einzeln Fremdschlüssel auf `aerzte` bzw. `patienten` sind.
-
-Merksatz: m:n braucht immer eine eigene Verknüpfungstabelle (z. B. `behandelt(arzt_id, pat_id)`).
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Was sind die drei Normalformen (1./2./3. NF), und warum muss man Datenbanken normalisieren?
-:::
-
-::: {.exam-answer}
-**Warum normalisieren?** Ziel ist nicht nur, Redundanz (mehrfach gespeicherte Daten) zu vermeiden — Redundanz ist die *Ursache*, das eigentliche Problem sind die daraus entstehenden **Anomalien**:
-
-- **Update-Anomalie**: Ein Wert steht mehrfach gespeichert → bei Änderung muss man an mehreren Stellen updaten; vergisst man eine, sind die Daten inkonsistent (z. B. Patientenname doppelt gespeichert, nur einmal geändert).
-- **Einfüge-Anomalie**: Eine neue Information lässt sich nicht speichern, ohne unnötig weitere mitspeichern zu müssen (z. B. keine neue Station anlegen können, ohne schon einen Patienten dafür zu haben, wenn Stations- und Patientendaten in einer Tabelle stecken).
-- **Lösch-Anomalie**: Beim Löschen eines Datensatzes geht ungewollt weitere Information mit verloren (z. B. löscht man den letzten Patienten einer Station, verschwinden die Stationsdaten mit, wenn sie nur dort gespeichert waren).
-
-Merksatz aus dem Buch: "eine Tatsache, ein Ort" — jede Information soll nur an genau einer Stelle gespeichert sein. Gerade bei klinischen Daten (Patienten, Diagnosen, Medikation) ist das kritisch, weil veraltete/inkonsistente Duplikate zu falschen Informationen führen können.
-
-- **1. NF**: Jede Spalte enthält nur einen atomaren Wert (keine Listen/Mehrfachwerte in einer Zelle). Beispiel-Verstoß: Spalte "Produkte" = "Apfel, Brot, Milch" in einer Zelle → muss auf mehrere Zeilen/eine eigene Tabelle aufgeteilt werden.
-- **2. NF**: 1. NF erfüllt + jedes Nicht-Schlüsselattribut hängt vom **ganzen** (zusammengesetzten) Primärschlüssel ab, nicht nur einem Teil davon. Nur relevant, wenn der Schlüssel aus mehreren Spalten besteht. Beispiel (Schlüssel = Kunde-ID + Produkt-ID): "Kundenname" hängt nur an Kunde-ID, nicht am ganzen Schlüssel → raus in eigene Kunden-Tabelle.
-- **3. NF**: 2. NF erfüllt + keine **transitive** Abhängigkeit — ein Nicht-Schlüsselattribut darf nicht von einem *anderen* Nicht-Schlüsselattribut abhängen, sondern nur direkt vom Schlüssel. Einfach gesagt: alles in der Tabelle muss unmittelbar vom Schlüssel abhängen, nicht "über einen Umweg" von einer anderen Spalte. Beispiel: Tabelle `Mitarbeiter(Mitarbeiter_ID, PLZ, Stadt)` — Stadt hängt von PLZ ab, nicht direkt von der Mitarbeiter-ID → PLZ/Stadt gehören in eine eigene Tabelle.
-
-Merksatz für 2./3. NF: "Jedes Attribut hängt vom Schlüssel ab, vom ganzen Schlüssel, und von nichts außer dem Schlüssel."
-
-**Trade-off**: Normalisierung ist der Standardansatz, aber nicht immer zwingend bis zur höchsten Stufe — manchmal wird bewusst *denormalisiert* (Redundanz in Kauf genommen), wenn Lesegeschwindigkeit wichtiger ist als Konsistenz, z. B. bei Reporting-/Auswertungs-Datenbanken, um Joins zu vermeiden.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+Die Normalformen bauen aufeinander auf: Die 3. Normalform setzt die 1. und 2. voraus.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10. Normalisierung wird dort nicht ausdrücklich genannt.
+- IBM: *Db2 13 – Normalization in database design*. Abschnitte „First normal form“, „Second normal form“ und „Third normal form“. Geprüft am 05.11.2026.
+  - <https://www.ibm.com/docs/en/db2-for-zos/13.0.0?topic=modeling-normalization-in-database-design>
+
 :::
+
+::::
+
+
 
 ### Datenaustauschformate
 

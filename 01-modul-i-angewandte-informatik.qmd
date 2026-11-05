@@ -581,60 +581,80 @@ Wie sind Daten in einer relationalen Datenbank organisiert und miteinander verkn
   - **Spalte:** enthält ein Merkmal, z. B. Aufnahmedatum oder Fallnummer
 - **Primärschlüssel (Primary Key, PK):** identifiziert jede Zeile einer Tabelle eindeutig
   - Beispiel: `Patient_ID` in der Tabelle `Patient`
-- **Fremdschlüssel (Foreign Key, FK):** verweist auf einen eindeutigen Schlüssel einer anderen Tabelle und verknüpft dadurch Datensätze
-  - verhindert beispielsweise, dass ein Behandlungsfall einem nicht vorhandenen Patienten zugeordnet wird
-- **1:1-Beziehung:** Jedem Datensatz der ersten Tabelle ist höchstens ein Datensatz der zweiten Tabelle zugeordnet und umgekehrt
-  - Der Fremdschlüssel wird zusätzlich als `UNIQUE` festgelegt oder ist zugleich Primärschlüssel
-  - Beispiel: Zu einem Patienten existiert höchstens ein gesonderter Datensatz mit besonders geschützten Zusatzinformationen
-- **1:n-Beziehung:** Ein Datensatz der ersten Tabelle kann mit mehreren Datensätzen der zweiten Tabelle verbunden sein
-  - Ein Patient kann mehrere Behandlungsfälle haben, jeder Fall gehört aber genau einem Patienten
-  - Der Fremdschlüssel `Patient_ID` steht deshalb in der Tabelle `Fall`
+- **Fremdschlüssel (Foreign Key, FK):** verweist auf einen eindeutigen Schlüssel einer anderen Tabelle
+  - verbindet Datensätze und sichert die referenzielle Integrität
+- **1:1-Beziehung:** Jedem Datensatz ist höchstens ein Datensatz der anderen Tabelle zugeordnet und umgekehrt
+  - umgesetzt durch einen eindeutigen Fremdschlüssel oder einen gemeinsamen Primär- und Fremdschlüssel
+  - Beispiel: Zu einem Patienten existiert höchstens ein gesonderter Datensatz mit geschützten Zusatzinformationen
+- **1:n-Beziehung:** Ein Datensatz kann mit mehreren Datensätzen der anderen Tabelle verbunden sein
+  - ein Patient kann mehrere Behandlungsfälle haben; jeder Fall gehört genau einem Patienten
+  - `Patient_ID` steht als Fremdschlüssel in der Tabelle `Fall`
 - **m:n-Beziehung:** Auf beiden Seiten können mehrere zugehörige Datensätze bestehen
-  - Ein Fall kann mehrere Diagnosen haben; derselbe Diagnosecode kann bei mehreren Fällen vorkommen
-  - Die Beziehung wird über die Verknüpfungstabelle `Fall_Diagnose` abgebildet
-
+  - ein Fall kann mehrere Diagnosen haben; derselbe Diagnosecode kann bei mehreren Fällen vorkommen
+  - die Beziehung wird über die Verknüpfungstabelle `Fall_Diagnose` abgebildet
 
 **Vereinfachtes klinisches Datenmodell:**
 
 ```{mermaid}
 erDiagram
+    PATIENT  ||--o| PATIENT_ZUSATZ : "hat"
     PATIENT  ||--o{ FALL : "hat"
     FALL     ||--o{ FALL_DIAGNOSE : "enthält"
-    DIAGNOSE ||--o{ FALL_DIAGNOSE : "erscheint in"
+    DIAGNOSE ||--o{ FALL_DIAGNOSE : "wird zugeordnet"
 
     PATIENT {
-        int    Patient_ID PK
+        int Patient_ID PK
         string Name
     }
-    FALL {
-        int    Fall_ID PK
-        int    Patient_ID FK
-        date   Aufnahmedatum
+
+    PATIENT_ZUSATZ {
+        int Patient_ID PK, FK
+        string Zusatzinformation
     }
+
+    FALL {
+        int Fall_ID PK
+        int Patient_ID FK
+        date Aufnahmedatum
+    }
+
     DIAGNOSE {
-        int    Diagnose_ID PK
+        int Diagnose_ID PK
         string ICD_Code
         string Bezeichnung
     }
+
     FALL_DIAGNOSE {
-        int Fall_ID PK
-        int Diagnose_ID PK
+        int Fall_ID PK, FK
+        int Diagnose_ID PK, FK
+        string Diagnosetyp
     }
 ```
 
-Die Darstellung folgt dem **Entity-Relationship-Modell (ER-Modell)**, dem Standardverfahren zur Datenmodellierung. Gezeigt ist die Krähenfußnotation; `||--o{` liest sich als „eins zu null bis viele": Ein Patient hat beliebig viele Fälle, jeder Fall gehört genau einem Patienten. Daneben existieren andere Notationen, etwa die Chen-Notation und das UML-Klassendiagramm.
+Die Darstellung verwendet ein **Entity-Relationship-Diagramm (ER-Diagramm)** in Krähenfußnotation:
 
-Das ER-Modell beschreibt die fachliche Struktur unabhängig von einem konkreten Datenbanksystem. Erst die Umsetzung in Tabellen, Schlüssel und Datentypen bindet es an ein System.
+- `||--o|`: genau ein zu null oder einem
+- `||--o{`: genau ein zu null, einem oder mehreren
+- Die m:n-Beziehung zwischen `Fall` und `Diagnose` wird durch zwei 1:n-Beziehungen zur Verknüpfungstabelle `Fall_Diagnose` aufgelöst.
+
+Das Diagramm beschreibt die logische Datenstruktur. Die konkrete Umsetzung erfolgt anschließend in einem Datenbanksystem, beispielsweise durch SQL-Anweisungen.
+
+Merksatz: Der Primärschlüssel identifiziert, der Fremdschlüssel verbindet; 1:1 benötigt einen eindeutigen Fremdschlüssel, 1:n einen Fremdschlüssel auf der n-Seite und m:n eine Verknüpfungstabelle.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Ein Fremdschlüssel kann auf einen Primärschlüssel oder einen anderen eindeutigen Schlüssel verweisen. Verknüpfungstabellen können zusätzliche Angaben zur Beziehung enthalten, beispielsweise Diagnosetyp oder Diagnosesicherheit.
 
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
-:::
-::::
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
+- PostgreSQL Global Development Group: *PostgreSQL 18 Documentation*, Abschnitte 5.5.4 „Primary Keys“ und 5.5.5 „Foreign Keys“. Geprüft am 05.11.2026.
 
+:::
+
+::::
 
 
 

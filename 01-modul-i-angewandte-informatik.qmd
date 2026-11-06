@@ -1074,19 +1074,17 @@ Merksatz: SOAP definiert XML-basierte Nachrichten und deren Verarbeitung; REST b
 Quellen geprüft am 05.11.2026.
 
 :::
-
 ::::
 
 
 
 ### Methoden des Software Engineerings
 
-::: {.exam-question}
+::: {.exam-question .done}
 Welche Aufgaben haben Anforderungsanalyse, ER-Modell, UML und BPMN im Software Engineering, und wie hängen sie zusammen?
 :::
 
 :::: {.exam-answer}
-
 - **Anforderungsanalyse:** ermittelt, was ein System für wen und unter welchen Bedingungen leisten soll
   - berücksichtigt Funktionen, Qualitätsanforderungen und Randbedingungen
   - Beispiel: Eine Triagekraft muss Beschwerden, Vitalwerte und Dringlichkeitsstufe im Krankenhausinformationssystem dokumentieren können
@@ -1115,7 +1113,6 @@ Die Verfahren bilden keine starre Abfolge. BPMN kann beispielsweise schon währe
 Merksatz: Anforderungen beschreiben das Ziel, ER modelliert Daten, UML modelliert das System und BPMN modelliert den Arbeitsprozess.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
-
 Derselbe klinische Sachverhalt kann in mehreren Modellen erscheinen:
 
 - BPMN zeigt den Ablauf der Triage.
@@ -1123,11 +1120,9 @@ Derselbe klinische Sachverhalt kann in mehreren Modellen erscheinen:
 - UML zeigt, wie Benutzer und Anwendungssystem zusammenwirken.
 
 Die Modelle widersprechen sich nicht, sondern betrachten denselben Gegenstand aus unterschiedlichen Perspektiven.
-
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
 - ISO/IEC/IEEE 29148:2018: *Systems and software engineering – Life cycle processes – Requirements engineering*. 2. Auflage, 2018.  
   <https://www.iso.org/standard/72089.html>
@@ -1139,13 +1134,12 @@ Die Modelle widersprechen sich nicht, sondern betrachten denselben Gegenstand au
   <https://www.omg.org/spec/BPMN/2.0.2>
 
 Quellen geprüft am 06.11.2026.
-
 :::
 ::::
 
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Wie unterscheiden sich ER-Modell, UML und BPMN hinsichtlich Zweck, Abstraktion und Zielgruppe?
 :::
 
@@ -1159,7 +1153,7 @@ Wie unterscheiden sich ER-Modell, UML und BPMN hinsichtlich Zweck, Abstraktion u
 | **UML** | Aufbau und Verhalten eines Systems | beispielsweise Klassen, Komponenten, Akteure, Zustände und Nachrichten | Systemanalysten, Softwarearchitekten und Entwickler |
 | **BPMN** | fachliche und organisatorische Abläufe | Ereignisse, Aktivitäten, Gateways, Sequenzflüsse, Pools und Lanes | Fachanwender, Prozessverantwortliche und IT |
 
-### ER-Modell: Welche Daten gibt es?
+#### ER-Modell: Welche Daten gibt es?
 
 - Das **Entity-Relationship-Modell** beschreibt Datenobjekte, ihre Merkmale und ihre Beziehungen.
 - Es dient insbesondere als Grundlage für den Entwurf einer Datenbank.
@@ -1195,7 +1189,7 @@ erDiagram
 
 Das ER-Diagramm zeigt, **welche Datenobjekte existieren und wie sie zusammenhängen**. Es beschreibt weder den klinischen Arbeitsablauf noch die Kommunikation zwischen Softwaresystemen.
 
-### UML: Wie ist ein System aufgebaut oder wie verhält es sich?
+UML: Wie ist ein System aufgebaut oder wie verhält es sich?
 
 - Die **Unified Modeling Language (UML)** ist eine standardisierte grafische Modellierungssprache für Systeme.
 - UML umfasst zahlreiche Diagrammarten, die sich grundlegend in zwei Gruppen einteilen:
@@ -1225,7 +1219,7 @@ sequenceDiagram
 
 Das UML-Sequenzdiagramm zeigt, **wer mit welchem System in welcher zeitlichen Reihenfolge interagiert**. Andere UML-Diagramme stellen beispielsweise Klassen, Komponenten oder Systemzustände dar.
 
-### BPMN: Wie läuft der Arbeitsprozess ab?
+#### BPMN: Wie läuft der Arbeitsprozess ab?
 
 - Die **Business Process Model and Notation (BPMN)** ist eine standardisierte grafische Notation für Geschäfts- und Arbeitsprozesse.
 - Wichtige Elemente sind:
@@ -1245,7 +1239,7 @@ Merksatz: ER modelliert Daten, UML modelliert Systeme und BPMN modelliert Prozes
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-ER-Modell, UML und BPMN sind keine aufeinanderfolgenden Entwicklungsschritte, sondern ergänzende Sichtweisen:
+#### ER-Modell, UML und BPMN sind keine aufeinanderfolgenden Entwicklungsschritte, sondern ergänzende Sichtweisen:
 
 - **Datensicht:** Welche Informationen müssen gespeichert werden?
 - **Systemsicht:** Wie ist das System aufgebaut und wie verhält es sich?
@@ -1274,135 +1268,110 @@ Quellen geprüft am 06.11.2026.
 
 
 
-::: {.exam-question}
-Was ist ein ER-Modell (Entity-Relationship-Modell), und wie hängt die (min,max)-Kardinalität mit dem später gelernten 1:n/m:n zusammen?
-:::
-
-::: {.exam-answer}
-Grundidee: bevor eine Datenbank-Tabelle gebaut wird, zeichnet man erst ein Bild davon, welche "Dinge" es gibt und wie sie zusammenhängen — unabhängig von SQL oder einem konkreten Datenbanksystem.
-
-**Die drei Bausteine, an einem Klinikbeispiel:**
-
-- **Entitäten** = die "Dinge"/Objekte selbst, z. B. `Patient`, `Arzt`, `Station`, `Bett`. Eine Entität ist der **Typ** (alle Patienten), nicht eine einzelne Person.
-- **Beziehungen** = wie Entitäten zusammenhängen, z. B. "Patient **liegt auf** Station", "Arzt **behandelt** Patient".
-- **Attribute** = Eigenschaften einer Entität, z. B. Patient hat `Name`, `Geburtsdatum`; Station hat `Fachrichtung`.
-
-**Kardinalität** (wie viele auf jeder Seite mitmachen dürfen), als (min,max)-Notation:
-
-- Patient **(1,1)** — Station **(0,\*)**: ein Patient liegt auf **genau einer** Station, eine Station hat **null bis viele** Patienten → entspricht unserem 1:n-Beispiel (Fremdschlüssel `Station_ID` bei Patienten).
-- Patient **(0,\*)** — Arzt **(0,\*)**: ein Patient wird von mehreren Ärzten behandelt, ein Arzt behandelt mehrere Patienten → entspricht unserem m:n-Beispiel (eigene Verknüpfungstabelle `Behandelt`).
-
-**Die Min-Zahl ist wichtig**: steht dort eine **1** statt **0**, heißt das "diese Entität kann ohne die andere gar nicht existieren" (Existenzabhängigkeit) — z. B. kann ein `Bett` nur existieren, wenn es zu **genau einer** Station gehört.
-
-**Warum vor der Datenbank**: das ER-Modell ist die "Landkarte", die vor der eigentlichen Implementierung entsteht — Fehler hier (falsche Beziehung, falsche Kardinalität) sind viel billiger zu korrigieren als später, wenn schon Tabellen mit echten Daten existieren. Jede Beziehung wird später zu einem Fremdschlüssel (1:n) oder einer Verknüpfungstabelle (m:n) — genau die Konzepte, die wir bei den relationalen Datenbanken schon besprochen haben.
-
-**Faustregel — Attribut oder eigene Entität?** Eine Eigenschaft wie "Diagnose" ist nicht automatisch eine Entität. Zwei Varianten:
-
-- **Als Attribut** (einfacher Fall): wenn "Diagnose" nur ein simples Textfeld bei jedem Patienten ist — `Patient(Patient_ID, Name, Diagnose)` → dann ist es nur ein **Attribut** von `Patient`.
-- **Als eigene Entität**: sobald die Diagnose selbst eigene Merkmale hat (ICD-Code, Bezeichnung) **und/oder** in einer echten Beziehung zu mehreren Patienten stehen kann — dann wird sie zur eigenen Entität: `Diagnose(ICD_Code, Bezeichnung)`, mit Beziehung Patient **(0,\*)** — Diagnose **(0,\*)** (ein Patient kann mehrere Diagnosen haben, eine Diagnose betrifft mehrere Patienten → m:n → Verknüpfungstabelle `Patient_Diagnose(Patient_ID, ICD_Code, Diagnosedatum)`).
-
-Merksatz: einfache, einzelne Eigenschaft eines Dings → **Attribut**. Eigene Merkmale und/oder echte 1:n/m:n-Beziehung zu anderen Dingen → eigene **Entität**. In der Praxis ist "Diagnose" fast immer die Entität-Variante, weil ICD-Codes strukturiert erfasst werden (siehe Kap. 12, ICD-System).
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
+### IT-Servicemanagement
 
 ::: {.exam-question}
-Was ist der Unterschied zwischen einem UML-Klassendiagramm und einem Sequenzdiagramm, am Beispiel eines KIS-Moduls?
+Was ist IT-Servicemanagement, und welche Maßnahmen sichern den zuverlässigen Betrieb klinischer IT-Dienste?
 :::
 
-::: {.exam-answer}
-**Klassendiagramm — die Struktur**: zeigt, welche "Bausteine" (Klassen) es im Programm gibt und wie sie zusammenhängen. Kasten mit bis zu 3 Feldern: Name, Attribute, Operationen.
+:::: {.exam-answer}
 
-```
-Patient
------------------
-- name: String
-- geburtstag: Date
------------------
-+ berechneAlter(): int
-```
+- **IT-Servicemanagement (ITSM):** koordiniertes Planen, Bereitstellen, Betreiben, Überwachen und kontinuierliches Verbessern von IT-Services
+  - Ziel ist, die vereinbarte Leistung zuverlässig und bedarfsgerecht für die Anwender bereitzustellen.
+- **IT-Service:** eine nutzbare Gesamtleistung aus Anwendungen, Daten, Infrastruktur, Support und Betriebsprozessen
+  - Das Krankenhausinformationssystem (KIS) ist ein IT-Service; ein einzelner KIS-Server ist nur eine seiner technischen Komponenten.
 
-Zeigt nur: "es gibt eine Patient-Klasse mit diesen Daten und diesen Fähigkeiten" — kein zeitlicher Ablauf, nur Bauplan.
+**Wichtige Maßnahmen für einen zuverlässigen Betrieb:**
 
-**Sequenzdiagramm — der zeitliche Ablauf**: zeigt, wie Objekte zu einem bestimmten Zeitpunkt miteinander kommunizieren, Schritt für Schritt von oben nach unten (entlang vertikaler Lebenslinien).
+- **Klare Zuständigkeiten und Service Desk:** definierte Verantwortliche, Meldewege und Eskalationsverfahren
+  - Anwender haben eine zentrale Anlaufstelle für Störungen und Anfragen.
+- **Service-Level-Management:** vereinbart messbare Anforderungen an einen Service
+  - Beispiele sind Verfügbarkeit, Supportzeiten sowie Reaktions- und Wiederherstellungszeiten.
+  - Solche Vereinbarungen können in einem Service Level Agreement (SLA) dokumentiert werden.
+- **Monitoring:** überwacht Verfügbarkeit, Leistung, Kapazität und Fehlermeldungen
+  - Störungen sollen möglichst erkannt werden, bevor sie die Patientenversorgung beeinträchtigen.
+- **Incident- und Problem-Management:**
+  - **Incident-Management:** stellt einen beeinträchtigten Service möglichst schnell wieder her.
+  - **Problem-Management:** sucht und beseitigt die zugrunde liegende Ursache wiederkehrender Störungen.
+- **Kontrollierte Änderungen:** Änderungen werden bewertet, getestet, freigegeben, dokumentiert und bei Bedarf zurückgenommen.
+  - Beispiele sind Softwareupdates, Konfigurationsänderungen und neue Schnittstellen.
+- **Konfigurations- und Dokumentationsmanagement:** erfasst Systeme, Versionen, Abhängigkeiten und verantwortliche Stellen
+  - Dadurch lässt sich beurteilen, welche Dienste von einer Störung oder Änderung betroffen sind.
+- **Ausfallvorsorge und Wiederanlauf:** umfasst Redundanz, Datensicherung, Wiederherstellungstests und klinische Ersatzverfahren
+  - Redundanz hält einen Dienst möglichst verfügbar, ein Backup ermöglicht die Wiederherstellung von Daten, und ein Ersatzverfahren unterstützt die Versorgung während des Ausfalls.
+- **Kontinuierliche Verbesserung:** wertet Störungen, Kennzahlen und Rückmeldungen aus
+  - Erkenntnisse werden genutzt, um Services und Betriebsprozesse zu verbessern.
 
-Beispiel: Arzt bestellt einen Laborbefund.
-```
-Arzt-Objekt          KIS-Objekt          Labor-System-Objekt
-    |--- bestelleBefund() --->|                    |
-    |                          |--- sendeAnfrage() ->|
-    |                          |<--- Ergebnis -------|
-    |<--- zeigeErgebnis() -----|                    |
-```
-Jede Lebenslinie (senkrechte gestrichelte Linie unter dem Objekt) zeigt, wann dieses Objekt existiert/handelt. Pfeile = Aufrufe zwischen Objekten, in der zeitlichen Reihenfolge, wie sie passieren.
+**Beispiel KIS-Ausfall:**
 
-**Kurz der Unterschied**: Klassendiagramm = Bauplan/Struktur (was gibt's, ein für alle Mal). Sequenzdiagramm = Film/Ablauf (was passiert wann, für einen konkreten Fall). Laut Buch wird das Klassendiagramm für den schnellen Strukturüberblick genutzt (fast immer bei OOP-Projekten), das Sequenzdiagramm eher spät und nur für komplexere Abläufe, weil es aufwändiger zu erstellen ist.
+- Das Monitoring erkennt, dass das KIS in der Notaufnahme nicht erreichbar ist.
+- Der Service Desk nimmt den Incident auf und priorisiert ihn nach Auswirkung und Dringlichkeit.
+- Das klinische Ersatzverfahren wird aktiviert und die betroffenen Bereiche werden informiert.
+- Die IT stellt den Service wieder her und untersucht anschließend die Ursache.
+- Eine notwendige technische Änderung wird kontrolliert getestet und umgesetzt.
+- Der Vorfall wird nachbereitet, um einen erneuten Ausfall zu verhindern.
 
-Merksatz: Klassendiagramm = Bauplan (was gibt es), Sequenzdiagramm = Film (wer ruft wann wen auf).
+Merksatz: ITSM betrachtet nicht nur einzelne Server, sondern den gesamten IT-Service: vereinbaren, überwachen, wiederherstellen, kontrolliert verändern und verbessern.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**ITSM, IT-Betrieb und Informationssicherheit überschneiden sich, sind aber nicht identisch:**
+
+- **IT-Betrieb:** führt die technischen Betriebsaufgaben aus.
+- **Informationssicherheit:** schützt insbesondere Vertraulichkeit, Integrität und Verfügbarkeit.
+- **ITSM:** koordiniert die technischen und organisatorischen Maßnahmen aus Sicht des bereitgestellten Services.
+
+Die **ISO/IEC 20000-1** enthält Anforderungen an ein Servicemanagementsystem. **ITIL** ist dagegen ein Framework mit bewährten Praktiken und keine verpflichtende Norm.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
+- ISO/IEC: *ISO/IEC 20000-1:2018 – Information technology – Service management – Part 1: Service management system requirements*. 3. Auflage, 2018, Abstract; 2023 bestätigt, ergänzt durch Amendment 1:2024.  
+  <https://www.iso.org/standard/70636.html>
+- Bundesamt für Sicherheit in der Informationstechnik: *IT-Grundschutz-Kompendium, OPS.1.1.1 Allgemeiner IT-Betrieb*. Edition 2023, Abschnitte 1.3 und 3.1, insbesondere OPS.1.1.1.A1 „Festlegung der Aufgaben und Zuständigkeiten des IT-Betriebs“.  
+  <https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/04_OPS_Betrieb/OPS_1_1_1_Allgemeiner_IT_Betrieb_Edition_2023.pdf>
+
+Quellen geprüft am 06.11.2026.
+
 :::
+::::
+
 
 ::: {.exam-question}
-Mit welchem Werkzeug dokumentiert man einen Ablauf mit Entscheidungspunkten (z. B. Patientenaufnahme in der Notaufnahme, "kritisch? ja/nein"), was sind die Grundbausteine, und wie unterscheidet sich das vom UML-Aktivitätsdiagramm?
+Wie unterscheiden sich Incident, Problem, Service Request und Change im IT-Servicemanagement?
 :::
 
-::: {.exam-answer}
-**BPMN** (Business Process Model and Notation) — das richtige Werkzeug für Abläufe mit Entscheidungspunkten. Grundbausteine, am Notaufnahme-Beispiel:
+:::: {.exam-answer}
 
-- **Start-/End-Event** (Kreis): "Patient kommt an" → "Patient versorgt/entlassen".
-- **Aktivität/Task** (abgerundetes Rechteck): ein Arbeitsschritt, z. B. "Patient einchecken", "Triage durchführen".
-- **Gateway** (Raute): eine Entscheidung, z. B. "kritisch? ja/nein". Die exklusive Gateway (mit X markiert) bedeutet: nur einer der Pfade wird genommen.
-- **Sequenzfluss** (Pfeil): verbindet die Schritte in der Reihenfolge, wie sie passieren.
-- **Swimlanes** (Spuren): trennen, wer für welchen Schritt zuständig ist — z. B. eine Spur "Triage-Schwester", eine Spur "Arzt", eine Spur "Verwaltung".
+Für klinische Anwender ist die Unterscheidung wichtig, weil sie bestimmt, ob die IT eine akute Störung behebt, deren Ursache untersucht, eine reguläre Anfrage erfüllt oder eine geplante Änderung kontrolliert umsetzt.
 
-Notaufnahme-Beispiel als Skizze:
-```
-[Start] → (Patient einchecken) → (Triage durchführen) → <kritisch?>
-                                                          ├─ ja  → (Schockraum) → [Ende]
-                                                          └─ nein → (Wartebereich) → (Arztuntersuchung) → [Ende]
-```
+| Vorgang | Ausgangssituation | Ziel |
+|---|---|---|
+| **Incident (Störung)** | Ein IT-Dienst ist ungeplant unterbrochen oder in seiner Qualität beeinträchtigt | normalen Betrieb möglichst schnell wiederherstellen |
+| **Problem** | Eine Ursache oder mögliche Ursache eines oder mehrerer Incidents liegt vor | Ursache beherrschen und erneute Störungen verhindern |
+| **Service Request (Serviceanfrage)** | Ein Nutzer fordert eine vereinbarte reguläre Serviceleistung an | Anfrage standardisiert bearbeiten |
+| **Change (Änderung)** | Eine geplante Änderung kann einen IT-Dienst beeinflussen | Änderung bewerten, freigeben und kontrolliert umsetzen |
 
-**Abgrenzung zum UML-Aktivitätsdiagramm**: sieht sehr ähnlich aus (Pfeile, Entscheidungsrauten, Start/Ende) — der Unterschied ist Zielgruppe und Ebene, nicht die Bausteine:
+**Zusammenhängendes Beispiel:**
 
-- **BPMN**: für Geschäfts-/Klinikprozesse über mehrere Abteilungen/Rollen hinweg — auch für Nicht-Techniker (Ärzte, Pflege, Verwaltung) verständlich, dank Swimlanes.
-- **UML-Aktivitätsdiagramm**: für den internen Ablauf **innerhalb** eines Softwaresystems (z. B. was passiert intern in einer Methode, Schritt für Schritt, mit Verzweigungen) — Teil des technischen UML-Gesamtmodells, von Entwicklern genutzt.
+Das Krankenhausinformationssystem (KIS) fällt aus (**Incident**). Als Ursache wird ein fehlerhafter Datenbanktreiber erkannt (**Problem**) und durch ein geprüftes und freigegebenes Update behoben (**Change**). Die Einrichtung eines KIS-Zugangs für einen neuen Mitarbeiter ist dagegen eine **Service Request**.
 
-Merksatz: BPMN = Prozess über Abteilungen hinweg, für Fachleute verständlich. UML-Aktivitätsdiagramm = Logik innerhalb einer Software, technisches Werkzeug.
+Merksatz: Incident behebt die Störung, Problem untersucht die Ursache, Service Request erfüllt eine reguläre Anfrage und Change setzt eine Änderung kontrolliert um.
 
-**Wird das in der Praxis wirklich gemalt?** Volle, lehrbuchkonforme UML-Diagramme (mit allen Notationsdetails) sind im Alltag eher selten — meist werden informelle Skizzen im UML-Stil genutzt (Whiteboard, Tools wie Miro), ohne strikte Konformität. Wichtige Ausnahme: in **regulierten Bereichen wie Medizinprodukte-Software** (Stichwort EN 62304, Software-Lebenszyklus für Medizinprodukte, siehe Kap. 16) wird oft formale Dokumentation verlangt, damit Zulassungsbehörden den Entwicklungsprozess nachvollziehen können — dort ist formales Diagrammieren tatsächlich Standard/Pflicht, nicht nur Theorie.
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-::: {.callout-note title="Good to know" appearance="simple"}
+Ein Incident kann vorläufig durch einen Workaround behoben werden, obwohl das zugrunde liegende Problem fortbesteht. Ein dauerhafter Problem-Fix wird häufig als Change umgesetzt.
 
 :::
-:::
 
-### Maßnahmen und Methoden des IT-Servicemanagements
+::: {.callout-note title="Literatur" appearance="simple"}
 
-::: {.exam-question}
-KIS fällt aus, Ärzte kommen nicht an Befunde — was ist der Unterschied zwischen "Incident" und "Problem" (ITIL)?
-:::
-
-::: {.exam-answer}
-**Incident** = die akute Störung selbst ("KIS ausgefallen") — Ziel: schnell Betrieb wiederherstellen, notfalls per Workaround (z. B. Befunde übers Backup-System). **Problem** = die zugrunde liegende Ursache (z. B. fehlerhaftes Update) — Ziel: dauerhaft beheben, damit der Incident nicht wiederkommt.
-
-Merksatz: Incident = Feuer löschen (Symptom). Problem = Brandursache finden (Ursache). Ein Incident kann per Workaround gelöst sein, ohne dass das Problem schon behoben ist.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
+- International Organization for Standardization: *ISO/IEC 20000-10:2018 – Information technology — Service management — Part 10: Concepts and vocabulary*. 1. Auflage, 2018. Geprüft am 06.11.2026.  
+  <https://www.iso.org/standard/74316.html>
+- PeopleCert: Offizielle Praxisbeschreibungen zu *Incident Management*, *Problem Management*, *Service Request Management* und *Change Enablement*. Geprüft am 06.11.2026.
 
 :::
-:::
-
-## Quellen {.unnumbered}
-
-Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
-
-- Curriculum/Allgemeinwissen — Netzwerkgrundlagen
-- Im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
-- Im medinfo-kompakt-Buch nicht als eigener Prozessablauf behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
-- BPMN und die Praxis-Einordnung im medinfo-kompakt-Buch nicht behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
-- nicht im medinfo-kompakt-Buch behandelt — Allgemeinwissen, Rahmenwerk ITIL
+::::

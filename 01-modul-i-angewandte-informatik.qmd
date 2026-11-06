@@ -1270,7 +1270,7 @@ Quellen geprüft am 06.11.2026.
 
 ### IT-Servicemanagement
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist IT-Servicemanagement, und welche Maßnahmen sichern den zuverlässigen Betrieb klinischer IT-Dienste?
 :::
 
@@ -1339,7 +1339,7 @@ Quellen geprüft am 06.11.2026.
 ::::
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Wie unterscheiden sich Incident, Problem, Service Request und Change im IT-Servicemanagement?
 :::
 

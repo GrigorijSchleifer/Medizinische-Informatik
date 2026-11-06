@@ -1198,12 +1198,15 @@ Das ER-Diagramm zeigt, **welche Datenobjekte existieren und wie sie zusammenhän
 ### UML: Wie ist ein System aufgebaut oder wie verhält es sich?
 
 - Die **Unified Modeling Language (UML)** ist eine standardisierte grafische Modellierungssprache für Systeme.
-- UML umfasst unterschiedliche Diagrammarten:
-  - **Strukturdiagramme**, beispielsweise Klassen- und Komponentendiagramme
-  - **Verhaltensdiagramme**, beispielsweise Aktivitäts- und Zustandsdiagramme
-  - **Interaktionsdiagramme**, beispielsweise Sequenzdiagramme
+- UML umfasst zahlreiche Diagrammarten, die sich grundlegend in zwei Gruppen einteilen:
+  - **Strukturdiagramme:** beschreiben den statischen Aufbau eines Systems
+    - Beispiele: Klassen- und Komponentendiagramm
+  - **Verhaltensdiagramme:** beschreiben das dynamische Verhalten eines Systems
+    - Beispiele: Aktivitäts- und Zustandsdiagramm
+    - **Interaktionsdiagramme** sind spezielle Verhaltensdiagramme und zeigen die Kommunikation zwischen Beteiligten oder Systemkomponenten
+      - Beispiel: Sequenzdiagramm
 
-**Beispiel:** Das Sequenzdiagramm zeigt, wie Arzt, Krankenhausinformationssystem und Laborinformationssystem beim Laborauftrag zusammenwirken.
+**Beispiel eines UML-Interaktionsdiagramms:** Das folgende Sequenzdiagramm zeigt, wie Arzt, Krankenhausinformationssystem und Laborinformationssystem beim Laborauftrag zeitlich nacheinander interagieren.
 
 ```{mermaid}
 %%| fig-cap: "UML-Sequenzdiagramm: Interaktion zwischen Anwender und Softwaresystemen"
@@ -1249,9 +1252,6 @@ ER-Modell, UML und BPMN sind keine aufeinanderfolgenden Entwicklungsschritte, so
 - **Prozesssicht:** Wer erledigt wann welche Aufgabe?
 
 UML und BPMN sind standardisierte Modellierungssprachen beziehungsweise Notationen. Das ER-Modell wird dagegen mit verschiedenen grafischen Notationen dargestellt. Ein gewöhnliches Flussdiagramm wird nicht allein durch ähnliche Symbole zu einem BPMN-Diagramm.
-
-Die Datei `laborprozess.bpmn` enthält das bearbeitbare BPMN-2.0-Modell. Für das Buch wird die lokal gespeicherte Datei `laborprozess-bpmn.svg` eingebunden; dadurch besteht beim Erstellen oder Lesen keine Abhängigkeit von einem externen Diagrammdienst.
-
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
@@ -1270,7 +1270,6 @@ Die Datei `laborprozess.bpmn` enthält das bearbeitbare BPMN-2.0-Modell. Für da
 Quellen geprüft am 06.11.2026.
 
 :::
-
 ::::
 
 

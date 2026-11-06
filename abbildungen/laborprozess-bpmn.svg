@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="430" viewBox="-20 0 1340 430" role="img" aria-labelledby="title desc">
+  <title id="title">BPMN-Diagramm einer Laboruntersuchung</title>
+  <desc id="desc">Der Prozess beginnt mit dem Laborauftrag. Nach Probenentnahme und Prüfung entscheidet ein exklusives Gateway, ob die Probe verwertbar ist. Bei verwertbarer Probe folgen Analyse und Befundfreigabe; andernfalls wird eine erneute Probenentnahme veranlasst.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/>
+    </marker>
+    <style>
+      .task { fill: #ffffff; stroke: #1f2937; stroke-width: 2; }
+      .flow { fill: none; stroke: #1f2937; stroke-width: 2; marker-end: url(#arrow); }
+      .event { fill: #ffffff; stroke: #1f2937; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #111827; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #111827; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect x="-20" y="0" width="1340" height="430" fill="#ffffff"/>
+
+  <!-- Sequenzflüsse -->
+  <path class="flow" d="M 76 190 L 110 190"/>
+  <path class="flow" d="M 260 190 L 310 190"/>
+  <path class="flow" d="M 460 190 L 510 190"/>
+  <path class="flow" d="M 660 190 L 710 190"/>
+  <path class="flow" d="M 760 190 L 810 190"/>
+  <path class="flow" d="M 960 190 L 1010 190"/>
+  <path class="flow" d="M 1160 190 L 1210 190"/>
+  <path class="flow" d="M 735 215 L 735 300"/>
+  <path class="flow" d="M 660 340 L 385 340 L 385 240"/>
+
+  <!-- Startereignis -->
+  <circle class="event" cx="58" cy="190" r="18" stroke-width="2"/>
+  <text class="small" x="58" y="225">
+    <tspan x="58" dy="0">Laboruntersuchung</tspan>
+    <tspan x="58" dy="17">erforderlich</tspan>
+  </text>
+
+  <!-- Aktivitäten -->
+  <rect class="task" x="110" y="140" width="150" height="100" rx="12" ry="12"/>
+  <text class="label" x="185" y="185">
+    <tspan x="185" dy="0">Laborauftrag</tspan>
+    <tspan x="185" dy="20">erfassen</tspan>
+  </text>
+
+  <rect class="task" x="310" y="140" width="150" height="100" rx="12" ry="12"/>
+  <text class="label" x="385" y="185">
+    <tspan x="385" dy="0">Probe</tspan>
+    <tspan x="385" dy="20">entnehmen</tspan>
+  </text>
+
+  <rect class="task" x="510" y="140" width="150" height="100" rx="12" ry="12"/>
+  <text class="label" x="585" y="185">
+    <tspan x="585" dy="0">Probe</tspan>
+    <tspan x="585" dy="20">prüfen</tspan>
+  </text>
+
+  <!-- Exklusives Gateway -->
+  <path d="M 735 165 L 760 190 L 735 215 L 710 190 z" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+  <path d="M 726 181 L 744 199 M 744 181 L 726 199" fill="none" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+  <text class="label" x="735" y="132">Probe verwertbar?</text>
+  <text class="small" x="785" y="178">Ja</text>
+  <text class="small" x="758" y="257">Nein</text>
+
+  <rect class="task" x="810" y="140" width="150" height="100" rx="12" ry="12"/>
+  <text class="label" x="885" y="185">
+    <tspan x="885" dy="0">Probe</tspan>
+    <tspan x="885" dy="20">analysieren</tspan>
+  </text>
+
+  <rect class="task" x="1010" y="140" width="150" height="100" rx="12" ry="12"/>
+  <text class="label" x="1085" y="185">
+    <tspan x="1085" dy="0">Befund</tspan>
+    <tspan x="1085" dy="20">freigeben</tspan>
+  </text>
+
+  <rect class="task" x="660" y="300" width="150" height="80" rx="12" ry="12"/>
+  <text class="small" x="735" y="327">
+    <tspan x="735" dy="0">Erneute</tspan>
+    <tspan x="735" dy="17">Probenentnahme</tspan>
+    <tspan x="735" dy="17">veranlassen</tspan>
+  </text>
+
+  <!-- Endereignis -->
+  <circle class="event" cx="1228" cy="190" r="18" stroke-width="4"/>
+  <text class="small" x="1228" y="225">
+    <tspan x="1228" dy="0">Befund</tspan>
+    <tspan x="1228" dy="17">freigegeben</tspan>
+  </text>
+</svg>

@@ -853,113 +853,427 @@ Die Normalformen bauen aufeinander auf: Die 3. Normalform setzt die 1. und 2. vo
 
 ### Datenaustauschformate
 
-::: {.exam-question}
-Was ist der Unterschied zwischen JSON und XML, wofür steht SOAP, und wo tauchen diese Formate in medizinischen Standards konkret auf?
+::: {.exam-question .done}
+Welche Datenaustauschformate und -standards sind in der Medizin relevant?
 :::
 
-::: {.exam-answer}
-**XML** (eXtensible Markup Language): Daten in verschachtelten Tags (`<patient><name>Müller</name></patient>`). Vergleichsweise "starr": hat oft ein Schema (DTD/XSD), das Elemente/Reihenfolge streng vorschreibt; dafür mehr Text-Overhead durch öffnende/schließende Tags.
+:::: {.exam-answer}
 
-**JSON** (JavaScript Object Notation): Daten als Schlüssel-Wert-Paare (`{"name": "Müller"}`), kompakter, weniger Overhead, kein so striktes verpflichtendes Schema-System wie XML.
+Die Begriffe gehören zu unterschiedlichen Ebenen des Datenaustauschs:
 
-Beide sind reine **Datenformate** (wie Daten strukturiert aufgeschrieben werden). **SOAP** (Simple Object Access Protocol) liegt eine Ebene drüber: ein **Protokoll** für den Nachrichtenaustausch zwischen Systemen, das XML-Nachrichten in einer festen Umschlag-Struktur (Header/Body) verschickt, meist über HTTP.
+- **JSON und XML:** textbasierte Serialisierungsformate
+  - **JavaScript Object Notation (JSON):** bildet Daten durch Objekte, Schlüssel-Wert-Paare und Listen ab
+    - wird häufig für Web- und FHIR-Schnittstellen verwendet
+  - **Extensible Markup Language (XML):** bildet Daten durch verschachtelte Elemente, Attribute und Namensräume ab
+    - die Struktur kann beispielsweise mit einem XML Schema (XSD) geprüft werden
+- **SOAP:** XML-basiertes Nachrichtenframework beziehungsweise Protokoll
+  - eine SOAP-Nachricht besteht aus einem `Envelope`, einem optionalen `Header` und einem `Body`
+  - die Übertragung kann beispielsweise über HTTP erfolgen
+- **Health Level Seven (HL7):** Familie von Standards für den Austausch von Gesundheitsinformationen
+  - **HL7 Version 2:** Nachrichten aus Segmenten, Feldern und Komponenten, meist durch Trennzeichen strukturiert
+    - Beispiel: Eine Aufnahmenachricht übermittelt Patientendaten vom Krankenhausinformationssystem an das Laborinformationssystem
+  - **Clinical Document Architecture (CDA):** XML-basierter Standard für klinische Dokumente
+    - Beispiel: strukturierter elektronischer Arztbrief
+  - **Fast Healthcare Interoperability Resources (FHIR):** definiert Ressourcen, Profile und Austauschmechanismen
+    - Ressourcen können unter anderem als JSON, XML oder RDF/Turtle dargestellt werden
+    - REST-Schnittstellen sind verbreitet, aber nicht die einzige Austauschform
+- **Integrating the Healthcare Enterprise (IHE):** Initiative mit Integrationsprofilen für konkrete Anwendungsszenarien
+  - Profile legen beteiligte Akteure und Transaktionen fest und präzisieren die Verwendung bestehender Standards
+  - Beispiel: XDS.b beschreibt den einrichtungsübergreifenden Austausch klinischer Dokumente
 
-**Medizinischer Bezug**:
+**Vergleich am selben vereinfachten Patientenbeispiel**
 
-- **XML**: HL7 CDA (Clinical Document Architecture, strukturierte Arztbriefe/Befunde), HL7 v3 (Nachfolger des textbasierten HL7 v2 mit Pipe-Trennung, z. B. `MSH|^~\&|...`), Teile der deutschen elektronischen Patientenakte (ePA).
-- **JSON**: FHIR (Fast Healthcare Interoperability Resources, aktueller HL7-Standard, Nachfolger von v2/v3/CDA) — überträgt Daten wahlweise als JSON oder XML, in modernen Web-/App-Schnittstellen (z. B. Patienten-Apps mit ePA-Zugriff) meist JSON.
-- **SOAP**: ältere IHE-Profile und Teile der deutschen Telematikinfrastruktur-Fachdienste (z. B. Kommunikation mit dem Konnektor) — dort, wo strenge, vertraglich fest definierte Schnittstellen wichtiger sind als Schlankheit.
+HL7-v2-Nachricht:
 
-**Trend**: HL7 v2 (Text) → v3/CDA (XML, streng spezifiziert) → FHIR (JSON, schlank, REST-basiert statt SOAP) spiegelt den allgemeinen Trend von starren, schwergewichtigen Formaten zu leichtgewichtigen, web-API-freundlichen Formaten.
-
-Merksatz: XML (eXtensible Markup Language) = Tags, streng, z. B. CDA (Clinical Document Architecture); JSON (JavaScript Object Notation) = Schlüssel-Wert, schlank, z. B. FHIR (Fast Healthcare Interoperability Resources); SOAP (Simple Object Access Protocol) = Protokoll mit XML-Umschlag, z. B. Konnektor.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Was ist SOAP genau, was ist REST, und wie stehen die beiden zueinander? Wieso ist das für die Medizininformatik relevant?
-:::
-
-::: {.exam-answer}
-**SOAP** (Simple Object Access Protocol): ein **Protokoll** — Nachrichten werden als XML-"Briefumschlag" mit fester Struktur verschickt:
-
-```xml
-<Envelope>
-  <Header>...</Header>                 <!-- Metadaten: Auth, Routing -->
-  <Body>
-    <GetPatientRequest>
-      <PatientID>P123</PatientID>
-    </GetPatientRequest>
-  </Body>
-</Envelope>
+```{.text}
+MSH|^~\&|KIS|KLINIK|LIS|LABOR|20260305083000||ADT^A01|MSG0001|P|2.5
+PID|1||4711^^^KLINIK^PI||Müller^Anna||19600514|F
 ```
 
-Dazu gehört meist **WSDL** (Web Services Description Language): eine formale, maschinenlesbare Vertragsbeschreibung, welche Operationen ein Dienst anbietet und welche Parameter/Rückgabewerte er erwartet — Client und Server müssen sich strikt daran halten. SOAP bringt außerdem eingebaute Standards für Sicherheit (WS-Security) und Transaktionen mit, deshalb beliebt in sicherheitskritischen/regulierten Umgebungen.
+- `ADT^A01` kennzeichnet eine Aufnahmenachricht.
+- `PID-3` enthält die Patientenkennung.
+- `PID-5` enthält den Namen, `PID-7` das Geburtsdatum.
+- Die Bedeutung ergibt sich aus Segment, Position, Datentyp, Version und Profil.
 
-**REST** (Representational State Transfer): kein Protokoll, sondern ein **Architekturstil** — nutzt die vorhandenen HTTP-Methoden direkt, um auf "Ressourcen" (identifiziert über URLs) zuzugreifen:
+FHIR-Patient als JSON:
 
-| HTTP-Methode | Bedeutung | Beispiel |
-|---|---|---|
-| GET | Ressource lesen | `GET /Patient/123` → liefert Patient 123 |
-| POST | Ressource anlegen | `POST /Patient` → neuer Patient |
-| PUT | Ressource ändern | `PUT /Patient/123` → Patient 123 aktualisieren |
-| DELETE | Ressource löschen | `DELETE /Patient/123` → Patient 123 löschen |
+```{.json}
+{
+  "resourceType": "Patient",
+  "id": "patient-4711",
+  "identifier": [
+    {
+      "system": "https://klinik.example/fhir/sid/patient-id",
+      "value": "4711"
+    }
+  ],
+  "name": [
+    {
+      "family": "Müller",
+      "given": ["Anna"]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1960-05-14"
+}
+```
 
-Kein Envelope mit Operationsnamen nötig — die Aktion steckt schon in der HTTP-Methode + URL. REST ist **stateless**: jede Anfrage muss für sich vollständig sein, der Server hält keine Sitzung zwischen Anfragen (wichtig für Skalierbarkeit, da jeder Request unabhängig von jedem Server beantwortet werden kann).
+Dieselbe FHIR-Ressource als XML:
 
-**Vergleich**:
+```{.xml}
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="patient-4711"/>
+  <identifier>
+    <system value="https://klinik.example/fhir/sid/patient-id"/>
+    <value value="4711"/>
+  </identifier>
+  <name>
+    <family value="Müller"/>
+    <given value="Anna"/>
+  </name>
+  <gender value="female"/>
+  <birthDate value="1960-05-14"/>
+</Patient>
+```
 
-| | SOAP | REST |
-|---|---|---|
-| Art | Protokoll, streng spezifiziert | Architekturstil, flexibel |
-| Format | nur XML | meist JSON, auch XML möglich |
-| Vertrag | WSDL (formal, maschinenlesbar) | keine zwingende formale Beschreibung |
-| Transport | oft HTTP, aber auch andere | praktisch immer HTTP |
-| Sicherheits-/Transaktionsstandards | eingebaut (WS-Security) | nicht eingebaut, muss selbst ergänzt werden |
-| typischer Einsatz | sicherheitskritische, streng definierte Schnittstellen (z. B. Telematikinfrastruktur-Konnektor) | moderne, leichtgewichtige Web-/App-Schnittstellen |
+Die JSON- und XML-Darstellungen enthalten dieselben fachlichen Informationen. Sie unterscheiden sich jedoch in ihrer Syntax.
 
-**Warum das für die Medizininformatik wichtig ist**: Der aktuelle Interoperabilitätsstandard **FHIR** ist bewusst RESTful aufgebaut (`GET /Patient/123`, `POST /Observation`, …) — der Wechsel weg von SOAP/WSDL (wie noch bei älteren HL7-v3/IHE-Webservices) hin zu REST ist ein zentraler Grund, warum FHIR als "leichtgewichtiger" und leichter zu implementieren gilt als seine Vorgänger. Wer den SOAP→REST-Wandel versteht, versteht auch, warum FHIR sich in Kliniksoftware/Apps so schnell verbreitet hat.
+Merksatz: JSON und XML stellen Daten dar, SOAP strukturiert Nachrichten, HL7 standardisiert Gesundheitsinformationen und IHE präzisiert das Zusammenspiel für konkrete Anwendungsszenarien.
 
-**Prüfungsrelevante Merksätze**:
-- SOAP = Protokoll + WSDL-Vertrag + nur XML. REST = Architekturstil + HTTP-Verben + meist JSON.
-- REST ist stateless, SOAP kann (muss aber nicht) zustandsbehaftet sein.
-- FHIR = RESTful; ältere IHE/HL7-v3-Webservices = oft SOAP-basiert.
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-**Woher der Name "REST" kommt**: bei jeder Anfrage schickt der Server nicht den Patienten selbst, sondern eine Momentaufnahme seines aktuellen Zustands (die "Representation", z. B. als JSON) — dieser Zustand wird übertragen ("State Transfer").
+FHIR ist weder mit JSON noch mit REST gleichzusetzen:
 
-**Stateless, kurz erklärt**: der Server "merkt" sich nichts vom letzten Aufruf — so wie ein Bereitschaftsarzt, der bei jedem neuen Anruf nochmal den vollständigen Fall geschildert bekommt, statt sich zu merken, mit wem er vorhin telefoniert hat. Jede Anfrage muss deshalb alles Nötige selbst mitbringen (z. B. den Ausweis/Token, wer fragt).
-
-Vorteil im Klinikalltag übertragen: egal welcher "Schalter" (Server) die Anfrage bearbeitet — es kommt immer dieselbe Antwort raus, weil keiner sich extra was merken muss. Das macht es einfach, viele Anfragen gleichzeitig zu bedienen (z. B. wenn viele Stationen zur gleichen Zeit auf den FHIR-Server zugreifen).
-
-::: {.callout-note title="Good to know" appearance="simple"}
+- `Patient.id` bezeichnet die logische ID einer FHIR-Ressource.
+- `Patient.identifier` enthält fachliche Kennungen, beispielsweise eine Patientennummer.
+- Die verwendete FHIR-Version und das konkrete Profil beziehungsweise der Implementation Guide müssen zusätzlich vereinbart werden.
+- HL7 v2, CDA und FHIR können abhängig vom Anwendungsfall nebeneinander eingesetzt werden.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Bray T.: *The JavaScript Object Notation (JSON) Data Interchange Format*. RFC 8259, 2017.  
+  <https://www.rfc-editor.org/rfc/rfc8259>
+- W3C: *Extensible Markup Language (XML) 1.0*. Fifth Edition, 2008.  
+  <https://www.w3.org/TR/xml/>
+- W3C: *SOAP Version 1.2 Part 1: Messaging Framework*. Second Edition, 2007.  
+  <https://www.w3.org/TR/soap12/>
+- HL7 International: *FHIR Release 5*, Abschnitte „Resource Formats“, „Resource Identity“, „Patient“ und „Messaging“.  
+  <https://hl7.org/fhir/R5/>
+- HL7 International: *Clinical Document Architecture*.  
+  <https://hl7.org/cda/>
+- IHE International: *IT Infrastructure Technical Framework*, Revision 20.2, Kapitel 10 „Cross-Enterprise Document Sharing (XDS.b)“, 2025.  
+  <https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html>
+
+Quellen geprüft am 05.11.2026.
+
 :::
+::::
+
+
+::: {.exam-question .done}
+Was unterscheidet SOAP und REST, und warum ist das für die Medizininformatik relevant?
+:::
+
+:::: {.exam-answer}
+
+SOAP und REST beschreiben den Datenaustausch auf unterschiedlichen Ebenen:
+
+- **SOAP:** XML-basiertes Nachrichtenprotokoll beziehungsweise Nachrichtenframework
+  - eine Nachricht besteht aus einem `Envelope`, einem optionalen `Header` und einem `Body`
+  - die Übertragung erfolgt über eine Protokollbindung, häufig über HTTP
+  - SOAP-Webservices werden häufig mit der Web Services Description Language (WSDL) beschrieben
+  - Sicherheit und Zuverlässigkeit können beispielsweise durch TLS oder WS-Spezifikationen ergänzt werden
+  - Beispiel: Ein Praxisverwaltungssystem ruft Dienste des TI-Konnektors über eine SOAP-Schnittstelle auf
+- **Representational State Transfer (REST):** Architekturstil für verteilte Systeme
+  - Ressourcen werden über eindeutige Bezeichner adressiert
+  - bei RESTful Web-APIs werden meist URLs und standardisierte HTTP-Methoden verwendet
+  - jede Anfrage muss alle für ihre Verarbeitung erforderlichen Informationen enthalten
+  - der Server darf nicht auf einen Sitzungskontext aus vorherigen Anfragen angewiesen sein
+  - Beispiel: Ein Krankenhausinformationssystem liest eine Patient-Ressource von einem FHIR-Server
+
+**SOAP und REST im Vergleich:**
+
+| Merkmal | SOAP | REST |
+|---|---|---|
+| Einordnung | Nachrichtenprotokoll beziehungsweise -framework | Architekturstil |
+| Schwerpunkt | strukturierte Nachrichten und deren Verarbeitung | Ressourcen und ihre Repräsentationen |
+| Datenformat | XML-basierter SOAP-Umschlag | durch REST nicht festgelegt; bei FHIR meist JSON oder XML |
+| Transport | über Bindungen, häufig HTTP | bei Web-APIs meist HTTP |
+| Schnittstellenbeschreibung | häufig WSDL | nicht einheitlich festgelegt; bei FHIR `CapabilityStatement` |
+| Sitzungszustand | keine grundsätzliche Vorgabe | Anfragen müssen zustandslos sein |
+| Sicherheit | beispielsweise TLS und WS-Security | beispielsweise TLS und OAuth 2.0 |
+
+**REST in der Medizininformatik: die RESTful FHIR API**
+
+Ein wichtiges medizinisches Anwendungsbeispiel für REST ist die RESTful FHIR API. Sie stellt FHIR-Ressourcen über HTTP-Interaktionen bereit, beispielsweise wenn ein Krankenhausinformationssystem eine Patient-Ressource von einem FHIR-Server abruft.
+
+
+**Typische Interaktionen der RESTful FHIR API:**
+
+| HTTP-Methode | FHIR-Interaktion | Beispiel |
+|---|---|---|
+| `GET` | Ressource lesen | `GET /Patient/patient-4711` |
+| `POST` | Ressource mit serverseitig vergebener ID anlegen | `POST /Patient` |
+| `PUT` | Ressource unter einer logischen ID aktualisieren oder anlegen | `PUT /Patient/patient-4711` |
+| `PATCH` | Ressource teilweise verändern | `PATCH /Patient/patient-4711` |
+| `DELETE` | Ressource gemäß Serverrichtlinie löschen | `DELETE /Patient/patient-4711` |
+
+**Beispiel eines RESTful-FHIR-Aufrufs:**
+
+```{.text}
+GET /fhir/Patient/patient-4711 HTTP/1.1
+Host: fhir.klinik.example
+Accept: application/fhir+json
+Authorization: Bearer <Zugriffstoken>
+```
+
+- `patient-4711` ist die logische ID der FHIR-Ressource.
+- `Accept` fordert die Darstellung als FHIR-JSON an.
+- Bei tokenbasierter Authentisierung wird das Zugriffstoken mit der Anfrage übertragen.
+
+
+**Relevanz für die Medizininformatik:**
+
+- Die Clientsystemschnittstelle des TI-Konnektors verwendet SOAP-Webservices.
+- Die RESTful FHIR API verwendet Ressourcen und HTTP-Interaktionen.
+- IHE XDS.b verwendet SOAP-basierte Webservices für den Dokumentenaustausch.
+- IHE Mobile access to Health Documents (MHD) verwendet FHIR RESTful.
+
+Merksatz: SOAP definiert XML-basierte Nachrichten und deren Verarbeitung; REST beschreibt den zustandslosen Zugriff auf Ressourcen, bei FHIR meist über HTTP.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **FHIR ist nicht auf REST beschränkt:** FHIR unterstützt auch Messaging und Dokumente.
+- **Logische ID ist nicht Patientennummer:** `Patient/patient-4711` adressiert eine konkrete FHIR-Ressource. Eine fachliche Patientennummer wird beispielsweise mit `Patient?identifier=system|wert` gesucht.
+- **Das CapabilityStatement ist kein direktes Gegenstück zur WSDL:** Es beschreibt unter anderem unterstützte Ressourcen, Interaktionen, Profile und Sicherheitsverfahren.
+- Ein FHIR-Server muss nicht alle HTTP-Interaktionen unterstützen. Maßgeblich ist sein `CapabilityStatement`.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Fielding RT: *Architectural Styles and the Design of Network-based Software Architectures*. Dissertation, University of California, Irvine, 2000, Kapitel 5, insbesondere Abschnitte 5.1.3 und 5.1.5.  
+  <https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm>
+- W3C: *SOAP Version 1.2 Part 1: Messaging Framework*. Second Edition, 2007, Abschnitte 1, 4 und 5.  
+  <https://www.w3.org/TR/soap12/>
+- W3C: *Web Services Description Language (WSDL) Version 2.0, Part 1*. 2007.  
+  <https://www.w3.org/TR/wsdl20/>
+- HL7 International: *FHIR Release 5*, Abschnitt 3.2.0 „RESTful API“. 2023.  
+  <https://hl7.org/fhir/R5/http.html>
+- gematik: *Spezifikation Konnektor*, Version 5.28.0, Stand 22.07.2026, Abschnitt 3.6.1 „SOAP-Schnittstelle“.  
+  <https://gemspec.gematik.de/docs/gemSpec/gemSpec_Kon/latest/>
+- IHE International: *ITI Technical Framework*, Revision 20.2, 2025, Transaktion ITI-41 „Provide and Register Document Set-b“.  
+  <https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html>
+- IHE International: *Mobile access to Health Documents*, Version 4.2.5, 2026.  
+  <https://profiles.ihe.net/ITI/MHD/>
+
+Quellen geprüft am 05.11.2026.
+
+:::
+
+::::
+
+
 
 ### Methoden des Software Engineerings
 
 ::: {.exam-question}
-Was ist der erste Schritt im Software-Engineering-Prozess, und wie geht es danach weiter (Anforderungsanalyse → ER-Modell → UML → BPMN)?
+Welche Aufgaben haben Anforderungsanalyse, ER-Modell, UML und BPMN im Software Engineering, und wie hängen sie zusammen?
 :::
 
-::: {.exam-answer}
-**1. Anforderungsanalyse**: bevor eine Zeile Code geschrieben wird, wird geklärt, *was* das System können soll und *für wen* — durch Gespräche mit den späteren Nutzern. Beispiel: Interview mit der Triage-Schwester der Notaufnahme: "Was brauchst du beim Check-in?" → Name, Geburtsdatum, Beschwerde, Dringlichkeitsstufe, freies Bett finden. Noch ganz ohne Datenbank/Software zu denken — nur "was muss die Realität abdecken".
+:::: {.exam-answer}
 
-**2. Datenmodellierung (ER-Modell)**: die gesammelten Infos werden zu einem Diagramm — welche "Dinge" (Entitäten) gibt es, wie hängen sie zusammen, unabhängig von jeder konkreten Datenbank/Software.
+- **Anforderungsanalyse:** ermittelt, was ein System für wen und unter welchen Bedingungen leisten soll
+  - berücksichtigt Funktionen, Qualitätsanforderungen und Randbedingungen
+  - Beispiel: Eine Triagekraft muss Beschwerden, Vitalwerte und Dringlichkeitsstufe im Krankenhausinformationssystem dokumentieren können
+- **Entity-Relationship-Modell (ER-Modell):** beschreibt Datenobjekte und ihre Beziehungen unabhängig von einer konkreten Datenbank
+  - Beispiel: Ein Patient kann mehrere Behandlungsfälle haben; zu jedem Fall können Triagebeurteilungen gespeichert werden
+- **Unified Modeling Language (UML):** standardisierte Modellierungssprache für unterschiedliche strukturelle und dynamische Aspekte eines Systems
+  - **Anwendungsfalldiagramm:** zeigt Benutzer und Funktionen
+  - **Klassendiagramm:** zeigt Klassen, Eigenschaften und Beziehungen
+  - **Sequenzdiagramm:** zeigt den Nachrichtenaustausch zwischen Systemkomponenten
+  - Beispiel: Ein Anwendungsfalldiagramm zeigt, dass die Triagekraft eine Triagebeurteilung erfasst und der Arzt sie abruft
+- **Business Process Model and Notation (BPMN):** standardisierte Notation für Arbeits- und Geschäftsprozesse
+  - verwendet unter anderem Ereignisse, Aktivitäten, Entscheidungspunkte und Verantwortungsbereiche
+  - Beispiel: Ankunft → Anmeldung → Triage → Entscheidung „kritisch?“ → Schockraum oder Wartebereich
 
-**3. Softwaremodellierung (UML)**: wie das Programm selbst aufgebaut wird (Klassen, Abläufe im Code).
+Die Modelle beantworten unterschiedliche Fragen:
 
-**4. Prozessmodellierung (BPMN)**: der Arbeitsablauf wird als Flussdiagramm dargestellt, z. B. "Patient kommt an → Triage → Wartebereich → Arztzimmer → Entlassung/Aufnahme", mit Entscheidungspunkten ("kritisch? ja/nein").
+| Fragestellung | Geeignetes Modell |
+|---|---|
+| Was muss das System leisten? | Anforderungsanalyse |
+| Welche Daten und Beziehungen gibt es? | ER-Modell |
+| Welche Funktionen, Strukturen und Interaktionen hat das System? | UML |
+| Welche Arbeitsschritte, Entscheidungen und Rollen gibt es? | BPMN |
 
-Merksatz: erst verstehen (Anforderungen), dann Daten strukturieren (ER-Modell), dann Software bauen (UML), dann Abläufe visualisieren (BPMN) — in der Praxis nicht ganz starr nacheinander, aber das ist die Grundidee.
+Die Verfahren bilden keine starre Abfolge. BPMN kann beispielsweise schon während der Anforderungsanalyse den bestehenden Prozess sichtbar machen. Die daraus erkannten Anforderungen können anschließend mithilfe von ER-Modellen und UML weiter konkretisiert werden.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+Merksatz: Anforderungen beschreiben das Ziel, ER modelliert Daten, UML modelliert das System und BPMN modelliert den Arbeitsprozess.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Derselbe klinische Sachverhalt kann in mehreren Modellen erscheinen:
+
+- BPMN zeigt den Ablauf der Triage.
+- Das ER-Modell zeigt die dabei entstehenden Daten.
+- UML zeigt, wie Benutzer und Anwendungssystem zusammenwirken.
+
+Die Modelle widersprechen sich nicht, sondern betrachten denselben Gegenstand aus unterschiedlichen Perspektiven.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
+- ISO/IEC/IEEE 29148:2018: *Systems and software engineering – Life cycle processes – Requirements engineering*. 2. Auflage, 2018.  
+  <https://www.iso.org/standard/72089.html>
+- Chen PP-S: *The Entity-Relationship Model—Toward a Unified View of Data*. ACM Transactions on Database Systems. 1976;1(1):9–36.  
+  <https://doi.org/10.1145/320434.320440>
+- Object Management Group: *Unified Modeling Language*, Version 2.5.1, 2017.  
+  <https://www.omg.org/spec/UML/2.5.1>
+- Object Management Group: *Business Process Model and Notation*, Version 2.0.2, 2014.  
+  <https://www.omg.org/spec/BPMN/2.0.2>
+
+Quellen geprüft am 06.11.2026.
+
 :::
+::::
+
+
+
+::: {.exam-question}
+Wie unterscheiden sich ER-Modell, UML und BPMN hinsichtlich Zweck, Abstraktion und Zielgruppe?
+:::
+
+:::: {.exam-answer}
+
+**Entity-Relationship-Modell (ER-Modell), Unified Modeling Language (UML) und Business Process Model and Notation (BPMN)** visualisieren unterschiedliche Aspekte eines Informationssystems.
+
+| Modellierungsansatz | Betrachtet hauptsächlich | Typische Elemente | Typische Zielgruppe |
+|---|---|---|---|
+| **ER-Modell** | Daten und ihre Beziehungen | Entitäten, Attribute, Beziehungen und Kardinalitäten | Fachanalysten, Datenmodellierer und Datenbankentwickler |
+| **UML** | Aufbau und Verhalten eines Systems | beispielsweise Klassen, Komponenten, Akteure, Zustände und Nachrichten | Systemanalysten, Softwarearchitekten und Entwickler |
+| **BPMN** | fachliche und organisatorische Abläufe | Ereignisse, Aktivitäten, Gateways, Sequenzflüsse, Pools und Lanes | Fachanwender, Prozessverantwortliche und IT |
+
+### ER-Modell: Welche Daten gibt es?
+
+- Das **Entity-Relationship-Modell** beschreibt Datenobjekte, ihre Merkmale und ihre Beziehungen.
+- Es dient insbesondere als Grundlage für den Entwurf einer Datenbank.
+- Für ER-Diagramme existieren unterschiedliche Darstellungsformen, beispielsweise Chen- und Krähenfußnotation.
+
+**Beispiel:** Ein Patient kann mehrere Behandlungsfälle haben; zu einem Behandlungsfall können mehrere Laboraufträge gehören.
+
+```{mermaid}
+%%| fig-cap: "ER-Diagramm: Datenobjekte und ihre Beziehungen"
+%%| label: fig-er-labor
+
+erDiagram
+    PATIENT ||--o{ BEHANDLUNGSFALL : hat
+    BEHANDLUNGSFALL ||--o{ LABORAUFTRAG : umfasst
+
+    PATIENT {
+        int Patient_ID PK
+        string Name
+    }
+
+    BEHANDLUNGSFALL {
+        int Fall_ID PK
+        int Patient_ID FK
+        date Aufnahmedatum
+    }
+
+    LABORAUFTRAG {
+        int Auftrag_ID PK
+        int Fall_ID FK
+        string Status
+    }
+```
+
+Das ER-Diagramm zeigt, **welche Datenobjekte existieren und wie sie zusammenhängen**. Es beschreibt weder den klinischen Arbeitsablauf noch die Kommunikation zwischen Softwaresystemen.
+
+### UML: Wie ist ein System aufgebaut oder wie verhält es sich?
+
+- Die **Unified Modeling Language (UML)** ist eine standardisierte grafische Modellierungssprache für Systeme.
+- UML umfasst unterschiedliche Diagrammarten:
+  - **Strukturdiagramme**, beispielsweise Klassen- und Komponentendiagramme
+  - **Verhaltensdiagramme**, beispielsweise Aktivitäts- und Zustandsdiagramme
+  - **Interaktionsdiagramme**, beispielsweise Sequenzdiagramme
+
+**Beispiel:** Das Sequenzdiagramm zeigt, wie Arzt, Krankenhausinformationssystem und Laborinformationssystem beim Laborauftrag zusammenwirken.
+
+```{mermaid}
+%%| fig-cap: "UML-Sequenzdiagramm: Interaktion zwischen Anwender und Softwaresystemen"
+%%| label: fig-uml-labor
+
+sequenceDiagram
+    actor Arzt
+    participant KIS as Krankenhausinformationssystem
+    participant LIS as Laborinformationssystem
+
+    Arzt->>KIS: Laborauftrag erfassen
+    KIS->>LIS: Laborauftrag übermitteln
+    LIS-->>KIS: Befund übermitteln
+    KIS-->>Arzt: Befund anzeigen
+```
+
+Das UML-Sequenzdiagramm zeigt, **wer mit welchem System in welcher zeitlichen Reihenfolge interagiert**. Andere UML-Diagramme stellen beispielsweise Klassen, Komponenten oder Systemzustände dar.
+
+### BPMN: Wie läuft der Arbeitsprozess ab?
+
+- Die **Business Process Model and Notation (BPMN)** ist eine standardisierte grafische Notation für Geschäfts- und Arbeitsprozesse.
+- Wichtige Elemente sind:
+  - **Ereignisse:** starten, beeinflussen oder beenden einen Prozess
+  - **Aktivitäten:** beschreiben auszuführende Aufgaben
+  - **Gateways:** steuern Verzweigungen und Zusammenführungen
+  - **Sequenzflüsse:** legen die Reihenfolge der Prozessschritte fest
+  - **Pools und Lanes:** ordnen Aktivitäten beteiligten Organisationen oder Rollen zu
+
+**Beispiel:** Der Prozess reicht vom Laborauftrag bis zur Freigabe des Befundes. Das exklusive Gateway verzweigt abhängig davon, ob die Probe verwertbar ist.
+
+![BPMN-Diagramm: Ablauf einer Laboruntersuchung](abbildungen/laborprozess-bpmn.svg){#fig-bpmn-labor width="100%"}
+
+Das BPMN-Diagramm zeigt, **welche Aufgaben, Entscheidungen und Reihenfolgen der Arbeitsprozess enthält**. Es beschreibt weder die Datenbankstruktur noch automatisch den inneren Aufbau der beteiligten Software.
+
+Merksatz: ER modelliert Daten, UML modelliert Systeme und BPMN modelliert Prozesse.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+ER-Modell, UML und BPMN sind keine aufeinanderfolgenden Entwicklungsschritte, sondern ergänzende Sichtweisen:
+
+- **Datensicht:** Welche Informationen müssen gespeichert werden?
+- **Systemsicht:** Wie ist das System aufgebaut und wie verhält es sich?
+- **Prozesssicht:** Wer erledigt wann welche Aufgabe?
+
+UML und BPMN sind standardisierte Modellierungssprachen beziehungsweise Notationen. Das ER-Modell wird dagegen mit verschiedenen grafischen Notationen dargestellt. Ein gewöhnliches Flussdiagramm wird nicht allein durch ähnliche Symbole zu einem BPMN-Diagramm.
+
+Die Datei `laborprozess.bpmn` enthält das bearbeitbare BPMN-2.0-Modell. Für das Buch wird die lokal gespeicherte Datei `laborprozess-bpmn.svg` eingebunden; dadurch besteht beim Erstellen oder Lesen keine Abhängigkeit von einem externen Diagrammdienst.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Chen PP: *The Entity-Relationship Model—Toward a Unified View of Data*. ACM Transactions on Database Systems. 1976;1(1):9–36.  
+  <https://doi.org/10.1145/320434.320440>
+- Object Management Group: *Unified Modeling Language, Version 2.5.1*. Dezember 2017.  
+  <https://www.omg.org/spec/UML/2.5.1>
+- Object Management Group: *Business Process Model and Notation, Version 2.0.2*. Januar 2014.  
+  <https://www.omg.org/spec/BPMN/2.0.2>
+- Quarto: *Diagrams – Mermaid and Graphviz*.  
+  <https://quarto.org/docs/authoring/diagrams.html>
+
+Quellen geprüft am 06.11.2026.
+
+:::
+
+::::
+
+
 
 ::: {.exam-question}
 Was ist ein ER-Modell (Entity-Relationship-Modell), und wie hängt die (min,max)-Kardinalität mit dem später gelernten 1:n/m:n zusammen?

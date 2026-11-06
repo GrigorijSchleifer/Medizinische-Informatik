@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+    xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+    xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+    id="Definitions_Laborprozess"
+    targetNamespace="https://example.org/medizinische-informatik/laborprozess">
+
+  <bpmn:process id="Process_Laboruntersuchung" name="Laboruntersuchung" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_Auftrag" name="Laboruntersuchung erforderlich">
+      <bpmn:outgoing>Flow_Start_Auftrag</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:task id="Task_Auftrag" name="Laborauftrag erfassen">
+      <bpmn:incoming>Flow_Start_Auftrag</bpmn:incoming>
+      <bpmn:outgoing>Flow_Auftrag_Entnahme</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:task id="Task_Entnahme" name="Probe entnehmen">
+      <bpmn:incoming>Flow_Auftrag_Entnahme</bpmn:incoming>
+      <bpmn:incoming>Flow_Wiederholung_Entnahme</bpmn:incoming>
+      <bpmn:outgoing>Flow_Entnahme_Pruefung</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:task id="Task_Pruefung" name="Probe prüfen">
+      <bpmn:incoming>Flow_Entnahme_Pruefung</bpmn:incoming>
+      <bpmn:outgoing>Flow_Pruefung_Gateway</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:exclusiveGateway id="Gateway_Verwertbar" name="Probe verwertbar?" default="Flow_Nein">
+      <bpmn:incoming>Flow_Pruefung_Gateway</bpmn:incoming>
+      <bpmn:outgoing>Flow_Ja</bpmn:outgoing>
+      <bpmn:outgoing>Flow_Nein</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:task id="Task_Analyse" name="Probe analysieren">
+      <bpmn:incoming>Flow_Ja</bpmn:incoming>
+      <bpmn:outgoing>Flow_Analyse_Freigabe</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:task id="Task_Freigabe" name="Befund freigeben">
+      <bpmn:incoming>Flow_Analyse_Freigabe</bpmn:incoming>
+      <bpmn:outgoing>Flow_Freigabe_Ende</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:task id="Task_Wiederholung" name="Erneute Probenentnahme veranlassen">
+      <bpmn:incoming>Flow_Nein</bpmn:incoming>
+      <bpmn:outgoing>Flow_Wiederholung_Entnahme</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:endEvent id="EndEvent_Befund" name="Befund freigegeben">
+      <bpmn:incoming>Flow_Freigabe_Ende</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_Start_Auftrag" sourceRef="StartEvent_Auftrag" targetRef="Task_Auftrag"/>
+    <bpmn:sequenceFlow id="Flow_Auftrag_Entnahme" sourceRef="Task_Auftrag" targetRef="Task_Entnahme"/>
+    <bpmn:sequenceFlow id="Flow_Entnahme_Pruefung" sourceRef="Task_Entnahme" targetRef="Task_Pruefung"/>
+    <bpmn:sequenceFlow id="Flow_Pruefung_Gateway" sourceRef="Task_Pruefung" targetRef="Gateway_Verwertbar"/>
+    <bpmn:sequenceFlow id="Flow_Ja" name="Ja" sourceRef="Gateway_Verwertbar" targetRef="Task_Analyse">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[probeVerwertbar = true]]></bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_Nein" name="Nein" sourceRef="Gateway_Verwertbar" targetRef="Task_Wiederholung"/>
+    <bpmn:sequenceFlow id="Flow_Wiederholung_Entnahme" sourceRef="Task_Wiederholung" targetRef="Task_Entnahme"/>
+    <bpmn:sequenceFlow id="Flow_Analyse_Freigabe" sourceRef="Task_Analyse" targetRef="Task_Freigabe"/>
+    <bpmn:sequenceFlow id="Flow_Freigabe_Ende" sourceRef="Task_Freigabe" targetRef="EndEvent_Befund"/>
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Laborprozess">
+    <bpmndi:BPMNPlane id="BPMNPlane_Laborprozess" bpmnElement="Process_Laboruntersuchung">
+      <bpmndi:BPMNShape id="Shape_Start" bpmnElement="StartEvent_Auftrag">
+        <dc:Bounds x="40" y="172" width="36" height="36"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="10" y="215" width="100" height="28"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Auftrag" bpmnElement="Task_Auftrag">
+        <dc:Bounds x="110" y="140" width="150" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Entnahme" bpmnElement="Task_Entnahme">
+        <dc:Bounds x="310" y="140" width="150" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Pruefung" bpmnElement="Task_Pruefung">
+        <dc:Bounds x="510" y="140" width="150" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gateway" bpmnElement="Gateway_Verwertbar" isMarkerVisible="true">
+        <dc:Bounds x="710" y="165" width="50" height="50"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="682" y="118" width="106" height="28"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Analyse" bpmnElement="Task_Analyse">
+        <dc:Bounds x="810" y="140" width="150" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Freigabe" bpmnElement="Task_Freigabe">
+        <dc:Bounds x="1010" y="140" width="150" height="100"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ende" bpmnElement="EndEvent_Befund">
+        <dc:Bounds x="1210" y="172" width="36" height="36"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1174" y="215" width="110" height="28"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Wiederholung" bpmnElement="Task_Wiederholung">
+        <dc:Bounds x="660" y="300" width="150" height="80"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNEdge id="Edge_Start_Auftrag" bpmnElement="Flow_Start_Auftrag">
+        <di:waypoint x="76" y="190"/><di:waypoint x="110" y="190"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Auftrag_Entnahme" bpmnElement="Flow_Auftrag_Entnahme">
+        <di:waypoint x="260" y="190"/><di:waypoint x="310" y="190"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Entnahme_Pruefung" bpmnElement="Flow_Entnahme_Pruefung">
+        <di:waypoint x="460" y="190"/><di:waypoint x="510" y="190"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Pruefung_Gateway" bpmnElement="Flow_Pruefung_Gateway">
+        <di:waypoint x="660" y="190"/><di:waypoint x="710" y="190"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Ja" bpmnElement="Flow_Ja">
+        <di:waypoint x="760" y="190"/><di:waypoint x="810" y="190"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="778" y="168" width="16" height="18"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Nein" bpmnElement="Flow_Nein">
+        <di:waypoint x="735" y="215"/><di:waypoint x="735" y="300"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="743" y="250" width="26" height="18"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Wiederholung_Entnahme" bpmnElement="Flow_Wiederholung_Entnahme">
+        <di:waypoint x="660" y="340"/><di:waypoint x="385" y="340"/><di:waypoint x="385" y="240"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Analyse_Freigabe" bpmnElement="Flow_Analyse_Freigabe">
+        <di:waypoint x="960" y="190"/><di:waypoint x="1010" y="190"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Freigabe_Ende" bpmnElement="Flow_Freigabe_Ende">
+        <di:waypoint x="1160" y="190"/><di:waypoint x="1210" y="190"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -56,12 +56,6 @@ Die **Einwilligung in eine medizinische Maßnahme** nach § 630d Bürgerliches G
 
 Auch wenn keine datenschutzrechtliche Einwilligung erforderlich ist, bleiben Informationspflichten, Zweckbindung, Datenminimierung und die übrigen Betroffenenrechte bestehen.
 
-Neben dem allgemeinen Datenschutzrecht können bereichsspezifische Vorschriften zusätzliche Dokumentations-, Aufbewahrungs- und Meldepflichten begründen:
-
-- **Medizinprodukte:** Das im Curriculum noch genannte Medizinproduktegesetz (MPG) ist weitgehend aufgehoben. Maßgeblich sind heute insbesondere die europäische Medizinprodukteverordnung (MDR), die In-vitro-Diagnostika-Verordnung (IVDR) und das Medizinprodukterecht-Durchführungsgesetz (MPDG).
-- **Arzneimittel:** Das Arzneimittelgesetz (AMG) und die Verordnung (EU) Nr. 536/2014 regeln insbesondere Arzneimittel, klinische Prüfungen sowie Dokumentations- und Sicherheitsanforderungen.
-- **Landesrecht:** Landesdatenschutz- und Landeskrankenhausgesetze können zusätzliche Vorgaben enthalten, besonders für öffentlich-rechtliche Krankenhäuser.
-
 Diese Spezialvorschriften ersetzen die DSGVO nicht. Personenbezogene Daten müssen weiterhin auf einer datenschutzrechtlichen Grundlage verarbeitet werden.
 :::
 
@@ -106,14 +100,13 @@ Merksatz: DSGVO und Schweigepflicht schützen Patientendaten; MDR, IVDR, MPDG un
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-Die im Curriculum genannten Bezeichnungen sind teilweise veraltet:
+Die im [Muster-Kursbuch Medizinische Informatik (2018)](https://www.bundesaerztekammer.de/fileadmin/user_upload/_old-files/downloads/pdf-Ordner/Weiterbildung/_Muster-Kursbuecher/20200428_MKB-MedInformatik.pdf) genannten Bezeichnungen sind teilweise veraltet:
 
 - Das **Medizinproduktegesetz (MPG)** ist weitgehend durch MDR, IVDR und MPDG abgelöst.
 - Die sogenannten **IT-Sicherheitsgesetze** waren Änderungsgesetze. Die daraus hervorgegangenen aktuellen Pflichten finden sich insbesondere im BSIG, in der BSI-KritisV und für Krankenhäuser in § 391 SGB V.
 - Nach der BSI-KritisV gilt für Krankenhäuser derzeit ein Schwellenwert von mindestens 30.000 vollstationären Fällen pro Jahr. § 391 SGB V enthält dagegen grundsätzlich Anforderungen für alle Krankenhäuser.
 
 :::
-
 ::: {.callout-note title="Literatur" appearance="simple"}
 
 - Verordnung (EU) 2017/745 über Medizinprodukte (MDR), insbesondere Art. 1 und Art. 2: <https://eur-lex.europa.eu/eli/reg/2017/745/oj/deu>
@@ -154,7 +147,6 @@ Patienten sind hinsichtlich ihrer Daten **betroffene Personen** im Sinne der Dat
   - nach § 630f BGB müssen ursprünglicher Inhalt und Zeitpunkt einer Änderung erkennbar bleiben
 
 - **Recht auf Löschung (Art. 17 DSGVO):** Daten müssen unter bestimmten Voraussetzungen gelöscht werden
-  - beispielsweise, wenn sie nicht mehr benötigt werden oder unrechtmäßig verarbeitet wurden
   - das Recht gilt nicht, soweit die weitere Speicherung aufgrund einer gesetzlichen Pflicht, aus Gründen der öffentlichen Gesundheit oder zur Geltendmachung von Rechtsansprüchen erforderlich ist
   - Behandlungsakten sind grundsätzlich zehn Jahre nach Abschluss der Behandlung aufzubewahren; Spezialvorschriften können längere Fristen verlangen
 
@@ -412,7 +404,7 @@ Quellen geprüft am 07.11.2026.
 ## Gewährleistung von Datenschutz und Informationssicherheit in Versorgung und Forschung
 
 ::: {.exam-question .done}
-Wie werden Datenschutz und Informationssicherheit systematisch umgesetzt, und welche Aufgaben haben dabei IT-Grundschutz, technische und organisatorische Maßnahmen, Berechtigungskonzepte und die Orientierungshilfe-KIS?
+Wie werden Datenschutz und Informationssicherheit systematisch umgesetzt?
 :::
 
 :::: {.exam-answer}
@@ -475,6 +467,72 @@ Quellen geprüft am 07.11.2026.
 
 :::
 ::::
+
+
+
+
+
+::: {.exam-question .done}
+Wie unterscheiden sich Pseudonymisierung, Anonymisierung und Verschlüsselung, und welchen Zweck haben elektronische Signaturen?
+:::
+
+:::: {.exam-answer}
+
+- **Pseudonymisierung:** personenbezogene Merkmale werden durch ein Pseudonym ersetzt
+  - eine Zuordnung zur Person ist nur mithilfe zusätzlicher, getrennt aufbewahrter Informationen möglich
+  - pseudonymisierte Daten bleiben personenbezogene Daten und unterliegen weiterhin der Datenschutz-Grundverordnung (DSGVO)
+  - Beispiel: Forschungsdaten werden unter `P-4711` gespeichert; die Zuordnung zur Patientenidentität verwaltet eine getrennte Treuhandstelle
+
+- **Anonymisierung:** Daten werden so verändert oder zusammengefasst, dass die betroffene Person mit vernünftigerweise zu erwartenden Mitteln nicht mehr identifiziert werden kann
+  - es verbleibt kein verwendbarer Zuordnungsschlüssel
+  - tatsächlich anonymisierte Daten fallen nicht mehr in den Anwendungsbereich der DSGVO
+  - Beispiel: Studienergebnisse werden nur für ausreichend große Altersgruppen veröffentlicht; kleine Fallzahlen werden unterdrückt
+
+- **Verschlüsselung:** Daten werden mithilfe eines kryptografischen Verfahrens und eines Schlüssels in eine nicht lesbare Form umgewandelt
+  - Berechtigte können die Daten mit dem passenden Schlüssel wieder entschlüsseln
+  - Verschlüsselung schützt vor unbefugtem Lesen, beseitigt aber weder den Personenbezug noch die Anwendbarkeit der DSGVO
+  - Beispiel: Patientendaten werden bei der Übertragung zwischen Klinik und Forschungsdatenbank verschlüsselt
+
+- **Elektronische Signatur:** elektronische Daten werden mit anderen Daten verbunden, um eine Erklärung elektronisch zu unterzeichnen
+  - fortgeschrittene und qualifizierte elektronische Signaturen ermöglichen die Zuordnung zum Unterzeichner und machen nachträgliche Veränderungen erkennbar
+  - sie schützen damit insbesondere **Authentizität** und **Integrität**, aber nicht die Vertraulichkeit des Inhalts
+  - eine qualifizierte elektronische Signatur (QES) hat nach der eIDAS-Verordnung die gleiche Rechtswirkung wie eine handschriftliche Unterschrift
+  - Beispiel: Eine Ärztin signiert einen elektronischen Arztbrief mit ihrem elektronischen Heilberufsausweis
+
+Merksatz: Pseudonymisierung trennt die Zuordnung, Anonymisierung beseitigt sie, Verschlüsselung macht Daten ohne Schlüssel unlesbar und die Signatur weist Urheber und Veränderungen nach.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**Pseudonymisierung und Verschlüsselung können miteinander kombiniert werden**, verfolgen aber unterschiedliche Zwecke:
+
+- Pseudonymisierung erschwert die Zuordnung zu einer Person.
+- Verschlüsselung schützt den Inhalt vor unbefugtem Lesen.
+- Beide Maßnahmen senken Risiken, ersetzen aber keine erforderliche Rechtsgrundlage oder Einwilligung.
+
+Das bloße Entfernen von Namen führt noch nicht sicher zur Anonymität. Auch Kombinationen aus Alter, Diagnose, Wohnort oder Behandlungsdatum können eine Person identifizierbar machen. Gerade bei seltenen Erkrankungen und genetischen Daten kann eine belastbare Anonymisierung schwierig sein.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.2 „Modul II – Datenschutz/Datensicherheit“, S. 11. Das Kursbuch nennt Pseudonymisierung, Anonymisierung, Verschlüsselungsverfahren und Signaturen als Lerninhalte, definiert sie aber nicht näher.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Europäische Union: *Verordnung (EU) 2016/679 – Datenschutz-Grundverordnung*, Art. 4 Nr. 5 „Pseudonymisierung“, Art. 32 „Sicherheit der Verarbeitung“ sowie Erwägungsgründe 26 und 28.  
+  <https://eur-lex.europa.eu/eli/reg/2016/679/oj/deu>
+- Europäische Union: *Verordnung (EU) Nr. 910/2014 über elektronische Identifizierung und Vertrauensdienste (eIDAS)*, konsolidierte Fassung, Art. 3 Nr. 10–12 sowie Art. 25 und 26.  
+  <https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02014R0910-20241018>
+- Bundesamt für Sicherheit in der Informationstechnik: *IT-Grundschutz-Kompendium, Baustein CON.1 Kryptokonzept*, Edition 2023, Abschnitt 1.1.  
+  <https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf>
+- Bundesamt für Sicherheit in der Informationstechnik: *BSI TR-03125 – Beweiswerterhaltung kryptographisch signierter Dokumente (TR-ESOR)*, Version 1.3.1, Glossar zu elektronischen und digitalen Signaturen.  
+  <https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR03125/BSI_TR_03125_V1_3_1.pdf>
+
+Quellen geprüft am 07.11.2026.
+
+:::
+::::
+
+
+
 
 
 

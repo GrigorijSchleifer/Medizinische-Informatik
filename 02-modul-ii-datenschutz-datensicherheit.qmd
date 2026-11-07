@@ -1,6 +1,6 @@
 # Datenschutz/Datensicherheit {#modul-ii}
 
-## Rechtliche Grundlage
+## Rechtliche Grundlagen
 
 ::: {.exam-question .done}
 Auf welchen Rechtsgrundlagen dürfen Patientendaten verarbeitet oder offengelegt werden, und wann ist eine Einwilligung erforderlich?
@@ -66,7 +66,6 @@ Diese Spezialvorschriften ersetzen die DSGVO nicht. Personenbezogene Daten müss
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
 - Europäische Union: *Verordnung (EU) 2016/679 – Datenschutz-Grundverordnung*, insbesondere Art. 4 Abs. 2, Art. 6, 7 und 9.  
   <https://eur-lex.europa.eu/eli/reg/2016/679/oj>
 - Bundesdatenschutzgesetz, insbesondere §§ 1 und 22.  
@@ -79,10 +78,57 @@ Diese Spezialvorschriften ersetzen die DSGVO nicht. Personenbezogene Daten müss
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Modul II „Datenschutz und Datensicherheit“.
 
 Quellen geprüft am 06.11.2026.
-
 :::
 ::::
 
+
+
+
+
+::: {.exam-question .done}
+Welche spezialgesetzlichen Regelungen ergänzen das Datenschutzrecht bei Medizinprodukten, Arzneimittelstudien und der IT-Sicherheit von Krankenhäusern?
+:::
+
+:::: {.exam-answer}
+
+Die Datenschutz-Grundverordnung (DSGVO) bleibt maßgeblich, sobald personenbezogene Daten verarbeitet werden. Je nach Anwendungsbereich gelten zusätzlich besondere Vorschriften:
+
+- **Medizinprodukte:** Die Verordnung (EU) 2017/745 über Medizinprodukte (Medical Device Regulation, MDR), die Verordnung (EU) 2017/746 über In-vitro-Diagnostika (In Vitro Diagnostic Medical Devices Regulation, IVDR) und das Medizinprodukterecht-Durchführungsgesetz (MPDG) regeln insbesondere Sicherheit, Leistung, Konformitätsbewertung und klinische Prüfungen beziehungsweise Leistungsstudien.
+  - Beispiel: Eine Software zur medizinischen Diagnose kann bei entsprechender Zweckbestimmung ein Medizinprodukt sein.
+- **Arzneimittelstudien:** Die Verordnung (EU) Nr. 536/2014 über klinische Prüfungen mit Humanarzneimitteln und das Arzneimittelgesetz (AMG) regeln unter anderem Genehmigung, Aufklärung, Einwilligung und Sicherheit der Prüfungsteilnehmer.
+  - Die Einwilligung zur Studienteilnahme ist von der datenschutzrechtlichen Rechtsgrundlage für die Verarbeitung der Studiendaten zu unterscheiden.
+- **Landesrecht:** Landesdatenschutz- und Landeskrankenhausgesetze können zusätzliche Vorgaben enthalten.
+  - Welche Vorschriften gelten, hängt unter anderem von Bundesland und Trägerschaft der Einrichtung ab.
+
+Diese Spezialregelungen ersetzen weder die DSGVO noch die ärztliche Schweigepflicht, sondern ergänzen sie für bestimmte Anwendungsbereiche.
+
+Merksatz: DSGVO und Schweigepflicht schützen Patientendaten; MDR, IVDR, MPDG und AMG regeln besondere medizinische Anwendungen, BSIG, BSI-KritisV und § 391 SGB V die IT-Sicherheit.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Die im Curriculum genannten Bezeichnungen sind teilweise veraltet:
+
+- Das **Medizinproduktegesetz (MPG)** ist weitgehend durch MDR, IVDR und MPDG abgelöst.
+- Die sogenannten **IT-Sicherheitsgesetze** waren Änderungsgesetze. Die daraus hervorgegangenen aktuellen Pflichten finden sich insbesondere im BSIG, in der BSI-KritisV und für Krankenhäuser in § 391 SGB V.
+- Nach der BSI-KritisV gilt für Krankenhäuser derzeit ein Schwellenwert von mindestens 30.000 vollstationären Fällen pro Jahr. § 391 SGB V enthält dagegen grundsätzlich Anforderungen für alle Krankenhäuser.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Verordnung (EU) 2017/745 über Medizinprodukte (MDR), insbesondere Art. 1 und Art. 2: <https://eur-lex.europa.eu/eli/reg/2017/745/oj/deu>
+- Verordnung (EU) 2017/746 über In-vitro-Diagnostika (IVDR), insbesondere Art. 1 und Art. 2: <https://eur-lex.europa.eu/eli/reg/2017/746/oj/deu>
+- Medizinprodukterecht-Durchführungsgesetz (MPDG), insbesondere §§ 1 und 2: <https://www.gesetze-im-internet.de/mpdg/>
+- Verordnung (EU) Nr. 536/2014 über klinische Prüfungen mit Humanarzneimitteln, insbesondere Art. 28 und 29: <https://eur-lex.europa.eu/eli/reg/2014/536/oj/deu>
+- Arzneimittelgesetz (AMG), insbesondere § 40b: <https://www.gesetze-im-internet.de/amg_1976/__40b.html>
+- BSI-Gesetz (BSIG): <https://www.gesetze-im-internet.de/bsig_2025/>
+- BSI-Kritisverordnung, § 6 und Anhang 5: <https://www.gesetze-im-internet.de/bsi-kritisv/>
+- Fünftes Buch Sozialgesetzbuch (SGB V), § 391 „IT-Sicherheit in Krankenhäusern“: <https://www.gesetze-im-internet.de/sgb_5/__391.html>
+
+Quellen geprüft am 06.11.2026.
+
+:::
+::::
 
 
 
@@ -143,7 +189,6 @@ Anträge auf Auskunft, Berichtigung, Löschung oder andere Betroffenenrechte sin
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
 - Europäische Union: *Verordnung (EU) 2016/679 – Datenschutz-Grundverordnung*, insbesondere Art. 7, 12–22 und 77.  
   <https://eur-lex.europa.eu/eli/reg/2016/679/oj>
 - Bürgerliches Gesetzbuch, § 630f „Dokumentation der Behandlung“ und § 630g „Einsichtnahme in die Behandlungsakte“.  
@@ -155,7 +200,6 @@ Anträge auf Auskunft, Berichtigung, Löschung oder andere Betroffenenrechte sin
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Modul II „Datenschutz und Datensicherheit“.
 
 Quellen geprüft am 06.11.2026.
-
 :::
 ::::
 
@@ -225,7 +269,6 @@ Das BSI-Gesetz wurde zum 6. Dezember 2025 im Zuge der Umsetzung der europäische
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
 - Europäische Union: *Verordnung (EU) 2016/679 – Datenschutz-Grundverordnung*, insbesondere Art. 4 Nr. 7, Art. 24, 33, 37–39 und 51–58.  
   <https://eur-lex.europa.eu/eli/reg/2016/679/oj>
 - Bundesdatenschutzgesetz, insbesondere § 40 „Aufsichtsbehörden der Länder“.  
@@ -243,52 +286,6 @@ Das BSI-Gesetz wurde zum 6. Dezember 2025 im Zuge der Umsetzung der europäische
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Modul II „Datenschutz und Datensicherheit“.
 
 Quellen geprüft am 06.11.2026.
-
-:::
-::::
-
-::: {.exam-question .done}
-Welche spezialgesetzlichen Regelungen ergänzen das Datenschutzrecht bei Medizinprodukten, Arzneimittelstudien und der IT-Sicherheit von Krankenhäusern?
-:::
-
-:::: {.exam-answer}
-
-Die Datenschutz-Grundverordnung (DSGVO) bleibt maßgeblich, sobald personenbezogene Daten verarbeitet werden. Je nach Anwendungsbereich gelten zusätzlich besondere Vorschriften:
-
-- **Medizinprodukte:** Die Verordnung (EU) 2017/745 über Medizinprodukte (Medical Device Regulation, MDR), die Verordnung (EU) 2017/746 über In-vitro-Diagnostika (In Vitro Diagnostic Medical Devices Regulation, IVDR) und das Medizinprodukterecht-Durchführungsgesetz (MPDG) regeln insbesondere Sicherheit, Leistung, Konformitätsbewertung und klinische Prüfungen beziehungsweise Leistungsstudien.
-  - Beispiel: Eine Software zur medizinischen Diagnose kann bei entsprechender Zweckbestimmung ein Medizinprodukt sein.
-- **Arzneimittelstudien:** Die Verordnung (EU) Nr. 536/2014 über klinische Prüfungen mit Humanarzneimitteln und das Arzneimittelgesetz (AMG) regeln unter anderem Genehmigung, Aufklärung, Einwilligung und Sicherheit der Prüfungsteilnehmer.
-  - Die Einwilligung zur Studienteilnahme ist von der datenschutzrechtlichen Rechtsgrundlage für die Verarbeitung der Studiendaten zu unterscheiden.
-- **Landesrecht:** Landesdatenschutz- und Landeskrankenhausgesetze können zusätzliche Vorgaben enthalten.
-  - Welche Vorschriften gelten, hängt unter anderem von Bundesland und Trägerschaft der Einrichtung ab.
-
-Diese Spezialregelungen ersetzen weder die DSGVO noch die ärztliche Schweigepflicht, sondern ergänzen sie für bestimmte Anwendungsbereiche.
-
-Merksatz: DSGVO und Schweigepflicht schützen Patientendaten; MDR, IVDR, MPDG und AMG regeln besondere medizinische Anwendungen, BSIG, BSI-KritisV und § 391 SGB V die IT-Sicherheit.
-
-::: {.callout-note title="Gut zu wissen" appearance="simple"}
-
-Die im Curriculum genannten Bezeichnungen sind teilweise veraltet:
-
-- Das **Medizinproduktegesetz (MPG)** ist weitgehend durch MDR, IVDR und MPDG abgelöst.
-- Die sogenannten **IT-Sicherheitsgesetze** waren Änderungsgesetze. Die daraus hervorgegangenen aktuellen Pflichten finden sich insbesondere im BSIG, in der BSI-KritisV und für Krankenhäuser in § 391 SGB V.
-- Nach der BSI-KritisV gilt für Krankenhäuser derzeit ein Schwellenwert von mindestens 30.000 vollstationären Fällen pro Jahr. § 391 SGB V enthält dagegen grundsätzlich Anforderungen für alle Krankenhäuser.
-
-:::
-
-::: {.callout-note title="Literatur" appearance="simple"}
-
-- Verordnung (EU) 2017/745 über Medizinprodukte (MDR), insbesondere Art. 1 und Art. 2: <https://eur-lex.europa.eu/eli/reg/2017/745/oj/deu>
-- Verordnung (EU) 2017/746 über In-vitro-Diagnostika (IVDR), insbesondere Art. 1 und Art. 2: <https://eur-lex.europa.eu/eli/reg/2017/746/oj/deu>
-- Medizinprodukterecht-Durchführungsgesetz (MPDG), insbesondere §§ 1 und 2: <https://www.gesetze-im-internet.de/mpdg/>
-- Verordnung (EU) Nr. 536/2014 über klinische Prüfungen mit Humanarzneimitteln, insbesondere Art. 28 und 29: <https://eur-lex.europa.eu/eli/reg/2014/536/oj/deu>
-- Arzneimittelgesetz (AMG), insbesondere § 40b: <https://www.gesetze-im-internet.de/amg_1976/__40b.html>
-- BSI-Gesetz (BSIG): <https://www.gesetze-im-internet.de/bsig_2025/>
-- BSI-Kritisverordnung, § 6 und Anhang 5: <https://www.gesetze-im-internet.de/bsi-kritisv/>
-- Fünftes Buch Sozialgesetzbuch (SGB V), § 391 „IT-Sicherheit in Krankenhäusern“: <https://www.gesetze-im-internet.de/sgb_5/__391.html>
-
-Quellen geprüft am 06.11.2026.
-
 :::
 ::::
 
@@ -296,6 +293,7 @@ Quellen geprüft am 06.11.2026.
 
 
 
+## Zusammenhang zwischen Datenschutz und Informationssicherheit
 
 ::: {.exam-question .done}
 Wie unterscheiden sich Datenschutz und Informationssicherheit, und wo überschneiden sie sich bei Patientendaten?
@@ -394,7 +392,6 @@ Ein Cyberangriff kann die Patientensicherheit gefährden; ein direkter ursächli
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.2 „Modul II – Datenschutz/Datensicherheit“, S. 11.  
   <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
 - European Union Agency for Cybersecurity (ENISA): *ENISA Threat Landscape: Health Sector*. 2023, Kapitel 2 „Threats“, Abschnitte 2.1–2.7, S. 13–15, sowie Kapitel 4 „Impact“, insbesondere Abschnitte 4.2 und 4.4, S. 29–31. DOI: 10.2824/163953.  
@@ -403,7 +400,6 @@ Ein Cyberangriff kann die Patientensicherheit gefährden; ein direkter ursächli
   <https://www.enisa.europa.eu/sites/default/files/2026-09/ENISA%20Threat%20Landscape%202026_Final.pdf>
 
 Quellen geprüft am 07.11.2026.
-
 :::
 ::::
 
@@ -413,7 +409,7 @@ Quellen geprüft am 07.11.2026.
 
 
 
-## Zusammenhang Datenschutz - Informationssicherheit
+## Gewährleistung von Datenschutz und Informationssicherheit in Versorgung und Forschung
 
 ::: {.exam-question .done}
 Wie werden Datenschutz und Informationssicherheit systematisch umgesetzt, und welche Aufgaben haben dabei IT-Grundschutz, technische und organisatorische Maßnahmen, Berechtigungskonzepte und die Orientierungshilfe-KIS?
@@ -482,7 +478,7 @@ Quellen geprüft am 07.11.2026.
 
 
 
-## Prinzipien und Maßnahmen zur Gewährleistung von Datenschutz und Datensicherheit in Versorgung und Forschung
+## Entwicklung und Fortschreibung von Datenschutzkonzepten
 
 ::: {.exam-question .done}
 Was enthält ein Datenschutzkonzept, und wie wird es entwickelt, überprüft und fortgeschrieben?
@@ -539,7 +535,6 @@ Die Klinikleitung bleibt für die rechtskonforme Verarbeitung verantwortlich. De
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
 - Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.2 „Modul II – Datenschutz/Datensicherheit“, S. 11.  
   <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
 - Europäische Union: *Datenschutz-Grundverordnung*, Verordnung (EU) 2016/679, insbesondere Art. 5, 24, 25, 28, 30, 32–35 und 37–39.  
@@ -548,7 +543,6 @@ Die Klinikleitung bleibt für die rechtskonforme Verarbeitung verantwortlich. De
   <https://www.datenschutzkonferenz-online.de/media/ah/SDM-Methode-V31.pdf>
 
 Quellen geprüft am 07.11.2026.
-
 :::
 ::::
 

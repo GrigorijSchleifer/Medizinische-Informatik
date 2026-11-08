@@ -34,6 +34,7 @@ filters:
 
 format:
   html:
+    html-math-method: mathjax
     theme:
       light: [cosmo, custom-light.scss]
       dark:  [darkly, custom-dark.scss]

@@ -1,8 +1,1446 @@
-# Medizinische Statistik/Epidemiologie/Biometrie {#modul-iii}
+# Medizinische Statistik, Epidemiologie und Biometrie {#modul-iii}
 
-## Grundtypen und Effektmasse für medizinische Studien
 
-### Quantitative Erfolgs- und Risikokriterien
+## Statistische Grundlagen
+
+1. Grundgesamtheit, Stichprobe, Parameter und Inferenz
+2. Merkmalsarten und Skalenniveaus
+3. Lage- und Streuungsmaße
+4. Konfidenzintervalle und Anteilswerte
+5. Hypothesentests, p-Wert und Fehlerarten
+6. Auswahl einfacher statistischer Tests
+7. Regression, Varianzanalyse und weiterführende Verfahren
+
+::: {.exam-question}
+Wie unterscheiden sich Grundgesamtheit, Stichprobe, Parameter und Stichprobenkennwert sowie deskriptive und schließende Statistik?
+:::
+
+:::: {.exam-answer}
+
+Grundgesamtheit und Stichprobe bezeichnen **Mengen von Untersuchungseinheiten**. Parameter und Stichprobenkennwerte sind dagegen **Zahlen, die diese Mengen beschreiben**.
+
+- **Grundgesamtheit (Population):** Gesamtheit der Personen, Fälle oder Beobachtungen, auf die sich die Fragestellung bezieht
+  - Sie muss durch fachliche, räumliche und zeitliche Kriterien eindeutig definiert werden.
+  - Beispiel: alle Erwachsenen, die im Jahr 2026 in deutschen Stroke Units wegen eines ischämischen Schlaganfalls behandelt werden
+
+- **Stichprobe:** tatsächlich untersuchte Teilmenge der Grundgesamtheit
+  - Sie soll die für die Fragestellung relevante Grundgesamtheit möglichst angemessen abbilden.
+  - Beispiel: 1.200 Patienten aus zehn teilnehmenden Stroke Units
+
+- **Parameter:** numerischer Kennwert der Grundgesamtheit
+  - Er wird in der klassischen Statistik als fest, aber meist unbekannt betrachtet.
+  - Beispiel: der tatsächliche Anteil der Patienten der Grundgesamtheit, die innerhalb von 30 Tagen versterben
+
+- **Stichprobenkennwert (Statistik):** aus den Daten der Stichprobe berechneter Wert
+  - Er kann zur Schätzung des entsprechenden Parameters verwendet werden.
+  - Sein Wert kann sich zwischen verschiedenen Stichproben unterscheiden.
+  - Beispiel: In der Stichprobe beträgt die beobachtete 30-Tage-Sterblichkeit 8 Prozent.
+
+- **Deskriptive Statistik:** beschreibt und verdichtet die tatsächlich erhobenen Daten
+  - Dazu gehören Häufigkeiten, Mittelwert, Median, Streuungsmaße, Tabellen und Diagramme.
+  - Sie trifft für sich allein keine Aussage über nicht beobachtete Personen.
+  - Beispiel: Beschreibung von Alter, Geschlecht und 30-Tage-Sterblichkeit der 1.200 untersuchten Patienten
+
+- **Schließende Statistik (Inferenzstatistik):** verwendet Stichprobendaten, um Parameter der Grundgesamtheit zu schätzen oder Hypothesen zu prüfen
+  - Zu ihren Werkzeugen gehören Punktschätzer, Konfidenzintervalle, statistische Tests und Regressionsmodelle.
+  - Jeder Rückschluss ist mit Unsicherheit verbunden und hängt vom Studiendesign, von der Auswahl der Stichprobe und von Modellannahmen ab.
+  - Beispiel: Schätzung der 30-Tage-Sterblichkeit in der Grundgesamtheit mit einem Konfidenzintervall
+
+Merksatz: Grundgesamtheit und Stichprobe beantworten die Frage „Wer wird betrachtet?“, Parameter und Stichprobenkennwert die Frage „Welche Zahl beschreibt sie?“; die deskriptive Statistik beschreibt Beobachtetes, die schließende Statistik folgert unter Angabe von Unsicherheit darüber hinaus.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Schätzer und Schätzwert sind streng genommen nicht dasselbe:** Ein Schätzer ist die Berechnungsvorschrift; der Schätzwert ist ihr Ergebnis in der konkreten Stichprobe.
+- Eine größere Stichprobe verringert meist die zufällige Unsicherheit. Eine verzerrte Auswahl wird dadurch jedoch nicht behoben.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12. Das Kursbuch nennt die statistischen Grundbegriffe als Lerninhalt, definiert sie aber nicht im Einzelnen.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Campbell MJ: *Statistics at Square One*. 12. Auflage, Wiley-Blackwell, 2021, Kapitel 6 „Populations and Samples“, S. 78–90.  
+  <https://doi.org/10.1002/9781119402350>
+
+- National Institute of Standards and Technology (NIST)/SEMATECH: *e-Handbook of Statistical Methods*. Online-Ausgabe, erstellt 2003, umfassend aktualisiert 2012, „Glossary“ sowie Abschnitt 3.1.3.4 „Populations and Sampling“.  
+  <https://doi.org/10.18434/M32189>  
+  <https://www.itl.nist.gov/div898/handbook/glossary.htm>  
+  <https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc134.htm>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+::: {.exam-question}
+Wie werden Merkmale klassifiziert, und welche Bedeutung hat das Skalenniveau?
+:::
+
+:::: {.exam-answer}
+
+Ein **Merkmal** oder eine **Variable** ist eine Eigenschaft, die bei den untersuchten Einheiten erhoben wird. Die möglichen Werte oder Kategorien heißen **Merkmalsausprägungen**.
+
+- **Kategoriales Merkmal:** ordnet Beobachtungen Kategorien zu
+  - Die Kategorien können durch Wörter oder durch Zahlencodes dargestellt werden.
+  - **Dichotomes oder binäres Merkmal:** besitzt genau zwei Ausprägungen
+    - Beispiel: nosokomiale Infektion ja oder nein
+  - **Mehrkategoriales Merkmal:** besitzt mehr als zwei Ausprägungen
+    - Beispiel: Blutgruppe A, B, AB oder 0
+
+- **Quantitatives Merkmal:** beschreibt eine numerisch messbare oder zählbare Größe
+  - **Diskretes Merkmal:** kann nur einzelne, abzählbare Werte annehmen
+    - Beispiel: Anzahl der stationären Aufnahmen innerhalb eines Jahres
+  - **Stetiges Merkmal:** kann innerhalb eines Wertebereichs grundsätzlich jeden Wert annehmen
+    - Beispiel: Körpertemperatur; die dokumentierte Genauigkeit wird durch das Messverfahren begrenzt
+
+Das **Skalenniveau** beschreibt, welche Vergleiche und Rechenoperationen für die Ausprägungen eines Merkmals inhaltlich sinnvoll sind:
+
+- **Nominalskala:** Die Kategorien lassen sich nur als gleich oder verschieden unterscheiden.
+  - Es besteht keine natürliche Rangfolge.
+  - Sinnvoll sind insbesondere absolute und relative Häufigkeiten sowie der häufigste Wert.
+  - Beispiel: Blutgruppe A, B, AB oder 0
+
+- **Ordinalskala:** Die Kategorien besitzen eine natürliche Reihenfolge.
+  - Die Abstände zwischen benachbarten Kategorien sind nicht als gleich definiert.
+  - Neben Häufigkeiten können beispielsweise Median und Quantile angegeben werden.
+  - Beispiel: Dringlichkeitsstufen einer klinischen Ersteinschätzung
+
+- **Intervallskala:** Reihenfolge und Differenzen zwischen Werten sind sinnvoll interpretierbar.
+  - Der Nullpunkt ist willkürlich festgelegt; Quotienten sind daher nicht sinnvoll interpretierbar.
+  - Mittelwert und Standardabweichung können grundsätzlich berechnet werden, sofern sie zur Verteilung passen.
+  - Beispiel: Körpertemperatur in Grad Celsius; 20 °C sind nicht „doppelt so warm“ wie 10 °C.
+
+- **Verhältnisskala:** besitzt zusätzlich einen inhaltlich begründeten Nullpunkt.
+  - Differenzen und Verhältnisse sind sinnvoll interpretierbar.
+  - Beispiel: Eine Aufenthaltsdauer von sechs Tagen ist doppelt so lang wie eine Aufenthaltsdauer von drei Tagen.
+
+- **Bedeutung für die Auswertung:** Das Skalenniveau begrenzt, welche Kennwerte und Rechenoperationen sinnvoll sind.
+  - Kategoriale Daten werden meist durch Häufigkeiten und Anteile beschrieben.
+  - Ordinale Daten erlauben zusätzlich Rangvergleiche.
+  - Intervall- und verhältnisskalierte Daten werden häufig als **metrische Daten** zusammengefasst.
+  - Die Wahl eines statistischen Verfahrens hängt zusätzlich vom Studiendesign, von der Verteilung der Daten und von den Modellannahmen ab.
+
+Merksatz: Die Merkmalsart beschreibt, welche Werte auftreten können; das Skalenniveau bestimmt, welche Vergleiche und Berechnungen mit diesen Werten inhaltlich sinnvoll sind.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Eine Zahlencodierung verändert das Skalenniveau nicht. Die Codes `1`, `2` und `3` für „leicht“, „mittel“ und „schwer“ bleiben ordinal.
+- Ein dichotomes Merkmal ist kein eigenes Skalenniveau, sondern ein kategoriales Merkmal mit genau zwei Ausprägungen.
+- Die Umwandlung eines stetigen Merkmals in Kategorien vereinfacht die Darstellung, führt aber meist zu Informationsverlust. Aus einem Blutdruckwert wird beispielsweise nur noch „Hypertonie: ja oder nein“.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12. Das Kursbuch nennt Merkmalsklassifikation und Skalenniveau als Lerninhalte, definiert sie aber nicht im Einzelnen.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Walters SJ, Campbell MJ, Machin D: *Medical Statistics: A Textbook for the Health Sciences*. 5. Auflage, Wiley-Blackwell, 2021, Kapitel 2.1 „Types of Data“, S. 10–12.  
+  <https://www.wiley.com/en-us/medical-statistics-a-textbook-for-the-health-sciences-5th-edition-p-9781119423652>
+
+- Fowler J, Jarvis P, Chevannes M: *Practical Statistics for Nursing and Health Care*. 2. Auflage, Wiley-Blackwell, 2021, Kapitel 3.1–3.5 „Scales of Measurement“, S. 13–15.  
+  <https://www.wiley-vch.de/en/areas-interest/medicine-health-care/practical-statistics-for-nursing-and-health-care-978-1-119-69852-4>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+::: {.exam-question}
+Welche Effektmaße werden für stetige, binäre und Zeit-bis-Ereignis-Endpunkte verwendet?
+:::
+
+:::: {.exam-answer}
+
+Das geeignete Effektmaß richtet sich nach dem Datentyp des Endpunkts und der klinischen Fragestellung.
+
+- **Stetiger Endpunkt:** kann innerhalb eines Wertebereichs numerische Werte annehmen, z. B. Blutdruck oder Körpergewicht
+  - **Mittelwertdifferenz (Mean Difference, MD):** Differenz der Mittelwerte zweier Gruppen in der ursprünglichen Maßeinheit
+    - Beispiel: Ein mittlerer systolischer Blutdruck von 132 statt 138 mmHg ergibt bei der Reihenfolge Intervention minus Kontrolle eine Mittelwertdifferenz von −6 mmHg.
+  - **Standardisierte Mittelwertdifferenz (Standardized Mean Difference, SMD):** Mittelwertdifferenz geteilt durch eine Standardabweichung
+    - Sie wird insbesondere verwendet, wenn Studien dasselbe Merkmal mit unterschiedlichen Skalen messen.
+    - Das Ergebnis wird in Einheiten von Standardabweichungen angegeben und ist klinisch schwerer zu interpretieren.
+- **Binärer Endpunkt:** besitzt zwei mögliche Ausprägungen, z. B. Schlaganfall ja oder nein
+  - Beispiel: Das Einjahresrisiko beträgt 15 % unter Intervention und 20 % in der Kontrollgruppe.
+  - **Relatives Risiko (Risk Ratio, RR):** Verhältnis der Ereignisrisiken
+    - `RR = 0,15 / 0,20 = 0,75`
+  - **Relative Risikoreduktion (RRR):** relative Verminderung eines unerwünschten Ereignisses
+    - `RRR = 1 − RR = 25 %`
+    - Sie kann nur zusammen mit dem Ausgangsrisiko klinisch sinnvoll beurteilt werden.
+  - **Risikodifferenz (Risk Difference, RD):** absolute Differenz der Ereignisrisiken
+    - Bei der Reihenfolge Intervention minus Kontrolle: `RD = 0,15 − 0,20 = −0,05`, also −5 Prozentpunkte.
+  - **Absolute Risikoreduktion (ARR):** Verringerung des Risikos eines unerwünschten Ereignisses
+    - `ARR = 0,20 − 0,15 = 0,05`, also 5 Prozentpunkte.
+  - **Number Needed to Treat (NNT):** Anzahl der zu behandelnden Personen, um innerhalb eines festgelegten Zeitraums ein zusätzliches unerwünschtes Ereignis zu verhindern
+    - `NNT = 1 / ARR = 1 / 0,05 = 20` innerhalb eines Jahres.
+    - Bei einer Risikoerhöhung wird entsprechend die Number Needed to Harm (NNH) angegeben.
+  - **Odds Ratio (OR):** Verhältnis der Ereignis-Odds beider Gruppen
+    - `OR = (0,15 / 0,85) / (0,20 / 0,80) ≈ 0,71`
+    - Die Odds Ratio ist nicht mit dem relativen Risiko gleichzusetzen.
+
+- **Zeit-bis-Ereignis-Endpunkt:** berücksichtigt sowohl das Auftreten als auch den Zeitpunkt eines Ereignisses
+  - **Hazard Ratio (HR):** Verhältnis der momentanen Ereignisraten zweier Gruppen
+    - Eine `HR = 0,70` entspricht unter der Annahme proportionaler Hazards einer um 30 % niedrigeren Hazard in der Interventionsgruppe.
+    - Daraus folgt nicht automatisch eine um 30 % niedrigere kumulative Ereigniswahrscheinlichkeit.
+  - **Überlebens- oder Ereigniswahrscheinlichkeit zu einem festgelegten Zeitpunkt:** ermöglicht einen absoluten Gruppenvergleich
+    - Beispiel: Vergleich des ereignisfreien Überlebens nach zwei Jahren.
+  - Personen, bei denen die genaue Zeit bis zum Ereignis nicht beobachtet wurde, können als zensierte Beobachtungen in die Analyse eingehen.
+
+Differenzmaße wie Mittelwert- und Risikodifferenz haben bei `0` keinen Unterschied. Verhältnisgrößen wie relatives Risiko, Odds Ratio und Hazard Ratio haben bei `1` keinen Unterschied.
+
+Merksatz: Stetige Endpunkte werden durch Mittelwertdifferenzen, binäre Endpunkte durch relative und absolute Risiken und Zeit-bis-Ereignis-Endpunkte meist durch die Hazard Ratio beschrieben.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Relative und absolute Effektmaße beantworten unterschiedliche Fragen:
+
+- Das **relative Effektmaß** beschreibt die proportionale Veränderung.
+- Das **absolute Effektmaß** berücksichtigt zusätzlich das Ausgangsrisiko und ist deshalb für die klinische Entscheidung besonders wichtig.
+- Die **NNT** ist aus der absoluten Risikodifferenz abgeleitet und gilt nur für den angegebenen Endpunkt, Beobachtungszeitraum und das zugrunde liegende Ausgangsrisiko.
+- Die **Hazard Ratio** ist weder ein relatives Risiko noch eine „Odds Ratio über die Zeit“. Bei deutlich nicht proportionalen Hazards kann eine einzelne Hazard Ratio den zeitlichen Verlauf unzureichend zusammenfassen.
+
+Effektschätzer sollten zusammen mit einem Konfidenzintervall angegeben werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Higgins JPT, Li T, Deeks JJ: „Choosing effect measures and computing estimates of effect“. In: *Cochrane Handbook for Systematic Reviews of Interventions*, Version 6.5, Cochrane, 2024, Kapitel 6, insbesondere Abschnitte 6.1.2, 6.4.1, 6.5.1 und 6.8.1.  
+  <https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-06>
+- International Council for Harmonisation: *ICH E9 – Statistical Principles for Clinical Trials*. 1998, Abschnitt 5.5 „Estimation, Confidence Intervals and Hypothesis Testing“, S. 27–28.  
+  <https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-9-statistical-principles-clinical-trials-step-5_en.pdf>
+
+Quellen geprüft am 07.11.2026.
+
+:::
+::::
+
+
+
+
+
+::: {.exam-question}
+Wie werden , Spezifität, Likelihood Ratios und prädiktive Werte diagnostischer Tests interpretiert, und wie hängen sie von Prävalenz und Vortestwahrscheinlichkeit ab?
+:::
+
+:::: {.exam-answer}
+
+Die diagnostische Genauigkeit eines **Indextests** wird durch Vergleich mit dem bestmöglichen **Referenzstandard** beurteilt.
+
+| Ergebnis des Indextests | Zielzustand vorhanden | Zielzustand nicht vorhanden |
+|---|---:|---:|
+| positiv | richtig positiv (`TP`) | falsch positiv (`FP`) |
+| negativ | falsch negativ (`FN`) | richtig negativ (`TN`) |
+
+`TP`, `FP`, `FN` und `TN` stehen für *true positive*, *false positive*, *false negative* und *true negative*.
+
+- **Sensitivität:** Anteil der Personen mit Zielzustand, bei denen der Test positiv ausfällt
+  - $\mathrm{Sensitivität}=\frac{TP}{TP+FN}$
+  - Eine hohe Sensitivität bedeutet wenige falsch negative Ergebnisse.
+  - Sie beantwortet nicht, wie wahrscheinlich der Zielzustand nach einem positiven Ergebnis ist.
+
+- **Spezifität:** Anteil der Personen ohne Zielzustand, bei denen der Test negativ ausfällt
+  - $\mathrm{Spezifität}=\frac{TN}{TN+FP}$
+  - Eine hohe Spezifität bedeutet wenige falsch positive Ergebnisse.
+  - Sensitivität und Spezifität müssen immer gemeinsam und für eine festgelegte Testschwelle betrachtet werden.
+
+- **Positiver prädiktiver Wert (Positive Predictive Value, PPV):** Wahrscheinlichkeit, dass der Zielzustand bei einem positiven Testergebnis tatsächlich vorliegt
+  - $\mathrm{PPV}=\frac{TP}{TP+FP}$
+
+- **Negativer prädiktiver Wert (Negative Predictive Value, NPV):** Wahrscheinlichkeit, dass der Zielzustand bei einem negativen Testergebnis tatsächlich nicht vorliegt
+  - $\mathrm{NPV}=\frac{TN}{TN+FN}$
+
+- **Einfluss der Prävalenz auf die prädiktiven Werte:** Bei gleichbleibender Sensitivität und Spezifität verändern sich PPV und NPV mit der Häufigkeit des Zielzustands.
+  - Mit steigender Prävalenz steigt der PPV und der NPV sinkt.
+  - Mit sinkender Prävalenz sinkt der PPV und der NPV steigt.
+  - Bei seltenen Erkrankungen können deshalb trotz guter Testeigenschaften viele positive Ergebnisse falsch positiv sein.
+
+- **Positive Likelihood Ratio ($\mathrm{LR}^{+}$):** gibt an, wie viel wahrscheinlicher ein positives Ergebnis bei Personen mit Zielzustand als bei Personen ohne Zielzustand ist
+  - $\mathrm{LR}^{+}=\frac{\mathrm{Sensitivität}}{1-\mathrm{Spezifität}}$
+  - Werte über 1 sprechen für das Vorliegen des Zielzustands; je größer der Wert, desto stärker die diagnostische Information.
+
+- **Negative Likelihood Ratio ($\mathrm{LR}^{-}$):** gibt an, wie wahrscheinlich ein negatives Ergebnis bei Personen mit Zielzustand im Vergleich zu Personen ohne Zielzustand ist
+  - $\mathrm{LR}^{-}=\frac{1-\mathrm{Sensitivität}}{\mathrm{Spezifität}}$
+  - Werte unter 1 sprechen gegen das Vorliegen des Zielzustands; je näher der Wert an 0 liegt, desto stärker die diagnostische Information.
+  - Eine Likelihood Ratio von 1 verändert die diagnostische Einschätzung nicht.
+
+- **Vortest- und Nachtestwahrscheinlichkeit:** Die Vortestwahrscheinlichkeit beschreibt die geschätzte Wahrscheinlichkeit des Zielzustands vor dem Testergebnis.
+  - Sie ergibt sich aus der Prävalenz im passenden klinischen Setting sowie aus individuellen Symptomen, Befunden und Risikofaktoren.
+  - Zur Aktualisierung wird die Vortestwahrscheinlichkeit zunächst in Odds umgerechnet:
+
+    $$\mathrm{Vortestodds}=\frac{p_\mathrm{vor}}{1-p_\mathrm{vor}}$$
+
+  - Anschließend werden die Odds mit der zum Testergebnis gehörenden Likelihood Ratio multipliziert:
+
+    $$\mathrm{Nachtestodds}=\mathrm{Vortestodds}\times\mathrm{LR}$$
+
+  - Die Nachtestodds werden wieder in eine Wahrscheinlichkeit umgerechnet:
+
+    $$p_\mathrm{nach}=\frac{\mathrm{Nachtestodds}}{1+\mathrm{Nachtestodds}}$$
+
+Merksatz: Sensitivität und Spezifität fragen vom Zielzustand zum Testergebnis, prädiktive Werte vom Testergebnis zum Zielzustand; Likelihood Ratios überführen die Vortest- in eine Nachtestwahrscheinlichkeit.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**Beispiel zum Prävalenzeffekt:** Ein Test besitzt eine Sensitivität und Spezifität von jeweils 90 Prozent. In einer Population von 1.000 Personen beträgt die Prävalenz 10 Prozent.
+
+- Von 100 Personen mit Zielzustand werden 90 richtig positiv und 10 falsch negativ getestet.
+- Von 900 Personen ohne Zielzustand werden 810 richtig negativ und 90 falsch positiv getestet.
+- Unter den 180 positiven Ergebnissen sind nur 90 richtig positiv:
+  - $\mathrm{PPV}=50\,\%$
+- Unter den 820 negativen Ergebnissen sind 810 richtig negativ:
+  - $\mathrm{NPV}\approx98{,}8\,\%$
+
+Das Beispiel zeigt: Auch ein Test mit jeweils 90 Prozent Sensitivität und Spezifität kann bei niedriger Prävalenz einen deutlich niedrigeren positiven prädiktiven Wert besitzen.
+
+Bei Tests mit einem numerischen Messwert beeinflusst der gewählte Schwellenwert Sensitivität und Spezifität: Eine niedrigere Schwelle erhöht häufig die Sensitivität und vermindert die Spezifität. Dieser Zusammenhang kann mit einer Receiver-Operating-Characteristic-Kurve dargestellt werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12. Das Kursbuch nennt epidemiologische Maßzahlen und quantitative Erfolgskriterien, führt die diagnostischen Maßzahlen aber nicht einzeln aus.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Campbell MJ: *Statistics at Square One*. 12. Auflage, Wiley-Blackwell, 2021, Kapitel 5 „Diagnostic and Screening Tests“, S. 61–77.  
+  <https://doi.org/10.1002/9781119402350.ch5>
+
+- Deeks JJ, Bossuyt PM, Leeflang MM, Takwoingi Y, Hrsg.: *Cochrane Handbook for Systematic Reviews of Diagnostic Test Accuracy*. Version 2.0, Cochrane, 2023, insbesondere Kapitel 2 „Evaluating Diagnostic Tests“ und Kapitel 4 „Understanding Test Accuracy Statistics“.  
+  <https://doi.org/10.1002/9781119756194>
+
+- Cohen JF, Korevaar DA, Altman DG et al.: *STARD 2015 Guidelines for Reporting Diagnostic Accuracy Studies: Explanation and Elaboration*. BMJ Open 2016;6:e012799, insbesondere Tabelle 1 „Key terminology“ und die Erläuterungen zu Zielpopulation, Indextest und Referenzstandard.  
+  <https://doi.org/10.1136/bmjopen-2016-012799>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+## Studiendesigns und Effektmaße
+
+::: {.exam-question}
+Welche grundlegenden Studiendesigns gibt es, und welche Aussagen erlauben sie?
+:::
+
+:::: {.exam-answer}
+
+Grundlegend werden **interventionelle** und **beobachtende** Studien unterschieden.
+
+- **Interventionelle Studie:** Das Studienteam weist den Teilnehmenden eine Intervention zu.
+  - **Randomisierte kontrollierte Studie (Randomized Controlled Trial, RCT):** Die Zuteilung zu Interventions- und Kontrollgruppe erfolgt nach dem Zufallsprinzip.
+    - Bei geeigneter Durchführung und Auswertung erlaubt sie die belastbarste Beurteilung eines kausalen Interventionseffekts.
+    - Beispiel: Vergleich einer neuen Therapie mit der Standardtherapie nach zufälliger Zuteilung.
+- **Beobachtungsstudie:** Das Studienteam weist keine Intervention oder Exposition zu, sondern beobachtet vorhandene Unterschiede und deren Zusammenhang mit einem Ergebnis.
+  - **Kohortenstudie:** Personen werden nach ihrer Exposition gruppiert und hinsichtlich des Auftretens eines Ergebnisses verglichen.
+    - Sie ermöglicht die Bestimmung von Inzidenz und Risiko sowie die Untersuchung der zeitlichen Abfolge von Exposition und Ergebnis.
+    - Beispiel: Vergleich des Auftretens einer akuten Nierenschädigung bei Patienten mit und ohne Exposition gegenüber einem bestimmten Arzneimittel.
+  - **Fall-Kontroll-Studie:** Personen mit einem Ergebnis oder einer Erkrankung werden mit geeigneten Kontrollen ohne dieses Ergebnis verglichen.
+    - Untersucht wird, ob frühere Expositionen bei den Fällen häufiger waren.
+    - Sie eignet sich besonders für seltene Erkrankungen oder Ergebnisse mit langer Latenzzeit.
+    - Beispiel: Vergleich früherer Expositionen bei Patienten mit und ohne nosokomiale Blutstrominfektion.
+  - **Querschnittsstudie:** Exposition und Ergebnis werden zu einem bestimmten Zeitpunkt oder in einem kurzen Zeitraum erhoben.
+    - Sie eignet sich zur Bestimmung der Prävalenz und zur Beschreibung von Zusammenhängen.
+    - Die zeitliche Reihenfolge von Exposition und Ergebnis bleibt häufig unklar.
+    - Beispiel: Erhebung des Anteils von Praxispatienten mit erhöhtem Blutdruck an einem Untersuchungstag.
+  - **Fallbericht oder Fallserie:** Ein einzelner Fall oder mehrere ähnliche Fälle werden ohne Vergleichsgruppe beschrieben.
+    - Sie können neue oder seltene Beobachtungen sichtbar machen und Hypothesen erzeugen, aber keine vergleichende Wirksamkeit belegen.
+    - Beispiel: Beschreibung mehrerer ungewöhnlicher unerwünschter Arzneimittelwirkungen.
+
+Merksatz: Die randomisierte Studie vergleicht zugewiesene Interventionen; die Kohortenstudie beginnt bei der Exposition, die Fall-Kontroll-Studie beim Ergebnis und die Querschnittsstudie erhebt beides gleichzeitig.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**Prospektiv und retrospektiv bezeichnen den zeitlichen Bezug der Datenerhebung, nicht das Studiendesign selbst.** Eine Kohortenstudie kann sowohl prospektiv als auch anhand bereits vorhandener Daten retrospektiv durchgeführt werden.
+
+Bezeichnungen wie Therapie-, Diagnose- oder Prognosestudie beschreiben vor allem die **Fragestellung**. Sie bilden daher keine eigene, mit Kohorten-, Fall-Kontroll- oder Querschnittsstudien unmittelbar vergleichbare Einteilungsebene.
+
+Systematische Reviews und Meta-Analysen fassen vorhandene Studien zusammen und gehören zur Sekundärforschung. Sie werden gesondert behandelt.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Bonita R, Beaglehole R, Kjellström T: *Basic Epidemiology*. 2. Auflage, World Health Organization, 2006, Kapitel 3 „Types of studies“, S. 39–51.  
+  <https://iris.who.int/bitstream/handle/10665/43541/9241547073_eng.pdf>
+- International Council for Harmonisation: *ICH E9 – Statistical Principles for Clinical Trials*. 1998, Abschnitte 2.1.2–2.1.3 „Confirmatory Trial/Exploratory Trial“ und 2.3 „Design Techniques to Avoid Bias“.  
+  <https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-9-statistical-principles-clinical-trials-step-5_en.pdf>
+
+Quellen geprüft am 07.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+## Epidemiologie und Studiendurchführung
+
+
+::: {.exam-question}
+Wie unterscheiden sich Prävalenz, Inzidenzproportion und Inzidenzrate?
+:::
+
+:::: {.exam-answer}
+
+- **Prävalenz:** Anteil einer Population, bei dem eine Erkrankung oder ein anderes Merkmal bereits besteht
+  - Im Zähler stehen bestehende Fälle unabhängig davon, wann die Erkrankung begonnen hat.
+  - Bei der **Punktprävalenz** beziehen sich Zähler und Nenner auf einen Stichtag.
+  - Bei der **Periodenprävalenz** werden alle Personen erfasst, bei denen die Erkrankung irgendwann während eines festgelegten Zeitraums bestand.
+  - Typisches Studiendesign zur Bestimmung der Punktprävalenz ist die **Querschnittsstudie**.
+  - Beispiel: An einem Stichtag haben 20 von 200 stationären Patienten eine nosokomiale Infektion:  
+    $\mathrm{Punktprävalenz}=\frac{20}{200}=0{,}10=10\,\%$.
+
+- **Inzidenzproportion:** Anteil einer anfangs erkrankungsfreien Population, der innerhalb eines festgelegten Zeitraums neu erkrankt
+  - Sie wird auch **kumulative Inzidenz** oder **Risiko** genannt.
+  - Im Nenner stehen die zu Beginn erkrankungsfreien und für das Ereignis gefährdeten Personen.
+  - Der Beobachtungszeitraum muss immer angegeben werden.
+  - Sie wird typischerweise in einer **Kohortenstudie** oder einer **randomisierten kontrollierten Studie** mit festgelegter Nachbeobachtung bestimmt.
+  - Beispiel: Von 180 zu Beginn infektionsfreien Patienten entwickeln 18 innerhalb von 30 Tagen eine nosokomiale Infektion:  
+    $\mathrm{Inzidenzproportion}=\frac{18}{180}=0{,}10=10\,\%$ in 30 Tagen.
+
+- **Inzidenzrate:** Geschwindigkeit, mit der neue Fälle in einer Population auftreten
+  - Im Zähler stehen neue Fälle.
+  - Im Nenner steht die summierte Zeit, während der die beobachteten Personen tatsächlich erkrankungsfrei und gefährdet waren.
+  - Sie wird auch **Inzidenzdichte** oder **Personenzeitrate** genannt.
+  - Sie wird typischerweise in einer **Kohortenstudie** oder einer **randomisierten kontrollierten Studie** mit Erfassung der individuellen Beobachtungszeit bestimmt.
+  - Beispiel: Während 1.800 Patiententagen unter Risiko treten 18 neue Infektionen auf:  
+    $\mathrm{Inzidenzrate}=\frac{18}{1.800\ \text{Patiententage}}=10$ pro 1.000 Patiententage.
+
+| Maß | Zähler | Nenner | Einheit | Kernaussage |
+|---|---|---|---|---|
+| Prävalenz | bestehende Fälle | Population zum betrachteten Zeitpunkt oder Zeitraum | Anteil oder Prozent | Wie häufig besteht die Erkrankung? |
+| Inzidenzproportion | neue Fälle | anfangs gefährdete Personen | Anteil oder Prozent pro festgelegtem Zeitraum | Wie groß ist das Erkrankungsrisiko? |
+| Inzidenzrate | neue Fälle | summierte Personenzeit unter Risiko | Fälle pro Personenzeit | Wie schnell treten neue Fälle auf? |
+
+Merksatz: Die Querschnittsstudie bestimmt typischerweise die Prävalenz; Kohortenstudien und randomisierte kontrollierte Studien bestimmen durch Nachbeobachtung Inzidenzproportionen und Inzidenzraten.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Die Prävalenz wird sowohl von der Häufigkeit neuer Fälle als auch von der Erkrankungsdauer beeinflusst. Eine hohe Prävalenz bedeutet daher nicht zwingend eine hohe Inzidenz.
+- Die vereinfachte Beziehung $\mathrm{Prävalenz}\approx\mathrm{Inzidenzrate}\times\mathrm{Erkrankungsdauer}$ gilt nur unter zusätzlichen Annahmen, insbesondere bei annähernd stabilen Verhältnissen und niedriger Prävalenz.
+- Die bei Krankheitsausbrüchen verwendete **Attack Rate** ist trotz ihres Namens gewöhnlich eine Inzidenzproportion und keine Personenzeitrate.
+- In einer klassischen **Fall-Kontroll-Studie** können Prävalenz und absolute Inzidenz nicht unmittelbar bestimmt werden, weil die Zahl der Fälle und Kontrollen durch das Studiendesign festgelegt wird.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 1. Auflage, 2020, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/_old-files/downloads/pdf-Ordner/Weiterbildung/_Muster-Kursbuecher/20200428_MKB-MedInformatik.pdf>
+- Bonita R, Beaglehole R, Kjellström T: *Basic Epidemiology*. 2. Auflage, World Health Organization, 2006, Kapitel 2 „Measuring health and disease“, Abschnitt „Incidence and prevalence“.  
+  <https://iris.who.int/handle/10665/43541>
+- Centers for Disease Control and Prevention: *Principles of Epidemiology in Public Health Practice*. 3. Auflage, 2006, aktualisiert 2012, Lektion 3, Abschnitt 2 „Morbidity Frequency Measures“.  
+  <https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson3/section2.html>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+::: {.exam-question}
+Wie unterscheiden sich systematisches Review und Meta-Analyse, und wie werden Forest Plot, Heterogenität und Funnel Plot interpretiert?
+:::
+
+:::: {.exam-answer}
+
+- **Systematisches Review:** systematische Übersichtsarbeit zu einer klar formulierten Fragestellung
+  - Verwendet vorab festgelegte Ein- und Ausschlusskriterien.
+  - Sucht relevante Studien nachvollziehbar und möglichst vollständig.
+  - Bewertet die eingeschlossenen Studien, insbesondere ihr Verzerrungsrisiko.
+  - Fasst die Ergebnisse strukturiert zusammen.
+  - Eine statistische Zusammenfassung ist nicht zwingend erforderlich.
+  - Beispiel: systematische Suche und Bewertung aller geeigneten Studien zu elektronischen Medikationswarnungen und Medikationsfehlern
+
+- **Meta-Analyse:** statistische Zusammenfassung der Ergebnisse mehrerer Studien
+  - Sie ist häufig der quantitative Teil eines systematischen Reviews.
+  - Vergleichbare Effektschätzer werden gewichtet zu einem Gesamteffekt zusammengeführt.
+  - Studien mit höherer Präzision erhalten üblicherweise ein größeres Gewicht.
+  - Eine Meta-Analyse ist nur sinnvoll, wenn Fragestellungen, Populationen, Interventionen und Endpunkte ausreichend vergleichbar sind.
+  - Beispiel: Zusammenfassung der Effekte vergleichbarer Studien zu elektronischen Medikationswarnungen auf die Häufigkeit von Verordnungsfehlern
+
+**Elemente eines Forest Plots:**
+
+| Element | Bedeutung |
+|---|---|
+| **Quadrat** | Effektschätzer einer einzelnen Studie |
+| **Größe des Quadrats** | üblicherweise statistisches Gewicht der Studie |
+| **Horizontale Linie** | Konfidenzintervall der einzelnen Studie |
+| **Vertikale Linie** | Linie des Nulleffekts |
+| **Raute** | gepoolter Gesamteffekt, sofern eine Meta-Analyse durchgeführt wurde |
+| **Breite der Raute** | Konfidenzintervall des Gesamteffekts |
+
+- Bei Differenzmaßen liegt der Nulleffekt bei `0`.
+- Bei Verhältnismaßen wie Risk Ratio, Odds Ratio oder Hazard Ratio liegt er bei `1`.
+- Schneidet ein Konfidenzintervall die Linie des Nulleffekts, ist das Ergebnis auf dem entsprechenden Signifikanzniveau nicht statistisch signifikant.
+  - Das beweist nicht, dass kein Effekt besteht.
+- Welche Seite einen Nutzen oder Schaden anzeigt, ergibt sich aus Endpunkt, Effektmaß und Achsenbeschriftung.
+  - „Links“ bedeutet nicht automatisch „besser“.
+
+- **Heterogenität:** Unterschiede zwischen den eingeschlossenen Studien
+  - **Klinische Heterogenität:** Unterschiede bei Populationen, Interventionen oder Endpunkten
+  - **Methodische Heterogenität:** Unterschiede bei Studiendesign, Messverfahren oder Verzerrungsrisiko
+  - **Statistische Heterogenität:** Unterschiede zwischen den Effektschätzern, die nicht allein durch Stichprobenfehler erklärt werden
+  - Die Statistik `I²` beschreibt, welcher Anteil der beobachteten Variabilität auf statistische Heterogenität statt auf Stichprobenfehler zurückgeführt wird.
+  - Ein hohes `I²` weist auf eine stärkere Inkonsistenz hin, erklärt aber weder deren Ursache noch ihre klinische Bedeutung.
+  - `I²` muss zusammen mit dem Forest Plot sowie den klinischen und methodischen Unterschieden der Studien beurteilt werden.
+  - Bei wenigen Studien ist die Schätzung von `I²` sehr unsicher.
+
+- **Funnel Plot:** Streudiagramm aus Effektschätzer und Studienpräzision
+  - Größere und präzisere Studien liegen typischerweise im oberen Bereich.
+  - Kleinere Studien streuen wegen ihrer größeren Unsicherheit breiter im unteren Bereich.
+  - Eine annähernd symmetrische Trichterform spricht gegen deutlich erkennbare Small-Study-Effekte, schließt fehlende Studien aber nicht aus.
+  - Eine Asymmetrie kann durch selektive Veröffentlichung, methodische Mängel kleiner Studien, klinische Heterogenität, ungeeignete Effektmaße oder Zufall entstehen.
+  - Sie ist deshalb kein Beweis für Publikationsbias.
+  - Bei weniger als ungefähr zehn Studien ist die Interpretation besonders unsicher.
+
+Merksatz: Das systematische Review sucht und bewertet die Evidenz, die Meta-Analyse kombiniert geeignete Ergebnisse, der Forest Plot zeigt Effekte und Präzision, `I²` beschreibt statistische Heterogenität und der Funnel Plot sucht nach Small-Study-Effekten, beweist aber keinen Publikationsbias.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Ein Random-Effects-Modell geht davon aus, dass die Studien unterschiedliche, aber zusammenhängende wahre Effekte untersuchen. Es berücksichtigt die Variabilität zwischen den Studien im statistischen Modell, erklärt oder beseitigt die Heterogenität jedoch nicht.
+
+**Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA)** unterstützt die vollständige und transparente Berichterstattung eines systematischen Reviews. Die Einhaltung der PRISMA-Checkliste garantiert nicht automatisch eine methodisch hochwertige Durchführung.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Higgins JPT, Thomas J, Chandler J, Cumpston M, Li T, Page MJ, Welch VA, Hrsg.: *Cochrane Handbook for Systematic Reviews of Interventions*. Version 6.5, Cochrane, 2024, Kapitel 10, insbesondere Abschnitte 10.2 und 10.10, sowie Kapitel 13, Abschnitt 13.3.4.  
+  <https://www.cochrane.org/handbook>
+- Page MJ, McKenzie JE, Bossuyt PM et al.: *The PRISMA 2020 statement: an updated guideline for reporting systematic reviews*. BMJ 2021;372:n71.  
+  DOI: <https://doi.org/10.1136/bmj.n71>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+::: {.exam-question}
+Was bewirken Randomisierung und verdeckte Zuteilung, und wie unterscheiden sich einfache, Block- und stratifizierte Randomisierung?
+:::
+
+:::: {.exam-answer}
+
+- **Randomisierung:** Teilnehmende werden durch ein nicht vorhersagbares Zufallsverfahren den Studiengruppen zugeteilt.
+  - Bekannte und unbekannte prognostische Faktoren werden dadurch im statistischen Erwartungswert vergleichbar auf die Gruppen verteilt.
+  - Sie schafft eine wesentliche Grundlage für die unverzerrte Schätzung eines Interventionseffekts und die statistische Inferenz.
+  - Sie garantiert jedoch weder gleich große Gruppen noch eine vollständige Übereinstimmung aller Ausgangsmerkmale.
+
+- **Verdeckte Gruppenzuteilung (allocation concealment):** Die nächste Zuteilung bleibt den Personen, die Teilnehmende in die Studie aufnehmen, bis zum Abschluss der Aufnahmeentscheidung verborgen.
+  - Dadurch kann die Kenntnis der nächsten Studiengruppe nicht beeinflussen, ob eine Person in die Studie aufgenommen wird.
+  - Geeignete Verfahren sind beispielsweise eine zentrale webbasierte Randomisierung oder korrekt vorbereitete, fortlaufend nummerierte, undurchsichtige und versiegelte Behältnisse.
+  - Auch eine korrekt erzeugte Zufallsfolge kann ohne Zuteilungsverdeckung manipuliert oder umgangen werden.
+
+- **Einfache Randomisierung:** Jede Zuteilung erfolgt unabhängig mit einer vorher festgelegten Wahrscheinlichkeit.
+  - Bei einer 1:1-Zuteilung besitzt jede Person dieselbe Wahrscheinlichkeit für Intervention oder Kontrolle.
+  - Das Verfahren ist schwer vorherzusagen, kann aber insbesondere bei kleinen Studien zu ungleichen Gruppengrößen oder unausgeglichenen Ausgangsmerkmalen führen.
+
+- **Blockrandomisierung:** Innerhalb jedes Blocks wird eine festgelegte Zahl von Zuteilungen in zufälliger Reihenfolge auf die Studiengruppen verteilt.
+  - Bei einem Block von vier Personen und einer 1:1-Zuteilung werden beispielsweise jeweils zwei Personen der Intervention und zwei der Kontrolle zugeteilt.
+  - Dadurch bleiben die Gruppengrößen während der Rekrutierung annähernd ausgeglichen.
+  - Kleine, feste und bekannte Blockgrößen können Zuteilungen vorhersagbar machen. Deshalb werden häufig zufällig wechselnde Blockgrößen verwendet und geheim gehalten.
+
+- **Stratifizierte Randomisierung:** Vor der Randomisierung werden wenige prognostisch wichtige Merkmale als Stratifizierungsfaktoren festgelegt.
+  - Innerhalb jedes Stratum erfolgt eine eigene Randomisierung, gewöhnlich als Blockrandomisierung.
+  - Beispiel: Bei einer Multicenter-Studie wird getrennt nach Studienzentrum und Krankheitsschwere randomisiert.
+  - Dadurch werden die Studiengruppen hinsichtlich der ausgewählten Faktoren besser ausgeglichen.
+  - Zu viele Stratifizierungsfaktoren erzeugen zahlreiche kleine Strata und erschweren Durchführung und Auswertung.
+  - Die verwendeten Stratifizierungsfaktoren sollen bei der statistischen Analyse berücksichtigt werden.
+
+Merksatz: Randomisierung erzeugt eine unvorhersehbare Zuteilung, die Zuteilungsverdeckung schützt sie vor Beeinflussung; Blockrandomisierung gleicht Gruppengrößen und stratifizierte Randomisierung ausgewählte prognostische Merkmale aus.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+**Zuteilungsverdeckung ist nicht Verblindung:**
+
+- Die Zuteilungsverdeckung wirkt **vor und bis zur Gruppenzuteilung** und schützt vor Selektionsbias.
+- Die Verblindung wirkt **nach der Gruppenzuteilung** und soll unter anderem Behandlungs- und Bewertungsbias vermindern.
+- Wechselnde Zuteilung, Geburtsdatum oder Krankenaktennummer sind vorhersehbar und daher keine Randomisierung.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12. Das Kursbuch nennt die „Prinzipien der Randomisierung“, definiert die einzelnen Verfahren jedoch nicht näher.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- International Council for Harmonisation of Technical Requirements for Pharmaceuticals for Human Use (ICH): *E9 – Statistical Principles for Clinical Trials*. Step-4-Fassung, 1998, Abschnitt 2.3.2 „Randomisation“, S. 9–10.  
+  <https://database.ich.org/sites/default/files/E9_Guideline.pdf>
+
+- Hopewell S, Chan A-W, Collins GS et al.: *CONSORT 2025 explanation and elaboration: updated guideline for reporting randomised trials*. BMJ. 2025;389:e081124. Insbesondere Items 17b „Type of randomisation“ und 18 „Allocation concealment“.  
+  <https://doi.org/10.1136/bmj-2024-081124>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+::: {.exam-question}
+Welche Vor- und Nachteile haben Multicenter-Studien?
+:::
+
+:::: {.exam-answer}
+
+- **Multicenter-Studie:** Eine Studie wird nach einem gemeinsamen Studienprotokoll an mehreren räumlich getrennten Studienzentren durchgeführt.
+  - Sie kann interventionell oder beobachtend sowie randomisiert oder nicht randomisiert sein.
+  - Beispiel: Mehrere Universitätskliniken untersuchen gemeinsam die Behandlung einer seltenen Erkrankung.
+
+- **Vorteile:**
+  - **Schnellere Rekrutierung:** Mehr Zentren können in kürzerer Zeit mehr Teilnehmende aufnehmen.
+  - **Größere Stichprobe:** Seltene Erkrankungen oder seltene Endpunkte können eher mit ausreichender Fallzahl untersucht werden.
+  - **Breitere Studienpopulation:** Unterschiedliche Regionen, Einrichtungen und Versorgungsbedingungen können einbezogen werden.
+  - **Bessere Übertragbarkeit:** Ergebnisse können eher auf verschiedene Versorgungssituationen übertragbar sein, sofern die Zentren und Teilnehmenden ausreichend vielfältig ausgewählt wurden.
+  - **Prüfung der praktischen Umsetzbarkeit:** Eine Intervention wird nicht nur unter den Bedingungen eines einzelnen spezialisierten Zentrums erprobt.
+
+- **Nachteile:**
+  - **Höherer Koordinationsaufwand:** Protokoll, Schulungen, Dokumentation, Monitoring und Kommunikation müssen standortübergreifend abgestimmt werden.
+  - **Höhere Kosten:** Mehr Personal, technische Infrastruktur und Qualitätskontrollen werden benötigt.
+  - **Unterschiede zwischen Zentren:** Patientenpopulationen, Behandlungspraxis, Erfahrung und Messverfahren können voneinander abweichen.
+  - **Zentrumseffekte:** Unterschiede im Ergebnis können teilweise durch das Zentrum und nicht durch die untersuchte Intervention verursacht sein.
+  - **Ungleiche Rekrutierung:** Wenige große und viele sehr kleine Zentren können die statistische Auswertung und Interpretation erschweren.
+  - **Komplexeres Datenmanagement:** Datenformate, Definitionen, Datenschutz und Datenqualität müssen über alle Zentren hinweg vereinheitlicht werden.
+
+- **Wichtige Voraussetzungen:**
+  - gemeinsames Studienprotokoll und einheitliche Definitionen
+  - standardisierte Schulung und Durchführung
+  - zentrale Koordination, Datenhaltung und Qualitätssicherung
+  - vorab festgelegte Berücksichtigung des Zentrums bei Randomisierung und statistischer Analyse
+  - Prüfung, ob sich der Interventionseffekt zwischen Zentren wesentlich unterscheidet
+
+Merksatz: Multicenter-Studien erleichtern die Rekrutierung und können die Übertragbarkeit verbessern, erhöhen aber Koordinationsaufwand, Datenheterogenität und statistische Komplexität.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Bei randomisierten Multicenter-Studien wird häufig innerhalb der einzelnen Zentren randomisiert beziehungsweise nach Zentrum stratifiziert. Dadurch bleiben die Studiengruppen innerhalb der Zentren besser ausgeglichen. Das Zentrum soll anschließend entsprechend dem vorab festgelegten Analyseplan berücksichtigt werden.
+
+Ein statistischer Unterschied zwischen Zentren bedeutet nicht automatisch, dass die Intervention an jedem Zentrum unterschiedlich wirkt. Ein allgemeiner **Zentrumseffekt** ist von einer **Interaktion zwischen Zentrum und Intervention** zu unterscheiden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12. Das Kursbuch nennt Multicenter-Studien als Lerninhalt, erläutert sie aber nicht näher.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- International Council for Harmonisation of Technical Requirements for Pharmaceuticals for Human Use (ICH): *E9 – Statistical Principles for Clinical Trials*. Step-4-Fassung, 1998, Abschnitte 2.3.2 „Randomisation“, S. 9–10, und 3.2 „Multicentre Trials“, S. 12–13.  
+  <https://database.ich.org/sites/default/files/E9_Guideline.pdf>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+## Deskriptive Statistik und statistische Unsicherheit
+
+::: {.exam-question}
+Welche Maßzahlen beschreiben Lage und Streuung einer Verteilung?
+:::
+
+:::: {.exam-answer}
+
+Maßzahlen der **Lage** beschreiben einen typischen oder zentralen Wert. Maßzahlen der **Streuung** beschreiben, wie stark die Einzelwerte voneinander beziehungsweise von einem Lagewert abweichen.
+
+**Lagemaße:**
+
+- **Arithmetischer Mittelwert:** Summe aller Werte geteilt durch ihre Anzahl
+  - Berechnung: $\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i$
+  - Er berücksichtigt die Größe jedes Einzelwerts und reagiert deshalb empfindlich auf Ausreißer.
+  - Beispiel: mittlerer systolischer Blutdruck einer annähernd symmetrisch verteilten Stichprobe
+
+- **Median:** mittlerer Wert der geordneten Beobachtungen
+  - Jeweils mindestens die Hälfte der Werte liegt unterhalb beziehungsweise oberhalb des Medians.
+  - Er entspricht dem 50-Prozent-Quantil und ist gegenüber einzelnen Extremwerten robust.
+  - Beispiel: mediane Krankenhausverweildauer bei einer rechtsschiefen Verteilung
+
+- **Modus oder Modalwert:** am häufigsten vorkommende Ausprägung
+  - Er kann auch für nominalskalierte Merkmale bestimmt werden.
+  - Eine Verteilung kann mehrere Modalwerte besitzen.
+  - Beispiel: häufigste Blutgruppe in einer Stichprobe
+
+**Positionsmaße:**
+
+- **Quantil:** Wert, unterhalb dessen ein festgelegter Anteil der geordneten Beobachtungen liegt
+  - Das erste Quartil $Q_1$ entspricht dem 25-Prozent-Quantil, der Median dem 50-Prozent-Quantil und das dritte Quartil $Q_3$ dem 75-Prozent-Quantil.
+  - Beispiel: Das 90-Prozent-Quantil der Laborbearbeitungszeit gibt an, bis zu welcher Zeit 90 Prozent der Aufträge bearbeitet wurden.
+
+**Streuungsmaße:**
+
+- **Spannweite:** Differenz zwischen größtem und kleinstem Wert
+  - Berechnung: $\mathrm{Spannweite}=x_{\max}-x_{\min}$
+  - Sie ist leicht verständlich, wird aber ausschließlich durch die beiden Extremwerte bestimmt.
+
+- **Interquartilsabstand (Interquartile Range, IQR):** Abstand zwischen dem dritten und ersten Quartil
+  - Berechnung: $\mathrm{IQR}=Q_3-Q_1$
+  - Er umfasst die mittleren 50 Prozent der geordneten Werte und ist gegenüber Ausreißern robust.
+  - Beispiel: Angabe der Verweildauer als Median mit erstem und drittem Quartil
+
+- **Varianz:** Maß der mittleren quadrierten Abweichung der Werte vom Mittelwert
+  - Für die korrigierte Stichprobenvarianz gilt: $s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2$.
+  - Durch die Quadrierung erhalten größere Abweichungen ein hohes Gewicht.
+  - Die Einheit der Varianz ist das Quadrat der ursprünglichen Maßeinheit.
+
+- **Standardabweichung (Standard Deviation, SD):** Quadratwurzel der Varianz
+  - Berechnung: $s=\sqrt{s^2}$
+  - Sie besitzt dieselbe Maßeinheit wie die beobachteten Werte.
+  - Sie eignet sich besonders zusammen mit dem Mittelwert für annähernd symmetrische Verteilungen ohne ausgeprägte Ausreißer.
+  - Beispiel: mittlerer Hämoglobinwert mit Standardabweichung
+
+**Auswahl geeigneter Maßzahlen:**
+
+- Bei annähernd symmetrischen Verteilungen ohne ausgeprägte Ausreißer werden häufig Mittelwert und Standardabweichung gemeinsam angegeben.
+- Bei schiefen Verteilungen oder ausgeprägten Ausreißern werden häufig Median und erstes sowie drittes Quartil oder der Interquartilsabstand angegeben.
+- Bei kategorialen Daten werden vor allem absolute und relative Häufigkeiten berichtet; als Lagemaß kommt gegebenenfalls der Modus infrage.
+- Die Verteilung sollte zusätzlich durch eine geeignete Tabelle oder Grafik geprüft werden.
+
+Merksatz: Mittelwert und Standardabweichung passen vor allem zu annähernd symmetrischen Verteilungen; Median und Interquartilsabstand sind bei schiefen Verteilungen und Ausreißern robuster.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Standardabweichung und Standardfehler beantworten unterschiedliche Fragen:** Die Standardabweichung beschreibt die Streuung der Einzelwerte, der Standardfehler die Unsicherheit eines Stichprobenkennwerts.
+- Die bekannte Näherung, dass etwa 68 Prozent der Werte innerhalb einer und etwa 95 Prozent innerhalb zweier Standardabweichungen vom Mittelwert liegen, gilt nur für eine annähernde Normalverteilung.
+- Für die Berechnung von Quartilen existieren verschiedene Konventionen. Daher können Statistikprogramme bei kleinen Datensätzen geringfügig unterschiedliche Quartile ausgeben.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12. Das Kursbuch nennt die Maßzahlen als Lerninhalte, definiert sie aber nicht im Einzelnen.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Campbell MJ: *Statistics at Square One*. 12. Auflage, Wiley-Blackwell, 2021, Kapitel 2 „Data Display and Summary“, S. 15–30, sowie Kapitel 3 „Summary Statistics for Quantitative Data“, S. 31–45.  
+  <https://doi.org/10.1002/9781119402350>
+
+- National Institute of Standards and Technology (NIST)/SEMATECH: *e-Handbook of Statistical Methods*. Online-Ausgabe, Abschnitt 1.3.5.1 „Measures of Location“ und Abschnitt 1.3.5.6 „Measures of Scale“.  
+  <https://doi.org/10.18434/M32189>  
+  <https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm>  
+  <https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+::: {.exam-question}
+Wie werden Konfidenzintervall, p-Wert, α- und β-Fehler sowie statistische Power interpretiert?
+:::
+
+:::: {.exam-answer}
+
+Statistische Inferenz verwendet Stichprobendaten, um Aussagen über unbekannte Parameter einer Grundgesamtheit zu treffen. Diese Aussagen bleiben mit Unsicherheit verbunden.
+
+- **Nullhypothese ($H_0$):** zu prüfende Annahme, häufig „kein Unterschied“ oder „kein Zusammenhang“
+  - Bei einer Mittelwertdifferenz lautet der Nullwert meist 0.
+  - Bei Verhältnisgrößen wie relativem Risiko oder Odds Ratio lautet der Nullwert meist 1.
+
+- **Konfidenzintervall (KI):** Bereich von Parameterwerten, die unter den Modellannahmen mit den beobachteten Daten vereinbar sind
+  - Der Punktschätzer beschreibt den geschätzten Effekt; die Breite des Intervalls beschreibt seine Präzision.
+  - Ein schmales Intervall bedeutet höhere, ein breites Intervall geringere Präzision.
+  - Bei einem 95-%-Konfidenzverfahren enthalten langfristig 95 % der auf dieselbe Weise berechneten Intervalle den wahren Parameter, sofern die Modellannahmen erfüllt sind.
+  - Das konkrete Intervall sollte nicht als Bereich interpretiert werden, in dem der Parameter mit 95 % Wahrscheinlichkeit liegt.
+
+- **p-Wert:** Wahrscheinlichkeit, unter der Nullhypothese und den weiteren Modellannahmen ein mindestens so extremes Testergebnis wie das beobachtete zu erhalten
+  - Ein kleiner p-Wert zeigt eine stärkere Unvereinbarkeit der Daten mit der Nullhypothese beziehungsweise dem zugrunde gelegten Nullmodell.
+  - Er gibt weder die Wahrscheinlichkeit der Nullhypothese noch die Größe oder klinische Bedeutung eines Effekts an.
+
+- **Signifikanzniveau ($\alpha$):** vor der Auswertung festgelegte Schwelle für die Testentscheidung
+  - Häufig wird $\alpha=0{,}05$ gewählt; dieser Wert ist eine Konvention und keine naturgegebene Grenze.
+  - Gilt $p\leq\alpha$, wird die Nullhypothese nach der festgelegten Entscheidungsregel verworfen.
+  - Das Signifikanzniveau entspricht bei wiederholter korrekter Anwendung der maximal zugelassenen Wahrscheinlichkeit eines Fehlers 1. Art.
+
+- **α-Fehler oder Fehler 1. Art:** Eine tatsächlich zutreffende Nullhypothese wird verworfen.
+  - Beispiel: Eine Studie kommt zu dem Schluss, dass eine Therapie wirksam ist, obwohl in der definierten Grundgesamtheit kein entsprechender Effekt besteht.
+
+- **β-Fehler oder Fehler 2. Art:** Eine falsche Nullhypothese wird nicht verworfen, obwohl der vorab festgelegte Effekt tatsächlich besteht.
+  - Beispiel: Eine klinisch relevante Wirksamkeit wird in der Studie nicht erkannt.
+
+- **Statistische Power oder Teststärke:** Wahrscheinlichkeit, die Nullhypothese zu verwerfen, wenn die festgelegte Alternativhypothese tatsächlich gilt
+  - Berechnung: $\mathrm{Power}=1-\beta$
+  - Sie hängt unter anderem von der angenommenen Effektgröße, Stichprobengröße, Variabilität, dem Signifikanzniveau und dem Studiendesign ab.
+  - Eine häufig verwendete Planungsgröße ist eine Power von 80 oder 90 Prozent; sie stellt jedoch keine allgemeine Qualitätsgarantie dar.
+
+| Testentscheidung | $H_0$ ist tatsächlich richtig | Festgelegte Alternativhypothese ist tatsächlich richtig |
+|---|---|---|
+| $H_0$ verwerfen | α-Fehler | richtige Entscheidung mit Wahrscheinlichkeit $1-\beta$ |
+| $H_0$ nicht verwerfen | richtige Entscheidung mit Wahrscheinlichkeit $1-\alpha$ | β-Fehler |
+
+**Zusammenhang zwischen Konfidenzintervall und p-Wert:**
+
+- Bei korrespondierenden zweiseitigen Verfahren entspricht ein 95-%-Konfidenzintervall einem Test mit $\alpha=0{,}05$.
+- Schließt das Intervall den Nullwert aus, ergibt sich beim entsprechenden Test in der Regel $p<0{,}05$.
+- Enthält das Intervall den Nullwert, wird die Nullhypothese auf diesem Signifikanzniveau nicht verworfen.
+- Das Konfidenzintervall zeigt zusätzlich, welche Effektgrößen mit den Daten vereinbar sind.
+
+**Beispiel:** Eine Studie ergibt für die Blutdrucksenkung eine Mittelwertdifferenz von −4 mmHg mit einem 95-%-Konfidenzintervall von −7 bis −1 mmHg und $p=0{,}01$.
+
+- Die Daten sprechen unter den Modellannahmen gegen eine Mittelwertdifferenz von 0.
+- Mit den Daten vereinbare Effektgrößen liegen ungefähr zwischen −7 und −1 mmHg.
+- Ob eine Senkung um 4 mmHg klinisch relevant ist, kann nicht allein aus p-Wert oder Konfidenzintervall entschieden werden.
+
+Merksatz: Das Konfidenzintervall beschreibt Effektgröße und Präzision, der p-Wert die Vereinbarkeit der Daten mit dem Nullmodell, der α-Fehler ein falsch positives und der β-Fehler ein falsch negatives Testergebnis; die Power beträgt $1-\beta$.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- $p>0{,}05$ beweist weder die Gleichheit zweier Gruppen noch die Abwesenheit eines Effekts. Ein breites Konfidenzintervall kann sowohl relevante Vorteile als auch Nachteile einschließen.
+- Bei mehreren statistischen Tests steigt ohne geeignete Kontrolle die Wahrscheinlichkeit mindestens eines α-Fehlers.
+- Eine statistisch signifikante Differenz muss nicht klinisch bedeutsam sein. Umgekehrt kann ein klinisch wichtiger Effekt wegen geringer Präzision statistisch nicht eindeutig nachweisbar sein.
+- Nach Abschluss einer Studie sollte keine aus dem beobachteten Effekt berechnete Post-hoc-Power zur Erklärung des Ergebnisses verwendet werden. Maßgeblich sind Effektgröße und Konfidenzintervall.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12. Das Kursbuch nennt Konfidenzintervalle als Lerninhalt, definiert die weiteren Begriffe aber nicht einzeln.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Campbell MJ: *Statistics at Square One*. 12. Auflage, Wiley-Blackwell, 2021, Kapitel 7 „Statements of Probability and Confidence Intervals“, S. 91–101, sowie Kapitel 8 „P Values, Power, Type I and Type II Errors“, S. 102–117.  
+  <https://doi.org/10.1002/9781119402350>
+
+- Wasserstein RL, Lazar NA: *The ASA Statement on p-Values: Context, Process, and Purpose*. The American Statistician 2016;70(2):129–133.  
+  <https://doi.org/10.1080/00031305.2016.1154108>
+
+- Greenland S, Senn SJ, Rothman KJ et al.: *Statistical Tests, P Values, Confidence Intervals, and Power: A Guide to Misinterpretations*. European Journal of Epidemiology 2016;31:337–350.  
+  <https://doi.org/10.1007/s10654-016-0149-3>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+## Statistische Methoden
+
+::: {.exam-question}
+Nach welchen Kriterien wird ein statistisches Verfahren ausgewählt?
+:::
+
+:::: {.exam-answer}
+
+Die Auswahl beginnt mit der **inhaltlichen Fragestellung**. Danach werden Endpunkttyp, Studiendesign und Abhängigkeit der Beobachtungen berücksichtigt.
+
+```{mermaid}
+%%| fig-cap: "Vereinfachte Auswahl häufig verwendeter statistischer Verfahren"
+%%| label: fig-auswahl-statistik
+
+flowchart TB
+    A{"Was ist die Hauptfrage?"}
+
+    A --> B["Gruppen vergleichen"]
+    A --> C["Zusammenhang untersuchen"]
+    A --> D["Einflussgrößen berücksichtigen"]
+    A --> E["Zeit bis zum Ereignis analysieren"]
+
+    B --> F{"Art und Struktur des Endpunkts"}
+
+    F -->|"stetig, zwei Gruppen"| G{"Messungen gepaart?"}
+    G -->|"nein"| H["Welch-t-Test"]
+    G -->|"ja"| I["gepaarter t-Test"]
+
+    F -->|"stetig, mindestens drei Gruppen"| J["Varianzanalyse"]
+    F -->|"kategorial"| K["Chi-Quadrat-Test oder exakter Fisher-Test"]
+
+    C --> L["Pearson- oder Spearman-Korrelation"]
+
+    D --> M{"Art des Endpunkts"}
+    M -->|"stetig"| N["lineare Regression"]
+    M -->|"binär"| O["logistische Regression"]
+
+    E --> P["Kaplan-Meier-Methode, Log-Rank-Test oder Cox-Regression"]
+```
+
+### Die sieben häufigsten Verfahrensgruppen
+
+1. **t-Test für unabhängige Gruppen:** vergleicht Mittelwerte zweier unabhängiger Gruppen
+   - Der Welch-t-Test ist meist geeignet, wenn gleiche Varianzen nicht vorausgesetzt werden sollen.
+   - Beispiel: mittlerer systolischer Blutdruck unter zwei verschiedenen Therapien
+
+2. **t-Test für verbundene Stichproben:** vergleicht den Mittelwert gepaarter Differenzen
+   - Beispiel: Blutdruck derselben Patienten vor und nach einer Behandlung
+
+3. **Varianzanalyse:** vergleicht die Mittelwerte von mindestens drei Gruppen
+   - Ein signifikantes Ergebnis zeigt zunächst nur, dass nicht alle Gruppenmittelwerte gleich sind.
+   - Beispiel: mittlerer Blutdruck unter drei Therapien
+
+4. **Chi-Quadrat- oder exakter Fisher-Test:** untersucht den Zusammenhang kategorialer Merkmale
+   - Der exakte Fisher-Test kommt insbesondere bei kleinen erwarteten Zellhäufigkeiten in kleinen Kontingenztafeln infrage.
+   - Beispiel: Zusammenhang zwischen Therapiegruppe und Wundinfektion
+
+5. **Korrelation:** beschreibt Richtung und Stärke eines Zusammenhangs
+   - Die Pearson-Korrelation erfasst lineare Zusammenhänge stetiger Variablen.
+   - Die Spearman-Rangkorrelation erfasst monotone Zusammenhänge anhand der Rangwerte.
+   - Eine Korrelation belegt keine Kausalität.
+
+6. **Regressionsanalyse:** untersucht den Zusammenhang eines Endpunkts mit einer oder mehreren Einflussgrößen
+   - lineare Regression bei einem stetigen Endpunkt
+   - logistische Regression bei einem binären Endpunkt
+   - Beispiel: Zusammenhang von Alter und Begleiterkrankungen mit dem Auftreten einer postoperativen Komplikation
+
+7. **Survivalanalyse:** analysiert die Zeit bis zu einem Ereignis und kann Zensierungen berücksichtigen
+   - Kaplan-Meier-Methode zur Schätzung von Ereignis- oder Überlebenswahrscheinlichkeiten
+   - Log-Rank-Test zum Vergleich von Gruppen
+   - Cox-Regression zur Berücksichtigung mehrerer Einflussgrößen
+
+Vor der endgültigen Auswahl müssen zusätzlich geprüft werden:
+
+- Unabhängigkeit, Paarung oder Clusterung der Beobachtungen
+- Anzahl der Gruppen und Messzeitpunkte
+- relevante Modellannahmen
+- fehlende Werte und Zensierungen
+- vorab festgelegter Endpunkt und gewünschtes Effektmaß
+
+Merksatz: Erst die Fragestellung, dann Endpunkttyp und Studiendesign – erst danach wird das statistische Verfahren ausgewählt.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Rangbasierte Verfahren wie Mann-Whitney-U-Test, Wilcoxon-Vorzeichen-Rang-Test und Kruskal-Wallis-Test sind nicht automatisch bei jeder Abweichung von der Normalverteilung erforderlich. Sie prüfen teilweise andere Hypothesen als t-Test und Varianzanalyse und sollten zur wissenschaftlichen Fragestellung passen.
+
+Wiederholte Messungen, Multicenter-Daten und andere Clusterstrukturen können gemischte Modelle oder Verfahren für korrelierte Beobachtungen erfordern.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Campbell MJ: *Statistics at Square One*. 12. Auflage, Wiley-Blackwell, 2021, Kapitel 14 „Study Design and Choosing a Statistical Test“, S. 215–226.  
+  <https://doi.org/10.1002/9781119402350.ch14>
+- Mansournia MA, Collins GS, Nielsen RO et al.: *A CHecklist for statistical Assessment of Medical Papers (the CHAMP statement): explanation and elaboration*. British Journal of Sports Medicine, 2021.  
+  <https://doi.org/10.1136/bjsports-2020-103652>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+::: {.exam-question}
+Wofür werden lineare Regression und Varianzanalyse eingesetzt, und wie hängen sie zusammen?
+:::
+
+:::: {.exam-answer}
+
+Lineare Regression und Varianzanalyse gehören zur Familie der **linearen Modelle**. In ihrer klassischen Form modellieren sie den erwarteten Mittelwert eines stetigen Endpunkts.
+
+- **Lineare Regression:** untersucht den Zusammenhang eines stetigen Endpunkts mit einer oder mehreren Einflussgrößen
+  - Bei einer stetigen Einflussgröße beschreibt der Regressionskoeffizient, welche mittlere Differenz des Endpunkts mit einem Unterschied von einer Einheit verbunden ist.
+  - Bei einer kategorialen Einflussgröße beschreibt er die mittlere Differenz gegenüber einer festgelegten Referenzgruppe.
+  - In einem Modell mit mehreren Einflussgrößen gilt die Interpretation jeweils bei gleichen Werten der übrigen Modellvariablen.
+  - Die Regression kann zur Beschreibung von Zusammenhängen, zur statistischen Adjustierung oder zur Vorhersage eingesetzt werden.
+  - Beispiel: Zusammenhang von Alter und Body-Mass-Index mit dem systolischen Blutdruck
+
+- **Varianzanalyse (Analysis of Variance, ANOVA):** vergleicht den Mittelwert eines stetigen Endpunkts zwischen Gruppen
+  - Die einfaktorielle Varianzanalyse untersucht einen kategorialen Faktor.
+  - Ihr globaler F-Test prüft, ob alle Gruppenmittelwerte gleich sind.
+  - Ein signifikantes Ergebnis bedeutet zunächst nur, dass sich mindestens ein Gruppenmittelwert unterscheidet.
+  - Gezielte Kontraste oder korrigierte Mehrfachvergleiche zeigen, zwischen welchen Gruppen Unterschiede bestehen.
+  - Mehrfaktorielle Modelle können mehrere Faktoren und deren Wechselwirkungen untersuchen.
+  - Beispiel: Vergleich des mittleren systolischen Blutdrucks unter drei Therapien
+
+- **Zusammenhang beider Verfahren:** Die Varianzanalyse ist ein Spezialfall des linearen Modells.
+  - Gruppen werden durch kategoriale Variablen und daraus abgeleitete Indikatorvariablen dargestellt.
+  - Die **Kovarianzanalyse (Analysis of Covariance, ANCOVA)** kombiniert kategoriale Faktoren mit stetigen Kovariaten.
+  - Regression und Varianzanalyse unterscheiden sich daher vor allem in Fragestellung und Darstellung, nicht in ihrer mathematischen Grundstruktur.
+
+Merksatz: Die lineare Regression modelliert einen stetigen Endpunkt durch Einflussgrößen; die Varianzanalyse ist das entsprechende lineare Modell für Mittelwertvergleiche zwischen Gruppen.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Der Name „Varianzanalyse“ ist missverständlich: Untersucht werden Mittelwertunterschiede, indem erklärte und nicht erklärte Variabilität miteinander verglichen werden.
+- Wichtige Voraussetzungen sind eine geeignete lineare Modellstruktur, unabhängige Modellfehler und eine annähernd konstante Residualvarianz. Die Normalitätsannahme betrifft die Residuen und ist insbesondere für Signifikanztests und Konfidenzintervalle bei kleinen Stichproben relevant.
+- Wiederholte Messungen oder Patienten aus mehreren Zentren benötigen Verfahren, welche die Abhängigkeiten berücksichtigen, beispielsweise gemischte Modelle.
+- Weder Regression noch Varianzanalyse beweisen ohne geeignetes Studiendesign einen kausalen Zusammenhang.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Campbell MJ: *Statistics at Square One*. 12. Auflage, Wiley-Blackwell, 2021, Kapitel 11 „Correlation and Regression“, S. 165–182, und Kapitel 14 „Study Design and Choosing a Statistical Test“, S. 215–226.  
+  <https://doi.org/10.1002/9781119402350>
+- National Institute of Standards and Technology: *NIST/SEMATECH e-Handbook of Statistical Methods*, Abschnitt 1.3.5.5 „Multi-factor Analysis of Variance“.  
+  <https://www.itl.nist.gov/div898/handbook/eda/section3/eda355.htm>
+- Pennsylvania State University: *STAT 502 – Analysis of Variance and Design of Experiments*, Lesson 4, Abschnitt 4.4 „Dummy Variable Regression“.  
+  <https://online.stat.psu.edu/stat502/Lesson04>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+::: {.exam-question}
+Wie werden Zeit-bis-Ereignis-Daten bei Zensierung mit Kaplan-Meier-Methode, Log-Rank-Test und Cox-Regression analysiert?
+:::
+
+:::: {.exam-answer}
+
+**Zeit-bis-Ereignis-Daten** enthalten zwei Informationen:
+
+- die beobachtete Zeit bis zu einem festgelegten Ereignis
+- die Angabe, ob das Ereignis tatsächlich beobachtet oder die Beobachtung zensiert wurde
+
+Beispiel: Untersucht wird die Zeit von Therapiebeginn bis zu einem Tumorrezidiv. Ist bis zum Studienende kein Rezidiv aufgetreten, wird die bisherige ereignisfreie Beobachtungszeit berücksichtigt und anschließend rechtszensiert.
+
+- **Zensierung:** Die genaue Ereigniszeit ist nicht vollständig bekannt.
+  - Bei der häufigen Rechtszensierung ist nur bekannt, dass das Ereignis bis zum letzten Beobachtungszeitpunkt noch nicht eingetreten war.
+  - Gründe können das reguläre Studienende oder ein vorzeitiges Ende der Nachbeobachtung sein.
+  - Eine zensierte Person trägt bis zu ihrem letzten Beobachtungszeitpunkt zur Risikomenge bei.
+
+- **Kaplan-Meier-Methode:** schätzt die Überlebens- oder Ereignisfreiheitsfunktion über die Zeit
+  - Die Kurve fällt stufenweise zu den Zeitpunkten beobachteter Ereignisse.
+  - Zensierungen verkleinern anschließend die Risikomenge, führen aber selbst nicht zu einem Abfall der Kurve.
+  - Aus der Kurve können beispielsweise Ereignisfreiheitswahrscheinlichkeiten zu festgelegten Zeitpunkten abgelesen werden.
+  - Die mediane Ereigniszeit ist der Zeitpunkt, an dem die geschätzte Ereignisfreiheitswahrscheinlichkeit erstmals höchstens 50 Prozent beträgt.
+
+- **Log-Rank-Test:** vergleicht die Zeit-bis-Ereignis-Verteilungen von zwei oder mehr Gruppen
+  - Er vergleicht über den gesamten Beobachtungszeitraum beobachtete und unter der Nullhypothese erwartete Ereignisse.
+  - Er liefert einen unadjustierten Signifikanztest.
+  - Er liefert allein weder eine Effektgröße noch ein Konfidenzintervall für den Gruppenunterschied.
+  - Seine Aussagekraft ist besonders gut, wenn sich die Hazards der Gruppen ungefähr proportional verhalten.
+
+- **Cox-Regression:** untersucht den Zusammenhang von Einflussgrößen mit der momentanen Ereignisrate
+  - Sie kann mehrere Einflussgrößen gleichzeitig berücksichtigen.
+  - Die Regressionskoeffizienten werden meist als **Hazard Ratios (HR)** mit Konfidenzintervallen angegeben.
+  - Eine Hazard Ratio unter 1 bedeutet eine niedrigere Hazard in der betrachteten Gruppe gegenüber der Referenzgruppe.
+  - Die übliche Cox-Regression setzt voraus, dass das Hazard Ratio für eine Einflussgröße über die Zeit annähernd konstant bleibt.
+  - Diese **Proportional-Hazards-Annahme** muss für die relevanten Einflussgrößen geprüft werden.
+
+Merksatz: Kaplan-Meier schätzt den zeitlichen Verlauf, der Log-Rank-Test vergleicht Gruppen unadjustiert und die Cox-Regression modelliert den Einfluss mehrerer Variablen auf die Hazard.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Unabhängige Zensierung:** Die gebräuchlichen Verfahren setzen voraus, dass die Zensierung unter Berücksichtigung der Modellvariablen keine zusätzliche Information über die spätere Ereigniszeit enthält.
+- **Kreuzende Kurven:** Bei stark kreuzenden Kaplan-Meier-Kurven können Log-Rank-Test und ein einziges konstantes Hazard Ratio unzureichend oder irreführend sein.
+- **Konkurrierende Ereignisse:** Verhindert ein anderes Ereignis das Auftreten des untersuchten Ereignisses, kann eine Competing-Risks-Analyse erforderlich sein. Beispielsweise verhindert der Tod ohne Rezidiv die spätere Beobachtung eines Rezidivs.
+- Die Hazard Ratio beschreibt keine absolute Risikodifferenz und ist nicht mit einem relativen Risiko gleichzusetzen.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Campbell MJ: *Statistics at Square One*. 12. Auflage, Wiley-Blackwell, 2021, Kapitel 12 „Survival Analysis“, S. 183–194.  
+  <https://doi.org/10.1002/9781119402350.ch12>
+- Kaplan EL, Meier P: *Nonparametric Estimation from Incomplete Observations*. Journal of the American Statistical Association. 1958;53(282):457–481.  
+  <https://doi.org/10.1080/01621459.1958.10501452>
+- Cox DR: *Regression Models and Life-Tables*. Journal of the Royal Statistical Society: Series B. 1972;34(2):187–202.  
+  <https://doi.org/10.1111/j.2517-6161.1972.tb00899.x>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+::: {.exam-question}
+Wie unterscheiden sich multivariable und multivariate Verfahren, und welche Rolle spielt die Adjustierung für Confounder?
+:::
+
+:::: {.exam-answer}
+
+Die Begriffe **multivariabel** und **multivariat** werden in medizinischen Publikationen häufig verwechselt.
+
+- **Multivariables Verfahren:** untersucht einen Endpunkt unter gleichzeitiger Berücksichtigung mehrerer Einflussgrößen
+  - Je nach Endpunkt können beispielsweise eine lineare, logistische oder Cox-Regression multivariabel durchgeführt werden.
+  - Jeder Modellkoeffizient beschreibt den Zusammenhang einer Einflussgröße mit dem Endpunkt bei gleichen Werten der übrigen Modellvariablen.
+  - Beispiel: Eine logistische Regression untersucht die 30-Tage-Sterblichkeit in Abhängigkeit von Therapie, Alter, Krankheitsschwere und Begleiterkrankungen.
+
+- **Multivariates Verfahren:** analysiert mehrere miteinander zusammenhängende Endpunkte oder deren gemeinsame Verteilungsstruktur
+  - Dabei werden die Zusammenhänge zwischen den Endpunkten in der Analyse berücksichtigt.
+  - Beispiel: Eine multivariate Varianzanalyse untersucht gemeinsam, ob sich systolischer und diastolischer Blutdruck zwischen Therapiegruppen unterscheiden.
+
+- **Confounder:** beeinflusst die Zuordnung oder Exposition und zugleich den Endpunkt und kann dadurch einen nichtkausalen Zusammenhang erzeugen
+  - Er liegt nicht auf dem zu untersuchenden kausalen Weg zwischen Exposition und Endpunkt.
+  - Beispiel: In einer Beobachtungsstudie kann die Krankheitsschwere sowohl die Wahl einer intensivierten Therapie als auch die Sterblichkeit beeinflussen.
+
+- **Adjustierung:** soll den Einfluss gemessener Confounder auf den geschätzten Zusammenhang vermindern
+  - Bei einer multivariablen Regression werden die ausgewählten Confounder gemeinsam mit der interessierenden Exposition in das Modell aufgenommen.
+  - Der adjustierte Koeffizient beschreibt den Zusammenhang der Exposition mit dem Endpunkt unter Berücksichtigung der im Modell enthaltenen Variablen.
+  - Weitere Verfahren sind Stratifizierung, Standardisierung und Gewichtung.
+  - Potenzielle Confounder sollten anhand der Fragestellung, des Fachwissens und möglichst eines kausalen Modells vorab ausgewählt werden.
+
+Merksatz: Multivariabel bedeutet ein Endpunkt mit mehreren Einflussgrößen, multivariat bedeutet mehrere gemeinsam analysierte Endpunkte; Adjustierung soll gemessenes Confounding vermindern.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Adjustiert bedeutet nicht kausal:** Unbekannte, nicht gemessene oder fehlerhaft gemessene Confounder können als residuales Confounding bestehen bleiben.
+- **Nicht jede Kovariate sollte adjustiert werden:** Die Adjustierung für einen Mediator kann einen Teil des interessierenden Effekts entfernen; die Adjustierung für einen Collider kann einen neuen Bias erzeugen.
+- Eine ausschließlich datengetriebene Auswahl anhand statistischer Signifikanz ist für Confounder ungeeignet. Kausale Diagramme können helfen, ein begründetes Adjustierungsset festzulegen.
+- Multivariable Modelle können auch zur Vorhersage eingesetzt werden. Dann ist die Auswahl der Prädiktoren nicht mit der Auswahl eines Confounder-Sets für eine kausale Fragestellung gleichzusetzen.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Hidalgo B, Goodman M: *Multivariate or Multivariable Regression?* American Journal of Public Health. 2013;103(1):39–40.  
+  <https://doi.org/10.2105/AJPH.2012.300897>
+- Vandenbroucke JP, von Elm E, Altman DG et al.: *Strengthening the Reporting of Observational Studies in Epidemiology (STROBE): Explanation and Elaboration*. PLoS Medicine. 2007;4(10):e297, Abschnitt 12(a) und Box 5 „Confounding“.  
+  <https://doi.org/10.1371/journal.pmed.0040297>
+- Hernán MA, Robins JM: *Causal Inference: What If*. Chapman & Hall/CRC, 2020, Kapitel 7 „Confounding“, insbesondere Abschnitte 7.1–7.4.  
+  <https://miguelhernan.org/whatifbook>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+## Darstellung von Daten
+
+::: {.exam-question}
+Wie unterscheiden sich multivariable und multivariate Verfahren, und welche Rolle spielt die Adjustierung für Confounder?
+:::
+
+:::: {.exam-answer}
+
+### Multivariabel oder multivariat?
+
+| Merkmal | Multivariables Verfahren | Multivariates Verfahren |
+|---|---|---|
+| Endpunkte | ein Endpunkt | mehrere Endpunkte beziehungsweise Variablen gemeinsam |
+| Einflussgrößen | mehrere | eine oder mehrere |
+| Typisches Verfahren | multivariable lineare, logistische oder Cox-Regression | multivariate Varianzanalyse |
+| Zweck | Zusammenhang eines Endpunkts mit mehreren Einflussgrößen untersuchen | Zusammenhänge mehrerer Endpunkte gemeinsam berücksichtigen |
+| Beispiel | 30-Tage-Sterblichkeit in Abhängigkeit von Therapie, Alter und Krankheitsschwere | systolischen und diastolischen Blutdruck gemeinsam zwischen Therapiegruppen vergleichen |
+
+- **Multivariabel:** Ein Endpunkt wird durch mehrere Einflussgrößen beschrieben.
+  - Jeder Koeffizient wird unter Berücksichtigung der übrigen Modellvariablen interpretiert.
+
+- **Multivariat:** Mehrere miteinander zusammenhängende Endpunkte oder Variablen werden gemeinsam analysiert.
+  - Dabei wird berücksichtigt, dass die Endpunkte untereinander korreliert sein können.
+
+### Confounding und Adjustierung
+
+Ein **Confounder** beeinflusst sowohl die Exposition beziehungsweise Behandlungswahl als auch den Endpunkt. Dadurch kann ein nichtkausaler Zusammenhang entstehen.
+
+```{mermaid}
+%%| fig-cap: "Confounding durch Krankheitsschwere"
+%%| label: fig-confounding
+
+flowchart LR
+    C["Krankheitsschwere<br>Confounder"]
+    E["Intensivierte Therapie<br>Exposition"]
+    O["30-Tage-Sterblichkeit<br>Endpunkt"]
+
+    C -->|"beeinflusst die Therapiewahl"| E
+    C -->|"beeinflusst die Prognose"| O
+    E -->|"interessierender Zusammenhang"| O
+```
+
+Ohne Adjustierung enthält der beobachtete Zusammenhang zwischen Therapie und Sterblichkeit möglicherweise:
+
+- den Zusammenhang der Therapie mit der Sterblichkeit
+- den zusätzlichen Einfluss der Krankheitsschwere
+
+- **Adjustierung:** soll den Einfluss gemessener Confounder auf den geschätzten Zusammenhang vermindern.
+  - Bei einer multivariablen Regression werden Exposition und ausgewählte Confounder gemeinsam in das Modell aufgenommen.
+  - Weitere Möglichkeiten sind Stratifizierung, Standardisierung und Gewichtung.
+  - Die Auswahl der Confounder sollte auf Fachwissen und einem angenommenen kausalen Modell beruhen, nicht allein auf p-Werten.
+
+Merksatz: Multivariabel bedeutet ein Endpunkt mit mehreren Einflussgrößen, multivariat bedeutet mehrere gemeinsam analysierte Endpunkte; Adjustierung soll nichtkausale Rückpfade über gemessene Confounder blockieren.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Adjustiert bedeutet nicht kausal:** Unbekannte, nicht gemessene oder fehlerhaft gemessene Confounder können als residuales Confounding bestehen bleiben.
+- Nicht jede Variable sollte adjustiert werden:
+  - Ein **Mediator** liegt auf dem kausalen Weg und sollte bei der Schätzung des Gesamteffekts gewöhnlich nicht kontrolliert werden.
+  - Ein **Collider** wird von zwei anderen Variablen beeinflusst; seine Adjustierung kann einen neuen Bias erzeugen.
+- „Multivariat“ wird in der Literatur teilweise weiter gefasst, beispielsweise für Hauptkomponenten- oder Faktorenanalysen. Für Regressionsmodelle sollte die Unterscheidung zwischen multivariabel und multivariat konsequent eingehalten werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Hidalgo B, Goodman M: *Multivariate or Multivariable Regression?* American Journal of Public Health. 2013;103(1):39–40.  
+  <https://doi.org/10.2105/AJPH.2012.300897>
+- Vandenbroucke JP, von Elm E, Altman DG et al.: *Strengthening the Reporting of Observational Studies in Epidemiology (STROBE): Explanation and Elaboration*. PLoS Medicine. 2007;4(10):e297, Abschnitt 12(a) und Box 5 „Confounding“.  
+  <https://doi.org/10.1371/journal.pmed.0040297>
+- Hernán MA, Robins JM: *Causal Inference: What If*. Chapman & Hall/CRC, 2020, Kapitel 7 „Confounding“, insbesondere Abschnitte 7.1–7.4.  
+  <https://miguelhernan.org/whatifbook>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+## Statistiksoftware und Reproduzierbarkeit
+
+::: {.exam-question}
+Wie unterscheiden sich R und IBM SPSS Statistics, und warum erleichtern skriptbasierte Arbeitsabläufe die rechnerische Reproduzierbarkeit?
+:::
+
+:::: {.exam-answer}
+
+**R** und **IBM SPSS Statistics** können beide medizinische Daten verwalten, statistisch analysieren und grafisch darstellen. Sie unterscheiden sich vor allem hinsichtlich Lizenzierung, Bedienung und Erweiterbarkeit.
+
+| Merkmal | R | IBM SPSS Statistics |
+|---|---|---|
+| Art | Programmiersprache und Softwareumgebung | kommerzielle Statistiksoftware |
+| Lizenz | freie Software unter der GNU General Public License | kostenpflichtige proprietäre Lizenz |
+| Bedienung | überwiegend durch Befehle und Skripte; grafische Entwicklungsumgebungen sind zusätzlich verfügbar | grafische Benutzeroberfläche und eigene Befehlssyntax |
+| Erweiterung | zahlreiche Zusatzpakete | Zusatzmodule sowie Erweiterungen, unter anderem für Python und R |
+| Automatisierung | unmittelbar durch Skripte und Funktionen | durch Syntaxdateien und Produktionsaufträge möglich |
+| Einstieg | erfordert Programmier- und Syntaxkenntnisse | menügesteuerte Standardanalysen sind vergleichsweise leicht zugänglich |
+
+- **R:** eignet sich besonders für flexible, automatisierte und erweiterbare Analysen
+  - Skripte können Datenaufbereitung, Statistik, Tabellen und Abbildungen in einem Arbeitsablauf verbinden.
+  - Skriptdateien lassen sich mit einer Versionsverwaltung nachvollziehbar weiterentwickeln.
+
+- **IBM SPSS Statistics:** bietet viele statistische Standardverfahren über Dialogfelder an
+  - Die Auswahl in einem Dialogfeld kann häufig als SPSS-Syntax gespeichert und später erneut ausgeführt werden.
+  - Reine Mausbedienung ist weniger transparent, wenn die einzelnen Einstellungen und Verarbeitungsschritte nicht zusätzlich dokumentiert werden.
+
+- **Skriptbasierter Arbeitsablauf:** speichert die Analyseschritte als ausführbare Anweisungen
+  - Er dokumentiert beispielsweise Datenimport, Ausschlusskriterien, Variablentransformationen, statistische Modelle und Abbildungen.
+  - Änderungen können geprüft und über eine Versionsverwaltung nachvollzogen werden.
+  - Die vollständige Analyse kann mit denselben oder aktualisierten Daten erneut ausgeführt werden.
+  - Beispiel: Ein Skript importiert einen pseudonymisierten Klinikdatensatz, wendet festgelegte Einschlusskriterien an, berechnet eine logistische Regression und erzeugt die Ergebnistabelle erneut.
+
+Für eine rechnerisch reproduzierbare Analyse müssen zusätzlich bereitgestellt oder dokumentiert werden:
+
+- verwendete Eingabedaten beziehungsweise ein zulässiger Zugang zu ihnen
+- vollständige Skripte und festgelegte Analyseparameter
+- Software-, Paket- und Bibliotheksversionen
+- verwendete Zufallszahlengeneratoren und Startwerte
+- relevante Eigenschaften der Rechenumgebung
+- manuelle Arbeitsschritte, die nicht im Skript enthalten sind
+
+Merksatz: R arbeitet primär skriptbasiert, SPSS bietet Menüführung und Syntax; reproduzierbar wird eine Analyse durch dokumentierte, ausführbare Schritte sowie festgelegte Daten- und Softwareversionen.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Auch mit SPSS kann eine gut reproduzierbare Analyse erstellt werden, wenn konsequent Syntaxdateien statt ausschließlich Dialogfelder verwendet werden.
+- R ist nicht automatisch reproduzierbar: Änderungen von Paketen oder Abhängigkeiten können Ergebnisse beeinflussen und müssen durch Versionsangaben oder eine festgelegte Softwareumgebung kontrolliert werden.
+- **Reproduzierbarkeit** bedeutet, die Analyse mit denselben Daten und Methoden erneut auszuführen. **Replikation** prüft eine wissenschaftliche Aussage mit neu erhobenen Daten.
+- Personenbezogene Gesundheitsdaten dürfen nicht zur Herstellung von Reproduzierbarkeit unkontrolliert veröffentlicht werden. Stattdessen sind datenschutzkonforme Zugangswege, anonymisierte Daten oder geeignete synthetische Beispieldaten erforderlich.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- R Core Team: *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Wien, 2026.  
+  <https://www.r-project.org/about.html>
+- IBM Corporation: *IBM SPSS Statistics 32 Documentation*. 2026, Abschnitt „Getting Started“.  
+  <https://www.ibm.com/docs/en/spss-statistics/32.0.0>
+- IBM Corporation: *IBM SPSS Statistics Documentation*, Version 30.0.0, Abschnitt „Working with Syntax“. Kein Veröffentlichungsjahr ausgewiesen.  
+  <https://www.ibm.com/docs/en/spss-statistics/30.0.0?topic=tutorial-working-syntax>
+- National Academies of Sciences, Engineering, and Medicine: *Reproducibility and Replicability in Science*. National Academies Press, Washington, DC, 2019, „Summary“ sowie Kapitel 6 „Improving Reproducibility and Replicability“.  
+  <https://doi.org/10.17226/25303>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+## Translationale Forschungsplattformen
+
+::: {.exam-question}
+Was sind translationale Forschungsplattformen, und welche Aufgaben übernehmen die Medizininformatik-Initiative, Datenintegrationszentren und das Deutsche Forschungsdatenportal für Gesundheit?
+:::
+
+:::: {.exam-answer}
+
+**Translationale Forschungsplattformen** sind organisatorische und technische Infrastrukturen, die medizinische Forschung und Patientenversorgung miteinander verbinden. Sie unterstützen den Weg von klinischen Beobachtungen und Forschungsfragen über die Datenauswertung bis zu überprüften Erkenntnissen, die für die Versorgung nutzbar gemacht werden können.
+
+Eine solche Plattform ist nicht zwingend ein einzelnes Softwareprodukt oder eine zentrale Datenbank. Sie kann als föderiertes Netzwerk aus lokalen Datenbeständen, gemeinsamen Standards, Zugangsverfahren und Analysediensten aufgebaut sein.
+
+| Bestandteil | Einordnung | Zentrale Aufgaben |
+|---|---|---|
+| **Medizininformatik-Initiative (MII)** | bundesweites Förderprogramm und Netzwerk | schafft gemeinsame organisatorische, rechtliche und technische Rahmenbedingungen; entwickelt Standards und übergreifende Nutzungskonzepte; vernetzt universitätsmedizinische Standorte |
+| **Datenintegrationszentrum (DIZ)** | lokale organisatorische und technische Infrastruktur an einem Standort | übernimmt Daten aus klinischen Quellsystemen, führt sie zusammen, harmonisiert sie, prüft ihre Qualität und stellt sie unter Beachtung von Datenschutz und Nutzungsregeln für genehmigte Forschungsprojekte bereit |
+| **Deutsches Forschungsdatenportal für Gesundheit (FDPG)** | zentrale Antrags-, Vermittlungs- und Transparenzplattform der MII | ermöglicht Machbarkeitsanfragen sowie Anträge auf Daten und Bioproben; koordiniert den Antragsstatus und informiert über genehmigte Forschungsprojekte |
+
+Der typische Ablauf ist:
+
+1. In klinischen Anwendungssystemen entstehen Versorgungsdaten, beispielsweise Diagnosen, Laborwerte und Medikationsdaten.
+2. Das jeweilige DIZ erschließt relevante Daten und überführt sie in möglichst einheitliche Strukturen und Terminologien.
+3. Forschende prüfen über das FDPG, ob geeignete Daten oder Bioproben grundsätzlich verfügbar sind.
+4. Anschließend stellen sie einen Datennutzungsantrag.
+5. Die beteiligten Standorte entscheiden nach ihren rechtlichen und organisatorischen Verfahren über die Teilnahme. Dazu dienen insbesondere die lokalen **Use & Access Committees (UAC)**.
+6. Bei einer Genehmigung stellen die DIZ die erforderlichen Daten projektbezogen und datenschutzgerecht bereit.
+7. Forschungsergebnisse können nach wissenschaftlicher und gegebenenfalls klinischer Prüfung wieder für die Versorgung nutzbar gemacht werden.
+
+**Beispiel:** Für eine standortübergreifende Untersuchung unerwünschter Arzneimittelwirkungen werden Medikations-, Diagnose- und Labordaten mehrerer Universitätskliniken harmonisiert. Das FDPG unterstützt Anfrage und Antrag, während die beteiligten DIZ die genehmigten Daten aufbereiten.
+
+Merksatz: Die MII schafft den gemeinsamen Rahmen, die DIZ integrieren und schützen die Daten an den Standorten, und das FDPG vermittelt den geregelten Zugang für Forschungsprojekte.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Die Datenbestände der MII werden grundsätzlich **dezentral an den Standorten** gehalten. Das FDPG ist daher kein zentraler Speicher sämtlicher Patientendaten.
+- Der **MII-Kerndatensatz** legt gemeinsame Datenstrukturen und semantische Festlegungen fest. Er wird technisch mit **Health Level Seven Fast Healthcare Interoperability Resources (HL7 FHIR)** repräsentiert und verwendet geeignete Terminologien, beispielsweise **Logical Observation Identifiers Names and Codes (LOINC)** für Laborbefunde.
+- Das **FDPG der MII** darf nicht mit dem **Forschungsdatenzentrum Gesundheit (FDZ Gesundheit)** beim Bundesinstitut für Arzneimittel und Medizinprodukte verwechselt werden. Das FDZ Gesundheit ist eine andere Infrastruktur, insbesondere für Abrechnungsdaten gesetzlich Versicherter und für Forschungszwecke bereitgestellte Daten der elektronischen Patientenakte.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.3 „Modul III – Medizinische Statistik/Epidemiologie/Biometrie“, S. 12.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Medizininformatik-Initiative: *FAQ – Häufig gestellte Fragen*, Abschnitte „Was ist die Medizininformatik-Initiative?“ und „Was ist ein Datenintegrationszentrum?“.  
+  <https://www.medizininformatik-initiative.de/de/ueber-die-initiative/faq-haeufig-gestellte-fragen>
+- Medizininformatik-Initiative: *Datenintegrationszentren*.  
+  <https://www.medizininformatik-initiative.de/de/konsortien/datenintegrationszentren>
+- Medizininformatik-Initiative: *Deutsches Forschungsdatenportal für Gesundheit*.  
+  <https://www.medizininformatik-initiative.de/de/deutsches-forschungsdatenportal-fuer-gesundheit>
+- Medizininformatik-Initiative: *Der Kerndatensatz der Medizininformatik-Initiative*.  
+  <https://www.medizininformatik-initiative.de/de/der-kerndatensatz-der-medizininformatik-initiative>
+- National Center for Advancing Translational Sciences: *About Translational Science*, Abschnitt „Translational Science“.  
+  <https://ncats.nih.gov/about/about-translational-science>
+- Bundesministerium für Gesundheit: *FAQ: Forschungsdatenzentrum Gesundheit*, Abschnitt „Was ist das Forschungsdatenzentrum Gesundheit?“.  
+  <https://www.bundesgesundheitsministerium.de/themen/gesundheitswesen/forschungsdatenzentrum-fdz-gesundheit-fragen-und-antworten>
+
+Quellen geprüft am 08.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ::: {.exam-question}
 Eine Studie zu einem neuen Blutverdünner zeigt "25% relative Risikoreduktion" für Schlaganfall. Was bedeutet das konkret, und warum kann diese Zahl irreführend sein? Was solltest du stattdessen fragen?
@@ -26,9 +1464,6 @@ Merksatz: Die RRR (relative Risikoreduktion) klingt immer groß — frag nach AR
 :::
 :::
 
-## Grundbegriffe der Statistik, Klassifikation von Merkmalen
-
-### Grundbegriffe der Statistik
 
 ::: {.exam-question}
 Was ist der Unterschied zwischen deskriptiver und induktiver (schließender) Statistik, und was sind Grundgesamtheit vs. Stichprobe?
@@ -50,7 +1485,6 @@ Merksatz: Deskriptiv = beschreiben, was man sieht. Induktiv = schließen auf das
 :::
 :::
 
-### Klassifikation von Merkmalen
 
 ::: {.exam-question}
 Was ist der Unterschied zwischen qualitativen und quantitativen Merkmalen, und innerhalb der quantitativen zwischen diskret und stetig?
@@ -73,7 +1507,6 @@ Merksatz: Qualitativ = "was für eine Art" (Kategorie). Quantitativ diskret = "w
 :::
 :::
 
-### Skalenniveau
 
 ::: {.exam-question}
 Du misst bei Patienten Blutgruppe, Schmerzstärke (Skala 0-10), Körpertemperatur und ob "geheilt ja/nein". Was für Skalenniveaus sind das jeweils, und warum ist das für die Wahl des Tests wichtig?
@@ -100,9 +1533,6 @@ Merksatz: erst Skalenniveau bestimmen → daraus ergibt sich, welches Lage-/Stre
 :::
 :::
 
-## Grundbegriffe der medizinischen Epidemiologie
-
-### Prinzipien der Randomisierung
 
 ::: {.exam-question}
 Was ist Randomisierung, welche Verfahren gibt es (einfache/Block-/stratifizierte Randomisierung), und sollte man immer stratifiziert randomisieren?
@@ -134,7 +1564,6 @@ Merksatz: Stratifizierung lohnt sich gezielt für wenige, bekannte, stark einflu
 :::
 :::
 
-### Multicenter-Studien
 
 ::: {.exam-question}
 Was ist eine Multicenter-Studie, und welche Vor- und Nachteile hat sie gegenüber einer Studie an nur einem Krankenhaus?
@@ -161,8 +1590,6 @@ Merksatz: Multicenter = mehr Patienten + bessere Generalisierbarkeit, erkauft mi
 
 :::
 :::
-
-### Meta-Analysen
 
 ::: {.exam-question}
 Was ist eine Meta-Analyse, warum bringt sie mehr statistische Power als Einzelstudien, und wann deutet ein Funnel Plot auf Publication Bias hin?
@@ -195,7 +1622,6 @@ Merksatz: Meta-Analyse = "Studie der Studien", höhere Power, aber nur so vertra
 :::
 :::
 
-### Maßzahlen in der Epidemiologie
 
 ::: {.exam-question}
 Was ist der Unterschied zwischen Prävalenz und Inzidenz, und welcher Studientyp eignet sich jeweils, um sie zu ermitteln?
@@ -217,7 +1643,6 @@ Merksatz: Prävalenz = Bestand (Momentaufnahme). Inzidenz = Zufluss (neu Erkrank
 :::
 :::
 
-### Güte diagnostischer Tests: Sensitivität, Spezifität, PPV, NPV
 
 ::: {.exam-question}
 Ein D-Dimer-Test hat Sensitivität 98 % und Spezifität 40 %. Eignet er sich eher zum Ausschließen oder zum Bestätigen einer Lungenembolie — und wie viele falsch Negative/falsch Positive bedeutet das?
@@ -271,7 +1696,6 @@ Merksatz: Sensitiv schließt aus (SnNout), spezifisch schließt ein (SpPin). Fal
 :::
 :::
 
-## Maßzahlen der deskriptiven Statistik
 
 Maßzahlen der deskriptiven Statistik (z. B. Mittelwert, Median, Quantile, Varianz und Standardabweichung, Konfidenzintervalle für Mittelwerte und Anteilswerte).
 
@@ -317,9 +1741,6 @@ Merksatz: Stichprobengröße ↑ → Intervall schmaler (mehr Sicherheit). Konfi
 :::
 :::
 
-## Statistische Methoden
-
-### Testwahl: welcher Test für welches Szenario?
 
 ::: {.exam-question}
 Nach welchen Kriterien wählt man den statistischen Test, und welche Tests gehören zu welchem Szenario — insbesondere die verteilungsfreien (nichtparametrischen)?
@@ -386,7 +1807,6 @@ Merksatz: Erst Skala, dann verbunden/unabhängig, dann Gruppenzahl. Nicht normal
 :::
 :::
 
-### Lineare Regression und Varianzanalyse
 
 ::: {.exam-question}
 Was ist der Unterschied zwischen Korrelation und linearer Regression, wie liest man die Regressionsgleichung y = a + b·x, und wann braucht man eine Varianzanalyse (ANOVA) statt eines t-Tests?
@@ -418,7 +1838,6 @@ Merksatz: Korrelation = wie stark hängen zwei Merkmale zusammen (r, ohne Richtu
 :::
 :::
 
-### Logistische Regression
 
 ::: {.exam-question}
 Was ist eine Vierfeldertafel, muss "Erkrankung" dabei immer in derselben Position (Zeile/Spalte) stehen, und geht es dabei nur um Expositionsfragen?
@@ -503,7 +1922,6 @@ Merksatz: Lineare Regression → stetiges Y (z. B. Blutdruck). Logistische Regre
 :::
 :::
 
-### Survivalanalyse
 
 ::: {.exam-question}
 Was ist eine Survivalanalyse, was bedeutet "Zensierung" dabei (betrifft das die Gestorbenen oder die Nicht-Gestorbenen?), und wie hängt die Hazard Ratio mit der Odds Ratio zusammen?
@@ -536,7 +1954,6 @@ Merksatz: Odds Ratio = Momentaufnahme (fester Zeitpunkt/Endpunkt). Hazard Ratio 
 :::
 :::
 
-### Höhere multivariate Verfahren
 
 ::: {.exam-question}
 Ein neues Medikament soll die Sterblichkeit senken — die Behandlungsgruppe ist aber im Schnitt älter und kränker. Wie trifft man trotzdem eine faire Aussage zum Medikamenteneffekt? Welches Verfahren, und was macht es im Prinzip?
@@ -574,7 +1991,6 @@ Merksatz: Regression rechnet ungleiche Gruppen "fair", aber nur bezüglich desse
 :::
 :::
 
-## Präsentation von Daten in Tabellen und Diagrammen
 
 ::: {.exam-question}
 Die Liegedauer zweier Stationen soll verglichen werden, einige wenige Patienten liegen extrem lange. Welches Diagramm nimmt man, und warum ist ein Balkendiagramm mit Mittelwert hier irreführend?
@@ -624,7 +2040,6 @@ Merksatz: Schiefe Daten (Liegedauer, Kosten, CRP) → Median und Boxplot. Balken
 :::
 :::
 
-## Statistik-Tools
 
 Statistik-Tools (z. B. R, SPSS).
 
@@ -669,7 +2084,6 @@ Merksatz: Klicken ist schnell, Skript ist belegbar. Für Forschung: R (kostenlos
 :::
 :::
 
-## Translationale Forschungsplattformen
 
 ::: {.exam-question}
 Was bedeutet translationale Forschung ("from bench to bedside"), welche Aufgabe haben translationale Forschungsplattformen, und welche Beispiele gibt es in Deutschland (Medizininformatik-Initiative, Datenintegrationszentren)?
@@ -717,22 +2131,3 @@ Merksatz: Translation = Labor ↔ Krankenbett. Plattform = macht verstreute Klin
 :::
 :::
 
-## Quellen {.unnumbered}
-
-Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
-
-- Kap. 13, Evidenzbasierte Medizin
-- Kap. 6, Statistik und Biometrie
-- Kap. 13, Evidenzbasierte Medizin — Grundprinzip und Jadad-Score aus dem Buch; Detailtypen der Randomisierungsverfahren als Allgemeinwissen ergänzt
-- nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
-- Kap. 13, Evidenzbasierte Medizin — Meta-Analyse und Funnel-Plot-Konzept aus dem Buch, Detailinterpretation der Trichterform als Allgemeinwissen ergänzt
-- Kap. 13 (Studientypen), Prävalenz/Inzidenz-Grundbegriffe als Curriculum/Allgemeinwissen ergänzt
-- Curriculum Modul III / Allgemeinwissen — 2×2-Tafel aus Kap. 6/13; SnNout/SpPin und D-Dimer-Beispiel ergänzt
-- Kap. 6, Statistik und Biometrie — parametrische vs. verteilungsfreie Verfahren nach Skalenniveau; Testübersicht und Eselsbrücken als Allgemeinwissen ergänzt
-- Kap. 6, Statistik und Biometrie — Vierfeldertafel/RR/OR aus dem Buch; Diagnostik-Variante und Konventions-Klarstellung als Allgemeinwissen ergänzt
-- Kap. 6, Statistik und Biometrie — Vierfeldertafel/OR/RR-Formeln aus dem Buch; Beziehung zur logistischen Regression und OR-vs-RR-Abgrenzung als Allgemeinwissen ergänzt
-- Kap. 6, Statistik und Biometrie — OR als Basis der logistischen Regression steht im Buch; Detailmechanik der Logit-Funktion als Allgemeinwissen ergänzt
-- Kap. 6, Statistik und Biometrie — Hazard Rate-Formel aus dem Buch; Kaplan-Meier, Log-Rank-Test, Cox-Regression und Zensierung als Allgemeinwissen ergänzt
-- Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" nicht behandelt
-- Kap. 6, Statistik und Biometrie — Lage-/Streuungsmaße und Skalenniveaus aus dem Buch; Diagrammwahl und Darstellungsfehler als Allgemeinwissen ergänzt
-- Curriculum Modul III / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt; MII-Stand nach 2015. Vertiefung: "Translational Health Informatics" (Books/)

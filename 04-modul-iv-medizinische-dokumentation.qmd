@@ -61,9 +61,97 @@ Quellen geprüft am 12.11.2026.
 
 
 
+
 ::: {.exam-question}
 Welche rechtlichen Anforderungen gelten für die medizinische Dokumentation?
 :::
+
+:::: {.exam-answer}
+
+Die Dokumentationspflicht ergibt sich aus mehreren Rechtsgebieten. Besonders wichtig sind Vertragsrecht, Haftungsrecht, Berufsrecht, Sozialrecht und Datenschutzrecht.
+
+- **Zeitnahe Dokumentation (§ 630f Abs. 1 BGB):** Für jeden Patienten ist eine Behandlungsakte in Papierform oder elektronisch zu führen.
+  - Die Einträge müssen in unmittelbarem zeitlichen Zusammenhang mit der Behandlung erfolgen.
+  - Spätere Ergänzungen sind zulässig, müssen aber als solche nachvollziehbar bleiben.
+
+- **Erforderlicher Inhalt (§ 630f Abs. 2 BGB):** Aufzuzeichnen sind alle aus fachlicher Sicht für die derzeitige oder künftige Behandlung wesentlichen Maßnahmen und Ergebnisse.
+  - Dazu gehören insbesondere Anamnese, Diagnosen, Untersuchungen, Befunde, Therapien und ihre Wirkungen, Eingriffe und ihre Wirkungen, Einwilligungen und Aufklärungen.
+  - Arztbriefe sind in die Behandlungsakte aufzunehmen.
+  - **Beispiel:** Bei akutem Brustschmerz müssen das erhobene Elektrokardiogramm, sein Befund und die daraus abgeleiteten Maßnahmen dokumentiert werden.
+
+- **Nachvollziehbare Änderungen (§ 630f Abs. 1 BGB):** Einträge dürfen berichtigt oder ergänzt werden, wenn der ursprüngliche Inhalt und der Zeitpunkt der Änderung erkennbar bleiben.
+  - Ein unbemerktes Überschreiben oder Entfernen des ursprünglichen Eintrags ist nicht zulässig.
+  - Diese Anforderung gilt auch für elektronische Akten.
+
+- **Aufbewahrung (§ 630f Abs. 3 BGB):** Die Behandlungsakte ist grundsätzlich zehn Jahre nach Abschluss der Behandlung aufzubewahren.
+  - Spezialgesetze können längere Fristen verlangen.
+  - Nach zehn Jahren darf nicht automatisch gelöscht werden. Zunächst sind weitere Aufbewahrungspflichten und zulässige Aufbewahrungszwecke zu prüfen.
+
+- **Einsichtsrecht (§ 630g BGB):** Patienten können unverzüglich Einsicht in ihre vollständige Behandlungsakte und Abschriften verlangen.
+  - Die erste Abschrift ist unentgeltlich.
+  - Eine Ablehnung ist nur bei erheblichen therapeutischen Gründen oder erheblichen Rechten Dritter zulässig und muss begründet werden.
+
+- **Haftungsrechtliche Beweisvermutung (§ 630h Abs. 3 BGB):** Wird eine medizinisch gebotene wesentliche Maßnahme oder ihr Ergebnis nicht dokumentiert, wird vermutet, dass die Maßnahme nicht durchgeführt wurde.
+  - Diese Regel gilt auch, wenn die Behandlungsakte entgegen der gesetzlichen Verpflichtung nicht aufbewahrt wurde.
+  - **Beispiel:** Fehlt bei einem Patienten mit akutem Brustschmerz jede Dokumentation eines medizinisch gebotenen Elektrokardiogramms, kann im Haftungsprozess vermutet werden, dass es nicht durchgeführt wurde.
+
+- **Berufsrecht:** Die Berufsordnungen der Landesärztekammern verpflichten Ärzte ebenfalls zu erforderlichen Aufzeichnungen und deren Schutz.
+  - § 10 der Musterberufsordnung dient den Landesärztekammern als Vorlage.
+  - Elektronische Aufzeichnungen müssen gegen unbefugte Veränderung, Vernichtung und Verwendung geschützt werden.
+  - Maßgeblich ist die Berufsordnung der jeweils zuständigen Landesärztekammer.
+
+- **Sozialrecht:** Für die Versorgung gesetzlich Versicherter bestehen zusätzliche Aufzeichnungs- und Übermittlungspflichten.
+  - § 295 SGB V betrifft insbesondere die vertragsärztliche Abrechnung.
+  - § 301 SGB V regelt insbesondere die Datenübermittlung der Krankenhäuser an die Krankenkassen.
+  - **Beispiel:** Krankenhäuser übermitteln abrechnungsrelevante Diagnosen und Prozeduren verschlüsselt nach ICD-10-GM und OPS.
+
+- **Datenschutz und Schweigepflicht:** Patientendokumentationen müssen vor unbefugter Kenntnisnahme, Veränderung, Verlust und Zerstörung geschützt werden.
+  - Maßgeblich sind insbesondere die Datenschutz-Grundverordnung, ergänzendes nationales beziehungsweise Landesrecht und die ärztliche Schweigepflicht nach § 203 StGB.
+  - Zugriffe müssen auf berechtigte Personen und erforderliche Zwecke beschränkt werden.
+
+Merksatz: Wesentliches muss zeitnah, vollständig und nachvollziehbar dokumentiert, vor unbefugtem Zugriff geschützt und grundsätzlich mindestens zehn Jahre aufbewahrt werden.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Die allgemeine Zehnjahresfrist wird durch Spezialvorschriften ergänzt:
+
+- Nach § 14 Transfusionsgesetz müssen bestimmte Unterlagen zur Anwendung von Blutprodukten mindestens 15 Jahre und rückverfolgungsrelevante Angaben mindestens 30 Jahre aufbewahrt werden.
+- Nach § 85 Strahlenschutzgesetz gelten für Aufzeichnungen über Strahlenbehandlungen grundsätzlich 30 Jahre.
+
+Deshalb benötigt eine Einrichtung ein differenziertes Aufbewahrungs- und Löschkonzept. „Zehn Jahre“ ist keine einheitliche Frist für sämtliche medizinischen Unterlagen.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bürgerliches Gesetzbuch: §§ 630f–630h in der geltenden Fassung.  
+  <https://www.gesetze-im-internet.de/bgb/__630f.html>  
+  <https://www.gesetze-im-internet.de/bgb/__630g.html>  
+  <https://www.gesetze-im-internet.de/bgb/__630h.html>
+
+- Bundesärztekammer: *(Muster-)Berufsordnung für die in Deutschland tätigen Ärztinnen und Ärzte*. Fassung des Beschlusses des 130. Deutschen Ärztetages, Mai 2026, § 10 „Dokumentationspflicht“.  
+  <https://doi.org/10.3238/arztebl.2026.mbo_daet2026>
+
+- Sozialgesetzbuch Fünftes Buch: §§ 295 und 301 in der geltenden Fassung.  
+  <https://www.gesetze-im-internet.de/sgb_5/__295.html>  
+  <https://www.gesetze-im-internet.de/sgb_5/__301.html>
+
+- Verordnung (EU) 2016/679: Datenschutz-Grundverordnung, insbesondere Art. 5 und 32.  
+  <https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679>
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
 
 ::: {.exam-question}
 Wie unterscheiden sich Klassifikation, Nomenklatur, Terminologie, Taxonomie, Thesaurus und Ontologie?

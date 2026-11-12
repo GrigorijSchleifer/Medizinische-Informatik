@@ -153,20 +153,272 @@ Quellen geprüft am 12.11.2026.
 
 
 
+
 ::: {.exam-question}
 Wie unterscheiden sich Klassifikation, Nomenklatur, Terminologie, Taxonomie, Thesaurus und Ontologie?
 :::
+
+:::: {.exam-answer}
+
+Die Begriffe beschreiben unterschiedliche Aufgaben und Strukturmerkmale von Ordnungssystemen. Sie schließen sich nicht gegenseitig aus: Ein System kann beispielsweise zugleich Terminologie, Taxonomie und Ontologie sein.
+
+- **Klassifikation:** ordnet Gegenstände oder Sachverhalte nach festgelegten Kriterien in Klassen ein
+  - Sie dient einem bestimmten Zweck, beispielsweise Statistik, Abrechnung oder Vergleichbarkeit.
+  - Eine statistische Klassifikation fasst detaillierte Sachverhalte bewusst zusammen. Ihre Kategorien sollen auf der vorgesehenen Aggregationsebene möglichst vollständig und überschneidungsfrei sein.
+    - **Beispiel:** Die Internationale statistische Klassifikation der Krankheiten und verwandter Gesundheitsprobleme, 10. Revision, German Modification (ICD-10-GM), gruppiert Diagnosen für Morbiditätsstatistik und Abrechnung.
+
+- **Nomenklatur:** legt standardisierte Benennungen und häufig auch Codes für Objekte oder Objektgruppen fest
+  - Im Vordergrund steht die eindeutige und einheitliche Benennung.
+  - Eine Nomenklatur benötigt nicht zwingend ein umfassendes semantisches Beziehungsmodell.
+    - **Beispiel:** Die Global Medical Device Nomenclature (GMDN) stellt standardisierte Bezeichnungen, Codes und Definitionen für Medizinproduktgruppen bereit.
+
+- **Terminologie:** umfasst die Konzepte eines Fachgebiets und ihre sprachlichen Bezeichnungen
+  - Eine kontrollierte Terminologie kann stabile Identifikatoren, Vorzugsbezeichnungen, Synonyme, Definitionen und Beziehungen enthalten.
+  - Konzept und Bezeichnung sind zu unterscheiden: Dasselbe Konzept kann mehrere Bezeichnungen besitzen.
+    - **Beispiel:** Systematized Nomenclature of Medicine – Clinical Terms (SNOMED CT) weist klinischen Konzepten eindeutige Identifikatoren sowie bevorzugte Bezeichnungen und Synonyme zu.
+
+- **Taxonomie:** ordnet Konzepte oder Klassen hierarchisch
+  - Typisch sind Ober- und Unterbegriffe beziehungsweise „ist-ein“-Beziehungen.
+  - Eine Taxonomie kann **monohierarchisch** sein: Jedes Element besitzt höchstens einen direkten Oberbegriff.
+  - Sie kann auch **polyhierarchisch** sein: Ein Element kann mehrere direkte Oberbegriffe besitzen.
+    - **Beispiel:** SNOMED CT ist polyhierarchisch; ein klinisches Konzept kann mehreren übergeordneten Konzepten zugeordnet sein.
+
+- **Thesaurus:** ist ein kontrolliertes Vokabular für Indexierung und Informationssuche
+  - Er unterscheidet meist Vorzugsbegriffe und alternative Bezeichnungen.
+  - Zusätzlich enthält er Oberbegriffe, Unterbegriffe und verwandte Begriffe.
+    - **Beispiel:** Medical Subject Headings (MeSH) werden zur inhaltlichen Erschließung und Suche biomedizinischer Literatur verwendet.
+
+- **Ontologie:** beschreibt ein Fachgebiet als formales, maschinenverarbeitbares Modell
+  - Sie enthält Konzepte oder Klassen, typisierte Beziehungen und formale Regeln beziehungsweise Axiome.
+  - Abhängig von der verwendeten formalen Sprache können Konsistenzprüfungen und logische Schlussfolgerungen unterstützt werden.
+    - **Beispiel:** SNOMED CT beschreibt klinische Konzepte durch formale „ist-ein“- und Attributbeziehungen.
+
+Einordnung wichtiger medizinischer Ordnungssysteme:
+
+| System | Klassifikation | Terminologie oder Nomenklatur | Taxonomie beziehungsweise Hierarchie | Formale Ontologie |
+|---|---|---|---|---|
+| **ICD-10-GM** | Ja: statistische Klassifikation von Diagnosen | Enthält Codes und Bezeichnungen, ist aber primär eine Klassifikation | Hierarchisch gegliederte Kapitel, Gruppen und Kategorien | Nein |
+| **Operationen- und Prozedurenschlüssel (OPS)** | Ja: Klassifikation medizinischer Prozeduren | Enthält Codes und Bezeichnungen, ist aber primär eine Klassifikation | Hierarchische Codestruktur | Nein |
+| **German Diagnosis Related Groups (G-DRG)** | Ja: Klassifikation von Behandlungsfällen | Nein | Technische Gruppierungsstruktur, aber keine medizinische „ist-ein“-Taxonomie | Nein |
+| **SNOMED CT** | Nicht primär für statistische Klassifikation bestimmt | Ja: klinische Referenzterminologie | Ja: polyhierarchisch | Ja: terminologische Ontologie |
+| **Logical Observation Identifiers Names and Codes (LOINC)** | Keine statistische Klassifikation | Ja: Terminologiestandard für Beobachtungen, Messungen und Dokumente | Ergänzende Hierarchien und Gruppen, aber keine einheitliche Gesamttaxonomie | Kern-LOINC: nein; eine separate LOINC Ontology ist verfügbar |
+| **GMDN** | Nicht primär eine statistische Klassifikation | Ja: Medizinproduktenomenklatur | Ergänzende Kategorisierung; der Code selbst besitzt keine inhärente Bedeutung | Nein |
+| **MeSH** | Keine statistische Klassifikation | Ja: kontrollierter Thesaurus | Ja: polyhierarchische Baumstrukturen | Keine formale Ontologie |
+
+Merksatz: Klassifikation gruppiert, Nomenklatur benennt, Terminologie ordnet Fachkonzepte und Bezeichnungen, Taxonomie hierarchisiert, Thesaurus unterstützt die Suche und Ontologie formalisiert Bedeutung und Beziehungen.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Der historische Name **SNOMED** enthält zwar „Nomenclature“. SNOMED CT wird heute fachlich jedoch als klinische Referenzterminologie und terminologische Ontologie eingeordnet.
+- Das **Kern-LOINC** und die gesondert veröffentlichte **LOINC Ontology** sind zu unterscheiden. Die Ontologie verbindet LOINC-Inhalte mit dem formalen Modell von SNOMED CT.
+- Die Zuordnung eines Systems hängt teilweise vom betrachteten Aspekt ab. Eine ICD-Version besitzt beispielsweise eine Hierarchie, bleibt ihrem Hauptzweck nach aber eine statistische Klassifikation.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- International Organization for Standardization: *ISO 1087:2019 – Terminology work and terminology science — Vocabulary*, insbesondere Abschnitt 3.1.11 „terminology“.  
+  <https://www.iso.org/standard/62330.html>
+- World Health Organization: *ICD-11 Reference Guide*. 2022, Abschnitte 1.1.2 „Classification“ und 1.2.1 „Taxonomy“ sowie Glossar.  
+  <https://icdcdn.who.int/icd11referenceguide/en/refguide.pdf>
+- World Wide Web Consortium: *OWL 2 Web Ontology Language Primer*. 2. Auflage, 2012, Abschnitt 1 „Introduction“.  
+  <https://www.w3.org/TR/owl2-primer/>
+- SNOMED International: *SNOMED CT Editorial Guide*, Abschnitt „SNOMED CT Introduction“.  
+  <https://docs.snomed.org/snomed-ct-specifications/snomed-ct-editorial-guide/readme/snomed-ct-introduction>
+- United States National Library of Medicine: *Medical Subject Headings – Introduction*.  
+  <https://www.nlm.nih.gov/mesh/index.html>
+- Regenstrief Institute: *What LOINC Is*.  
+  <https://loinc.org/about/>
+- Global Medical Device Nomenclature Agency: *What We Do*.  
+  <https://www.gmdnagency.org/what-we-do/>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
 
 ::: {.exam-question}
 Wie unterscheiden sich strukturierte, semistrukturierte und unstrukturierte Dokumentation, und welche Bedeutung haben Datentypen und Skalenniveaus?
 :::
 
+:::: {.exam-answer}
 
-## Typische Elemente medizinischer Dokumentation
+Der **Strukturierungsgrad** beschreibt, wie stark Aufbau und mögliche Inhalte einer Dokumentation vorgegeben sind.
+
+- **Strukturierte Dokumentation:** Informationen werden in fest definierten Datenfeldern mit vorgegebenen Datentypen, Formaten oder Wertelisten erfasst.
+  - Die Inhalte können leichter validiert, durchsucht, statistisch ausgewertet und für Entscheidungsunterstützung wiederverwendet werden.
+  - Nachteile können zusätzlicher Erfassungsaufwand, unpassende Auswahlmöglichkeiten und ein Verlust klinischer Nuancen sein.
+    - **Beispiel:** Die Herzfrequenz wird als Zahlenwert mit Einheit und Messzeitpunkt gespeichert.
+
+- **Semistrukturierte Dokumentation:** Ein Dokument besitzt vorgegebene Abschnitte oder Metadaten, erlaubt innerhalb dieser Bereiche aber freie Inhalte.
+  - Sie verbindet eine erkennbare Gliederung mit narrativer Ausdrucksmöglichkeit.
+  - Die strukturierten Bestandteile sind maschinell leichter auswertbar als die enthaltenen Freitexte.
+    - **Beispiel:** Ein elektronischer Arztbrief enthält standardisierte Angaben zu Patient, Fall und Diagnosen, aber Freitext in den Abschnitten Anamnese, Verlauf und Epikrise.
+
+- **Unstrukturierte Dokumentation:** Die klinisch relevante Information liegt nicht in fest definierten Datenfeldern vor.
+  - Sie ermöglicht eine flexible und differenzierte Darstellung komplexer Sachverhalte.
+  - Für Suche, Statistik oder Entscheidungsunterstützung muss die Information häufig manuell oder durch Verfahren der Sprach- beziehungsweise Bildverarbeitung erschlossen werden.
+    - **Beispiel:** Ein frei formulierter klinischer Verlaufsbericht enthält Symptome, diagnostische Überlegungen und Unsicherheiten als Fließtext.
+
+| Dokumentationsform | Vorgaben | Maschinenverarbeitung | Klinische Ausdrucksfreiheit |
+|---|---|---|---|
+| strukturiert | feste Felder, Formate und gegebenenfalls Wertelisten | vergleichsweise gut | eher begrenzt |
+| semistrukturiert | feste Abschnitte oder Metadaten mit freien Inhalten | teilweise möglich | mittel bis hoch |
+| unstrukturiert | keine inhaltlich festgelegten Datenfelder | erst nach zusätzlicher Erschließung | hoch |
+
+- **Datentyp:** legt fest, welche Werte ein Datenfeld annehmen darf und wie diese technisch verarbeitet werden können.
+  - Typische einfache Datentypen sind Wahrheitswert, Ganzzahl, Dezimalzahl, Zeichenkette, Datum und Zeitpunkt.
+  - Medizinische Informationsmodelle verwenden zusätzlich zusammengesetzte Datentypen, beispielsweise Messwert mit Einheit oder Code mit Codesystem.
+    - **Beispiel:** Ein Kaliumwert sollte als numerischer Messwert zusammen mit der Einheit `mmol/L` und nicht nur als Zeichenkette `"4,2"` gespeichert werden.
+
+- **Skalenniveau:** beschreibt, welche Beziehungen zwischen den Ausprägungen eines Merkmals mathematisch sinnvoll interpretiert werden können.
+  - Es ist eine inhaltliche Eigenschaft des Merkmals und nicht lediglich eine Eigenschaft seiner technischen Speicherung.
+
+| Skalenniveau | Zulässige Interpretation | Beispiel |
+|---|---|---|
+| **Nominalskala** | Werte können nur als gleich oder verschieden unterschieden werden; es besteht keine Rangfolge | Blutgruppe A, B, AB oder 0 |
+| **Ordinalskala** | Werte besitzen eine Rangfolge; die Abstände zwischen den Stufen sind nicht zwingend gleich | Einteilung der Herzinsuffizienz nach der New York Heart Association in die Klassen I bis IV |
+| **Intervallskala** | Abstände sind vergleichbar; der Nullpunkt ist willkürlich, sodass Verhältnisse nicht sinnvoll sind | Körpertemperatur in Grad Celsius |
+| **Verhältnisskala** | Abstände und Verhältnisse sind sinnvoll; es besteht ein inhaltlich begründeter Nullpunkt | Körpergewicht in Kilogramm |
+
+Datentyp und Skalenniveau dürfen nicht gleichgesetzt werden:
+
+- Die Zahlen `1`, `2`, `3` und `4` können technisch als Ganzzahlen gespeichert sein, aber lediglich ordinale Kategorien darstellen.
+- Umgekehrt kann ein nominales Merkmal technisch als Zeichenkette oder als numerischer Code gespeichert werden.
+- Das Skalenniveau beeinflusst, welche Kennzahlen und mathematischen Aussagen sinnvoll sind. Die Auswahl eines statistischen Verfahrens hängt zusätzlich von Fragestellung, Studiendesign, Verteilung, Abhängigkeiten und Stichprobengröße ab.
+
+Merksatz: Der Strukturierungsgrad bestimmt die Organisation der Dokumentation, der Datentyp die technische Darstellung und das Skalenniveau die mathematische Bedeutung eines Merkmals.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Strukturiert bedeutet nicht automatisch korrekt:** Auswahlfelder können unvollständig, falsch oder nur aus Bequemlichkeit ausgefüllt werden.
+- **Keine Eingabe bedeutet nicht „nein“:** Fehlende, unbekannte und tatsächlich verneinte Angaben müssen unterscheidbar dokumentiert werden.
+- Formate wie Extensible Markup Language (XML) oder JavaScript Object Notation (JSON) schaffen eine technische Struktur. Sie garantieren aber weder eine einheitliche klinische Bedeutung noch die Verwendung standardisierter Terminologien.
+- In der Praxis ist häufig eine Kombination sinnvoll: Kerninformationen werden strukturiert erfasst, während Freitext klinische Zusammenhänge und Unsicherheiten ergänzt.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Health Level Seven International: *Electronic Health Record System Functional Model, Release 2.1.1*. Funktion CP.3.3 „Manage Clinical Documents and Notes“, 2026.  
+  <https://hl7.org/ehrs/uv/ehrsfmr2/Normative1/en/Requirements-EHRSFMR2-CP.3.3.html>
+- Health Level Seven International: *FHIR Release 5*. Abschnitt 2.1.28 „Datatypes“, 2023.  
+  <https://hl7.org/fhir/datatypes.html>
+- Rosenbloom ST, Denny JC, Xu H et al.: *Data from clinical notes: a perspective on the tension between structure and flexible documentation*. Journal of the American Medical Informatics Association. 2011;18(2):181–186.  
+  <https://doi.org/10.1136/jamia.2010.007237>
+- Stevens SS: *On the Theory of Scales of Measurement*. Science. 1946;103(2684):677–680.  
+  <https://doi.org/10.1126/science.103.2684.677>
+- Flater D, Black PE, Fong E et al.: *A Rational Foundation for Software Metrology*. NIST Interagency Report 8101, 2016, Abschnitt 2.3 „Scales“.  
+  <https://doi.org/10.6028/NIST.IR.8101>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
 
 ::: {.exam-question}
-Welche Aufgaben haben Patientenakte, Kurve, Arztbrief, Medikationsplan, Impfpass und Notfalldatensatz?
+Welche Aufgaben haben Behandlungsakte, Patientenkurve, Arztbrief, Medikationsplan, Impfausweis beziehungsweise Impfplan und Notfalldatensatz?
 :::
+
+:::: {.exam-answer}
+
+Die Dokumente unterscheiden sich vor allem hinsichtlich ihres Umfangs, ihres zeitlichen Bezugs und ihrer Zielgruppe.
+
+- **Behandlungsakte:** enthält die für die aktuelle und zukünftige Behandlung wesentlichen Informationen
+  - Dazu gehören insbesondere Anamnese, Diagnosen, Befunde, Untersuchungen, Therapien und ihre Wirkungen, Eingriffe, Aufklärung und Einwilligung.
+  - Sie dient der Behandlungskontinuität, der Kommunikation innerhalb des Behandlungsteams und dem Nachweis des Behandlungsverlaufs.
+  - Der umgangssprachliche Begriff **Patientenakte** wird häufig gleichbedeutend verwendet.
+    - **Beispiel:** In der Krankenhausakte werden Aufnahmebefund, Operationsbericht, Laborbefunde, Medikation und Verlaufseinträge zusammengeführt.
+
+- **Patientenkurve:** stellt zeitabhängige Behandlungs- und Verlaufsdaten übersichtlich dar
+  - Typische Inhalte sind Vitalzeichen, Medikamentenanordnungen und -gaben, Flüssigkeitsbilanz, Laborwerte sowie ärztliche und pflegerische Maßnahmen.
+  - Sie unterstützt die laufende Versorgung, Schichtübergaben und das Erkennen zeitlicher Veränderungen.
+  - Sie kann papiergebunden oder als digitale Kurve im Krankenhausinformationssystem geführt werden.
+    - **Beispiel:** Temperatur, Entzündungswerte und Antibiotikagaben werden über mehrere Behandlungstage gemeinsam dargestellt.
+
+- **Arztbrief:** fasst die wesentlichen Informationen einer Behandlungsepisode für die Weiterbehandlung zusammen
+  - Typische Inhalte sind Anlass der Behandlung, Diagnosen, relevante Befunde, Behandlungsverlauf, durchgeführte Maßnahmen, Entlassmedikation und Empfehlungen.
+  - Er richtet sich vor allem an weiterbehandelnde Ärztinnen, Ärzte oder Einrichtungen.
+  - Vorläufige und endgültige Arzt- beziehungsweise Entlassbriefe müssen als solche erkennbar sein.
+    - **Beispiel:** Der Entlassbrief informiert die Hausarztpraxis über die stationäre Therapie und die notwendige Nachsorge.
+
+- **Medikationsplan:** gibt eine aktuelle Übersicht über die bekannte Medikation
+  - Er enthält verordnete Arzneimittel, relevante Selbstmedikation und gegebenenfalls für die Medikation bedeutsame Medizinprodukte.
+  - Angegeben werden insbesondere Wirkstoff beziehungsweise Arzneimittel, Wirkstärke, Darreichungsform, Dosierung und Anwendungshinweise.
+  - Er unterstützt die Kommunikation, die Medikationsabstimmung und die Arzneimitteltherapiesicherheit.
+  - Er muss aktualisiert werden, wenn sich die Medikation ändert.
+    - **Beispiel:** Nach einer stationären Behandlung wird die neue Antikoagulation in den Medikationsplan übernommen und eine abgesetzte Vormedikation entfernt.
+
+- **Impfausweis beziehungsweise Impfpass:** weist durchgeführte Schutzimpfungen nach
+  - Dokumentiert werden insbesondere Impfdatum, Impfstoff, Charge, Zielkrankheit und die für die Impfung verantwortliche Person.
+  - Zusätzlich soll über notwendige Folge- und Auffrischimpfungen informiert werden.
+  - Ein **Impfplan** beschreibt dagegen, welche Impfungen aufgrund von Alter, Vorerkrankungen, Exposition oder bisherigem Impfstatus noch vorgesehen sind.
+    - **Beispiel:** Bei einer verschmutzten Wunde kann anhand der Impfdokumentation geprüft werden, ob eine Tetanusauffrischung erforderlich ist.
+
+- **Notfalldatensatz:** stellt ausgewählte notfallrelevante Informationen rasch zur Verfügung
+  - Er kann beispielsweise relevante Erkrankungen, regelmäßige Medikation, Allergien, Unverträglichkeiten, Implantate, Schwangerschaft sowie Kontaktpersonen enthalten.
+  - Er soll die Versorgung unterstützen, wenn eine vollständige Anamnese nicht rechtzeitig oder nicht zuverlässig möglich ist.
+  - Seine Anlage ist freiwillig. Seine Verlässlichkeit hängt davon ab, dass die Angaben regelmäßig aktualisiert werden.
+  - Er ersetzt weder die Anamnese noch die Behandlungsakte oder den Medikationsplan.
+    - **Beispiel:** Bei einer bewusstlosen Person kann der Notfalldatensatz Hinweise auf eine Antikoagulation und eine schwere Arzneimittelallergie liefern.
+
+Merksatz: Die Behandlungsakte dokumentiert umfassend, die Kurve zeigt den zeitlichen Verlauf, der Arztbrief übergibt eine Behandlungsepisode und Medikationsplan, Impfdokumentation sowie Notfalldatensatz stellen ausgewählte Informationen für besondere Versorgungssituationen bereit.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Die **elektronische Patientenakte (ePA)** ist nicht mit der lokalen Behandlungsakte einer Praxis oder eines Krankenhauses identisch. Sie ergänzt den einrichtungsübergreifenden Informationsaustausch, ersetzt aber nicht die Primärdokumentation der behandelnden Einrichtung.
+- Der Notfalldatensatz ist vom **Datensatz Persönliche Erklärungen (DPE)** zu unterscheiden. Der DPE enthält Hinweise auf den Ablageort beispielsweise einer Patientenverfügung, Vorsorgevollmacht oder eines Organspendeausweises, nicht deren vollständigen Inhalt.
+- Ein Medikationsplan ist eine Momentaufnahme der bekannten Medikation. Vor einer Behandlung bleibt eine strukturierte Medikationsanamnese beziehungsweise ein Medikationsabgleich erforderlich.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Bürgerliches Gesetzbuch: § 630f „Dokumentation der Behandlung“.  
+  <https://www.gesetze-im-internet.de/bgb/__630f.html>
+- Sozialgesetzbuch Fünftes Buch: § 31a „Medikationsplan“ und § 358 „Elektronische Notfalldaten, elektronische Patientenkurzakte und elektronischer Medikationsplan“.  
+  <https://www.gesetze-im-internet.de/sgb_5/__31a.html>  
+  <https://www.gesetze-im-internet.de/sgb_5/__358.html>
+- Infektionsschutzgesetz: § 22 „Impf-, Genesenen- und Testdokumentation“.  
+  <https://www.gesetze-im-internet.de/ifsg/__22.html>
+- GKV-Spitzenverband, Deutsche Krankenhausgesellschaft und Kassenärztliche Bundesvereinigung: *Rahmenvertrag über ein Entlassmanagement beim Übergang in die Versorgung nach Krankenhausbehandlung*. Fassung der 12. Änderungsvereinbarung vom 03.06.2024, § 9 „Dokumentation an die weiterbehandelnden Ärzte“.  
+  <https://www.kbv.de/media/sp/Rahmenvertrag_Entlassmanagement.pdf>
+- gematik: *Notfalldatenmanagement – Fragen und Antworten*.  
+  <https://www.gematik.de/anwendungen/notfalldaten/faq>
+- gematik: *Klinische Dokumentenklassen-Liste*, Version 2024, Einträge „Intensivkurve“, „Pflegekurve“ und „Impfausweis“.  
+  <https://gemspec.gematik.de/ig/fhir/terminology/1.0.5/CodeSystem-kdl-cs-2024.html>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
 
 
 ## Klinische Ordnungs- und Klassifikationssysteme
@@ -175,6 +427,89 @@ Welche Aufgaben haben Patientenakte, Kurve, Arztbrief, Medikationsplan, Impfpass
 Wofür werden ICD-O, TNM-Klassifikation und ICF verwendet, und welche unterschiedlichen Aspekte eines Patienten beschreiben sie?
 :::
 
+:::: {.exam-answer}
+
+Die drei Klassifikationen beantworten unterschiedliche Fragen:
+
+| Klassifikation | Leitfrage | Beschriebener Aspekt | Typischer Einsatz |
+|---|---|---|---|
+| **ICD-O** | Wo liegt der Tumor, und um welche Tumorart handelt es sich? | Lokalisation und biologische beziehungsweise histologische Eigenschaften | Krebsregister und Pathologie |
+| **TNM** | Wie weit hat sich der Tumor anatomisch ausgebreitet? | Primärtumor, regionale Lymphknoten und Fernmetastasen | Tumorstadium, Therapieplanung und Prognoseabschätzung |
+| **ICF** | Wie wirkt sich eine Gesundheitsstörung auf das Leben der betroffenen Person aus? | Körperfunktionen, Aktivitäten, Teilhabe und Kontextfaktoren | Rehabilitation, Versorgungsplanung und Ergebnismessung |
+
+- **International Classification of Diseases for Oncology (ICD-O):** klassifiziert Neubildungen nach mehreren Merkmalen
+  - Die **Topographie** beschreibt den Ursprungsort des Tumors.
+  - Die **Morphologie** beschreibt den histologischen Tumortyp.
+  - Ergänzend werden das biologische Verhalten, beispielsweise gutartig, in situ oder bösartig, und gegebenenfalls der Differenzierungsgrad erfasst.
+  - Die ICD-O wird hauptsächlich in Tumor- und Krebsregistern sowie in der Pathologie eingesetzt.
+  - Sie beschreibt weder das anatomische Tumorstadium noch die Funktionsfähigkeit der betroffenen Person.
+    - **Beispiel:** Ein Krebsregister dokumentiert bei einem Mammakarzinom getrennt die betroffene Brustregion und den histologischen Tumortyp.
+
+- **TNM-Klassifikation:** beschreibt die anatomische Ausbreitung eines malignen Tumors
+  - **T – Tumor:** Ausdehnung beziehungsweise Größe des Primärtumors
+  - **N – Nodes:** Befall regionaler Lymphknoten
+  - **M – Metastasis:** Vorliegen von Fernmetastasen
+  - Aus der Kombination kann für viele Tumorentitäten eine Stadiengruppe gebildet werden.
+  - TNM unterstützt Therapieplanung, Prognoseabschätzung, Ergebnisvergleich und Krebsregistrierung.
+  - Die genaue Bedeutung der Kategorien ist tumor- und editionsspezifisch.
+    - **Beispiel:** `cT2 cN1 cM0` bezeichnet ein klinisch ermitteltes Stadium mit einer tumorspezifischen T2-Ausdehnung, regionalem Lymphknotenbefall und ohne nachgewiesene Fernmetastasen.
+
+- **International Classification of Functioning, Disability and Health (ICF):** beschreibt Funktionsfähigkeit und Beeinträchtigungen im Kontext der Lebenssituation
+  - **Körperfunktionen und Körperstrukturen:** physiologische Funktionen und anatomische Strukturen sowie deren Beeinträchtigungen
+  - **Aktivitäten:** Durchführung von Aufgaben oder Handlungen
+  - **Teilhabe:** Einbezogensein in Lebenssituationen
+  - **Umweltfaktoren:** physische, soziale und einstellungsbezogene Faktoren, die als Barrieren oder Förderfaktoren wirken können
+  - Persönliche Faktoren werden im Modell berücksichtigt, aber nicht durch die ICF klassifiziert.
+  - Die ICF ergänzt eine Krankheitsdiagnose, ersetzt sie jedoch nicht.
+    - **Beispiel:** Nach einer Brustkrebsoperation können eingeschränkte Schulterbeweglichkeit, Schwierigkeiten beim Ankleiden, Auswirkungen auf die Berufstätigkeit und die Unterstützung durch Angehörige beschrieben werden.
+
+- **Zusammenspiel:** Bei einer Tumorerkrankung können alle drei Systeme gleichzeitig benötigt werden.
+  - ICD-O beschreibt **Lokalisation und Tumorart**.
+  - TNM beschreibt **die anatomische Ausbreitung**.
+  - ICF beschreibt **die Auswirkungen auf Funktionsfähigkeit, Alltag und Teilhabe**.
+
+Merksatz: ICD-O beschreibt, wo und welcher Tumor vorliegt; TNM beschreibt, wie weit er sich ausgebreitet hat; ICF beschreibt, wie die betroffene Person im Alltag funktioniert.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Klinische und pathologische TNM-Klassifikation:**
+  - `cTNM` beruht auf den vor der Behandlung verfügbaren klinischen, bildgebenden und bioptischen Befunden.
+  - `pTNM` berücksichtigt zusätzliche Befunde aus Operation und histopathologischer Untersuchung.
+- Die Union for International Cancer Control (UICC) empfiehlt die **9. TNM-Ausgabe** seit dem 1. Januar 2026. Tumordokumentationen müssen deshalb die verwendete TNM-Ausgabe angeben.
+- Die finalen Tabellen der **ICD-O-4** wurden im Juli 2026 international veröffentlicht. Da die Umstellung national und registerspezifisch erfolgen kann, muss bei der Kodierung die jeweils vorgeschriebene ICD-O-Fassung verwendet und dokumentiert werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- World Health Organization: *International Classification of Diseases for Oncology, 3rd Edition (ICD-O-3)*, Abschnitte „Purpose/Definition“ und „Classification structure“.  
+  <https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology>
+- Znaor A, Rous B, Levy GG et al.: *The International Classification of Diseases for Oncology, 4th edition (ICD-O-4): an overview*. Cancer Epidemiology. 2026; veröffentlicht am 22.01.2026.  
+  <https://doi.org/10.1016/j.canep.2026.102989>
+- International Agency for Research on Cancer: *International Classification of Diseases for Oncology, fourth edition (ICD-O-4) final tables now available*. 20.07.2026.  
+  <https://www.iarc.who.int/news-events/international-classification-of-diseases-for-oncology-fourth-edition-icd-o-4-final-tables-now-available/>
+- Bundesinstitut für Arzneimittel und Medizinprodukte: *ICD-10-GM Version 2026 – Morphologie der Neubildungen*.  
+  <https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2026/zusatz-05-anh-morphologie-neubildungen.htm>
+- Brierley JD, Giuliani M, O’Sullivan B, Rous B, Van Eycken E, Hrsg.: *TNM Classification of Malignant Tumours*. 9. Auflage, Wiley-Blackwell, 2025. Einführendes Kapitel und aktuelle Ausgabenhinweise über die UICC.  
+  <https://www.uicc.org/resources/tnm/publications-resources>
+- World Health Organization: *International Classification of Functioning, Disability and Health: ICF*. WHO, 2001, Einleitung, Abschnitte 3.3 und 4, insbesondere S. 8–11.  
+  <https://iris.who.int/handle/10665/42407>
+- World Health Organization: *Towards a Common Language for Functioning, Disability and Health – ICF*. WHO, 2002, Abschnitte „The Model of ICF“, „Concepts of functioning and disability“ und „The Qualifiers“, S. 8–11.  
+  <https://www.who.int/docs/default-source/classification/icf/icfbeginnersguide.pdf>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
 
 ## Administrative Ordnungs- und Klassifikationssysteme
 
@@ -182,23 +517,431 @@ Wofür werden ICD-O, TNM-Klassifikation und ICF verwendet, und welche unterschie
 Wofür werden ICD-10-GM, OPS, G-DRG und PEPP verwendet, und wie wirken sie bei Dokumentation und Abrechnung zusammen?
 :::
 
+:::: {.exam-answer}
+
+Die Systeme erfüllen unterschiedliche Aufgaben: **ICD-10-GM und OPS kodieren dokumentierte medizinische Sachverhalte. G-DRG beziehungsweise PEPP ordnen den Behandlungsfall anschließend einer Entgeltgruppe zu.**
+
+- **ICD-10-GM:** Die *Internationale statistische Klassifikation der Krankheiten und verwandter Gesundheitsprobleme, 10. Revision, German Modification* dient zur standardisierten Kodierung von Diagnosen und anderen gesundheitsbezogenen Sachverhalten.
+  - Im Krankenhaus werden insbesondere die Hauptdiagnose und relevante Nebendiagnosen nach den Deutschen Kodierrichtlinien kodiert.
+  - Die Hauptdiagnose ist die Diagnose, die nach Analyse hauptsächlich für die Veranlassung des stationären Aufenthalts verantwortlich war.
+  - Die ICD-10-GM wird außerdem für Abrechnung, Statistik und Datenübermittlung verwendet.
+    - **z. B.:** Eine ärztlich dokumentierte Pneumonie wird mit dem zutreffenden ICD-10-GM-Kode verschlüsselt.
+
+- **OPS:** Der *Operationen- und Prozedurenschlüssel* dient zur standardisierten Kodierung medizinischer Maßnahmen.
+  - Er umfasst nicht nur Operationen, sondern auch diagnostische, nichtoperative therapeutische und komplexe Behandlungsmaßnahmen.
+  - Eine Maßnahme darf nur kodiert werden, wenn sie tatsächlich durchgeführt und ausreichend dokumentiert wurde und die jeweiligen Kodiermerkmale erfüllt sind.
+    - **z. B.:** Eine durchgeführte und dokumentierte Appendektomie wird mit dem zutreffenden OPS-Kode verschlüsselt.
+
+- **G-DRG beziehungsweise aG-DRG:** Die *German Diagnosis Related Groups* klassifizieren stationäre somatische Behandlungsfälle im DRG-Entgeltbereich.
+  - Die heute verwendete Bezeichnung **aG-DRG** steht für das G-DRG-System nach Ausgliederung der Pflegepersonalkosten.
+  - Ein zertifizierter Grouper verarbeitet unter anderem:
+    - Haupt- und Nebendiagnosen
+    - Prozeduren
+    - Alter und Geschlecht
+    - Beatmungsdauer
+    - Verweildauer sowie Aufnahme- und Entlassungsdaten
+  - Der Grouper ordnet den Behandlungsfall einer DRG mit einer bestimmten Bewertungsrelation zu.
+  - Die endgültige Rechnung kann zusätzlich Zu- und Abschläge, Zusatzentgelte und gesondert finanzierte Bestandteile enthalten.
+    - **z. B.:** Zwei stationäre Fälle mit derselben Hauptdiagnose können wegen unterschiedlicher Operationen, relevanter Nebendiagnosen oder Beatmungszeiten verschiedenen aG-DRGs zugeordnet werden.
+
+- **PEPP:** Das *Pauschalierende Entgeltsystem für Psychiatrie und Psychosomatik* dient der Klassifikation und Vergütung vollstationärer, teilstationärer und stationsäquivalenter psychiatrischer und psychosomatischer Behandlungen.
+  - Auch hier werden ICD-10-GM-, OPS- und weitere Falldaten durch einen zertifizierten Grouper verarbeitet.
+  - Der Fall wird einer PEPP zugeordnet.
+  - Die Vergütung erfolgt grundsätzlich tagesbezogen. Die Bewertungsrelation je Tag kann von der Zahl der Berechnungstage abhängen.
+  - Zusatzentgelte und ergänzende Tagesentgelte können hinzukommen.
+    - **z. B.:** Bei einer stationären Depressionsbehandlung beeinflussen die dokumentierten Diagnosen, Behandlungsmerkmale und Berechnungstage die PEPP-Zuordnung und Vergütung.
+
+- **Zusammenwirken bei Dokumentation und Abrechnung:**
+  1. Das Behandlungsteam dokumentiert Diagnosen, Befunde, Verlauf und durchgeführte Maßnahmen.
+  2. Ärztlicher Dienst und/oder medizinisches Kodierpersonal übertragen die abrechnungsrelevanten Sachverhalte nach den geltenden Kodierrichtlinien in ICD-10-GM- und OPS-Kodes.
+  3. Ein Grouper verarbeitet die Kodes und weitere Falldaten.
+  4. Der somatische Fall wird einer aG-DRG, der psychiatrische oder psychosomatische Fall grundsätzlich einer PEPP zugeordnet.
+  5. Die Abrechnung erfolgt nach dem jeweils geltenden Entgeltkatalog und den zugehörigen Abrechnungsbestimmungen.
+
+Die vereinfachte Kette lautet:
+
+**klinische Dokumentation → ICD-10-GM und OPS → Grouper → aG-DRG oder PEPP → Entgeltabrechnung**
+
+Merksatz: ICD-10-GM kodiert vor allem, warum behandelt wurde, OPS, was durchgeführt wurde; der Grouper ordnet den dokumentierten Behandlungsfall einer aG-DRG oder PEPP zu.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Codes verdichten Informationen und ersetzen nicht die vollständige klinische Dokumentation.
+- Nicht jeder zusätzliche Kode verändert die Gruppierung oder erhöht das Entgelt.
+- Kodiert werden dürfen nur tatsächlich vorliegende beziehungsweise erbrachte und regelgerecht dokumentierte Sachverhalte.
+- ICD-10-GM, OPS, Kodierrichtlinien und Entgeltkataloge werden regelmäßig aktualisiert. Maßgeblich ist die für den jeweiligen Fall geltende Fassung.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13. Das Kursbuch nennt ICD-10, OPS, DRG und PEPP als Lerninhalte, definiert ihr Zusammenspiel jedoch nicht näher.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Bundesinstitut für Arzneimittel und Medizinprodukte: *ICD-10-GM, Version 2026*. Systematisches Verzeichnis und Anleitung zur Verschlüsselung.  
+  <https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2026/index.htm>
+
+- Bundesinstitut für Arzneimittel und Medizinprodukte: *Operationen- und Prozedurenschlüssel, Version 2026*. Systematisches Verzeichnis, insbesondere Kapitel 1, 3, 5, 6, 8 und 9.  
+  <https://klassifikationen.bfarm.de/ops/kode-suche/htmlops2026/index.htm>
+
+- Institut für das Entgeltsystem im Krankenhaus: *Deutsche Kodierrichtlinien, Version 2026*. Insbesondere DKR D002 „Hauptdiagnose“ und DKR P001f „Allgemeine Kodierrichtlinien für Prozeduren“.  
+  <https://www.g-drg.de/content/download/17438/file/Deutsche_Kodierrichtlinien_Version_2026_251120.pdf>
+
+- Institut für das Entgeltsystem im Krankenhaus: *aG-DRG-System 2026*. Definitionshandbuch und Fallpauschalen-Katalog 2026.  
+  <https://www.g-drg.de/ag-drg-system-2026>
+
+- Institut für das Entgeltsystem im Krankenhaus: *Vereinbarung über die pauschalierenden Entgelte für die Psychiatrie und Psychosomatik 2026*. Insbesondere § 1 „Abrechnungsgrundsätze“.  
+  <https://www.g-drg.de/content/download/17209/file/2025_09_26_PEPPV%202026_final.pdf>
+
+- Sozialgesetzbuch Fünftes Buch, § 301 Abs. 1 und 2: Übermittlung und Verschlüsselung von Diagnosen, Operationen und sonstigen Prozeduren durch Krankenhäuser.  
+  <https://www.gesetze-im-internet.de/sgb_5/__301.html>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
 ::: {.exam-question}
 Wie unterscheiden sich EBM und GOÄ hinsichtlich Anwendungsbereich und Abrechnungslogik?
 :::
+
+:::: {.exam-answer}
+
+Der **Einheitliche Bewertungsmaßstab (EBM)** und die **Gebührenordnung für Ärzte (GOÄ)** sind Abrechnungssysteme für ärztliche Leistungen. Sie sind keine medizinischen Klassifikationen.
+
+- **Einheitlicher Bewertungsmaßstab (EBM):** verbindliche Abrechnungsgrundlage der vertragsärztlichen Versorgung
+  - Er gilt insbesondere für Leistungen, die Vertragsärzte und Vertragspsychotherapeuten für Versicherte der gesetzlichen Krankenversicherung erbringen.
+  - Er wird von der Kassenärztlichen Bundesvereinigung und dem Spitzenverband Bund der Krankenkassen im Bewertungsausschuss vereinbart.
+  - Jede abrechenbare Leistung besitzt eine **Gebührenordnungsposition (GOP)**.
+  - Die GOP legt unter anderem fest:
+    - Leistungsinhalt
+    - Abrechnungsvoraussetzungen
+    - Punktzahl und Eurobewertung
+    - Ausschlüsse und Kombinationsregeln
+    - gegebenenfalls Zeit- oder Mengenbegrenzungen
+  - Die Praxis rechnet die Leistungen grundsätzlich quartalsweise über die zuständige Kassenärztliche Vereinigung ab.
+  - Der Patient erhält im Sachleistungsprinzip normalerweise keine Rechnung.
+  - Das tatsächlich ausgezahlte Honorar hängt zusätzlich von der Vergütungsart und den regionalen Honorarverteilungsregeln ab:
+    - Ein Teil der Leistungen wird innerhalb einer begrenzten Gesamtvergütung vergütet.
+    - Andere Leistungen werden extrabudgetär oder aufgrund besonderer gesetzlicher Regelungen ohne Mengenbegrenzung vergütet.
+    - **z. B.:** Eine Vertragsarztpraxis rechnet die Behandlung eines gesetzlich versicherten Patienten mit den zutreffenden GOP über die Kassenärztliche Vereinigung ab.
+
+- **Gebührenordnung für Ärzte (GOÄ):** staatliche Gebührenordnung für privat abzurechnende ärztliche Leistungen
+  - Sie gilt, soweit nicht durch Bundesgesetz eine andere Vergütungsregelung bestimmt ist.
+  - Typische Anwendungsbereiche sind:
+    - Behandlung privat versicherter Patienten
+    - Selbstzahlerleistungen
+    - individuelle Gesundheitsleistungen
+    - wahlärztliche Leistungen im Krankenhaus
+  - Der Arzt stellt dem Zahlungspflichtigen eine Rechnung über einzelne GOÄ-Nummern.
+  - Die Gebühr einer Leistung ergibt sich grundsätzlich aus:
+    - Punktzahl der GOÄ-Leistung
+    - gesetzlich festgelegtem Punktwert
+    - angewendetem Steigerungsfaktor
+  - Bei den meisten persönlichen ärztlichen Leistungen liegt der Gebührenrahmen zwischen dem Einfachen und dem 3,5-Fachen des Gebührensatzes.
+  - Der Faktor richtet sich insbesondere nach Schwierigkeit, Zeitaufwand und Umständen der Leistung.
+  - Eine Überschreitung des 2,3-fachen Schwellenwertes muss für die einzelne Leistung nachvollziehbar begründet werden.
+  - Für technische und Laborleistungen gelten niedrigere Gebührenrahmen und Schwellenwerte.
+  - Die Rechnung wird grundsätzlich gegenüber dem Patienten beziehungsweise einem anderen Zahlungspflichtigen fällig.
+    - **z. B.:** Ein privat versicherter Patient erhält nach einer ärztlichen Behandlung eine Rechnung mit GOÄ-Nummern, Steigerungsfaktoren und Einzelbeträgen.
+
+- **Wesentlicher Unterschied:**
+  - Beim EBM erfolgt die Abrechnung überwiegend zwischen Leistungserbringer, Kassenärztlicher Vereinigung und gesetzlicher Krankenversicherung.
+  - Bei der GOÄ entsteht grundsätzlich eine Einzelrechnung an den Zahlungspflichtigen.
+  - Der EBM verbindet Leistungspositionen mit kollektivvertraglichen und teilweise mengenabhängigen Vergütungsregeln.
+  - Die GOÄ berechnet einzelne Leistungen anhand eines festen Punktwerts und eines begründeten Steigerungsfaktors.
+  - Die Erstattung einer GOÄ-Rechnung durch private Krankenversicherung oder Beihilfe richtet sich zusätzlich nach dem jeweiligen Tarif beziehungsweise Beihilferecht.
+
+Merksatz: EBM bedeutet vertragsärztliche Abrechnung über die Kassenärztliche Vereinigung; GOÄ bedeutet grundsätzlich Einzelrechnung nach Gebührennummer und Steigerungsfaktor.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Die Zuordnung richtet sich nicht allein nach dem Versicherungsstatus, sondern nach dem konkreten Versorgungs- und Abrechnungsverhältnis.
+- Bestimmte ambulante Krankenhausleistungen werden ebenfalls nach dem EBM vergütet.
+- Bei Arbeitsunfällen gilt regelmäßig das besondere Gebührenverzeichnis der gesetzlichen Unfallversicherung und nicht die allgemeine GOÄ.
+- Selbständige, nicht im Gebührenverzeichnis enthaltene ärztliche Leistungen können nach § 6 Abs. 2 GOÄ analog zu einer gleichwertigen Leistung berechnet werden.
+- Die diskutierte neue GOÄ ist noch nicht in Kraft. Bis zu einer wirksamen Neuregelung gilt die bisherige GOÄ fort.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13. Das Kursbuch nennt EBM und GOÄ als Lerninhalte, definiert ihre Abrechnungslogik jedoch nicht.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Sozialgesetzbuch Fünftes Buch, § 87 Abs. 1 und 2: Vereinbarung, Inhalt und Bewertung des Einheitlichen Bewertungsmaßstabes.  
+  <https://www.gesetze-im-internet.de/sgb_5/__87.html>
+
+- Kassenärztliche Bundesvereinigung: *Einheitlicher Bewertungsmaßstab*, Abschnitte „Einheitlicher Bewertungsmaßstab“ und „Orientierungswert“, Stand 4. Quartal 2026.  
+  <https://www.kbv.de/praxis/abrechnung/ebm>
+
+- Kassenärztliche Bundesvereinigung: *Online-EBM*, Version 2026/4, Datenstand 01.10.2026.  
+  <https://ebm.kbv.de/>
+
+- Gebührenordnung für Ärzte:
+  - § 1 „Anwendungsbereich“
+  - § 4 „Gebühren“
+  - § 5 „Bemessung der Gebühren“
+  - § 6 Abs. 2 „Analogberechnung“
+  - § 12 „Fälligkeit und Abrechnung der Vergütung, Rechnung“  
+  <https://www.gesetze-im-internet.de/go__1982/>
+
+- Bundesärztekammer: *GOÄ-Novellierung*, Stand 2026.  
+  <https://www.bundesaerztekammer.de/themen/aerzte/honorar/goae-novellierung>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
 
 
 ## Weitere medizinische Terminologien und Ordnungssysteme
 
 ::: {.exam-question}
-Welche Informationen bilden SNOMED CT, LOINC, ATC, UCUM und GMDN beziehungsweise EMDN ab?
+Welche Informationen bilden SNOMED CT, LOINC, ATC, UCUM sowie GMDN und EMDN ab?
 :::
+
+:::: {.exam-answer}
+
+Die Systeme standardisieren unterschiedliche Arten medizinischer Informationen. Sie ergänzen sich, sind aber nicht gegeneinander austauschbar.
+
+- **SNOMED Clinical Terms (SNOMED CT):** umfangreiche klinische Terminologie zur strukturierten Darstellung medizinischer Bedeutungen
+  - Sie enthält unter anderem Konzepte für:
+    - klinische Befunde und Erkrankungen
+    - Symptome
+    - Prozeduren
+    - Körperstrukturen
+    - Organismen
+    - Substanzen und Arzneimittel
+    - klinische Situationen und Kontextangaben
+  - Jedes Konzept besitzt einen eindeutigen numerischen Identifikator.
+  - Synonyme können demselben Konzept zugeordnet werden.
+  - Beziehungen zwischen Konzepten bilden klinische Zusammenhänge maschinenlesbar ab.
+  - SNOMED CT ermöglicht eine detailliertere klinische Dokumentation als eine primär statistisch ausgerichtete Klassifikation wie ICD-10-GM.
+    - **z. B.:** Das Konzept einer bakteriellen Pneumonie kann mit dem übergeordneten Konzept Pneumonie und weiteren klinischen Merkmalen verknüpft werden.
+
+- **Logical Observation Identifiers Names and Codes (LOINC):** Terminologie zur Identifikation von Untersuchungen, Beobachtungen, Messgrößen und medizinischen Dokumenttypen
+  - Ein LOINC-Term kann insbesondere festlegen:
+    - untersuchte Komponente oder Analyt
+    - gemessene Eigenschaft
+    - Zeitbezug
+    - Probenmaterial oder untersuchtes System
+    - Skalenniveau
+    - gegebenenfalls Untersuchungsmethode
+  - LOINC beschreibt, **was** bestimmt oder beobachtet wurde.
+  - Das Ergebnis und seine Einheit werden getrennt übertragen.
+  - LOINC umfasst neben Laboruntersuchungen auch Vitalparameter, klinische Scores, bildgebende Untersuchungen und Dokumenttypen.
+    - **z. B.:** LOINC identifiziert die Bestimmung der Kaliumkonzentration in Serum oder Plasma; der Messwert und die Einheit sind nicht Bestandteil des LOINC-Kodes.
+
+- **Anatomisch-Therapeutisch-Chemische Klassifikation (ATC):** hierarchische Klassifikation von Wirkstoffen und Wirkstoffkombinationen
+  - Die Einteilung erfolgt auf fünf Ebenen nach:
+    - behandeltem Organ oder Organsystem
+    - therapeutischer Hauptgruppe
+    - pharmakologischer beziehungsweise therapeutischer Untergruppe
+    - chemischer beziehungsweise pharmakologischer Untergruppe
+    - chemischem Wirkstoff
+  - ATC-Kodes werden insbesondere für Arzneimittelstatistik, Pharmakoepidemiologie und Arzneimittelverbrauchsforschung verwendet.
+  - Sie identifizieren nicht automatisch eine konkrete Handelspräparation, Packungsgröße oder patientenindividuelle Dosis.
+    - **z. B.:** Metformin wird dem ATC-Kode `A10BA02` zugeordnet.
+
+- **Unified Code for Units of Measure (UCUM):** maschinenlesbares Kodiersystem für Maßeinheiten
+  - Es ermöglicht die eindeutige elektronische Übertragung von Einheiten.
+  - UCUM kodiert nur die Einheit, nicht:
+    - die untersuchte Messgröße
+    - den Zahlenwert
+    - den klinischen Referenzbereich
+  - Die normgerechte Schreibweise ist teilweise zwischen Groß- und Kleinschreibung unterscheidend.
+    - **z. B.:** Die Einheit Millimol pro Liter wird als `mmol/L` dargestellt.
+
+- **Global Medical Device Nomenclature (GMDN):** internationale Nomenklatur zur herstellerunabhängigen Benennung und Kategorisierung von Medizinproduktarten
+  - Ein GMDN-Term besteht insbesondere aus:
+    - Bezeichnung der Produktart
+    - numerischem Kode
+    - Definition
+  - Er beschreibt eine generische Produktgruppe und nicht ein bestimmtes Fabrikat, eine Seriennummer oder ein einzelnes Exemplar.
+  - GMDN wird unter anderem für Regulierung, Marktüberwachung, Vigilanz und vergleichende Auswertungen verwendet.
+    - **z. B.:** Der GMDN-Term `47017` bezeichnet eine allgemeine Spritze und nicht die Spritze eines bestimmten Herstellers.
+
+- **European Medical Device Nomenclature (EMDN):** europäische Nomenklatur für Medizinprodukte und In-vitro-Diagnostika
+  - Sie wird insbesondere für die Registrierung von Produkten in der Europäischen Datenbank für Medizinprodukte (EUDAMED) verwendet.
+  - Der EMDN-Kode wird dort mit dem jeweiligen Produktdatensatz beziehungsweise der Produktkennung verknüpft.
+  - Die EMDN ist hierarchisch aufgebaut und basiert auf der italienischen *Classificazione Nazionale Dispositivi medici*.
+  - Sie unterstützt außerdem Marktüberwachung, Vigilanz und Auswertung regulatorischer Produktdaten.
+    - **z. B.:** Bei der Registrierung einer Infusionspumpe in EUDAMED wird die zutreffende generische Produktart durch einen EMDN-Kode angegeben.
+
+Merksatz: SNOMED CT kodiert klinische Bedeutungen, LOINC die untersuchte Beobachtung, ATC den Arzneistoff, UCUM die Einheit und GMDN beziehungsweise EMDN die generische Medizinproduktart.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Ein vollständiges quantitatives Laborergebnis besteht typischerweise aus mehreren getrennten Bestandteilen:
+
+- **LOINC:** Was wurde gemessen?
+- **Messwert:** Welches Ergebnis wurde ermittelt?
+- **UCUM:** In welcher Einheit wird das Ergebnis angegeben?
+- **SNOMED CT:** Welcher klinische Befund oder welches kategorische Ergebnis liegt gegebenenfalls vor?
+
+Beispielsweise werden bei einer Kaliumbestimmung die Messgröße durch LOINC, der Zahlenwert separat und die Einheit `mmol/L` durch UCUM dargestellt.
+
+Eine Medizinproduktenomenklatur bezeichnet dagegen eine **generische Produktart**. Sie ersetzt nicht die eindeutige Produktidentifikation durch das UDI-System. GMDN und EMDN sind eigenständige Nomenklaturen und dürfen nicht ungeprüft als gleichbedeutend behandelt werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13. Das Kursbuch nennt SNOMED CT, LOINC, ATC, UCUM und GMDN als Lerninhalte, definiert sie jedoch nicht im Einzelnen.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- SNOMED International: *What is SNOMED CT?*, Abschnitte „Concepts“, „Descriptions“ und „Relationships“, Online-Dokumentation, 2026.  
+  <https://www.snomed.org/what-is-snomed-ct>
+
+- SNOMED International: *SNOMED CT Starter Guide*, Kapitel 4 „SNOMED CT Basics“, 2026.  
+  <https://docs.snomed.org/snomed-ct-practical-guides/snomed-ct-starter-guide/4-snomed-ct-basics>
+
+- Regenstrief Institute: *LOINC Users’ Guide*, Kapitel 1 „Introduction“ und Kapitel 2 „Major Parts of a LOINC Term“, aktualisiert 2026.  
+  <https://loinc.org/kb/users-guide/introduction>  
+  <https://loinc.org/kb/users-guide/major-parts-of-a-loinc-term>
+
+- World Health Organization: *ATC/DDD Toolkit – Anatomical Therapeutic Chemical Classification*, Abschnitt „Structure“, laufend aktualisierte Online-Dokumentation.  
+  <https://www.who.int/tools/atc-ddd-toolkit/atc-classification>
+
+- UCUM Organization: *The Unified Code for Units of Measure*, Einleitung und Abschnitt 2.1 „Character Set and Lexical Rules“, ohne ausgewiesenes Publikationsjahr.  
+  <https://ucum.org/ucum>
+
+- GMDN Agency: *What we do – What is the GMDN?*, Stand 2026.  
+  <https://www.gmdnagency.org/what-we-do/>
+
+- European Commission: *European Medical Device Nomenclature*, laufend aktualisierte Online-Dokumentation.  
+  <https://health.ec.europa.eu/medical-devices-topics-interest/european-medical-devices-nomenclature-emdn_en>
+
+- Medical Device Coordination Group: *MDCG 2021-12 Rev. 2 – FAQ on the European Medical Device Nomenclature*, April 2026, insbesondere Frage 1.  
+  <https://health.ec.europa.eu/document/download/d90b3f63-1d62-43e6-bf5f-fb32ea7c47a2_en>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
 
 
 ## Qualitätssicherung
 
 ::: {.exam-question}
-Wie ist die gesetzliche Qualitätssicherung im Gesundheitswesen organisiert, und welche Aufgaben haben G-BA, IQTIG und Medizinischer Dienst?
+Wie ist die gesetzliche Qualitätssicherung nach dem SGB V organisiert, und welche Aufgaben haben G-BA, IQTIG und Medizinische Dienste?
 :::
+
+:::: {.exam-answer}
+
+Die gesetzliche Qualitätssicherung nach dem **Fünften Buch Sozialgesetzbuch (SGB V)** verbindet einrichtungsinternes Qualitätsmanagement, einrichtungsübergreifende Qualitätsvergleiche, verbindliche Qualitätsanforderungen und gezielte Prüfungen.
+
+- **Leistungserbringer:** sind für die Qualität ihrer Leistungen verantwortlich.
+  - Vertragsärzte, Medizinische Versorgungszentren und zugelassene Krankenhäuser müssen ein einrichtungsinternes Qualitätsmanagement betreiben und an vorgeschriebenen einrichtungsübergreifenden Maßnahmen teilnehmen.
+  - **z. B.:** Ein Krankenhaus dokumentiert festgelegte Daten zu Komplikationen und nutzt die Rückmeldung für sein internes Qualitätsmanagement.
+
+- **Gemeinsamer Bundesausschuss (G-BA):** legt verbindliche Vorgaben für die Qualitätssicherung fest.
+  - Er bestimmt durch Richtlinien insbesondere:
+    - Maßnahmen der einrichtungsübergreifenden Qualitätssicherung
+    - Anforderungen an das einrichtungsinterne Qualitätsmanagement
+    - Anforderungen an Struktur-, Prozess- und Ergebnisqualität
+    - Qualitätsindikatoren, Datenerhebung und Auswertung
+    - Verfahren bei Auffälligkeiten und mögliche Folgen bei Nichteinhaltung
+  - Er entscheidet über die verbindliche Ausgestaltung; das IQTIG bereitet diese Entscheidungen wissenschaftlich vor.
+  - **z. B.:** Der G-BA regelt in der DeQS-Richtlinie, welche Daten bei bestimmten Behandlungen erhoben und verglichen werden.
+
+- **Institut für Qualitätssicherung und Transparenz im Gesundheitswesen (IQTIG):** ist ein fachlich unabhängiges wissenschaftliches Institut nach § 137a SGB V.
+  - Es arbeitet überwiegend im Auftrag des G-BA.
+  - Zu seinen Aufgaben gehören insbesondere:
+    - Entwicklung von Qualitätsindikatoren und Messinstrumenten
+    - Entwicklung der erforderlichen Qualitätssicherungsdokumentation
+    - Entwicklung von Patientenbefragungen
+    - Mitwirkung an Durchführung und Auswertung der Qualitätssicherungsverfahren
+    - verständliche Veröffentlichung von Qualitätsergebnissen
+  - Das IQTIG erlässt keine verbindlichen Richtlinien und führt keine Krankenhausprüfungen durch.
+  - **z. B.:** Es entwickelt einen risikoadjustierten Indikator zur Beurteilung von Behandlungsergebnissen.
+
+- **Medizinische Dienste (MD):** prüfen bestimmte Qualitätsanforderungen in zugelassenen Krankenhäusern.
+  - Prüfgegenstände können insbesondere sein:
+    - gesetzliche oder vom G-BA festgelegte Qualitätsanforderungen
+    - Strukturmerkmale bestimmter OPS-Kodes
+    - die Richtigkeit der Dokumentation für die externe stationäre Qualitätssicherung
+  - Prüfungen erfolgen anhand von Unterlagen, vor Ort oder in kombinierter Form.
+  - Der zuständige Medizinische Dienst erstellt einen Prüfbericht, entscheidet aber nicht selbst über die zugrunde liegenden Qualitätsanforderungen.
+  - **z. B.:** Der Medizinische Dienst prüft, ob ein Krankenhaus vorgeschriebene personelle und organisatorische Voraussetzungen erfüllt.
+
+- **Datengestützte einrichtungsübergreifende Qualitätssicherung:** vergleicht die Versorgungsqualität anhand festgelegter Qualitätsindikatoren.
+  - Als Datenquellen können Dokumentationen der Leistungserbringer, Sozialdaten der Krankenkassen und Patientenbefragungen dienen.
+  - Die Einrichtungen erhalten Rückmeldeberichte und Vergleichswerte.
+  - Rechnerische Auffälligkeiten können ein Stellungnahmeverfahren und Maßnahmen zur Qualitätsverbesserung auslösen.
+
+Merksatz: Der G-BA legt die verbindlichen Regeln fest, das IQTIG entwickelt und bearbeitet die wissenschaftlichen Verfahren, und die Medizinischen Dienste prüfen bestimmte Anforderungen in Krankenhäusern.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Eine rechnerische Auffälligkeit bei einem Qualitätsindikator beweist noch keinen Qualitätsmangel. Unterschiedliche Patientenkollektive, Dokumentationsfehler oder besondere Behandlungssituationen müssen berücksichtigt werden.
+- In der vertragsärztlichen Versorgung werden bestimmte Qualitätsprüfungen durch die Kassenärztlichen Vereinigungen durchgeführt. Die Prüfaufgaben der Medizinischen Dienste nach § 275a SGB V betreffen vor allem Krankenhäuser.
+- Das BÄK-Kursbuch nennt verkürzt die „Qualitätssicherung nach § 137 SGB V“. Die gesetzlichen Grundlagen verteilen sich inzwischen auf mehrere Vorschriften, insbesondere §§ 135a, 136, 137, 137a und 275a SGB V.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, Lerninhalt „Qualitätssicherung nach § 137 SGB V“, S. 13. Die Fundstelle nennt das Thema, definiert jedoch nicht die Aufgabenverteilung zwischen G-BA, IQTIG und Medizinischen Diensten.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Sozialgesetzbuch Fünftes Buch:
+  - § 135a „Verpflichtung der Leistungserbringer zur Qualitätssicherung“  
+    <https://www.gesetze-im-internet.de/sgb_5/__135a.html>
+  - § 136 „Richtlinien des Gemeinsamen Bundesausschusses zur Qualitätssicherung“  
+    <https://www.gesetze-im-internet.de/sgb_5/__136.html>
+  - § 137 „Durchsetzung und Prüfung der Qualitätsanforderungen des Gemeinsamen Bundesausschusses“  
+    <https://www.gesetze-im-internet.de/sgb_5/__137.html>
+  - § 137a „Institut für Qualitätssicherung und Transparenz im Gesundheitswesen“  
+    <https://www.gesetze-im-internet.de/sgb_5/__137a.html>
+  - § 275a „Prüfungen zu Qualitätskriterien, Strukturmerkmalen, Qualitätsanforderungen und Vorgaben bei Zuschlägen im Krankenhaus“  
+    <https://www.gesetze-im-internet.de/sgb_5/__275a.html>
+
+- Gemeinsamer Bundesausschuss: *Datengestützte Qualitätssicherungsverfahren: Messen und Bewerten von Behandlungsqualität*, insbesondere Abschnitte „Aufgabe des G-BA“, „Messen mit Hilfe verschiedener Datenquellen“ und „Vergleichen und Bewerten mit Hilfe von Referenzbereichen“.  
+  <https://www.g-ba.de/themen/qualitaetssicherung/datenerhebung-zur-qualitaetssicherung/datengestuetzte-qualitaetssicherungsverfahren/>
+
+- Institut für Qualitätssicherung und Transparenz im Gesundheitswesen: *Grundlagen unserer Arbeit*, Abschnitt zu Auftrag und gesetzlichen Grundlagen.  
+  <https://iqtig.org/das-iqtig/wie-wir-arbeiten/grundlagen/>
+
+- Gemeinsamer Bundesausschuss: *MD-Qualitätsprüfungs-Richtlinie (MD-QP-RL)*, gültige Bezeichnung seit 1. August 2026.  
+  <https://www.g-ba.de/richtlinien/102/>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
 
 
 ## Entwicklung medizinischer Dokumentationssysteme
@@ -207,9 +950,227 @@ Wie ist die gesetzliche Qualitätssicherung im Gesundheitswesen organisiert, und
 Wie wird ein medizinisches Dokumentationssystem geplant, eingeführt, geprüft und fortgeschrieben?
 :::
 
+:::: {.exam-answer}
+
+Ein **medizinisches Dokumentationssystem** umfasst den Dokumentationszweck, die zu erfassenden Daten, Arbeitsabläufe, Verantwortlichkeiten, Regeln und technischen oder papierbasierten Werkzeuge. Seine Entwicklung ist ein fortlaufender Lebenszyklus.
+
+1. **Zweck und Verantwortlichkeiten festlegen**
+   - Zunächst werden Versorgungsbereich, Zielgruppe und Zweck der Dokumentation bestimmt.
+   - Es muss feststehen, ob die Daten beispielsweise der Behandlung, Abrechnung, Qualitätssicherung oder Forschung dienen.
+   - Verantwortlichkeiten, Ressourcen, rechtliche Grundlagen und messbare Ziele werden festgelegt.
+   - **z. B.:** Bei einem Sepsisregister werden Zielpopulation, Einschlusskriterien und auszuwertende Behandlungsergebnisse vor der Festlegung der Eingabefelder definiert.
+
+2. **Istzustand und Anforderungen erheben**
+   - Bestehende Dokumentationen, Arbeitsabläufe, Datenquellen, Schnittstellen und Medienbrüche werden analysiert.
+   - Ärzte, Pflege, Dokumentationsfachkräfte, IT und weitere betroffene Gruppen werden einbezogen.
+   - Festgelegt werden:
+     - funktionale Anforderungen, beispielsweise benötigte Eingaben und Auswertungen
+     - Qualitätsanforderungen, beispielsweise Benutzerfreundlichkeit, Verfügbarkeit und Antwortzeiten
+     - Anforderungen an Datenschutz, Informationssicherheit und Aufbewahrung
+     - Anforderungen an Interoperabilität und Datenexport
+     - Kriterien, anhand derer die spätere Zielerreichung geprüft wird
+
+3. **Daten- und Dokumentationskonzept entwerfen**
+   - Für jedes Datenelement werden Bedeutung, Datentyp, Format, zulässige Werte, Einheit und Erfassungszeitpunkt festgelegt.
+   - Pflichtfelder und Plausibilitätsregeln werden nur eingesetzt, wenn sie fachlich begründet sind.
+   - Geeignete Terminologien, Klassifikationen und Einheitensysteme werden verwendet.
+   - Urheberschaft, Zeitstempel, Änderungen, Zugriffsrechte sowie Lösch- und Aufbewahrungsregeln werden berücksichtigt.
+   - Formulare und Arbeitsabläufe werden möglichst früh mit den späteren Anwendern als Prototyp erprobt.
+
+4. **System auswählen oder umsetzen und einführen**
+   - Auf Grundlage der Anforderungen wird ein Produkt ausgewählt, angepasst oder entwickelt.
+   - Schnittstellen, Rollen, Berechtigungen und Datenmigration werden eingerichtet.
+   - Die Einführung umfasst:
+     - Pilotbetrieb oder gestufte Einführung
+     - Schulung der Anwender
+     - festgelegte Verantwortlichkeiten für Betrieb und Support
+     - Ausfall- und Rückfallverfahren
+     - geregelte Übernahme vorhandener Daten
+
+5. **System prüfen und freigeben**
+   - **Verifikation:** prüft, ob die festgelegten Anforderungen korrekt umgesetzt wurden.
+     - Dazu gehören Funktions-, Schnittstellen-, Berechtigungs-, Protokollierungs-, Migrations-, Leistungs- und Wiederherstellungstests.
+   - **Validierung:** prüft mit den vorgesehenen Anwendern, ob das System den beabsichtigten Zweck im tatsächlichen Arbeitsablauf erfüllt.
+   - Vor der Freigabe müssen schwerwiegende Fehler behoben, Restrisiken bewertet und die Ergebnisse dokumentiert werden.
+
+6. **Betrieb evaluieren und System fortschreiben**
+   - Nach der Einführung werden insbesondere Datenqualität, Nutzung, Benutzerfreundlichkeit, technische Verfügbarkeit und Auswirkungen auf Arbeitsabläufe und Patientensicherheit beobachtet.
+   - Rückmeldungen, Störungen und unerwünschte Auswirkungen werden systematisch ausgewertet.
+   - Änderungen erfolgen über ein geregeltes Änderungsmanagement:
+     - Änderungsbedarf begründen und priorisieren
+     - Auswirkungen und Risiken prüfen
+     - neue Version testen und freigeben
+     - Änderungen versionieren und dokumentieren
+     - betroffene Anwender informieren oder erneut schulen
+   - Auslöser können neue Rechtsvorgaben, medizinische Standards, Arbeitsabläufe, Schnittstellen oder erkannte Fehler sein.
+
+Merksatz: Zweck und Anforderungen bestimmen die Dokumentation; Tests sichern die Einführung, und Evaluation sowie Änderungsmanagement halten das System dauerhaft geeignet.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Ein medizinisches Dokumentationssystem ist nicht allein deshalb ein Medizinprodukt, weil es im Krankenhaus eingesetzt wird. Enthält die Software jedoch Funktionen, die Informationen für individuelle diagnostische oder therapeutische Entscheidungen erzeugen, muss ihre mögliche Qualifikation als Medizinprodukt nach der europäischen Medizinprodukteverordnung gesondert geprüft werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, Lerninhalt „Vorgehen bei Planung und Entwicklung von Dokumentationssystemen“, S. 13. Die Fundstelle nennt das Thema, beschreibt aber kein konkretes Vorgehensmodell.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Winter A, Ammenwerth E, Haux R, Marschollek M, Steiner B, Jahn F: *Health Information Systems: Technological and Management Perspectives*. 3. Auflage, Springer, 2023:
+  - Kapitel 4, Abschnitt 4.2 „Dimensions of Managing Health Information Systems“, S. 155–157
+  - Abschnitt 4.3.1.2 „Strategic Information Management Plan“, S. 160–164
+  - Kapitel 5, Abschnitt 5.4 „Evaluating the Quality of Health Information Systems“, S. 199–205  
+  <https://doi.org/10.1007/978-3-031-12310-8>
+
+- International Organization for Standardization: *ISO 9241-210:2019 – Ergonomics of human-system interaction – Part 210: Human-centred design for interactive systems*. 2. Auflage, 2019, Anwendungsbereich und Überblick über menschzentrierte Gestaltungsaktivitäten im Lebenszyklus; 2025 bestätigt.  
+  <https://www.iso.org/standard/77520.html>
+
+- International Organization for Standardization: *ISO/IEC 25010:2023 – Systems and software engineering – Systems and software Quality Requirements and Evaluation – Product quality model*. 2. Auflage, 2023, Abstract und Anwendungsbereich des Qualitätsmodells für Anforderungsdefinition, Prüfung und Abnahme.  
+  <https://www.iso.org/standard/78176.html>
+
+- Europäische Union: *Verordnung (EU) 2016/679 – Datenschutz-Grundverordnung*, insbesondere Art. 25 „Datenschutz durch Technikgestaltung und durch datenschutzfreundliche Voreinstellungen“ und Art. 32 „Sicherheit der Verarbeitung“.  
+  <https://eur-lex.europa.eu/eli/reg/2016/679/oj>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
 ::: {.exam-question}
 Welche unterschiedlichen Aufgaben erfüllen medizinische Register, Krebsregister, Infektionsschutzmeldungen, freiwillige Qualitätssicherungssysteme, Archivsysteme und Systeme zur Arzneimitteltherapiesicherheit?
 :::
+
+:::: {.exam-answer}
+
+Die genannten Systeme unterscheiden sich vor allem nach **Zweck, Rechtsgrundlage, erfassten Daten und Empfängern**. Ihre Funktionen können sich teilweise überschneiden.
+
+- **Medizinisches Register:** erfasst standardisiert Daten zu einer festgelegten Population, Erkrankung, Behandlung, einem Medizinprodukt oder einer anderen Fragestellung.
+  - Register ermöglichen insbesondere:
+    - Beobachtung von Krankheits- und Behandlungsverläufen
+    - Untersuchung der Versorgung unter Alltagsbedingungen
+    - Erkennung seltener oder langfristiger Ereignisse
+    - Qualitätsvergleiche und Versorgungsforschung
+  - Register können gesetzlich vorgeschrieben oder freiwillig geführt werden.
+  - Sie ersetzen keine randomisierte Studie und erlauben wegen möglicher Verzerrungen nicht automatisch kausale Schlussfolgerungen.
+  - **z. B.:** Ein Register für eine seltene Erkrankung dokumentiert langfristig Therapien, Krankheitsverläufe und Behandlungsergebnisse.
+
+- **Krebsregister:** sind spezialisierte, gesetzlich geregelte Register für Krebserkrankungen.
+  - **Epidemiologische Krebsregistrierung:** beschreibt das Krebsgeschehen in der Bevölkerung.
+    - Ermittelt werden insbesondere Neuerkrankungsraten, Häufigkeiten, Überlebensraten und zeitliche oder regionale Entwicklungen.
+  - **Klinische Krebsregistrierung:** erfasst zusätzlich Diagnose, Therapie und Krankheitsverlauf.
+    - Sie dient der Bewertung und Verbesserung der onkologischen Versorgung.
+    - Behandlungsergebnisse werden ausgewertet und an die Leistungserbringer zurückgemeldet.
+  - Beide Registerformen liefern außerdem Daten für Berichterstattung und Forschung.
+  - **z. B.:** Ein klinisches Krebsregister kann Behandlung und Verlauf eines kolorektalen Karzinoms sektorenübergreifend dokumentieren.
+
+- **Infektionsschutzmeldung:** übermittelt gesetzlich festgelegte Krankheiten oder Erregernachweise an das zuständige Gesundheitsamt.
+  - Die Meldungen dienen:
+    - der frühzeitigen Erkennung übertragbarer Krankheiten
+    - der Untersuchung einzelner Fälle und möglicher Infektionsquellen
+    - der Erkennung und Bekämpfung von Ausbrüchen
+    - der epidemiologischen Überwachung
+  - Das Gesundheitsamt prüft und ergänzt die Meldungen und übermittelt die bewerteten Fälle über die Landesbehörden an das Robert Koch-Institut.
+  - Das **Deutsche Elektronische Melde- und Informationssystem für den Infektionsschutz (DEMIS)** unterstützt die elektronische Meldung und Weiterverarbeitung.
+  - **z. B.:** Der Verdacht auf Masern wird unverzüglich an das zuständige Gesundheitsamt gemeldet.
+
+- **Freiwilliges Qualitätssicherungssystem:** sammelt nach einheitlichen Regeln Daten, um die eigene Versorgungsqualität zu beobachten und mit Referenzwerten zu vergleichen.
+  - Typische Funktionen sind:
+    - standardisierte Erfassung von Qualitätsindikatoren
+    - zeitliche Verlaufsbeobachtung
+    - anonymes Benchmarking
+    - Rückmeldung an die teilnehmenden Einrichtungen
+    - Ableitung und Überprüfung von Verbesserungsmaßnahmen
+  - Die freiwillige Teilnahme befreit nicht von daneben bestehenden gesetzlichen Pflichten.
+  - **z. B.:** Das Krankenhaus-Infektions-Surveillance-System (KISS) ermöglicht den Vergleich eigener Infektionsraten mit Referenzdaten anderer teilnehmender Einrichtungen.
+
+- **Archivsystem:** bewahrt medizinische Daten und Dokumente langfristig, nachvollziehbar und wiederauffindbar auf.
+  - Es muss insbesondere gewährleisten:
+    - Integrität und Authentizität der archivierten Informationen
+    - Schutz vor unbefugtem Zugriff
+    - Einhaltung von Aufbewahrungs- und Löschfristen
+    - dauerhafte Lesbarkeit und Wiederauffindbarkeit
+    - nachvollziehbare Zugriffe und Migrationen auf neue Formate oder Systeme
+  - Archivierung ist nicht dasselbe wie Datensicherung: Ein Backup dient vor allem der technischen Wiederherstellung nach Datenverlust.
+  - **z. B.:** Ein freigegebener Arztbrief wird einschließlich Metadaten und Änderungsnachweisen langfristig archiviert.
+
+- **System zur Arzneimitteltherapiesicherheit (AMTS):** unterstützt einen möglichst sicheren Medikationsprozess.
+  - Es stellt eine aktuelle und möglichst vollständige Medikation strukturiert bereit.
+  - Abhängig von den verfügbaren Funktionen und Patientendaten kann es insbesondere prüfen auf:
+    - Wechselwirkungen
+    - Kontraindikationen und Allergien
+    - Doppelverordnungen
+    - ungeeignete Dosierungen
+    - notwendige Anpassungen an Alter oder Nierenfunktion
+  - Warnungen unterstützen die fachliche Prüfung, ersetzen aber weder die klinische Beurteilung noch die Verantwortung der behandelnden Personen.
+  - **z. B.:** Bei eingeschränkter Nierenfunktion weist das System auf eine möglicherweise erforderliche Dosisanpassung hin.
+
+Merksatz: Register beobachten Verläufe, Krebsregister beschreiben Krebsgeschehen und Versorgung, Infektionsmeldungen lösen behördlichen Infektionsschutz aus, Qualitätssicherungssysteme ermöglichen Feedback, Archive bewahren Informationen und AMTS-Systeme unterstützen eine sichere Medikation.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Registerdaten entstehen meist unter Versorgungsbedingungen. Fehlende Randomisierung, unvollständige Erfassung und unterschiedliche Patientengruppen müssen bei der Auswertung berücksichtigt werden.
+- Die Teilnahme an KISS ist freiwillig. Die gesetzliche Verpflichtung bestimmter Einrichtungen zur Erfassung und Bewertung ausgewählter nosokomialer Infektionen und Resistenzen nach § 23 Abs. 4 IfSG bleibt davon unberührt.
+- Arzneimitteltherapiesicherheit konzentriert sich auf die Vermeidung von Medikationsfehlern und vermeidbaren Risiken im Medikationsprozess. Sie ist nicht mit der Pharmakovigilanz gleichzusetzen, die insbesondere Verdachtsfälle unerwünschter Arzneimittelwirkungen nach der Anwendung überwacht.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, Lerninhalt „Vorgehen bei Planung und Entwicklung von Dokumentationssystemen“, S. 13. Die Fundstelle nennt die Systemarten lediglich als Beispiele und erläutert ihre Aufgaben nicht näher.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Winter A, Ammenwerth E, Haux R, Marschollek M, Steiner B, Jahn F: *Health Information Systems: Technological and Management Perspectives*. 3. Auflage, Springer, 2023, Kapitel 6, Abschnitt 6.6 „Information Systems in Medical Research Facilities“, insbesondere S. 218–222.  
+  <https://doi.org/10.1007/978-3-031-12310-8>
+
+- Bundesministerium für Gesundheit: *Gutachten zur Weiterentwicklung medizinischer Register zur Verbesserung der Dateneinspeisung und -anschlussfähigkeit*. 2021, Kapitel 1 „Einleitung“, Abschnitt „Definition Register“, S. 8.  
+  <https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/5_Publikationen/Gesundheit/Abschlussberichte/REG-GUT-2021_Registergutachten_BQS-TMF-Gutachtenteam_2021-10-29.pdf>
+
+- Sozialgesetzbuch Fünftes Buch: § 65c „Klinische Krebsregister“, insbesondere Abs. 1 zu Erfassung, Auswertung, Rückmeldung und Forschung.  
+  <https://www.gesetze-im-internet.de/sgb_5/__65c.html>
+
+- Bundeskrebsregisterdatengesetz: §§ 1–2 zu Zentrum für Krebsregisterdaten und dessen Aufgaben.  
+  <https://www.gesetze-im-internet.de/bkrg/>
+
+- Infektionsschutzgesetz:
+  - §§ 6 und 7 zu meldepflichtigen Krankheiten und Erregernachweisen
+  - § 9 zu Inhalt, Frist und Empfänger der Meldung
+  - § 11 zur weiteren Übermittlung und epidemiologischen Bewertung
+  - § 23 Abs. 4 zur Erfassung und Bewertung nosokomialer Infektionen und Resistenzen  
+  <https://www.gesetze-im-internet.de/ifsg/>
+
+- Robert Koch-Institut: *DEMIS – Deutsches Elektronisches Melde- und Informationssystem für den Infektionsschutz*, Abschnitt „Funktionen von DEMIS“, Stand 13.05.2025.  
+  <https://www.rki.de/DE/Themen/Infektionskrankheiten/Meldewesen/DEMIS/demis-node.html>
+
+- Nationales Referenzzentrum für Surveillance von nosokomialen Infektionen: *Krankenhaus-Infektions-Surveillance-System (KISS)*, Abschnitt zu Surveillance, Feedback und Referenzdaten.  
+  <https://www.nrz-hygiene.de/kiss>
+
+- Bundesamt für Sicherheit in der Informationstechnik: *Umsetzungshinweise zum IT-Grundschutz-Baustein OPS.1.2.2 Archivierung*. 2022, insbesondere Maßnahmen M2 „Entwicklung eines Archivierungskonzepts“, M5 „Regelmäßige Aufbereitung von archivierten Datenbeständen“, M7 „Regelmäßige Datensicherung“ und M16 „Regelmäßige Erneuerung technischer Archivsystem-Komponenten“.  
+  <https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Umsetzungshinweise/Umsetzungshinweise_2022/Umsetzungshinweis_zum_Baustein_OPS_1_2_2_Archivierung.pdf>
+
+- Arzneimittelkommission der deutschen Ärzteschaft: *Arzneimitteltherapiesicherheit*, Definition der AMTS als Maßnahmen zur Optimierung des Medikationsprozesses und zur Verringerung vermeidbarer Risiken.  
+  <https://www.akdae.de/amts>
+
+- Bundesministerium für Gesundheit: *Aktionsplan 2026–2029 zur Verbesserung der Arzneimitteltherapiesicherheit in Deutschland*, Abschnitt 5, insbesondere Maßnahmen 1 und 2 zum digital gestützten Medikationsprozess.  
+  <https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/A/Arzneimittelversorgung/Aktionsplan_AMTS_2026-2029.pdf>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
 
 
 ## Big Data und Public Health
@@ -217,3 +1178,86 @@ Welche unterschiedlichen Aufgaben erfüllen medizinische Register, Krebsregister
 ::: {.exam-question}
 Welche Chancen und Risiken bieten große Gesundheitsdatenbestände für Versorgung, Forschung und Public Health?
 :::
+
+:::: {.exam-answer}
+
+**Große Gesundheitsdatenbestände** umfassen umfangreiche und häufig heterogene Daten aus unterschiedlichen Quellen, beispielsweise aus klinischer Dokumentation, Abrechnung, Registern, Bildgebung, Genomik oder patientennahen Geräten. Der Begriff **Big Data** besitzt dabei keine allgemein verbindliche Größengrenze.
+
+- **Chancen für die Versorgung:**
+  - Daten aus verschiedenen Behandlungsabschnitten können zu einem vollständigeren Bild des Krankheitsverlaufs zusammengeführt werden.
+  - Auswertungen können die Qualitätssicherung, Risikoeinschätzung und klinische Entscheidungsunterstützung fördern.
+  - Eine bessere Abstimmung von Behandlungen ist möglich, wenn die Daten korrekt, aktuell und interoperabel vorliegen.
+    - **z. B.:** Ein validiertes Modell erkennt Patienten mit erhöhtem Wiederaufnahmerisiko und unterstützt die Planung der Nachsorge.
+
+- **Chancen für die Forschung:**
+  - Routinedaten können für Hypothesengenerierung, Machbarkeitsanalysen und Beobachtungsstudien genutzt werden.
+  - Große Populationen erleichtern die Untersuchung seltener Erkrankungen, Ereignisse oder Arzneimittelwirkungen.
+  - Daten aus der Routineversorgung können Erkenntnisse über Behandlungen unter Alltagsbedingungen liefern.
+  - Präzision und Übertragbarkeit können steigen, wenn die Zielpopulation vollständig und repräsentativ erfasst wird.
+    - **z. B.:** Krankenhaus- und Verordnungsdaten werden verknüpft, um seltene unerwünschte Arzneimittelwirkungen zu untersuchen.
+
+- **Chancen für Public Health:**
+  - Erkrankungshäufigkeiten und zeitliche oder regionale Entwicklungen können beobachtet werden.
+  - Unterschiede zwischen Bevölkerungsgruppen können sichtbar werden.
+  - Daten können die Bedarfsplanung, Ressourcenverteilung und Evaluation bevölkerungsbezogener Maßnahmen unterstützen.
+    - **z. B.:** Regionale Meldedaten zeigen einen Anstieg bestimmter Infektionen und unterstützen die Planung von Präventionsmaßnahmen.
+
+- **Risiken durch unzureichende Datenqualität und Interoperabilität:**
+  - Fehlende, falsche, veraltete oder doppelte Angaben können Ergebnisse verzerren.
+  - Unterschiedliche Kodierungen und Definitionen erschweren die Zusammenführung.
+  - Abrechnungsdaten bilden nicht automatisch den vollständigen klinischen Zustand ab.
+  - Fehler bei der Verknüpfung können Daten verschiedener Personen fälschlich zusammenführen.
+
+- **Risiken durch Bias und Fehlinterpretation:**
+  - Nicht repräsentative Daten können bestimmte Patientengruppen benachteiligen.
+  - Beobachtete Zusammenhänge können durch Confounding oder systematische Dokumentationsunterschiede entstehen.
+  - Eine große Fallzahl beseitigt solche systematischen Fehler nicht.
+  - Korrelationen aus Routinedaten belegen daher nicht automatisch einen kausalen Zusammenhang.
+
+- **Risiken für Datenschutz und Informationssicherheit:**
+  - Die Verknüpfung mehrerer Datenquellen kann das Risiko einer Reidentifizierung erhöhen.
+  - Zweckänderungen können zu einer nicht vorgesehenen Nutzung der Daten führen.
+  - Große zentrale oder vernetzte Datenbestände sind attraktive Ziele für Cyberangriffe.
+  - Unberechtigte Offenlegung kann Patienten schädigen und das Vertrauen in Versorgung und Forschung beeinträchtigen.
+
+- **Voraussetzungen für eine verantwortbare Nutzung:**
+  - Forschungs- oder Versorgungszweck vor der Auswertung eindeutig festlegen
+  - Eignung, Vollständigkeit, Repräsentativität und Herkunft der Daten prüfen
+  - einheitliche Formate, Terminologien und Metadaten verwenden
+  - Rechtsgrundlage, Zweckbindung und Zugriffsregeln festlegen
+  - Daten je nach Zweck anonymisieren oder pseudonymisieren und technisch schützen
+  - Analyseverfahren extern und für relevante Patientengruppen validieren
+  - Ergebnisse transparent dokumentieren und fachlich durch Menschen prüfen
+
+Merksatz: Große Gesundheitsdaten können Versorgung, Forschung und Public Health verbessern; ihr Nutzen hängt jedoch nicht nur von der Datenmenge, sondern vor allem von Datenqualität, Repräsentativität, geeigneten Methoden und sicherer Governance ab.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Die **Sekundärnutzung** bezeichnet die Verwendung von Gesundheitsdaten für einen anderen Zweck als den ursprünglichen Erhebungszweck, beispielsweise die Nutzung von Behandlungsdaten für Forschung.
+- Datenverknüpfung kann den Informationsgehalt erhöhen, steigert aber zugleich mögliche Datenschutz- und Reidentifizierungsrisiken.
+- Ein Modell mit guter durchschnittlicher Leistung kann bei einzelnen Patientengruppen deutlich schlechter funktionieren. Die Leistung sollte deshalb auch für relevante Untergruppen geprüft werden.
+- Künstliche Intelligenz ist eine mögliche Auswertungsmethode, aber kein Synonym für Big Data.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, S. 13. Das Kursbuch nennt „Big Data und Public Health“ als Lerninhalt, enthält dort aber keine nähere Definition.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Winter A, Ammenwerth E, Haux R, Marschollek M, Steiner B, Jahn F: *Health Information Systems: Technological and Management Perspectives*. 3. Auflage, Springer, 2023, Kapitel 6, insbesondere Abschnitt 6.6 „Information Systems in Medical Research Facilities“.  
+  <https://doi.org/10.1007/978-3-031-12310-8_6>
+
+- International Council for Harmonisation: *ICH M14 Guideline on General Principles on Planning, Designing, Analysing, and Reporting of Non-interventional Studies that Utilise Real-World Data for Safety Assessment of Medicines*. Step 5, 2025, insbesondere Abschnitt 3 „Conceptual Framework“, Abschnitt 5.3 „Data Sources“ und Abschnitt 5.5 „Bias and Confounding“.  
+  <https://www.ema.europa.eu/system/files/documents/scientific-guideline/ich-m14-guideline_step-5_en.pdf>
+
+- Organisation for Economic Co-operation and Development: *Health Data Governance for the Digital Age: Implementing the OECD Recommendation on Health Data Governance*. OECD Publishing, 2022, Abschnitt „Scope of the Recommendation“.  
+  <https://doi.org/10.1787/68b60796-en>
+
+- Europäische Union: *Verordnung (EU) 2016/679 – Datenschutz-Grundverordnung*, insbesondere Art. 5, 9, 25, 32 und 89.  
+  <https://eur-lex.europa.eu/eli/reg/2016/679/oj>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::

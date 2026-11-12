@@ -1,785 +1,131 @@
 # Medizinische Dokumentation {#modul-iv}
 
-## Normative Grundlagen medizinischer Dokumentation
-
-### Normative Grundlagen medizinischer Dokumentation
-
-Normative Grundlagen medizinischer Dokumentation (z. B. aus Berufsrecht, Haftungsrecht, Vertragsrecht, Sozialrecht).
+## Aufgaben und Grundlagen medizinischer Dokumentation
 
 ::: {.exam-question}
-Warum muss ein Arzt dokumentieren? Welche Rechtsgrundlagen regeln die ärztliche Dokumentationspflicht, und wie lange muss aufbewahrt werden?
+Welche Aufgaben erfüllt die medizinische Dokumentation, und wie unterscheiden sich klinische, administrative, qualitätssichernde und wissenschaftliche Dokumentation?
 :::
 
-::: {.exam-answer}
-**Zwecke der Dokumentation** (warum überhaupt):
-- **Therapiesicherung**: Kommunikation im Team und über Schichten/Sektoren hinweg (Übergabe, Arztbrief, Weiterbehandler) — der Hauptzweck.
-- **Beweissicherung**: im Haftungsfall belegen, was wann warum getan wurde.
-- **Rechenschaft und Abrechnung**: Grundlage für ICD/OPS-Kodierung und Vergütung.
-- **Qualitätssicherung und Forschung**: Sekundärnutzung (Register, QS-Verfahren, Studien).
+:::: {.exam-answer}
 
-**Rechtsgrundlagen nach Rechtsgebiet:**
+Medizinische Dokumentation macht gesundheitsbezogene Informationen für einen festgelegten Zweck nachvollziehbar und nutzbar. Dieselben Daten können mehreren Zwecken dienen.
 
-| Rechtsgebiet | Norm | Inhalt |
-|---|---|---|
-| **Vertragsrecht** | **§ 630f BGB** (Patientenrechtegesetz 2013) | Pflicht zur Patientenakte **in unmittelbarem zeitlichen Zusammenhang** mit der Behandlung; alle wesentlichen Maßnahmen und Ergebnisse (Anamnese, Diagnosen, Untersuchungen, Befunde, Therapien, Eingriffe, Einwilligungen, Aufklärungen, Arztbriefe). **Änderungen nur so, dass der ursprüngliche Inhalt erkennbar bleibt** (mit Zeitpunkt) — gilt auch elektronisch (revisionssicher). |
-| | § 630g BGB | **Einsichtsrecht** des Patienten in die vollständige Akte, Recht auf (elektronische) Kopie; ergänzend Auskunftsrecht Art. 15 DSGVO (erste Kopie kostenfrei). |
-| **Haftungsrecht** | **§ 630h Abs. 3 BGB** | **Nicht dokumentiert = nicht gemacht**: Ist eine medizinisch gebotene Maßnahme nicht dokumentiert, wird vermutet, dass sie nicht erfolgt ist → Beweislast kehrt sich zulasten des Arztes um. |
-| | § 630h Abs. 2 BGB | Arzt muss **Einwilligung und ordnungsgemäße Aufklärung beweisen** → Aufklärung immer dokumentieren (Bogen + individuelle Notizen). |
-| **Berufsrecht** | **§ 10 MBO-Ä** (umgesetzt in den Berufsordnungen der Landesärztekammern) | Dokumentationspflicht als ärztliche Berufspflicht, Aufbewahrung **10 Jahre** nach Abschluss der Behandlung; elektronische Dokumentation zulässig, wenn gegen Veränderung, Vernichtung und unrechtmäßige Verwendung geschützt. |
-| **Sozialrecht** | **§ 294, § 295 SGB V** (ambulant), **§ 301 SGB V** (stationär) | Pflicht zur Aufzeichnung und **Übermittlung** abrechnungsrelevanter Daten an Krankenkassen/KV, Diagnosen nach **ICD-10-GM**, Prozeduren nach **OPS**. |
-| | § 57 BMV-Ä | Dokumentationspflicht der Vertragsärzte, 10 Jahre Aufbewahrung. |
+- **Klinische Dokumentation:** unterstützt unmittelbar die Versorgung eines einzelnen Patienten
+  - Sie hält Anamnese, Befunde, Diagnosen, Entscheidungen und durchgeführte Maßnahmen fest.
+  - Sie ermöglicht die Kommunikation und die Kontinuität der Behandlung.
+  - Beispiel: In der elektronischen Kurve werden eine Antibiotikaanordnung und ihre Verabreichung dokumentiert.
 
-**Aufbewahrungsfristen:**
+- **Administrative Dokumentation:** unterstützt Organisation, Leistungsnachweis, Abrechnung und gesetzlich vorgeschriebene Datenübermittlungen
+  - Dafür werden häufig standardisierte und kodierte Angaben verwendet.
+  - Beispiel: Diagnosen und Prozeduren eines Krankenhausfalls werden mit ICD-10-GM und OPS verschlüsselt.
 
-| Frist | Was | Grundlage |
-|---|---|---|
-| **10 Jahre** nach Abschluss der Behandlung | **Regelfall**: Patientenakte | § 630f Abs. 3 BGB, § 10 Abs. 3 MBO-Ä |
-| **10 Jahre** | Röntgen-/CT-Aufzeichnungen bei Erwachsenen; bei Minderjährigen bis zur Vollendung des **28. Lebensjahres** | Strahlenschutzgesetz/-verordnung |
-| **30 Jahre** | Strahlentherapie/Behandlung mit radioaktiven Stoffen | Strahlenschutzrecht |
-| **30 Jahre** | Daten zur Rückverfolgung von Blutprodukten (Chargen ↔ Empfänger) | Transfusionsgesetz (§ 14 TFG) |
-| **3 Jahre** | BtM-Rezeptdurchschläge, BtM-Bücher | BtMVV |
-| oft **30 Jahre** (freiwillig) | viele Kliniken bewahren länger auf | Haftungsansprüche verjähren spätestens nach **30 Jahren** (§ 199 Abs. 2 BGB) |
+- **Qualitätssichernde Dokumentation:** macht Strukturen, Behandlungsprozesse und Ergebnisse messbar
+  - Die erhobenen Daten werden mit festgelegten Qualitätszielen, Referenzbereichen oder anderen Einrichtungen verglichen.
+  - Auffälligkeiten können Maßnahmen zur Verbesserung der Versorgung auslösen.
+  - Beispiel: Postoperative Komplikationen werden für ein Qualitätssicherungsverfahren standardisiert erfasst.
 
-Nach Ablauf der Frist greift die **DSGVO-Löschpflicht** (Art. 17) — "so lange wie nötig, nicht unbegrenzt".
+- **Wissenschaftliche Dokumentation:** dient der Beantwortung einer festgelegten Forschungsfrage
+  - Variablen, Erhebungszeitpunkte und Auswertungsregeln müssen vorab definiert werden.
+  - Daten können eigens für eine Studie erhoben oder aus der Versorgung weiterverwendet werden.
+  - Beispiel: Ein Register dokumentiert Behandlung und Verlauf von Patienten mit Schlaganfall nach einem festgelegten Datensatz.
 
-**Klinik-Beispiele:**
-- Nachtdienst: Patient klagt um 2 Uhr über Brustschmerz, EKG unauffällig, aber nicht dokumentiert → im Prozess gilt das EKG als **nicht geschrieben** (§ 630h Abs. 3).
-- Nachträgliche Ergänzung im KIS ("vergessen einzutragen") ist erlaubt, muss aber als **Nachtrag mit Datum/Uhrzeit** erkennbar sein — spurloses Überschreiben vernichtet den Beweiswert der ganzen Akte und kann strafrechtlich relevant sein.
-- Aufklärung vor Koloskopie: unterschriebener Bogen **plus** handschriftliche Notiz zu individuellen Risiken (z. B. Antikoagulation) — der Bogen allein beweist nicht das Gespräch.
+Merksatz: Klinische Dokumentation unterstützt die individuelle Behandlung, administrative Dokumentation bildet Leistungen und Organisation ab, qualitätssichernde Dokumentation bewertet die Versorgung und wissenschaftliche Dokumentation beantwortet Forschungsfragen.
 
-Merksatz: Dokumentation ist Therapie- und Beweismittel. **§ 630f BGB** = Pflicht und 10 Jahre, **§ 630h BGB** = "nicht dokumentiert = nicht gemacht", **§ 10 MBO-Ä** = Berufspflicht, **§ 295/§ 301 SGB V** = Abrechnungsdaten an die Kassen.
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-::: {.callout-note title="Good to know" appearance="simple"}
+Die Ausrichtungen schließen sich nicht aus: Ein Laborwert kann zunächst für die Behandlung erhoben und später für Abrechnung, Qualitätssicherung oder Forschung weiterverwendet werden.
+
+Die Datenqualität ist zweckabhängig. Routinedaten, die für die Behandlung ausreichen, sind nicht automatisch vollständig und eindeutig genug für eine wissenschaftliche Auswertung. Vor einer Sekundärnutzung müssen daher Eignung, Qualität und rechtliche Zulässigkeit geprüft werden.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.4 „Modul IV – Medizinische Dokumentation“, Kompetenzziel, S. 13.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Winter A, Ammenwerth E, Haux R, Marschollek M, Steiner B, Jahn F: *Health Information Systems: Technological and Management Perspectives*. 3. Auflage, Springer, 2023, Kapitel 1, Abschnitte 1.3.4 und 1.3.5; Kapitel 2, Abschnitt 2.10; Kapitel 6, Abschnitt 6.6.2.  
+  <https://doi.org/10.1007/978-3-031-12310-8>
+
+- World Health Organization: *Toolkit for Routine Health Information Systems Data*. Abschnitte „Introduction“ und „Mortality data“.  
+  <https://www.who.int/data/data-collection-tools/health-service-data/toolkit-for-routine-health-information-system-data/modules>
+
+Quellen geprüft am 12.11.2026.
+
 :::
+::::
 
-## Grundbegriffe der medizinischen Dokumentation
 
-### Grundbegriffe der medizinischen Dokumentation
 
-Grundbegriffe der medizinischen Dokumentation (z. B. Klassifikation, Taxonomie, Ontologie, Nomenklatur, Datentypen, Skalen).
+
+
+
 
 ::: {.exam-question}
-Was ist der Unterschied zwischen Klassifikation, Nomenklatur, Taxonomie und Ontologie? Je ein Klinik-Beispiel. Welche Datentypen und Skalen gibt es in der medizinischen Dokumentation?
+Welche rechtlichen Anforderungen gelten für die medizinische Dokumentation?
 :::
 
-::: {.exam-answer}
-**Oberbegriff: Ordnungssystem** = System, das medizinische Sachverhalte über eine festgelegte Terminologie mit Kodes/Symbolen eindeutig erfassbar macht (Indexierung).
-
-**Die vier Begriffe im Vergleich:**
-
-| Begriff | Prinzip | Analogie | Klinik-Beispiel |
-|---|---|---|---|
-| **Klassifikation** | Objekte werden in **wenige, disjunkte Klassen** einsortiert — jeder Fall landet in **genau einer** Schublade; Feinheiten gehen verloren | Sortierschrank: jede Akte in genau ein Fach | **ICD-10-GM** (Diagnosen), **OPS**, **DRG**; TNM |
-| **Nomenklatur** | Sammlung **standardisierter Bezeichnungen** für Begriffe; sehr feingranular, Begriffe **kombinierbar** (mehrere Achsen), keine Pflicht zu disjunkten Klassen | Wörterbuch mit genormten Fachbegriffen | **SNOMED CT** (Befund + Lokalisation + Morphologie kombinierbar), **LOINC** (Laboranalysen) |
-| **Taxonomie** | **hierarchische** Ordnung (Baum: Ober- → Unterbegriff, "ist ein") | Stammbaum | ICD-Hierarchie: Kapitel IX Kreislauf → I20–I25 ischämische Herzkrankheiten → I21 Myokardinfarkt → I21.0 Vorderwandinfarkt; biologische Taxonomie der Erreger |
-| **Ontologie** | **formale, maschinenlesbare** Beschreibung von Begriffen **und ihren Beziehungen** (ist-ein, Teil-von, verursacht-durch, Lokalisation) → Computer kann logisch schlussfolgern | Landkarte mit Wegen zwischen den Begriffen | **SNOMED CT** (formal auf Beschreibungslogik), Gene Ontology; z. B. "Pneumokokken-Pneumonie *ist eine* bakterielle Pneumonie, *Lokalisation* Lunge, *Erreger* Streptococcus pneumoniae" |
-
-Ergänzend: **Thesaurus** = kontrolliertes Vokabular mit Synonymen und Beziehungen für die Suche, z. B. **MeSH** (PubMed).
-
-**Kernunterschied Klassifikation vs. Nomenklatur (häufigste Prüfungsfrage):**
-- **Klassifikation fasst zusammen** → für **Statistik und Abrechnung** (zählbar, vergleichbar). Beispiel: alle Formen der Pneumonie durch unbekannten Erreger → J18.9.
-- **Nomenklatur beschreibt detailliert** → für die **klinische Dokumentation und Interoperabilität** (nichts geht verloren). Beispiel: "Unterlappenpneumonie rechts, ambulant erworben, Verdacht auf Aspiration" bleibt in SNOMED CT voll erhalten.
-
-**Wichtig: ein System kann mehreres gleichzeitig sein — Beispiel SNOMED CT**
-
-SNOMED CT (= *SNOMED Clinical Terms*, **ein** System) ist eine **Nomenklatur, die als Ontologie gebaut ist** — und nebenbei eine Taxonomie:
-
-| Blickwinkel | Warum SNOMED CT das ist | Beispiel |
-|---|---|---|
-| **Nomenklatur / Terminologie** | genormte Begriffe mit Kode + Synonymen | `22298006` = Myokardinfarkt (Synonyme: Herzinfarkt, MI) |
-| **Ontologie** | formale Beziehungen zwischen Begriffen → Computer kann schlussfolgern | Myokardinfarkt **ist ein** ischämische Herzkrankheit; **Lokalisation** Myokard; **Morphologie** Infarkt → Suche nach "Herzkrankheiten" findet auch alle Infarkte |
-| **Taxonomie** (Poly-Hierarchie) | "ist ein"-Beziehungen bilden einen Baum, ein Begriff kann **mehrere Eltern** haben | Pneumokokken-Pneumonie unter *bakterielle Infektion* **und** unter *Lungenerkrankung* |
-
-Einordnung der wichtigsten Systeme:
-
-| System | Klassifikation | Nomenklatur | Taxonomie | Ontologie |
-|---|---|---|---|---|
-| **ICD-10-GM** | ✅ | – | ✅ (mono-hierarchisch: genau ein Elternteil) | – |
-| **OPS** | ✅ | – | ✅ | – |
-| **DRG** | ✅ (**Patientenklassifikation**: Fälle nach ähnlichem **Ressourcenverbrauch** gruppiert) | – | nur flach (MDC → Basis-DRG → Schweregrad), keine medizinische "ist ein"-Hierarchie | – |
-| **SNOMED CT** | – | ✅ | ✅ (poly-hierarchisch) | ✅ |
-| **LOINC** | – | ✅ (Laboranalysen) | – (keine systematische Hierarchie) | – |
-| **MeSH** | – | Thesaurus | ✅ (poly-hierarchisch) | – |
-
-Kurz: **ICD = Klassifikation** (Schublade, keine formalen Beziehungen). **SNOMED CT = Nomenklatur + Ontologie** (Wörterbuch mit Beziehungen).
-
-**Bildlich: Taxonomie = Stammbaum, Ontologie = U-Bahn-Netz**
-
-*Taxonomie* — nur **senkrecht** ("ist ein"), klassisch **ein** Elternteil pro Begriff:
-
-```
-            Krankheit
-           /         \
-  Lungenkrankheit   Infektion
-        |               |
-    Pneumonie       Virusinfektion
-        |
-  virale Pneumonie            ← hängt nur unter "Lunge", kein Bezug zu "Infektion"
-```
-
-*Ontologie* — **senkrecht** ("ist ein", auch mehrere Eltern) **plus waagerecht** (weitere, **beschriftete** Beziehungen):
-
-```
-  Pneumonie      Virusinfektion          ← zwei Eltern (senkrecht)
-        \            /
-         ist ein   ist ein
-           \      /
-       virale Pneumonie ──Lokalisation──▶ Lunge     (waagerecht)
-               │
-               └──────Erreger───────────▶ Virus     (waagerecht)
-```
-
-→ Abfrage "alle Virusinfektionen" **und** "alle Lungenerkrankungen" finden die virale Pneumonie — der Computer **schlussfolgert** über die beschrifteten Linien.
-
-| Stufe (jede kann mehr) | kann | Beispiel |
-|---|---|---|
-| Vokabular / Nomenklatur | Begriffe festlegen | Fachbegriffsliste |
-| **Taxonomie** | + Hierarchie ("ist ein") | biologische Systematik, ICD-Baum |
-| Thesaurus | + Synonyme, verwandte Begriffe | **MeSH** |
-| **Ontologie** | + viele Beziehungsarten + formale Logik | **SNOMED CT** |
-
-Klinisch: Taxonomie = Organigramm der Klinik (jede Station hat **einen** Chef); Ontologie = Wissen des Oberarztes (virale Pneumonie *ist* Infektion, *sitzt* in der Lunge, *kommt* vom Virus → Isolation nötig).
-
-**Warum rechnet man mit der ICD ab und nicht mit SNOMED CT?** Beispiel: Pneumokokken-Pneumonie rechter Unterlappen → ICD **J13** (ein Kode) vs. SNOMED CT (Erreger + Lokalisation + Morphologie einzeln).
-- **Abrechnung braucht zählbare, endliche Schubladen**: jeder Fall in genau **eine** Klasse (Disjunktheit + Vollständigkeit) → nur so kann der DRG-Grouper eindeutig zuordnen und jeder Klasse ein Preis zugeordnet werden.
-- SNOMED CT hat **> 350.000 Konzepte**, frei kombinierbar → praktisch unendlich viele Varianten; zwei Ärzte könnten denselben Fall unterschiedlich detailliert beschreiben → nicht vergleichbar, nicht bepreisbar.
-- **Gesetzlich vorgeschrieben**: Diagnosen für die Abrechnung nach **ICD-10-GM** (§ 295/§ 301 SGB V).
-- **Ergänzung statt Konkurrenz**: klinisch detailliert in SNOMED CT dokumentieren, für Abrechnung/Statistik daraus auf ICD **abbilden** (offizielle Mappings SNOMED CT → ICD-10 existieren). Detail geht dabei verloren, Vergleichbarkeit wird gewonnen.
-
-**Anforderungen an eine Klassifikation:**
-1. **Vollständigkeit** — jeder Fall muss passen → dafür **Resteklassen** (".8 sonstige", ".9 nicht näher bezeichnet").
-2. **Einheitliches Klassifikationsprinzip / Bezugssystem** (z. B. Ätiologie *oder* Organ, nicht wild gemischt).
-3. **Eindeutige Klassengrenzen.**
-4. **Disjunktheit** — Klassen überlappen nicht, jeder Fall in genau eine Klasse.
-
-**Datentypen in der Dokumentation:**
-
-| Typ | Beispiel | Auswertbarkeit |
-|---|---|---|
-| **Freitext** (unstrukturiert) | Anamnese, Verlaufsnotiz, Arztbrief | für Menschen ideal, für Maschinen schwer (→ NLP nötig) |
-| **Strukturiert/kodiert** | ICD-Kode, OPS, Auswahllisten (Allergie ja/nein) | direkt auswertbar |
-| **Numerisch** | Laborwerte, Vitalzeichen (mit **Einheit**! → UCUM) | rechenbar |
-| **Datum/Zeit** | Aufnahme, OP-Beginn, Medikamentengabe | Verläufe, Fristen, Verweildauer |
-| **Boolesch** | Raucher ja/nein | einfache Filter |
-| **Multimedia/Signale** | Röntgenbild (DICOM), EKG-Kurve, Foto einer Wunde | spezielle Verfahren (Modul V) |
-
-**Skalenniveaus** (bestimmen, welche Auswertung erlaubt ist — Bezug zu Modul III):
-
-| Skala | Eigenschaft | Beispiel | erlaubtes Lagemaß |
-|---|---|---|---|
-| **Nominal** | nur Kategorien, keine Reihenfolge | Blutgruppe, Geschlecht, Diagnose (ICD) | Modus |
-| **Ordinal** | Reihenfolge, aber Abstände nicht gleich | NYHA I–IV, Tumorstadium, Schmerz-NRS, Glasgow Coma Scale | Median |
-| **Intervall** | gleiche Abstände, **kein** natürlicher Nullpunkt | Temperatur in °C | Mittelwert |
-| **Verhältnis** | gleiche Abstände **und** natürlicher Nullpunkt (Verhältnisse sinnvoll) | Gewicht, Kreatinin, Liegedauer ("doppelt so lang") | Mittelwert, geometrisches Mittel |
-
-Nominal + ordinal = **qualitativ/kategorial**; Intervall + Verhältnis = **quantitativ/metrisch**.
-
-**Warum bei ordinalen Daten kein Mittelwert?** Die Zahlen sind nur **Rangplätze**, keine Mengen — die Abstände dazwischen sind nicht gleich groß.
-- **NYHA**: Schritt von I (keine Beschwerden) → II (Luftnot bei starker Belastung) ist klinisch viel kleiner als von III → IV (Luftnot in Ruhe). 4 Patienten mit NYHA I, I, I, IV → Mittelwert **1,75** — "NYHA 1,75" gibt es nicht und beschreibt keinen Patienten; **Median I** ist ehrlich ("der typische Patient hat keine Beschwerden").
-- **ICF-Schweregrad .0–.4**: "erheblich" (.3) ist nicht "dreimal so schlimm" wie "leicht" (.1).
-- **GCS**: von 14 auf 15 ist ein kleiner Unterschied (leicht verwirrt → wach), von 8 auf 9 einer an der Intubationsgrenze — gleiche Zahlendifferenz, ganz andere Bedeutung.
-- Gegenbeispiel **metrisch**: Kreatinin 1 → 2 mg/dl und 2 → 3 mg/dl sind gleich große Schritte → Mittelwert sinnvoll.
-- Praxis-Hinweis: Die **Schmerz-NRS** wird in Studien oft trotzdem wie metrisch mit Mittelwert ausgewertet — methodisch umstritten; in der Prüfung: ordinal → Median, nichtparametrische Tests (Mann-Whitney-U).
-
-Merksatz: Klassifikation = Schublade (zusammenfassen für Statistik/Abrechnung), Nomenklatur = Wörterbuch (detailliert beschreiben), Taxonomie = Baum, Ontologie = Begriffe + Beziehungen für den Computer.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
+::: {.exam-question}
+Wie unterscheiden sich Klassifikation, Nomenklatur, Terminologie, Taxonomie, Thesaurus und Ontologie?
 :::
+
+::: {.exam-question}
+Wie unterscheiden sich strukturierte, semistrukturierte und unstrukturierte Dokumentation, und welche Bedeutung haben Datentypen und Skalenniveaus?
 :::
+
 
 ## Typische Elemente medizinischer Dokumentation
 
-### Typische Elemente medizinischer Dokumentation
+::: {.exam-question}
+Welche Aufgaben haben Patientenakte, Kurve, Arztbrief, Medikationsplan, Impfpass und Notfalldatensatz?
+:::
 
-Typische Elemente medizinischer Dokumentation (z. B. Kurve, Akte, Arztbrief, Medikationsplan, Impfplan, Notfalldatensatz).
+
+## Klinische Ordnungs- und Klassifikationssysteme
 
 ::: {.exam-question}
-Was sind MIOs (Medizinische Informationsobjekte), wie hängen sie mit Impfpass, Mutterpass usw. zusammen, und welche Rolle spielen FHIR und SNOMED CT darin?
+Wofür werden ICD-O, TNM-Klassifikation und ICF verwendet, und welche unterschiedlichen Aspekte eines Patienten beschreiben sie?
 :::
 
-::: {.exam-answer}
-**MIO = Medizinisches Informationsobjekt**: ein **bundesweit einheitlich festgelegtes, digitales Dokumentformat** für ein bestimmtes medizinisches Dokument in der **elektronischen Patientenakte (ePA)**. Ziel: jedes Praxis- und Kliniksystem kann den Inhalt **lesen und weiterverarbeiten** — nicht nur als PDF anzeigen.
 
-- **Wer**: festgelegt von der **KBV** (gesetzlicher Auftrag, § 355 SGB V), entwickelt durch deren Tochter **mio42**.
-- **Beispiele** (u. a.): **Impfpass**, **Mutterpass**, **Kinder-Untersuchungsheft (U-Heft)**, **Zahnbonusheft**, **Laborbefund**, **Patientenkurzakte**; weitere (z. B. Entlassbrief) in Entwicklung.
-
-**Die drei Ebenen — wie MIO, FHIR und SNOMED CT zusammenspielen:**
-
-| Ebene | Was | Analogie (Papierwelt) |
-|---|---|---|
-| **MIO** | *welche* Felder ein Dokument hat (Impfstoff, Datum, Charge, impfender Arzt) | das **genormte Formular** (der gelbe Impfpass) |
-| **HL7 FHIR** | *wie* die Daten technisch strukturiert und übertragen werden (Ressourcen wie `Patient`, `Immunization`, `Observation`) | **Papierformat und Grammatik**, damit jeder Drucker/Leser es versteht |
-| **SNOMED CT, LOINC, ICD-10, ATC/PZN** | *was* in den Feldern steht, als eindeutige Kodes | das **Fachvokabular**, das jeder gleich versteht |
-
-Beispiel Impfpass-MIO: Impfung gegen Masern → FHIR-Ressource `Immunization`; Impfstoff über ATC/PZN, Zielkrankheit "Masern" als **SNOMED-CT**-Kode → jedes System erkennt automatisch "Masernimpfung vorhanden", Impflücken-Erinnerung möglich.
-
-**Abgrenzung zu verwandten Elementen:**
-- **Bundeseinheitlicher Medikationsplan (BMP)** und **Notfalldatensatz (NFD)**: von der **gematik** spezifiziert, ursprünglich auf der **eGK** gespeichert; mit der "ePA für alle" (seit 2025) wandert die Medikation in die **elektronische Medikationsliste** der ePA (gespeist aus E-Rezept-Daten).
-- **PDF-Arztbrief in der ePA**: lesbar für Menschen, aber **nicht** maschinenauswertbar → genau das Problem, das MIOs lösen.
-
-**Warum wichtig:** strukturierte Daten statt "PDF-Friedhof" → automatische Übernahme ins Primärsystem, Prüfungen (Impflücken, Wechselwirkungen), Sekundärnutzung für Forschung (Forschungsdatenzentrum, Modul III/IX).
-
-Merksatz: **MIO = Formular**, **FHIR = Grammatik**, **SNOMED CT/LOINC = Vokabular**. Zusammen ergeben sie ein Dokument, das jeder Computer versteht.
-
-Weiter vertieft: ePA und Telematikinfrastruktur → Modul X.
-
-**Bundeseinheitlicher Medikationsplan (BMP)** — typisches Element, oft geprüft:
-- **Rechtsgrundlage**: **§ 31a SGB V** (E-Health-Gesetz), seit **1.10.2016**; Details in Anlage 3 zum Bundesmantelvertrag (KBV, BÄK, Apothekerverband).
-- **Anspruch**: GKV-Versicherte mit **mindestens 3 gleichzeitig verordneten, systemisch wirkenden Arzneimitteln**, dauerhaft (**≥ 28 Tage**).
-- **Wer erstellt**: in der Regel der **Hausarzt**; Fachärzte, Krankenhaus (bei Entlassung) und auf Wunsch **Apotheke** aktualisieren.
-- **Inhalt**: Wirkstoff, Handelsname, Stärke, Darreichungsform, Dosierung (morgens–mittags–abends–nachts), Einheit, Hinweise, **Behandlungsgrund**; auch **Selbstmedikation** (OTC).
-- **Technik**: Papierausdruck in festgelegtem Layout **plus 2D-Barcode** (Data-Matrix-Code) mit allen Daten → anderer Arzt/Apotheker **scannt** ihn ein, statt abzutippen.
-- **Digitale Weiterentwicklung**: **eMP** auf der eGK (gematik); mit der "ePA für alle" die **elektronische Medikationsliste** aus E-Rezept-Daten.
-- **Ziel**: **Arzneimitteltherapiesicherheit (AMTS)** — Wechselwirkungen, Doppelverordnungen und Einnahmefehler vermeiden, besonders bei Polypharmazie.
-
-**Notfalldatensatz (NFD)** — Anwendung "Notfalldatenmanagement" (NFDM) der Telematikinfrastruktur:
-- **Was**: auf der **eGK** gespeicherte, im Notfall sofort verfügbare Kerninformationen; spezifiziert von der **gematik**, Rechtsgrundlage SGB V (heute § 358), seit **2020** in Betrieb.
-- **Freiwillig**: nur mit **Einwilligung** des Patienten; angelegt meist vom **Hausarzt**.
-- **Inhalt (NFD)**: notfallrelevante **Diagnosen/Befunde** (z. B. Epilepsie, Herzinsuffizienz), **Medikation**, **Allergien/Unverträglichkeiten**, **besondere Hinweise** (Schwangerschaft, Implantate/Herzschrittmacher, Dialyse), **Kontakte** (Angehörige, behandelnder Arzt).
-- **Zusätzlich: Datensatz persönliche Erklärungen (DPE)**: **Ablageort** von Organspendeausweis, Patientenverfügung, Vorsorgevollmacht — nur der Ort, nicht das Dokument selbst.
-- **Zugriff**:
-  - **Im Notfall ohne PIN des Patienten** lesbar — aber nur mit **Heilberufsausweis (HBA)** bzw. Berechtigung, also durch **Ärzte** und berechtigte Notfall-Fachkräfte (z. B. Notfallsanitäter) → der bewusstlose Patient muss nichts eingeben.
-  - **Außerhalb eines Notfalls** (z. B. Einsicht in der Praxis): nur mit **PIN des Patienten**.
-  - **Anlegen/Ändern**: Arzt mit HBA **plus** Patienten-PIN.
-- **Auslesen in der Praxis**: eGK ins Kartenterminal, eigener **eHBA** steckt, im PVS/KIS bzw. in der Einsatzsoftware Auslesegrund wählen: **"Notfall"**, "Aktualisierung" oder "Abruf ohne Notfallhintergrund".
-- **Rettungsdienst/RTW**: rechtlich dürfen Notärzte und **Notfallsanitäter** (eHBA beantragbar seit 2023) im Notfall lesen. **Praktisch**: Der NFD liegt **auf der Karte selbst**, nicht auf einem Server → zum Lesen ist **keine Online-Verbindung zur TI** nötig. Es reicht ein **zugelassenes mobiles Kartenterminal** (arbeitet offline, ohne Konnektor) plus **eHBA** (oder Institutionsausweis SMC-B) als Berechtigungsnachweis. Engpass ist die **Ausstattung**: viele Rettungsdienste haben noch keine mobilen Kartenterminals/eHBA im Einsatz (Ausrollung regional, z. B. NRW im Aufbau). Fehlt das, ist der NFD erst in der Notaufnahme einsehbar. Eine **Online-TI-Anbindung** wird erst für ePA-basierte Daten (künftige ePKA) nötig.
-- **Aktueller Stand (2026)**: NFD auf der eGK weiter in Betrieb; seit 2026 eigene Abrechnungsposition für die Aktualisierung (GOP 01643); bis **Ende 2027** Weiterentwicklung zur **elektronischen Patientenkurzakte (ePKA)** in der ePA, die Speicherung auf der eGK wird dann abgelöst.
-
-**Kurve (Verlaufs-/Fieberkurve)** — zentrales Dokument am Patientenbett, gemeinsam geführt von **Ärzten und Pflege**, zeitachsenbasiert:
-- **Inhalt**: Vitalzeichen (Temperatur, Puls, RR, Atemfrequenz, SpO₂), **Ein-/Ausfuhr-Bilanz**, **ärztliche Anordnungen** (mit Handzeichen) und deren **Durchführung** (Medikamentengabe), Labor, Schmerzscore, Ernährung, Drainagen/Zugänge, Pflegemaßnahmen.
-- **Rechtlich**: Teil der Patientenakte (§ 630f BGB) → Anordnung **und** Gabe müssen nachvollziehbar sein (wer hat was wann angeordnet/gegeben).
-
-**Elektronische Kurve / PDMS (Patientendatenmanagementsystem)** auf der Intensivstation — warum besonders wertvoll:
-- **Automatische Geräteübernahme**: Monitor, Beatmungsgerät, Perfusoren schreiben direkt in die Kurve (Medizingeräteanbindung) → lückenlos, minütlich, keine Abschreibfehler, Pflege gewinnt Zeit.
-- **Automatische Berechnungen**: Bilanzen, Laufraten/Dosierungen (µg/kg/min), **Scores** (SOFA, SAPS II, TISS-28).
-- **Abrechnung**: die **intensivmedizinische Komplexbehandlung** (OPS 8-980) verlangt tägliche SAPS-II- und TISS-Dokumentation → das PDMS liefert sie automatisch → erlösrelevant.
-- **Sicherheit (AMTS)**: Dosis-/Allergie-/Wechselwirkungsprüfung, lesbare Anordnungen statt Handschrift, Alarme bei kritischen Verläufen.
-- **Verfügbarkeit**: gleichzeitig von mehreren Orten einsehbar (Visite, Konsil, Tele-Intensivmedizin).
-- **Forschung**: hochauflösende Verlaufsdaten (internationales Beispiel: MIMIC-Datenbank).
-- **Regulatorisch**: PDMS mit Berechnungs-/Entscheidungsfunktionen sind oft **Medizinprodukte** (MDR).
-
-Merksatz Kurve: Papierkurve = Notizblock am Bett; **PDMS = Kurve, die sich selbst ausfüllt, rechnet und warnt.**
-
-Merksatz Medikationsplan vs. Notfalldatensatz: **BMP** = vollständige Medikation für den Alltag (ab 3 Medikamenten, Barcode); **NFD** = das Allernötigste für den Notfall (Diagnosen, Allergien, Medikation, Kontakte), **ohne PIN** für Ärzte lesbar.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Ordnungs- und Klassifikationssysteme für klinische Zwecke
-
-### Ordnungs- und Klassifikationssysteme für klinische Zwecke
-
-Ordnungs- und Klassifikationssysteme für klinische Zwecke (z. B. ICD-O, ICF, TNM-Klassifikation).
+## Administrative Ordnungs- und Klassifikationssysteme
 
 ::: {.exam-question}
-Was beschreibt die TNM-Klassifikation, und was bedeuten die Präfixe c, p und y (z. B. ypT2)?
-:::
-
-::: {.exam-answer}
-**TNM** (herausgegeben von der **UICC**) beschreibt die **anatomische Ausbreitung solider Tumoren** — einheitlich für Prognose, Therapieplanung (Tumorkonferenz), Vergleichbarkeit von Studien und Krebsregister.
-
-| Kategorie | Bedeutung | Ausprägungen |
-|---|---|---|
-| **T** | Primär**t**umor: Größe/Infiltrationstiefe | TX (nicht beurteilbar), T0 (kein Tumor), **Tis** (Carcinoma in situ), T1–T4 |
-| **N** | regionäre Lymphk**n**oten | NX, N0, N1–N3 |
-| **M** | Fern**m**etastasen | M0, M1 |
-
-**Präfixe — *wann und wie* wurde bestimmt:**
-
-| Präfix | Bedeutung | Beispiel |
-|---|---|---|
-| **c** | **klinisch**: Untersuchung, Bildgebung, Endoskopie, Biopsie *vor* Therapie (wird oft weggelassen: "T2" = cT2) | cT3 cN1 cM0 nach Staging-CT |
-| **p** | **pathologisch**: am Resektat histologisch gesichert — genauer, gilt als maßgeblich | pT2 pN0 nach Operation |
-| **y** | Klassifikation **nach (neoadjuvanter) Vorbehandlung** (Chemo/Radiatio) — mit c oder p kombiniert | **ypT2**: nach neoadjuvanter Therapie, am Resektat pathologisch T2 |
-| r | **Rezidiv** | rpT1 |
-| a | bei **Autopsie** | aT3 |
-
-**"Klinisch" (c) heißt: alles, was *vor* der Therapie bekannt ist** — körperliche Untersuchung, Bildgebung (CT, MRT, PET-CT, Endosonographie), Endoskopie, **auch Biopsie** und chirurgische Exploration ohne Resektion. Achtung, Prüfungsfalle: eine histologisch gesicherte **Biopsie macht noch kein p** — p braucht in der Regel das **Resektat**, an dem die ganze Ausdehnung beurteilt werden kann (Ausnahme z. B.: Biopsie einer Fernmetastase → pM1).
-
-Klinik-Beispiel Rektumkarzinom: Staging **cT3 cN1 cM0** → neoadjuvante Radiochemotherapie → OP → **ypT2 ypN0** = Tumor geschrumpft ("Downstaging"), Lymphknoten frei.
-
-**Ergänzende Angaben:**
-- **G** = Grading (Differenzierung, G1 gut bis G4 undifferenziert)
-- **R** = Residualtumor nach OP: **R0** (kein Rest), R1 (mikroskopisch), R2 (makroskopisch)
-- **L / V / Pn** = Invasion in Lymphgefäße / Venen / Perineuralscheiden (0/1)
-- Aus T, N, M wird das **UICC-Stadium I–IV** gebildet (z. B. jedes M1 → Stadium IV).
-
-**TNM ist eine (mehrachsige) Klassifikation, keine Nomenklatur:** jede Achse (T, N, M) hat **wenige, fest definierte, disjunkte Klassen** — ein Tumor ist genau T2, nicht "ein bisschen T2 und T3"; **vollständig** dank TX/NX/T0; dient Zusammenfassen und Vergleichen (Stadium, Statistik). Dass man drei Achsen *kombiniert*, macht sie noch nicht zur Nomenklatur — in einer Nomenklatur (SNOMED CT) gibt es zehntausende frei kombinierbare Begriffe, bei TNM nur eine kleine, endliche Zahl von Kombinationen. (Mehrachsige Klassifikation wie die Kreuz-Stern-Systematik der ICD.)
-
-**Abgrenzung:** TNM = **Ausbreitung**; **ICD-O-3** = **Lokalisation (Topographie) + Histologie (Morphologie mit Dignität)**; **ICD-10** = Diagnose für Abrechnung (C-Kodes). Krebsregister nutzen alle drei.
-
-Merksatz: TNM = wie weit (Tumor, Knoten, Metastasen); c = klinisch, p = pathologisch, y = nach Vorbehandlung.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
+Wofür werden ICD-10-GM, OPS, G-DRG und PEPP verwendet, und wie wirken sie bei Dokumentation und Abrechnung zusammen?
 :::
 
 ::: {.exam-question}
-Wofür braucht man die ICD-O-3 zusätzlich zur ICD-10, wenn ein Patient ein Karzinom hat?
+Wie unterscheiden sich EBM und GOÄ hinsichtlich Anwendungsbereich und Abrechnungslogik?
 :::
 
-::: {.exam-answer}
-**ICD-O-3** = *International Classification of Diseases for Oncology*, 3. Auflage (WHO; aktuell Revision ICD-O-3.2). Spezialklassifikation für Tumoren mit **zwei Achsen**:
 
-| Achse | Was | Aufbau | Beispiel |
-|---|---|---|---|
-| **Topographie** | **Wo** sitzt der Tumor? | C00.0–C80.9 (angelehnt an ICD-10-Kapitel II) | C34.1 Oberlappen, Bronchus |
-| **Morphologie** | **Was** ist es histologisch, und **wie verhält** es sich? | M-**4 Ziffern** (Histologie) **/ Verhaltenskode** (+ ggf. Grading) | 8140/3 Adenokarzinom, maligne |
+## Weitere medizinische Terminologien und Ordnungssysteme
 
-**Verhaltenskode (Dignität)** nach dem Schrägstrich:
-- **/0** gutartig · **/1** unsicher, ob gut- oder bösartig · **/2** in situ · **/3** bösartig, Primärtumor · **/6** bösartig, Metastase · **/9** bösartig, unklar ob primär oder Metastase
-
-**Warum die ICD-10 nicht reicht:** Die ICD-10 kodiert nur **Lokalisation + "bösartig"** (C-Kode) — die **Histologie fehlt**, ist aber für Therapie und Prognose entscheidend:
-
-| Lungentumor, Oberlappen | ICD-10 | ICD-O-3 Morphologie | Therapie |
-|---|---|---|---|
-| Adenokarzinom | C34.1 | 8140/3 | z. B. zielgerichtet bei EGFR/ALK |
-| Plattenepithelkarzinom | C34.1 | 8070/3 | andere Chemo-/Immuntherapie |
-| Kleinzelliges Karzinom | C34.1 | 8041/3 | primär Chemo, kaum OP |
-
-→ in der ICD-10 dreimal **derselbe** Kode, obwohl völlig verschiedene Erkrankungen.
-
-**Einsatz:** vor allem **Krebsregister** (klinische und epidemiologische Register der Länder, Zusammenführung im Zentrum für Krebsregisterdaten am RKI) und onkologische Forschung/Statistik. Die ICD-10 bleibt für die **Abrechnung** zuständig.
-
-**Zusammenspiel bei einem Tumorpatienten:**
-- **ICD-10** → Abrechnung (C34.1)
-- **ICD-O-3** → Lokalisation + Histologie + Dignität (C34.1, 8140/3) → Krebsregister
-- **TNM** → Ausbreitung (pT2 pN1 cM0) → Stadium, Therapieplanung
-
-Merksatz: ICD-10 sagt *wo* und *bösartig*; ICD-O-3 sagt zusätzlich *was genau* (Histologie) und *wie bösartig* (Verhaltenskode); TNM sagt *wie weit*.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
+::: {.exam-question}
+Welche Informationen bilden SNOMED CT, LOINC, ATC, UCUM und GMDN beziehungsweise EMDN ab?
 :::
+
+
+## Qualitätssicherung
+
+::: {.exam-question}
+Wie ist die gesetzliche Qualitätssicherung im Gesundheitswesen organisiert, und welche Aufgaben haben G-BA, IQTIG und Medizinischer Dienst?
+:::
+
+
+## Entwicklung medizinischer Dokumentationssysteme
+
+::: {.exam-question}
+Wie wird ein medizinisches Dokumentationssystem geplant, eingeführt, geprüft und fortgeschrieben?
 :::
 
 ::: {.exam-question}
-Was beschreibt die ICF, und warum reicht für einen Reha-Patienten nach Schlaganfall die ICD-Diagnose allein nicht aus?
+Welche unterschiedlichen Aufgaben erfüllen medizinische Register, Krebsregister, Infektionsschutzmeldungen, freiwillige Qualitätssicherungssysteme, Archivsysteme und Systeme zur Arzneimitteltherapiesicherheit?
 :::
 
-::: {.exam-answer}
-**ICF** = *International Classification of Functioning, Disability and Health* = **Internationale Klassifikation der Funktionsfähigkeit, Behinderung und Gesundheit** (WHO 2001; deutsche Fassung BfArM, früher DIMDI). Eselsbrücke: ICD = **D**isease (Krankheit), ICF = **F**unctioning (Funktion). Klassifiziert nicht die Krankheit, sondern die **Funktionsfähigkeit**: *Was kann der Mensch im Alltag — und was hindert ihn?*
-
-**ICD vs. ICF:**
-- **ICD** = **Was hat der Patient?** (Diagnose)
-- **ICF** = **Was kann der Patient (noch), und was braucht er?** (Folgen der Erkrankung)
-
-**Schlaganfall-Beispiel:** Drei Patienten, alle mit derselben ICD **I63.- Hirninfarkt**:
-- Patient A geht nach 3 Wochen wieder arbeiten.
-- Patient B läuft mit Rollator, braucht Hilfe beim Anziehen.
-- Patient C sitzt im Rollstuhl, kann nicht sprechen.
-
-→ **Gleicher ICD-Kode, völlig verschiedener Reha-Bedarf.** Für Reha-Planung, Hilfsmittel, Begutachtung und Teilhabe braucht man die ICF.
-
-**Biopsychosoziales Modell — die Komponenten:**
-
-| Komponente | Präfix | Frage | Schlaganfall-Beispiel |
-|---|---|---|---|
-| **Körperfunktionen** | **b** (*body*) | Was funktioniert im Körper nicht? | b730 Muskelkraft (Hemiparese), b167 Sprache (Aphasie) |
-| **Körperstrukturen** | **s** (*structure*) | Welche Struktur ist geschädigt? | s110 Gehirn |
-| **Aktivitäten und Partizipation** | **d** (*domain*) | Was kann er tun, woran teilhaben? | d450 Gehen, d540 sich kleiden, d850 bezahlte Arbeit |
-| **Umweltfaktoren** | **e** (*environment*) | Was hilft oder behindert von außen? | e120 Mobilitätshilfen (Rollator = Förderfaktor), Treppe ohne Aufzug = Barriere |
-| Personbezogene Faktoren | (nicht kodiert) | Alter, Motivation, Bildung | 45 Jahre, sehr motiviert |
-
-**Beurteilungsmerkmal** hinter dem Punkt = **Schweregrad des Problems**:
-.0 kein · .1 leicht · .2 mäßig · .3 erheblich · .4 voll ausgeprägt (.8 nicht spezifiziert, .9 nicht anwendbar).
-Beispiel: **d450.3** = erhebliches Problem beim Gehen.
-
-**Einsatz:** Rehabilitation (Reha-Antrag, Zielplanung, Entlassbericht), sozialmedizinische Begutachtung, Teilhabeplanung (SGB IX, Bundesteilhabegesetz), Hilfsmittelversorgung.
-
-Merksatz: ICD = Diagnose (*was hat er*), ICF = Funktionsfähigkeit (*was kann er, was hindert ihn*). b Körperfunktion, s Struktur, d Aktivität/Teilhabe, e Umwelt.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Ordnungs- und Klassifikationssysteme für administrative Zwecke
-
-### Ordnungs- und Klassifikationssysteme für administrative Zwecke
-
-Ordnungs- und Klassifikationssysteme für administrative Zwecke (z. B. ICD-10, OPS, EBM, GOÄ, DRG, PEPP).
-
-::: {.exam-question}
-Was ist die ICD-10, wie ist ein ICD-Kode aufgebaut, und wofür wird sie verwendet?
-:::
-
-::: {.exam-answer}
-> **Auf einen Blick:**
-> - ICD-10 = **Postleitzahl der Diagnosen** (WHO): `I21.0` = Buchstabe (Bereich: Kreislauf) + 2 Ziffern (Krankheit: Herzinfarkt) + Punkt (Detail: Vorderwand).
-> - **GM** → Abrechnung, AU, Statistik (BfArM, jährlich neu) · **WHO** → Todesursachen.
-> - Buchstaben: **C** Krebs · **I** Herz/Kreislauf · **J** Lunge · **K** Bauch · **S/T** Verletzung · **F** Psyche · **Z** Vorsorge/Anlass.
-> - Zeichen: **+** Ursache · **\*** Organ (nur mit +) · **!** Zusatzinfo. Ambulant: **G/V/A/Z** (gesichert/Verdacht/ausgeschlossen/Zustand nach), **R/L/B** (Seite).
-> - Grenze: Gewebeart eines Tumors fehlt (C34.1 = Lungenkrebs, aber welcher?) → dafür **ICD-O-3**.
-
-**Was ist die ICD?** *International Statistical Classification of Diseases and Related Health Problems* der **WHO** = internationale **Klassifikation der Diagnosen**. Jede Diagnose bekommt einen kurzen Kode, damit alle Ärzte, Kliniken, Kassen und Länder dieselbe Sprache sprechen.
-
-Analogie: wie eine **Postleitzahl** für Krankheiten — statt "Herzinfarkt der Vorderwand" schreibt man **I21.0**, und jeder Computer weiß, was gemeint ist.
-
-**Zwei Versionen in Deutschland:**
-- **ICD-10-GM** (*German Modification*) → für **Abrechnung** (ambulant und stationär), AU-Bescheinigung, Krankenhausstatistik. Herausgeber: **BfArM** (früher DIMDI), **jährlich** neue Version.
-- **ICD-10-WHO** → für die **Todesursachenstatistik** (Leichenschauschein).
-- **ICD-11**: von der WHO seit 2022 in Kraft, in Deutschland für die Abrechnung **noch nicht** eingeführt.
-
-**Aufbau — eine Hierarchie von grob nach fein (Beispiel Herzinfarkt):**
-
-| Ebene | Kode | Bedeutung |
-|---|---|---|
-| **Kapitel** | IX (I00–I99) | Krankheiten des Kreislaufsystems |
-| **Gruppe** | I20–I25 | Ischämische Herzkrankheiten |
-| **Kategorie** (3-stellig) | **I21** | Akuter Myokardinfarkt |
-| **Subkategorie** (4-/5-stellig) | **I21.0** | Akuter transmuraler Myokardinfarkt der Vorderwand |
-
-**Anatomie eines Kodes** — `I21.0`:
-- **Buchstabe** (I) → grober Bereich/Kapitel
-- **2 Ziffern** (21) → Krankheit (Kategorie)
-- **Punkt + 1–2 Ziffern** (.0) → genauere Unterteilung
-- Je mehr Stellen, desto genauer. Kodiert wird immer **so spezifisch wie möglich** ("endständiger Kode").
-
-**Einfache Beispiele aus dem Alltag:**
-
-| Diagnose | ICD-10-GM | Kapitel |
-|---|---|---|
-| Erkältung (akuter Infekt der oberen Atemwege, n. n. bez.) | J06.9 | X Atmungssystem |
-| Pneumonie, nicht näher bezeichnet | J18.9 | X Atmungssystem |
-| Harnwegsinfekt | N39.0 | XIV Urogenitalsystem |
-| Distale Radiusfraktur | S52.5 | XIX Verletzungen |
-| Herzinfarkt Vorderwand | I21.0 | IX Kreislauf |
-| Brustkrebs (Mamma, n. n. bez.) | C50.9 | II Neubildungen |
-
-Faustregel Buchstaben: **C** = Krebs, **I** = Kreislauf, **J** = Lunge, **K** = Verdauung, **S/T** = Verletzungen, **F** = Psyche, **Z** = Kontaktanlässe (z. B. Vorsorge).
-
-**Sonderzeichen hinter dem Kode:**
-
-| Zeichen | Name | Bedeutung | Beispiel |
-|---|---|---|---|
-| **+** | Kreuz | **Ursache** (Ätiologie), Primärkode | E11.40+ Diabetes Typ 2 mit neurologischen Komplikationen |
-| **\*** | Stern | **Organmanifestation**, nur **zusammen** mit Kreuzkode erlaubt | G63.2\* Diabetische Polyneuropathie |
-| **!** | Ausrufezeichen | **Zusatzinformation**, nie allein | N39.0 Harnwegsinfekt + **B96.2!** E. coli als Erreger |
-
-→ Kreuz-Stern = "Ursache + wo es sich zeigt": E11.40+ G63.2\* = Polyneuropathie **durch** Diabetes.
-
-**Zusatzkennzeichen** (ambulant Pflicht, Diagnosesicherheit): **G** gesichert, **V** Verdacht, **A** ausgeschlossen, **Z** Zustand nach. Dazu Seite: **R** rechts, **L** links, **B** beidseits. Beispiel: S52.5 G L = gesicherte distale Radiusfraktur links.
-
-**Haupt- und Nebendiagnose (stationär, Deutsche Kodierrichtlinien):**
-- **Hauptdiagnose** = Grund für die Aufnahme, *nach Abschluss der Diagnostik* festgestellt. Beispiel: Aufnahme wegen Brustschmerz, Diagnose Herzinfarkt → HD **I21.0** (nicht das Symptom "Brustschmerz").
-- **Nebendiagnose** = zusätzliche Erkrankung, die **Aufwand verursacht** hat (Diagnostik, Therapie, Pflege). Beispiel: bekannter Diabetes, Insulin wird weitergegeben → ND E11.-.
-
-**Wofür die ICD verwendet wird:**
-- **Abrechnung**: stationär über **DRG** (Hauptdiagnose bestimmt die Fallgruppe), ambulant über KV/EBM (§ 295/§ 301 SGB V).
-- **AU-Bescheinigung** (eAU) — Diagnose für die Krankenkasse.
-- **Statistik**: Morbidität, Krankenhausstatistik, Todesursachen (WHO-Version).
-- **Qualitätssicherung und Versorgungsforschung**.
-
-**Grenzen:** Klassifikation = **Schublade** → Details gehen verloren (Histologie eines Tumors → dafür ICD-O-3; feine klinische Beschreibung → dafür SNOMED CT).
-
-Merksatz: ICD-10 = Postleitzahl der Diagnosen: Buchstabe (Bereich) + 2 Ziffern (Krankheit) + Punkt (Detail). GM für Abrechnung, WHO für Todesursachen; + Ursache, \* Organ, ! Zusatz.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Eine 25-Jährige mit akuter Appendizitis wird laparoskopisch appendektomiert. Was wird mit der ICD-10, was mit dem OPS kodiert — und warum braucht das Krankenhaus beide?
-:::
-
-::: {.exam-answer}
-- **ICD-10-GM** = **Was hat die Patientin?** → Diagnose: **K35.8** Akute Appendizitis, nicht näher bezeichnet (Hauptdiagnose).
-- **OPS** = **Was haben wir gemacht?** → Prozedur: **5-470.1-** Appendektomie, laparoskopisch.
-
-**OPS** = *Operationen- und Prozedurenschlüssel*, deutsche Klassifikation (BfArM, jährlich neu) für **alle Prozeduren im Krankenhaus** und beim ambulanten Operieren.
-
-**Aufbau** `5-470.1-`: **Kapitel** (5 = Operationen) – **4 Stellen** (470 = Appendektomie) **.** 5./6. Stelle (1 = laparoskopisch, weitere Stelle = Technik); bei paarigen Organen Seite **R/L/B**.
-
-| Kapitel | Inhalt | Beispiel |
-|---|---|---|
-| **1** | Diagnostische Maßnahmen | Koloskopie, Biopsie |
-| **3** | Bildgebende Diagnostik | CT, MRT |
-| **5** | **Operationen** (zentrales Kapitel) | Appendektomie, Hüft-TEP |
-| **6** | Medikamente (teure, abrechnungsrelevante) | bestimmte Chemotherapeutika, Antikörper |
-| **8** | Nichtoperative therapeutische Maßnahmen | Reanimation, Transfusion, **Intensivkomplexbehandlung 8-980** |
-| **9** | Ergänzende Maßnahmen | Geburtsleitung, Dolmetscher, Psychotherapie |
-
-**Warum beide?** Der **DRG-Grouper** braucht beides:
-- **Hauptdiagnose (ICD)** → Hauptdiagnosegruppe (**MDC 06** Verdauungsorgane).
-- **OPS** → **Partition**: operativ (Kode 5-…) oder konservativ.
-- Ergebnis: operative DRG "Appendektomie" (**G23**). **Ohne OPS-Kode** landet derselbe Fall in einer **konservativen** DRG ("Appendizitis ohne OP") → deutlich weniger Erlös, obwohl operiert wurde.
-- Zusätzlich: OPS für Qualitätssicherung, Mindestmengen, Leistungsstatistik.
-
-Merksatz: **ICD = Was hat er? OPS = Was tun wir?** Beide zusammen ergeben die DRG — fehlt der OPS, "verschwindet" die OP aus der Rechnung.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Was ist eine DRG, wie entsteht der Preis, und was bedeutet die Kodierung G23B?
-:::
-
-::: {.exam-answer}
-**DRG** = *Diagnosis Related Groups* = **Fallpauschale**: Das Krankenhaus bekommt pro stationärem Fall einen **festen Betrag** für die Fallgruppe — unabhängig davon, ob der Patient 4 oder 6 Tage bleibt (innerhalb gewisser Grenzen). In Deutschland **G-DRG**, verpflichtend seit **2004**, gepflegt vom **InEK** (Institut für das Entgeltsystem im Krankenhaus), jährlich neuer Katalog.
-
-Analogie: wie ein **Pauschalpreis beim Handwerker** — "Bad fliesen" kostet X, egal wie lange es dauert. Vorher (Tagessätze) wurde nach Tagen bezahlt → Anreiz, Patienten lange zu behalten.
-
-**Aufbau G23B:**
-
-| Stelle | Bedeutung | G23B |
-|---|---|---|
-| **1. Buchstabe** | Hauptdiagnosegruppe (**MDC**), meist aus der Hauptdiagnose | **G** = MDC 06 Verdauungsorgane |
-| **2.–3. Ziffer** | **Partition**: 01–39 operativ · 40–59 andere (invasiv) · 60–99 medizinisch/konservativ | **23** = operativ (Appendektomie) |
-| **4. Buchstabe** | **Schweregrad/Ressourcenverbrauch**: A = höchster, dann B, C …; **Z** = nicht unterteilt | **B** = zweithöchste Stufe |
-
-Sonderfälle: **A**-DRGs = Prä-MDC (Transplantation, Langzeitbeatmung), **9**xx = Fehler-DRG.
-
-**Wie der Grouper zuordnet:** Hauptdiagnose → MDC → OPS → Partition → Basis-DRG → Nebendiagnosen (CCL je ND → **PCCL** 0–4 = Gesamtschweregrad), Alter, Beatmung → finaler Schweregrad-Buchstabe.
-
-**Wie der Preis entsteht:**
-
-**Erlös = Bewertungsrelation (Relativgewicht) × Landesbasisfallwert**
-
-- **Bewertungsrelation**: wie aufwendig die DRG relativ zum Durchschnittsfall (= 1,0) ist, z. B. 0,8 für eine einfache Appendektomie, 5,0 für eine große Bauch-OP.
-- **Landesbasisfallwert**: Euro-Betrag pro Bewertungsrelation 1,0, je Bundesland verhandelt (einige tausend Euro).
-- **Grenzverweildauern**: unter der **unteren GVD** → Abschlag; über der **oberen GVD** → Zuschlag pro Tag.
-- **Zusatzentgelte** für teure Leistungen (bestimmte Medikamente, Implantate) — über OPS-Kodes ausgelöst.
-- Seit **2020**: Pflegepersonalkosten am Bett als eigenes **Pflegebudget** aus den DRGs ausgegliedert (aG-DRG). **Warum?** Mit der Fallpauschale konnten Kliniken am meisten bei der **Pflege** sparen (größter beeinflussbarer Kostenblock) → jahrelanger **Stellenabbau**, Überlastung, Gefahr für Patientensicherheit. Seit dem **Pflegepersonal-Stärkungsgesetz** werden die tatsächlichen Pflegepersonalkosten **krankenhausindividuell erstattet** (Selbstkostendeckung) → jede zusätzliche Pflegekraft wird refinanziert, Sparanreiz entfällt. Ergänzend: **Pflegepersonaluntergrenzen** je Station. Kritik: Abgrenzung "was ist Pflege?" schwierig, mehr Bürokratie.
-
-**Folgen für die Dokumentation:** Jede vergessene, aufwandsrelevante Nebendiagnose oder jeder fehlende OPS kann eine niedrigere DRG bedeuten → Kodierfachkräfte und Medizincontrolling; umgekehrt prüft der **Medizinische Dienst (MD)** auf Überkodierung ("Upcoding").
-
-**Psychiatrie:** analog **PEPP** (Pauschalierendes Entgeltsystem Psychiatrie und Psychosomatik) — vergütet **tagesbezogen**, nicht pro Fall.
-
-Merksatz: DRG = Fallpauschale. Buchstabe = Organsystem (MDC), Ziffern = operativ/konservativ, letzter Buchstabe = Schweregrad (A teuerster). Preis = Bewertungsrelation × Landesbasisfallwert.
-
-**Ambulant: EBM und GOÄ**
-
-| | **EBM** (Einheitlicher Bewertungsmaßstab) | **GOÄ** (Gebührenordnung für Ärzte) |
-|---|---|---|
-| **Für wen** | **gesetzlich Versicherte** (GKV), Vertragsärzte | **Privatpatienten**, Selbstzahler, IGeL |
-| **Wer legt fest** | **Bewertungsausschuss** (KBV + GKV-Spitzenverband), § 87 SGB V | **Rechtsverordnung** der Bundesregierung (Bundesrat stimmt zu) |
-| **Prinzip** | **Gebührenordnungspositionen (GOP)** mit **Punkten**; Euro = Punkte × **Orientierungswert** (Cent-Betrag pro Punkt); viele **Pauschalen** (z. B. Versichertenpauschale pro Quartal) | **Einzelleistungen** mit Punktzahl × Punktwert, multipliziert mit **Steigerungsfaktor** |
-| **Abrechnung** | quartalsweise über die **KV**; Diagnosen nach **ICD-10-GM** Pflicht; Budgetierung (Mengenbegrenzung) | Rechnung direkt an den Patienten, der sie bei seiner PKV einreicht |
-| **Besonderheit** | Arzt bekommt nicht immer den vollen Punktwert (Budget) | Steigerungsfaktor: persönliche Leistungen **1,0–3,5**, Regelfall bis **2,3** (darüber schriftliche Begründung); technische Leistungen bis 2,5, Labor bis 1,3. GOÄ in weiten Teilen von **1996** → Reform ("GOÄneu") geplant |
-
-**Warum Steigerungsfaktor?** Gedacht nach **§ 5 GOÄ**: Vergütung nach **Schwierigkeit, Zeitaufwand und Umständen** des Einzelfalls (z. B. Beratung eines dementen, schwerhörigen Patienten dauert dreimal so lang). In der Praxis ist **2,3 zum Standard** geworden, weil die Punktwerte seit 1996 kaum angepasst wurden — der Faktor gleicht faktisch die fehlende Inflationsanpassung aus. Kritik: intransparent, abhängig vom Versicherungsstatus; die geplante GOÄneu soll realistische Festbeträge statt Faktor-Spielraum bringen.
-
-Klinik-Beispiel: Gespräch beim Hausarzt — GKV-Patient: in der **Versichertenpauschale** (EBM) enthalten; Privatpatient: GOÄ Nr. 1 "Beratung" × Steigerungsfaktor 2,3.
-
-Merksatz: **EBM = Kasse, Punkte, Pauschalen, über die KV. GOÄ = privat, Einzelleistung × Steigerungsfaktor, direkt an den Patienten.**
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Weitere Klassifikation und ihre Anwendungsgebiete
-
-### Weitere Klassifikation und ihre Anwendungsgebiete
-
-Weitere Klassifikation und ihre Anwendungsgebiete (z. B. SNOMED-CT, LOINC, ATC-Klassifikation, UCUM, GMDN).
-
-::: {.exam-question}
-Was macht SNOMED CT, wofür wird es eingesetzt, und wie ist es aufgebaut?
-:::
-
-::: {.exam-answer}
-**Aufgabe:** SNOMED CT (*Systematized Nomenclature of Medicine – Clinical Terms*) ist die weltweit umfassendste **klinische Terminologie**. Es gibt jedem klinischen Begriff einen **eindeutigen, sprachunabhängigen Kode**, damit Computer verschiedener Hersteller und Länder **dasselbe meinen**, wenn sie Daten austauschen (semantische Interoperabilität).
-
-Analogie: Ein Dolmetscher, der jedes Fachwort in eine Zahl übersetzt — "Herzinfarkt", "MI", "myocardial infarction" → alle `22298006`.
-
-**Aufbau (3 Bausteine):**
-- **Konzepte** (> 350.000): ein Begriff = ein Kode, z. B. `22298006` Myokardinfarkt.
-- **Beschreibungen**: Bezeichnungen und Synonyme, auch in mehreren Sprachen.
-- **Beziehungen**: "ist ein" (Hierarchie) und Attribute wie Lokalisation, Erreger, Morphologie → macht es zur **Ontologie**.
-- Gegliedert in **Hauptachsen/Top-Level-Hierarchien** (das Buch nennt 18 Achsen), u. a. *Klinischer Befund/Erkrankung*, *Prozedur*, *Körperstruktur*, *Organismus*, *Substanz*.
-
-**Einsatz:**
-- **Klinische Dokumentation** in KIS/elektronischer Akte: Problemliste, Befunde, Allergien — detaillierter als ICD.
-- **Datenaustausch**: als Kodesystem in **HL7 FHIR/CDA** und **DICOM**; in Deutschland u. a. in den **MIOs der ePA** und im **MII-Kerndatensatz** (Forschung).
-- **Entscheidungsunterstützung**: Regeln wie "Patient hat *irgendeine* Penicillin-Allergie" funktionieren über die Hierarchie.
-- **Forschung/Auswertung**: Kohortensuche über Oberbegriffe ("alle ischämischen Herzkrankheiten").
-- **Abrechnung** nicht direkt → dafür Mapping auf ICD-10.
-
-**Organisatorisch:** herausgegeben von **SNOMED International**; Deutschland ist seit **2021 Mitglied**, nationale Lizenz über das **BfArM** → für Einrichtungen in Deutschland kostenfrei nutzbar.
-
-Merksatz: SNOMED CT = gemeinsame klinische Sprache für Computer — dokumentieren und austauschen, nicht abrechnen.
-
-**LOINC, ATC, UCUM, GMDN — vier "Sprachen" für vier Gegenstände:**
-
-| System | Kodiert | Klinik-Beispiel | Systemtyp |
-|---|---|---|---|
-| **LOINC** (*Logical Observation Identifiers Names and Codes*) | **Laboruntersuchungen/Beobachtungen** — *was* wurde gemessen | "Kalium im Serum" hat in jedem Labor denselben Kode, egal ob intern "K", "Kalium" oder "K+" | **Nomenklatur/Terminologie**: Kodes **ohne systematische Hierarchie**, Begriff aus 6 Achsen gebildet (Komponente, Eigenschaft, Zeit, Material, Skala, Methode) → **keine** Taxonomie |
-| **ATC** (*Anatomisch-Therapeutisch-Chemisch*, WHO) | **Wirkstoffe**, nach Organ und Wirkung | **C07AB02** Metoprolol: C Herz-Kreislauf → C07 Betablocker → C07A → C07AB selektiv → 02 Metoprolol | **Klassifikation mit Taxonomie** (5 Ebenen, Baum) |
-| **UCUM** (*Unified Code for Units of Measure*) | **Maßeinheiten**, maschinenlesbar | `mmol/L` vs. `mg/dL` Glukose (Faktor 18!); `kg/m2` für BMI | **weder noch**: eine **formale Grammatik** — Regeln, wie Einheiten zusammengesetzt werden, damit Computer umrechnen können |
-| **GMDN** (*Global Medical Device Nomenclature*) | **Medizinprodukte** (Gerätetypen) | "Infusionspumpe", "Herzschrittmacher" einheitlich benannt (Rückrufe, Register); EU-Datenbank EUDAMED nutzt die verwandte **EMDN** | **Nomenklatur** |
-
-**Warum ist LOINC trotz 6 Achsen keine Taxonomie?** **Achsen ≠ Hierarchie.**
-- **Achsen** = Merkmale **nebeneinander**, wie Felder eines Formulars: Kalium im Serum = Komponente *Kalium* · Eigenschaft *Stoffmengenkonzentration* · Zeit *Zeitpunkt* · Material *Serum/Plasma* · Skala *quantitativ* · Methode *(keine)* → LOINC **2823-3**.
-- **Taxonomie** = Begriffe **übereinander** (Ober-/Unterbegriff, "ist ein"), wie ein Stammbaum.
-- Der LOINC-Kode ist zudem **nicht sprechend**: 2823-3 ist eine laufende Nummer + Prüfziffer, aus der man nichts ablesen kann. Gegensatz **sprechender Schlüssel**: ICD **I21.0** oder ATC **C07AB02** — die Stellen selbst verraten die Position im Baum.
-- (LOINC bietet zum Durchsuchen zusätzlich eine Hilfs-Hierarchie an, das Kodesystem selbst ist aber nicht hierarchisch aufgebaut.)
-
-Feinheit ATC: ein Wirkstoff kann **mehrere** ATC-Kodes haben, je nach Anwendung — ASS als Thrombozytenaggregationshemmer **B01AC06**, als Schmerzmittel **N02BA01** (ATC klassifiziert nach Hauptindikation).
-
-Zusammenspiel: Laborbefund in der ePA "Kalium (**LOINC**) = 5,8 mmol/L (**UCUM**)" + Medikation Spironolacton (**ATC** C03DA01) → System erkennt **Hyperkaliämie unter kaliumsparendem Diuretikum** und warnt.
-
-Merksatz: LOINC = *was* gemessen, UCUM = *in welcher Einheit*, ATC = *welcher Wirkstoff*, GMDN = *welches Gerät*. Nur ATC ist ein Baum (Taxonomie).
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Qualitätssicherung nach §137 SGB V
-
-### Qualitätssicherung nach §137 SGB V
-
-Qualitätssicherung nach §137 SGB V.
-
-::: {.exam-question}
-Was regelt die gesetzliche Qualitätssicherung (§§ 135a–137 SGB V), wer ist beteiligt, und wie läuft die externe Qualitätssicherung im Krankenhaus ab?
-:::
-
-::: {.exam-answer}
-**Grundidee:** Krankenhäuser und Praxen sind **gesetzlich verpflichtet**, die Qualität ihrer Leistungen zu sichern und sich **vergleichen** zu lassen.
-
-**Rechtsgrundlagen (heutiger Stand — das Buch von 2015 fasst alles unter § 137):**
-
-| Norm | Inhalt |
-|---|---|
-| **§ 135a SGB V** | **Pflicht** aller Leistungserbringer zur Qualitätssicherung + einrichtungsinternes **Qualitätsmanagement** |
-| **§ 136 ff. SGB V** | **G-BA** (Gemeinsamer Bundesausschuss) erlässt die QS-Richtlinien; **§ 136b**: **Mindestmengen** und jährlicher **Qualitätsbericht** der Krankenhäuser |
-| **§ 137 SGB V** | **Durchsetzung**: Folgen bei Nichteinhaltung (Vergütungsabschläge, Wegfall des Vergütungsanspruchs), Kontrollen durch den **Medizinischen Dienst** |
-| **§ 137a SGB V** | **IQTIG** (Institut für Qualitätssicherung und Transparenz im Gesundheitswesen) — entwickelt Verfahren und wertet aus (Nachfolger des **AQUA-Instituts**) |
-
-**Ablauf der externen QS (datengestützt, DeQS-Richtlinie):**
-1. **QS-Filter** im KIS: bestimmte ICD-/OPS-Kodes lösen automatisch einen **QS-Dokumentationsbogen** aus (z. B. OPS für Hüft-TEP).
-2. Arzt/Pflege füllen den Bogen aus (strukturiert: Indikation, Komplikationen, Entlassstatus).
-3. Daten gehen pseudonymisiert an die **Landesstellen** bzw. das IQTIG; ergänzt um **Sozialdaten der Krankenkassen** (z. B. Revision im anderen Krankenhaus nach 1 Jahr).
-4. Auswertung anhand von **Qualitätsindikatoren** mit **Referenzbereichen**, risikoadjustiert (→ Modul III: Adjustierung).
-5. **Rechnerisch auffällig** → **Stellungnahmeverfahren** (früher "Strukturierter Dialog"): Klinik muss erklären; ggf. Maßnahmen, Vor-Ort-Begehung.
-6. Ergebnisse fließen in den öffentlichen **Qualitätsbericht**.
-
-**Beispiele für QS-Verfahren:** Hüft-/Knie-Endoprothetik, Geburtshilfe, Herzschrittmacher, Koronarangiographie/PCI, ambulant erworbene Pneumonie, Dekubitusprophylaxe.
-
-**Weitere Instrumente:**
-- **Mindestmengen**: bestimmte planbare Eingriffe nur, wenn ein Haus sie oft genug macht (z. B. **Knie-TEP mindestens 50/Jahr**) — Idee: Übung verbessert Ergebnisse.
-- **Qualitätsbericht**: jährlich, öffentlich (Grundlage für Klinik-Vergleichsportale).
-- **Planungsrelevante Indikatoren**: Qualitätsergebnisse können die Krankenhausplanung der Länder beeinflussen.
-
-**Bezug Dokumentation:** QS lebt von der **Routinedokumentation** (ICD/OPS als Auslöser, QS-Bögen als Daten) → schlechte Kodierung = falsche Qualitätsergebnisse.
-
-Merksatz: § 135a = Pflicht, § 136 = G-BA macht Regeln, § 137 = Durchsetzung, § 137a = IQTIG wertet aus. Ablauf: QS-Filter → QS-Bogen → Auswertung → Auffälligkeit → Stellungnahme → Qualitätsbericht.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Vorgehen bei Planung und Entwicklung von Dokumentationssystemen
-
-### Vorgehen bei Planung und Entwicklung von Dokumentationssystemen
-
-Vorgehen bei Planung und Entwicklung von Dokumentationssystemen (z. B. medizinische Register, Krebsregister, Infektionsschutzmeldungen, freiwillige Qualitätssicherungssysteme, Archivsysteme, AMTS).
-
-::: {.exam-question}
-Wie plant man ein medizinisches Dokumentationssystem (z. B. ein Register), und welche Beispiele gibt es (Krebsregister, IfSG-Meldungen, freiwillige Register, Archiv, AMTS)?
-:::
-
-::: {.exam-answer}
-**Vorgehen in Schritten** (Beispiel: Reanimationsregister einer Klinik/eines Rettungsdienstes):
-
-| Schritt | Was | Beispiel Reanimationsregister |
-|---|---|---|
-| 1. **Ziel/Fragestellung** | Wofür? Wer nutzt die Daten? | Überlebensrate nach präklinischer Reanimation verbessern, Vergleich mit anderen Standorten |
-| 2. **Datensatz festlegen** | **Minimal-/Kerndatensatz**: "so wenig wie möglich, so viel wie nötig" | Zeitpunkt Kollaps, Laienreanimation ja/nein, erster Rhythmus, ROSC, Entlassung lebend |
-| 3. **Merkmalskatalog** | jedes Merkmal mit **Definition, Ausprägungen, Skalenniveau**, Pflicht/optional | "erster Rhythmus": VF / pVT / PEA / Asystolie (nominal) |
-| 4. **Standards nutzen** | etablierte Kataloge/Terminologien → Vergleichbarkeit | **Utstein-Kriterien** (internationaler Reanimations-Standard), ICD, SNOMED CT, LOINC |
-| 5. **Datenquellen + Erfassung** | Primärerfassung (eigens) oder Sekundärnutzung (aus KIS/Einsatzprotokoll übernehmen) | Übernahme aus dem digitalen Einsatzprotokoll statt doppeltem Eintippen |
-| 6. **Datenschutz** | Rechtsgrundlage (Gesetz oder Einwilligung), **Pseudonymisierung**, Zugriffsrechte, Ethikvotum | pseudonymisierte Meldung an das Register |
-| 7. **Datenqualität** | Pflichtfelder, **Plausibilitätsprüfungen**, Vollständigkeit, Schulung | Warnung bei "Entlassung lebend" vor "Kollaps-Zeit" |
-| 8. **Pilotierung → Betrieb → Evaluation** | testen, anpassen, regelmäßig auswerten und rückmelden | Jahresbericht an alle Standorte |
-
-**Beispiele aus dem Curriculum:**
-- **Krebsregister**: **klinische Krebsregister** der Länder (§ 65c SGB V) für Qualität der Versorgung + epidemiologische Auswertung; Zusammenführung im **Zentrum für Krebsregisterdaten (ZfKD)** am RKI. **Meldepflicht** für Ärzte (Diagnose, Therapie, Verlauf) — Meldungen werden vergütet. Kodiert mit **ICD-10, ICD-O-3, TNM**.
-- **Infektionsschutzmeldungen (IfSG)**: **§ 6 IfSG** — Arzt meldet bestimmte **Krankheiten** (z. B. Masern, Meningokokken-Meningitis) namentlich **innerhalb von 24 h** ans Gesundheitsamt; **§ 7 IfSG** — Labor meldet **Erregernachweise**. Elektronisch über **DEMIS** (Deutsches Elektronisches Melde- und Informationssystem für den Infektionsschutz).
-- **Freiwillige QS-Register** (Fachgesellschaften): z. B. **Deutsches Reanimationsregister**, **TraumaRegister DGU**, Endoprothesenregister — Teilnahme freiwillig, Nutzen: Benchmarking.
-- **Archivsysteme**: **revisionssichere** Langzeitarchivierung der Akte (10–30 Jahre, s. Punkt 1); Papierakten **ersetzend scannen** nur nach festgelegtem Verfahren (BSI-Richtlinie **TR-RESISCAN**), damit der Scan den Beweiswert behält.
-- **AMTS-Systeme** (Arzneimitteltherapiesicherheit): elektronische Verordnung mit **Wechselwirkungs-, Dosis-, Allergie- und Nierenfunktionsprüfung**; Grundlage: strukturierte Medikationsdaten (ATC, BMP, ePA-Medikationsliste).
-
-Merksatz: Ziel → Kerndatensatz → Merkmalskatalog → Standards → Erfassung → Datenschutz → Datenqualität → Pilot. Krebsregister = Meldepflicht + ICD-O/TNM; IfSG = 24 h ans Gesundheitsamt über DEMIS.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
 
 ## Big Data und Public Health
 
-### Big Data und Public Health
-
-Big Data und Public Health.
-
 ::: {.exam-question}
-Was versteht man unter Big Data im Gesundheitswesen, wie wird es für Public Health genutzt, und welche Risiken gibt es?
+Welche Chancen und Risiken bieten große Gesundheitsdatenbestände für Versorgung, Forschung und Public Health?
 :::
-
-::: {.exam-answer}
-**Big Data** = Datenmengen, die zu groß, zu schnell oder zu vielfältig für klassische Auswertung sind — beschrieben durch die **5 V**:
-
-| V | Bedeutung | Gesundheits-Beispiel |
-|---|---|---|
-| **Volume** | Menge | Abrechnungsdaten von 74 Mio. GKV-Versicherten |
-| **Velocity** | Geschwindigkeit | minütliche Vitaldaten aus PDMS, Wearables |
-| **Variety** | Vielfalt | Freitext, Bilder, Labor, Genom, Abrechnung |
-| **Veracity** | Verlässlichkeit | Routinedaten für Abrechnung kodiert, nicht für Forschung |
-| **Value** | Nutzen | nur relevant, wenn daraus bessere Entscheidungen folgen |
-
-**Datenquellen:** Abrechnungs-/Routinedaten der Kassen, KIS/ePA, Register, Omics, Wearables/Apps, Labormeldungen, Abwasser, Internet-Suchanfragen.
-
-**Nutzung für Public Health:**
-- **Surveillance** (Überwachung des Infektionsgeschehens): IfSG-Meldungen über DEMIS, **Abwassermonitoring** (SARS-CoV-2, Influenza), **syndromische Surveillance** aus Notaufnahmedaten (z. B. AKTIN-Notaufnahmeregister: Anstieg "Atemwegsinfekte" sichtbar, bevor Laborbefunde da sind).
-- **Versorgungsforschung**: Über-/Unterversorgung, regionale Unterschiede (z. B. Häufigkeit von Knie-TEPs pro Landkreis).
-- **Pharmakovigilanz**: seltene Nebenwirkungen in Millionen Verordnungen erkennen.
-- **Prävention und Risikovorhersage**: z. B. Hitzewarnsysteme, Vorhersage von Krankenhausauslastung.
-- **Infrastruktur in Deutschland**: Forschungsdatenzentrum Gesundheit (BfArM, GDNG), MII/Datenintegrationszentren (Modul III), künftig **European Health Data Space (EHDS)**.
-
-**Risiken und Grenzen (prüfungsrelevant):**
-- **Garbage in, garbage out**: Routinedaten sind für die Abrechnung kodiert → Kodierfehler, Upcoding, fehlende klinische Details.
-- **Korrelation ≠ Kausalität**, **Confounding** (→ Modul III, Adjustierung).
-- **Selektionsbias**: Wearable-Nutzer sind jünger, gesünder, wohlhabender als die Bevölkerung.
-- **Viele Tests → viele Zufallsbefunde** (multiples Testen): in riesigen Datensätzen wird fast alles "signifikant".
-- **Lehrbeispiel Google Flu Trends**: Grippe-Vorhersage aus Suchanfragen überschätzte die Grippewelle 2013 um rund das Doppelte — Suchverhalten änderte sich durch Medienberichte.
-- **Datenschutz**: Re-Identifikation durch Verknüpfung (Linkage); daher Pseudonymisierung, Zugriff nur in kontrollierten Umgebungen (Modul II).
-- **Algorithmischer Bias**: Modelle, die mit Daten einer Gruppe trainiert wurden, funktionieren für andere schlechter.
-
-Merksatz: Big Data = 5 V. Für Public Health: Surveillance, Versorgungsforschung, Pharmakovigilanz. Große Datenmenge ersetzt kein gutes Studiendesign — Bias und Confounding bleiben.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Quellen {.unnumbered}
-
-Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
-
-- Kap. 12, Medizinische Dokumentation — § 10 MBO-Ä und 10 Jahre Aufbewahrungsfrist aus dem Buch; Patientenrechtegesetz (§§ 630a ff. BGB), Strahlenschutz-/Transfusionsfristen und DSGVO als Allgemeinwissen ergänzt
-- Kap. 12, Medizinische Dokumentation — Ordnungssysteme, Klassifikation und ihre Anforderungen, SNOMED CT, MeSH; Kap. 6 Skalenniveaus; Ontologie-Begriff und Datentypen-Übersicht als Allgemeinwissen ergänzt
-- Curriculum / Allgemeinwissen — MIOs, ePA für alle und mio42 sind im Buch "MedInfo kompakt" (2015) nicht enthalten. Stand: 10/2026
-- Curriculum / Allgemeinwissen — TNM-Systematik der UICC; ICD-O-3-Struktur aus Kap. 12
-- Kap. 12, Medizinische Dokumentation — Struktur ICD-O-3 Morphologie mit Dignitätsziffer; Topographie-Achse, Revision 3.2 und Krebsregister-Bezug als Allgemeinwissen ergänzt
-- Curriculum / Allgemeinwissen — ICF im Buch "MedInfo kompakt" nicht ausführlich behandelt
-- Kap. 12, Medizinische Dokumentation — ICD-10-GM/WHO, Kodeaufbau, Kreuz-Stern-Systematik, Haupt-/Nebendiagnose; BfArM-Zuständigkeit, Zusatzkennzeichen und ICD-11-Stand als Allgemeinwissen ergänzt. Stand: 10/2026
-- Kap. 12, Medizinische Dokumentation — OPS-Kodierstruktur, Kapitel 5 als zentrales Kapitel, Grouper-Logik; Kodebeispiele als Allgemeinwissen, Stand kann je Katalogjahr abweichen
-- Kap. 4 Gesundheitsökonomie und Kap. 12 Medizinische Dokumentation — DRG-Kode-Struktur, Grouper, CCL/PCCL, Bewertungsrelation; Pflegebudget seit 2020 als Allgemeinwissen ergänzt. Stand: 10/2026
-- Kap. 12, Medizinische Dokumentation — SNOMED CT als konzeptbasierte Terminologie mit Achsen, Einsatz in DICOM/HL7/e-Akte; Mitgliedschaft Deutschlands, FHIR/ePA/MII als Allgemeinwissen ergänzt
-- Kap. 5 Qualitätsmanagement und Kap. 12 — gesetzliche QS, Qualitätsbericht §137; heutige Paragrafenaufteilung, IQTIG statt AQUA und DeQS-RL als Allgemeinwissen aktualisiert. Stand: 10/2026
-- Kap. 12 Medizinische Dokumentation und Kap. 5 Qualitätsmanagement — Dokumentationsziele, Register, Qualitätssicherung; Utstein, DEMIS, TR-RESISCAN, § 65c SGB V als Allgemeinwissen ergänzt
-- Curriculum / Allgemeinwissen — im Buch "MedInfo kompakt" (2015) nicht behandelt. Stand: 10/2026

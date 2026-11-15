@@ -1,331 +1,601 @@
 # Entscheidungsunterstützung {#modul-vi}
 
-## Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
-
-### Entscheidungsunterstützung und Zugriff auf medizinisches Wissen
-
-Entscheidungsunterstützung und Zugriff auf medizinisches Wissen.
+## Entscheidungsunterstützung und medizinisches Wissen
 
 ::: {.exam-question}
-Was ist ein klinisches Entscheidungsunterstützungssystem (CDSS), wie unterscheidet es sich vom reinen Wissenszugriff, wie ist es aufgebaut, und welche Probleme gibt es?
+Wie unterscheiden sich medizinischer Wissenszugriff und klinische Entscheidungsunterstützung, und welche Voraussetzungen und Risiken haben Clinical Decision Support Systems?
 :::
 
-::: {.exam-answer}
-**Zwei Arten, Wissen an den Arzt zu bringen:**
+:::: {.exam-answer}
 
-| | **passiver Wissenszugriff** ("Pull") | **aktive Entscheidungsunterstützung** ("Push") |
+Medizinischer Wissenszugriff und klinische Entscheidungsunterstützung überschneiden sich. Die Unterscheidung „Wissenszugriff = Pull“ und „Entscheidungsunterstützung = Push“ ist jedoch zu vereinfachend.
+
+| Merkmal | Medizinischer Wissenszugriff | Klinische Entscheidungsunterstützung |
 |---|---|---|
-| Wer startet? | Arzt sucht selbst | System meldet sich von selbst |
-| Bezug | allgemeines Wissen | **patientenspezifisch** (nutzt Daten aus KIS/Labor/Medikation) |
-| Beispiele | PubMed/MEDLINE (MeSH), Cochrane Library, **AWMF-Leitlinien**, UpToDate/AMBOSS, Fachinformation, Embryotox | Warnung "Kalium 6,2 + Spironolacton", Dosisanpassung bei GFR 25, Sepsis-Score-Alarm, Impf-Erinnerung |
-| Brücke | **Infobutton** (HL7-Standard): Klick im KIS neben Diagnose/Medikament öffnet passende Wissensquelle **mit Kontext** | |
+| Zweck | medizinisches Wissen verfügbar machen | eine konkrete klinische Entscheidung unterstützen |
+| Inhalt | Leitlinien, Studien, Fachinformationen oder Wissensdatenbanken | gefilterte Informationen, Bewertungen oder Empfehlungen |
+| Patientenbezug | häufig allgemein, teilweise kontextbezogen | häufig Verknüpfung mit aktuellen Patientendaten |
+| Auslösung | meist durch den Anwender | aktiv aufgerufen oder automatisch ausgelöst |
 
-**CDSS** (*Clinical Decision Support System*) = Software, die **patientenbezogene Daten mit medizinischem Wissen verknüpft**, um eine konkrete Entscheidung zu unterstützen — der **Arzt entscheidet**, das System berät.
+- **Medizinischer Wissenszugriff:** Der Anwender sucht medizinische Informationen und bewertet deren Bedeutung für den Patienten selbst.
+  - **z. B.:** Aufruf einer AWMF-Leitlinie zur Behandlung einer Sepsis
 
-**Funktionen (Beispiele):**
-- **Alarme/Warnungen**: Interaktionen, Allergien, kritische Laborwerte
-- **Erinnerungen**: fällige Kontrollen, Vorsorge, Thromboseprophylaxe
-- **Diagnoseunterstützung**: Differenzialdiagnosen, Scores (CHA₂DS₂-VASc, Wells), Bild-KI (Rundherd-CAD)
-- **Therapieunterstützung**: Dosierung, **Order Sets** (Standard-Anordnungspakete), Leitlinien-Pfade
-- **Dokumentationshilfe**: Checklisten, Plausibilitätsprüfung
+- **Klinisches Entscheidungsunterstützungssystem (Clinical Decision Support System, CDSS):** Eine IT-Funktion oder ein Anwendungssystem stellt klinisches Wissen und relevante Informationen zum Zeitpunkt einer Entscheidung strukturiert bereit.
+  - Mögliche Formen sind Warnungen, Erinnerungen, Order Sets, Dosierungshilfen, Übersichten und Diagnose- oder Therapieunterstützung.
+  - **z. B.:** Das Verordnungssystem berücksichtigt Nierenfunktion und Körpergewicht und warnt vor einer ungeeigneten Arzneimitteldosis.
 
-**Wissensbasiert vs. datengetrieben:**
+**Voraussetzungen für ein sicheres CDSS:**
 
-| | **wissensbasiert** (klassisch, "Expertensystem") | **datengetrieben** (maschinelles Lernen/KI) |
-|---|---|---|
-| Wissen kommt von | Experten, Leitlinien → explizit formuliert | wird aus vielen Falldaten **gelernt** |
-| Form | **Regeln** WENN–DANN, Entscheidungsbäume, **Bayes** (Wahrscheinlichkeiten) | Modelle (Regression, neuronale Netze) |
-| Erklärbar? | **ja** ("Warnung, weil GFR < 30 UND Metformin") | oft **Black Box** → Explainable AI |
-| Beispiel | **MYCIN** (1970er, Antibiotikawahl, Regeln mit Sicherheitsfaktoren), **Arden Syntax** (HL7-Standard für Regeln, "Medical Logic Modules") | Sepsis-Vorhersage, Hautkrebs-Erkennung, Retinopathie-Screening |
+- **Valides Wissen oder Modell:** Inhalt, Regeln und Modelle müssen fachlich geprüft, aktuell und für den vorgesehenen Einsatz geeignet sein.
+- **Geeignete Daten:** Patientendaten müssen korrekt, vollständig, aktuell und semantisch eindeutig zugeordnet sein.
+- **Workflowintegration:** Die Unterstützung muss zum richtigen Zeitpunkt, für die richtige Person und in einer handlungsfähigen Form erscheinen.
+- **Lokale Prüfung:** Funktion, Benutzerfreundlichkeit und klinische Sicherheit müssen vor Einführung und nach Änderungen getestet werden.
+- **Governance:** Verantwortlichkeiten, Versionierung, Wissenspflege, Überwachung und Rückmeldungen der Anwender müssen geregelt sein.
 
-**Aufbau eines klassischen Expertensystems:**
-- **Wissensbasis** — die Regeln/Fakten ("Lehrbuch")
-- **Inferenzmaschine** — wendet die Regeln auf den Patienten an ("das Denken")
-- **Erklärungskomponente** — begründet den Vorschlag
-- **Dialog-/Benutzerschnittstelle** und **Wissenserwerbskomponente** (Pflege der Regeln)
+**Wesentliche Risiken:**
 
-**Bayes als Grundlage diagnostischer Unterstützung:** Vortestwahrscheinlichkeit (Prävalenz) + Testergebnis → Nachtestwahrscheinlichkeit — genau das Prinzip von PPV/NPV (Modul III). Historisches Beispiel: de Dombals Bauchschmerz-System (Leeds, 1970er).
+- **Fehlerhafte Empfehlungen:** Unvollständige Daten, veraltetes Wissen oder ungeeignete Modelle können falsche oder ausbleibende Hinweise verursachen.
+- **Alert Fatigue:** Zu viele oder klinisch unbedeutende Warnungen können dazu führen, dass auch wichtige Meldungen übergangen werden.
+- **Automation Bias:** Anwender können einer Empfehlung zu stark vertrauen und widersprechende klinische Informationen übersehen.
+- **Workflowstörung:** Schlecht integrierte Systeme erhöhen Arbeitsaufwand und kognitive Belastung.
+- **Mangelnde Übertragbarkeit:** Ein an einer bestimmten Population oder Einrichtung entwickeltes System kann andernorts schlechter funktionieren.
 
-**Probleme:**
-- **Alert Fatigue**: zu viele, zu unspezifische Warnungen → werden weggeklickt (oft > 90 % übergangen), auch die wichtigen.
-- **Wissenspflege**: Regeln veralten, neue Leitlinien müssen eingepflegt werden.
-- **Integration**: muss im Workflow (KIS, Verordnung) erscheinen, nicht in einem Extra-Programm.
-- **Datenqualität**: falsche/fehlende Daten → falsche Ratschläge ("garbage in, garbage out").
-- **Haftung/Regulierung**: CDSS mit diagnostischer/therapeutischer Zweckbestimmung = **Medizinprodukt (MDR)**, KI zusätzlich **EU AI Act** (Hochrisiko). Verantwortung bleibt beim Arzt.
-- **Automation Bias**: blindes Vertrauen in den Vorschlag.
+Merksatz: Wissenszugriff stellt medizinisches Wissen bereit; ein CDSS bereitet Wissen und Patientendaten für eine konkrete Entscheidung auf. Sicher wird es erst durch valide Inhalte, geeignete Daten, Workflowintegration und fortlaufende Überwachung.
 
-**"Five Rights" der CDS:** die **richtige Information** an die **richtige Person** im **richtigen Format** über den **richtigen Kanal** zum **richtigen Zeitpunkt** im Workflow.
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-Merksatz: Wissenszugriff = Arzt sucht (Pull, allgemein); CDSS = System meldet sich (Push, patientenspezifisch). Wissensbasiert = Regeln, erklärbar (MYCIN, Arden Syntax); datengetrieben = gelernt, oft Black Box. Größtes Praxisproblem: Alert Fatigue.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+Ein CDSS unterstützt, ersetzt aber nicht die klinische Beurteilung. Nicht jedes CDSS ist ein Medizinprodukt. Entscheidend ist die vom Hersteller festgelegte Zweckbestimmung. Software, deren Informationen für diagnostische oder therapeutische Entscheidungen verwendet werden sollen, kann unter die europäische Medizinprodukteverordnung fallen und wird dann risikobasiert klassifiziert.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.6 „Modul VI – Entscheidungsunterstützung“, S. 15.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Sutton RT, Pincock D, Baumgart DC et al.: *An overview of clinical decision support systems: benefits, risks, and strategies for success*. npj Digital Medicine. 2020;3:17. Abschnitte „Introduction: What is a Clinical Decision Support System?“ und „Pitfalls of CDSS“ sowie Tabelle 1.  
+  <https://doi.org/10.1038/s41746-020-0221-y>
+- Centers for Medicare & Medicaid Services: *Clinical Decision Support*. Abschnitt „About“ und „CDS Five Rights“, aktualisiert am 28.01.2026.  
+  <https://ecqi.healthit.gov/cds/about>
+- Medical Device Coordination Group: *MDCG 2019-11 Rev. 1 – Guidance on Qualification and Classification of Software under MDR and IVDR*. 2025, Abschnitte 3.2 und 4.2.1 sowie Anhang I „Decision Support Software“.  
+  <https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf>
+
+Quellen geprüft am 15.11.2026.
+
 :::
+::::
 
-## Wissensbasen und Systeme zur Therapiesicherheit
 
-### Wissensbasen und Systeme zur Therapiesicherheit
 
-Wissensbasen und Systeme zur Therapiesicherheit (z. B. Wissensmanagement, Evidence Based Medicine).
+
+
+
+## Wissensbasen, Evidenz und Therapiesicherheit
 
 ::: {.exam-question}
-Welche IT-Systeme und Wissensbasen erhöhen die Arzneimitteltherapiesicherheit (AMTS)? Was ist Evidence Based Medicine (EbM), und was bedeutet Wissensmanagement im Krankenhaus?
+Wie werden medizinische Erkenntnisse nach den Prinzipien der evidenzbasierten Medizin gesucht, bewertet und angewendet sowie im Wissensmanagement aktuell verfügbar gemacht?
 :::
 
-::: {.exam-answer}
-**1. Therapiesicherheit / AMTS** — Medikationsfehler passieren an jeder Stelle des **Medikationsprozesses**: Verordnung → Übertragung → Stellen/Richten → Gabe → Überwachung. Klassische Fehler: unleserliche Handschrift, Übertragungsfehler (Kurve → Pflege), falsche Dosis bei Niereninsuffizienz, übersehene Interaktion/Allergie.
+:::: {.exam-answer}
 
-| System | was es tut | Beispiel |
-|---|---|---|
-| **Arzneimittel-Wissensbasis** | strukturierte Daten zu Präparaten, Wirkstoffen, Dosierungen, Interaktionen, Kontraindikationen | **ABDA-Datenbank** (ABDATA), ifap, Fachinformation |
-| **CPOE** (*Computerized Physician Order Entry*) | **elektronische Verordnung** statt Papier — lesbar, vollständig, prüfbar | Arzt verordnet im KIS/PDMS, nicht auf der Kurve |
-| **AMTS-Prüfung / CDSS** in der CPOE | automatische Checks beim Verordnen | **Interaktion** (Clarithromycin + Simvastatin), **Allergie**, **Doppelverordnung**, **Dosis nach GFR**, Höchstdosis |
-| Spezielle Wissensquellen | Zielgruppen-Wissen | **PRISCUS-Liste** (potenziell inadäquat für Ältere), **Embryotox** (Schwangerschaft/Stillzeit), Dosierung Niereninsuffizienz |
-| **Closed Loop Medication Management** | geschlossener Kreis Verordnung → Apotheke → Gabe, alles elektronisch | **Unit-Dose** (Einzelverpackung je Patient) + **Barcode-Scan** am Bett (richtiger Patient, richtiges Medikament) |
-| **Medikationsplan** | aktuelle Medikation sektorübergreifend | bundeseinheitlicher Medikationsplan (BMP), **eMP** in der ePA |
+**Evidenzbasierte Medizin (EbM)** verbindet die beste verfügbare wissenschaftliche Evidenz mit der klinischen Expertise sowie den Werten, Präferenzen und individuellen Umständen des Patienten.
 
-"**5-R-Regel**" der Medikamentengabe: richtiger **Patient**, richtiges **Medikament**, richtige **Dosis**, richtige **Applikationsform**, richtiger **Zeitpunkt** — Barcode/Closed Loop prüft genau das.
+Sie folgt häufig fünf Schritten:
 
-**2. Evidence Based Medicine (EbM)** — Definition nach **Sackett**: gewissenhafter, ausdrücklicher und vernünftiger Gebrauch der **besten verfügbaren externen Evidenz** + **klinische Expertise** + **Patientenpräferenzen**.
+1. **Ask – Frage formulieren:** Eine konkrete klinische Frage wird strukturiert, beispielsweise nach dem PICO-Schema mit Patient, Intervention, Vergleich und Endpunkt.
+2. **Acquire – Evidenz suchen:** Geeignete Quellen wie Leitlinien, systematische Reviews und wissenschaftliche Datenbanken werden gezielt durchsucht.
+3. **Appraise – Evidenz bewerten:** Untersucht werden insbesondere methodische Qualität, Verzerrungsrisiko, Präzision, klinische Relevanz und Übertragbarkeit.
+4. **Apply – Evidenz anwenden:** Die Ergebnisse werden mit klinischer Erfahrung, Patientenzielen und den Rahmenbedingungen der Versorgung zusammengeführt.
+5. **Assess – Ergebnis überprüfen:** Behandlungsergebnis und Entscheidungsprozess werden beurteilt und bei Bedarf angepasst.
 
-**5 Schritte (5 A):**
-1. **Ask** — beantwortbare Frage nach **PICO**: **P**atient, **I**ntervention, **C**omparison, **O**utcome. *Beispiel: Ältere mit VHF (P) — DOAK (I) vs. Phenprocoumon (C) — Blutungen (O)?*
-2. **Acquire** — Literatursuche (PubMed/MeSH, Cochrane, Leitlinien)
-3. **Appraise** — kritische Bewertung (Studiendesign, Bias, Effektmaße, KI)
-4. **Apply** — auf den Patienten anwenden
-5. **Assess** — Ergebnis überprüfen
+- **z. B.:** Vor Beginn einer Antikoagulation werden Studienergebnisse, Blutungsrisiko, Begleiterkrankungen und Präferenzen des Patienten gemeinsam berücksichtigt.
 
-**Evidenzpyramide** (oben = stärkste Evidenz):
+**Wissensmanagement** überführt relevantes Wissen in verlässlich nutzbare Inhalte einer Organisation:
 
-| Rang | Studientyp | Prinzip | Beispiel | Schwäche |
-|---|---|---|---|---|
-| 1 | **Systematischer Review / Metaanalyse** von RCTs (z. B. Cochrane) | alle guten RCTs suchen und **zusammenrechnen** | alle DOAK-vs.-Marcumar-Studien gepoolt | nur so gut wie die eingeschlossenen Studien |
-| 2 | **RCT** (randomisierte kontrollierte Studie) | Zuteilung per **Los** → Intervention vs. Kontrolle | Apixaban vs. Warfarin | teuer, "ideale" Patienten |
-| 3 | **Kohortenstudie** | Exponierte vs. Nicht-Exponierte **vorwärts** beobachten | Raucher vs. Nichtraucher 20 Jahre → Lungenkrebs? | **Confounder** (Raucher trinken evtl. auch mehr) |
-| 4 | **Fall-Kontroll-Studie** | Kranke vs. Gesunde, **rückwärts** nach Exposition fragen | 100 Lungenkrebs vs. 100 Gesunde: wer rauchte? | **Recall Bias**; nur **OR** berechenbar |
-| 5 | Fallserie, Fallbericht | einzelne Fälle beschreiben | 5 Sinusvenenthrombosen nach Impfstoff X | keine Vergleichsgruppe |
-| 6 | Expertenmeinung | Erfahrung | "machen wir seit 30 Jahren so" | subjektiv |
+- **Erfassen:** Neue Leitlinien, Studien, Sicherheitsinformationen und Rückmeldungen aus der Anwendung werden beobachtet.
+- **Bewerten und freigeben:** Zuständige Fachpersonen prüfen Evidenz, Interessenkonflikte, Anwendbarkeit und lokale Bedeutung.
+- **Aufbereiten:** Wissen wird beispielsweise in Standard Operating Procedures, Behandlungspfade, Order Sets oder CDSS-Regeln übertragen.
+- **Bereitstellen:** Freigegebene Inhalte werden zentral, leicht auffindbar und möglichst im klinischen Arbeitsablauf zugänglich gemacht.
+- **Versionieren:** Autor, Freigabestatus, Versionsnummer, Gültigkeitszeitraum und nächste Überprüfung werden dokumentiert.
+- **Aktualisieren oder zurückziehen:** Neue Evidenz oder Änderungen der Versorgung lösen eine Überprüfung aus; ungültige Fassungen werden gekennzeichnet und aus der aktiven Nutzung entfernt.
 
-**Warum RCT so weit oben?** Die **Randomisierung** verteilt alle Störgrößen — auch unbekannte — gleichmäßig auf beide Gruppen → Unterschied im Outcome kommt wirklich von der Intervention. Bezug Statistik: Kohorte/RCT → **RR**; Fall-Kontroll → nur **OR** (Anzahl Kranker selbst festgelegt).
+- **z. B.:** Nach Aktualisierung einer Sepsisleitlinie werden SOP, elektronisches Order Set und hinterlegte Entscheidungsregeln gemeinsam geprüft, freigegeben und versioniert aktualisiert.
 
-**Leitlinien in Deutschland (AWMF** = Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften) — zwei Kriterien: systematische **Evidenz**recherche? formaler **Konsens**?
+Merksatz: Forschung erzeugt Evidenz, EbM macht daraus eine individuelle klinische Entscheidung und Wissensmanagement hält die daraus abgeleiteten Inhalte geprüft, versioniert und zugänglich.
 
-| Stufe | Evidenz systematisch | Konsens formal | Bild |
-|---|---|---|---|
-| **S1** | ❌ | ❌ | Expertengruppe, Handlungsempfehlung |
-| **S2k** | ❌ | ✅ (**k** = Konsens) | Fachgesellschaften stimmen formal ab |
-| **S2e** | ✅ (**e** = Evidenz) | ❌ | Literatur systematisch ausgewertet |
-| **S3** | ✅ | ✅ | beides — höchste Stufe (z. B. S3-Leitlinie Sepsis, Nationale VersorgungsLeitlinien NVL) |
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-Prüfungsfalle: **Leitlinie** = Empfehlung/Entscheidungs**korridor** (begründetes Abweichen erlaubt) ≠ **Richtlinie** = verbindlich (z. B. G-BA).
-
-**3. Wissensmanagement** = Wissen in der Organisation **erfassen, speichern, verteilen, nutzen**.
-- **explizites Wissen** — aufgeschrieben: SOPs, Leitlinien, Behandlungspfade, Intranet-Wiki, Dosierungstabellen.
-- **implizites Wissen** (tacit) — im Kopf erfahrener Mitarbeiter ("der Oberarzt weiß, wie man hier punktiert") → geht bei Personalwechsel verloren, wenn nicht in explizites Wissen überführt (Einarbeitung, Mentoring, SOPs).
-- Werkzeuge: Dokumentenmanagement mit Versionierung, Behandlungspfade (Clinical Pathways), **CIRS** (*Critical Incident Reporting System*, anonymes Melden von Beinahe-Fehlern → aus Fehlern lernen), Fallkonferenzen/M&M-Konferenzen.
-
-Merksatz: AMTS-IT = Wissensbasis (ABDA) + elektronische Verordnung (CPOE) mit automatischer Prüfung + Closed Loop (Unit-Dose, Barcode). EbM = Evidenz + Erfahrung + Patientenwunsch; PICO → suchen → bewerten → anwenden → prüfen; Metaanalyse von RCTs ganz oben, S3 = beste Leitlinie.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+Die Qualität der Evidenz hängt nicht allein vom Studiendesign ab. Entscheidend sind auch methodische Qualität, Verzerrungsrisiko, Präzision und Übertragbarkeit. Eine Metaanalyse ist daher nicht automatisch die beste Evidenz.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.6 „Modul VI – Entscheidungsunterstützung“, S. 15.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Sackett DL, Rosenberg WMC, Gray JAM, Haynes RB, Richardson WS: *Evidence based medicine: what it is and what it isn't*. BMJ. 1996;312:71–72.  
+  <https://doi.org/10.1136/bmj.312.7023.71>
+- Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften: *AWMF-Regelwerk Leitlinien*. Version 2.2, 2025, Abschnitte „Evidenzbasierung“, „Einreichung zur Publikation“ und „Planung der Aktualisierung“.  
+  <https://www.awmf.org/regelwerk>
+- International Organization for Standardization: *ISO/TS 22756:2020 – Health informatics: Requirements for a knowledge base for clinical decision support systems to be used in medication-related processes*. 1. Auflage, 2020, Abschnitte zur Entwicklung, Governance und Pflege einer Wissensbasis.  
+  <https://www.iso.org/standard/73827.html>
+
+Quellen geprüft am 15.11.2026.
+
 :::
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+::: {.exam-question}
+Wie unterstützen Arzneimittel-Wissensbasen, elektronische Verordnungssysteme und Closed-Loop-Prozesse die Arzneimitteltherapiesicherheit?
+:::
+
+:::: {.exam-answer}
+
+Die **Arzneimitteltherapiesicherheit (AMTS)** soll vermeidbare Medikationsfehler und daraus entstehende Schäden im gesamten Medikationsprozess verhindern. Digitale Systeme unterstützen dabei, ersetzen aber nicht die ärztliche, pharmazeutische und pflegerische Prüfung.
+
+- **Arzneimittel-Wissensbasis:** enthält strukturiertes und regelmäßig gepflegtes Wissen über Arzneimittel und arzneimittelbezogene Risiken
+  - Dazu gehören beispielsweise Wirkstoffe, Darreichungsformen, Dosierungsgrenzen, Wechselwirkungen, Kontraindikationen und erforderliche Kontrollen.
+  - Die Wissensbasis stellt den fachlichen Inhalt bereit. Ein klinisches Entscheidungsunterstützungssystem verknüpft diesen Inhalt mit Verordnungs- und Patientendaten.
+  - Voraussetzung sind nachvollziehbare Quellen, fachlich geprüfte Regeln, Versionierung und regelmäßige Aktualisierung.
+  - **z. B.:** Das System erkennt anhand der aktuellen Nierenfunktion, dass eine verordnete Dosis überprüft werden sollte.
+
+- **Elektronisches Verordnungssystem:** ermöglicht die strukturierte elektronische Eingabe und Übermittlung klinischer Verordnungen
+  - Im Krankenhaus wird häufig von **Computerized Provider Order Entry (CPOE)** gesprochen.
+  - Verordnungen können Angaben wie Arzneimittel, Dosis, Applikationsweg, Zeitpunkt und Häufigkeit verpflichtend enthalten.
+  - Das vermindert Probleme durch unleserliche Handschrift, unvollständige Angaben und erneute manuelle Übertragung.
+  - Die strukturierten Daten können unmittelbar gegen eine Arzneimittel-Wissensbasis und aktuelle Patientendaten geprüft werden.
+  - **z. B.:** Vor Abschluss einer Verordnung weist das System auf eine dokumentierte Allergie gegen den ausgewählten Wirkstoff hin.
+
+- **Closed-Loop-Medikationsprozess:** verknüpft die einzelnen Schritte des Medikationsprozesses elektronisch und nachvollziehbar
+  - Dazu können Medikationsabgleich, Verordnung, pharmazeutische Prüfung, Bereitstellung, Identifikation von Patient und Arzneimittel, Verabreichung, Dokumentation und Überwachung gehören.
+  - Eine elektronische Verabreichungsdokumentation kann zurückmelden, ob und wann eine angeordnete Dosis tatsächlich gegeben oder ausgelassen wurde.
+  - Mögliche Komponenten sind Unit-Dose-Versorgung, **Barcode Medication Administration (BCMA)** und eine elektronische Verabreichungsdokumentation.
+  - **z. B.:** Vor der Gabe werden Patientenarmband und Arzneimittel gescannt; das System gleicht beides mit der freigegebenen Verordnung ab und dokumentiert die Gabe.
+
+- **Voraussetzungen für eine sichere Umsetzung:**
+  - eindeutige Identifikation von Patienten, Arzneimitteln und Verordnungen
+  - aktuelle und vollständige Patientendaten
+  - funktionierende Schnittstellen zwischen Verordnung, Apotheke, Pflege und Dokumentation
+  - priorisierte und klinisch relevante Warnungen
+  - an den Arbeitsablauf angepasste Benutzeroberflächen
+  - geregelte Verantwortlichkeiten, Schulungen und Ausfallkonzepte
+  - fortlaufende Überprüfung auf Fehlalarme, Bedienprobleme und Umgehungslösungen
+
+- **Grenzen und neue Risiken:**
+  - Zu viele unspezifische Warnungen können zu **Alert Fatigue** führen.
+  - Ungeeignete Standardwerte und Auswahllisten können Fehlverordnungen begünstigen.
+  - Fehlerhafte oder fehlende Patientendaten führen zu unzutreffenden Prüfungen.
+  - Barcodeprüfungen bestätigen nur die elektronisch abgebildeten Zuordnungen; sie beurteilen nicht automatisch Indikation, klinische Angemessenheit oder Wirkung.
+  - Eine unkritische Übernahme von Systemempfehlungen kann einen **Automationsbias** verursachen.
+
+Merksatz: Die Wissensbasis liefert das Arzneimittelwissen, CPOE strukturiert und prüft die Verordnung, und der Closed Loop verbindet die Schritte bis zur dokumentierten Gabe und Überwachung.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+„Closed Loop“ bezeichnet ein funktionales Sicherheitskonzept und keine einheitlich vorgeschriebene Produktkombination. Barcode, Unit Dose, elektronische Verabreichungsdokumentation und intelligente Infusionspumpen können Bestandteile sein. Entscheidend ist, dass Medienbrüche vermieden, Prozessschritte nachvollziehbar verknüpft und Abweichungen erkannt werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.6 „Modul VI – Entscheidungsunterstützung“, Lerninhalt „Wissensbasen und Systeme zur Therapiesicherheit“.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- International Organization for Standardization: *ISO/TS 22756:2020 – Health informatics — Requirements for a knowledge base for clinical decision support systems to be used in medication-related processes*. 1. Ausgabe, 2020, Abstract und Anwendungsbereich.  
+  <https://www.iso.org/standard/73827.html>
+- International Organization for Standardization: *ISO/TS 22703:2021 – Health informatics — Requirements for medication safety alerts*. 1. Ausgabe, 2021, Abstract und Anwendungsbereich.  
+  <https://www.iso.org/standard/73714.html>
+- UC Davis PSNet Editorial Team: *Computerized Provider Order Entry*. Agency for Healthcare Research and Quality Patient Safety Network, aktualisiert 2025, Abschnitte „Background“, „Evidence of Effectiveness“ und „New Safety Concerns“.  
+  <https://psnet.ahrq.gov/primer/computerized-provider-order-entry>
+- MacDowell P, Cabri A, Davis M: *Medication Administration Errors*. Agency for Healthcare Research and Quality Patient Safety Network, 2021, Abschnitt „High Tech Solutions“.  
+  <https://psnet.ahrq.gov/primer/medication-administration-errors>
+- World Health Organization: *Medication Without Harm*. Global Patient Safety Challenge, Abschnitt „Strategic Framework“.  
+  <https://www.who.int/initiatives/medication-without-harm>
+
+Quellen geprüft am 15.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
 
 ## Systematische evidenzbasierte Bewertung
 
-### Systematische evidenzbasierte Bewertung
-
-Systematische evidenzbasierte Bewertung (z. B. Health Technology Assessment [HTA]).
-
 ::: {.exam-question}
-Was ist Health Technology Assessment (HTA), welche Aspekte werden bewertet, und wer macht das in Deutschland (IQWiG, G-BA, AMNOG, DiGA)?
+Was ist ein Health Technology Assessment, welche Aspekte werden dabei bewertet, und wie unterscheidet es sich von der evidenzbasierten Entscheidung für einen einzelnen Patienten?
 :::
 
-::: {.exam-answer}
-**HTA** (*Health Technology Assessment*, Technologiefolgenabschätzung im Gesundheitswesen) = **systematische, evidenzbasierte Bewertung** einer Gesundheitstechnologie, um **Entscheidungen auf Systemebene** zu unterstützen (Erstattung, Preis, Aufnahme in den Leistungskatalog).
+:::: {.exam-answer}
 
-- **"Technologie"** ist weit gefasst: Arzneimittel, Medizinprodukte, Operationsverfahren, Diagnostik, Screening-Programme, **IT/Apps (DiGA)**, Organisationsformen.
-- Unterschied zur **EbM**: EbM = Entscheidung für **den einzelnen Patienten**; HTA = Entscheidung für **die Bevölkerung/das Gesundheitssystem** ("Soll die GKV das bezahlen?"). Methoden sind dieselben (PICO, systematische Suche, Bewertung, Metaanalyse).
+Ein **Health Technology Assessment (HTA)** ist die systematische, transparente und multidisziplinäre Bewertung einer Gesundheitstechnologie im Vergleich zu bestehenden Alternativen. Es soll Entscheidungen im Gesundheitswesen wissenschaftlich unterstützen.
 
-**Bewertete Aspekte (Domänen, EUnetHTA Core Model):**
+- **Gesundheitstechnologie:** umfasst Interventionen zur Prävention, Diagnostik, Behandlung, Rehabilitation oder Organisation der Versorgung
+  - Dazu können Arzneimittel, Medizinprodukte, diagnostische Tests, Operationsverfahren, digitale Systeme oder Versorgungsprogramme gehören.
 
-| Domäne | Frage | Beispiel Mammographie-Screening |
+- **Fragestellung und Vergleich:** müssen vor der Bewertung festgelegt werden
+  - Dazu gehören insbesondere Zielpopulation, Technologie, Vergleichsverfahren, relevante Endpunkte, Versorgungskontext und Perspektive.
+  - Der Wert einer Technologie wird nicht isoliert, sondern gegenüber einer angemessenen Alternative beurteilt.
+
+- **Medizinische und technische Aspekte:**
+  - zu behandelndes Gesundheitsproblem und bisherige Versorgung
+  - technische Eigenschaften und praktische Anwendung
+  - klinische Wirksamkeit unter Studien- und Versorgungsbedingungen
+  - Sicherheit und unerwünschte Folgen
+  - patientenrelevante Endpunkte wie Beschwerden, Funktionsfähigkeit, Lebensqualität und Überleben
+
+- **Ökonomische Aspekte:**
+  - Kosten der Technologie und ihrer Anwendung
+  - Verhältnis von Kosten und gesundheitlichem Nutzen
+  - mögliche Auswirkungen auf das Budget
+  - Die konkreten Analysen hängen vom Auftrag und Entscheidungskontext ab.
+
+- **Weitere mögliche Aspekte:**
+  - organisatorische Folgen, beispielsweise zusätzlicher Personal- oder Schulungsbedarf
+  - ethische Fragen, beispielsweise gerechter Zugang
+  - soziale und patientenbezogene Auswirkungen
+  - rechtliche und datenschutzrechtliche Anforderungen
+  - gegebenenfalls kulturelle und ökologische Folgen
+
+- **Ergebnis eines HTA:** ist eine nachvollziehbare wissenschaftliche Bewertung mit Darstellung der Evidenz, Unsicherheiten und möglichen Folgen
+  - Sie kann Entscheidungen über Erstattung, Beschaffung, Leitlinien, Versorgungsstrukturen oder die Beendigung einer nicht mehr angemessenen Leistung unterstützen.
+  - Die verbindliche Entscheidung trifft jedoch die jeweils zuständige Institution.
+
+  - **z. B.:** Vor der Einführung eines KI-Systems zur Schlaganfalltriage werden sein zusätzlicher klinischer Nutzen, Fehlentscheidungen, Datenanforderungen, Kosten, Auswirkungen auf den Arbeitsablauf sowie rechtliche und ethische Fragen bewertet.
+
+| Merkmal | Health Technology Assessment | Evidenzbasierte Einzelfallentscheidung |
 |---|---|---|
-| **Wirksamkeit/Nutzen** | Bringt es patientenrelevant etwas? | weniger Brustkrebstodesfälle? |
-| **Sicherheit** | Welche Schäden? | Strahlung, Überdiagnosen, falsch positive Befunde |
-| **Wirtschaftlichkeit** | Kosten im Verhältnis zum Nutzen? | Kosten pro gewonnenem Lebensjahr |
-| **Ethik** | gerecht, zumutbar? | Angst durch Fehlalarme |
-| **Organisation** | Was ändert sich im Versorgungsablauf? | Screening-Einheiten, Einladungssystem |
-| **Recht / Soziales** | Zugang, Datenschutz, Akzeptanz | Einladung aus Melderegister |
+| Bezugsebene | Population, Einrichtung oder Gesundheitssystem | einzelner Patient |
+| Leitfrage | Welchen Wert hat die Technologie gegenüber Alternativen? | Welche Option ist für diesen Patienten angemessen? |
+| Grundlage | systematische Evidenzbewertung und weitere HTA-Dimensionen | beste verfügbare Evidenz, klinische Expertise und Patientenpräferenzen |
+| Zusätzlicher Kontext | Kosten, Organisation, Ethik, soziale und rechtliche Folgen | Komorbiditäten, Risiken, Behandlungsziele und individuelle Lebenssituation |
+| Ergebnis | Bericht oder Empfehlung als Grundlage institutioneller Entscheidungen | gemeinsame klinische Entscheidung mit dem Patienten |
 
-**Patientenrelevante Endpunkte vs. Surrogatparameter** (Prüfungsklassiker):
-- **patientenrelevant**: **Mortalität, Morbidität** (Herzinfarkt, Schlaganfall, Amputation), **Lebensqualität**, Nebenwirkungen.
-- **Surrogat** (Ersatzmesswert): HbA1c, LDL, Blutdruck, Tumorgröße — leichter/schneller messbar, aber **nicht automatisch** = Nutzen (Beispiel: manche Antidiabetika senkten HbA1c, aber nicht Herzinfarkte). HTA-Agenturen akzeptieren Surrogate nur, wenn sie validiert sind.
+- **Evidenzbasierte Einzelfallentscheidung:**
+  - Überträgt die wissenschaftliche Evidenz auf die konkrete Behandlungssituation.
+  - Berücksichtigt, ob die untersuchten Studienpopulationen und Endpunkte auf den Patienten übertragbar sind.
+  - Bezieht klinische Erfahrung, Begleiterkrankungen, Kontraindikationen, Behandlungsziele und Präferenzen ein.
+  - Kann deshalb begründet von einer allgemeinen Empfehlung abweichen.
 
-**Gesundheitsökonomische Bewertung:**
-- Kosten-Effektivität: **ICER** (*inkrementelles Kosten-Effektivitäts-Verhältnis*) = Mehrkosten / Mehrnutzen gegenüber Standard.
-- **QALY** (*Quality-Adjusted Life Year*) = Lebensjahr × Lebensqualität (0 = tot, 1 = volle Gesundheit); z. B. 2 Jahre bei 0,5 = 1 QALY. International (z. B. UK/NICE) mit Zahlungsschwelle; in Deutschland **keine feste QALY-Schwelle**, IQWiG nutzt die **Effizienzgrenze**.
+Merksatz: HTA bewertet den Wert einer Gesundheitstechnologie für Population und Versorgungssystem; die evidenzbasierte Medizin entscheidet unter Einbeziehung von Evidenz, Expertise und Patientenpräferenzen über den individuellen Behandlungsfall.
 
-**Akteure in Deutschland:**
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-| Institution | Rolle |
+Ein vollständiges HTA kann zahlreiche Bewertungsdimensionen umfassen. Eine verkürzte Bewertung oder eine gemeinsame klinische Bewertung auf europäischer Ebene deckt dagegen nur einen Teil davon ab.
+
+Die Verordnung (EU) 2021/2282 wird seit Januar 2025 angewendet und sieht gemeinsame klinische Bewertungen bestimmter Gesundheitstechnologien vor. Wirtschaftliche Bewertung, Preisbildung und Erstattungsentscheidung bleiben grundsätzlich Aufgabe der Mitgliedstaaten.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.6 „Modul VI – Entscheidungsunterstützung“, Lerninhalt „Systematische evidenzbasierte Bewertung“.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- O’Rourke B, Oortwijn W, Schuller T, International Joint Task Group: *The new definition of health technology assessment: A milestone in international collaboration*. International Journal of Technology Assessment in Health Care. 2020;36(3):187–190.  
+  <https://doi.org/10.1017/S0266462320000215>
+- Europäisches Parlament und Rat: *Verordnung (EU) 2021/2282 über die Bewertung von Gesundheitstechnologien*. 2021, insbesondere Artikel 2.  
+  <https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32021R2282>
+- Institut für Qualität und Wirtschaftlichkeit im Gesundheitswesen: *ThemenCheck Medizin*, Abschnitte „Was ist ein ThemenCheck-Bericht?“ und „Wie der ThemenCheck-Bericht entsteht“.  
+  <https://www.iqwig.de/sich-einbringen/themencheck-medizin/>
+- Sackett DL, Rosenberg WMC, Gray JAM, Haynes RB, Richardson WS: *Evidence based medicine: what it is and what it isn't*. BMJ. 1996;312:71–72.  
+  <https://doi.org/10.1136/bmj.312.7023.71>
+- Europäische Kommission: *Health Technology Assessment – Overview*, Abschnitte „How does it work?“ und „Regulation on Health Technology Assessment“.  
+  <https://health.ec.europa.eu/health-technology-assessment/overview_en>
+
+Quellen geprüft am 15.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+## Künstliche Intelligenz und Präzisionsmedizin
+
+::: {.exam-question}
+Wie unterscheiden sich regelbasierte und Machine-Learning-basierte Entscheidungsunterstützung, und welche Rolle können sie in der Präzisionsmedizin spielen?
+:::
+
+:::: {.exam-answer}
+
+Regelbasierte und Machine-Learning-basierte Systeme erzeugen patientenbezogene Hinweise auf unterschiedliche Weise. Beide sollen die klinische Entscheidung unterstützen, nicht selbstständig die Verantwortung für sie übernehmen.
+
+| Merkmal | Regelbasierte Entscheidungsunterstützung | Machine-Learning-basierte Entscheidungsunterstützung |
+|---|---|---|
+| Grundlage | von Fachleuten formuliertes Wissen | aus Beispieldaten geschätzte statistische Zusammenhänge |
+| Verarbeitung | explizite Regeln, Schwellenwerte und logische Verknüpfungen | trainiertes Modell mit zahlreichen Modellparametern |
+| Typische Ausgabe | Warnung, Erinnerung oder regelgeleitete Empfehlung | Wahrscheinlichkeit, Risikowert, Klassifikation oder Prognose |
+| Nachvollziehbarkeit | Regelweg meist unmittelbar nachvollziehbar | je nach Modell unterschiedlich gut erklärbar |
+| Stärke | verlässliche Umsetzung bekannten Wissens | Erkennung komplexer Muster und Wechselwirkungen |
+| Grenze | erkennt grundsätzlich nur vorher definierte Sachverhalte | abhängig von Qualität und Repräsentativität der Entwicklungsdaten |
+
+- **Regelbasierte Entscheidungsunterstützung:** wendet explizit formulierte Regeln auf Patientendaten an
+  - Typisch sind Wenn-dann-Regeln, Grenzwerte, Entscheidungsbäume oder Kombinationen mehrerer Bedingungen.
+  - Die Regeln können aus Leitlinien, Fachinformationen oder lokal vereinbarten Behandlungsstandards stammen.
+  - Bei gleicher Eingabe und identischem Regelstand ist das Ergebnis grundsätzlich reproduzierbar und nachvollziehbar.
+  - Neue Erkenntnisse müssen jedoch aktiv in die Wissensbasis übernommen und bestehende Regeln gepflegt werden.
+  - **z. B.:** Bei dokumentierter schwerer Nierenfunktionsstörung und einer bestimmten Arzneimittelverordnung fordert das System eine Dosisprüfung.
+
+- **Machine-Learning-basierte Entscheidungsunterstützung:** verwendet ein anhand von Daten entwickeltes statistisches Modell
+  - Beim überwachten Lernen werden Zusammenhänge zwischen Eingabedaten und bekannten Zielgrößen gelernt.
+  - Das Modell kann komplexe, nichtlineare Muster und Wechselwirkungen berücksichtigen, die sich nur schwer als Regeln formulieren lassen.
+  - Die Ausgabe ist häufig eine Wahrscheinlichkeit oder Risikoeinschätzung und keine eindeutige Handlungsanweisung.
+  - Das System lernt im klinischen Betrieb nicht automatisch weiter. Modelländerungen müssen kontrolliert entwickelt, validiert und überwacht werden.
+  - **z. B.:** Ein Modell schätzt aus Vitalparametern, Laborwerten und zeitlichen Veränderungen das Risiko einer klinischen Verschlechterung.
+
+- **Hybride Systeme:** kombinieren beide Ansätze
+  - Ein Machine-Learning-Modell kann beispielsweise ein Risiko schätzen.
+  - Regelbasierte Logik kann anschließend festlegen, wann und für welche Berufsgruppe ein Hinweis angezeigt wird.
+  - Dadurch können datenbasierte Mustererkennung und nachvollziehbare Sicherheitsregeln verbunden werden.
+
+- **Präzisionsmedizin:** berücksichtigt individuelle Unterschiede, um Prävention, Diagnostik oder Therapie genauer auszurichten
+  - Verwendet werden können genomische, molekulare, klinische, physiologische, bildgebende, umweltbezogene und lebensstilbezogene Informationen.
+  - Häufig werden Patienten präziser definierten Untergruppen zugeordnet, statt für jeden Patienten eine vollständig individuelle Therapie zu entwickeln.
+
+- **Rolle regelbasierter Systeme in der Präzisionsmedizin:**
+  - Sie können bekannte Biomarker, Pharmakogenetik, Kontraindikationen und Leitlinienempfehlungen miteinander verknüpfen.
+  - Sie eignen sich besonders, wenn der Zusammenhang fachlich etabliert und eindeutig formulierbar ist.
+
+- **Rolle von Machine Learning in der Präzisionsmedizin:**
+  - Es kann große und heterogene Datenmengen gemeinsam auswerten.
+  - Mögliche Aufgaben sind Risikostratifikation, diagnostische Klassifikation, Prognose und die Erforschung möglicher Therapieansprecher.
+  - Eine prognostische Genauigkeit beweist jedoch nicht, dass das Modell den individuellen Nutzen einer Therapie zuverlässig vorhersagt.
+
+  - **z. B.:** In einem molekularen Tumorboard kann ein Regelsystem einen nachgewiesenen Biomarker mit evidenzbasierten Therapieoptionen verknüpfen. Ein zusätzliches ML-Modell kann Bild-, Pathologie- und Verlaufsdaten auswerten. Die Therapieentscheidung trifft das Behandlungsteam gemeinsam mit dem Patienten.
+
+- **Anforderungen an beide Ansätze:**
+  - klar festgelegter medizinischer Zweck und vorgesehene Anwender
+  - fachlich geeignete und vollständige Eingabedaten
+  - Prüfung mit unabhängigen Daten und in der vorgesehenen Zielpopulation
+  - Bewertung von Diskrimination, Kalibrierung und klinischem Nutzen
+  - transparente Darstellung von Leistung, Grenzen und bekannten Fehlersituationen
+  - Integration in den klinischen Arbeitsablauf
+  - menschliche Kontrolle, geregelte Verantwortlichkeit und Ausfallkonzept
+  - Überwachung der Leistung nach der Einführung
+
+- **Besondere Risiken:**
+  - Regelbasierte Systeme können veraltete, unvollständige oder widersprüchliche Regeln enthalten und durch zu viele Hinweise Alert Fatigue verursachen.
+  - ML-Modelle können Überanpassung, Verzerrungen, Datenlecks, schlechte Übertragbarkeit und Leistungsabfall bei veränderten Versorgungsbedingungen zeigen.
+  - Beide Ansätze können Automationsbias fördern, wenn Anwender ihre Ausgaben unkritisch übernehmen.
+
+Merksatz: Regelbasierte Systeme wenden ausdrücklich formuliertes Wissen an; Machine Learning erkennt statistische Muster in Daten. In der Präzisionsmedizin können beide Patientengruppen genauer charakterisieren, müssen aber klinisch validiert und ärztlich eingeordnet werden.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Eine Vorhersage beantwortet zunächst: „Wie wahrscheinlich ist ein Ereignis?“ Eine Therapieentscheidung verlangt zusätzlich die Frage: „Wie verändert eine konkrete Behandlung den Ausgang gegenüber einer Alternative?“ Dieser individuelle Behandlungseffekt kann aus einer guten Risikoprognose nicht automatisch abgeleitet werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.6 „Modul VI – Entscheidungsunterstützung“, Lerninhalt „Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin“.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Sutton RT, Pincock D, Baumgart DC et al.: *An overview of clinical decision support systems: benefits, risks, and strategies for success*. npj Digital Medicine. 2020;3:17, Abschnitte zu wissensbasierten und nichtwissensbasierten Systemen.  
+  <https://doi.org/10.1038/s41746-020-0221-y>
+- Collins GS, Moons KGM, Dhiman P et al.: *TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods*. BMJ. 2024;385:e078378.  
+  <https://doi.org/10.1136/bmj-2023-078378>
+- International Medical Device Regulators Forum: *Good Machine Learning Practice for Medical Device Development: Guiding Principles*. 2025, Prinzipien für Daten, Entwicklung, Evaluation und Überwachung über den Produktlebenszyklus.  
+  <https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/good-machine-learning-practice-medical-device-development-guiding-principles>
+- National Institutes of Health: *Precision Medicine – Overview*, Abschnitt zur Definition und zu verwendbaren individuellen Informationen.  
+  <https://research.nih.gov/research-at-nih/precision-medicine>
+- World Health Organization: *Ethics and Governance of Artificial Intelligence for Health*. 2021, Abschnitte zu Transparenz, Verantwortung, Sicherheit, Gleichbehandlung und menschlicher Kontrolle.  
+  <https://www.who.int/publications/i/item/9789240029200>
+
+Quellen geprüft am 15.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+## Schlussfolgerungsverfahren
+
+::: {.exam-question}
+Wie leiten wissensbasierte Systeme aus Patientendaten, Regeln und wissenschaftlicher Evidenz Empfehlungen ab, und wie unterscheiden sich Vorwärts- und Rückwärtsverkettung?
+:::
+
+:::: {.exam-answer}
+
+Ein **wissensbasiertes klinisches Entscheidungsunterstützungssystem** verknüpft patientenbezogene Daten mit formalisiertem medizinischem Wissen. Eine Inferenzmaschine prüft, welche Regeln erfüllt sind, und erzeugt daraus patientenspezifische Hinweise oder Empfehlungen.
+
+Der grundlegende Ablauf lautet:
+
+**wissenschaftliche Evidenz und Fachwissen → formalisierte Regeln → Verknüpfung mit Patientendaten → Schlussfolgerung → Empfehlung und Begründung**
+
+- **Patientendaten:** bilden die Fakten des konkreten Falls
+  - Dazu können Diagnosen, Symptome, Laborwerte, Vitalparameter, Medikation, Allergien und demografische Daten gehören.
+  - Daten müssen hinsichtlich Bedeutung, Einheit, Zeitpunkt und Gültigkeit eindeutig sein.
+  - Veraltete, falsch zugeordnete oder fehlende Daten können zu unzutreffenden Schlussfolgerungen führen.
+
+- **Wissensbasis:** enthält das für die Entscheidungsunterstützung formalisierte Fachwissen
+  - Quellen können Leitlinien, Studien, Fachinformationen, Expertenkonsens oder lokale Behandlungsvorgaben sein.
+  - Das Wissen wird häufig als Wenn-dann-Regel dargestellt:  
+    **WENN** bestimmte Bedingungen erfüllt sind, **DANN** folgt eine Schlussfolgerung oder Handlungsempfehlung.
+  - Jede Regel sollte mit Quelle, Gültigkeitsbereich, Version und Aktualisierungsdatum dokumentiert werden.
+  - **z. B.:** WENN die Nierenfunktion unter einem festgelegten Grenzwert liegt UND ein davon betroffenes Arzneimittel verordnet ist, DANN soll die Dosierung überprüft werden.
+
+- **Inferenzmaschine:** führt die Regeln auf den Patientendaten aus
+  - Sie prüft, welche Regelbedingungen erfüllt sind.
+  - Eine erzeugte Schlussfolgerung kann als neuer Fakt weitere Regeln auslösen.
+  - Sind mehrere Regeln gleichzeitig anwendbar, benötigt das System eine festgelegte Konflikt- und Priorisierungsstrategie.
+  - Der Schlussfolgerungsweg sollte für Anwender nachvollziehbar sein.
+
+- **Ausgabe:** kann unterschiedliche Formen annehmen
+  - Warnung oder Erinnerung
+  - Anforderung zusätzlicher Informationen
+  - diagnostischer Hinweis
+  - Vorschlag für eine Untersuchung oder Therapie
+  - Begründung mit den verwendeten Patientendaten und Wissensquellen
+
+| Merkmal | Vorwärtsverkettung | Rückwärtsverkettung |
+|---|---|---|
+| Ausgangspunkt | vorhandene Patientendaten | vorgegebenes Ziel oder zu prüfende Hypothese |
+| Richtung | von Fakten zu möglichen Schlussfolgerungen | vom Ziel zurück zu den erforderlichen Voraussetzungen |
+| Vorgehen | alle erfüllten Regeln werden schrittweise angewendet | Regeln mit passender Schlussfolgerung werden gesucht und ihre Bedingungen geprüft |
+| Ende | keine weitere Regel ist anwendbar oder ein Abbruchkriterium ist erreicht | Ziel ist bestätigt, widerlegt oder wegen fehlender Daten nicht entscheidbar |
+| Typische Anwendung | Überwachung, Warnungen und automatische Erinnerungen | zielgerichtete Diagnostik oder Prüfung einer konkreten Handlungsoption |
+
+- **Vorwärtsverkettung:** ist datengetrieben
+  - Das System beginnt mit den vorhandenen Fakten.
+  - Es aktiviert passende Regeln und ergänzt deren Schlussfolgerungen als neue Fakten.
+  - Dadurch können weitere Regeln ausgelöst werden.
+  - Sie eignet sich besonders, wenn neu eingehende Daten automatisch auf relevante Risiken geprüft werden sollen.
+  - **z. B.:** Nach Eingang eines kritischen Laborwerts werden passende Überwachungs- und Medikationsregeln geprüft und gegebenenfalls Warnungen erzeugt.
+
+- **Rückwärtsverkettung:** ist zielgetrieben
+  - Das System beginnt mit einer Hypothese oder einer zu prüfenden Empfehlung.
+  - Es sucht Regeln, deren Schlussfolgerung diesem Ziel entspricht.
+  - Anschließend prüft es schrittweise, ob die dafür erforderlichen Voraussetzungen vorliegen.
+  - Fehlende Informationen können gezielt angefordert werden.
+  - **z. B.:** Für das Ziel „Therapieoption geeignet?“ prüft das System gezielt die dafür hinterlegten Indikationen, Kontraindikationen und erforderlichen Befunde.
+
+- **Qualitätssicherung wissensbasierter Systeme:**
+  - nachvollziehbare Auswahl und Bewertung der Wissensquellen
+  - interprofessionelle Prüfung der Regeln
+  - Verwendung eindeutiger Terminologien, Einheiten und Zeitbezüge
+  - Testfälle einschließlich Grenz-, Fehler- und Ausnahmesituationen
+  - Versionierung und regelmäßige Aktualisierung der Wissensbasis
+  - Überwachung von Fehlalarmen, übersehenen Fällen und unerwünschten Auswirkungen
+  - verständliche Begründung und Möglichkeit zur begründeten Abweichung
+
+Merksatz: Die Vorwärtsverkettung fragt „Was folgt aus diesen Patientendaten?“, die Rückwärtsverkettung fragt „Welche Voraussetzungen müssen für dieses Ziel erfüllt sein?“.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Klassische Regeln verwenden häufig eindeutige Bedingungen. Medizinisches Wissen ist jedoch oft unvollständig oder unsicher. Wissensbasierte Systeme können deshalb zusätzlich Wahrscheinlichkeiten, Risikoscores, Fuzzy-Logik oder Konfidenzwerte verwenden.
+
+Ein nicht dokumentierter Befund darf nicht automatisch als normal oder ausgeschlossen interpretiert werden. Das System sollte zwischen „positiv“, „negativ“ und „nicht bekannt“ unterscheiden können.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.6 „Modul VI – Entscheidungsunterstützung“, Lerninhalt „Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse – Schlussfolgerungsverfahren“.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Sutton RT, Pincock D, Baumgart DC et al.: *An overview of clinical decision support systems: benefits, risks, and strategies for success*. npj Digital Medicine. 2020;3:17, Abschnitt „What is a clinical decision support system?“.  
+  <https://doi.org/10.1038/s41746-020-0221-y>
+- Papadopoulos P, Soflano M, Chaudy Y, Adejo W, Connolly TM: *A systematic review of technologies and standards used in the development of rule-based clinical decision support systems*. Health and Technology. 2022;12:713–727, insbesondere Abschnitte 2.1–2.3.  
+  <https://doi.org/10.1007/s12553-022-00672-9>
+- Winstanley T, Courvalin P: *Expert Systems in Clinical Microbiology*. Clinical Microbiology Reviews. 2011;24(3):515–556, Abschnitt zur Inferenzmaschine sowie Vorwärts- und Rückwärtsverkettung.  
+  <https://doi.org/10.1128/CMR.00061-10>
+- International Organization for Standardization: *ISO/TS 22756:2020 – Health informatics — Requirements for a knowledge base for clinical decision support systems to be used in medication-related processes*. 1. Ausgabe, 2020, Abstract und Anwendungsbereich.  
+  <https://www.iso.org/standard/73827.html>
+
+Quellen geprüft am 15.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+## Workflowmanagement und Clinical Pathways
+
+::: {.exam-question}
+Was ist ein Clinical Pathway, und wie unterstützt IT-gestütztes Workflowmanagement seine Planung, Durchführung und Überprüfung?
+:::
+
+:::: {.exam-answer}
+
+- **Clinical Pathway beziehungsweise klinischer Behandlungspfad:** strukturierter, multiprofessioneller Versorgungsplan für eine definierte Patientengruppe, ein klinisches Problem oder eine Behandlungsepisode
+  - Er überträgt Leitlinien und wissenschaftliche Evidenz auf die organisatorischen Bedingungen einer konkreten Einrichtung.
+  - Er beschreibt wesentliche Behandlungsschritte, Zuständigkeiten, Abhängigkeiten, Entscheidungspunkte sowie zeitliche oder klinische Kriterien für den weiteren Verlauf.
+  - Er soll wiederkehrende Abläufe vereinheitlichen, ohne die individuelle ärztliche Entscheidung zu ersetzen.
+  - Begründete Abweichungen müssen möglich und nachvollziehbar dokumentiert sein.
+  - **z. B.:** Ein Schlaganfallpfad koordiniert Aufnahme, Bildgebung, Therapieentscheidung und Verlegung auf die Stroke Unit.
+
+| Begriff | Kernaussage |
 |---|---|
-| **G-BA** (Gemeinsamer Bundesausschuss) | **entscheidet**, was die GKV bezahlt (Richtlinien, verbindlich) |
-| **IQWiG** (Institut für Qualität und Wirtschaftlichkeit im Gesundheitswesen) | **bewertet** Nutzen im Auftrag des G-BA (Berichte, Dossierbewertungen), gibt Gesundheitsinformationen heraus |
-| **IQTIG** | Qualitätssicherung (Modul IV) — **nicht** HTA, Abgrenzung beachten |
-| **BfArM** | Zulassung/DiGA-Verzeichnis |
-| **GKV-Spitzenverband** | verhandelt Preise |
+| **Leitlinie** | gibt übergreifende evidenzbasierte Handlungsempfehlungen |
+| **Clinical Pathway** | überträgt die Empfehlungen in einen lokalen multiprofessionellen Versorgungsablauf |
+| **Individueller Behandlungsplan** | passt die vorgesehenen Maßnahmen an den konkreten Patienten an |
 
-**AMNOG** (*Arzneimittelmarktneuordnungsgesetz*, 2011) — **frühe Nutzenbewertung** neuer Arzneimittel:
-1. Hersteller reicht bei Markteintritt **Dossier** ein.
-2. **IQWiG** bewertet den **Zusatznutzen** gegenüber der **zweckmäßigen Vergleichstherapie**.
-3. **G-BA** beschließt: Zusatznutzen *erheblich / beträchtlich / gering / nicht quantifizierbar / nicht belegt / geringer*.
-4. Danach **Preisverhandlung** Hersteller ↔ GKV-Spitzenverband (Erstattungsbetrag) — kein Zusatznutzen → Preis wie Vergleichstherapie.
+**IT-gestütztes Workflowmanagement** unterstützt den Lebenszyklus eines Clinical Pathway:
 
-**DiGA** (*Digitale Gesundheitsanwendungen*, "App auf Rezept", DVG 2019): **BfArM-Fast-Track** — Prüfung von Sicherheit, Datenschutz, Interoperabilität; **positiver Versorgungseffekt** muss (ggf. nach 12–24 Monaten Erprobung) belegt werden → Aufnahme ins **DiGA-Verzeichnis**.
+- **Planung und Modellierung:**
+  - Ein- und Ausschlusskriterien sowie Anfang und Ende des Pfades festlegen
+  - Aufgaben, Rollen, Reihenfolge, Abhängigkeiten und Entscheidungspunkte modellieren
+  - Zeitziele, erforderliche Daten, Qualitätsindikatoren und Eskalationswege definieren
+  - Leitlinien, lokale Ressourcen und bestehende Arbeitsabläufe berücksichtigen
+  - Pfadversion, Verantwortliche und Freigabestatus dokumentieren
 
-**EU:** **EU-HTA-Verordnung** (2021/2282), seit **Januar 2025** gemeinsame klinische Bewertung (*Joint Clinical Assessment*) — zunächst für **Onkologika und ATMP** (Gen-/Zelltherapien), später ausgeweitet. Wirtschaftliche Bewertung/Preis bleibt national.
+- **Durchführung:**
+  - für einen geeigneten Patienten eine patientenbezogene Pfadinstanz anlegen
+  - Aufgaben den zuständigen Berufsgruppen oder Arbeitslisten zuordnen
+  - erforderliche Informationen, Aufträge und Dokumentationsschritte bereitstellen
+  - Fristen, fehlende Ergebnisse und kritische Abweichungen anzeigen
+  - Bearbeitungsstatus und Übergaben zwischen den Beteiligten nachvollziehbar machen
+  - klinisch begründete Abweichungen und Ausnahmen zulassen
 
-Merksatz: HTA = EbM auf Systemebene ("Soll die Kasse das zahlen?") — bewertet Nutzen, Schaden, Kosten, Ethik, Organisation. IQWiG **bewertet**, G-BA **entscheidet**, GKV-SV **verhandelt den Preis** (AMNOG). Patientenrelevant = Tod, Krankheit, Lebensqualität — nicht Laborwerte.
+- **Überprüfung und Fortschreibung:**
+  - Bearbeitungszeiten, Statusänderungen und Abweichungen protokollieren
+  - geplanten und tatsächlich dokumentierten Ablauf vergleichen
+  - Verzögerungen, häufige Abweichungen und organisatorische Engpässe erkennen
+  - Prozessindikatoren, klinische Ergebnisse, Patientensicherheit und Ressourcenverbrauch gemeinsam bewerten
+  - den Pfad bei neuer Evidenz, geänderten Leitlinien oder organisatorischen Änderungen kontrolliert aktualisieren
 
-::: {.callout-note title="Good to know" appearance="simple"}
+- **Voraussetzungen und Risiken:**
+  - Der Pfad muss fachlich validiert, lokal abgestimmt und in die vorhandenen Informationssysteme integriert sein.
+  - Datenqualität, eindeutige Zuständigkeiten, Benutzerfreundlichkeit, Versionsverwaltung und Ausfallkonzepte sind erforderlich.
+  - Ungeeignete Automatisierung kann zu starren Abläufen, zusätzlichen Warnmeldungen, Umgehungslösungen oder einer verzögerten Versorgung führen.
+  - Die Verantwortung für die individuelle Behandlung verbleibt bei den behandelnden Personen.
 
-:::
-:::
+Merksatz: Der Clinical Pathway beschreibt den abgestimmten Versorgungsprozess; IT-gestütztes Workflowmanagement modelliert, koordiniert und überwacht seine Umsetzung, ohne die klinische Entscheidung zu ersetzen.
 
-## Künstliche Intelligenz/Machine Learning/Entwicklung der Präzisionsmedizin z. B. in der Krebstherapie
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-::: {.exam-question}
-Was ist der Unterschied zwischen regelbasierten (rule-based) und ML-basierten Decision-Support-Systemen, und was bedeutet "Präzisionsmedizin" am Beispiel der Krebstherapie?
-:::
+In **Fast Healthcare Interoperability Resources (FHIR)** können unterschiedliche Ebenen eines Pfades getrennt dargestellt werden:
 
-::: {.exam-answer}
-**Rule-based (regelbasiert)**: feste "Wenn-Dann"-Regeln, von Experten vorprogrammiert — z. B. "wenn Serum-Kalium > 6,0 mmol/l → Alarm". Vorteil: **nachvollziehbar/transparent**, jede Entscheidung lässt sich auf eine Regel zurückführen. Nachteil: **starr** — Fälle außerhalb der vordefinierten Regeln werden nicht erkannt, Pflege der Regelbasis wird mit wachsender Komplexität aufwendig.
+- `PlanDefinition` beschreibt einen wiederverwendbaren Plan oder ein Protokoll.
+- `CarePlan` beschreibt einen Plan für einen konkreten Patienten oder eine konkrete Gruppe.
+- `Task` kann die Zuweisung und den Bearbeitungsstatus einzelner Aufgaben abbilden.
 
-**ML-based (lernend)**: das System lernt Muster selbst aus Trainingsdaten, statt fest programmierter Regeln — z. B. erkennt ein Modell Hautkrebs auf Fotos oder Lungenrundherde auf CT-Bildern, trainiert an tausenden gelabelten Beispielen. Vorteil: oft **präziser**, erkennt auch Muster, die kein Mensch explizit als Regel formuliert hätte. Nachteil: häufig eine **"Black Box"** — nicht immer nachvollziehbar, *warum* genau diese Entscheidung getroffen wurde (relevant z. B. für Haftungsfragen, Nachvollziehbarkeit gegenüber dem Patienten).
-
-**Präzisionsmedizin**: Therapie wird nach dem **individuellen molekularen/genetischen Profil** des Patienten ausgewählt, statt nach einer Einheits-Behandlung für alle Patienten mit derselben Diagnose.
-
-Beispiel Krebstherapie: der Tumor wird genetisch sequenziert. Findet sich z. B. eine **EGFR**- oder **BRAF**-Mutation, kann ein **zielgerichtetes Medikament** (targeted therapy) gegeben werden, das genau auf diese Mutation wirkt — statt einer unspezifischen Standard-Chemotherapie. Diese molekulare Information (welche Mutation liegt vor) ist oft selbst das Ergebnis einer ML-gestützten Auswertung großer Genom-/Bilddatensätze.
-
-**Zusammenhang**: KI/ML liefert in der Präzisionsmedizin häufig die Grundlage (Mustererkennung in Genom-/Bild-/Laten-Daten), auf der dann die individualisierte Therapieentscheidung aufbaut.
-
-Merksatz: Rule-based = nachvollziehbar, aber starr. ML-based = flexibel/präzise, aber Black-Box. Präzisionsmedizin = Therapie nach Molekülprofil (z. B. EGFR/BRAF), nicht nach Durchschnittspatient.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Beratung zu Therapieoptionen aufgrund wissenschaftlicher Erkenntnisse
-
-::: {.exam-question}
-Was ist der Unterschied zwischen Vorwärts- und Rückwärtsverkettung (forward/backward chaining) bei wissensbasierten Beratungssystemen?
-:::
-
-::: {.exam-answer}
-- **Vorwärtsverkettung (forward chaining, datengetrieben)**: das System startet mit den vorhandenen Fakten (Symptome, Laborwerte) und wendet Regeln schrittweise vorwärts an, bis eine Schlussfolgerung (Diagnose-/Therapievorschlag) entsteht. Klinik-Beispiel: Pflegekraft gibt Vitalwerte ein → System leitet daraus automatisch "Sepsis-Verdacht, Score X" ab.
-- **Rückwärtsverkettung (backward chaining, zielgetrieben)**: das System startet mit einer Hypothese (Ziel) und fragt rückwärts gezielt nach den Fakten, die diese Hypothese stützen oder widerlegen würden. Klinik-Beispiel: System prüft Hypothese "Patient hat Sepsis" und fragt gezielt nach den dafür nötigen Werten (Laktat, Blutkultur), statt alle verfügbaren Daten durchzugehen.
-
-Merksatz: Vorwärts = "was folgt aus den Daten, die ich habe?" (datengetrieben). Rückwärts = "welche Daten brauche ich, um diese Hypothese zu prüfen?" (zielgetrieben). Beide bauen auf derselben Wissens-/Regelbasis auf (siehe rule-based Systeme) — unterscheiden sich nur in der Suchrichtung.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+Diese Ressourcen ermöglichen einen standardisierten Datenaustausch, bilden aber allein noch keine vollständige Workflow-Engine und gewährleisten weder die lokale Umsetzung noch die medizinische Richtigkeit des Pfades.
 
 :::
-:::
 
-## IT-gestütztes Workflowmanagement und Clinical Pathways
+::: {.callout-note title="Literatur" appearance="simple"}
 
-::: {.exam-question}
-Was ist ein Clinical Pathway, und wie unterstützt IT-Workflowmanagement seine Umsetzung im Klinikalltag?
-:::
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.6 „Modul VI – Entscheidungsunterstützung“, S. 15.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+- Kinsman L, Rotter T, James E, Snow P, Willis J: *What is a clinical pathway? Development of a definition to inform the debate*. BMC Medicine. 2010;8:31.  
+  <https://doi.org/10.1186/1741-7015-8-31>
+- Rotter T, Baatenburg de Jong R, Lacko SE, Ronellenfitsch U, Kinsman L: *Clinical pathways as a quality strategy*. In: Busse R, Klazinga N, Panteli D et al., Hrsg. *Improving Healthcare Quality in Europe*. European Observatory on Health Systems and Policies, 2019, Kapitel 12.  
+  <https://www.ncbi.nlm.nih.gov/books/NBK549262/>
+- Gooch P, Roudsari A: *Computerization of workflows, guidelines, and care pathways: a review of implementation challenges for process-oriented health information systems*. Journal of the American Medical Informatics Association. 2011;18(6):738–748.  
+  <https://doi.org/10.1136/amiajnl-2010-000033>
+- HL7 International: *FHIR Release 5*, Abschnitte „PlanDefinition“, „CarePlan“ und „Task“.  
+  <https://hl7.org/fhir/R5/plandefinition.html>  
+  <https://hl7.org/fhir/R5/careplan.html>  
+  <https://hl7.org/fhir/R5/task.html>
 
-::: {.exam-answer}
-**Clinical Pathway** (klinischer Behandlungspfad): ein standardisierter, evidenzbasierter Ablaufplan für eine bestimmte Diagnose/Prozedur — legt fest, welche Schritte wann von wem erfolgen sollen (z. B. Hüft-TEP: präoperative Checkliste → OP-Tag → Tag 1 Mobilisation → Tag 3 Röntgenkontrolle → Entlassung Tag 5).
-
-**IT-gestütztes Workflowmanagement**: Software (oft eine Workflow-Engine im KIS, verknüpft mit BPMN-Prozessmodellen — siehe Modul I, Business Process Model and Notation: Start-/End-Event, Task, Gateway, Sequenzfluss, Swimlanes) bildet diesen Pfad digital ab — erinnert/prompt't automatisch die nächsten fälligen Schritte, markiert Abweichungen ("Variances") vom Standardpfad (z. B. Patient noch nicht mobilisiert an Tag 1 → System flaggt das), und dokumentiert den tatsächlichen Verlauf zur späteren Auswertung.
-
-**Nutzen**: reduziert Variabilität in der Versorgung, macht Abweichungen früh sichtbar, erleichtert Qualitätssicherung/Benchmarking zwischen Stationen.
-
-Merksatz: Clinical Pathway = der Plan (evidenzbasierter Soll-Ablauf). IT-Workflowmanagement = das Werkzeug, das diesen Plan im Alltag durchsetzt/überwacht und Abweichungen sichtbar macht.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Evaluation / Grundbegriffe (ergänzend)
-
-### Rule-based vs. ML-based Systeme
-
-Rule-based vs. ML-based Systeme.
-
-### Alert fatigue
-
-::: {.exam-question}
-Was ist "Alert fatigue", und warum ist das ein zentrales Problem bei Clinical-Decision-Support-Systemen?
-:::
-
-::: {.exam-answer}
-**Alert fatigue** (Alarmmüdigkeit): wenn ein CDS-System zu viele Warnungen/Alerts auslöst (v. a. wenn viele davon klinisch unbedeutend oder falsch-positiv sind), beginnen Ärzte/Pflegekräfte, Alerts routinemäßig wegzuklicken, ohne sie wirklich zu lesen — dadurch werden irgendwann auch die wichtigen, echten Warnungen übersehen.
-
-Klinik-Beispiel: ein Medikations-Interaktions-Check warnt bei jeder Kombination, auch bei klinisch irrelevanten — nach dem 50. überflüssigen Pop-up klickt der Arzt auch die wichtige Warnung ("Lebensgefährliche Interaktion!") automatisch weg.
-
-Gegenmaßnahmen: Alerts nach Relevanz/Schweregrad stufen (nur kritische als echte Pop-ups, Rest als leiser Hinweis), kontextsensitiv filtern (z. B. nicht erneut warnen, wenn Interaktion schon bekannt/bewusst in Kauf genommen wurde).
-
-Merksatz: zu viele Alerts → Ignorieren wird zur Gewohnheit → genau die Sicherheit, die das System bringen sollte, geht verloren. Zentrales Qualitätskriterium für CDS-Systeme: Spezifität der Alerts, nicht nur Sensitivität.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+Quellen geprüft am 15.11.2026.
 
 :::
-:::
-
-### Sensitivität / Spezifität
-
-```{r cds-metrics, echo=FALSE}
-knitr::kable(
-  data.frame(
-    Term = c("Sensitivität", "Spezifität"),
-    Definition = c("TP / (TP + FN)", "TN / (TN + FP)")
-  ),
-  caption = "Diagnostische Testkennzahlen"
-)
-```
-
-::: {.exam-question}
-Was messen Sensitivität und Spezifität jeweils, und wie rechnet man sie an einem konkreten Patientenkollektiv durch?
-:::
-
-::: {.exam-answer}
-- **Sensitivität** = TP / (TP + FN): von allen **tatsächlich Kranken**, wie viele erkennt der Test korrekt als positiv? "Wie gut erkennt der Test Kranke?"
-- **Spezifität** = TN / (TN + FP): von allen **tatsächlich Gesunden**, wie viele erkennt der Test korrekt als negativ? "Wie gut erkennt der Test Gesunde?"
-
-**Beispiel**: 1.000 Patienten, 20% haben die Krankheit (= 200 krank, 800 gesund). Test: Sensitivität 95%, Spezifität 80%.
-
-1. Von 200 Kranken: richtig-positiv = 200 × 0,95 = **190**. Falsch-negativ = 200 − 190 = **10**.
-2. Von 800 Gesunden: richtig-negativ = 800 × 0,80 = **640**. Falsch-positiv = 800 − 640 = **160**.
-
-**Klinisch übersetzt**: der Test erkennt 190 von 200 tatsächlich Kranken (nur 10 werden übersehen — hohe Sensitivität, wenig verpasste Fälle). Aber von den 800 Gesunden werden 160 fälschlich als "krank" eingestuft (mäßige Spezifität, einige Fehlalarme).
-
-**Merkhilfe SnNout/SpPin**:
-- **SnNout** (hohe **Sn**sitivität → **N**egatives Ergebnis schließt Krankheit **out**/aus): bei einem sehr sensitiven Test ist ein negatives Ergebnis beruhigend — kaum falsch-negative Fälle.
-- **SpPin** (hohe **Sp**ezifität → **P**ositives Ergebnis beweist Krankheit **in**): bei einem sehr spezifischen Test ist ein positives Ergebnis fast sicher echt — kaum falsch-positive Fälle.
-
-Merksatz: Sensitivität = Test gut bei **Kranken** (TP-Fokus). Spezifität = Test gut bei **Gesunden** (TN-Fokus). Beide sind **prävalenzunabhängige** Testeigenschaften — im Unterschied zu PPV/NPV (siehe Wiederholung), die von der Prävalenz abhängen.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Quellen {.unnumbered}
-
-Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
-
-- Kap. 9 Entscheidungsunterstützung (Expertensysteme, wissensbasierte Systeme, MYCIN, Arden Syntax, Bayes); Infobutton, Five Rights, Alert Fatigue, AI Act als Allgemeinwissen ergänzt. Stand: 10/2026
-- Kap. 9 Entscheidungsunterstützung (Wissensbasen), Kap. 10 Evidenzbasierte Medizin; AMTS/Closed Loop, PRISCUS, AWMF-Klassen und CIRS als Allgemeinwissen ergänzt. Stand: 10/2026
-- Kap. 10 Evidenzbasierte Medizin/HTA; AMNOG, DiGA, EU-HTA-Verordnung, QALY/Effizienzgrenze als Allgemeinwissen ergänzt. Stand: 10/2026
-- nicht im medinfo-kompakt-Buch behandelt (Buch von 2015, KI/Präzisionsmedizin in dieser Form noch nicht etabliert) — Antwort basiert auf Curriculum/Allgemeinwissen
-- nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen, klassische KI-Inferenzverfahren aus Expertensystemen
-- nicht im medinfo-kompakt-Buch behandelt — Antwort basiert auf Curriculum/Allgemeinwissen
+::::

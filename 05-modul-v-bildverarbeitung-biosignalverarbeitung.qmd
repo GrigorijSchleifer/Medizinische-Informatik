@@ -1,5 +1,293 @@
 # Bildverarbeitung/Biosignalverarbeitung {#modul-v}
 
+## Medizinische Bildgebung
+
+::: {.exam-question}
+Welche wichtigen medizinischen Bildgebungsmodalitäten gibt es, nach welchen physikalischen Prinzipien arbeiten sie, und welche Art von Bildinformationen erzeugen sie?
+:::
+
+:::: {.exam-answer}
+
+Eine **Bildgebungsmodalität** bezeichnet eine Klasse von Aufnahmeverfahren beziehungsweise Aufnahmegeräten. Die Modalitäten unterscheiden sich durch die verwendete Energie, die Art der Wechselwirkung mit dem Körper und die daraus berechnete Bildinformation.
+
+| Modalität | Physikalisches Prinzip | Erzeugte Bildinformation | Ionisierende Strahlung |
+|---|---|---|---|
+| **Projektionsradiographie** einschließlich Mammographie | Röntgenstrahlung wird im Gewebe unterschiedlich stark abgeschwächt und von einem Detektor gemessen. | Zweidimensionales Summationsbild der Röntgenschwächung entlang des Strahlengangs | ja |
+| **Durchleuchtung und Röntgenangiographie** | Wiederholte Röntgenprojektionen erzeugen eine zeitliche Bildfolge; häufig wird Kontrastmittel verwendet. | Bewegte zweidimensionale Projektionsbilder, beispielsweise zur Darstellung von Instrumenten oder kontrastierten Gefäßen | ja |
+| **Computertomographie (CT)** | Röntgenprojektionen aus vielen Richtungen werden rechnerisch zu Schnittbildern rekonstruiert. | Schnittbilder und dreidimensionale Volumendaten der Röntgenschwächung; die Werte werden üblicherweise in Hounsfield-Einheiten angegeben. | ja |
+| **Magnetresonanztomographie (MRT)** | Ein statisches Magnetfeld richtet Kernspins aus. Hochfrequenzimpulse regen vor allem Wasserstoffprotonen an; Gradienten ermöglichen die Ortskodierung. | Sequenzabhängige Schnitt- und Volumenbilder mit unterschiedlichen Gewebekontrasten; zusätzlich sind unter anderem Diffusions-, Perfusions- und Flussinformationen möglich. | nein |
+| **Sonographie** | Hochfrequente Schallwellen werden ausgesendet; Laufzeit und Stärke zurückkehrender Echos werden ausgewertet. Dopplerverfahren nutzen zusätzlich Frequenzverschiebungen. | Echtzeitfähige Schnittbilder; Dopplerverfahren liefern Informationen über Richtung und Geschwindigkeit von Bewegungen, insbesondere des Blutflusses. | nein |
+| **Planare Szintigraphie und Single-Photon-Emissionscomputertomographie (SPECT)** | Ein Radiopharmakon emittiert Gammastrahlung, die außerhalb des Körpers gemessen wird. Bei SPECT erfolgt die Messung aus mehreren Richtungen. | Zweidimensionale beziehungsweise tomographische Darstellung der räumlichen Tracerverteilung | ja |
+| **Positronenemissionstomographie (PET)** | Ein positronenemittierendes Radiopharmakon führt zu Annihilationsphotonen, die in Koinzidenz gemessen werden. | Tomographische Darstellung der Tracerverteilung und damit molekularer, metabolischer oder physiologischer Prozesse | ja |
+
+- **Morphologische und funktionelle Bildgebung:** bilden keine vollständig getrennten Kategorien.
+  - Röntgen und CT liefern überwiegend morphologische beziehungsweise anatomische Informationen.
+  - MRT und Sonographie können sowohl morphologische als auch funktionelle Informationen liefern.
+  - Nuklearmedizinische Verfahren bilden vor allem die Verteilung eines Radiopharmakons und damit funktionelle oder molekulare Prozesse ab.
+    - **z. B.:** Die Dopplersonographie zeigt neben der Gefäßanatomie auch Richtung und Geschwindigkeit des Blutflusses.
+
+- **Hybridbildgebung:** kombiniert komplementäre Modalitäten.
+  - PET/CT und SPECT/CT verbinden die Tracerverteilung mit einer anatomischen Zuordnung.
+  - PET/MRT kombiniert molekulare Informationen mit den Gewebe- und Funktionskontrasten der MRT.
+
+- **Bedeutung für die Medizininformatik:** Die Modalität bestimmt wesentliche Eigenschaften der erzeugten Daten.
+  - Projektionsaufnahmen sind überwiegend zweidimensional.
+  - CT, MRT, SPECT und PET erzeugen Schnittbilder beziehungsweise Volumendaten.
+  - Durchleuchtung und Sonographie können zeitabhängige Bildfolgen erzeugen.
+  - Funktionelle Verfahren können zusätzlich Parameterkarten, Aktivitätswerte oder Messkurven liefern.
+  - Modalität, Untersuchungsparameter und räumlich-zeitliche Zuordnung werden als Metadaten gespeichert.
+  - Datenmenge, Übertragungszeit und Speicherbedarf hängen vom Untersuchungsprotokoll und nicht allein von der Modalität ab.
+
+Merksatz: Röntgenverfahren und Nuklearmedizin verwenden ionisierende Strahlung, die MRT Magnetfelder und Hochfrequenzimpulse und die Sonographie Schallwellen; daraus entstehen Projektionsbilder, Schnitt- und Volumenbilder, Bildfolgen oder Darstellungen funktioneller Prozesse.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Endoskopie, Mikroskopie und digitale Pathologie gehören ebenfalls zur medizinischen Bildgebung, sind aber keine radiologischen Kernmodalitäten. Sie verwenden überwiegend sichtbares Licht sowie Kameras oder Scanner.
+- Ein medizinisches Bild ist häufig keine unmittelbare „Fotografie“. Besonders bei CT, MRT, SPECT und PET entstehen Bilder erst durch eine mathematische Rekonstruktion aus gemessenen Rohdaten.
+- Im Standard **Digital Imaging and Communications in Medicine (DICOM)** kennzeichnet das Attribut „Modality“ die Art beziehungsweise Aufnahmefunktion des erzeugenden Geräts. Beispiele sind `CT`, `MR`, `US`, `DX`, `NM` und `PT`. Die DICOM-Kürzel werden in der eigenen DICOM-Frage vertieft.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.5 „Modul V – Bildverarbeitung/Biosignalverarbeitung“, S. 14. Das Kursbuch nennt „Medizintechnik/radiologische Modalitäten“ als Lerninhalt, definiert die einzelnen Modalitäten aber nicht.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Maier A, Steidl S, Christlein V, Hornegger J, Hrsg.: *Medical Imaging Systems: An Introductory Guide*. 1. Auflage, Springer, 2018:
+  - Kapitel 6 „Magnetic Resonance Imaging“, S. 91–118
+  - Kapitel 7 „X-ray Imaging“, S. 119–145
+  - Kapitel 8 „Computed Tomography“, S. 147–189
+  - Kapitel 10 „Emission Tomography“, S. 207–236
+  - Kapitel 11 „Ultrasound“, S. 237–249  
+  <https://doi.org/10.1007/978-3-319-96520-8>
+
+- Dance DR, Christofides S, Maidment ADA, McLean ID, Ng KH, Hrsg.: *Diagnostic Radiology Physics: A Handbook for Teachers and Students*. International Atomic Energy Agency, Wien, 2014, insbesondere Kapitel 5–6, 9, 11–12 und 14–15.  
+  <https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1564webNew-74666420.pdf>
+
+- National Electrical Manufacturers Association: *DICOM PS3.16 – Content Mapping Resource*. Ausgabe 2026c, CID 29 „Acquisition Modality“.  
+  <https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_cid_29.html>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+## Digitalisierung von Biosignalen
+
+::: {.exam-question}
+Wie wird ein analoges Biosignal digitalisiert, und welche Bedeutung haben Abtastung, Quantisierung, Auflösung und Abtasttheorem?
+:::
+
+:::: {.exam-answer}
+
+Ein physiologischer Vorgang wird durch eine Elektrode oder einen Sensor erfasst und meist in ein analoges elektrisches Signal umgewandelt. Dieses ist zeit- und wertkontinuierlich. Damit es im Computer gespeichert und verarbeitet werden kann, muss es zeitlich abgetastet, quantisiert und binär kodiert werden.
+
+- **Analoge Signalaufbereitung:** Das elektrische Signal wird vor der Digitalisierung verstärkt und gefiltert.
+  - Ein analoges Tiefpassfilter begrenzt die Signalbandbreite und entfernt Frequenzanteile, die später Aliasing verursachen könnten.
+  - Dieses vorgeschaltete Filter wird **Anti-Aliasing-Filter** genannt.
+  - **z. B.:** Die geringe Spannung eines Elektrokardiogramms wird verstärkt und von unerwünschten hochfrequenten Anteilen befreit.
+
+- **Abtastung:** Der momentane Signalwert wird in regelmäßigen Zeitabständen gemessen.
+  - Dadurch wird aus einem zeitkontinuierlichen ein zeitdiskretes Signal.
+  - Die **Abtastfrequenz** $f_\mathrm{s}$ gibt die Zahl der Messwerte pro Sekunde in Hertz an.
+  - Für das Abtastintervall $\Delta t$ gilt:
+
+    $$f_\mathrm{s}=\frac{1}{\Delta t}$$
+
+  - Eine höhere Abtastfrequenz verkürzt das Abtastintervall und erhöht die zeitliche Auflösung, erzeugt aber auch mehr Daten.
+  - **z. B.:** Bei $f_\mathrm{s}=500\,\mathrm{Hz}$ wird alle $2\,\mathrm{ms}$ ein Messwert erfasst.
+
+- **Quantisierung:** Jeder abgetastete Wert wird einer von endlich vielen darstellbaren Amplitudenstufen zugeordnet.
+  - Dadurch wird das Signal auch wertdiskret.
+  - Die Differenz zwischen dem ursprünglichen Wert und dem zugeordneten Wert heißt **Quantisierungsfehler**.
+  - Bei einer Auflösung von $n$ Bit stehen $2^n$ unterschiedliche Codes zur Verfügung.
+  - **z. B.:** 12 Bit ermöglichen $2^{12}=4.096$ unterschiedliche Codes.
+
+- **Binärkodierung:** Die quantisierten Werte werden als Bitfolgen dargestellt, gespeichert oder übertragen.
+  - Erst nach Abtastung, Quantisierung und Kodierung liegt ein digitales Signal vor.
+
+- **Auflösung:** Beschreibt, wie fein zeitliche oder wertmäßige Unterschiede dargestellt werden können.
+  - **Zeitliche Auflösung:** wird wesentlich durch Abtastfrequenz und Abtastintervall geprägt.
+  - **Amplitudenauflösung:** hängt von Bitzahl und gewähltem Eingangsmessbereich ab.
+  - Bei gleichmäßiger Quantisierung beträgt die Schrittweite näherungsweise:
+
+    $$\Delta A\approx\frac{\text{Eingangsmessbereich}}{2^n}$$
+
+  - Eine größere Bitzahl ergibt kleinere Amplitudenstufen, bedeutet aber nicht automatisch eine höhere Messgenauigkeit.
+
+- **Nyquist-Shannon-Abtasttheorem:** Ein ideal bandbegrenztes Signal kann ohne Informationsverlust rekonstruiert werden, wenn die Abtastfrequenz größer als das Doppelte seiner höchsten enthaltenen Frequenz $f_\mathrm{max}$ ist.
+
+  $$f_\mathrm{s}>2f_\mathrm{max}$$
+
+  - Die **Nyquist-Frequenz** beträgt $f_\mathrm{s}/2$.
+  - Frequenzanteile oberhalb dieser Grenze können als falsche niedrigere Frequenzen erscheinen. Dieser Effekt heißt **Aliasing**.
+  - Ein einmal entstandenes Aliasing kann durch nachträgliche digitale Filterung nicht zuverlässig beseitigt werden.
+  - Reale Systeme verwenden deshalb ein analoges Anti-Aliasing-Filter und eine Abtastfrequenz mit Abstand zur theoretischen Untergrenze.
+  - **z. B.:** Soll ein Signal Frequenzanteile bis $150\,\mathrm{Hz}$ enthalten, muss theoretisch mit mehr als $300\,\mathrm{Hz}$ abgetastet werden; praktisch wird eine höhere Abtastfrequenz gewählt.
+
+| Signalform | Zeit | Amplitude |
+|---|---|---|
+| analog | kontinuierlich | kontinuierlich |
+| abgetastet | diskret | zunächst kontinuierlich |
+| digital | diskret | diskret und binär kodiert |
+
+Merksatz: Abtastung diskretisiert die Zeit, Quantisierung diskretisiert die Amplitude und das Abtasttheorem verhindert bei ausreichender Bandbegrenzung und Abtastrate das Aliasing.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Die Bitauflösung darf nicht mit der Messgenauigkeit gleichgesetzt werden. Auch Sensorqualität, Verstärkung, Rauschen, Eingangsmessbereich, Kalibrierung und Linearität beeinflussen die Messung.
+- Die Analog-Digital-Wandlung erfolgt üblicherweise im Erfassungsgerät oder Monitor. Ein Patientendatenmanagementsystem übernimmt meistens bereits digitalisierte Werte oder Kurven.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.5 „Modul V – Bildverarbeitung/Biosignalverarbeitung“, S. 14. Das Kursbuch nennt „Signalklassen (analog/diskret)“, definiert Abtastung und Quantisierung jedoch nicht.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Fischer P, Sembritzki K, Maier A: „System Theory“. In: Maier A, Steidl S, Christlein V, Hornegger J, Hrsg.: *Medical Imaging Systems: An Introductory Guide*. 1. Auflage, Springer, 2018, Kapitel 2, Abschnitte 2.4.1 „Motivation“ und 2.4.2 „Sampling Theorem“, S. 31–33.  
+  <https://doi.org/10.1007/978-3-319-96520-8_2>
+
+- Tooley MA: „Electronics and biological signal processing“. *BJA Education*. 2023;23(4):122–127, Abschnitt „Digital signal processing“.  
+  <https://doi.org/10.1016/j.bjae.2022.12.004>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+## Digitale Filter
+
+::: {.exam-question}
+Wie wirken Tiefpass, Hochpass, Bandpass und Bandsperre auf Biosignale, und welche diagnostischen Fehler können durch eine ungeeignete Filterung entstehen?
+:::
+
+:::: {.exam-answer}
+
+Biosignale enthalten physiologische Signalanteile und unerwünschte Störungen in unterschiedlichen Frequenzbereichen. Filter sollen das Verhältnis von Nutzsignal zu Störung verbessern. Sie können jedoch auch diagnostisch relevante Signalanteile dämpfen oder deren zeitlichen Verlauf verändern.
+
+| Filter | Wirkung | Typischer Zweck | Gefahr ungeeigneter Einstellung |
+|---|---|---|---|
+| **Tiefpass** | Lässt niedrige Frequenzen weitgehend passieren und dämpft hohe Frequenzen | Verringerung hochfrequenter Störungen | Verlust kurzer oder steiler Signalanteile |
+| **Hochpass** | Lässt hohe Frequenzen weitgehend passieren und dämpft tiefe Frequenzen sowie Gleichanteile | Verringerung langsamer Grundlinienschwankungen | Verlust langsamer Signalanteile und Verfälschung der Kurvenform |
+| **Bandpass** | Lässt einen begrenzten Frequenzbereich passieren | Begrenzung auf den erwarteten Frequenzbereich eines Biosignals | Verlust relevanter Anteile oberhalb oder unterhalb des gewählten Bandes |
+| **Bandsperre** | Dämpft einen begrenzten Frequenzbereich | Unterdrückung einer bekannten schmalbandigen Störung | Dämpfung physiologischer Signalanteile im gleichen Frequenzbereich |
+
+- **Tiefpass:** dämpft Frequenzen oberhalb seiner Grenzfrequenz.
+  - Er glättet das Signal und kann hochfrequentes Rauschen oder Muskelartefakte vermindern.
+  - Ist die Grenzfrequenz zu niedrig, werden steile Flanken, kurze Ausschläge und kleine hochfrequente Komponenten abgeschwächt.
+  - **z. B.:** Beim Elektrokardiogramm (EKG) können QRS-Amplitude, QRS-Kerbungen und Schrittmacherimpulse vermindert oder übersehen werden.
+
+- **Hochpass:** dämpft Frequenzen unterhalb seiner Grenzfrequenz.
+  - Er vermindert langsame Grundlinienwanderungen durch Atmung, Bewegung oder Gerätedrift.
+  - Ist die Grenzfrequenz zu hoch oder besitzt das Filter eine ungeeignete Phasencharakteristik, können langsame physiologische Signalanteile und die zeitliche Signalform verändert werden.
+  - **z. B.:** Beim EKG können artifizielle ST-Hebungen oder ST-Senkungen entstehen und eine Myokardischämie oder ein Brugada-Muster vortäuschen.
+
+- **Bandpass:** kombiniert die Wirkung eines Hochpasses und eines Tiefpasses.
+  - Nur Frequenzen zwischen unterer und oberer Grenzfrequenz werden weitgehend übertragen.
+  - Ein enger Bandpass erzeugt häufig eine ruhigere Darstellung, enthält aber weniger diagnostische Information.
+  - **z. B.:** Ein Monitor-EKG kann zur Rhythmusüberwachung enger gefiltert sein als ein diagnostisches 12-Kanal-EKG; seine Amplituden und ST-Strecken dürfen dann nicht ohne Weiteres diagnostisch interpretiert werden.
+
+- **Bandsperre:** dämpft ein schmales Frequenzband und wird bei schmalbandigen Störungen auch **Notch-Filter** genannt.
+  - Im deutschen Stromnetz wird sie häufig zur Verminderung von 50-Hz-Netzinterferenzen eingesetzt.
+  - Eine zu breite oder starke Bandsperre kann physiologische Anteile in der Nähe der Sperrfrequenz abschwächen und scharfe Transienten verformen.
+  - **z. B.:** Beim Elektroenzephalogramm (EEG) kann eine Netzfrequenzsperre pathologische Spitzen dämpfen oder deren Form verändern.
+
+- **Grenzfrequenz:** bezeichnet den Übergangsbereich zwischen weitgehend durchgelassenen und zunehmend gedämpften Frequenzen.
+  - Ein reales Filter besitzt keine abrupte Trennung zwischen „durchgelassen“ und „entfernt“.
+  - Neben der Amplitude kann ein Filter auch die Phase und damit die zeitliche Form des Signals verändern.
+
+- **Diagnostische Konsequenz:** Die Filtereinstellung muss zum Biosignal und zur Fragestellung passen.
+  - Elektrokardiogramm, Elektroenzephalogramm und Elektromyogramm besitzen unterschiedliche diagnostisch relevante Frequenzbereiche.
+  - Eine für die Überwachung geeignete Einstellung ist nicht automatisch für eine diagnostische Aufzeichnung geeignet.
+  - Filterart und Filtereinstellung sollten bei der Befundung bekannt beziehungsweise dokumentiert sein.
+
+Merksatz: Tiefpass dämpft hohe, Hochpass tiefe, Bandpass äußere und Bandsperre ausgewählte Frequenzen; eine zu starke Filterung macht das Signal ruhiger, kann aber diagnostische Information beseitigen oder pathologische Befunde vortäuschen.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Analoge Filter vor der Digitalisierung bestimmen unwiderruflich, welche Frequenzanteile überhaupt aufgezeichnet werden. Ein vorgeschalteter Anti-Aliasing-Tiefpass verhindert, dass zu hohe Frequenzen bei der Abtastung als falsche niedrige Frequenzen erscheinen.
+- Digitale Darstellungsfilter können nachträglich verändert werden, wenn das ungefilterte oder ausreichend breitbandig aufgezeichnete Rohsignal gespeichert wurde. Das ist nicht bei jedem Gerät oder Datenexport gewährleistet.
+- Bei einem diagnostischen 12-Kanal-EKG ist ein breiterer Frequenzbereich erforderlich als bei einer reinen Rhythmusüberwachung. Insbesondere darf eine durch starke Filterung optisch beruhigte Monitorkurve nicht ungeprüft zur Beurteilung von ST-Strecke, QRS-Amplitude oder Schrittmacherimpulsen verwendet werden.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.5 „Modul V – Bildverarbeitung/Biosignalverarbeitung“, S. 14. Das Kursbuch nennt „Digitale Filter und Bildoperationen“, definiert die Filterarten jedoch nicht.  
+  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
+
+- Tooley MA: „Electronics and biological signal processing“. *BJA Education*. 2023;23(4):122–127, Abschnitte „Frequency response“ und „Filters“.  
+  <https://doi.org/10.1016/j.bjae.2022.12.004>
+
+- Kligfield P, Gettes LS, Bailey JJ et al.: „Recommendations for the Standardization and Interpretation of the Electrocardiogram. Part I: The Electrocardiogram and Its Technology“. *Journal of the American College of Cardiology*. 2007;49(10):1109–1127, Abschnitte „Low-Frequency Filtering“ und „High-Frequency Filtering“.  
+  <https://doi.org/10.1016/j.jacc.2007.01.024>
+
+- Sinha SR, Sullivan L, Sabau D et al.: „American Clinical Neurophysiology Society Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography“. *Journal of Clinical Neurophysiology*. 2016;33(4):303–307, Abschnitte 3.4 und 3.5.  
+  <https://doi.org/10.1097/WNP.0000000000000308>
+
+Quellen geprüft am 12.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+## Digitale Bilder und Bildoperationen
+
+::: {.exam-question}
+Wie sind digitale medizinische Bilder aufgebaut, und wofür werden Fensterung, Glättung, Schärfung, Schwellwertverfahren, Registrierung und Bildsubtraktion eingesetzt?
+:::
+
+
+## Segmentierung und Mustererkennung
+
+::: {.exam-question}
+Wie unterscheiden sich Segmentierung, Konturverfolgung, Merkmalsextraktion und Klassifikation in der medizinischen Bildanalyse?
+:::
+
+
+## DICOM
+
+::: {.exam-question}
+Was standardisiert DICOM, wie sind DICOM-Datensätze und die Hierarchie Patient–Studie–Serie–Instanz aufgebaut, und was ist bei Kompression und De-Identifizierung zu beachten?
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Bildverarbeitung/Biosignalverarbeitung {#modul-v}
+
 ## Technische Komponenten
 
 ### Medizintechnik/radiologische Modalitäten

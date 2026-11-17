@@ -69,332 +69,541 @@ Quellen geprüft am 17.11.2026.
 :::
 ::::
 
-## Qualitätssicherung (gesetzliche und freiwillige Verfahren)
+## Qualitätssicherung
 
 ::: {.exam-question}
-Welche gesetzlichen und welche freiwilligen Verfahren der Qualitätssicherung gibt es im Krankenhaus, und wer ist dafür zuständig?
+Welche gesetzlichen und freiwilligen Verfahren der Qualitätssicherung gibt es im Krankenhaus, und wer ist dafür zuständig?
 :::
 
-::: {.exam-answer}
-**Gesetzlich (verpflichtend, SGB V §§ 135 ff.)**:
-- **G-BA** (Gemeinsamer Bundesausschuss) legt per Richtlinie fest, *was* gemessen wird.
-- **IQTIG** (Institut für Qualitätssicherung und Transparenz im Gesundheitswesen) entwickelt Indikatoren, wertet bundesweit aus. ⚠️ Buch (2015) nennt noch **AQUA** — seit 2016 IQTIG.
-- **Externe QS (datengestützt, heute DeQS-Richtlinie)**: Klinik dokumentiert für bestimmte Leistungsbereiche (z. B. Hüft-TEP, Geburtshilfe, Herzschrittmacher, PCI, Dekubitusprophylaxe) **QS-Bögen** → Export über KIS → Landesstelle/IQTIG → Vergleich mit Referenzbereichen.
-  - Dokumentationsrate < 100 % (Buch: < 95 %) → **finanzielle Abschläge**.
-  - Auffälliges Ergebnis → **Stellungnahmeverfahren** (früher „Strukturierter Dialog“): Klinik muss erklären + Maßnahmen benennen.
-  - Zunehmend **Sozialdaten bei Krankenkassen** genutzt (z. B. Wiederaufnahmen, Spätkomplikationen nach Entlassung — ohne Zusatzdokumentation).
-- **Qualitätsbericht** (§ 136b SGB V): öffentlich, laienverständlich, **jährlich** (Buch: „alle 2 Jahre“ — veraltet), Teile A–D (Struktur Haus, Fachabteilungen, QS, QM) → Basis für Klinikvergleichsportale.
-- **Mindestmengen** (z. B. Knie-TEP, Pankreas-/Ösophagus-OP, Frühgeborene < 1250 g): Unterschreitung → keine Vergütung.
-- **Strukturvorgaben**: z. B. Pflegepersonaluntergrenzen, Notfallstufen, Richtlinien für Frühgeborenenversorgung.
-- **Prüfungen durch den Medizinischen Dienst (MD)** auf Einhaltung von Strukturmerkmalen (⚠️ früher MDK).
-- **Krankheitsregister mit Meldepflicht**: z. B. klinische Krebsregister (§ 65c SGB V), Implantateregister (EIRD).
+:::: {.exam-answer}
 
-**Freiwillig**:
-- **Zertifizierungen** (KTQ, ISO 9001, proCum Cert, JCI — siehe vorheriger Punkt).
-- **Fachgesellschafts-Zertifikate**: DKG-Organkrebszentren (Brust-, Darmzentrum), Stroke Units (DSG), Traumazentren (DGU), EndoCert.
-- **IQM** (Initiative Qualitätsmedizin): Routinedaten-basierte Indikatoren + **Peer-Review**-Verfahren (Chefärzte anderer Kliniken analysieren auffällige Todesfälle).
-- **Freiwillige Register** (z. B. Traumaregister DGU), **CIRS** (anonymes Fehlermeldesystem), Morbiditäts-/Mortalitätskonferenzen (M&M).
+- **Gesetzliche Qualitätssicherung:** Krankenhäuser müssen ein internes Qualitätsmanagement betreiben und an einrichtungsübergreifenden Maßnahmen der Qualitätssicherung teilnehmen.
 
-Rolle der IT: QS-Bögen werden aus dem KIS befüllt (Plausibilitätsprüfung, QS-Filter erkennt anhand ICD/OPS automatisch, welcher Fall dokumentationspflichtig ist) — ohne IT praktisch nicht leistbar.
+- **Gemeinsamer Bundesausschuss (G-BA):** legt durch Richtlinien fest, welche Qualitätsanforderungen und Verfahren gelten
+  - Dazu gehören insbesondere die DeQS-Richtlinie, Qualitätsberichte, Mindestmengen und Strukturvorgaben.
 
-Merksatz: Gesetzlich = G-BA bestimmt, IQTIG misst, Klinik dokumentiert per QS-Bogen, Ergebnis öffentlich im Qualitätsbericht. Freiwillig = Zertifikate, Zentren, IQM-Peer-Review, CIRS.
+- **Institut für Qualitätssicherung und Transparenz im Gesundheitswesen (IQTIG):** entwickelt im Auftrag des G-BA Qualitätsindikatoren, wertet Daten aus und erstellt Qualitätsberichte.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+- **Datengestützte einrichtungsübergreifende Qualitätssicherung:** vergleicht die Versorgungsqualität anhand festgelegter Qualitätsindikatoren
+  - Je nach Verfahren werden QS-Dokumentationen der Leistungserbringer, Sozialdaten der Krankenkassen oder Patientenbefragungen verwendet.
+  - z. B. Qualitätssicherung bei perkutanen Koronarinterventionen, Hüftgelenkversorgung oder Perinatalmedizin
+  - Rechnerisch auffällige Ergebnisse werden in einem **Stellungnahmeverfahren** geprüft.
+  - Die Landesarbeitsgemeinschaften beziehungsweise zuständigen Bundesstellen führen diese Verfahren mit Fachkommissionen durch.
+
+- **Qualitätsbericht:** Jedes Krankenhaus erstellt jährlich einen strukturierten Bericht
+  - **Teil A:** Struktur- und Leistungsdaten des Standortes
+  - **Teil B:** Daten der Fachabteilungen
+  - **Teil C:** Angaben zur Qualitätssicherung
+
+- **Mindestmengen und Qualitätsanforderungen:** Für bestimmte planbare Leistungen gelten Mindestmengen oder verbindliche Struktur- und Prozessanforderungen.
+  - Ohne positive Mindestmengenprognose darf eine Leistung grundsätzlich nicht erbracht und abgerechnet werden, soweit keine Ausnahme greift.
+
+- **Medizinischer Dienst (MD):** prüft im Auftrag der zuständigen Stellen die Einhaltung bestimmter Qualitätsanforderungen des G-BA.
+
+- **Freiwillige Verfahren:**
+  - Zertifizierungen und Akkreditierungen, z. B. KTQ, DIN EN ISO 9001, pCC inkl. KTQ oder JCI
+  - Zertifizierung von Fachzentren, z. B. Organkrebszentrum, Stroke Unit oder Traumazentrum
+  - freiwillige Qualitätsverbünde mit Peer Review, z. B. Initiative Qualitätsmedizin
+  - freiwillige medizinische Register
+
+- **IT-Unterstützung:** Das Krankenhausinformationssystem unterstützt die Erkennung dokumentationspflichtiger Fälle, Plausibilitätsprüfungen und die elektronische Datenübermittlung.
+
+Merksatz: Der G-BA legt die Regeln fest, das IQTIG entwickelt und berechnet Qualitätsindikatoren, Landesstellen bewerten Auffälligkeiten und der Medizinische Dienst prüft definierte Anforderungen vor Ort.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- Eine rechnerische Auffälligkeit ist zunächst nur ein Prüfhinweis und noch kein nachgewiesener Qualitätsmangel.
+- Die frühere Bezeichnung **„Strukturierter Dialog“** wurde durch das **Stellungnahmeverfahren** ersetzt.
+- Ältere Literatur nennt noch das AQUA-Institut; seit 2016 übernimmt das IQTIG die zentralen Aufgaben.
+- Fehlende oder unvollständige QS-Dokumentation kann verfahrensabhängig zu Sanktionen führen. Ein allgemeiner Grenzwert von 95 oder 100 Prozent gilt jedoch nicht.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Sozialgesetzbuch V: § 135a „Verpflichtung der Leistungserbringer zur Qualitätssicherung“.  
+  <https://www.gesetze-im-internet.de/sgb_5/__135a.html>
+- Gemeinsamer Bundesausschuss: *Richtlinie zur datengestützten einrichtungsübergreifenden Qualitätssicherung (DeQS-RL)*, aktuelle Fassung 2026.  
+  <https://www.g-ba.de/richtlinien/105/>
+- Gemeinsamer Bundesausschuss: *Regelungen zum Qualitätsbericht der Krankenhäuser*, insbesondere §§ 4 und 5.  
+  <https://www.g-ba.de/themen/qualitaetssicherung/datenerhebung-zur-qualitaetssicherung/datenerhebung-qualitaetsbericht/>
+- Gemeinsamer Bundesausschuss: *Mindestmengenregelungen*.  
+  <https://www.g-ba.de/richtlinien/5/>
+- IQTIG: „Grundlagen unserer Arbeit“ und „Auswertung von Daten“.  
+  <https://iqtig.org/das-iqtig/wie-wir-arbeiten/grundlagen/>
+- Medizinischer Dienst Bund: *Prüfung der Qualitätsvorgaben des Gemeinsamen Bundesausschusses*, Stand 17.09.2026.  
+  <https://md-bund.de/themen/krankenhaus/qualitaetspruefungen-im-krankenhaus.html>
+
+Quellen geprüft am 17.11.2026.
+
 :::
+::::
+
+
+
+
+
+
+
+
+
 
 ::: {.exam-question}
-Vertiefung: Was ist die Aufgabe des G-BA, und wie ist er zusammengesetzt?
+Was ist die Aufgabe des Gemeinsamen Bundesausschusses, und wie ist er zusammengesetzt?
 :::
 
-::: {.exam-answer}
-Der **Gemeinsame Bundesausschuss (G-BA)** ist das oberste Beschlussgremium der **gemeinsamen Selbstverwaltung** (§ 91 SGB V, Sitz Berlin) — der „kleine Gesetzgeber“: Das SGB V gibt den Rahmen vor („ausreichend, zweckmäßig, wirtschaftlich“), der G-BA konkretisiert ihn per **Richtlinie**, verbindlich für Ärzte, Kliniken, Kassen und Versicherte.
+:::: {.exam-answer}
 
-**Aufgaben**:
+Der **Gemeinsame Bundesausschuss (G-BA)** ist das oberste Beschlussgremium der gemeinsamen Selbstverwaltung im Gesundheitswesen. Er konkretisiert Vorgaben des Sozialgesetzbuchs V durch verbindliche Richtlinien für die gesetzliche Krankenversicherung.
 
-| Bereich | Beispiel |
-|---|---|
-| Leistungskatalog GKV | Liposuktion bei Lipödem Kassenleistung? |
-| Methodenbewertung | ambulant **Erlaubnisvorbehalt** (erst nach positiver Bewertung), stationär **Verbotsvorbehalt** (erlaubt, bis ausgeschlossen) |
-| Arzneimittel (AMNOG) | Zusatznutzen eines neuen Onkologikums → Basis der Preisverhandlung |
-| Qualitätssicherung | QM-Richtlinie, DeQS, Mindestmengen, Qualitätsbericht |
-| Bedarfsplanung | Zahl der Kassenarztsitze je Planungsbereich |
-| Weitere | Früherkennung (Mammographie-Screening), Heil-/Hilfsmittel, Innovationsfonds |
+- **Zentrale Aufgaben:**
+  - Festlegung des Leistungskatalogs der gesetzlichen Krankenversicherung
+  - Bewertung neuer Untersuchungs- und Behandlungsmethoden
+  - Beschlüsse zum Zusatznutzen neuer Arzneimittel
+  - Vorgaben zur Qualitätssicherung, zu Mindestmengen und Qualitätsberichten
+  - Festlegung von Kriterien für die vertragsärztliche Bedarfsplanung
+  - Richtlinien zu Früherkennung, Arznei-, Heil- und Hilfsmitteln
 
-**Zusammensetzung des Plenums (13 Stimmen)**:
-```
-            3 Unparteiische (inkl. Vorsitz)
-                       │
-  5 Leistungserbringer ┼ 5 Kostenträger
-  ├ 2 DKG (Kliniken)   │  └ 5 GKV-Spitzenverband
-  ├ 2 KBV (Kassenärzte)│
-  └ 1 KZBV (Zahnärzte) │
-  + bis zu 5 Patientenvertreter: Mitberatung/Antragsrecht, KEIN Stimmrecht
-```
-- Paritätisch 5 : 5, Unparteiische entscheiden bei Patt.
-- **Rechtsaufsicht: BMG** (kann beanstanden, entscheidet nicht inhaltlich).
-- Zuarbeit: **IQWiG** (Nutzenbewertung) und **IQTIG** (Qualitätsmessung).
+- **Zusammensetzung des Plenums:** 13 stimmberechtigte Mitglieder
 
-Merksatz: G-BA = kleiner Gesetzgeber der Selbstverwaltung; 3 + 5 + 5 = 13 Stimmen (DKG 2, KBV 2, KZBV 1 | GKV-SV 5); Patienten reden mit, stimmen nicht ab. IQWiG → Nutzen, IQTIG → Qualität.
+| Gruppe | Stimmen |
+|---|---:|
+| Unparteiischer Vorsitz und zwei weitere Unparteiische | 3 |
+| GKV-Spitzenverband | 5 |
+| Kassenärztliche Bundesvereinigung | 2 |
+| Deutsche Krankenhausgesellschaft | 2 |
+| Kassenzahnärztliche Bundesvereinigung | 1 |
 
-::: {.callout-note title="Good to know" appearance="simple"}
+- **Patientenvertretung:** besitzt Mitberatungs- und Antragsrechte, aber kein Stimmrecht.
+- **Beschlussfassung:** Ein Beschluss benötigt grundsätzlich mindestens sieben der 13 Stimmen.
+- **Rechtsaufsicht:** Das Bundesministerium für Gesundheit prüft Richtlinienbeschlüsse und kann sie bei Rechtsverstößen beanstanden.
+- **Wissenschaftliche Unterstützung:**
+  - **Institut für Qualität und Wirtschaftlichkeit im Gesundheitswesen (IQWiG):** bewertet insbesondere Nutzen und Schaden medizinischer Methoden und Arzneimittel.
+  - **Institut für Qualitätssicherung und Transparenz im Gesundheitswesen (IQTIG):** entwickelt und berechnet Qualitätsindikatoren und unterstützt die gesetzliche Qualitätssicherung.
+
+Merksatz: Der G-BA macht aus den gesetzlichen Vorgaben konkrete Regeln für die GKV; 3 Unparteiische, 5 Kassenvertreter und 5 Leistungserbringer entscheiden, während Patienten mitberaten, aber nicht abstimmen.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Bei neuen Behandlungsmethoden gilt grundsätzlich:
+
+- **Ambulant:** Erlaubnisvorbehalt – zulasten der GKV erst nach positiver Bewertung.
+- **Stationär:** Verbotsvorbehalt – grundsätzlich möglich, solange die Methode nicht ausgeschlossen wurde und die gesetzlichen Qualitätsanforderungen erfüllt sind.
 
 :::
-:::
 
-## Prozessmanagement, z. B. Organisation von Behandlungspfaden
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Sozialgesetzbuch V: § 91 „Gemeinsamer Bundesausschuss“, insbesondere Absätze 2, 6 und 7.  
+  <https://www.gesetze-im-internet.de/sgb_5/__91.html>
+- Sozialgesetzbuch V: § 140f „Beteiligung von Interessenvertretungen der Patientinnen und Patienten“.  
+  <https://www.gesetze-im-internet.de/sgb_5/__140f.html>
+- Gemeinsamer Bundesausschuss: „Plenum“.  
+  <https://www.g-ba.de/ueber-den-gba/wer-wir-sind/plenum/>
+- Gemeinsamer Bundesausschuss: „Methodenbewertung“.  
+  <https://www.g-ba.de/themen/methodenbewertung/>
+- Gemeinsamer Bundesausschuss: „Beschlüsse und Richtlinien“.  
+  <https://www.g-ba.de/service/faq/beschluesse-und-richtlinien/>
+
+Quellen geprüft am 17.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+## Prozessmanagement und klinische Behandlungspfade
 
 ::: {.exam-question}
-Was ist ein klinischer Behandlungspfad, wie wird er entwickelt und im KIS abgebildet, und wie unterscheidet er sich von Leitlinie und SOP?
+Was ist ein klinischer Behandlungspfad, wie wird er entwickelt und gesteuert, und wie unterscheidet er sich von Leitlinie und SOP?
 :::
 
-::: {.exam-answer}
-**Prozessmanagement** = Abläufe systematisch erfassen (Ist), verbessern (Soll), umsetzen, messen — über **Prozesseigner** (Verantwortlicher je Prozess) und PDCA. Prozesse werden grafisch modelliert, z. B. als **BPMN** oder **EPK** (Ereignisgesteuerte Prozesskette): „Patient kommt in ZNA“ → „Triage“ → „Ereignis: Verdacht Schlaganfall“ → „CT“ …
+:::: {.exam-answer}
 
-**Behandlungspfad (Clinical Pathway)**: einrichtungsinterner, **interdisziplinärer, zeitlich gegliederter Standardablauf** für eine definierte Patientengruppe (meist eine Diagnose/Prozedur, oft an DRG gekoppelt).
+- **Prozessmanagement:** erfasst, gestaltet und überprüft wiederkehrende Arbeits- und Behandlungsabläufe
+  - Für einen Prozess werden Ziel, Verantwortliche, Schnittstellen und Kennzahlen festgelegt.
+  - Die Verbesserung erfolgt regelmäßig nach dem PDCA-Zyklus.
 
-Beispiel Pfad **Hüft-TEP elektiv**:
-```
-Tag -7  prästationär: Anästhesie-Aufklärung, Labor, Rö
-Tag  0  Aufnahme, OP, Antibiotika-Prophylaxe, Thromboseprophylaxe
-Tag  1  Mobilisation mit Physio, Drainage ex, Hb-Kontrolle
-Tag 2-5 Gangschule, Treppe, Schmerz-Score
-Tag  6  Entlassung, Reha-Anmeldung, Arztbrief
-```
+- **Klinischer Behandlungspfad (Clinical Pathway):** einrichtungsbezogener, strukturierter und multidisziplinärer Versorgungsplan für eine definierte Patientengruppe
+  - Er übersetzt Leitlinien und Evidenz in konkrete Zuständigkeiten und eine zeitliche oder kriteriumsabhängige Abfolge.
+  - Begründete Abweichungen sind möglich und werden als **Varianzen** dokumentiert.
+  - z. B. Pfad für eine Hüftendoprothese: präoperative Vorbereitung, Operation, Schmerztherapie, Mobilisation und Entlassungsplanung
 
-**Abgrenzung**:
-
-| | Leitlinie | Behandlungspfad | SOP |
-|---|---|---|---|
-| Wer? | Fachgesellschaft (AWMF) | eigene Klinik, interdisziplinär | eigene Abteilung |
-| Was? | *was* ist medizinisch richtig | *wer macht was wann* bei Diagnose X | *wie* genau ein Einzelschritt geht |
-| Beispiel | S3-LL Hüftendoprothetik | Hüft-TEP-Pfad Tag 0–6 | SOP „Anlage ZVK“ |
-
-Der Pfad **übersetzt die Leitlinie in die lokalen Gegebenheiten** (Personal, Geräte, Räume).
-
-**Entwicklung**: Pfad-Team (Arzt, Pflege, Physio, Sozialdienst, Controlling) → Ist-Analyse (wie läuft es heute?) → Soll-Pfad anhand Leitlinie + Verweildauer der DRG → Pilot → Einführung → **Varianzanalyse** (Abweichungen dokumentieren und auswerten: z. B. „Entlassung Tag 9 statt 6 wegen Wundinfekt“) → Pfad anpassen.
-
-**Im KIS**: Pfad als Vorlage, die bei Aufnahme gestartet wird → erzeugt automatisch Aufträge (Labor, Physio-Anforderung), Termine, Pflegemaßnahmen, Checklisten; Abweichungen werden per Klick begründet → auswertbar.
-
-**Nutzen**: weniger Variabilität, kürzere/planbare Verweildauer, bessere Kostenkalkulation (DRG), Einarbeitung neuer Mitarbeiter, Qualitätsnachweis.
-
-Merksatz: Leitlinie = *was* (bundesweit), Pfad = *wer–was–wann* (meine Klinik, interdisziplinär, Tag für Tag), SOP = *wie* (ein Handgriff). Pfad lebt von der Varianzanalyse.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Typische Abläufe und Vorgehensweisen im Medizin-Controlling
-
-::: {.exam-question}
-Was macht das Medizin-Controlling, und wie sieht der typische Ablauf von der Aufnahme bis zur Rechnung und MD-Prüfung aus?
-:::
-
-::: {.exam-answer}
-Medizin-Controlling = Schnittstelle **Medizin ↔ Ökonomie**: sorgt dafür, dass die erbrachte Leistung **vollständig, korrekt und prüfsicher kodiert und abgerechnet** wird, und liefert Steuerungszahlen an Chefärzte und Geschäftsführung.
-
-**Typischer Fallablauf**:
-
-1. **Aufnahme**: Aufnahmediagnose, Prüfung stationäre Notwendigkeit (ambulant möglich? AOP-Katalog, Hybrid-DRG).
-2. **Während des Aufenthalts**: Kodierfachkraft/Arzt kodiert laufend **ICD-10-GM** (Diagnosen) und **OPS** (Prozeduren) nach den **Deutschen Kodierrichtlinien (DKR)**; Controlling behält **Verweildauer** im Blick (untere/obere Grenzverweildauer, mittlere VWD der DRG) → Hinweis an Station: „Patient überschreitet bald oGVD“.
-3. **Entlassung**: Festlegung der **Hauptdiagnose** (die „nach Analyse“ hauptsächlich für die Aufnahme verantwortliche Diagnose), Nebendiagnosen (Komplikationen/Komorbiditäten → **PCCL**-Schweregrad) → **Grouper**-Software ermittelt die **DRG** → Relativgewicht × Landesbasisfallwert = Erlös (+ Zusatzentgelte, Pflegebudget seit 2020 ausgegliedert).
-4. **Rechnung** an Krankenkasse (elektronisch, § 301 SGB V-Datensatz).
-5. **Prüfung durch den MD** (Medizinischer Dienst, ⚠️ früher MDK): Kasse beauftragt Prüfung (Hauptdiagnose richtig? VWD zu lang? stationär nötig?) → Controlling stellt Unterlagen zusammen, schreibt Stellungnahme → ggf. Rechnungskorrektur, Widerspruch, Klage. Seit MDK-Reformgesetz: **Prüfquoten** abhängig von der Beanstandungsrate der Klinik.
-
-**Weitere Aufgaben**:
-- **Kennzahlen/Berichte**: Fallzahl, **CMI** (Case Mix Index = durchschnittliche Fallschwere), Case Mix, Erlöse je Abteilung, VWD-Abweichung.
-- **Budget-/Entgeltverhandlung** mit Kassen (Leistungsmenge fürs nächste Jahr).
-- **Schulung** der Ärzte in Kodierung, Dokumentation „MD-fest“ machen.
-- **Pfad-/Leistungsplanung** gemeinsam mit Kliniken (welche Leistung lohnt sich, Mindestmengen erreicht?).
-
-Beispiel: Pneumonie-Patient, Nebendiagnose „Herzinsuffizienz NYHA III“ nicht kodiert → niedrigerer PCCL → schlechtere DRG → Erlösverlust. Umgekehrt: unbelegte Nebendiagnose → MD streicht → Rückforderung.
-
-Merksatz: Medizin-Controlling = „aus Medizin wird Geld, ohne dass der MD es zurückholt“: kodieren (ICD/OPS nach DKR) → groupen (DRG) → abrechnen (§ 301) → MD-Prüfung verteidigen → Kennzahlen (CMI, VWD) zurückmelden.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## IT-Projektmanagement und Vorgehensmodelle (z. B. V-Modell)
-
-::: {.exam-question}
-Was gehört zum IT-Projektmanagement, wie ist das V-Modell aufgebaut, und wie unterscheidet es sich von Wasserfall und agilen Modellen (Scrum)?
-:::
-
-::: {.exam-answer}
-**Projekt** (DIN 69901: Vorhaben, das im Wesentlichen durch die *Einmaligkeit der Bedingungen* gekennzeichnet ist) = einmalig, zeitlich begrenzt, definiertes Ziel, eigene Ressourcen und Organisation — Gegensatz: **Linie** (Routinebetrieb). Beispiele: Einführung eines PDMS auf der Intensivstation, KIS-Wechsel, Anbindung an die TI.
-
-**Magisches Dreieck**: **Zeit – Kosten – Qualität/Umfang** — eines ändern verschiebt die anderen (PDMS-Einführung früher fertig → teurer oder weniger Funktionen).
-
-**Typische Phasen**: Initiierung (Projektauftrag, Lenkungsausschuss) → Planung (Lastenheft = *was* der Auftraggeber will; Pflichtenheft = *wie* der Hersteller es umsetzt; Zeitplan/Meilensteine, Gantt-Diagramm) → Durchführung → Abnahme/Go-Live → Abschluss (Lessons Learned). Rollen: Auftraggeber, Projektleiter, Key-User aus der Klinik (Arzt/Pflege!), Hersteller.
-
-**Vorgehensmodelle**:
-
-- **Wasserfall**: Phasen strikt nacheinander (Anforderung → Entwurf → Implementierung → Test → Betrieb); einfach, aber Fehler in Anforderungen fallen erst spät auf.
-- **V-Modell**: Wasserfall „geknickt“ — **jeder Spezifikationsstufe links steht eine Teststufe rechts gegenüber**:
-
-```
-Anforderungsdefinition ─────────────── Abnahmetest     (Validierung: richtiges System?)
-   Systementwurf ──────────────────── Systemtest
-      Komponentenentwurf ──────────── Integrationstest
-         Modulentwurf ─────────────── Modultest       (Verifizierung: System richtig gebaut?)
-                   \                /
-                    Implementierung
-```
-  Beispiel KIS-Medikationsmodul: Anforderung „Interaktionswarnung bei Marcumar + NSAR“ → wird beim **Abnahmetest** von Stationsärzten mit echtem Szenario geprüft; Modulentwurf „Interaktionsprüffunktion“ → **Modultest** durch Entwickler.
-  Variante **V-Modell XT** (*eXtreme Tailoring*): verbindlicher Standard für IT-Projekte des Bundes. Kern ist das **Tailoring**: je nach Projekttyp werden *Vorgehensbausteine* ausgewählt, gesteuert wird über *Entscheidungspunkte* (Meilensteine mit Qualitätsprüfung). Es legt fest, *welche* Ergebnisse entstehen, nicht zwingend die Reihenfolge der Arbeit — iterative Durchläufe sind möglich, „V-Modell = starrer Wasserfall“ ist also eine Vereinfachung. Stark in der **Medizinprodukte-Software** (IEC 62304) verbreitet, weil Nachweisbarkeit (Traceability Anforderung ↔ Test) gefordert ist.
-- **Agil (Scrum)**: kurze Iterationen (**Sprints**, höchstens 1 Monat, meist 2–4 Wochen), Ergebnis jedes Sprints ist ein nutzbares **Inkrement**. Rollen: **Product Owner** (verantwortet den Wert, priorisiert das **Product Backlog**), **Scrum Master** (sorgt für den Prozess, räumt Hindernisse aus dem Weg), **Developers**. Ereignisse: Sprint Planning, Daily Scrum, Sprint Review, Retrospektive. Feedback der Nutzer fließt sofort ein (z. B. Station testet nach jedem Sprint die neue Pflegedoku-Maske). Gut bei unklaren/ändernden Anforderungen; schwieriger bei strenger Regulierung.
-
-| | Wasserfall | V-Modell | Scrum |
-|---|---|---|---|
-| Ablauf | linear | linear + Test je Stufe | iterativ |
-| Änderungen | teuer | teuer | eingeplant |
-| fest / variabel | Umfang fest → Zeit und Kosten werden geplant | wie Wasserfall | Zeit und Team fest → Umfang variiert |
-| Stärke | einfach | Nachweisbarkeit, Qualität | Nutzernähe, Flexibilität |
-| Klinik-Beispiel | Serverumzug | Medizinprodukte-Software | App/Portal mit Nutzerfeedback |
-
-Merksatz: V-Modell = „zu jeder Planung links gehört ein Test rechts“; oben Validierung (Anwender: richtiges System?), unten Verifizierung (Entwickler: richtig gebaut?). Wasserfall = Treppe runter, Scrum = Kreisverkehr in Sprints.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-::: {.exam-question}
-Vertiefung: Was ist PRINCE2, worin unterscheidet es sich von einem Vorgehensmodell wie dem V-Modell, und wie wird ein Klinik-IT-Projekt damit gesteuert?
-:::
-
-::: {.exam-answer}
-**PRINCE2** (*PRojects IN Controlled Environments*, aus Großbritannien) ist eine **Projektmanagement-Methode**, kein Entwicklungsmodell: Sie sagt nichts darüber, *wie* Software gebaut wird, sondern *wie ein Projekt gelenkt* wird. Daher lässt sie sich mit V-Modell oder Scrum kombinieren.
-
-**Aufbau: 7 – 7 – 7**:
-- **7 Grundprinzipien**, u. a. fortlaufende geschäftliche Rechtfertigung (*Business Case* muss über die ganze Laufzeit tragen), Steuern nach dem **Ausnahmeprinzip** (*Management by Exception*), Steuern über **Managementphasen**, **Produktorientierung**, Anpassung an die Projektumgebung (*Tailoring*).
-- **7 Themen** (seit der Ausgabe 2023 „Praktiken“): Business Case, Organisation, Qualität, Pläne, Risiko, Änderungen (*Issues*), Fortschritt.
-- **7 Prozesse** vom Vorbereiten bis zum Abschließen des Projekts.
-
-**Lenkungsausschuss** (*Project Board*) mit drei Perspektiven:
-
-| Rolle | Vertritt | Klinik-Beispiel PDMS |
+| Instrument | Hauptfunktion | Leitfrage |
 |---|---|---|
-| **Executive** (Auftraggeber) | Geschäftsinteresse, Business Case | Geschäftsführung |
-| **Senior User** | künftige Anwender | Oberarzt/Pflegeleitung Intensivstation |
-| **Senior Supplier** | Lieferanten/Umsetzer | Hersteller, ggf. Klinik-IT |
+| **Leitlinie** | evidenzbasierte Handlungsempfehlungen für ein klinisches Problem | Was wird empfohlen? |
+| **Behandlungspfad** | lokale Koordination eines vollständigen Versorgungsablaufs | Wer macht was wann? |
+| **Standard Operating Procedure (SOP)** | schriftliche Standardisierung eines wiederkehrenden Vorgehens | Wie wird ein Arbeitsschritt einheitlich durchgeführt? |
 
-Der **Projektmanager** arbeitet innerhalb vereinbarter **Toleranzen** (Zeit, Kosten, Umfang …) selbstständig und **eskaliert erst bei drohender Überschreitung** an den Lenkungsausschuss.
+- **Entwicklung eines Behandlungspfades:**
+  1. Patientengruppe, Prozessziel und Qualitätsindikatoren festlegen
+  2. Ist-Ablauf, Evidenz, Risiken und lokale Ressourcen analysieren
+  3. Soll-Ablauf, Verantwortlichkeiten, Schnittstellen und zulässige Abweichungen definieren
+  4. Pfad pilotieren, Mitarbeitende schulen und einführen
+  5. Ergebnisse und Varianzen auswerten und den Pfad fortschreiben
 
-**Praxis — hybrid**: Kliniken steuern Ausschreibung, Vertrag, Budget und Meilensteine meist klassisch (PRINCE2, V-Modell); die Parametrierung (Formulare, Order-Sets, Pflegedoku-Masken) läuft in kurzen agilen Zyklen mit den Anwendern.
+- **Abbildung im Krankenhausinformationssystem:**
+  - Aufgaben, Checklisten, Termine, Dokumentationsfelder und Order Sets bereitstellen
+  - fällige Schritte anzeigen und Abweichungen dokumentieren
+  - medizinische Anordnungen durch berechtigte Personen bestätigen lassen
 
-Merksatz: PRINCE2 lenkt das Projekt (Business Case, Lenkungsausschuss, Management by Exception), V-Modell und Scrum beschreiben, wie das Produkt entsteht.
+Merksatz: Die Leitlinie gibt den evidenzbasierten Entscheidungskorridor vor, der Behandlungspfad organisiert den lokalen Gesamtprozess und die SOP beschreibt ein standardisiertes Vorgehen im Detail.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Ein Behandlungspfad soll unerwünschte Unterschiede verringern und die Zusammenarbeit verbessern. Er darf die individuelle ärztliche Entscheidung nicht ersetzen; medizinisch begründete Abweichungen müssen möglich bleiben.
 
 :::
-:::
 
-## Risikomanagement und Risikoanalyse (z. B. nach DIN EN ISO 14971 und IEC 80001)
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Gemeinsamer Bundesausschuss: *Qualitätsmanagement-Richtlinie*, Fassung vom 18.06.2026, Teil A §§ 2 und 4.  
+  <https://www.g-ba.de/richtlinien/87/>
+- Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften: *AWMF-Regelwerk Leitlinien*, Version 2.2, 2025, Abschnitt 0 „Einführung: Was sind Leitlinien?“.  
+  <https://www.awmf.org/regelwerk/>
+- Kinsman L, Rotter T, James E, Snow P, Willis J: *What is a clinical pathway? Development of a definition to inform the debate.* BMC Medicine. 2010;8:31.  
+  <https://doi.org/10.1186/1741-7015-8-31>
+- European Medicines Agency: *Policies and Procedures*, Abschnitt „Standard operating procedures“.  
+  <https://www.ema.europa.eu/en/about-us/how-we-work/governance-reporting/policies-procedures>
+
+Quellen geprüft am 17.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Medizincontrolling
 
 ::: {.exam-question}
-Wie läuft Risikomanagement nach DIN EN ISO 14971 ab, was regelt IEC 80001-1, und wer ist jeweils verantwortlich?
+Welche Aufgaben hat das Medizincontrolling, und wie verläuft ein Krankenhausfall von der Aufnahme bis zur Abrechnung und möglichen MD-Prüfung?
 :::
 
-::: {.exam-answer}
-**Begriffe** (ISO 14971):
-- **Gefährdung** (*hazard*): potenzielle Schadensquelle (z. B. falsche Dosiseinheit).
-- **Gefährdungssituation**: Umstände, in denen Menschen einer Gefährdung ausgesetzt sind (Pflegekraft programmiert die Pumpe in µg statt mg).
-- **Schaden**: Verletzung oder Schädigung der Gesundheit von Menschen, von Sachen oder der Umwelt.
-- **Risiko** = **Kombination** aus **Wahrscheinlichkeit** des Schadens und seinem **Schweregrad** (oft vereinfacht als Produkt gerechnet).
+:::: {.exam-answer}
 
-**DIN EN ISO 14971** (Risikomanagement für **Medizinprodukte**, Adressat: **Hersteller**, über den ganzen Lebenszyklus). Aktuell **ISO 14971:2019**, in Europa **EN ISO 14971:2019 + A11:2021** — die Änderung A11 ergänzt den Anhang Z mit dem Bezug zur MDR; in dieser Fassung ist die Norm unter der MDR **harmonisiert**. Erläuternder Leitfaden: **ISO/TR 24971:2020**.
+Das **Medizincontrolling** verbindet medizinische Dokumentation, Kodierung, Abrechnung und betriebliche Steuerung. Ziel ist eine vollständige, nachvollziehbare und regelkonforme Abbildung der erbrachten Behandlung.
 
-1. **Risikoanalyse**: Zweckbestimmung **+ vorhersehbarer Fehlgebrauch** dokumentieren, Gefährdungen identifizieren, Wahrscheinlichkeit/Schwere schätzen.
-2. **Risikobewertung**: Einordnung in **Risikomatrix** → akzeptabel / **ALARP** („so niedrig wie vernünftigerweise machbar“) / nicht akzeptabel.
-3. **Risikobeherrschung**, feste Rangfolge:
-   ① **inhärent sicheres Design** > ② **Schutzmaßnahmen** (Alarme, Abschaltung) > ③ **Information** (Warnhinweis, Schulung).
-4. **Gesamt-Restrisiko** bewerten (Restrisiko vs. Nutzen) und im **Risikomanagementbericht** festhalten.
-5. **Herstellung und Nachproduktionsphase**: Marktbeobachtung (Vorkommnisse, Beschwerden) → Analyse aktualisieren — der Prozess endet nicht mit der Markteinführung.
+- **1. Aufnahme und Wahl des Versorgungsbereichs:**
+  - Aufnahmegrund und Diagnosen werden dokumentiert.
+  - Es wird geprüft, ob die Behandlung vollstationär, ambulant oder in einer anderen Abrechnungsform erbracht werden muss.
 
-Beispiel Infusionspumpe: Gefährdung „Dosierfehler mg vs. µg“ → ① Medikamentenbibliothek mit festen Einheiten und harten Dosisgrenzen (Design) → ② Alarm bei Überschreitung weicher Grenze (Schutz) → ③ Schulung + Warnhinweis (Information). Ein Warnhinweis allein reicht nicht, wenn Design-Lösung möglich ist.
+- **2. Behandlung und Dokumentation:**
+  - Ärzte und Pflege dokumentieren Diagnosen, Prozeduren und Behandlungsaufwand.
+  - Diagnosen werden mit der **ICD-10-GM**, Prozeduren mit dem **Operationen- und Prozedurenschlüssel (OPS)** kodiert.
+  - Maßgeblich sind die jeweils geltenden **Deutschen Kodierrichtlinien (DKR)**.
+  - Verweildauer und Behandlungsablauf können überwacht werden; medizinische Notwendigkeit und Patientensicherheit bleiben entscheidend.
 
-Risikomatrix (vereinfacht):
-```
-Schwere →      gering   mittel   schwer   Tod
-häufig          ALARP    X        X        X
-gelegentlich    ok       ALARP    X        X
-selten          ok       ok       ALARP    X
-unwahrscheinl.  ok       ok       ok       ALARP      X = nicht akzeptabel
-```
+- **3. Abschlusskodierung und Gruppierung:**
+  - **Hauptdiagnose:** Diagnose, die nach Analyse hauptsächlich für die stationäre Aufnahme verantwortlich war.
+  - **Nebendiagnose:** Erkrankung, die Diagnostik, Therapie oder zusätzlichen Betreuungs-, Pflege- oder Überwachungsaufwand erforderte.
+  - Ein zertifizierter **Grouper** ermittelt aus den Falldaten die abrechenbare **Diagnosis Related Group (DRG)**.
+  - Der **Patient Clinical Complexity Level (PCCL)** beschreibt den durch kodierbare Komplikationen und Komorbiditäten beeinflussten Gesamtschweregrad des Falls.
 
-**IEC 80001-1** (Risikomanagement für **IT-Netzwerke mit Medizinprodukten**, Adressat: **Betreiber = Krankenhaus**, zusammen mit Herstellern):
-- Problem: Medizinprodukte (Monitore, Pumpen, CT) hängen im Kliniknetz, das der Hersteller nicht kontrolliert → neue Risiken (Netzausfall, Überlast, Malware, Fehlkonfiguration).
-- Lösung: **Joint Responsibility** — Hersteller liefert Netzwerkanforderungen (Bandbreite, Ports, Latenz; Sicherheitsangaben z. B. im **MDS2**-Formular), Klinik betreibt Risikomanagementprozess, benennt **Risikomanager** (Medizin-IT), jede Änderung (Firewall-Regel, Firmware-/Windows-Update, neues VLAN, Switch-Tausch) wird vorher auf Risiko geprüft.
-- Fassung **IEC 80001-1:2021** (DIN EN IEC 80001-1): Aufbau an **ISO 31000** (allgemeines Risikomanagement) angelehnt, Anforderungen richten sich an die **Organisation** des Betreibers; die **oberste Leitung** legt die Risikopolitik fest und stellt die Ressourcen bereit.
-- Schutzziele: **Sicherheit** (Patient), **Effektivität** (Gerät funktioniert), **Daten- und Systemsicherheit**.
-- Beispiel: Zentrale Monitoring-Überwachung der Intensivstation → Netzwerkausfall darf nicht dazu führen, dass Alarme unbemerkt bleiben → eigenes VLAN, Redundanz, lokale Alarmierung am Bett bleibt erhalten.
+- **4. Abrechnung:**
+  - Der DRG-Fallbetrag ergibt sich vereinfacht aus Bewertungsrelation × Landesbasisfallwert.
+  - Hinzukommen können Zu- und Abschläge, Zusatzentgelte und gesonderte Pflegeentgelte.
+  - Die Rechnungsdaten werden nach § 301 SGB V elektronisch an die Krankenkasse übermittelt.
 
-**Methoden der Risikoanalyse**: **FMEA** (Fehlermöglichkeits- und Einflussanalyse; RPZ = Auftreten × Bedeutung × Entdeckbarkeit), Fehlerbaumanalyse (FTA, „rückwärts vom Schaden zur Ursache“), Checklisten, **CIRS**-Auswertung, Morbiditäts-/Mortalitätskonferenzen.
+- **5. Prüfung der Krankenhausabrechnung:**
+  - Die Krankenkasse kann den **Medizinischen Dienst (MD)** mit einer Prüfung beauftragen.
+  - Geprüft werden beispielsweise Kodierung, stationäre Behandlungsnotwendigkeit und Behandlungsdauer.
+  - Das Medizincontrolling stellt fristgerecht die erforderlichen Behandlungsunterlagen bereit.
+  - Bei Uneinigkeit kann ein Erörterungsverfahren zwischen Krankenhaus und Krankenkasse und anschließend gegebenenfalls eine gerichtliche Klärung folgen.
 
-| Norm | Gegenstand | Verantwortlich |
-|---|---|---|
-| ISO 14971 | Medizinprodukt (Gerät, Software) | Hersteller |
-| IEC 62304 | Software-Lebenszyklus Medizinprodukt | Hersteller |
-| IEC 80001-1 | Netzwerk, in das Medizinprodukte eingebunden sind | Betreiber (Klinik) + Hersteller |
+- **Weitere Aufgaben des Medizincontrollings:**
+  - Schulung in Kodierung und vollständiger Dokumentation
+  - Analyse von Verweildauer, Erlösen und Leistungsentwicklung
+  - Unterstützung von Budget- und Leistungsplanung
+  - Prüfung von Mindestmengen und Abrechnungsvoraussetzungen
+  - Erstellung medizinisch-ökonomischer Kennzahlen:
+    - **Case Mix:** Summe der Bewertungsrelationen
+    - **Case Mix Index (CMI):** durchschnittliche Bewertungsrelation je Fall
 
-Merksatz: 14971 = Hersteller baut sicheres Gerät (Analyse → Bewertung → Beherrschung: Design > Schutz > Info → Marktbeobachtung). 80001 = Klinik betreibt sicheres Netz für viele Geräte (gemeinsame Verantwortung).
+Merksatz: Medizincontrolling sorgt dafür, dass die tatsächlich erbrachte und dokumentierte Behandlung korrekt kodiert, gruppiert, abgerechnet und bei einer Prüfung nachvollziehbar belegt wird.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Eine Erkrankung darf nicht allein zur Erlössteigerung kodiert werden.
+
+z. B. darf eine bekannte Herzinsuffizienz bei einem Patienten mit Pneumonie nur als Nebendiagnose kodiert werden, wenn sie während des Aufenthalts das Patientenmanagement beeinflusst hat. Auch dann verändert sie nicht zwingend PCCL oder DRG.
+
+Die zulässige MD-Prüfquote eines Krankenhauses hängt unter anderem vom Anteil der zuvor unbeanstandeten Abrechnungen ab.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Institut für das Entgeltsystem im Krankenhaus: *Deutsche Kodierrichtlinien, Version 2026*, insbesondere DKR D002u „Hauptdiagnose“ und D003u „Nebendiagnosen“.  
+  <https://www.g-drg.de/ag-drg-system-2026/kodierrichtlinien/deutsche-kodierrichtlinien-2026>
+- Sozialgesetzbuch V: § 301 „Krankenhäuser und Rehabilitationseinrichtungen“.  
+  <https://www.gesetze-im-internet.de/sgb_5/__301.html>
+- Sozialgesetzbuch V: § 275c „Durchführung und Umfang von Prüfungen bei Krankenhausbehandlung durch den Medizinischen Dienst“.  
+  <https://www.gesetze-im-internet.de/sgb_5/__275c.html>
+- GKV-Spitzenverband: *Prüfverfahrensvereinbarung und einzelfallbezogenes Erörterungsverfahren*.  
+  <https://www.gkv-spitzenverband.de/krankenversicherung/krankenhaeuser/krankenhaeuser_abrechnung/abrechnungspruefung/abrechnungspruefung.jsp>
+- Institut für das Entgeltsystem im Krankenhaus: *aG-DRG-System 2026*.  
+  <https://www.g-drg.de/ag-drg-system-2026>
+
+Quellen geprüft am 17.11.2026.
+
 :::
+::::
+
+
+
+
+
+
+
+
+
+## IT-Projektmanagement und Vorgehensmodelle
 
 ::: {.exam-question}
-Vertiefung: Wann ist Software ein Medizinprodukt, und in welche Risikoklasse fällt sie nach der MDR?
+Was gehört zum IT-Projektmanagement, wie ist das V-Modell aufgebaut, und wie unterscheidet es sich von Wasserfall und Scrum?
 :::
 
-::: {.exam-answer}
-Zwei getrennte Schritte: **Qualifizierung** (Ist es überhaupt ein Medizinprodukt?) und **Klassifizierung** (Welche Risikoklasse?). Entscheidend ist in beiden Fällen die **Zweckbestimmung** des Herstellers, nicht die Technik.
+:::: {.exam-answer}
 
-**Qualifizierung**: Software ist **Medical Device Software (MDSW)**, wenn ihr der Hersteller eine medizinische Zweckbestimmung nach **Art. 2 Nr. 1 MDR** gibt (Diagnose, Überwachung, Behandlung … mit Nutzen für den *einzelnen* Patienten). Reine Speicherung, Archivierung, verlustfreie Kommunikation oder einfache Suche reichen nicht. Ein KIS als Verwaltungssystem ist daher in der Regel kein Medizinprodukt, ein darin enthaltener **Dosisrechner** kann es aber sein (modulare Betrachtung). Leitfaden: **MDCG 2019-11** (Rev. 1, Juni 2025).
+- **IT-Projekt:** zeitlich begrenztes Vorhaben mit definiertem Ziel, eigenen Ressourcen und eigener Organisation
+  - z. B. Einführung eines Patientendatenmanagementsystems auf einer Intensivstation
 
-**Klassifizierung nach Regel 11** (Anhang VIII MDR):
+- **Zentrale Steuerungsgrößen:** Zeit, Kosten und Leistungsumfang
+  - Änderungen einer Größe beeinflussen meist die anderen Größen sowie die erreichbare Qualität.
 
-| Software … | Klasse |
+- **Typische Projektphasen:**
+  1. **Initiierung:** Projektauftrag, Ziele, Umfang und Verantwortlichkeiten festlegen
+  2. **Planung:** Anforderungen, Termine, Budget, Ressourcen, Risiken und Meilensteine planen
+  3. **Umsetzung und Steuerung:** Arbeitspakete bearbeiten, Fortschritt, Änderungen und Risiken überwachen
+  4. **Test, Abnahme und Go-live:** Funktionen prüfen, Datenmigration und Notfallverfahren testen, System freigeben
+  5. **Übergabe und Abschluss:** Betrieb übergeben, Ergebnisse dokumentieren und Lessons Learned festhalten
+
+- **Wichtige Rollen:** Auftraggeber, Projektleitung, Hersteller, IT, Datenschutz, Informationssicherheit und klinische Key-User
+  - Bei klinischen Systemen müssen insbesondere Ärzte, Pflege und weitere betroffene Berufsgruppen beteiligt werden.
+
+- **Anforderungsdokumente:**
+  - **Lastenheft:** beschreibt die Anforderungen des Auftraggebers – *was* benötigt wird.
+  - **Pflichtenheft:** beschreibt die geplante Umsetzung durch den Auftragnehmer – *wie* die Anforderungen erfüllt werden.
+
+- **Klassisches V-Modell:** verbindet jede Spezifikationsstufe mit einer zugehörigen Prüf- oder Teststufe.
+
+| Spezifikation | Zugeordnete Prüfung |
 |---|---|
-| liefert Informationen für Entscheidungen zu Diagnose oder Therapie | **mindestens IIa** |
-| … deren Folgen eine schwerwiegende Verschlechterung des Gesundheitszustands oder einen chirurgischen Eingriff verursachen können | **IIb** |
-| … deren Folgen Tod oder eine irreversible Verschlechterung verursachen können | **III** |
-| überwacht physiologische Prozesse | **IIa** |
-| … überwacht **vitale** Parameter, deren Schwankungen eine unmittelbare Gefahr bedeuten können (z. B. Intensivmonitoring) | **IIb** |
-| alle sonstige Software | **I** |
+| Nutzer- und Einsatzanforderungen | Abnahme und Validierung |
+| Systemanforderungen | Systemtest |
+| Architektur und Schnittstellen | Integrationstest |
+| Komponentenentwurf | Komponententest |
 
-Folge: Unter der alten MDD war fast jede Software Klasse I, unter der MDR landet Entscheidungs-Software meist in IIa oder höher und braucht eine **Benannte Stelle**.
+- **Verifizierung:** Wurde das System entsprechend den festgelegten Anforderungen entwickelt?
+- **Validierung:** Erfüllt das fertige System seinen vorgesehenen klinischen Verwendungszweck?
 
-**Ergänzend**:
-- **IEC 62304** (Software-Lebenszyklus) teilt Software in **Sicherheitsklassen A/B/C** nach möglichem Schaden ein — ein eigenes System, nicht gleich den MDR-Klassen (IIb ≠ C).
-- **KI-Software**: Muss für das Medizinprodukt eine Benannte Stelle beteiligt werden, gilt das KI-System nach dem **EU AI Act** zusätzlich als **Hochrisiko-KI**.
-- **Eigenherstellung** in der Klinik (z. B. selbst programmierter Heparin-Dosisrechner): **Art. 5 Abs. 5 MDR** befreit von Teilen der Herstellerpflichten, u. a. nur wenn kein gleichwertiges Produkt auf dem Markt die Bedürfnisse erfüllt, ein QM-System besteht, die grundlegenden Sicherheits- und Leistungsanforderungen (Anhang I) erfüllt sind und eine öffentliche Erklärung vorliegt. Risikomanagement (ISO 14971) und ein geregelter Software-Lebenszyklus (IEC 62304) sind trotzdem faktisch nötig.
+| Vorgehensmodell | Kennzeichen | Vorteil | Grenze |
+|---|---|---|---|
+| **Wasserfall** | überwiegend aufeinanderfolgende Phasen | gut planbar bei stabilen Anforderungen | späte Änderungen sind aufwendig |
+| **V-Modell** | Spezifikation und Prüfung werden einander zugeordnet | gute Nachvollziehbarkeit von Anforderungen und Tests | kann bei Änderungen schwerfällig werden |
+| **Scrum** | Entwicklung in Sprints von höchstens einem Monat | frühes Nutzerfeedback und schrittweise Anpassung | benötigt ergänzende Projekt-, Risiko- und Dokumentationsprozesse |
 
-⚠️ **Reform**: Die EU-Kommission hat am 16.12.2025 eine gezielte Überarbeitung von MDR und IVDR vorgeschlagen (Verfahren 2025/0404(COD)), u. a. mit einer Neufassung von Regel 11, nach der mehr Software in Klasse I fallen könnte. Das ist **noch kein geltendes Recht** (Parlament und Rat beraten noch) — in der Prüfung die geltende Regel 11 vortragen, die Reform als Ausblick.
+- **V-Modell XT:** anpassbare Weiterentwicklung für komplexe IT-Projekte
+  - Durch **Tailoring** werden passende Vorgehensbausteine, Rollen und Ergebnisse ausgewählt.
+  - **Entscheidungspunkte** dienen als Quality Gates für Prüfung und Freigabe von Projektergebnissen.
 
-Merksatz: Ob Software ein Medizinprodukt ist, entscheidet die Zweckbestimmung; über die Klasse entscheidet Regel 11, und Entscheidungsunterstützung ist mindestens IIa.
+Merksatz: Projektmanagement steuert Ziel, Zeit, Kosten und Umfang; das V-Modell verbindet Anforderungen mit Tests, während Scrum schrittweise nutzbare Ergebnisse und regelmäßiges Feedback organisiert.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Bei klinischer oder medizinproduktrechtlich relevanter Software müssen unabhängig vom Vorgehensmodell insbesondere Patientensicherheit, Datenschutz, Informationssicherheit, Risikomanagement, Rückverfolgbarkeit der Anforderungen und dokumentierte Tests berücksichtigt werden.
+
+Ein agiles Vorgehen entbindet daher nicht von Dokumentations- und Nachweispflichten.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- DIN 69901-1:2009-01: *Projektmanagement – Projektmanagementsysteme – Teil 1: Grundlagen*.  
+  <https://www.dinmedia.de/de/norm/din-69901-1/113428320>
+- Beauftragter der Bundesregierung für Informationstechnik: *V-Modell XT Bund 2.0*, insbesondere „Tailoring“, „Vorgehensbausteine“ und „Entscheidungspunkte“.  
+  <https://download.gsb.bund.de/BundesCIO/V-Modell_XT_Bund/V-Modell%20XT%20Bund-2.0-HTML/>
+- Schwaber K, Sutherland J: *The Scrum Guide*. Ausgabe November 2020, Abschnitte „Scrum Team“ und „The Sprint“.  
+  <https://scrumguides.org/scrum-guide.html>
+- International Electrotechnical Commission: *IEC 62304:2006 – Medical device software – Software life cycle processes*.  
+  <https://webstore.iec.ch/en/publication/6792>
+
+Quellen geprüft am 17.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Risikomanagement und Risikoanalyse
+
+::: {.exam-question}
+Wie läuft das Risikomanagement nach DIN EN ISO 14971 ab, was regelt DIN EN IEC 80001-1, und wer ist jeweils verantwortlich?
 :::
 
-## Quellen {.unnumbered}
+:::: {.exam-answer}
 
-Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+- **Gefährdung:** potenzielle Quelle eines Schadens
+  - z. B. Möglichkeit einer fehlerhaften Dosierung
 
-- Kap. 5, Qualitätsmanagement; proCum Cert/JCI, ISO-9001-Fassung 2015 als Curriculum/Allgemeinwissen ergänzt — Buch zitiert noch ISO 9001:2008
-- Kap. 5, Qualitätsmanagement; aktualisiert: AQUA → IQTIG (2016), MDK → MD (2020), QSKH-RL → DeQS-RL (2021), Qualitätsbericht jährlich; IQM/Mindestmengen als Allgemeinwissen. Stand: 10/2026
-- Curriculum/Allgemeinwissen — im medinfo-kompakt-Buch nur am Rande erwähnt
-- Kap. 5 (Prozessmanagement, Prozesseigner); Behandlungspfade/Varianzanalyse/KIS-Abbildung als Curriculum/Allgemeinwissen ergänzt
-- Kap. 4, Gesundheitsökonomie (DRG-Erlös) und Kap. 12 (Kodierung); Ablauf/MD-Prüfung als Curriculum/Allgemeinwissen; aktualisiert MDK → MD, Pflegebudget, Hybrid-DRG
-- Kap. 16 (Verifizierung/Validierung, IEC 62304); Projektmanagement (DIN 69901), V-Modell XT und Scrum (Scrum Guide 2020) als Curriculum/Allgemeinwissen ergänzt
-- Curriculum/Allgemeinwissen — PRINCE2 (AXELOS/PeopleCert, 7. Ausgabe 2023)
-- Kap. 16, Medizintechnik + Kap. 5 (Risikomanagement im QM); ⚠️ Buch bezieht sich auf MPG — seit 2021 gilt die EU-MDR + MPDG; ISO 14971 aktuell Fassung 2019 (EN ISO 14971:2019 + A11:2021, ISO/TR 24971:2020), IEC 80001-1 Fassung 2021 überarbeitet. FMEA/FTA als Allgemeinwissen. Stand: 10/2026
-- Curriculum/Allgemeinwissen — MDR (EU 2017/745) Art. 2 Nr. 1, Art. 5 Abs. 5, Anhang VIII Regel 11; MDCG 2019-11 Rev. 1; IEC 62304; EU AI Act Art. 6; Kommissionsvorschlag COM(2025) 1023. Stand: 10/2026
+- **Gefährdungssituation:** Situation, in der Menschen, Sachen oder die Umwelt einer Gefährdung ausgesetzt sind
+  - z. B. bei der Programmierung einer Infusionspumpe kann eine falsche Dosiseinheit ausgewählt werden.
+
+- **Schaden:** Verletzung oder Gesundheitsschädigung beziehungsweise Schädigung von Sachen oder Umwelt
+
+- **Risiko:** Kombination aus der Wahrscheinlichkeit eines Schadens und dessen Schweregrad
+  - Es muss nicht als mathematisches Produkt berechnet werden.
+
+### DIN EN ISO 14971
+
+Die Norm beschreibt das Risikomanagement für Medizinprodukte während ihres gesamten Lebenszyklus. Verantwortlich ist der **Hersteller**.
+
+1. **Risikomanagement planen:** Verantwortlichkeiten und Kriterien für die Risikoakzeptanz festlegen
+2. **Risikoanalyse:** Zweckbestimmung, vernünftigerweise vorhersehbaren Fehlgebrauch, Gefährdungen und Gefährdungssituationen ermitteln
+3. **Risikobewertung:** geschätzte Risiken mit den festgelegten Akzeptanzkriterien vergleichen
+4. **Risikobeherrschung:** Risiken in folgender Rangfolge reduzieren:
+   1. inhärent sichere Konstruktion und Herstellung
+   2. Schutzmaßnahmen im Produkt oder Herstellungsprozess
+   3. Sicherheitsinformationen und gegebenenfalls Schulung
+5. **Restrisiko bewerten:** verbleibende Risiken erneut beurteilen
+6. **Gesamt-Restrisiko und Bericht:** Gesamtrisiko bewerten und Durchführung des Risikomanagementplans dokumentieren
+7. **Produktions- und Nachproduktionsphase:** Beschwerden, Vorkommnisse und neue Erkenntnisse auswerten und die Risikoanalyse aktualisieren
+
+Eine **Nutzen-Risiko-Analyse** kann erforderlich sein, wenn ein Restrisiko nicht akzeptabel ist und weitere Risikobeherrschungsmaßnahmen nicht praktikabel sind.
+
+### DIN EN IEC 80001-1
+
+Die Norm behandelt Risiken bei der Einbindung vernetzter Medizinprodukte oder Gesundheitssoftware in eine IT-Infrastruktur.
+
+- Verantwortlich ist die **Organisation**, in der das System betrieben wird, beispielsweise das Krankenhaus.
+- Die oberste Leitung trägt die Gesamtverantwortung und benennt einen qualifizierten **Health-IT-Risikomanager**.
+- Hersteller, IT-Dienstleister, Medizintechnik und klinische Anwender werden als Beteiligte einbezogen.
+- Risikomanagement erfolgt vor, während und nach der technischen Einbindung sowie bei wesentlichen Änderungen.
+- Zu schützen sind:
+  - **Sicherheit:** keine unvertretbare Gefährdung von Patienten, Anwendern oder Dritten
+  - **Effektivität:** das System erfüllt seine vorgesehene Funktion
+  - **Daten- und Systemsicherheit:** Schutz insbesondere von Verfügbarkeit, Integrität und Vertraulichkeit
+
+z. B. muss bei einer zentralen Monitorüberwachung berücksichtigt werden, ob ein Netzwerkausfall Alarme unterbrechen kann. Mögliche Maßnahmen sind Redundanz und eine weiterhin funktionierende lokale Alarmierung am Patientenbett.
+
+| Norm | Gegenstand | Hauptverantwortung |
+|---|---|---|
+| **DIN EN ISO 14971** | Risiken eines Medizinprodukts über seinen Lebenszyklus | Hersteller |
+| **DIN EN IEC 80001-1** | Risiken vernetzter Gesundheits-IT im Betrieb | verantwortliche Organisation beziehungsweise Krankenhausleitung |
+
+Merksatz: ISO 14971 verpflichtet den Hersteller zum Risikomanagement für das Medizinprodukt; IEC 80001-1 verpflichtet die betreibende Organisation zum Risikomanagement bei dessen Einbindung in die Gesundheits-IT.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+- **Fehlermöglichkeits- und Einflussanalyse (FMEA):** untersucht mögliche Fehler, deren Ursachen und Auswirkungen vorausschauend.
+- **Fehlerbaumanalyse (Fault Tree Analysis, FTA):** geht von einem unerwünschten Ereignis aus und untersucht rückwärts mögliche Ursachen.
+- Eine Risikomatrix ist ein mögliches Hilfsmittel, aber weder ihre konkrete Gestaltung noch feste ALARP-Bereiche werden von ISO 14971 allgemein vorgeschrieben.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- DIN EN ISO 14971:2022-04: *Medizinprodukte – Anwendung des Risikomanagements auf Medizinprodukte*. Deutsche Fassung EN ISO 14971:2019 + A11:2021.  
+  <https://www.dinmedia.de/de/norm/din-en-iso-14971/348493801>
+- International Organization for Standardization: *ISO 14971:2019 – Medical devices – Application of risk management to medical devices*, 3. Auflage, 2019; 2025 bestätigt.  
+  <https://www.iso.org/standard/72704.html>
+- ISO/TR 24971:2020: *Medical devices – Guidance on the application of ISO 14971*.  
+  <https://www.iso.org/standard/74437.html>
+- DIN EN IEC 80001-1:2023-02: *Anwendung des Risikomanagements für IT-Netzwerke, die Medizinprodukte beinhalten*.  
+  <https://www.dinmedia.de/de/norm/din-en-iec-80001-1/359437814>
+- International Electrotechnical Commission: *IEC 80001-1:2021*, 2. Auflage, Abschnitt 5 „Risk management for health IT systems“.  
+  <https://webstore.iec.ch/en/publication/34263>
+
+Quellen geprüft am 17.11.2026.
+
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+::: {.exam-question}
+Wann ist Software ein Medizinprodukt, und in welche Risikoklasse fällt sie nach der MDR?
+:::
+
+:::: {.exam-answer}
+
+Es sind zwei Schritte zu unterscheiden: **Qualifizierung** und **Klassifizierung**.
+
+- **Qualifizierung:** Software ist Medizinproduktesoftware, wenn der Hersteller ihr eine medizinische Zweckbestimmung nach Artikel 2 Nummer 1 der Medical Device Regulation (MDR) gibt.
+  - Sie verarbeitet Daten für einen medizinischen Zweck zugunsten einzelner Patienten.
+  - Reine Speicherung, Archivierung, verlustfreie Kommunikation oder einfache Suche reichen grundsätzlich nicht aus.
+  - Einzelne Module eines Softwaresystems sind getrennt zu beurteilen.
+    - z. B. ist ein administratives Krankenhausinformationssystem meist kein Medizinprodukt; ein Modul für patientenbezogene Dosierungsempfehlungen kann eines sein.
+
+- **Klassifizierung:** Die Risikoklasse richtet sich nach der Zweckbestimmung, der Funktion und den möglichen Folgen fehlerhafter Informationen.
+
+| Zweck der Software nach MDR-Regel 11 | Klasse |
+|---|---:|
+| Informationen für diagnostische oder therapeutische Entscheidungen | IIa |
+| Fehlentscheidung kann eine schwerwiegende Verschlechterung oder einen chirurgischen Eingriff verursachen | IIb |
+| Fehlentscheidung kann Tod oder irreversible Verschlechterung verursachen | III |
+| Überwachung physiologischer Prozesse | IIa |
+| Überwachung vitaler Parameter, deren Veränderung eine unmittelbare Gefahr bedeuten kann | IIb |
+| sonstige Software | I |
+
+- **Weitere Regeln:**
+  - Steuert oder beeinflusst Software ein Medizinprodukt, kann sie dessen Klasse übernehmen.
+  - Treffen mehrere Klassifizierungsregeln zu, gilt grundsätzlich die strengste zutreffende Regel.
+  - Für die Klassen IIa, IIb und III ist regelmäßig eine Benannte Stelle am Konformitätsbewertungsverfahren beteiligt.
+
+Merksatz: Die medizinische Zweckbestimmung entscheidet über die Qualifizierung; Funktion und mögliche Schadensfolgen bestimmen die Risikoklasse.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Die Software-Sicherheitsklassen A, B und C der IEC 62304 beschreiben Anforderungen an den Softwarelebenszyklus. Sie sind nicht mit den MDR-Risikoklassen I, IIa, IIb und III gleichzusetzen.
+
+Die MDCG-Leitlinie 2019-11 Rev. 1 unterstützt die Auslegung der MDR, ist aber selbst nicht rechtsverbindlich.
+
+:::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Europäische Union: *Verordnung (EU) 2017/745 über Medizinprodukte*. Konsolidierte Fassung vom 01.01.2026, Artikel 2 Nummer 1 sowie Anhang VIII, Kapitel II, Regeln 3.1, 3.3, 3.5 und Regel 11.  
+  <https://eur-lex.europa.eu/eli/reg/2017/745/oj/deu>
+- Medical Device Coordination Group: *MDCG 2019-11 Rev. 1 – Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR*. Juni 2025, insbesondere Abschnitte 3, 4 und 7.  
+  <https://health.ec.europa.eu/system/files/2025-06/mdcg_2019_11_en.pdf>
+- International Electrotechnical Commission: *IEC 62304:2006+A1:2015 – Medical device software – Software life cycle processes*.  
+  <https://webstore.iec.ch/en/publication/22794>
+
+Quellen geprüft am 17.11.2026.
+
+:::
+::::

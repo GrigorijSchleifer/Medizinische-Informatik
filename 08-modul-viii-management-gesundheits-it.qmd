@@ -1,47 +1,73 @@
 # Management in der Gesundheits-IT {#modul-viii}
 
-## Qualitätsmanagement und Zertifizierungen (z. B. KTQ, proCum Cert, JCI, DIN EN ISO 9001)
+## Qualitätsmanagement und Zertifizierungen
 
 ::: {.exam-question}
-Was unterscheidet Qualitätskontrolle, Qualitätssicherung und Qualitätsmanagement, welche Qualitätsdimensionen nach Donabedian gibt es, und welche Zertifizierungsverfahren gibt es für Krankenhäuser?
+Wie unterscheiden sich Qualitätskontrolle, Qualitätssicherung und Qualitätsmanagement, welche Qualitätsdimensionen beschreibt Donabedian, und welche Zertifizierungs- oder Akkreditierungsverfahren sind für Krankenhäuser relevant?
 :::
 
-::: {.exam-answer}
-**Begriffs-Stufen** (von nachträglich → vorausschauend):
+:::: {.exam-answer}
 
-| Stufe | Wann? | Klinik-Analogie |
+- **Qualitätskontrolle:** prüft, ob ein konkretes Ergebnis oder ein Prozess festgelegte Anforderungen erfüllt
+  - z. B. Prüfung eines Arztbriefs vor der Freigabe
+
+- **Qualitätssicherung:** umfasst geplante und systematische Maßnahmen, mit denen die Einhaltung von Qualitätsanforderungen überprüft und unterstützt wird
+  - Sie kann einrichtungsintern oder einrichtungsübergreifend erfolgen.
+
+- **Qualitätsmanagement (QM):** übergeordnetes Führungssystem zur Festlegung, Steuerung, Überprüfung und Verbesserung von Qualität
+  - Es legt Qualitätsziele, Verantwortlichkeiten, Prozesse und Verbesserungsmaßnahmen fest.
+
+- **Qualitätsdimensionen nach Donabedian:**
+  - **Strukturqualität:** personelle, räumliche und technische Voraussetzungen
+    - z. B. Verfügbarkeit einer Stroke Unit
+  - **Prozessqualität:** Art und Ablauf der Versorgung
+    - z. B. Zeit von der Krankenhausaufnahme bis zur Thrombolyse
+  - **Ergebnisqualität:** Auswirkungen der Versorgung
+    - z. B. Komplikations- oder Sterblichkeitsrate
+
+- **PDCA-Zyklus:** Modell der kontinuierlichen Verbesserung
+  - **Plan:** Ziel und Maßnahmen festlegen
+  - **Do:** Maßnahmen umsetzen
+  - **Check:** Ergebnisse überprüfen
+  - **Act:** Vorgehen anpassen oder als Standard übernehmen
+
+| Verfahren | Ausrichtung | Besonderheit |
 |---|---|---|
-| **Qualitätskontrolle** | am Ende, Aussortieren/Nachbessern | Arztbrief erst nach Entlassung auf Fehler prüfen |
-| **Qualitätssicherung** | während des Prozesses, Monitoring | tägliche Visite prüft, ob Antibiose leitliniengerecht läuft |
-| **Qualitätsmanagement** | prospektiv, Planung + ständige Verbesserung (PDCA) | Station plant Abläufe so, dass Fehler gar nicht erst entstehen |
+| **DIN EN ISO 9001:2026** | branchenneutral | Anforderungen an ein zertifizierbares Qualitätsmanagementsystem |
+| **KTQ** | Gesundheitswesen | Selbstbewertung und externe Bewertung durch geschulte Visitoren; Zertifikat für drei Jahre |
+| **pCC inkl. KTQ** | konfessionelle Krankenhäuser | KTQ-Verfahren mit zusätzlichen christlich-werteorientierten Kriterien |
+| **Joint Commission International (JCI)** | international | Akkreditierung anhand internationaler Anforderungen an Patientenversorgung, Sicherheit und Krankenhausorganisation |
 
-**Donabedian-Trias**:
-- **Strukturqualität**: Rahmenbedingungen, z. B. Facharztquote, 24-h-CT, Stroke Unit vorhanden, Fortbildungsnachweise.
-- **Prozessqualität**: Abläufe, z. B. Door-to-Needle-Zeit bei Lyse, leitliniengerechte Thromboseprophylaxe, Tumorkonferenz vor OP.
-- **Ergebnisqualität**: Resultat, z. B. Mortalität, Wundinfektionsrate, Wiederaufnahmen, Patientenzufriedenheit.
+Merksatz: Kontrolle prüft konkrete Anforderungen, Qualitätssicherung schafft systematische Verlässlichkeit und Qualitätsmanagement steuert das Gesamtsystem. Donabedian unterscheidet Struktur, Prozess und Ergebnis.
 
-**PDCA-Zyklus (Deming)**: Plan → Do → Check → Act → wieder von vorn. Beispiel: Sturzrate zu hoch → Plan: Sturzrisiko-Assessment bei Aufnahme → Do: 3 Monate auf Pilotstation → Check: Sturzrate vorher/nachher → Act: auf alle Stationen ausrollen.
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-**Zertifizierungen/Normen**:
-
-| Verfahren | Wer/Was | Besonderheit |
-|---|---|---|
-| **DIN EN ISO 9001** | branchenneutral (Industrie, Behörden, Kliniken) | Grundnorm; prozessorientiert, aktuelle Fassung 2015 mit „risikobasiertem Denken“ |
-| **DIN EN 15224** | gesundheitsspezifische Ausprägung der ISO 9001 | „Kunde“ → „Patient“; 11 Qualitätsmerkmale (z. B. Patientensicherheit, Rechtzeitigkeit), Risikomanagement fest eingebaut |
-| **KTQ** (Kooperation für Transparenz und Qualität) | krankenhausspezifisch, von Selbstverwaltung (Kassen, DKG, BÄK, Pflegerat) | **Selbstbewertung + Fremdbewertung** (Visitoren = Fachkollegen), Zertifikat 3 Jahre |
-| **proCum Cert** | konfessionelle (kath./ev.) Krankenhäuser | baut auf KTQ auf + zusätzliche Kriterien (Seelsorge, christliches Leitbild, Ethik) |
-| **JCI** (Joint Commission International) | US-basiert, internationale Akkreditierung | sehr strenge Patientensicherheitsstandards; relevant für Kliniken mit internationalen Patienten |
-| **EFQM** | branchenübergreifendes Excellence-Modell | Befähiger- + Ergebniskriterien, Selbstbewertung; eher Weiterentwicklung als Zertifikat |
-| **QEP** | KBV, für Arztpraxen | freiwillig |
-
-Wichtig: **Internes QM ist Pflicht** (§ 135a SGB V, G-BA-QM-Richtlinie) — das *Zertifikat* (KTQ, ISO …) ist dagegen **freiwillig**.
-
-Merksatz: Kontrolle = hinterher, Sicherung = währenddessen, Management = vorher. Donabedian = Struktur (womit) → Prozess (wie) → Ergebnis (was kommt raus). KTQ = „Klinik-Zertifikat der Selbstverwaltung“, proCum Cert = KTQ + Kirche, JCI = amerikanisch/international, ISO 9001 = Industrie-Grundnorm.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+- Nach § 135a SGB V müssen zugelassene Krankenhäuser ein einrichtungsinternes Qualitätsmanagement einführen und weiterentwickeln sowie an einrichtungsübergreifender Qualitätssicherung teilnehmen.
+- Zertifizierung oder Akkreditierung bestätigen die Erfüllung bestimmter Anforderungen zum Prüfzeitpunkt. Sie garantieren nicht automatisch bessere Behandlungsergebnisse.
 
 :::
+
+::: {.callout-note title="Literatur" appearance="simple"}
+
+- Donabedian A: *The Quality of Care. How Can It Be Assessed?* JAMA. 1988;260(12):1743–1748.  
+  <https://doi.org/10.1001/jama.260.12.1743>
+- Sozialgesetzbuch V: § 135a „Verpflichtung der Leistungserbringer zur Qualitätssicherung“.  
+  <https://www.gesetze-im-internet.de/sgb_5/__135a.html>
+- Gemeinsamer Bundesausschuss: *Qualitätsmanagement-Richtlinie*, Fassung vom 18.06.2026, in Kraft seit 20.08.2026, insbesondere Teil B Abschnitt I § 1.  
+  <https://www.g-ba.de/richtlinien/87/>
+- DIN Media: *DIN EN ISO 9001:2026-11 – Qualitätsmanagementsysteme – Anforderungen*.  
+  <https://www.dinmedia.de/de/norm/din-en-iso-9001/406092424>
+- KTQ GmbH: *Informationen für Qualitätsbeauftragte – so arbeiten Sie mit KTQ*.  
+  <https://www.ktq.de/germany/qmbs>
+- proCum Cert: *pCC inkl. KTQ Krankenhaus*.  
+  <https://www.procum-cert.de/dienstleistungen/ueberblick/pcc-inkl-ktq-kh/>
+- Joint Commission International: *Accreditation Standards for Hospitals*, 8. Auflage, gültig seit 01.01.2025.  
+  <https://www.jointcommission.org/en/knowledge-library/news/2024-07-jci-publishes-8th-edition-of-international-accreditation-standards>
+
+Quellen geprüft am 17.11.2026.
+
 :::
+::::
 
 ## Qualitätssicherung (gesetzliche und freiwillige Verfahren)
 

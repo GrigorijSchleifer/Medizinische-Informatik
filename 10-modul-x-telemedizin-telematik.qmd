@@ -1,283 +1,234 @@
 # Telemedizin und Telematik {#modul-x}
 
-## Organisatorische, juristische, ethische und technische Aspekte von telemedizinischen Anwendungen
+## Grundlagen und Einsatzbedingungen der Telemedizin
 
 ::: {.exam-question}
-Was ist Telemedizin (vs. Telematik), und welche organisatorischen, juristischen, ethischen und technischen Aspekte muss man bei telemedizinischen Anwendungen beachten?
+Wie unterscheiden sich Telemedizin und Telematik, und welche Voraussetzungen sind beim Einsatz telemedizinischer Anwendungen zu beachten?
 :::
 
-::: {.exam-answer}
-**Telemedizin** = medizinische Versorgung (Diagnostik, Therapie, Beratung) **über räumliche und/oder zeitliche Distanz** mithilfe von IKT (Informations- und Kommunikationstechnik). **Telematik** = **Tele**kommunikation + Infor**matik** = die technische **Infrastruktur** dafür (z. B. TI = Telematikinfrastruktur). Kurz: Telematik ist die Straße, Telemedizin der Krankentransport, der darauf fährt.
+:::: {.exam-answer}
 
-Formen:
-- **Doc2Doc** (Arzt ↔ Arzt): **Telekonsil**, z. B. Radiologe befundet nachts das CT (Computertomographie) eines kleinen Hauses (Teleradiologie).
-- **Doc2Patient** (Arzt ↔ Patient): **Videosprechstunde**, **Telemonitoring** (Herzinsuffizienz-Patient überträgt Gewicht/Blutdruck/Implantatdaten).
-- **synchron** (live, z. B. Video) vs. **asynchron** (Store-and-Forward = speichern und weiterleiten, z. B. Hautfoto wird später befundet).
+- **Telemedizin** erbringt medizinische Leistungen über räumliche Distanz mithilfe von Informations- und Kommunikationstechnik.
+  - **Beteiligte:** Ein Telekonsil verbindet medizinische Fachpersonen. Eine Videosprechstunde verbindet Behandelnde und Patienten.
+  - **Zeitablauf:** Synchron bedeutet gleichzeitig, asynchron bedeutet zeitversetzt. Ein Hautfoto kann z. B. übermittelt und später beurteilt werden.
+- **Telematik** verbindet Telekommunikation und Informatik für den Austausch und die Verarbeitung von Daten. Die **Telematikinfrastruktur (TI)** ist eine konkrete Infrastruktur des deutschen Gesundheitswesens.
 
-| Aspekt | Worum geht es? | Beispiele |
-|---|---|---|
-| **Organisatorisch** | Wer macht was wann? Prozesse, Zuständigkeiten, Vergütung | **24/7-Erreichbarkeit** (wer reagiert am Sonntag auf den Telemonitoring-Alarm?); Notfallplan bei Technikausfall; Schulung von Personal und Patienten; Einbindung in KIS (Krankenhausinformationssystem)/Arbeitsabläufe; **Vergütung** über EBM-Ziffern (EBM = Einheitlicher Bewertungsmaßstab), z. B. Videosprechstunde, Telekonsil, Telemonitoring bei Herzinsuffizienz |
-| **Juristisch** | Was ist erlaubt, wer haftet? | **Fernbehandlung** seit 2018 erlaubt (§ 7 Abs. 4 MBO-Ä = Musterberufsordnung für Ärzte), wenn ärztlich vertretbar; **gleicher Facharztstandard** wie vor Ort (Haftung); **Dokumentationspflicht** (§ 630f BGB = Bürgerliches Gesetzbuch); **Aufklärung** über die Grenzen der Fernbehandlung; **Datenschutz** (DSGVO = Datenschutz-Grundverordnung, Art. 9: Gesundheitsdaten); Software ggf. **Medizinprodukt** nach MDR (Medical Device Regulation = EU-Medizinprodukteverordnung); zertifizierte Videodienstanbieter (Anlage 31b BMV-Ä = Bundesmantelvertrag-Ärzte) |
-| **Ethisch** | Ist es gerecht und gut für den Patienten? | **Arzt-Patient-Beziehung** (kein Abtasten, weniger nonverbale Signale); **Digital Divide** (digitale Spaltung: ältere, sehbehinderte, nicht-deutschsprachige Patienten ohne Smartphone); **Autonomie vs. Überwachung** (fühlt sich die demente Patientin mit Sensoren zu Hause kontrolliert?); **Gerechtigkeit**: bessere Versorgung im ländlichen Raum; informierte **Einwilligung** |
-| **Technisch** | Funktioniert es zuverlässig und sicher? | **Bandbreite/Latenz** (Verzögerung) für Video; **Verfügbarkeit/Ausfallsicherheit**; **Bild-/Tonqualität** (Telepathologie braucht hochauflösende Schnitte, Teledermatologie Farbtreue); **Interoperabilität** (HL7 FHIR = Health Level 7 Fast Healthcare Interoperability Resources, DICOM = Digital Imaging and Communications in Medicine, IHE = Integrating the Healthcare Enterprise); **Verschlüsselung** (Ende-zu-Ende); **Usability** (Gebrauchstauglichkeit) für Patienten |
+| Perspektive | Prüffrage |
+|---|---|
+| **Organisatorisch** | Wer beurteilt Befunde, wer handelt und innerhalb welcher Frist? Welche Abläufe gelten bei einem Ausfall? |
+| **Rechtlich** | Welche berufsrechtlichen Vorgaben gelten? Wie werden fachlicher Standard, Aufklärung, Dokumentation und Datenschutz gewahrt? |
+| **Ethisch** | Verbessert das Angebot den Zugang zur Versorgung? Welche Hürden entstehen durch Sprache, Behinderung, fehlende Technik oder geringe digitale Erfahrung? |
+| **Technisch** | Sind Bild, Ton und Daten für die Aufgabe ausreichend? Funktionieren sichere Übertragung, Zugriffsschutz und die Einbindung in vorhandene Systeme? |
 
-**Durchgespieltes Beispiel: Tele-Stroke-Netzwerk (Teleneurologie, z. B. TEMPiS = Telemedizinisches Projekt zur integrierten Schlaganfallversorgung in Bayern):** Patient mit Hemiparese in einem kleinen Haus ohne Neurologen.
-- *Technisch:* Videoverbindung + Übertragung der CT-Bilder per DICOM in Echtzeit.
-- *Organisatorisch:* Neurologe im Zentrum 24/7 erreichbar, feste Alarmierungswege, SOP (Standard Operating Procedure = Standardvorgehen) für die Lyse.
-- *Juristisch:* Behandlungsverantwortung bleibt beim Arzt vor Ort, der Telekonsiliar haftet für seinen Rat; beides dokumentieren.
-- *Ethisch:* Schnelle Lyse auch auf dem Land = mehr Versorgungsgerechtigkeit („Time is brain“).
+- **z. B. teleneurologisches Schlaganfallkonsil:** Das Team vor Ort untersucht den Patienten. Die zugeschaltete Neurologin beurteilt den Befund per Video und anhand der übermittelten Computertomographie-Bilder. Das Netzwerk legt fest, wer alarmiert, Empfehlungen dokumentiert und Maßnahmen umsetzt.
 
-Merksatz: **Telematik = Infrastruktur (Straße), Telemedizin = Versorgung über Distanz (Krankentransport darauf). Vier Aspekte: Organisation (wer reagiert, wer bezahlt?), Recht (Fernbehandlung erlaubt seit 2018, gleicher Facharztstandard, Dokumentation, DSGVO, MDR), Ethik (Digital Divide, Autonomie), Technik (Bandbreite, Verfügbarkeit, Interoperabilität, Verschlüsselung).**
+Merksatz: Bei Telemedizin muss vorab geklärt sein, ob die Daten für die Entscheidung ausreichen, wer daraufhin handelt und wie die Versorgung bei einem Ausfall weitergeht.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+::::
 
-:::
-:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Elektronische Akten und patientenzentrierte Anwendungen
 
 ::: {.exam-question}
-Welche elektronischen Akten und patientenzentrierten Anwendungen gibt es (z. B. ePA, Consumer Health IT, DiGA, Ambient Assisted Living), und worin unterscheiden sie sich?
+Welche Aufgaben haben elektronische Patientenakten, digitale Gesundheitsanwendungen und assistive Systeme für den Alltag, und wie unterscheiden sie sich?
 :::
 
-::: {.exam-answer}
-„Patientenzentriert“ heißt: Der **Patient selbst** nutzt, steuert oder befüllt die Anwendung, nicht nur die Einrichtung. Die Spannweite reicht von der gesetzlich geregelten **ePA (elektronische Patientenakte)** über ärztlich verordnete **DiGA (Digitale Gesundheitsanwendungen)** bis zu frei gekauften Apps und Wearables und zu Assistenzsystemen in der Wohnung (**AAL = Ambient Assisted Living = altersgerechte Assistenzsysteme für ein selbstbestimmtes Leben**).
+:::: {.exam-answer}
 
-**Akten nach Verantwortung** (Stufen der Akte nach Waegemann → siehe Modul VII):
+| Aktenform | Zweck und Zuständigkeit |
+|---|---|
+| **Behandlungsakte** | Praxis oder Krankenhaus dokumentieren die Behandlung in ihrem eigenen System. |
+| **Persönliche Gesundheitsakte (Personal Health Record, PHR)** | Die Person führt ihre Gesundheitsinformationen selbst zusammen, z. B. eigene Blutdruckwerte und Befunde. |
+| **Elektronische Patientenakte (ePA) nach dem Fünften Buch Sozialgesetzbuch (SGB V)** | Die gesetzliche Krankenkasse stellt sie bereit, sofern Versicherte nicht widersprechen. Über die **Telematikinfrastruktur (TI)** können berechtigte Behandelnde einrichtungsübergreifend auf bereitgestellte Informationen zugreifen. Versicherte haben Möglichkeiten, Zugriffe zu beschränken. |
 
-| Akte | Wer führt sie? | Beispiel |
-|---|---|---|
-| **EMR/EPR (Electronic Medical/Patient Record = einrichtungsinterne Akte)** | eine Einrichtung | Krankenakte im KIS (Krankenhausinformationssystem) |
-| **EHR (Electronic Health Record = einrichtungsübergreifende Akte)** | mehrere Einrichtungen gemeinsam | Fallakte eines Klinikverbunds |
-| **PHR (Personal Health Record = persönliche, patientengeführte Akte)** | **der Patient** | Gesundheits-App mit eigenen Messwerten |
-| **ePA nach § 341 SGB V (Sozialgesetzbuch V)** | Krankenkasse stellt bereit, **Patient verfügt** (Zugriffe steuern, widersprechen); Ärzte befüllen | „ePA für alle“: **Opt-out** (angelegt, außer der Versicherte widerspricht), bundesweit seit 2025; Inhalte z. B. eArztbrief, Befunde, **eMP (elektronischer Medikationsplan)** / Medikationsliste aus E-Rezepten; Zugriff über die TI (Telematikinfrastruktur) |
+- **Consumer Health IT** umfasst Gesundheits- und Fitnessanwendungen für Verbraucher. Ob eine Funktion ein Medizinprodukt ist, hängt von ihrer Zweckbestimmung ab.
+  - z. B. zählt eine Fitness-App Schritte zur Trainingsübersicht.
+- **Digitale Gesundheitsanwendungen (DiGA)** sind digitale Medizinprodukte, die bei Vorliegen der gesetzlichen Voraussetzungen im Verzeichnis des **Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)** geführt werden. Der Zugang zulasten der gesetzlichen Krankenversicherung erfolgt über eine Verordnung oder eine Genehmigung der Krankenkasse.
+  - z. B. unterstützt eine gelistete Anwendung die Behandlung chronischer Rückenschmerzen.
+- **Ambient Assisted Living (AAL)** unterstützt ein selbstständiges Leben durch Technik im Wohnumfeld.
+  - z. B. kann eine automatische Sturzerkennung einen Hausnotruf auslösen.
+- **Grenzen:** Messwerte müssen für den jeweiligen Zweck ausreichend verlässlich sein. Bedienbarkeit und Zugang beeinflussen die Nutzung. Bei AAL ist zu klären, welche Daten erhoben werden, wer sie sehen darf und wer auf einen Alarm reagiert.
 
-**Patientenzentrierte Anwendungen:**
+Merksatz: Die ePA macht Behandlungsinformationen einrichtungsübergreifend verfügbar. DiGA unterstützen einen medizinischen Zweck mit geregeltem Zugang über die gesetzliche Krankenversicherung. AAL unterstützt die Selbstständigkeit im Alltag.
 
-| Typ | Prinzip | Klinik-Beispiel |
-|---|---|---|
-| **Consumer Health IT** (Gesundheits-IT für Endverbraucher) | frei gekauft, meist **kein** Medizinprodukt, Qualität sehr unterschiedlich | Fitness-Tracker (Schritte, Puls), Symptom-Checker-App, Smartwatch mit EKG-Funktion (diese ist dann *doch* ein Medizinprodukt) |
-| **DiGA (Digitale Gesundheitsanwendung, § 33a SGB V, „App auf Rezept“)** | **Medizinprodukt niedriger Risikoklasse (I/IIa, neu teils IIb)**, vom **BfArM (Bundesinstitut für Arzneimittel und Medizinprodukte)** geprüft und im **DiGA-Verzeichnis** gelistet (Fast-Track nach § 139e SGB V: vorläufig 12 Monate, dann positiver Versorgungseffekt nachweisen); **ärztlich verordnet oder von der Kasse genehmigt, Kasse zahlt** | App gegen Tinnitus, Depression, Rückenschmerz, Adipositas; Diabetes-Tagebuch mit Auswertung |
-| **DiPA (Digitale Pflegeanwendung, § 40a SGB XI)** | wie DiGA, aber für **Pflegebedürftige**, Pflegekasse zahlt | Sturzpräventions-Trainings-App |
-| **AAL (Ambient Assisted Living)** | Sensorik und Technik **in der Wohnung**, unauffällig im Hintergrund; Ziel: länger selbstständig zu Hause | **Sturzerkennung** (Bodensensor alarmiert den Hausnotruf), Herdabschaltung bei Demenz, Bewegungsmelder („seit 12 h keine Bewegung im Bad“ → Angehörige informieren), Medikamentenspender mit Erinnerung |
+::::
 
-**Abgrenzung, die gern gefragt wird:**
-- **Medizinprodukt oder nicht?** Entscheidend ist die **Zweckbestimmung des Herstellers** (MDR = Medical Device Regulation = EU-Medizinprodukteverordnung): Schrittzähler „für Fitness“ = kein Medizinprodukt; App „erkennt Vorhofflimmern“ = Medizinprodukt.
-- **ePA vs. PHR:** Die ePA ist gesetzlich geregelt, sicher in die TI eingebunden und für Ärzte nutzbar. Eine PHR-App führt der Patient privat, ohne Anbindung oder Garantie.
-- **Risiken:** Datenschutz (Gesundheitsdaten bei kommerziellen Anbietern, ggf. Server außerhalb der EU), Datenqualität (vom Patienten selbst gemessen), Digital Divide, Überwachungsgefühl bei AAL → Einwilligung und Autonomie beachten.
 
-Merksatz: **ePA = gesetzliche Akte, Patient verfügt, Opt-out (§ 341 SGB V); DiGA = geprüfte App auf Rezept (BfArM-Verzeichnis, § 33a SGB V); Consumer Health = frei gekauft, meist kein Medizinprodukt; AAL = Sensorik in der Wohnung für ein selbstständiges Leben im Alter.**
 
-::: {.callout-note title="Good to know" appearance="simple"}
 
-:::
-:::
 
-## Anwendungsfälle
+
+
+
+
+
+
+
+
+## Telemedizinische Anwendungsfälle
 
 ::: {.exam-question}
-Nennen Sie typische telemedizinische Anwendungsfälle (z. B. Homemonitoring, Telekardiologie, Teleneurologie, Telepathologie) — wie funktionieren sie, und welchen Nutzen haben sie?
+Wie funktionieren Homemonitoring, Telekardiologie, Teleneurologie und Telepathologie, und welchen Nutzen können sie haben?
 :::
 
-::: {.exam-answer}
-Allen gemeinsam: **Daten oder Expertise reisen statt des Patienten oder des Arztes.** Man unterscheidet **Doc2Patient** (Homemonitoring) und **Doc2Doc** (Telekonsil: Tele-Stroke, Telepathologie, Teleradiologie), außerdem **synchron** (live) und **asynchron** (Store-and-Forward = speichern und weiterleiten).
+:::: {.exam-answer}
 
-| Anwendung | Wie funktioniert es? | Klinik-Beispiel | Nutzen |
-|---|---|---|---|
-| **Homemonitoring / Telemonitoring** (Doc2Patient, meist asynchron) | Patient misst zu Hause, Daten gehen automatisch an ein **Telemedizinzentrum (TMZ)**; Alarm bei Grenzwertüberschreitung | **Herzinsuffizienz**: Waage + Blutdruck + EKG (Elektrokardiogramm) täglich; +2 kg in 3 Tagen → Anruf, Diuretikum anpassen, bevor der Patient dekompensiert. Seit 2022 Kassenleistung (EBM = Einheitlicher Bewertungsmaßstab), Grundlage u. a. TIM-HF2-Studie (Telemedical Interventional Management in Heart Failure II) | weniger ungeplante Klinikaufnahmen, geringere Sterblichkeit |
-| **Telekardiologie** (Sonderform des Monitorings) | **implantierte Geräte** senden selbst: ICD (implantierbarer Kardioverter-Defibrillator), Herzschrittmacher, CRT (kardiale Resynchronisationstherapie), implantierter Event-Recorder | ICD meldet nachts eine Schockabgabe oder einen Elektrodenbruch → Kontrolle am nächsten Morgen statt erst bei der Routinekontrolle in 6 Monaten | Früherkennung von Rhythmusstörungen und Gerätefehlern, weniger Kontrolltermine |
-| **Teleneurologie (Tele-Stroke)** (Doc2Doc, **synchron**) | Neurologe im Zentrum untersucht per **Video** und sieht die **CT-/CTA-Bilder** (Computertomographie / CT-Angiographie) per DICOM (Digital Imaging and Communications in Medicine) | Schlaganfall in einem kleinen Haus ohne Neurologen: Lyse-Entscheidung per Video, ggf. Verlegung zur Thrombektomie; Netzwerke wie TEMPiS (Bayern) | „Time is brain“: schnellere Lyse auf dem Land |
-| **Telepathologie** (Doc2Doc) | Gewebeschnitt wird **gescannt** (WSI = Whole Slide Imaging = ganzer Objektträger als hochauflösendes Bild) oder live per ferngesteuertem Mikroskop gezeigt | **intraoperativer Schnellschnitt**: Chirurg wartet am offenen Situs, Pathologe in der Zentrale befundet „maligne, Resektionsrand frei“; Zweitmeinung bei seltenen Tumoren | kein Pathologe vor Ort nötig, Expertise für seltene Diagnosen |
-| **Teleradiologie** (Doc2Doc) | CT wird vor Ort gemacht, Befundung **aus der Ferne**; nach **StrlSchG (Strahlenschutzgesetz)** genehmigungspflichtig, vor Ort muss eine fachkundige Person sein, Radiologe max. ca. 45 Min. entfernt erreichbar | Nacht-CT im Krankenhaus der Grundversorgung, befundet vom Radiologen zu Hause oder im Zentrum | 24/7-Radiologie ohne Radiologen im Haus |
-| **Teledermatologie** (meist Store-and-Forward) | Foto der Hautläsion + Anamnese → Hautarzt befundet später | Hausarzt schickt ein Foto eines unklaren Naevus → Rückmeldung „dringend exzidieren“ oder „harmlos“ | schnellere Triage, weniger Wartezeit |
-| **Tele-Intensivmedizin** | Intensivmediziner im Zentrum betreut per Video, Monitor- und PDMS-Daten (PDMS = Patientendatenmanagementsystem) mit | Telekonsil für die Beatmungseinstellung auf der Intensivstation eines kleinen Hauses (z. B. Netzwerk Virtuelles Krankenhaus NRW) | Intensiv-Expertise in der Fläche |
+| Anwendung | Was wird übertragen und wer bewertet es? | Möglicher Nutzen |
+|---|---|---|
+| **Homemonitoring** | Betroffene messen zu Hause z. B. Gewicht und Blutdruck. Das betreuende Team beurteilt den Verlauf. | Hinweise auf eine Verschlechterung bei Herzinsuffizienz können früher erkannt und abgeklärt werden. |
+| **Telekardiologie** | Ein Herzschrittmacher oder implantierter Defibrillator kann Ereignisse und technische Gerätedaten an das betreuende Team übermitteln. | Rhythmusereignisse oder Geräteprobleme können zwischen regulären Kontrollen erkannt werden. |
+| **Teleneurologie** | Beim akuten Schlaganfall unterstützt ein neurologischer Spezialist das Team vor Ort per Video. Übermittelte Bilder der Computertomographie fließen in die Beurteilung ein. | Fachärztliche Expertise steht zeitnah zur Verfügung und unterstützt die Entscheidung über Akuttherapie und Verlegung. |
+| **Telepathologie** | Ein Pathologe beurteilt digitalisierte Gewebeschnitte aus der Ferne. | Spezialexpertise kann z. B. für eine Zweitmeinung bei einem seltenen Tumor hinzugezogen werden. |
 
-**Gemeinsame Voraussetzungen und Risiken** (vgl. X.1):
-- klare **Verantwortung** (der behandelnde Arzt vor Ort entscheidet, der Telekonsiliar berät),
-- **24/7-Organisation** und ein Rückfallplan bei Technikausfall,
-- **Bildqualität** (Pathologie: Auflösung; Dermatologie: Farbe, Licht),
-- **Alarmmüdigkeit** beim Monitoring (zu viele Fehlalarme → echte Alarme werden übersehen),
-- Datenschutz und Einwilligung.
+- **Voraussetzungen:** Daten und Bilder müssen für die jeweilige Entscheidung ausreichen. Zuständigkeiten, Sichtungszeiten, Eskalationswege und das Vorgehen bei einem Ausfall müssen festgelegt sein.
+- **Risiken:** Fehlalarme können das betreuende Team belasten. Fehlende, verspätete oder qualitativ unzureichende Daten können Entscheidungen verzögern oder verfälschen.
 
-Merksatz: **Homemonitoring = Patient misst, TMZ reagiert (Herzinsuffizienz, Kassenleistung). Telekardiologie = Implantat meldet sich selbst. Tele-Stroke = Neurologe per Video + CT live. Telepathologie = gescannter Schnitt (Schnellschnitt aus der Ferne). Teleradiologie = Befund aus der Ferne, genehmigt nach StrlSchG.**
+Merksatz: Monitoring unterstützt die Verlaufsbeobachtung. Telekonsile bringen Fachwissen in eine konkrete Entscheidung ein. In beiden Fällen muss klar sein, wer die Daten bewertet und wer bei einem auffälligen Befund handelt.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+::::
 
-:::
-:::
+
+
+
+
+
+
+
+
+
+
 
 ## Telematikinfrastruktur und elektronische Gesundheitskarte
 
 ::: {.exam-question}
-Was ist die Telematikinfrastruktur (TI), wie ist sie aufgebaut, welche Rolle spielt die elektronische Gesundheitskarte (eGK), und welche Anwendungen laufen über die TI?
+Was ist die Telematikinfrastruktur, welche Rolle spielt die elektronische Gesundheitskarte, und welche Anwendungen nutzt die Versorgung darüber?
 :::
 
-::: {.exam-answer}
-Die **TI (Telematikinfrastruktur)** ist das **geschlossene, verschlüsselte Datennetz des deutschen Gesundheitswesens**, das Praxen, Krankenhäuser, Apotheken, Krankenkassen und (zunehmend) Pflege und Patienten verbindet. Verantwortlich ist die **gematik** (früher Gesellschaft für Telematikanwendungen der Gesundheitskarte, seit 2024 „Digitalagentur", Mehrheitsgesellschafter BMG = Bundesministerium für Gesundheit); Rechtsgrundlage §§ 306 ff. SGB V (Sozialgesetzbuch V). Nur wer sich mit einer **Karte** ausweist, kommt hinein.
+:::: {.exam-answer}
 
-**Aufbau (Klinik-Analogie: geschlossenes Rohrpostsystem eines Klinikverbunds, Zugang nur mit Dienstausweis):**
+- **Telematikinfrastruktur (TI):** Sie ermöglicht den sicheren digitalen Informationsaustausch im Gesundheitswesen. Die gematik legt Spezifikationen für Komponenten und Dienste fest. Einrichtungen greifen z. B. über einen Konnektor oder ein TI-Gateway auf Dienste zu.
+- **Karten und Identitäten**
+  - Die **elektronische Gesundheitskarte (eGK)** weist die Versicherungsberechtigung nach und enthält Versichertenstammdaten. Sie unterstützt je nach Dienst den Zugriff. Die elektronische Patientenakte und E-Rezepte werden in den jeweiligen Diensten gespeichert.
+  - Der **elektronische Heilberufsausweis (eHBA)** weist einen Heilberufsangehörigen persönlich aus und ermöglicht qualifizierte elektronische Signaturen.
+  - Die **Institutionskarte (SMC-B)** weist die Einrichtung aus, etwa eine Praxis, ein Krankenhaus oder eine Apotheke.
 
-| Baustein | Funktion | Analogie / Beispiel |
-|---|---|---|
-| **Karten** (Identitäten) | **eGK (elektronische Gesundheitskarte)** = Patient; **eHBA (elektronischer Heilberufsausweis)** = Person des Arztes; **SMC-B (Security Module Card Typ B = Institutionsausweis)** = Praxis/Klinik | Patientenarmband, Dienstausweis, Stationsschild |
-| **Kartenterminal** | liest die Karten, PIN-Eingabe | Kartenleser am Empfang |
-| **Konnektor** bzw. **TI-Gateway** (neuer: Konnektor als Dienst im Rechenzentrum) | baut den sicheren **VPN-Tunnel** (VPN = Virtual Private Network = verschlüsselter Tunnel durchs Internet) zur TI auf, prüft Signaturen | „Pforte mit Sicherheitsdienst" zwischen Praxis-PVS (Praxisverwaltungssystem)/KIS (Krankenhausinformationssystem) und TI |
-| **Zentrale TI-Plattform** | Netz, Verzeichnisdienst (wer ist erreichbar?), Zeitdienst | Haustelefonbuch + Rohrpostnetz |
-| **Fachdienste** | die eigentlichen Anwendungen (Server) | E-Rezept-Server, ePA-Aktensystem, KIM-Postfächer |
-| **Zukunft: TI 2.0** | **Zero Trust** (keinem Gerät pauschal vertrauen), Zugang ohne Hardware-Konnektor, digitale Identitäten statt nur Karten | Ausweis per App statt Plastikkarte |
+| Anwendung | Aufgabe |
+|---|---|
+| **Versichertenstammdatenmanagement (VSDM)** | Prüft und aktualisiert Versichertenstammdaten online. |
+| **E-Rezept** | Stellt elektronische Verordnungen zur Einlösung bereit. In der Apotheke kann die eGK zum Abruf eingesetzt werden. |
+| **Elektronische Arbeitsunfähigkeitsbescheinigung (eAU)** | Übermittelt die Bescheinigung an die Krankenkasse. Der Arbeitgeber ruft die für ihn vorgesehenen Angaben bei der Krankenkasse ab. |
+| **Kommunikation im Medizinwesen (KIM)** | Ermöglicht sichere elektronische Nachrichten, z. B. den Versand eines Arztbriefs. |
+| **TI-Messenger (TIM)** | Ermöglicht sichere Kommunikation per Chat. |
+| **Elektronische Patientenakte (ePA)** | Macht bereitgestellte Behandlungsinformationen für Versicherte und berechtigte Behandelnde zugänglich. |
 
-**eGK (elektronische Gesundheitskarte, § 291 SGB V):**
-- Chipkarte jedes GKV-Versicherten (GKV = gesetzliche Krankenversicherung), mit **Lichtbild** (Missbrauchsschutz).
-- **Auf der Karte gespeichert:** Versichertenstammdaten (Name, Kasse, Status); optional **NFD (Notfalldatensatz = Notfalldaten wie Diagnosen, Allergien, Medikation)** und **DPE (Datensatz persönliche Erklärungen = Ablageort von Organspendeausweis/Patientenverfügung)**.
-- **Kein Datenspeicher für die Akte:** ePA-Inhalte und E-Rezepte liegen auf **Servern**; die eGK ist der **Schlüssel**, nicht der Tresor.
-- **Stecken in der Praxis = Behandlungskontext:** Praxis darf danach 90 Tage auf die ePA zugreifen.
-- **NFC-fähige eGK (NFC = Near Field Communication = kontaktlose Nahfunkübertragung) + PIN** bzw. **GesundheitsID** (digitale Identität, seit 2024) → Patient nutzt ePA- und E-Rezept-App selbst.
+Merksatz: Die TI verbindet Einrichtungen und Dienste. Die eGK steht für die versicherte Person, der eHBA für den Heilberufsangehörigen und die SMC-B für die Einrichtung.
 
-**Anwendungen über die TI (Stand: 10/2026):**
+::::
 
-| Anwendung | Was? | Klinik-Beispiel |
-|---|---|---|
-| **VSDM (Versichertenstammdatenmanagement)** | Online-Abgleich der Versichertendaten beim Stecken der eGK | Quartalsbeginn: Kasse meldet, dass der Patient nicht mehr versichert ist |
-| **E-Rezept** | Verordnung auf dem Fachdienst, mit **QES (qualifizierte elektronische Signatur)** des eHBA; **Pflicht seit 1.1.2024** | Patient steckt die eGK in der Apotheke, Apotheke ruft das Rezept ab |
-| **eAU (elektronische Arbeitsunfähigkeitsbescheinigung)** | AU geht direkt an die Kasse, Arbeitgeber ruft ab | kein „gelber Schein" mehr |
-| **KIM (Kommunikation im Medizinwesen)** | sichere E-Mail innerhalb der TI | **eArztbrief** vom Krankenhaus an den Hausarzt, Befund an den Facharzt |
-| **TIM (TI-Messenger)** | sicherer Chat zwischen Leistungserbringern | Station fragt kurz beim Hausarzt nach der Vormedikation |
-| **ePA (elektronische Patientenakte, § 341 SGB V)** | „ePA für alle", Opt-out, bundesweit seit 2025, Befüllpflicht seit 10/2025 | Entlassbrief, Laborbefunde, Medikationsliste aus E-Rezepten |
-| **NFD / eMP (elektronischer Medikationsplan)** | Notfalldaten (noch auf der eGK) und Medikationsplan; wandern schrittweise **in die ePA** | Notarzt liest Allergien und Antikoagulation vom NFD |
 
-**Zwei-Karten-Prinzip:** Für sensible Zugriffe müssen **Patientenkarte + Leistungserbringer-Karte** zusammenkommen (eGK + eHBA/SMC-B), z. B. NFD lesen: eGK + eHBA. So kann weder der Patient allein noch der Arzt allein beliebig auf die Daten zugreifen.
 
-Merksatz: **TI = geschlossenes, verschlüsseltes Netz (gematik); Zugang nur mit Karte: eGK (Patient), eHBA (Arzt), SMC-B (Einrichtung), über Konnektor/TI-Gateway. Die eGK ist der Schlüssel, nicht der Speicher (nur Stammdaten, NFD, DPE). Anwendungen: VSDM, E-Rezept, eAU, KIM, TIM, ePA.**
 
-::: {.callout-note title="Good to know" appearance="simple"}
 
-:::
-:::
+
+
+
+
+
 
 ### Elektronischer Heilberufsausweis (eHBA)
 
 ::: {.exam-question}
-Was ist der elektronische Heilberufsausweis (eHBA), wer stellt ihn aus, und wofür braucht man ihn?
+Was ist der elektronische Heilberufsausweis, wer gibt ihn heraus, und wofür wird er verwendet?
 :::
 
-::: {.exam-answer}
-**eHBA** = persönliche **Chipkarte im Scheckkartenformat** für Angehörige von Heilberufen — der "digitale Ausweis" in der Telematikinfrastruktur (TI).
+:::: {.exam-answer}
 
-- **Aussehen**: Plastikkarte mit Chip, Foto, Name, Berufsbezeichnung ("Arzt/Ärztin") und Kammer — **zugleich Sichtausweis**, ersetzt bei Ärzten also den alten Arztausweis.
-- **Wer stellt aus**:
-  - **Ärzte**: auf Antrag über die **Landesärztekammer** (die bestätigt die Approbation), produziert von einem zugelassenen Vertrauensdiensteanbieter; Laufzeit **5 Jahre**, kostenpflichtig.
-  - **Notfallsanitäter, Pflege, Physiotherapeuten u. a.**: über das **elektronische Gesundheitsberuferegister (eGBR)**, für Notfallsanitäter seit 2023.
-- **Persönlich, nicht arbeitgeberbezogen**: ein Arzt hat **einen** eHBA und nutzt ihn überall — Praxis, Klinik, Notarzteinsatz. Die **Einrichtung** hat dagegen einen eigenen Institutionsausweis (**SMC-B**, "Praxisausweis").
-- **Funktionen** (mit eigener PIN):
-  - **Authentisierung**: "ich bin Arzt" → Zugriff auf NFD, ePA, eMP.
-  - **Qualifizierte elektronische Signatur (QES)** = rechtsgültige Unterschrift: **E-Rezept**, **eAU**, **eArztbrief** über KIM.
-  - **Verschlüsselung**: z. B. KIM-Nachrichten.
+- Der **elektronische Heilberufsausweis (eHBA)** ist eine persönliche Chipkarte. Er weist die Identität und die Berufseigenschaft eines Heilberufsangehörigen elektronisch nach.
+- **Herausgabe:** Für Ärztinnen und Ärzte ist die zuständige Ärztekammer verantwortlich. Ein zugelassener Vertrauensdiensteanbieter produziert die Karte. Für bestimmte nicht verkammerte Gesundheitsberufe läuft die Beantragung über das **elektronische Gesundheitsberuferegister (eGBR)**.
+- **Funktionen:** Der eHBA dient zur elektronischen Authentisierung und ermöglicht eine **qualifizierte elektronische Signatur (QES)**. Je nach Anwendung unterstützt er auch kryptografische Funktionen wie die Verschlüsselung.
+  - z. B. signiert eine Ärztin ein E-Rezept mit ihrem eHBA. Die Apotheke kann das Rezept anschließend über die elektronische Gesundheitskarte der versicherten Person abrufen.
+- **Abgrenzung:** Der eHBA ist einer Person zugeordnet. Die **Institutionskarte (SMC-B)** weist eine Einrichtung aus.
 
-Analogie: eGK = Versichertenkarte des Patienten; **eHBA = Dienstausweis + Stempel + Unterschrift des Arztes**; SMC-B = Praxisschild der Einrichtung. Für die meisten TI-Zugriffe müssen **eGK + eHBA** (bzw. SMC-B) zusammen stecken ("Zwei-Karten-Prinzip").
+Merksatz: Der eHBA weist die Person und ihren Heilberuf nach und ermöglicht die persönliche qualifizierte Signatur. Die Zugriffsberechtigung richtet sich nach dem jeweiligen Dienst.
 
-Merksatz: eHBA = persönlicher Arztausweis mit Chip — weist aus, unterschreibt, verschlüsselt; ausgestellt über die Ärztekammer, gilt in jedem Einsatzort.
+::::
 
-::: {.callout-note title="Good to know" appearance="simple"}
 
-:::
-:::
+
+
+
+
+
+
+
+
 
 ## Fernbehandlung
 
 ::: {.exam-question}
-Was versteht man unter ausschließlicher Fernbehandlung, unter welchen Voraussetzungen ist sie berufsrechtlich zulässig, und wo liegen die Grenzen?
+Was ist ausschließliche Fernbehandlung, unter welchen Voraussetzungen ist sie berufsrechtlich zulässig, und wo liegen ihre Grenzen?
 :::
 
-::: {.exam-answer}
-**Ausschließliche Fernbehandlung** = Arzt und Patient behandeln **ohne jemals persönlichen Kontakt** gehabt zu haben, nur per Telefon, Video, Chat oder E-Mail. Bis 2018 war sie berufsrechtlich verboten (der Erstkontakt musste persönlich stattfinden). Seit dem **121. Deutschen Ärztetag 2018** ist sie nach **§ 7 Abs. 4 MBO-Ä (Musterberufsordnung für Ärzte)** **im Einzelfall erlaubt**. Die Landesärztekammern haben das in ihre Berufsordnungen übernommen.
+:::: {.exam-answer}
 
-**Voraussetzungen (§ 7 Abs. 4 MBO-Ä):**
-1. **ärztlich vertretbar** im Einzelfall (Krankheitsbild, Patient, technische Möglichkeiten),
-2. die **erforderliche ärztliche Sorgfalt** bleibt gewahrt, und zwar bei Befunderhebung, Beratung, Behandlung und **Dokumentation**,
-3. der Patient wird über die **Besonderheiten und Grenzen** der Fernbehandlung **aufgeklärt**.
+- **Ausschließliche Fernbehandlung:** Die konkrete ärztliche Beratung oder Behandlung erfolgt vollständig über Kommunikationsmedien, etwa per Telefon oder Video.
+- **Berufsrechtliche Voraussetzungen:** Nach § 7 Abs. 4 der Musterberufsordnung für die in Deutschland tätigen Ärztinnen und Ärzte (MBO-Ä) ist sie im Einzelfall zulässig, wenn
+  1. sie **ärztlich vertretbar** ist,
+  2. die **ärztliche Sorgfalt** bei Befunderhebung, Beratung, Behandlung und Dokumentation gewahrt bleibt und
+  3. der Patient über die **Besonderheiten** der ausschließlichen Fernbehandlung aufgeklärt wird. Dazu gehören die für ihn relevanten Grenzen.
+- **Grenze:** Reichen die aus der Ferne erhebbaren Befunde für eine sichere Entscheidung nicht aus, ist eine persönliche Untersuchung oder eine dringliche Abklärung vor Ort zu veranlassen.
+  - z. B. kann eine Besprechung vorliegender Laborbefunde per Video möglich sein. Neu aufgetretene fokal-neurologische Ausfälle erfordern eine sofortige Notfallabklärung.
+- **Abgrenzung:** Beim Telekonsil berät eine zugeschaltete Fachperson das Behandlungsteam vor Ort. Der Patient kann dabei weiterhin persönlich untersucht werden.
 
-**Vertretbar oder nicht? Klinik-Beispiele:**
+Merksatz: Ausschließliche Fernbehandlung ist eine Einzelfallentscheidung. Sie muss ärztlich vertretbar und sorgfältig durchgeführt sein. Der Patient muss über ihre Besonderheiten aufgeklärt werden.
 
-| Eher geeignet | Eher **nicht** geeignet (persönlich untersuchen!) |
-|---|---|
-| Befundbesprechung (Labor, MRT = Magnetresonanztomographie), Therapiekontrolle bei bekannter Erkrankung | **akuter Thoraxschmerz** (Verdacht auf ACS = akutes Koronarsyndrom), **akutes Abdomen** |
-| Hautausschlag mit gutem Foto, Wundverlaufskontrolle | Kind mit Fieber und reduziertem Allgemeinzustand |
-| Psychotherapeutische Folgegespräche, Diabetes-Einstellung anhand der Werte | neurologische Ausfälle (Verdacht auf Schlaganfall → 112, nicht Video) |
-| einfacher Harnwegsinfekt bei junger Frau (Anamnese reicht oft) | Erstdiagnose, die eine Palpation, Auskultation oder Bildgebung braucht |
+::::
 
-**Rechtlicher Rahmen außerhalb der MBO-Ä (Stand: 10/2026):**
-- **Haftung:** es gilt der **gleiche Facharztstandard** wie vor Ort (§ 630a BGB = Bürgerliches Gesetzbuch). Wer per Video etwas übersieht, das bei persönlicher Untersuchung erkennbar gewesen wäre, haftet. Im Zweifel einbestellen.
-- **Dokumentation** wie immer (§ 630f BGB), plus die Begründung, warum die Fernbehandlung vertretbar war.
-- **Werbung:** Werbung für Fernbehandlung ist seit 2019 erlaubt, wenn nach anerkannten fachlichen Standards kein persönlicher Kontakt nötig ist (§ 9 HWG = Heilmittelwerbegesetz).
-- **Verordnung:** **E-Rezept** und **eAU (elektronische Arbeitsunfähigkeitsbescheinigung)** sind auch nach Videosprechstunde möglich. Bei der AU gelten Grenzen der AU-Richtlinie des G-BA (Gemeinsamer Bundesausschuss), z. B. für unbekannte Patienten nur kurze Erstbescheinigungen; die genauen Fristen ändern sich häufig.
-- **Vertragsärztlich:** Videosprechstunde nur über einen **zertifizierten Videodienstanbieter** (Anlage 31b BMV-Ä = Bundesmantelvertrag-Ärzte), abrechenbar über EBM (Einheitlicher Bewertungsmaßstab); der Anteil der Videofälle je Quartal ist begrenzt.
 
-**Abgrenzung:** Fernbehandlung = **Arzt ↔ Patient** (Doc2Patient). Ein **Telekonsil** (Arzt ↔ Arzt, z. B. Tele-Stroke) ist keine Fernbehandlung, denn der Patient wird vom Arzt vor Ort persönlich behandelt.
 
-Merksatz: **Fernbehandlung seit 2018 im Einzelfall erlaubt (§ 7 Abs. 4 MBO-Ä): ärztlich vertretbar, Sorgfalt gewahrt, Patient aufgeklärt. Gleicher Facharztstandard wie vor Ort; im Zweifel persönlich einbestellen.**
 
-::: {.callout-note title="Good to know" appearance="simple"}
 
-:::
-:::
 
-## Datensicherheit und Datenschutz bei telemedizinischen Anwendungen
+
+
+
+
+
+## Datenschutz und Datensicherheit in der Telemedizin
 
 ::: {.exam-question}
-Welche Anforderungen an Datenschutz und Datensicherheit gelten bei telemedizinischen Anwendungen, und welche typischen Risiken gibt es?
+Welche Datenschutz- und Sicherheitsanforderungen gelten in der Telemedizin, und wie lassen sich typische Risiken beherrschen?
 :::
 
-::: {.exam-answer}
-Telemedizin heißt: Gesundheitsdaten **verlassen die Klinikmauern**. Sie laufen über Internet, Patienten-Smartphones, private WLANs und Server von Dienstleistern. Es gelten dieselben Regeln wie im Haus (→ Modul II), aber mehr Stellen, an denen etwas schiefgehen kann. **Datenschutz** fragt: *Darf* ich die Daten verarbeiten? **Datensicherheit** fragt: *Wie* schütze ich sie technisch?
+:::: {.exam-answer}
 
-**Datenschutz: rechtliche Pflichten**
+- **Datenschutz:** Für die Verarbeitung personenbezogener Gesundheitsdaten müssen die Voraussetzungen nach Artikel 6 und 9 der Datenschutz-Grundverordnung (DSGVO) erfüllt sein. Nur die für den jeweiligen Zweck erforderlichen Daten dürfen verarbeitet werden. Die ärztliche Schweigepflicht gilt auch auf Distanz.
+  - Verarbeitet ein Dienstleister Daten im Auftrag, ist eine Vereinbarung nach Artikel 28 DSGVO erforderlich. Bei voraussichtlich hohem Risiko ist vorab eine Datenschutz-Folgenabschätzung durchzuführen.
+- **Datensicherheit:** Artikel 32 DSGVO verlangt technische und organisatorische Maßnahmen, die dem Risiko angemessen sind.
 
-| Regel | Bedeutung in der Telemedizin | Beispiel |
-|---|---|---|
-| **Art. 9 DSGVO (Datenschutz-Grundverordnung)**: Gesundheitsdaten = besondere Kategorie | Verarbeitung nur mit Rechtsgrundlage: Behandlung (Art. 9 Abs. 2 lit. h) oder **Einwilligung** (lit. a) | Telemonitoring-Programm: schriftliche Einwilligung + Aufklärung, wer die Daten sieht |
-| **Auftragsverarbeitung (Art. 28 DSGVO)** | externer Dienstleister braucht einen **AV-Vertrag** (Auftragsverarbeitungsvertrag) | Videodienstanbieter, Cloud des Telemedizinzentrums, Hersteller-Server eines ICD (implantierbarer Kardioverter-Defibrillator) |
-| **Drittlandtransfer (Art. 44 ff. DSGVO)** | Server außerhalb der EU nur mit angemessenem Schutzniveau | US-Videotool mit Servern in den USA → kritisch prüfen |
-| **DSFA (Datenschutz-Folgenabschätzung, Art. 35 DSGVO)** | Pflicht bei hohem Risiko, z. B. umfangreiche Gesundheitsdaten, neue Technik | vor dem Start eines Tele-Intensiv-Netzwerks |
-| **Schweigepflicht (§ 203 StGB = Strafgesetzbuch)** | gilt auch per Video; Dienstleister dürfen nur als „mitwirkende Personen" eingebunden werden | niemand Unbefugtes im Raum oder im Bild; kein Mithören |
-| **Datensparsamkeit / Zweckbindung** | nur nötige Daten, nur für den vereinbarten Zweck | Gesundheits-App darf Daten nicht für Werbung weitergeben |
+| Schutzziel | Typisches Risiko und passende Maßnahme |
+|---|---|
+| **Vertraulichkeit** | Unbefugte lesen einen Befund mit. Verschlüsselung, persönliche Konten und rollenbasierte Zugriffsrechte schützen den Befund. |
+| **Integrität** | Ein telemedizinischer Messwert wird der falschen Person zugeordnet. Eine eindeutige Patienten- und Gerätezuordnung hilft, Verwechslungen zu vermeiden. |
+| **Verfügbarkeit** | Die Verbindung fällt aus und Messwerte gehen nicht ein. Ein Rückfallplan regelt, wer den Ausfall erkennt und wie die Versorgung weiterläuft. |
 
-**Datensicherheit: technische und organisatorische Maßnahmen (TOM, Art. 32 DSGVO)** entlang der Schutzziele:
+- **Vertragsärztliche Videosprechstunde:** Der Videodienst muss nach Anlage 31b zum Bundesmantelvertrag-Ärzte zertifiziert sein. Für die Übertragung ist Ende-zu-Ende-Verschlüsselung vorgesehen.
 
-| Schutzziel | Telemedizin-Risiko | Maßnahme |
-|---|---|---|
-| **Vertraulichkeit** | Mitlesen der Videoverbindung, verlorenes Patienten-Tablet | **Ende-zu-Ende-Verschlüsselung**, starke Authentisierung (2-Faktor), Gerätesperre |
-| **Integrität** | manipulierte oder falsch zugeordnete Messwerte (Waage des Ehemanns statt der Patientin) | Signaturen, Prüfsummen, eindeutige Patienten- und Gerätezuordnung |
-| **Verfügbarkeit** | Netzausfall, Serverausfall, **Ransomware** (Erpressungstrojaner) | Redundanz, Backups, **Rückfallplan** (Telefon, persönliche Vorstellung) |
-| **Authentizität** | falscher Arzt oder falscher Patient am Bildschirm | Identitätsprüfung (Versichertenkarte in die Kamera, eHBA = elektronischer Heilberufsausweis) |
+Merksatz: Vor dem Einsatz klären, auf welcher Grundlage Daten verarbeitet werden, wer zugreifen darf, wie Daten korrekt zugeordnet werden und wie die Versorgung bei einem Ausfall weiterläuft.
 
-**Konkrete Vorgaben in Deutschland (Stand: 10/2026):**
-- **Videosprechstunde** (Anlage 31b BMV-Ä = Bundesmantelvertrag-Ärzte): nur **zertifizierte Anbieter**, Ende-zu-Ende-verschlüsselt, **keine Speicherung** der Inhalte, keine Werbung; der Patient muss kein Konto anlegen.
-- **TI (Telematikinfrastruktur)** für den Datenaustausch: KIM (Kommunikation im Medizinwesen) statt normaler E-Mail für Arztbriefe.
-- **DiGA (Digitale Gesundheitsanwendungen)**: Nachweis von Datenschutz und Datensicherheit gegenüber dem **BfArM (Bundesinstitut für Arzneimittel und Medizinprodukte)**, u. a. Sicherheitszertifikat nach **BSI-TR-03161** (BSI = Bundesamt für Sicherheit in der Informationstechnik, TR = Technische Richtlinie); Datenverarbeitung grundsätzlich in der EU.
-- **Medizinprodukte** (MDR = Medical Device Regulation = EU-Medizinprodukteverordnung): Cybersicherheit ist Teil der grundlegenden Anforderungen, z. B. Sicherheits-Updates für Implantat-Programmiergeräte.
-- **IT-Sicherheit in Einrichtungen:** Praxen müssen die IT-Sicherheitsrichtlinie der KBV (Kassenärztliche Bundesvereinigung) umsetzen (§ 390 SGB V = Sozialgesetzbuch V), Krankenhäuser den Stand der Technik (§ 391 SGB V, z. B. B3S = Branchenspezifischer Sicherheitsstandard).
-
-**Typische Fehler in der Praxis:**
-- Befundfoto per WhatsApp an den Oberarzt (Messenger ohne AV-Vertrag, Bild landet in der privaten Galerie),
-- Videosprechstunde über ein nicht zertifiziertes Konferenztool,
-- Telemonitoring-Alarm per unverschlüsselter SMS mit Diagnose,
-- Patiententablet ohne PIN, gemeinsames Passwort im Telemedizinzentrum.
-
-Merksatz: **Datenschutz = *darf* ich (Art. 9 DSGVO, Einwilligung, AV-Vertrag, kein unsicherer Drittlandserver, DSFA, Schweigepflicht); Datensicherheit = *wie* schütze ich (Vertraulichkeit, Integrität, Verfügbarkeit, Authentizität: Ende-zu-Ende-Verschlüsselung, Backups, Rückfallplan). Kein WhatsApp für Befunde, nur zertifizierte Videodienste.**
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Quellen {.unnumbered}
-
-Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
-
-- Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä, § 630f BGB, MDR, Anlage 31b BMV-Ä, EBM. Stand: 10/2026
-- Curriculum/Allgemeinwissen — § 341 SGB V (ePA), § 33a und § 139e SGB V (DiGA), § 40a SGB XI (DiPA), BfArM-DiGA-Verzeichnis, MDR. Stand: 10/2026
-- Curriculum/Allgemeinwissen — TIM-HF2-Studie, EBM-Telemonitoring Herzinsuffizienz, § 14 StrlSchG (Teleradiologie), TEMPiS. Stand: 10/2026
-- Curriculum/Allgemeinwissen — gematik, §§ 291, 306 ff., 341 SGB V. Stand: 10/2026
-- Curriculum / Allgemeinwissen — eHBA für Gesundheitsfachberufe/eGBR nach 2015, im Buch nicht enthalten. Stand: 10/2026
-- Curriculum/Allgemeinwissen — § 7 Abs. 4 MBO-Ä (121. Deutscher Ärztetag 2018), §§ 630a, 630f BGB, § 9 HWG, AU-Richtlinie G-BA, Anlage 31b BMV-Ä. Stand: 10/2026
-- Curriculum/Allgemeinwissen — DSGVO Art. 9, 28, 32, 35, 44 ff., § 203 StGB, Anlage 31b BMV-Ä, BSI-TR-03161, §§ 390, 391 SGB V, MDR. Stand: 10/2026
+::::

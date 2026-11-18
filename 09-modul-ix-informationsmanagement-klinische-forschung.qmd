@@ -1,325 +1,266 @@
 # Informationsmanagement/Klinisches Datenmanagement/Klinische Forschung {#modul-ix}
 
-## Anwendungssysteme in der Forschung
+## 9.1 Anwendungssysteme in der Forschung
 
 ::: {.exam-question}
-Welche Anwendungssysteme werden in der medizinischen (klinischen) Forschung eingesetzt, wofür, und welche regulatorischen Anforderungen gelten für sie?
+Welche Anwendungssysteme unterstützen die klinische Forschung, und welche Anforderungen gelten für ihren Einsatz?
 :::
 
-::: {.exam-answer}
-- **Studienregistrierung und Antragstellung:** 
-	- machen Studien öffentlich nachvollziehbar und unterstützen behördliche Verfa
-- **[DRKS](https://www.bfarm.de/DE/Das-BfArM/Aufgaben/Deutsches-Register-Klinischer-Studien/_node.html) / ClinicalTrials.gov:** 
-	- öffentliche Studienregistrierung
-- **CTIS:** 
-	- Antragstellung, Aufsicht und Transparenz bei EU-Arzneimittelprüfungen
-- **EDC (Electronic Data Capture):**
-	- erfasst und prüft Studiendaten in elektronischen Prüfbögen (eCRF)
-	- Eine Study Nurse dokumentiert eine Visite in REDCap; Plausibilitätsprüfungen markieren auffällige Werte
-- **CTMS (Clinical Trial Management System):** 
-	- organisiert Studienabläufe, Zentren und Termine
-	- Die Studienzentrale überwacht den Rekrutierungsstand
-- **IRT (Interactive Response Technology):** unterstützt Randomisierung und Prüfpräparateverwaltung
-	- Ein Teilnehmer wird einer Behandlungsgruppe zugeteilt
-- **Pseudonymisierungs- und Einwilligungsmanagement:** 
-	- trennt Identitätsdaten von Forschungsdaten und dokumentiert Einwilligungen
-	- Forschende arbeiten mit einer Studiennummer statt dem Patientennamen
-- **Forschungsdatenplattform / Data Warehouse:** 
-	- führt Routinedaten zusammen und ermöglicht Kohortenabfragen
-  	- z.B. FDPG
-- **Statistiksoftware:** 
-	- analysiert Daten und stellt Ergebnisse dar
-  	- Überlebenszeitanalyse mit R oder SAS
+:::: {.exam-answer}
 
-**Anforderungen – abhängig von Studienart und Einsatzzweck:**
-
-- **Datenschutz:** geeignete Rechtsgrundlage nach Art. 6 und 9 DSGVO, Datenminimierung und Schutzmaßnahmen
-  - Pseudonymisierung schützt die Identität, hebt den Personenbezug aber nicht auf
-- **Studienrecht und Ethik:** erforderliche Genehmigungen und ethische Bewertung
-  - Diese betreffen das Forschungsvorhaben, nicht allein die Software
-- **GCP bei entsprechenden klinischen Prüfungen:** Schutz der Teilnehmenden und verlässliche Studiendaten
-  - ICH E6(R3): risikobasiertes und verhältnismäßiges Vorgehen
-- **Validierung:** dokumentierter Nachweis der Eignung für den vorgesehenen Einsatz
-  - Umfang richtet sich nach Risiko und Bedeutung des Systems für die Studie
-- **Datenintegrität:** Daten müssen zuordenbar, lesbar, zeitnah, originalgetreu und korrekt sowie vollständig, konsistent, dauerhaft und verfügbar sein (ALCOA+)
-  - **Audit Trail:** dokumentiert Erfassung und Änderungen mit Person, Zeitpunkt, alten/neuen Werten und gegebenenfalls Änderungsgrund
-- **Sicherer Betrieb:** Rollen und Rechte, Backups, Wiederherstellbarkeit und Archivierung
-- **FDA 21 CFR Part 11:** zusätzliche Anforderungen an elektronische Aufzeichnungen und Signaturen, soweit der FDA-Anwendungsbereich eröffnet ist
-
-Merksatz: Forschungssysteme organisieren, erfassen und analysieren — Anforderungen richten sich nach Zweck, Risiko und Studienart.
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Etablierung von IT-Strukturen im Rahmen von medizinischen Forschungsprojekten
-
-::: {.exam-question}
-Wie baut man die IT-Struktur für ein medizinisches Forschungsprojekt (z. B. eine multizentrische klinische Studie) auf — welche Schritte, Dokumente und Akteure gehören dazu?
-:::
-
-::: {.exam-answer}
-Analogie: Wie eine **neue Station eröffnen** — erst planen (Betten, Personal, SOPs), dann einrichten und probelaufen, dann Betrieb, am Ende geordnet schließen und archivieren.
-
-**Phasen**:
-
-| Phase | Was passiert IT-seitig? | Beispiel (Studie „Sepsis-Biomarker“, 10 Zentren) |
-|---|---|---|
-| **1. Planung** | Anforderungen aus dem **Studienprotokoll** ableiten; **Datenmanagementplan (DMP)**; Datensatz/Variablen festlegen (möglichst Standards: CDISC, LOINC, SNOMED CT, MII-Kerndatensatz); Systemwahl (EDC kaufen/hosten, z. B. REDCap am KKS); Budget, Rollen | „Wir brauchen Laktat, PCT, SOFA-Score an Tag 0/3/7 — als LOINC-kodierte Felder“ |
-| **2. Datenschutz/Recht** | **Datenschutzkonzept** (Vorlage: **TMF**-Leitfaden), **DSFA** (Art. 35 DSGVO), TOMs, Einwilligung (z. B. MII-Broad-Consent), Ethikvotum, Verträge (Auftragsverarbeitung, Kooperationsvertrag) | Treuhandstelle trennt Name ↔ Pseudonym; Zentren schicken nur pseudonymisierte Daten |
-| **3. Aufbau** | **eCRF**-Design, Plausibilitätsregeln, Randomisierung, Rollen-/Rechtekonzept, Schnittstellen (KIS → eCRF z. B. via **HL7 FHIR**), Hosting, Backup | Laborwerte werden aus dem LIS übernommen statt abgetippt |
-| **4. Validierung & Test** | Testplan, **User Acceptance Test (UAT)**, Validierungsbericht, Freigabe („go-live“) | Testpatient „Max Mustermann“ einmal komplett durchgespielt |
-| **5. Schulung & Rollout** | Accounts, Schulung der Prüfzentren, SOPs, Helpdesk | Study Nurses aller 10 Zentren per Webinar geschult |
-| **6. Betrieb** | Datenerfassung, **Queries**, Monitoring (auch zentral/risikobasiert), **Change Control** bei Protokolländerungen, Audit Trail | Amendment: neue Variable „Vasopressor ja/nein“ → versioniert eingeführt |
-| **7. Abschluss** | Datenbereinigung → **Database Lock** → Export für Statistik → **Archivierung** (EU-CTR 536/2014: Trial Master File **25 Jahre**) | Nach Lock keine Änderung mehr ohne dokumentierten Unlock |
-
-**Akteure/Strukturen**:
-- **KKS / ZKS** (Koordinierungszentren für Klinische Studien an Unikliniken): Datenmanagement, Monitoring, Biometrie als Dienstleistung.
-- **TMF** (Technologie- und Methodenplattform für die vernetzte medizinische Forschung): generische Datenschutzkonzepte, Tools, Leitfäden.
-- **MII / DIZ** (Medizininformatik-Initiative, Datenintegrationszentren): Routinedaten aus dem KIS für Forschung; **Use & Access Committee** entscheidet über Datennutzung.
-- Rollen: Sponsor, Leiter der klinischen Prüfung (LKP), Prüfarzt, Study Nurse, Datenmanager, Monitor, Biometriker, Datenschutzbeauftragter.
-
-**Architekturentscheidung multizentrisch**: **zentral** (ein Web-EDC, alle Zentren tippen dort ein — Standard) vs. **föderiert/dezentral** („Daten bleiben im Haus, Analyse wandert hin“, z. B. MII-Machbarkeitsabfragen, föderiertes Lernen).
-
-Merksatz: **Protokoll → DMP → Datenschutzkonzept → eCRF bauen → validieren → schulen → betreiben → Database Lock → archivieren.** Wer hilft? **KKS** (Dienstleister vor Ort), **TMF** (Vorlagen), **MII/DIZ** (Routinedaten).
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Vernetzte medizinische Forschung, Data Sharing, FAIR Data
-
-::: {.exam-question}
-Was versteht man unter vernetzter medizinischer Forschung und Data Sharing, welche Initiativen gibt es in Deutschland/EU, und was bedeuten die FAIR-Prinzipien?
-:::
-
-::: {.exam-answer}
-**Vernetzte Forschung** = Daten vieler Kliniken/Einrichtungen gemeinsam nutzen, weil eine Klinik allein zu wenige Fälle hat. Analogie: **Tumorkonferenz statt Einzelmeinung** — erst die gebündelte Erfahrung vieler ergibt belastbare Aussagen (v. a. bei seltenen Erkrankungen, KI-Training, Versorgungsforschung).
-
-**Initiativen**:
-
-| Initiative | Was? | Beispiel |
-|---|---|---|
-| **MII** (Medizininformatik-Initiative, BMBF, seit 2018) | **DIZ** an allen Unikliniken; 4 Konsortien (DIFUTURE, HiGHmed, MIRACUM, SMITH); **Kerndatensatz** (FHIR-Profile); **Broad Consent** | Routinedaten aus dem KIS werden standardisiert forschbar |
-| **FDPG** (Forschungsdatenportal für Gesundheit) | zentrale Anlaufstelle der MII: Machbarkeitsanfrage + Datenantrag | Forscher fragt: „Wie viele Pat. mit Long-COVID in allen Unikliniken?“ |
-| **NUM** (Netzwerk Universitätsmedizin) | seit COVID-19, gemeinsame Forschungsinfrastruktur der Unimedizin | NAPKON-Kohorte COVID-19 |
-| **DZG** (Deutsche Zentren der Gesundheitsforschung) | krankheitsbezogene Verbünde | DZHK (Herz), DKTK (Krebs), DZD (Diabetes) |
-| **FDZ Gesundheit** (am BfArM, GDNG 2024) | Abrechnungsdaten aller GKV-Versicherten für Forschung | Versorgungsforschung zu Antibiotika-Verordnungen |
-| **NFDI4Health** | Nationale Forschungsdateninfrastruktur: Metadaten/Studienkatalog | Suche: „Welche Kohortenstudien zu Adipositas gibt es?“ |
-| **EHDS** (European Health Data Space, EU-Verordnung 2025) | Primärnutzung (Versorgung, EU-weit) + **Sekundärnutzung** (Forschung) über Zugangsstellen | Spanische Forscher beantragen deutsche Registerdaten |
-
-**Data Sharing** — Formen:
-- **Open Data**: frei herunterladbar (nur bei anonymen/aggregierten Daten).
-- **Controlled Access**: Antrag + Prüfung (Use & Access Committee) + Nutzungsvertrag (DUA).
-- **Föderiert („Code to Data“)**: Daten bleiben in der Klinik, nur die Analyse wandert hin, nur Ergebnisse kommen zurück (z. B. DataSHIELD, föderiertes Lernen). Analogie: **Konsil, das zum Patienten kommt**, statt Patienten zu verlegen.
-- Hürden: Datenschutz (Re-Identifikationsrisiko bei seltenen Erkrankungen!), fehlende Standards, fehlende Anreize. Lösungen: Pseudonymisierung/Anonymisierung (k-Anonymität), synthetische Daten, Treuhandstelle.
-- ICMJE verlangt ein **Data Sharing Statement** bei Publikation klinischer Studien.
-
-**FAIR-Prinzipien** (Wilkinson et al. 2016):
-
-| Buchstabe | Bedeutung | Wie umgesetzt? | Klinik-Analogie |
-|---|---|---|---|
-| **F – Findable** | auffindbar | persistenter Identifier (**DOI**), reichhaltige Metadaten, in Katalog registriert | Befund hat eindeutige Fallnummer + steht im Archivverzeichnis |
-| **A – Accessible** | zugänglich | Standardprotokoll (z. B. HTTPS), Zugangsregeln klar; **Metadaten bleiben auch, wenn Daten gelöscht** | klar geregelt, wer Akteneinsicht bekommt und wie |
-| **I – Interoperable** | interoperabel | Standards/Terminologien: **FHIR, OMOP, SNOMED CT, LOINC** | Arztbrief, den jedes KIS versteht |
-| **R – Reusable** | wiederverwendbar | Lizenz, Herkunft (Provenienz), Datenqualität dokumentiert | Laborwert mit Methode, Einheit, Datum → auch Jahre später auswertbar |
-
-⚠️ Falle: **FAIR ≠ Open.** FAIR-Daten dürfen zugangsbeschränkt sein — wichtig: man *findet* sie und weiß, *wie* man Zugang bekommt.
-
-Merksatz: **Vernetzt = viele Kliniken, ein Datenpool (MII/DIZ, FDPG, EHDS).** Data Sharing: open / kontrolliert / föderiert („Code to Data“). **FAIR = Findable, Accessible, Interoperable, Reusable — „fair“ heißt nicht „frei“.**
-
-::: {.callout-note title="Good to know" appearance="simple"}
-
-:::
-:::
-
-## Nutzung von Routine- und Registerdaten in der Versorgungsforschung
-
-::: {.exam-question}
-Was ist Versorgungsforschung, welche Routine- und Registerdaten nutzt sie (z. B. Krebsregister, KISS), und welche Stärken und Schwächen haben diese Daten?
-:::
-
-::: {.exam-answer}
-**Versorgungsforschung** = Wie wirkt Medizin im **Alltag** („real world“), nicht unter Studienbedingungen? RCT = Wirksamkeit im Labor-ähnlichen Setting (*efficacy*), Versorgungsforschung = Wirksamkeit auf normaler Station mit multimorbiden 85-Jährigen (*effectiveness*). Fragen z. B.: Kommt die Leitlinie beim Patienten an? Gibt es regionale Unterschiede? Was passiert nach Entlassung?
-
-**Routinedaten** (entstehen *nebenbei* bei Versorgung/Abrechnung, nicht für Forschung):
-
-| Quelle | Inhalt | Beispiel-Fragestellung |
-|---|---|---|
-| **GKV-Abrechnungsdaten** (Krankenhaus § 301, ambulant § 295, Apotheke § 300 SGB V) | Diagnosen (ICD-10-GM), Prozeduren (OPS), Verordnungen (PZN/ATC), Sektorübergreifend, über Jahre | Wie viele Pat. erhalten nach Herzinfarkt innerhalb 1 Jahr dauerhaft ein Statin? |
-| **FDZ Gesundheit** (BfArM, GDNG) | GKV-Daten aller Versicherten, pseudonymisiert, auf Antrag | Antibiotika-Verordnungen bei Kindern im Regionalvergleich |
-| **§ 21-KHEntgG-Daten** (InEK) | DRG-Falldaten aller Krankenhäuser | Fallzahlen Pankreas-OP pro Klinik (→ Mindestmengen) |
-| **KIS-Daten via DIZ** (MII) | klinische Details: Labor, Vitalwerte, Medikation | Verlauf von Laktat bei Sepsis über 5 Unikliniken |
-| **Externe QS-Daten** (IQTIG) | QS-Bögen, z. B. Hüft-TEP, Geburtshilfe | Komplikationsraten im Klinikvergleich |
-
-**Registerdaten** (gezielt für eine Fragestellung, strukturiert, meist vollzählig angestrebt):
-
-| Register | Wer/Was | Besonderheit |
-|---|---|---|
-| **Krebsregister** | **epidemiologisch** (Inzidenz, Mortalität, Überleben der Bevölkerung) + **klinisch** (§ 65c SGB V: Diagnose, Therapie, Verlauf, jede Behandlung meldepflichtig, Meldevergütung) | Kodierung: ICD-10, **ICD-O-3** (Topographie + Morphologie), **TNM**; einheitlicher **oBDS** (onkologischer Basisdatensatz von ADT/GEKID); bundesweite Zusammenführung am **ZfKD (RKI)**; Rückmeldung an Tumorzentren/Qualitätskonferenzen |
-| **KISS** (Krankenhaus-Infektions-Surveillance-System) | **NRZ** (Nationales Referenzzentrum für Surveillance nosokomialer Infektionen, Charité Berlin); freiwillig, aber erfüllt die **Surveillance-Pflicht nach § 23 IfSG** | Module z. B. **ITS-KISS** (ZVK-Sepsis, beatmungsassoziierte Pneumonie, HWI bei Katheter), **OP-KISS** (Wundinfektionen), **NEO-KISS** (Frühgeborene), **HAND-KISS** (Händedesinfektionsmittelverbrauch); Klinik vergleicht sich mit **Referenzdaten** |
-| **Weitere** | **EPRD** (Endoprothesen), **IRD** (Implantateregister Deutschland, gesetzlich), TraumaRegister DGU, DIVI-Intensivregister, Mukoviszidose-Register, Register für Seltene Erkrankungen | z. B. EPRD erkennt früh, welches Hüftimplantat häufiger gewechselt werden muss |
-
-**Rechenbeispiel KISS** (Device-assoziierte Rate):
-1. Intensivstation: **4 ZVK-assoziierte Sepsen** in einem Jahr.
-2. **2.000 ZVK-Tage** (Summe aller Tage, an denen ein Pat. einen ZVK hatte).
-3. Rate = 4 / 2.000 × 1.000 = **2,0 pro 1.000 ZVK-Tage**.
-4. Vergleich mit KISS-Referenzwert (Median/Perzentilen vergleichbarer Stationen) → liegt die Station darüber → Ursachenanalyse (ZVK-Bundle, Schulung, Händehygiene).
-- Warum pro **Device-Tag** und nicht pro Patient? Eine Station mit vielen Langliegern hat mehr ZVK-Tage, also mehr Infektionsrisiko → sonst unfairer Vergleich (Analogie: Komplikationen pro OP-Stunde statt pro Chirurg).
-
-**Stärken vs. Schwächen**:
-
-| Stärken | Schwächen |
+| System | Aufgabe |
 |---|---|
-| sehr große Fallzahlen, auch **seltene Ereignisse** | **nicht für Forschung erhoben** → Abrechnungslogik (Upcoding, Kodierlücken), z. B. „Delir“ selten kodiert, weil erlösirrelevant |
-| **Alltagspatienten** (keine Ausschlusskriterien) | **Confounding** (v. a. *confounding by indication*: Kränkere bekommen eher Therapie X) → nur Assoziation, keine Kausalität; Methoden: Adjustierung, **Propensity Score** |
-| lange Nachbeobachtung, sektorübergreifend | klinische Details fehlen (GKV-Daten: kein Laborwert, kein Raucherstatus) |
-| günstig, schnell (Daten existieren schon) | Vollzähligkeit/Vollständigkeit/Validität schwankt; zeitlicher Verzug |
-| | **Record Linkage** über Quellen schwierig (Pseudonyme, Datenschutz) |
+| **Studienregister**, z. B. Deutsches Register Klinischer Studien (DRKS) | Macht Angaben zu Studien öffentlich auffindbar. |
+| **Clinical Trials Information System (CTIS)** | Unterstützt Antragstellung, Bewertung, Aufsicht und Veröffentlichung bei klinischen Arzneimittelprüfungen in der Europäischen Union und im Europäischen Wirtschaftsraum. |
+| **Electronic Data Capture (EDC)** | Erfasst Studiendaten in elektronischen Prüfbögen (*electronic Case Report Forms*, eCRFs) und unterstützt Plausibilitätsprüfungen. |
+| **Clinical Trial Management System (CTMS)** | Organisiert Prüfzentren, Rekrutierung und Meilensteine. |
+| **Interactive Response Technology (IRT)** | Unterstützt je nach Studie die Randomisierung und die Zuteilung oder Bestandsverwaltung der Prüfmedikation. |
+| **Pseudonymisierungs- und Einwilligungsmanagement** | Verwaltet Pseudonyme und Zuordnungsdaten getrennt von Forschungsdaten. Dokumentiert Einwilligungen, soweit vorgesehen. |
+| **Forschungsdateninfrastruktur** | Ein Data Warehouse führt Daten zusammen. Ein Forschungsdatenportal unterstützt Machbarkeitsabfragen und Datennutzungsanträge. |
+| **Statistiksoftware** | Wertet Studiendaten aus und stellt Ergebnisse dar. |
 
-Merksatz: **RCT = efficacy (Idealbedingungen), Versorgungsforschung = effectiveness (Alltag).** Routinedaten = *nebenbei* entstanden (Abrechnung), Register = *gezielt* gesammelt. **Krebsregister** = epidemiologisch + klinisch, ICD-O-3 + TNM, oBDS; **KISS** = NRZ/Charité, Infektionen pro 1.000 Device-Tage, erfüllt § 23 IfSG. Größte Schwäche: **Confounding** → keine Kausalität.
+- **Anforderungen nach Studienart und Einsatzzweck**
+  - **Datenschutz:** Für personenbezogene Gesundheitsdaten braucht es eine Rechtsgrundlage nach Artikel 6 und eine Ausnahme vom Verarbeitungsverbot nach Artikel 9 der Datenschutz-Grundverordnung (DSGVO). Pseudonymisierte Daten bleiben personenbezogen.
+  - **Studienrecht und Ethik:** Genehmigung und Ethikbewertung richten sich nach der Studienart und betreffen das Vorhaben.
+  - **Gute klinische Praxis (Good Clinical Practice, GCP):** Bei einschlägigen Prüfungen muss die Eignung der Systeme für den vorgesehenen Einsatz nachvollziehbar belegt werden. Die Validierung erfolgt risikobasiert.
+    - z. B. testet das Studienteam vor dem Einsatz, ob der konfigurierte Prüfbogen unplausible Werte wie vorgesehen markiert.
+  - **Datenintegrität und Betrieb:** Rollen und Zugriffsrechte festlegen, Daten sichern, Wiederherstellung prüfen und erforderliche Unterlagen archivieren. Ein Audit Trail macht Ersterfassung und Änderungen nachvollziehbar, einschließlich Zuordnung, Zeitstempel und gegebenenfalls Änderungsgrund.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+Merksatz: Das CTMS organisiert die Studie, das EDC erfasst ihre Daten. Studienart und Risiko bestimmen die Anforderungen an das jeweilige System.
+
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
+
+Bei ausgelagerten Systemleistungen bleibt der Sponsor für die ihm obliegenden Aufgaben verantwortlich. Eine Herstellerdokumentation kann die Validierung unterstützen. Sie allein belegt noch nicht die Eignung der konkreten Studienkonfiguration.
 
 :::
-:::
+::::
 
-## Datenmanagement, Datenintegration
+
+
+
+
+
+
+
+
+
+
+## 9.2 IT-Strukturen für medizinische Forschungsprojekte
 
 ::: {.exam-question}
-Was umfasst Datenmanagement, wie integriert man Daten aus verschiedenen Quellen (Architekturen, Datenstrukturen), und welche Algorithmen braucht man dafür (z. B. Record Linkage)?
+Wie wird die IT-Struktur einer multizentrischen klinischen Studie geplant, eingerichtet und betrieben?
 :::
 
-::: {.exam-answer}
-**Datenmanagement** = alle Tätigkeiten, damit Daten über ihren ganzen **Lebenszyklus** nutzbar, korrekt und geschützt sind: planen (Datenmanagementplan) → erheben → speichern → verarbeiten/prüfen → bereitstellen → archivieren → löschen.
-- **Data Governance**: Wer darf/muss was? **Data Owner** (fachlich verantwortlich, z. B. Chefarzt Labor für Laborwerte), **Data Steward** (pflegt Qualität und Definitionen, z. B. Medizincontroller für Kodierung).
-- **Stammdaten** (ändern sich selten: Patientenstamm, Leistungskatalog, Laborkatalog) vs. **Bewegungsdaten** (laufend: Befunde, Vitalwerte, Anordnungen).
-- **Metadaten** = Daten über Daten: Was bedeutet das Feld „K“? → „Kalium im Serum, mmol/l, LOINC 2823-3, gemessen mit Methode X“.
-- **Datenqualität**: Vollständigkeit, Korrektheit, Konsistenz, Plausibilität, Aktualität (Beispiel Inkonsistenz: „männlich“ + „Schwangerschaftswoche 12“).
+:::: {.exam-answer}
 
-**Datenintegration** — das Problem: Ein Patient ist in vielen Systemen verteilt (KIS, LIS, RIS/PACS, PDMS, OP-System, Praxis-PVS), jeweils mit **eigener ID, eigenem Format, eigenen Codes** (Labor A: „K“, Labor B: „Kalium_S“). Analogie: Ein Patient mit **Akten in fünf Kliniken** — man muss sie erst zusammenführen, dem richtigen Patienten zuordnen und „übersetzen“, bevor man den Verlauf sieht.
+1. **Planen:** Aus dem Studienprotokoll ableiten, welche Daten wann, wo und durch wen erhoben werden. Im **Datenmanagementplan** Datenflüsse, Zuständigkeiten, Qualitätsprüfungen und den Umgang mit Datenkorrekturen festlegen.
+2. **Standorte und Datenschutz klären:** Festlegen, welche Daten zentral zusammengeführt werden und welche vor Ort bleiben. Rechtsgrundlage, erforderliche Verträge sowie Zugriffs- und Schutzmaßnahmen klären. Bei Pseudonymisierung die Zuordnungsliste getrennt und zugriffsgeschützt halten.
+3. **Einrichten, prüfen und freigeben:** Elektronische Prüfbögen, Plausibilitätsregeln, Rollen und Schnittstellen konfigurieren. Die Eignung für den vorgesehenen Einsatz risikobasiert prüfen und dokumentieren. Vor dem Start die Prüfzentren schulen.
+   - z. B. wird mit synthetischen Testdaten geprüft, ob ein Laborwert mit korrekter Einheit der richtigen Person und Visite zugeordnet wird.
+4. **Betreiben:** Support und Datensicherung organisieren. Änderungen an Formularen und Schnittstellen kontrolliert testen, versionieren und freigeben.
+5. **Abschließen:** Offene Datenrückfragen klären, die Datenbank für die finale Auswertung sperren (*Database Lock*), den Analysedatensatz exportieren und die erforderlichen Unterlagen archivieren.
 
-Ebenen: **syntaktisch** (Format lesbar, z. B. HL7, FHIR, CSV) → **semantisch** (Bedeutung gleich, z. B. beide auf LOINC/SNOMED CT gemappt) → **organisatorisch/prozessual**.
+- **Zuständigkeiten:** Bei einer klinischen Prüfung organisiert der Sponsor die übergreifenden Abläufe. Die Prüfzentren setzen sie vor Ort um. Datenmanagement, IT und Datenschutz unterstützen mit klar zugewiesenen Aufgaben. Ein Koordinierungszentrum für Klinische Studien (KKS) kann Aufgaben wie Datenmanagement oder Monitoring übernehmen.
 
-**Architekturen**:
+Merksatz: Das Protokoll bestimmt den Datenbedarf. Der Datenmanagementplan legt den Umgang mit den Daten fest. Vor der Freigabe wird geprüft, im Betrieb werden Änderungen kontrolliert.
 
-| Ansatz | Prinzip | Beispiel |
-|---|---|---|
-| **Data Warehouse (ETL)** | **E**xtract aus Quellsystemen → **T**ransform (bereinigen, mappen, pseudonymisieren) → **L**oad in zentrale Datenbank; **physische** Integration | DIZ der MII lädt nachts KIS-/Labordaten ins Forschungs-Warehouse (i2b2, OMOP) |
-| **Föderiert / virtuell** | Daten bleiben in den Quellen; eine Abfrage wird verteilt, Ergebnisse zusammengeführt | Machbarkeitsabfrage über alle Unikliniken (FDPG) |
-| **Nachrichtenbasiert** (Kommunikationsserver) | Systeme schicken sich Nachrichten in Echtzeit (HL7 v2, FHIR) — für die **Versorgung** | Laborbefund erscheint sofort in der Kurve |
-| **Data Lake** | Rohdaten in Originalform sammeln, Struktur erst bei der Auswertung | Monitor-Rohdaten (Biosignale) für KI-Projekte |
+::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-**Datenstrukturen**:
-
-| Struktur | Wofür? | Beispiel |
-|---|---|---|
-| **Relationale Tabellen** (Zeilen/Spalten, Schlüssel) | Standard in KIS/Datenbanken | Tabelle Patient, Tabelle Fall, verknüpft über Fallnummer |
-| **Sternschema** (Faktentabelle + Dimensionstabellen) | Data Warehouse, schnelle Auswertung | Fakt „Laborwert“ mit Dimensionen Patient, Zeit, Parameter, Station (i2b2) |
-| **EAV** (Entity–Attribute–Value) | sehr viele, oft leere Merkmale („sparse“) | statt 5.000 Spalten je Laborparameter: Zeile = (Patient 17, Kalium, 4,2) |
-| **Baum / Hierarchie** | Klassifikationen | ICD-10: Kapitel → Gruppe → Kategorie (I21 → I21.0) |
-| **Graph** | Ontologien, Beziehungsnetze | SNOMED CT: „Pneumonie — *is a* — Lungenerkrankung“, „— *finding site* — Lunge“ |
-| **Dokument/Ressource** (JSON, XML) | Austausch, FHIR | FHIR-Ressource „Observation“ für einen Blutdruckwert |
-| **Zeitreihe / Array** | Biosignale | EKG mit 500 Messwerten pro Sekunde |
-
-**Algorithmen**:
-- **Record Linkage** = Datensätze desselben Patienten aus verschiedenen Quellen finden:
-  - **deterministisch**: exakte Übereinstimmung definierter Merkmale (Name + Geburtsdatum + PLZ identisch) → einfach, aber scheitert an Tippfehlern („Meier“ ≠ „Maier“).
-  - **probabilistisch** (Fellegi-Sunter): jedes übereinstimmende Merkmal bekommt ein **Gewicht** (seltener Nachname zählt mehr als „Müller“; Geburtsdatum viel, Geschlecht wenig) → Summe über Schwelle = Treffer, Grauzone = manuelle Prüfung.
-  - **phonetische Codes** (Kölner Phonetik, Soundex): „Meier/Mayer/Maier“ → gleicher Code.
-  - **datenschutzgerecht (PPRL)**: Abgleich über verschlüsselte **Bloom-Filter** statt Klarnamen (z. B. Krebsregister).
-- **Dublettenerkennung** im Patientenstamm → **MPI/EMPI** (Master Patient Index): Patient bekam bei Notaufnahme nachts eine zweite Patienten-ID → zusammenführen, sonst fehlen Allergien in der „neuen“ Akte.
-- **Mapping/Transformation**: lokale Codes → Standard (Hauslabor „K“ → LOINC 2823-3), Einheiten umrechnen (mg/dl → mmol/l, UCUM), über einen **Terminologieserver**.
-- **Plausibilitäts-/Validierungsregeln**: Wertebereiche (Körpertemperatur 15 °C?), Konsistenz (Entlassung vor Aufnahme?).
-
-**Beispiel Record Linkage** (gleicher Patient?):
-
-| Merkmal | KIS | Krebsregister | Übereinstimmung |
-|---|---|---|---|
-| Name | Maier, Hans | Meier, Hans | phonetisch gleich |
-| Geburtsdatum | 12.03.1956 | 12.03.1956 | ✅ (hohes Gewicht) |
-| PLZ | 50667 | 50668 | ❌ (Umzug?) |
-| Geschlecht | m | m | ✅ (niedriges Gewicht) |
-
-→ deterministisch: **kein** Treffer; probabilistisch: hohe Gesamtpunktzahl → **wahrscheinlich derselbe Patient** (ggf. manuelle Prüfung).
-
-Merksatz: **Datenmanagement = Lebenszyklus + Governance + Qualität + Metadaten.** Integration: **Warehouse = Daten zusammentragen (ETL), föderiert = Abfrage verteilen, Kommunikationsserver = Nachrichten in Echtzeit.** EAV für „viele leere Spalten“, Sternschema fürs Warehouse. **Record Linkage: deterministisch = exakt, probabilistisch = gewichtete Punkte**, Bloom-Filter = datenschutzgerecht.
-
-::: {.callout-note title="Good to know" appearance="simple"}
+Bei klinischen Arzneimittelprüfungen nach der Verordnung (EU) Nr. 536/2014 archivieren Sponsor und Prüfer den Inhalt ihres jeweiligen Master File mindestens 25 Jahre nach Prüfungsende (Artikel 58). Für Patientenakten gilt nationales Recht.
 
 :::
-:::
+::::
 
-## Durchführung klinisches Datenmanagement
+
+
+
+
+
+
+
+
+
+
+
+## 9.3 Vernetzte medizinische Forschung, Data Sharing und FAIR Data
 
 ::: {.exam-question}
-Wie läuft klinisches Datenmanagement in einer Studie ab — Planung, Erfassung, Validierung, Auswertung?
+Wie werden Gesundheitsdaten für die vernetzte Forschung gemeinsam genutzt, und was bedeuten die FAIR-Prinzipien?
 :::
 
-::: {.exam-answer}
-**Klinisches Datenmanagement (CDM)** = alles, damit am Ende einer Studie ein **vollständiger, korrekter, nachvollziehbarer Datensatz** vorliegt, den man auswerten (und der Behörde vorlegen) kann. Rahmen: **ICH-GCP E6 (International Council for Harmonisation – Good Clinical Practice = Regeln für gute klinische Studienpraxis)**; elektronische Systeme müssen **validiert** sein und einen **Audit Trail** haben (wer hat wann was geändert, alter Wert bleibt sichtbar — wie eine Korrektur in der Papierakte: durchstreichen, nicht schwärzen; USA: **21 CFR Part 11 (Code of Federal Regulations, US-Vorschrift für elektronische Aufzeichnungen und Signaturen)**).
+:::: {.exam-answer}
 
-Analogie: Wie eine **Station über einen Fall** — vorher festlegen, was dokumentiert wird (Standard), dann dokumentieren, dann Visite/Kontrolle (stimmt das?), am Ende Arztbrief (Auswertung).
+- **Vernetzte Forschung:** Mehrere Einrichtungen nutzen Daten für eine gemeinsame Fragestellung. Das ermöglicht größere Fallzahlen und standortübergreifende Vergleiche.
+  - z. B. untersuchen mehrere Kliniken gemeinsam die Behandlung einer seltenen Erkrankung.
+- **Data Sharing:** Forschungsdaten werden anderen zur Nachnutzung zugänglich gemacht. Der Zugang kann offen oder nach Antrag und Prüfung kontrolliert sein.
+  - Bei **zentraler Verarbeitung** werden Daten an einer Stelle zusammengeführt.
+  - Bei **föderierter Analyse** bleiben die Einzeldaten an den Standorten. Für die gemeinsame Auswertung werden freigegebene Ergebnisse zusammengeführt.
+- **Medizininformatik-Initiative (MII):** Datenintegrationszentren (DIZ) bereiten klinische Routinedaten nach einem gemeinsamen Kerndatensatz auf. Das Forschungsdatenportal für Gesundheit (FDPG) unterstützt Machbarkeitsabfragen und Anträge auf Datennutzung.
+- **Europäischer Gesundheitsdatenraum (European Health Data Space, EHDS):** Der europäische Rechtsrahmen regelt die Primärnutzung von Gesundheitsdaten für die Versorgung und die Sekundärnutzung unter anderem für Forschung. Die Vorgaben werden schrittweise angewendet.
 
-| Phase | Was passiert? | Klinik-/Studienbeispiel |
-|---|---|---|
-| **1. Planung** | **Prüfplan** (Protokoll: Fragestellung, Endpunkte, Visiten); **DMP (Datenmanagementplan)**; **eCRF (electronic Case Report Form = digitaler Erfassungsbogen je Visite)** entwerfen; Datenbank aufsetzen und **testen/validieren**; Kodierlexika festlegen; **SAP (Statistical Analysis Plan = statistischer Analyseplan)** *vor* Datenerhebung | Blutdruckstudie: eCRF (electronic Case Report Form) „Visite 2“ mit Feldern RR (Blutdruck nach Riva-Rocci) systolisch (mmHg, 60–260), Begleitmedikation (ATC = Anatomisch-Therapeutisch-Chemische Klassifikation), unerwünschte Ereignisse |
-| **2. Erfassung** | Daten aus der **Quelle** (Patientenakte = Source Document) ins **EDC-System (Electronic Data Capture = elektronische Datenerfassung**, z. B. REDCap, secuTrial, OpenClinica) — direkt im Prüfzentrum; Vorteil: Prüfregeln greifen schon bei Eingabe; ggf. **ePRO (electronic Patient-Reported Outcome = Patient gibt selbst ein, z. B. per App)** | Study Nurse überträgt den RR (Blutdruck) aus der Kurve ins eCRF (digitaler Erfassungsbogen); Patient füllt Lebensqualitätsbogen auf dem Tablet aus |
-| **3. Validierung / Bereinigung** | **Plausibilitäts-/Edit-Checks** (Wertebereich, Konsistenz, Pflichtfelder) → **Queries** (Rückfragen ans Zentrum, bis geklärt); **SDV (Source Data Verification = Abgleich eCRF ↔ Patientenakte)** durch den Monitor; **medizinische Kodierung** (UE (unerwünschte Ereignisse) → **MedDRA (Medical Dictionary for Regulatory Activities)**, Medikamente → WHO-Drug (Arzneimittelverzeichnis der WHO = World Health Organization) / ATC); **SAE (Serious Adverse Event = schwerwiegendes unerwünschtes Ereignis)**-Abgleich mit der Pharmakovigilanz → am Ende **Database Lock** (Datenbank eingefroren, keine Änderungen mehr) | Query: „Entlassdatum vor Aufnahmedatum — bitte prüfen“; „RR 1.200 mmHg?“ → Tippfehler 120; „Kopfweh“ → MedDRA „Headache“ |
-| **4. Auswertung** | Export im Standardformat (**CDISC (Clinical Data Interchange Standards Consortium)**: **CDASH (Clinical Data Acquisition Standards Harmonization)** für die Erfassung, **SDTM (Study Data Tabulation Model)** für die Einreichung bei Behörden, **ODM (Operational Data Model)** als Austauschformat); Auswertung **nach SAP (Analyseplan)** (z. B. **ITT (Intention-to-Treat = alle wie randomisiert)** vs. **PP (Per-Protocol = nur protokolltreue Patienten)**); Studienbericht; **Archivierung** (nach **AMG (Arzneimittelgesetz)** / **CTR (EU Clinical Trials Regulation)** ≥ 25 Jahre für den Trial Master File = Studienakte) | Statistiker rechnet nach dem Lock mit R/SAS (Statistiksoftware); Ergebnis in Studienregister/Publikation |
+| FAIR-Prinzip | Was bedeutet es praktisch? |
+|---|---|
+| **Findable – auffindbar** | Ein dauerhafter Identifikator und durchsuchbare Metadaten machen den Datensatz auffindbar. |
+| **Accessible – zugänglich** | Ein standardisierter Zugangsweg ist beschrieben. Authentifizierung und Berechtigungsprüfung sind möglich. Metadaten bleiben zugänglich, wenn die Daten selbst nicht mehr verfügbar sind. |
+| **Interoperable – interoperabel** | Gemeinsame Formate und Terminologien machen Daten systemübergreifend verarbeitbar und interpretierbar. |
+| **Reusable – nachnutzbar** | Nutzungsbedingungen, Herkunft und Erhebungsmethoden sind dokumentiert, damit andere die Eignung der Daten beurteilen können. |
 
-**Warum den SAP (Analyseplan) vor Lock/Entblindung festlegen?** Sonst „sucht man sich“ nachträglich die Analyse, die ein signifikantes Ergebnis liefert (p-Hacking).
+Merksatz: FAIR-Daten sind auffindbar, über einen geregelten Weg zugänglich, interoperabel und nachnutzbar. Auch Daten mit kontrolliertem Zugang können FAIR sein.
 
-Merksatz: **Planen (Prüfplan, DMP = Datenmanagementplan, eCRF = digitaler Erfassungsbogen, SAP = Analyseplan) → Erfassen (EDC = elektronische Datenerfassung aus Source Documents) → Validieren (Edit-Checks, Queries, SDV = Abgleich mit der Akte, MedDRA-Kodierung, Database Lock) → Auswerten (CDISC-Export, nach SAP, archivieren).** Immer mit **Audit Trail** nach GCP (Good Clinical Practice).
+::::
 
-::: {.callout-note title="Good to know" appearance="simple"}
 
-:::
-:::
 
-## Konzepte zur Wissensvermittlung mit Hilfe digitaler Medien
+
+
+
+
+
+## 9.5 Datenmanagement und Datenintegration
 
 ::: {.exam-question}
-Welche Konzepte gibt es, um Wissen mit digitalen Medien zu vermitteln (z. B. E-Learning, Blended Learning, Aufklärungsfilme), und was ist dabei zu beachten?
+Was umfasst Datenmanagement, und wie werden Daten aus verschiedenen Quellen strukturiert, harmonisiert und derselben Person zugeordnet?
 :::
 
-::: {.exam-answer}
-Zwei Zielgruppen: **Personal** (Aus-/Fort-/Weiterbildung, Einweisungen) und **Patienten** (Aufklärung, Schulung).
+:::: {.exam-answer}
 
-| Konzept | Prinzip | Klinik-Beispiel |
-|---|---|---|
-| **E-Learning** | Lernen mit elektronischen Medien, meist **asynchron** (jeder lernt, wann er will); z. B. **WBT (Web-Based Training = Online-Lernmodul)** auf einem **LMS (Learning Management System = Lernplattform, z. B. Moodle, ILIAS)** mit Lernstandskontrolle | Pflicht-Unterweisung Hygiene/Datenschutz/Brandschutz als Online-Modul mit Abschlusstest; **CME (Continuing Medical Education = zertifizierte ärztliche Fortbildung)**-Punkte per Online-Fortbildung |
-| **Blended Learning** | „gemischt“: **Online-Phase + Präsenzphase** kombiniert; Variante **Inverted/Flipped Classroom** (Theorie vorher online, Präsenzzeit nur zum Üben/Diskutieren) | Reanimationskurs: Algorithmus vorab per Video/Quiz, im Präsenztermin nur Training am Phantom |
-| **Webinar / virtuelles Klassenzimmer** | **synchron** (alle gleichzeitig, live, interaktiv) | Live-Fortbildung zur neuen Leitlinie per Videokonferenz, Fragen im Chat |
-| **MOOC (Massive Open Online Course = offener Online-Kurs für sehr viele Teilnehmer)** | frei zugänglich, große Teilnehmerzahl | Online-Kurs „Digitale Medizin“ einer Universität |
-| **Simulation / VR (Virtual Reality = virtuelle Realität) / Serious Games** | realitätsnahes Üben ohne Patientenrisiko | Laparoskopie-Simulator; VR-Training für Notfall-/Katastrophenszenarien |
-| **Mikrolernen** | sehr kurze Einheiten (wenige Minuten), oft mobil per App | 3-Minuten-Video „neues Infusionspumpenmodell“ auf Station; Medizinprodukte-Einweisung |
-| **Aufklärungsfilme / digitale Patientenaufklärung** | standardisierte, verständliche Information für Patienten, ggf. mehrsprachig | Film vor Koloskopie oder Narkose im Wartezimmer/Tablet; Diabetes-Schulung per App/DiGA (Digitale Gesundheitsanwendung) |
+- **Datenmanagement** umfasst Planung, Erfassung, Speicherung, Qualitätsprüfung, Bereitstellung und Aufbewahrung von Daten sowie ihre Löschung nach den geltenden Vorgaben.
+  - **Data Governance** legt Zuständigkeiten, Zugriffsregeln und Qualitätsanforderungen fest.
+  - **Metadaten** beschreiben Bedeutung, Einheit, Herkunft und Erhebungszeitpunkt eines Feldes. Wichtige Qualitätsmerkmale sind Vollständigkeit, Korrektheit, Konsistenz, Plausibilität und Aktualität.
 
-**Was zu beachten ist:**
-- **Didaktik vor Technik**: erst Lernziele festlegen, dann Medium wählen; Interaktivität (Quiz, Fälle) und Lernerfolgskontrolle einbauen.
-- **Aufklärungsfilm ersetzt nicht das ärztliche Aufklärungsgespräch**: Nach § 630e BGB (Bürgerliches Gesetzbuch) muss mündlich aufgeklärt werden; der Film ergänzt nur und dient als Vorbereitung. Die Dokumentation muss zeigen, dass das Gespräch stattgefunden hat.
-- **Vorteile**: zeit- und ortsunabhängig (Schichtdienst!), einheitliche Qualität, skalierbar, Nachweis der Teilnahme automatisch dokumentiert.
-- **Nachteile/Grenzen**: weniger persönlicher Austausch, praktische Fertigkeiten nur begrenzt digital lernbar (→ Blended Learning), Selbstdisziplin nötig, Aufwand für Erstellung und Aktualisierung.
-- **Rahmenbedingungen**: Barrierefreiheit (Untertitel, einfache Sprache, Mehrsprachigkeit), Datenschutz auf der Lernplattform (Lernstände sind Mitarbeiterdaten → Mitbestimmung durch Betriebs-/Personalrat), Urheberrecht an Bildern/Videos, IT-Ausstattung und Zugang für alle Mitarbeitenden.
+- **Datenintegration** macht Daten aus verschiedenen Quellen gemeinsam auswertbar.
+  - **Syntaktische Harmonisierung** vereinheitlicht Formate und Feldstrukturen. **Semantische Harmonisierung** gleicht die Bedeutung von Feldern, Codes und Einheiten ab.
+    - z. B. werden lokale Kaliumbefunde erst dann demselben Standardcode zugeordnet, wenn Messgröße und Probenmaterial übereinstimmen.
+  - Im **Data Warehouse** werden Daten zentral zusammengeführt. Ein typischer Ablauf ist Extrahieren, Transformieren und Laden (*Extract, Transform, Load*, ETL). Bei einer **föderierten Abfrage** bleiben die Einzeldaten an den Standorten und die Abfrageergebnisse werden zusammengeführt.
+  - **Relationale Tabellen** verknüpfen Datensätze über Schlüssel. Ein **Sternschema** ordnet Messungen in einer Faktentabelle und verknüpft sie mit Dimensionen wie Zeit und Standort.
 
-Merksatz: **E-Learning = online, meist asynchron; Blended Learning = online + Präsenz gemischt (Flipped Classroom: Theorie zu Hause, Üben vor Ort); Aufklärungsfilm = ergänzt das Aufklärungsgespräch, ersetzt es nie (§ 630e BGB).** Erst Lernziel, dann Medium.
+- **Record Linkage** ordnet Datensätze aus unterschiedlichen Quellen derselben Person zu.
+  - **Deterministisch:** Feste Regeln entscheiden über die Zuordnung, etwa anhand einer gemeinsamen, verlässlichen Patientenkennung.
+  - **Probabilistisch:** Übereinstimmungen und Abweichungen mehrerer Merkmale werden gewichtet. Unsichere Paare können zur manuellen Prüfung vorgesehen werden.
+  - Ein **Master Patient Index (MPI)** verwaltet Patientenidentitäten und ihre zugehörigen Kennungen. Record Linkage kann ihn beim Erkennen von Dubletten unterstützen.
 
-::: {.callout-note title="Good to know" appearance="simple"}
+Merksatz: Für eine gemeinsame Auswertung müssen Daten technisch lesbar, inhaltlich vergleichbar und der richtigen Person zugeordnet sein.
 
+::::
+
+
+
+
+
+
+
+## 9.4 Routine- und Registerdaten in der Versorgungsforschung
+
+::: {.exam-question}
+Welche Routine- und Registerdaten nutzt die Versorgungsforschung, und welche Stärken und Grenzen haben diese Daten?
 :::
+
+:::: {.exam-answer}
+
+- **Versorgungsforschung** untersucht, wie Gesundheitsversorgung im Alltag organisiert ist, wen sie erreicht und welche Ergebnisse sie erzielt.
+- **Routinedaten** entstehen bei Versorgung, Dokumentation oder Abrechnung. Für Forschungsfragen werden sie nachgenutzt.
+  - Abrechnungsdaten enthalten z. B. kodierte Diagnosen und Leistungen. Klinische Routinedaten können zusätzlich Laborwerte und Vitalparameter enthalten.
+- **Registerdaten** werden für einen festgelegten Zweck und eine definierte Zielgruppe systematisch erhoben. Die Abdeckung hängt vom Register ab.
+  - **Krebsregister:** Die epidemiologische Registrierung beschreibt die Häufigkeit und Entwicklung von Krebserkrankungen in der Bevölkerung. Die klinische Registrierung erfasst Diagnose, Therapie und Verlauf und unterstützt die Qualitätssicherung.
+  - **Krankenhaus-Infektions-Surveillance-System (KISS):** Teilnehmende Einrichtungen erfassen nosokomiale Infektionen nach standardisierten Definitionen und vergleichen ihre Ergebnisse mit Referenzdaten.
+    - z. B. entsprechen vier mit einem zentralen Venenkatheter (ZVK) assoziierte primäre Blutstrominfektionen bei 2.000 ZVK-Tagen einer Rate von **2 pro 1.000 ZVK-Tage**.
+- **Stärken:** Je nach Quelle große Fallzahlen, Beobachtung der Versorgung im Alltag und längere Verlaufsdaten.
+- **Grenzen:** Fehlende klinische Details, Unterschiede in Kodierung und Vollständigkeit sowie eingeschränkte Verknüpfbarkeit. Bei Therapievergleichen kann die Krankheitsschwere sowohl die Therapiewahl als auch das Ergebnis beeinflussen (*Confounding by Indication*).
+
+Merksatz: Routinedaten werden nachgenutzt, Registerdaten zweckgebunden erhoben. Die Aussagekraft hängt davon ab, welche Fälle erfasst sind, wie verlässlich die Merkmale dokumentiert wurden und welche Verzerrungen die Auswertung berücksichtigt.
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 9.6 Klinisches Datenmanagement
+
+::: {.exam-question}
+Wie läuft das klinische Datenmanagement von der Studienplanung bis zur Auswertung ab?
 :::
 
-## Quellen {.unnumbered}
+:::: {.exam-answer}
 
-Kapitelangaben („Kap. N“) beziehen sich auf „Medizinische Informatik kompakt“ (De Gruyter, 2015). Alles andere ist als Curriculum/Allgemeinwissen gekennzeichnet.
+Klinisches Datenmanagement stellt einen für die Fragestellung ausreichend vollständigen, verlässlichen und nachvollziehbaren Datensatz für die Auswertung bereit.
 
-- Curriculum/Allgemeinwissen; „Medizinische Informatik kompakt“ behandelt Forschungs-IT nur am Rande — MII/DIZ, REDCap, CTIS als aktueller Stand ergänzt
-- Curriculum/Allgemeinwissen; EU-CTR 536/2014, MII/DIZ, Broad Consent als aktueller Stand ergänzt
-- Curriculum/Allgemeinwissen; nicht im Buch von 2015 — MII, NUM, FDZ/GDNG, EHDS sind neuer. Stand: 10/2026
-- Curriculum/Allgemeinwissen; Krebsregister/§ 65c auch im Buch, Kap. Dokumentation — FDZ/GDNG, oBDS, IRD, ZfKD-Zusammenführung als aktueller Stand ergänzt. Stand: 10/2026
-- Curriculum/Allgemeinwissen; Datenbank-Grundlagen auch im Buch (Kap. Datenbanken) — MII/DIZ, OMOP, PPRL als aktueller Stand ergänzt
-- Curriculum/Allgemeinwissen — ICH-GCP E6 (International Council for Harmonisation – Good Clinical Practice), CDISC, EU-CTR als aktueller Stand
-- Curriculum/Allgemeinwissen — § 630e BGB (Aufklärung), (Muster-)Kursbuch BÄK Kap. 2.7 (Blended Learning/E-Learning)
+1. **Planung**
+   - Der **Prüfplan** legt fest, welche Daten wann erhoben werden.
+   - Der **Datenmanagementplan (DMP)** regelt Zuständigkeiten, Datenflüsse, Prüfregeln und Korrekturen. Die elektronischen Prüfbögen (*Electronic Case Report Forms*, eCRFs) werden eingerichtet.
+   - Der **statistische Analyseplan (SAP)** legt die Auswertungsmethoden fest. Bei verblindeten Studien wird er vor der Entblindung finalisiert.
+
+2. **Erfassung**
+   - Das System zur elektronischen Datenerfassung (*Electronic Data Capture*, EDC) nimmt Studiendaten auf. Daten können aus vorhandenen Quellen übernommen oder direkt elektronisch als Quelldaten erfasst werden.
+   - z. B. wird ein Blutdruckwert aus der Patientenakte in den elektronischen Prüfbogen übertragen.
+
+3. **Prüfung und Bereinigung**
+   - **Plausibilitätsregeln** erkennen fehlende, auffällige oder widersprüchliche Angaben. Offene Fragen werden als **Queries** an das Prüfzentrum zurückgegeben.
+     - z. B. fragt das Datenmanagement nach, wenn das Entlassdatum vor dem Aufnahmedatum liegt.
+   - Beim **Quelldatenabgleich** (*Source Data Verification*, SDV) vergleicht das Monitoring ausgewählte Einträge mit den Quelldaten. Ein **Audit Trail** hält nachvollziehbar fest, wer wann welche Daten erfasst oder geändert hat und gegebenenfalls warum.
+
+4. **Datenbankschluss und Auswertung**
+   - Nach Abschluss der vorgesehenen Prüfungen wird die Datenbank für die finale Auswertung gesperrt (*Database Lock*). Der freigegebene Datensatz wird versioniert an die Biometrie übergeben und nach dem statistischen Analyseplan ausgewertet.
+
+Merksatz: Der Prüfplan bestimmt, was erhoben wird. Der Datenmanagementplan regelt, wie die Daten geprüft und freigegeben werden. Der statistische Analyseplan bestimmt, wie sie ausgewertet werden.
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+## 9.7 Digitale Wissensvermittlung
+
+::: {.exam-question}
+Wie unterscheiden sich E-Learning, Blended Learning und digitale Patienteninformation, und worauf kommt es bei ihrem Einsatz an?
+:::
+
+:::: {.exam-answer}
+
+- **E-Learning** vermittelt Wissen mit digitalen Medien. Es kann **synchron** als Live-Veranstaltung oder **asynchron** zur selbstständigen Bearbeitung stattfinden.
+  - z. B. bearbeiten Mitarbeitende ein Online-Modul zur Händehygiene mit Quiz.
+- **Blended Learning** verbindet digitale Lernphasen und Präsenzphasen. Beim *Flipped Classroom* erarbeiten Lernende die Grundlagen vorab und wenden sie in der Präsenzphase an.
+  - z. B. wiederholt das Team den Reanimationsalgorithmus online und trainiert anschließend am Simulator.
+- **Digitale Patienteninformation** vermittelt medizinische Inhalte verständlich und möglichst barrierearm. Ein Aufklärungsfilm kann auf die erforderliche mündliche Aufklärung vorbereiten und sie ergänzen (§ 630e BGB).
+  - z. B. erklärt ein Video vor einer Narkose den typischen Ablauf. Im Gespräch werden individuelle Risiken und Fragen besprochen.
+
+- **Planung und Evaluation**
+  - **Lernziel und Zielgruppe** bestimmen das Format und die Erfolgskontrolle. Wissen lässt sich z. B. mit Fallfragen prüfen, praktische Fertigkeiten durch beobachtete Durchführung.
+  - **Zugang und Betrieb** berücksichtigen: verständliche, barrierearme Gestaltung, Schutz personenbezogener Lern- und Nutzungsdaten sowie regelmäßige fachliche Aktualisierung.
+
+Merksatz: Das Lernziel bestimmt das Format. Wissen lässt sich digital vermitteln, praktische Fertigkeiten brauchen Übung, und Aufklärungsfilme ergänzen das persönliche Gespräch.
+
+::::
+

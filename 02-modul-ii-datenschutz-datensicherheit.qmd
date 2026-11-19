@@ -2,7 +2,7 @@
 
 ## Rechtliche Grundlagen
 
-::: {.exam-question .done}
+::: {.exam-question}
 Auf welchen Rechtsgrundlagen dürfen Patientendaten verarbeitet oder offengelegt werden, und wann ist eine Einwilligung erforderlich?
 :::
 
@@ -79,7 +79,7 @@ Quellen geprüft am 06.11.2026.
 
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Welche spezialgesetzlichen Regelungen ergänzen das Datenschutzrecht bei Medizinprodukten, Arzneimittelstudien und der IT-Sicherheit von Krankenhäusern?
 :::
 
@@ -126,7 +126,7 @@ Quellen geprüft am 06.11.2026.
 
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Welche Datenschutzrechte haben Patienten, und welche Grenzen gelten im Gesundheitswesen?
 :::
 
@@ -199,7 +199,7 @@ Quellen geprüft am 06.11.2026.
 
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Wer kontrolliert Datenschutz und IT-Sicherheit im Gesundheitswesen?
 :::
 
@@ -287,7 +287,7 @@ Quellen geprüft am 06.11.2026.
 
 ## Zusammenhang zwischen Datenschutz und Informationssicherheit
 
-::: {.exam-question .done}
+::: {.exam-question}
 Wie unterscheiden sich Datenschutz und Informationssicherheit, und wo überschneiden sie sich bei Patientendaten?
 :::
 
@@ -339,7 +339,7 @@ Quellen geprüft am 06.11.2026.
 
 ## Bedrohungsszenarien durch Cyberkriminalität
 
-::: {.exam-question .done}
+::: {.exam-question}
 Welche typischen Cyberbedrohungen bestehen für Krankenhäuser, und welche Folgen können sie für Patientenversorgung und Informationssicherheit haben?
 :::
 
@@ -403,7 +403,7 @@ Quellen geprüft am 07.11.2026.
 
 ## Gewährleistung von Datenschutz und Informationssicherheit in Versorgung und Forschung
 
-::: {.exam-question .done}
+::: {.exam-question}
 Wie werden Datenschutz und Informationssicherheit systematisch umgesetzt?
 :::
 
@@ -472,7 +472,7 @@ Quellen geprüft am 07.11.2026.
 
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Wie unterscheiden sich Pseudonymisierung, Anonymisierung und Verschlüsselung, und welchen Zweck haben elektronische Signaturen?
 :::
 
@@ -538,7 +538,7 @@ Quellen geprüft am 07.11.2026.
 
 ## Entwicklung und Fortschreibung von Datenschutzkonzepten
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was enthält ein Datenschutzkonzept, und wie wird es entwickelt, überprüft und fortgeschrieben?
 :::
 

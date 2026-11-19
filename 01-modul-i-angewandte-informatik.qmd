@@ -4,13 +4,13 @@
 
 ### Aufbau typischer Krankenhaus- und Praxisnetzwerke
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 :::
 
 ::: {.exam-answer}
 - **Server:** stellen Anwendungen (z.B. KIS, PACS, LIS) und Daten bereit
-- **Clients und Endgeräte:** greifen auf Dienste zu oder tauschen Daten aus
+- **Clients:** greifen auf Dienste zu oder tauschen Daten aus
   - Stations-PCs, Visitenwagen, Netzwerkdrucker und Medizingeräte
 - **Aktive Netzwerkkomponenten:** verarbeiten oder steuern Signale 
   - Switch, Router, WLAN-Access-Point (benötigen Strom)
@@ -21,20 +21,19 @@ Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
   - [VLANs](https://de.wikipedia.org/wiki/Virtual_Local_Area_Network) sind Pfeiler der Segmentierung und unterteilen das Krankenhaus in Zonen (Medizintechnik, Verwaltung und Gäste)
 
 - **Externe Anbindungen:** verbinden die Klinik mit externen Diensten und Standorten
-  - z.B. Internet, TI (Telematikinfrastruktur), VPN (Virtual Private Network)
+  - z.B. Internet, TI (Telematikinfrastruktur)
 
 Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte, Router verbinden Netze, Firewalls kontrollieren den Verkehr.
 
 ::: {.callout-note title="Good to know" appearance="simple"}
-- Passive Infrastruktur nach [EN 50173](https://de.wikipedia.org/wiki/EN_50173) vs [Hierarchisches Internetworking-Modell](https://de.wikipedia.org/wiki/Hierarchisches_Internetworking-Modell)
-- VLAN als Grundlage der Segmentierungf
+- Passive Infrastruktur nach [EN 50173](https://de.wikipedia.org/wiki/EN_50173) und [Hierarchisches Internetworking-Modell](https://de.wikipedia.org/wiki/Hierarchisches_Internetworking-Modell)
 - [ISO 80001-1](https://de.wikipedia.org/wiki/Risikomanagement_f%C3%BCr_medizinische_IT-Netzwerke)
 :::
 :::
 
 ### Client-Server-Konzept
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was ist das Client-Server-Konzept?
 :::
 
@@ -64,7 +63,7 @@ Fielding RT, Nottingham M, Reschke J (2022).
 
 ### Rechnertypen
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was unterscheidet Fat-, Thin- und Zero-Clients?
 :::
 
@@ -91,7 +90,7 @@ Auch Thin und Zero Clients verarbeiten Daten lokal, etwa zur Bilddarstellung und
 
 ### Servertypen
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
 :::
 
@@ -123,7 +122,7 @@ Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen
 
 ### Betriebssysteme
 
-::: {.exam-question .done}
+::: {.exam-question}
 Welche Betriebssysteme sind im Klinikkontext auf Clients, Servern, mobilen Endgeräten und Medizingeräten relevant?
 :::
 
@@ -160,7 +159,7 @@ Bei Medizinprodukten müssen die Herstellerangaben zur unterstützten Betriebsum
 
 ### Schnittstellen
 
-::: {.exam-question .done .done}
+::: {.exam-question}
 Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen sowie internen und externen Schnittstellen?
 :::
 
@@ -184,7 +183,7 @@ Merksatz: Hardware verbindet Geräte physisch, Software Programme logisch – ob
 
 ### Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur
 
-::: {.exam-question .done}
+::: {.exam-question}
 Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 :::
 
@@ -246,7 +245,7 @@ Quellen geprüft am 3. November 2026.
 
 ### Programmbestandteile und Kontrollstrukturen
 
-::: {.exam-question .don .done}
+::: {.exam-question}
 Welche typischen Bestandteile enthält der Quellcode eines Programms?
 :::
 
@@ -309,7 +308,7 @@ Nicht jedes Programm enthält alle genannten Bestandteile. Kommentare gehören z
 
 ### Ein- und Ausgabe, Bedingungen und Schleifen
 
-:::: {.exam-question .done}
+:::: {.exam-question}
 Wie werden Ein- und Ausgabe, Bedingungen und Schleifen in einer
 Programmiersprache umgesetzt?
 ::::
@@ -403,7 +402,7 @@ Python Software Foundation: The Python Language Reference, Kapitel 8
 
 ### Ein- und Ausgabe, Bedingungen und Schleifen
 
-::: {.exam-question .don .done}
+::: {.exam-question}
 Wie werden Ein- und Ausgabe, Bedingungen und Schleifen in Python umgesetzt?
 :::
 
@@ -469,7 +468,7 @@ Python besitzt keine native `do–while`-Schleife. `while True` führt den Schle
 
 ### Algorithmen
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was ist ein Algorithmus, welche Eigenschaften kennzeichnen ihn, und wie unterscheidet er sich von Programm und Modell?
 :::
 
@@ -508,7 +507,7 @@ Die Begriffe Determiniertheit und Determinismus werden nicht einheitlich verwend
 ::::
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was beschreibt die O-Notation, und welche grundlegenden algorithmischen Verfahren sollte man kennen?
 :::
 
@@ -567,7 +566,7 @@ National Institute of Standards and Technology (NIST): *Dictionary of Algorithms
 ### Relationale Datenbanken
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Wie sind Daten in einer relationalen Datenbank organisiert und miteinander verknüpft?
 :::
 
@@ -660,7 +659,7 @@ Ein Fremdschlüssel kann auf einen Primärschlüssel oder einen anderen eindeuti
 
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was ist SQL und wie werden damit Tabellen definiert sowie Daten abgefragt und verändert?
 :::
 
@@ -798,7 +797,7 @@ SQL wird häufig in Teilsprachen eingeteilt:
 
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Warum werden relationale Datenbanken normalisiert?
 :::
 
@@ -850,7 +849,7 @@ Die Normalformen bauen aufeinander auf: Die 3. Normalform setzt die 1. und 2. vo
 
 ### Datenaustauschformate
 
-::: {.exam-question .done}
+::: {.exam-question}
 Welche Datenaustauschformate und -standards sind in der Medizin relevant?
 :::
 
@@ -971,7 +970,7 @@ Quellen geprüft am 05.11.2026.
 ::::
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was unterscheidet SOAP und REST, und warum ist das für die Medizininformatik relevant?
 :::
 
@@ -1077,7 +1076,7 @@ Quellen geprüft am 05.11.2026.
 
 ### Methoden des Software Engineerings
 
-::: {.exam-question .done}
+::: {.exam-question}
 Welche Aufgaben haben Anforderungsanalyse, ER-Modell, UML und BPMN im Software Engineering, und wie hängen sie zusammen?
 :::
 
@@ -1136,7 +1135,7 @@ Quellen geprüft am 06.11.2026.
 
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Wie unterscheiden sich ER-Modell, UML und BPMN hinsichtlich Zweck, Abstraktion und Zielgruppe?
 :::
 
@@ -1267,7 +1266,7 @@ Quellen geprüft am 06.11.2026.
 
 ### IT-Servicemanagement
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was ist IT-Servicemanagement, und welche Maßnahmen sichern den zuverlässigen Betrieb klinischer IT-Dienste?
 :::
 
@@ -1336,7 +1335,7 @@ Quellen geprüft am 06.11.2026.
 ::::
 
 
-::: {.exam-question .done}
+::: {.exam-question}
 Wie unterscheiden sich Incident, Problem, Service Request und Change im IT-Servicemanagement?
 :::
 

@@ -2,7 +2,7 @@
 
 ## Rechtliche Aspekte, Definition und Struktur von Krankenhausinformationssystemen und von Arztpraxisinformationssystemen
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was ist ein Krankenhausinformationssystem, wie lässt sich seine Architektur mit dem Drei-Ebenen-Metamodell 3LGM² beschreiben, und welche rechtlichen Anforderungen sind zu beachten?
 :::
 
@@ -113,7 +113,7 @@ Quellen geprüft am 16.11.2026.
 
 ## Anwendungsformen Elektronischer Patientenaktensysteme
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was ist das Fünf-Stufen-Modell nach Waegemann für elektronische Patientenakten, und wie unterscheiden sich die Stufen?
 :::
 
@@ -169,7 +169,7 @@ Quellen geprüft am 16.11.2026.
 
 ## Einrichtungs- und nutzerspezifische Parametrierung
 
-::: {.exam-question .done}
+::: {.exam-question}
 Was bedeuten einrichtungs- und nutzerspezifische Parametrierung eines KIS, und warum sind sie erforderlich?
 :::
 

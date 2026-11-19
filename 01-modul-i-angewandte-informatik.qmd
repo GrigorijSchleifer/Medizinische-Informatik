@@ -13,12 +13,9 @@ Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 - **Clients und Endgeräte:** greifen auf Dienste zu oder tauschen Daten aus
   - Stations-PCs, Visitenwagen, Netzwerkdrucker und Medizingeräte
 - **Aktive Netzwerkkomponenten:** verarbeiten oder steuern Signale 
-  - Switch, Router, WLAN-Access-Point
-  - benötigen Strom
+  - Switch, Router, WLAN-Access-Point (benötigen Strom)
 - **Passive Netzwerkkomponenten:** übertragen oder verbinden Signale 
-  - Kabel, Netzwerkdosen und Patchpanels
-  - Keine aktive Verarbeitung
-  - benötigen kein Strom 
+  - Kabel, Netzwerkdosen und Patchpanels (Keine aktive Verarbeitung, benötigen kein Strom)
 - **Sicherheitskomponenten und Netzwerksegmentierung:** Zugriffskontrolle, Netztrennung, Netzsicherheit
   - Firewalls (kontrollieren den Verkehr)
   - [VLANs](https://de.wikipedia.org/wiki/Virtual_Local_Area_Network) sind Pfeiler der Segmentierung und unterteilen das Krankenhaus in Zonen (Medizintechnik, Verwaltung und Gäste)

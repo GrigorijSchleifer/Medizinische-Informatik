@@ -86,3 +86,9 @@ strong {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+/* Abkürzungen mit Tooltip beim Überfahren (Filter abkuerzungen-tooltip.lua) */
+.abk {
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}

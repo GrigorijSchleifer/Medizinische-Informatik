@@ -931,8 +931,8 @@ Wie unterscheiden sich HL7 Version 2 und FHIR, und wie nutzt die Medizininformat
   - Die Quelldaten können über Datenbankabfragen, ETL-Prozesse, HL7 Version 2, FHIR oder proprietäre Schnittstellen erschlossen werden.
 
 Merksatz: HL7 Version 2 transportiert vor allem operative Ereignisnachrichten; FHIR beschreibt austauschbare Ressourcen; die MII nutzt FHIR als gemeinsames Zielformat für harmonisierte Forschungsdaten.
+::::
 
-::: {.callout-note title="Gut zu wissen" appearance="simple"}
 ### Semantische Interoperabilität und Terminologiedienste
 
 ::: {.exam-question}
@@ -957,44 +957,6 @@ Wie werden medizinische Codes in HL7 und FHIR übertragen, und wozu dienen Termi
 - **FHIR:** Kodierte Begriffe werden meist als `CodeableConcept` übertragen.
   - Ein darin enthaltenes `Coding` umfasst `system`, optional `version`, `code` und `display`.
   - Ein `CodeableConcept` kann mehrere Codierungen desselben klinischen Begriffs enthalten.
-
-- **Terminologieserver:** stellt Kodiersysteme und Versionen zentral für Anwendungen bereit.
-  - prüft Codes und zulässige Wertemengen
-  - stellt Bezeichnungen und Hierarchien bereit
-  - unterstützt definierte Übersetzungen zwischen Kodiersystemen
-
-- **FHIR-Terminologieressourcen:**
-  - **CodeSystem:** beschreibt beziehungsweise referenziert ein Kodiersystem.
-  - **ValueSet:** legt die für einen Anwendungsfall zulässigen Codes fest.
-  - **ConceptMap:** beschreibt Beziehungen zwischen Codes verschiedener Systeme.
-
-- **Mapping:** ordnet lokale oder fremde Codes einem Zielsystem zu.
-  - Mappings können unvollständig, mehrdeutig oder mit Informationsverlust verbunden sein.
-  - Sie müssen versioniert, fachlich geprüft und gepflegt werden.
-
-Merksatz: Semantische Interoperabilität benötigt nicht nur einen Code, sondern Kodiersystem, Version und Kontext; Terminologieserver prüfen und verwalten diese Informationen.
-
-::: {.callout-note title="Gut zu wissen" appearance="simple"}
-
-Ein LOINC-Code bezeichnet beispielsweise die Kaliumbestimmung. Messwert und UCUM-Einheit werden getrennt übertragen. Mapping bedeutet nur eine definierte Beziehung und nicht zwingend vollständige Bedeutungsgleichheit.
-
-:::
-
-::: {.callout-note title="Literatur" appearance="simple"}
-
-- HL7 International: *FHIR R5 – Datatypes*, Abschnitte „Coding“ und „CodeableConcept“.  
-  <https://www.hl7.org/fhir/datatypes.html>
-- HL7 International: *FHIR R5 – Terminology Service*, Abschnitt 4.7.  
-  <https://www.hl7.org/fhir/terminology-service.html>
-- Regenstrief Institute: *LOINC – Standard for identifying health observations, measurements and documents*.  
-  <https://loinc.org/>
-- Bundesinstitut für Arzneimittel und Medizinprodukte: *Zentraler Terminologieserver für das deutsche Gesundheitswesen*.  
-  <https://terminologien.bfarm.de/>
-
-Quellen geprüft am 16.11.2026.
-
-:::
-::::alten.
 
 - **Terminologieserver:** stellt Kodiersysteme und Versionen zentral für Anwendungen bereit.
   - prüft Codes und zulässige Wertemengen

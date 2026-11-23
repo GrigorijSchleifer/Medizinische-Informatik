@@ -30,6 +30,7 @@ lang: de
 from: markdown+lists_without_preceding_blankline
 filters:
   - merksatz.lua
+  - abkuerzungen-tooltip.lua
 
 format:
   html:
@@ -38,6 +39,7 @@ format:
       light: [cosmo, custom-light.scss]
       dark:  [darkly, custom-dark.scss]
     css: style.css
+    include-after-body: abkuerzungen-tooltip.html   # Abkürzungs-Tooltips als Popup
     grid:
       sidebar-width: 250px   # linke Kapitel-Navigation (Standard: 250px)
       body-width: 1100px     # mittlere Textspalte (Standard: 800px) -> breiter = Tabellen weniger gequetscht

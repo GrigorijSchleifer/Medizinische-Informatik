@@ -1,0 +1,17 @@
+<!-- Abkürzungs-Tooltips (Filter abkuerzungen-tooltip.lua) sofort als Popup zeigen,
+     mit Quartos mitgelieferter tippy-Bibliothek statt des trägen Browser-Tooltips. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (!window.tippy) return;  // ohne tippy bleibt der normale Browser-Tooltip (title)
+  document.querySelectorAll("span.abk[title]").forEach(function (el) {
+    el.dataset.tip = el.title;
+    el.removeAttribute("title");  // sonst zusätzlich der Browser-Tooltip
+  });
+  tippy("span.abk", {
+    content: function (el) { return el.dataset.tip; },
+    theme: "quarto",
+    maxWidth: 350,
+    delay: [100, 0]
+  });
+});
+</script>

@@ -1,4 +1,4 @@
-# Telemedizin und Telematik {#modul-x}
+# Telemedizin {#modul-x}
 
 ## Grundlagen und Einsatzbedingungen der Telemedizin
 

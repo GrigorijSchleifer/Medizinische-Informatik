@@ -1,4 +1,4 @@
-# Medizinische Dokumentation {#modul-iv}
+# Dokumentation {#modul-iv}
 
 ## Aufgaben und Grundlagen medizinischer Dokumentation
 

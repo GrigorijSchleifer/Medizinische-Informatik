@@ -1,5 +1,4 @@
-# Medizinische Statistik, Epidemiologie und Biometrie {#modul-iii}
-
+# Statistik {#modul-iii}
 
 ## Statistische Grundlagen
 

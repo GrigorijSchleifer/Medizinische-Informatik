@@ -4,7 +4,7 @@
 
 ### Aufbau typischer Krankenhaus- und Praxisnetzwerke
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was sind die typischen Bestandteile eines Krankenhausnetzwerks?
 :::
 
@@ -33,14 +33,14 @@ Merksatz: Server stellen bereit, Clients greifen zu, Switches verbinden Geräte,
 
 ### Client-Server-Konzept
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist das Client-Server-Konzept?
 :::
 
 ::: {.exam-answer}
-- **Client-Server-Konzept:** Aufgaben sind zwischen anfragendem Client und bereitstellendem Server aufgeteilt
+- **Client-Server-Konzept:**
   - **Client:** fordert Dienste/Daten an und verarbeitet die Antwort
-    - Die KIS-Anwendung auf dem Stations-PC ruft einen Laborbefund ab
+    - Die KIS-Anwendung ruft einen Laborbefund ab
   - **Server:** verarbeitet Anfragen und stellt Dienste oder Daten bereit
     - Der KIS-Server liefert den angeforderten Laborbefund
     - **Aufgabenverteilung:** Gemeinsame Daten und Dienste werden häufig zentral bereitgestellt; Verarbeitung kann auf beiden Seiten erfolgen
@@ -63,7 +63,7 @@ Fielding RT, Nottingham M, Reschke J (2022).
 
 ### Rechnertypen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was unterscheidet Fat-, Thin- und Zero-Clients?
 :::
 
@@ -75,7 +75,7 @@ Entscheidend sind die Verteilung der Anwendungsverarbeitung und die lokale Softw
   - Praxis-PC mit lokal installierter Praxissoftware und Verbindung zum Datenbankserver
 - **Thin Client:** nutzt überwiegend serverseitig ausgeführte Anwendungen; besitzt ein lokales, häufig reduziertes Betriebssystem
   - Am Stationsarbeitsplatz wird das KIS bedient; die Anwendung läuft auf einem zentralen Terminalserver
-- **Zero Client:** spezialisiertes Endgerät für entfernte Anwendungen oder Desktops; nutzt typischerweise Firmware statt eines allgemeinen Anwendungsbetriebssystems
+- **Zero Client:** spezialisiertes Endgerät sehr limitierten Ressourcen; nutzt typischerweise Firmware statt eines allgemeinen Anwendungsbetriebssystems
   - Stationsarbeitsplatz mit Zugriff auf einen virtuellen Desktop
 
 Merksatz: Fat verarbeitet Anwendungen überwiegend lokal; Thin und Zero überwiegend serverseitig.
@@ -90,7 +90,7 @@ Auch Thin und Zero Clients verarbeiten Daten lokal, etwa zur Bilddarstellung und
 
 ### Servertypen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was sind typische Servertypen (Cluster, dediziert, virtuell, shared)?
 :::
 
@@ -122,33 +122,32 @@ Merksatz: Dediziert = ein Server, eine Aufgabe; shared = mehrere Aufgaben teilen
 
 ### Betriebssysteme
 
-::: {.exam-question}
+::: {.exam-question .done}
 Welche Betriebssysteme sind im Klinikkontext auf Clients, Servern, mobilen Endgeräten und Medizingeräten relevant?
 :::
 
 :::: {.exam-answer}
 
-- **Stationäre Clients:** Windows sowie – abhängig von Anwendung und Arbeitsplatz – Linux, macOS oder spezielle Thin-Client-Betriebssysteme
-	- Ein Windows-Arbeitsplatz in der Notaufnahme greift auf das Krankenhausinformationssystem (KIS) zu
-	- Verzeichnisdienst (meist Microsoft Active Directory / AD): zentrale Datenbank und das „Telefonbuch“ des Netzwerks. Hier sind alle Benutzer (z. B. Ärztinnen, Pfleger), Computer, Drucker und Berechtigungen gespeichert.
+- **Stationäre Clients:** v.a. Windows, Linux, macOS oder spezielle Thin-Client-Betriebssysteme
+	- Ein Windows-Arbeitsplatz in der Notaufnahme greift auf das KIS zu
+		- Verzeichnisdienst (meist Microsoft Active Directory / AD): zentrale Datenbank und das „Telefonbuch“ des Netzwerks (Mitarbeiter, Computer, Drucker und Berechtigungen gespeichert.
 - **Server:** Windows Server, Linux und Unix-Varianten wie Solaris
   	- Ein Windows-Server stellt den Verzeichnisdienst für die Klinikarbeitsplätze bereit
 - **Mobile Endgeräte:** iOS beziehungsweise iPadOS und Android
   	- Ein zentral verwaltetes Tablet dient der mobilen Pflegedokumentation
-- **Medizingeräte:** allgemeine oder eingebettete Betriebssysteme; bei zeitkritischen Funktionen auch Echtzeitbetriebssysteme (Real-Time Operating Systems, RTOS)
+- **Medizingeräte:** eingebettete Betriebssysteme, Echtzeitbetriebssysteme (Real-Time Operating Systems, RTOS)
   	- Eine vernetzte Infusionspumpe kann ein eingebettetes Betriebssystem enthalten
 
 Merksatz: Es gibt keine feste Zuordnung: Das Betriebssystem richtet sich nach Anwendung, Herstelleranforderungen, Support, Verwaltung und Sicherheitsanforderungen.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
 
-Bei Medizinprodukten müssen die Herstellerangaben zur unterstützten Betriebsumgebung berücksichtigt werden. Sicherheitsrelevante Softwareupdates gehören nach § 7 Abs. 2 MPBetreibV zur Instandhaltung. Netzsegmentierung ergänzt das Patchmanagement, ersetzt es aber nicht.
+Bei Medizinprodukten müssen die Herstellerangaben zur unterstützten Betriebsumgebung berücksichtigt werden. Sicherheitsrelevante Softwareupdates gehören nach § 7 Abs. 2 MPBetreibV zur Instandhaltung.
 
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
-- Bundesärztekammer: [(Muster-)Kursbuch Medizinische Informatik](https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf), 2. Auflage, 2022, Abschnitt 4.1, S. 10
 - Winter A, Ammenwerth E, Haux R et al.: *Health Information Systems: Technological and Management Perspectives*, 3. Auflage, Springer 2023, Kapitel 3, Abschnitte 3.10.1.1 und 3.10.1.2, [DOI: 10.1007/978-3-031-12310-8_3](https://doi.org/10.1007/978-3-031-12310-8_3)
 - NIST: *Guidelines for Managing the Security of Mobile Devices in the Enterprise*, SP 800-124 Rev. 2, 2023, Abschnitt 4.2.1, [DOI: 10.6028/NIST.SP.800-124r2](https://doi.org/10.6028/NIST.SP.800-124r2)
 - MDCG: [Guidance on Cybersecurity for Medical Devices, MDCG 2019-16 Rev. 1](https://health.ec.europa.eu/system/files/2022-01/md_cybersecurity_en.pdf), 2020, Abschnitte 3.6 und 3.7
@@ -159,20 +158,20 @@ Bei Medizinprodukten müssen die Herstellerangaben zur unterstützten Betriebsum
 
 ### Schnittstellen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist der Unterschied zwischen Hardware- und Software-Schnittstellen sowie internen und externen Schnittstellen?
 :::
 
 :::: {.exam-answer}
 
 - **Hardware-Schnittstelle:** Physische und elektrische Verbindung zwischen technischen Geräten zur Signalübertragung.
-  - Beispiel: Die serielle RS-232-Verbindung eines Intensivmonitors an einen Datenkonzentrator.
+  - Die serielle RS-232-Verbindung eines Intensivmonitors an einen Datenkonzentrator.
 - **Software-Schnittstelle:** Logische Vereinbarung aus Format, Protokoll und Semantik zum Datenaustausch zwischen Anwendungsprogrammen.
-  - Beispiel: Eine REST-API nach dem FHIR-Standard zur Abfrage von Patientendaten durch eine App.
+  - Eine REST-API nach dem FHIR-Standard zur Abfrage von Patientendaten durch eine App.
 - **Interne Schnittstelle:** Schnittstelle zum Datenaustausch innerhalb einer definierten System- oder Organisationsgrenze.
-  - Beispiel: Die Schnittstelle zwischen dem Patientenaufnahmemodul und dem Abrechnungsmodul im Krankenhausinformationssystem.
+  - Die Schnittstelle zwischen dem Patientenaufnahmemodul und dem Abrechnungsmodul im Krankenhausinformationssystem.
 - **Externe Schnittstelle:** Schnittstelle zum Datenaustausch über eine festgelegte System- oder Organisationsgrenze hinweg.
-  - Beispiel: Die Anbindung des Krankenhauses an die Telematikinfrastruktur zur Prüfung des Versichertenstammdatenmanagements.
+  - Die Anbindung des Krankenhauses an die Telematikinfrastruktur zur Prüfung des Versichertenstammdatenmanagements.
 
 Merksatz: Hardware verbindet Geräte physisch, Software Programme logisch – ob intern oder extern, bestimmt einzig die gewählte Systemgrenze.
 
@@ -181,41 +180,40 @@ Merksatz: Hardware verbindet Geräte physisch, Software Programme logisch – ob
 :::
 ::::
 
-### Aufbau, Funktionsweise und Komponenten der Telematik-Infrastruktur
+### Aufbau und Funktionsweise der Telematik-Infrastruktur
 
-::: {.exam-question}
+::: {.exam-question .done}
 Welche Kernkomponenten braucht die Telematikinfrastruktur (TI)?
 :::
 
 :::: {.exam-answer}
 
-- **Identifikations- und Authentisierungskomponenten:** Personen- und institutionsbezogene Chipkarten zur Identifikation, Authentisierung und Berechtigungsprüfung
-  - **elektronische Gesundheitskarte (eGK):** Versichertennachweis, Authentisierungsmittel und Träger von Versichertenstammdaten
-    - Beispiel: Ein Patient legt die eGK bei der Anmeldung in der Arztpraxis vor
-  - **Security Module Card Typ B (SMC-B):** Institutionsausweis zur Authentisierung einer Praxis, Klinik oder Apotheke
-    - Beispiel: Bei kartenbasierter Nutzung befindet sich die SMC-B im E-Health-Kartenterminal und authentisiert die Praxis
-  - **elektronischer Heilberufsausweis (HBA):** personenbezogener Berufsausweis für Leistungserbringende, unter anderem zur qualifizierten elektronischen Signatur (QES)
-    - Beispiel: Eine Ärztin signiert ein E-Rezept mit ihrem HBA
+- **Identifikations- und Authentisierungskomponenten:** Personen- und institutionsbezogene Chipkarten
+  - *Elektronische Gesundheitskarte (eGK):* Versichertennachweis und Authentisierungsmittel
+    - Ein Patient legt die eGK bei der Anmeldung in der Arztpraxis vor
+  - *Security Module Card Typ B (SMC-B):* Institutionsausweis zur Authentisierung
+  - *elektronischer Heilberufsausweis (HBA):* personenbezogener Berufsausweis für Leistungserbringender
+    - Eine Ärztin signiert ein E-Rezept mit ihrem HBA (qualifizierten elektronischen Signatur (QES))
 
 - **Zugangskomponenten vor Ort:** Komponenten zur Anbindung der Einrichtung an die TI
-  - **Konnektor:** Sicherheitsgateway zwischen dem Netz der Einrichtung und der TI; alternativ kann ein TI-Gateway verwendet werden
-    - Beispiel: Ein im KIS integriertes ePA-Modul greift über den TI-Zugang auf die elektronische Patientenakte zu
-  - **E-Health-Kartenterminal:** von der gematik zugelassenes Lesegerät für eGK, SMC-B und HBA
-    - Beispiel: Das Kartenterminal am Aufnahmeschalter liest die eGK ein
+  - [*Konnektor:*]{.underline} Sicherheitsgateway zu der TI (alternativ ein TI-Gateway)
+    - Ein im KIS integriertes ePA-Modul greift über den TI-Zugang auf die ePA zu
+  - *E-Health-Kartenterminal:* von der gematik zugelassenes Lesegerät für eGK, SMC-B und HBA
+    - Das Kartenterminal am Aufnahmeschalter liest die eGK ein
 
 - **Netz und zentrale Dienste:** ermöglichen die geschützte Kommunikation und Adressierung
-  - **VPN-Zugangsdienst:** stellt beim klassischen Konnektor die gesicherte Verbindung zur zentralen TI-Plattform her
-    - Beispiel: Der Konnektor verbindet sich über den VPN-Zugangsdienst mit den TI-Diensten
-  - **Verzeichnisdienst (VZD):** zentrales Adressbuch für registrierte Leistungserbringende, Einrichtungen und weitere Organisationen
-    - Beispiel: Eine Praxis sucht die KIM-Adresse einer weiterbehandelnden Klinik im VZD
+  - *VPN-Zugangsdienst:* stellt die gesicherte Verbindung zur TI-Plattform her
+    - Der Konnektor verbindet sich über den VPN-Zugangsdienst mit den TI-Diensten
+  - *Verzeichnisdienst (VZD):* zentrales Adressbuch für registrierte Leistungserbringende, Einrichtungen und weitere Organisationen
+    - Eine Praxis sucht die KIM-Adresse einer weiterbehandelnden Klinik im VZD
 
 - **Fachanwendungen:** medizinische und administrative Anwendungen der TI
-  - **Fachdienste und Anwendungssysteme:** stellen Funktionen für TI-Anwendungen bereit
-    - Beispiel: Abruf und Einstellung von Dokumenten in der elektronischen Patientenakte (ePA)
-  - **VSDM-Fachdienste:** ermöglichen die Onlineprüfung von Versichertenstammdaten
-    - Beispiel: Durchführung des Versichertenstammdatenmanagements (VSDM) beim Einlesen der eGK
-  - **Kartengestützte Anwendungen:** speichern bestimmte medizinische Daten dezentral auf der eGK
-    - Beispiel: Auslesen eines Notfalldatensatzes des Notfalldatenmanagements (NFDM) von der eGK
+  - *Fachdienste und Anwendungssysteme:*
+    - Abruf und Einstellung von Dokumenten in der ePA
+  - *VSDM-Fachdienste:* ermöglichen die Onlineprüfung von Versichertenstammdaten
+    - Management der Stammdaten (VSDM) beim Einlesen der eGK
+  - *Kartengestützte Anwendungen:* speichern bestimmte medizinische Daten dezentral auf der eGK
+    - Auslesen eines Notfalldatensatzes (NFD) von der eGK
 
 Merksatz: Karten und digitale Identitäten weisen Personen und Einrichtungen aus, Zugangskomponenten verbinden mit der TI, und Fachanwendungen erfüllen den medizinischen oder administrativen Zweck.
 
@@ -231,7 +229,6 @@ VZD: "bildet die Basis für sichere Kommunikation mit KIM und TI‑Messenger sow
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
-- Bundesärztekammer: [(Muster-)Kursbuch Medizinische Informatik](https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf), 2. Auflage, 2022, Abschnitt 4.1, S. 10
 - gematik: [Übergreifendes Datenschutz- und Sicherheitskonzept der TI](https://gemspec.gematik.de/docs/gemKPT/gemKPT_DS_Sich_TI/), Version 3.2.2, 2026, Abschnitte 4.1 und 4.4
 - gematik: [TI-Zugang](https://www.gematik.de/telematikinfrastruktur/ti-zugang), Abschnitt „Was brauche ich, um einen TI-Zugang einzurichten?“
 - gematik: [TI-Gateway](https://www.gematik.de/telematikinfrastruktur/ti-zugang/ti-gateway), Abschnitt „So funktioniert das TI-Gateway“
@@ -245,7 +242,7 @@ Quellen geprüft am 3. November 2026.
 
 ### Programmbestandteile und Kontrollstrukturen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Welche typischen Bestandteile enthält der Quellcode eines Programms?
 :::
 
@@ -288,8 +285,6 @@ print(auffaellige_werte)                             # <9>
 6. Rückgabe an die aufrufende Stelle
 7. Vereinfachte
 
-Das Beispiel filtert Werte anhand eines ausschließlich zu Lehrzwecken festgelegten Schwellenwerts. Es stellt keine medizinische Entscheidungsregel dar.
-
 Merksatz: Anweisungen führen aus, Variablen halten Werte, Kontrollstrukturen steuern, Funktionen gliedern, Kommentare erklären und Ein- und Ausgabe verbinden das Programm mit seiner Umgebung.
 
 ::: {.callout-note title="Gut zu wissen" appearance="simple"}
@@ -300,7 +295,6 @@ Nicht jedes Programm enthält alle genannten Bestandteile. Kommentare gehören z
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
-- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
 - Python Software Foundation: *The Python Language Reference*, Kapitel 2.1.3, 3.1, 7 und 8. Onlinefassung, geprüft am 04.11.2026.
 
 :::
@@ -308,101 +302,7 @@ Nicht jedes Programm enthält alle genannten Bestandteile. Kommentare gehören z
 
 ### Ein- und Ausgabe, Bedingungen und Schleifen
 
-:::: {.exam-question}
-Wie werden Ein- und Ausgabe, Bedingungen und Schleifen in einer
-Programmiersprache umgesetzt?
-::::
-
-:::: {.exam-answer}
-
-- **Eingabe:** Daten gelangen von außen in das Programm. In Python liest `input()` von der Tastatur und liefert das Ergebnis **immer als Zeichenkette**.
-  - Zahlen müssen umgewandelt werden, etwa mit `int()` oder `float()` — sonst scheitert jeder Vergleich mit einem Zahlenwert.
-
-**Ein- und Ausgabe mit Typumwandlung:**
-
-```{.python}
-eingabe = input("Kaliumwert in mmol/l: ")    # <1>
-kalium = float(eingabe)                      # <2>
-print("Erfasster Wert:", kalium)             # <3>
-```
-1. `input()` liefert eine Zeichenkette, zum Beispiel `"5.5"`
-2. Umwandlung in eine Gleitkommazahl — ohne diesen Schritt wäre `kalium > 5.0` ein Fehler
-3. Ausgabe auf der Standardausgabe
-
-- **Ausgabe:** Daten verlassen das Programm. In Python schreibt `print()` auf die Standardausgabe.
-  - In klinischen Systemen laufen Ein- und Ausgabe praktisch nie über die Konsole, sondern über Benutzeroberfläche, Dateien, Datenbanken oder Schnittstellen. `input()` und `print()` sind Lehrbeispiele.
-- **Bedingung:** Ausdruck, der zu wahr oder falsch ausgewertet wird.
-  - Beispiel: `kalium > 5.0`
-- **Selektion:** `if`, `elif` und `else` wählen abhängig von Bedingungen einen Zweig aus.
-- **Iteration:** `for` durchläuft eine Sammlung, `while` wiederholt, solange eine Bedingung gilt. Eine fußgesteuerte `do-while`-Anweisung kennt Python nicht; sie wird mit `while True` und `break` nachgebildet.
-- **Schleifensteuerung:** `break` verlässt die Schleife sofort, `continue` springt zum nächsten Durchlauf.
-
-**Schleifensteuerung:** break und continue
-
-```{.python}
-kalium_messungen = [4.2, None, 4.9, 5.4, 6.2]
-grenzwert = 6.0
-pumpe_laeuft = True
-
-for messung in kalium_messungen:                       # <1>
-    if messung is None:                                # <2>
-        print("Messwert fehlt – Laufrate unverändert")
-        continue
-    if messung > grenzwert:                            # <3>
-        pumpe_laeuft = False
-        print("Grenzwert überschritten:", messung, "– Pumpe gestoppt")
-        break
-    print("Kalium", messung, "– Infusion läuft weiter")
-```
-1. Iteration über die aufeinanderfolgenden Messwerte
-2. Fehlender Messwert: `continue` überspringt diesen Durchlauf, die
-   Schleife läuft weiter
-3. Grenzwert überschritten: `break` verlässt die Schleife sofort, die
-   Simulation stoppt die Pumpe
-
-::: {.callout-note title="Gut zu wissen" appearance="simple"}
-
-**Achten Sie auf das Fehlerverhalten.** Der `continue`-Zweig im Beispiel ist
-sicherheitstechnisch die falsche Entscheidung: Bei einem fehlenden Messwert
-läuft die Infusion unverändert weiter — das Programm verhält sich
-*fail-open*. Ein reales Infusionssystem müsste *fail-safe* arbeiten: keine
-Messung heißt keine Freigabe, also stoppen oder alarmieren. Dieselbe
-Kontrollstruktur kann je nach Zweig sicher oder unsicher sein.
-
-:::
-
-Das Beispiel simuliert den Ablauf ausschließlich zu Lehrzwecken. Grenzwert
-und Logik stellen keine medizinische Entscheidungsregel und keine Steuerung
-eines Medizinprodukts dar.
-
-Merksatz: `input()` liest und liefert immer Text, `print()` gibt aus, `if`
-entscheidet, `for` durchläuft, `while` wiederholt — und `break` bricht ab,
-`continue` überspringt.
-
-::: {.callout-note title="Gut zu wissen" appearance="simple"}
-
-**Die häufigste Fehlerquelle bei der Eingabe** ist der Datentyp. `input()`
-gibt eine Zeichenkette zurück, auch wenn der Benutzer eine Zahl eintippt.
-Der Vergleich `input("Wert: ") > 5` löst einen `TypeError` aus. Erst
-`float()` oder `int()` macht den Wert rechenbar.
-
-:::
-
-::: {.callout-note title="Literatur" appearance="simple"}
-
-Bundesärztekammer: (Muster-)Kursbuch Medizinische Informatik, Modul I
-„Angewandte Informatik", Lerninhalt „Gängige Programmbestandteile und
-–algorithmen".
-
-Python Software Foundation: The Python Language Reference, Kapitel 8
-„Compound statements", Abschnitte 8.1 (`if`), 8.2 (`while`), 8.3 (`for`).
-
-:::
-::::
-
-### Ein- und Ausgabe, Bedingungen und Schleifen
-
-::: {.exam-question}
+::: {.exam-question .done}
 Wie werden Ein- und Ausgabe, Bedingungen und Schleifen in Python umgesetzt?
 :::
 
@@ -468,7 +368,7 @@ Python besitzt keine native `do–while`-Schleife. `while True` führt den Schle
 
 ### Algorithmen
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist ein Algorithmus, welche Eigenschaften kennzeichnen ihn, und wie unterscheidet er sich von Programm und Modell?
 :::
 
@@ -507,7 +407,7 @@ Die Begriffe Determiniertheit und Determinismus werden nicht einheitlich verwend
 ::::
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was beschreibt die O-Notation, und welche grundlegenden algorithmischen Verfahren sollte man kennen?
 :::
 
@@ -566,7 +466,7 @@ National Institute of Standards and Technology (NIST): *Dictionary of Algorithms
 ### Relationale Datenbanken
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Wie sind Daten in einer relationalen Datenbank organisiert und miteinander verknüpft?
 :::
 
@@ -659,7 +559,7 @@ Ein Fremdschlüssel kann auf einen Primärschlüssel oder einen anderen eindeuti
 
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist SQL und wie werden damit Tabellen definiert sowie Daten abgefragt und verändert?
 :::
 
@@ -785,7 +685,6 @@ SQL wird häufig in Teilsprachen eingeteilt:
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
-- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.
 - PostgreSQL Global Development Group: *PostgreSQL 18 Documentation*, Kapitel 2 „The SQL Language“, Kapitel 5 „Data Definition“ und Kapitel 6 „Data Manipulation“. Geprüft am 05.11.2026.
   - <https://www.postgresql.org/docs/current/tutorial-sql.html>
   - <https://www.postgresql.org/docs/current/ddl.html>
@@ -797,7 +696,7 @@ SQL wird häufig in Teilsprachen eingeteilt:
 
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Warum werden relationale Datenbanken normalisiert?
 :::
 
@@ -826,8 +725,7 @@ Merksatz: Redundanz verursacht Änderungs-, Einfüge- und Löschanomalien; Norma
   - relevant nur bei zusammengesetzten Schlüsseln
   - Verstoß: `Fall_Diagnose(Fall_ID, Diagnose_ID, Bezeichnung)` — die Bezeichnung hängt allein von `Diagnose_ID` ab, also von einem Teil des Schlüssels.
   - Lösung: Bezeichnung gehört in die Tabelle `Diagnose`.
-- **3. Normalform:** Nicht-Schlüsselattribute hängen nicht voneinander,
-  sondern unmittelbar vom Schlüssel ab.
+- **3. Normalform:** Nicht-Schlüsselattribute hängen nicht voneinander, sondern unmittelbar vom Schlüssel ab.
   - Verstoß: `Fall(Fall_ID, Patient_ID, Station_ID, Stationsname)` — der Stationsname hängt an `Station_ID`, nicht am Fall.
   - Lösung: eigene Tabelle `Station`, im `Fall` bleibt nur `Station_ID`.
 
@@ -836,11 +734,8 @@ Die Normalformen bauen aufeinander auf: Die 3. Normalform setzt die 1. und 2. vo
 :::
 
 ::: {.callout-note title="Literatur" appearance="simple"}
-
-- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10. Normalisierung wird dort nicht ausdrücklich genannt.
 - IBM: *Db2 13 – Normalization in database design*. Abschnitte „First normal form“, „Second normal form“ und „Third normal form“. Geprüft am 05.11.2026.
   - <https://www.ibm.com/docs/en/db2-for-zos/13.0.0?topic=modeling-normalization-in-database-design>
-
 :::
 
 ::::
@@ -849,7 +744,7 @@ Die Normalformen bauen aufeinander auf: Die 3. Normalform setzt die 1. und 2. vo
 
 ### Datenaustauschformate
 
-::: {.exam-question}
+::: {.exam-question .done}
 Welche Datenaustauschformate und -standards sind in der Medizin relevant?
 :::
 
@@ -862,20 +757,20 @@ Die Begriffe gehören zu unterschiedlichen Ebenen des Datenaustauschs:
     - wird häufig für Web- und FHIR-Schnittstellen verwendet
   - **Extensible Markup Language (XML):** bildet Daten durch verschachtelte Elemente, Attribute und Namensräume ab
     - die Struktur kann beispielsweise mit einem XML Schema (XSD) geprüft werden
-- **SOAP:** XML-basiertes Nachrichtenframework beziehungsweise Protokoll
+- **SOAP (Simple Object Access Protocol):** XML-basiertes Nachrichtenframework beziehungsweise Protokoll
   - eine SOAP-Nachricht besteht aus einem `Envelope`, einem optionalen `Header` und einem `Body`
   - die Übertragung kann beispielsweise über HTTP erfolgen
 - **Health Level Seven (HL7):** Familie von Standards für den Austausch von Gesundheitsinformationen
   - **HL7 Version 2:** Nachrichten aus Segmenten, Feldern und Komponenten, meist durch Trennzeichen strukturiert
-    - Beispiel: Eine Aufnahmenachricht übermittelt Patientendaten vom Krankenhausinformationssystem an das Laborinformationssystem
+    - Eine Aufnahmenachricht übermittelt Patientendaten vom Krankenhausinformationssystem an das Laborinformationssystem
   - **Clinical Document Architecture (CDA):** XML-basierter Standard für klinische Dokumente
-    - Beispiel: strukturierter elektronischer Arztbrief
+    - strukturierter elektronischer Arztbrief
   - **Fast Healthcare Interoperability Resources (FHIR):** definiert Ressourcen, Profile und Austauschmechanismen
     - Ressourcen können unter anderem als JSON, XML oder RDF/Turtle dargestellt werden
     - REST-Schnittstellen sind verbreitet, aber nicht die einzige Austauschform
 - **Integrating the Healthcare Enterprise (IHE):** Initiative mit Integrationsprofilen für konkrete Anwendungsszenarien
   - Profile legen beteiligte Akteure und Transaktionen fest und präzisieren die Verwendung bestehender Standards
-  - Beispiel: XDS.b beschreibt den einrichtungsübergreifenden Austausch klinischer Dokumente
+  - XDS.b beschreibt den einrichtungsübergreifenden Austausch klinischer Dokumente
 
 **Vergleich am selben vereinfachten Patientenbeispiel**
 
@@ -949,8 +844,6 @@ FHIR ist weder mit JSON noch mit REST gleichzusetzen:
 
 ::: {.callout-note title="Literatur" appearance="simple"}
 
-- Bundesärztekammer: *(Muster-)Kursbuch Medizinische Informatik*. 2. Auflage, 2022, Abschnitt 4.1 „Modul I – Angewandte Informatik“, S. 10.  
-  <https://www.bundesaerztekammer.de/fileadmin/user_upload/BAEK/Themen/Aus-Fort-Weiterbildung/Weiterbildung/Kursbuecher/2018/20220217_18_MKB_MedInformatik.pdf>
 - Bray T.: *The JavaScript Object Notation (JSON) Data Interchange Format*. RFC 8259, 2017.  
   <https://www.rfc-editor.org/rfc/rfc8259>
 - W3C: *Extensible Markup Language (XML) 1.0*. Fifth Edition, 2008.  
@@ -970,7 +863,7 @@ Quellen geprüft am 05.11.2026.
 ::::
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was unterscheidet SOAP und REST, und warum ist das für die Medizininformatik relevant?
 :::
 
@@ -1076,7 +969,7 @@ Quellen geprüft am 05.11.2026.
 
 ### Methoden des Software Engineerings
 
-::: {.exam-question}
+::: {.exam-question .done}
 Welche Aufgaben haben Anforderungsanalyse, ER-Modell, UML und BPMN im Software Engineering, und wie hängen sie zusammen?
 :::
 
@@ -1135,7 +1028,7 @@ Quellen geprüft am 06.11.2026.
 
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Wie unterscheiden sich ER-Modell, UML und BPMN hinsichtlich Zweck, Abstraktion und Zielgruppe?
 :::
 
@@ -1266,7 +1159,7 @@ Quellen geprüft am 06.11.2026.
 
 ### IT-Servicemanagement
 
-::: {.exam-question}
+::: {.exam-question .done}
 Was ist IT-Servicemanagement, und welche Maßnahmen sichern den zuverlässigen Betrieb klinischer IT-Dienste?
 :::
 
@@ -1335,7 +1228,7 @@ Quellen geprüft am 06.11.2026.
 ::::
 
 
-::: {.exam-question}
+::: {.exam-question .done}
 Wie unterscheiden sich Incident, Problem, Service Request und Change im IT-Servicemanagement?
 :::
 

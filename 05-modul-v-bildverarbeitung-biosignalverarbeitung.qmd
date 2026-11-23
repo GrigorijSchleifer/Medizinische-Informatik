@@ -1,4 +1,4 @@
-# Bildverarbeitung/Biosignalverarbeitung {#modul-v}
+# Bildverarbeitung {#modul-v}
 
 ## Medizinische Bildgebung
 

@@ -47,6 +47,7 @@ format:
     toc-depth: 3
     toc-expand: 1        # rechts nur Kursbuch-Punkte offen, Unterpunkte klappen beim Scrollen auf
     number-depth: 3
+    link-external-newwindow: true   # externe Links (andere Websites) im neuen Tab öffnen
     mermaid:
         theme: dark
 
